@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>原力三部曲 · 文脉骨架座舱</title>
+<style>
+  :root{
+    --bg:#0a0d15; --bg2:#101424; --panel:rgba(22,28,46,.62); --panel2:rgba(28,35,58,.5);
+    --ink:#ece6d6; --muted:#98a1b4; --faint:#6b7488;
+    --gold:#c9a96a; --gold-bright:#e7cf94; --gold-deep:#9a7d3e;
+    --line:rgba(201,169,106,.18); --line-2:rgba(201,169,106,.10);
+    --g1:#c9a961; --g2:#b08d57; --g3:#d4b86a; --g4:#9a7d3e;
+    --serif:"Songti SC","STSong","Noto Serif SC", serif;
+    --sans:"PingFang SC","Hiragino Sans GB",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;line-height:1.6}
+  body{
+    background:
+      radial-gradient(1200px 700px at 78% -8%, rgba(201,169,106,.10), transparent 60%),
+      radial-gradient(900px 600px at 10% 110%, rgba(120,90,200,.08), transparent 55%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg2) 60%, var(--bg) 100%);
+    background-attachment:fixed;
+    min-height:100vh; padding:48px 22px 80px;
+  }
+  .wrap{max-width:1180px;margin:0 auto}
+  .mono{font-family:var(--mono)}
+  .serif{font-family:var(--serif)}
+  .gold{color:var(--gold)}
+
+  /* ---------- header ---------- */
+  header{text-align:center;margin-bottom:14px}
+  .kicker{font-size:12px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,52px);letter-spacing:.06em;
+    background:linear-gradient(180deg,var(--gold-bright),var(--gold) 55%,var(--gold-deep));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--gold)}
+  .sub{color:var(--muted);font-size:14px;margin-top:12px;letter-spacing:.04em}
+
+  /* ---------- hero axiom ---------- */
+  .hero{margin:34px auto 10px;max-width:760px;text-align:center;
+    border:1px solid var(--line);border-radius:16px;padding:26px 28px;
+    background:linear-gradient(180deg,var(--panel),transparent);position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;background:
+    radial-gradient(420px 160px at 50% -40%,rgba(201,169,106,.16),transparent 70%);pointer-events:none}
+  .axiom-sym{font-family:var(--serif);font-size:46px;color:var(--gold-bright);letter-spacing:.04em}
+  .axiom-name{font-family:var(--serif);font-size:19px;margin-top:6px;letter-spacing:.05em}
+  .axiom-gloss{color:var(--muted);font-size:13.5px;margin-top:10px;font-style:italic}
+  .formula{margin-top:18px;font-family:var(--mono);font-size:17px;color:var(--ink);
+    border-top:1px solid var(--line-2);padding-top:16px;letter-spacing:.02em}
+  .formula b{color:var(--gold)}
+
+  .ladder{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px auto 4px;max-width:880px}
+  .ladder .step{flex:1 1 150px;min-width:130px;border:1px solid var(--line-2);border-radius:10px;
+    padding:9px 11px;background:var(--panel2);text-align:left}
+  .ladder .m{font-family:var(--serif);font-size:21px;color:var(--gold)}
+  .ladder .nt{font-size:11.5px;color:var(--muted);margin-top:3px;letter-spacing:.02em}
+  .ladder .step.tip{border-color:rgba(201,169,106,.5);box-shadow:0 0 0 1px rgba(201,169,106,.12) inset}
+  .ladder .step.tip .m{color:var(--gold-bright)}
+
+  /* ---------- section scaffolding ---------- */
+  section{margin-top:52px}
+  .sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;
+    border-bottom:1px solid var(--line);padding-bottom:12px}
+  .sec-n{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.2em}
+  .sec-t{font-family:var(--serif);font-size:22px;letter-spacing:.05em}
+  .sec-note{color:var(--muted);font-size:12.5px;margin-left:auto;text-align:right;max-width:46%}
+
+  /* ---------- projections ---------- */
+  .proj{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .pcard{border:1px solid var(--line);border-radius:13px;padding:18px;background:var(--panel);position:relative}
+  .pcard .ver{font-family:var(--serif);font-size:18px;color:var(--gold)}
+  .pcard .dim{font-size:12px;color:var(--muted);margin:4px 0 12px;letter-spacing:.04em}
+  .pcard .is{font-size:15px;font-weight:600;line-height:1.5}
+  .pcard .yx{font-size:12.5px;color:var(--muted);margin-top:9px;border-top:1px solid var(--line-2);padding-top:9px}
+  .leg-tag{position:absolute;top:14px;right:14px;font-size:10.5px;letter-spacing:.12em;
+    padding:3px 8px;border-radius:20px;border:1px solid var(--line)}
+  .leg-left{color:var(--g1);border-color:rgba(201,169,97,.4)}
+  .leg-right{color:#9fb4e0;border-color:rgba(159,180,224,.35)}
+  .leg-span{color:var(--muted)}
+  .pcard.in-trilogy{box-shadow:0 0 0 1px rgba(201,169,106,.16) inset}
+
+  /* ---------- books ---------- */
+  .legend{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+  .legend .lbl{font-size:12px;color:var(--muted);margin-right:2px}
+  .chip{font-size:12.5px;padding:5px 12px;border-radius:20px;cursor:pointer;user-select:none;
+    border:1px solid var(--line);background:var(--panel2);color:var(--ink);transition:.18s}
+  .chip:hover{border-color:var(--gold)}
+  .chip.active{background:var(--gold);color:#1a1305;border-color:var(--gold);font-weight:600}
+  .books{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .book{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);
+    cursor:pointer;transition:.2s;position:relative}
+  .book:hover{transform:translateY(-3px);border-color:rgba(201,169,106,.4)}
+  .book .topbar{height:4px;background:var(--bk,var(--gold))}
+  .book .bd{padding:18px}
+  .book .leg{font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+  .book .nm{font-family:var(--serif);font-size:24px;margin:7px 0 2px;letter-spacing:.04em}
+  .book .alt{font-size:12.5px;color:var(--gold)}
+  .book .q{font-size:14px;margin:12px 0;font-weight:600;line-height:1.5}
+  .book .row{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.55}
+  .book .row b{color:var(--ink);font-weight:600}
+  .book .gain{margin-top:11px;padding-top:11px;border-top:1px solid var(--line-2);font-size:13px;color:var(--gold-bright)}
+  .book .role{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:12.5px;color:var(--muted)}
+  .book.open .role{max-height:120px;margin-top:11px}
+  .book .shares{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px}
+  .book .s{font-size:10.5px;padding:2px 7px;border-radius:12px;border:1px solid var(--line-2);color:var(--muted)}
+  .book.hot{border-color:var(--gold);box-shadow:0 0 22px rgba(201,169,106,.18)}
+  .book .s.hit{background:var(--gold);color:#1a1305;border-color:var(--gold);font-weight:600}
+  .book.dim{opacity:.4}
+
+  /* ---------- transmission belt ---------- */
+  .belt{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+  .belt .node{flex:1 1 150px;border:1px solid var(--line);border-radius:12px;padding:15px;background:var(--panel);text-align:center}
+  .belt .node .nm{font-family:var(--serif);font-size:18px}
+  .belt .node .lg{font-size:11px;color:var(--muted);margin-top:3px}
+  .belt .arrow{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:0 12px;min-width:128px;text-align:center}
+  .belt .arrow .ln{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);position:relative}
+  .belt .arrow .ln:after{content:"▸";position:absolute;right:-2px;top:-10px;color:var(--gold)}
+  .belt .arrow .tx{font-size:11px;color:var(--gold);margin-top:8px;letter-spacing:.02em;line-height:1.4}
+
+  .spath{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+  .sp{border:1px solid var(--line-2);border-radius:11px;padding:13px;background:var(--panel2);text-align:center}
+  .sp .s{font-family:var(--mono);font-size:13px;color:var(--gold);letter-spacing:.1em}
+  .sp .nm{font-family:var(--serif);font-size:17px;margin:5px 0 1px}
+  .sp .meta{font-size:11px;color:var(--muted)}
+  .sp .m{font-family:var(--serif);font-size:22px;color:var(--gold-bright);margin-top:7px}
+  .sp.tip{border-color:rgba(201,169,106,.5)}
+
+  /* ---------- asset lifecycle ---------- */
+  .life{display:grid;grid-template-columns:repeat(4,1fr);gap:0;align-items:stretch}
+  .seg{position:relative;padding:20px 16px;border-top:3px solid var(--c);background:var(--panel);
+    border-right:1px solid var(--line-2)}
+  .seg:last-child{border-right:0}
+  .seg:nth-child(1){border-radius:14px 0 0 14px}
+  .seg:nth-child(4){border-radius:0 14px 14px 0}
+  .seg .seal{font-family:var(--serif);font-size:14px;color:var(--c);letter-spacing:.1em}
+  .seg .gate{font-size:12px;color:var(--muted);margin-top:2px}
+  .seg .neo{font-family:var(--serif);font-size:24px;margin:12px 0 2px;color:var(--ink)}
+  .seg .stage{display:inline-block;font-size:11px;color:var(--c);border:1px solid var(--c);
+    border-radius:20px;padding:2px 10px;margin-top:4px;opacity:.9}
+  .seg .old{font-size:11.5px;color:var(--faint);margin-top:10px}
+  .seg .old s{color:var(--faint)}
+  .seg .line{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5}
+  .seg .flow{position:absolute;right:-9px;top:50%;transform:translateY(-50%);z-index:2;
+    color:var(--gold);font-size:16px;background:var(--bg);border-radius:50%;width:20px;height:20px;
+    display:flex;align-items:center;justify-content:center}
+  .seg:last-child .flow{display:none}
+  .seg .dir{font-family:var(--serif);font-size:12px;color:var(--c);margin-top:9px;letter-spacing:.1em}
+
+  /* ---------- outcome ---------- */
+  .outcome{margin-top:26px;display:flex;gap:14px;align-items:stretch;flex-wrap:wrap}
+  .hand{flex:1 1 260px;border:1px solid var(--line);border-radius:13px;padding:18px 20px;background:var(--panel)}
+  .hand .h{font-family:var(--serif);font-size:16px;color:var(--gold)}
+  .hand .d{font-size:13px;color:var(--muted);margin-top:6px}
+  .equals{flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:30px;color:var(--gold)}
+  .sum{flex:1 1 180px;border:1px solid rgba(201,169,106,.5);border-radius:13px;padding:18px 20px;
+    background:linear-gradient(180deg,rgba(201,169,106,.12),transparent);text-align:center;
+    display:flex;flex-direction:column;justify-content:center}
+  .sum .big{font-family:var(--serif);font-size:34px;color:var(--gold-bright);letter-spacing:.18em}
+  .sum .sm{font-size:12px;color:var(--muted);margin-top:6px}
+
+  /* ---------- naming + footer ---------- */
+  .naming{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+  .nm-card{border:1px solid var(--line-2);border-radius:11px;padding:14px;background:var(--panel2);font-size:12.5px}
+  .nm-card .keep{color:var(--gold);font-family:var(--serif);font-size:16px}
+  .nm-card .drop{color:var(--faint);text-decoration:line-through;margin-left:8px;font-size:13px}
+  .nm-card .why{color:var(--muted);margin-top:7px;line-height:1.5}
+  footer{margin-top:54px;text-align:center;color:var(--faint);font-size:11.5px;line-height:1.9;
+    border-top:1px solid var(--line-2);padding-top:22px}
+  footer .quote{font-family:var(--serif);color:var(--gold);font-size:15px;margin-bottom:12px;letter-spacing:.04em}
+
+  /* ---------- §06 inventory (基石 + 关键概念全谱) ---------- */
+  .inv-legend{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+  .inv-legend .lbl{font-size:12px;color:var(--muted);margin-right:2px}
+  .inv-toggle{font-size:12.5px;padding:5px 12px;border-radius:20px;cursor:pointer;user-select:none;
+    border:1px solid var(--gold);color:var(--gold);background:transparent;transition:.18s}
+  .inv-toggle:hover{background:rgba(201,169,106,.12)}
+  .inv-toggle.active{background:var(--gold);color:#1a1305;font-weight:600}
+  .inventory{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+  .inv-col{border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px;background:var(--panel);
+    border-top:3px solid var(--bk,var(--gold))}
+  .inv-h{font-family:var(--serif);font-size:20px;letter-spacing:.03em}
+  .inv-leg{font-size:11px;color:var(--muted);letter-spacing:.08em;margin-left:7px;font-family:var(--sans)}
+  .inv-label{font-size:10.5px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;
+    margin:15px 0 9px;border-bottom:1px solid var(--line-2);padding-bottom:5px}
+  .cs-item{border-left:2px solid var(--bk,var(--gold));padding:5px 0 5px 11px;margin-bottom:9px;
+    border-radius:0 6px 6px 0;transition:.18s}
+  .cs-n{font-family:var(--serif);font-size:13.5px;color:var(--ink);line-height:1.45}
+  .cs-num{display:inline-block;width:17px;height:17px;line-height:16px;text-align:center;font-family:var(--mono);
+    font-size:10.5px;color:var(--gold);border:1px solid var(--line);border-radius:50%;margin-right:7px}
+  .cs-link{font-size:10.5px;margin-left:3px;opacity:.85}
+  .cs-d{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.5}
+  .keys{display:flex;flex-wrap:wrap;gap:6px}
+  .kchip{font-size:11.5px;padding:3px 9px;border-radius:13px;border:1px solid var(--line-2);
+    color:var(--muted);background:var(--panel2);transition:.18s;cursor:default}
+  .kchip.k-shared{border-color:rgba(201,169,106,.4);color:var(--ink)}
+  .inv-hot{background:rgba(201,169,106,.16)!important;border-color:var(--gold)!important;
+    color:var(--gold-bright)!important;box-shadow:0 0 0 1px rgba(201,169,106,.2)}
+  .cs-item.inv-hot{background:rgba(201,169,106,.10)}
+  .inv-dim{opacity:.3}
+
+  /* ---------- §03 理论模型依据 (model images) ---------- */
+  .models{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+  .model-card{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--panel);
+    border-top:3px solid var(--bk,var(--gold));display:flex;flex-direction:column}
+  .model-card .mh{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+  .model-card .mbook{font-family:var(--serif);font-size:19px;letter-spacing:.03em}
+  .model-card .mname{font-size:13px;color:var(--gold);font-weight:600}
+  .model-card .msrc{font-size:11px;color:var(--faint);letter-spacing:.02em;margin-top:4px;font-family:var(--mono)}
+  .model-svg{margin:15px 0 12px;display:flex;align-items:center;justify-content:center}
+  .model-svg svg{width:100%;height:112px;overflow:visible;display:block}
+  .model-claim{font-size:12.5px;color:var(--ink);line-height:1.62;flex:1}
+  .model-map{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;padding-top:11px;border-top:1px solid var(--line-2)}
+  .model-map .mm{font-size:10.5px;padding:2px 8px;border-radius:12px;border:1px solid var(--line-2);color:var(--muted)}
+  .model-map .mm.pit{border-color:var(--gold);color:var(--gold-bright);background:rgba(201,169,106,.08)}
+  .model-map .mm.gap{border-color:#c47a63;color:#dca18c}
+  .model-belt{margin-top:18px;border:1px solid rgba(201,169,106,.3);border-radius:13px;padding:16px 22px;
+    background:linear-gradient(180deg,rgba(201,169,106,.07),transparent);text-align:center;
+    font-size:13px;color:var(--muted);line-height:1.75}
+  .model-belt b{color:var(--gold-bright);font-family:var(--serif);font-size:15px}
+  .ms-line{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round}
+  .ms-band{fill:none;stroke:var(--gold-deep);stroke-width:1.4;opacity:.7}
+  .ms-faint{fill:none;stroke:var(--line);stroke-width:1}
+  .ms-water{fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:3 3}
+  .ms-gap{fill:none;stroke:#c47a63;stroke-width:1.8;stroke-dasharray:4 3}
+  .ms-dot{fill:var(--gold-bright)}
+  .ms-arrow{fill:var(--gold)}
+  .ms-lbl{fill:var(--muted);font-size:9px;font-family:var(--sans)}
+  .ms-lbl-g{fill:var(--gold-bright);font-size:9.5px;font-family:var(--sans)}
+  .ms-yx{fill:var(--gold-bright);font-size:15px;font-family:var(--serif)}
+
+  @media (max-width:860px){
+    .proj,.books,.spath,.life,.naming,.inventory,.models{grid-template-columns:1fr 1fr}
+    .seg:nth-child(n){border-radius:0}
+    .seg .flow{display:none}
+    .sec-note{display:none}
+  }
+  @media (max-width:560px){
+    .proj,.books,.spath,.life,.naming,.inventory,.models{grid-template-columns:1fr}
+    .belt .arrow{min-width:100%;padding:10px 0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">YUANLI TRILOGY · NARRATIVE SPINE</div>
+    <h1>原力三部曲 · 文脉骨架</h1>
+    <div class="sub serif">v0.4 · 一条公理两句合一 · 三本书各有坚实理论模型：原力资产=U型理论 / 原力创业=跨越鸿沟 / 原力OS=莫比乌斯环·CAS</div>
+  </header>
+
+  <div class="hero">
+    <div class="axiom-sym">ʸx</div>
+    <div class="axiom-name">做会自我繁殖的事，不做一次性的事</div>
+    <div class="axiom-gloss">「药不是药渣，是药引。你睡觉时它还在长。」</div>
+    <div class="formula"><b style="color:var(--gold-bright)">「你」是最贵的算法 × AI 是最强的算力</b> → 原力资产 ＝「你」×AI ＝ 会自我繁殖、万倍放大的资产（两句一枚硬币两面：你＝种子，AI＝ʸx 放大器）</div>
+    <div class="formula">把公理投到「赚钱」维度 → <b>财富 = 借势 × 合力</b>（乘法：任一为 0，整体归零）</div>
+  </div>
+  <div class="ladder" id="ladder"></div>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">§ 01</span><span class="sec-t">三投影 · 两条腿</span>
+      <span class="sec-note">同一条 ʸx 照在「怎么想 / 怎么变现 / 怎么变强」三面墙上 · 一层哲学 + 两条腿 (MECE)</span></div>
+    <div class="proj" id="proj"></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">§ 02</span><span class="sec-t">三部曲在脊柱上的位置</span>
+      <span class="sec-note">点共享概念 → 高亮它穿了哪几本书</span></div>
+    <div class="legend" id="legend"><span class="lbl">穿三部的共享概念：</span></div>
+    <div class="books" id="books"></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">§ 03</span><span class="sec-t">三本书的理论模型依据</span>
+      <span class="sec-note">每本书的坚实理论锚 · U型理论 / 跨越鸿沟 / 莫比乌斯环——站在巨人肩上</span></div>
+    <div class="models" id="models"></div>
+    <div class="model-belt" id="model-belt"></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">§ 04</span><span class="sec-t">三部传动接力</span>
+      <span class="sec-note">资产(觉醒找到你)→按确定键→创业(变现金流)→OS(让生意自我繁殖)·三角闭环飞轮</span></div>
+    <div class="belt" id="belt"></div>
+    <div class="spath" id="spath"></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">§ 05</span><span class="sec-t">原力创业 · 四获得物 · 资产生命线</span>
+      <span class="sec-note">四关 = 母体的一生 · 四获得物 = 现有四资产层的升格（非新理论）</span></div>
+    <div class="life" id="life"></div>
+    <div class="outcome" id="outcome"></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">§ 06</span><span class="sec-t">命名裁决</span>
+      <span class="sec-note">改下游不改公理 · 写死供下游引用</span></div>
+    <div class="naming" id="naming"></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="sec-n">§ 07</span><span class="sec-t">三部基石与关键概念全谱</span>
+      <span class="sec-note">每部 基石(地基)+关键(梁柱) · 点脊骨概念→跨三部高亮 · 逐条定义见 全谱.md（字典层）</span></div>
+    <div class="inv-legend" id="inv-legend"><span class="lbl">穿三部的脊骨：</span></div>
+    <div class="inventory" id="inventory"></div>
+  </section>
+
+  <footer>
+    <div class="quote">一条公理，两句合一，三本书。<br/>资产把「你」变成会复利的种子，创业把种子变成现金流，OS 把你变成会自我繁殖的物种。</div>
+    真源：觉醒课30节 + 白皮书觉醒#05-24/守#49-60 + 06-守（原力资产）· 创业 gates.jsx + 卷一 · OS README（四部/S1-S4）<br/>
+    原力三部曲 · 文脉骨架座舱 v0.4 · §03 三本书理论模型(U型理论/跨越鸿沟/莫比乌斯·CAS) · 资产=原力U · 创业=原力借势 · OS=元AI四套东西 · 数据与渲染分离 · 下游服从公理
+  </footer>
+</div>
+
+<script>
+/* ===== 判断层：脊柱模型（与 §1 总纲表同源；渲染只读它） ===== */
+const SPINE = {
+  ladder: [
+    {m:"1·x", nt:"你 + 1 个工具 · 线性"},
+    {m:"x·y", nt:"你 + N 个工具 · 乘法"},
+    {m:"x^y", nt:"工具自反馈 · 飞轮 · 幂"},
+    {m:"ʸx",  nt:"智能造下一代智能 · 迭代幂 ← 第六康波", tip:true}
+  ],
+  projections: [
+    {ver:"人生版", dim:"判断 · 怎么想", is:"哲学层 12 条（橙皮书 / 治理）", yx:"让判断、习惯、位置自我繁殖", leg:"贯穿", legCls:"leg-span", inTri:false},
+    {ver:"商业版", dim:"对外 · 怎么变现", is:"左腿 · 原力资产 + 原力创业", yx:"让创业每一关产出会复利的资产", leg:"左腿", legCls:"leg-left", inTri:true},
+    {ver:"工作版", dim:"对内 · 怎么变强", is:"右腿 · 原力OS", yx:"让 AI 班底造下一代 AI 班底", leg:"右腿", legCls:"leg-right", inTri:true}
+  ],
+  shares: ["原力资产","ʸx","借势合力","四关"],
+  books: [
+    {key:"zichan", nm:"原力资产", leg:"向内 · 右手雪球", alt:"资", q:"「你」是谁、怎么穿越周期复利（WHO）", model:"U 型理论 · Scharmer",
+      struct:"原力U 觉察→高能→阴影→整合→资产（冰山下潜到源头再上升）· 觉醒(找到你·1) + 守富(雪球·万→亿)",
+      gain:"会自我繁殖、万倍放大的资产（「你」×AI）",
+      role:"三部曲书一·新；把「你」最贵的算法解码、配元AI、按确定键、穿越周期复利。", shares:["原力资产","ʸx","借势合力"], color:"var(--g1)"},
+    {key:"venture", nm:"原力创业", leg:"左腿 · 落地", alt:"术", q:"怎么走通一门生意（HOW）", model:"跨越鸿沟 · Geoffrey Moore",
+      struct:"四关 原力借势→品类独创→模式升维→壁垒锁定（关一=借势/大势·内部对称 3×3×3×4）",
+      gain:"四获得物：原力资产 → 心理账户 → 利润容器 → 财富飞轮",
+      role:"关一改原力借势（识别康波大势+全局最优·合力侧引用资产），聚焦独创→升维→锁定。", shares:["原力资产","ʸx","借势合力","四关"], color:"var(--g3)"},
+    {key:"os", nm:"原力OS", leg:"右腿", alt:"器", q:"最终变成谁（WHO）", model:"莫比乌斯环 · CAS",
+      struct:"四部 信念→图景→工具→身份 · S路径 S1→S4 · 核心关窍 元AI=四套东西(文脉/大脑/地图/链路)",
+      gain:"新物种身份（ʸx 孵化者 · 终极作品=下一个能造物的人）",
+      role:"把通关后的人升级成自我繁殖系统；四关在 S 路径作「商业母语」(43–46 章) 被复用。", shares:["原力资产","ʸx","四关"], color:"var(--g4)"}
+  ],
+  belt: [
+    {nm:"原力资产", lg:"向内 · 觉醒+守富"},
+    {arrow:"按确定键 → 把「你」变成生意"},
+    {nm:"原力创业", lg:"向外 · 原力借势·现金流"},
+    {arrow:"AI班底 → 让生意自我繁殖"},
+    {nm:"原力OS", lg:"向上 · 物种引擎"}
+  ],
+  spath: [
+    {s:"S1", nm:"建模", meta:"0-3月 · 学生", m:"1·x"},
+    {s:"S2", nm:"工具", meta:"3-6月 · 工匠", m:"x·y"},
+    {s:"S3", nm:"板",   meta:"6-12月 · 产品人", m:"x^y"},
+    {s:"S4", nm:"舱",   meta:"12月+ · 孵化者", m:"ʸx", tip:true}
+  ],
+  life: [
+    {seal:"壹", gate:"一 觉醒", mother:"找到母体", old:"人格资产", neo:"原力资产", stage:"本金", dir:"向内求 · 找到我", line:"最贵的算法，AI 抄不走", c:"var(--g1)"},
+    {seal:"貳", gate:"二 独创", mother:"给母体定品类", old:"用户资产", neo:"心理账户", stage:"开户", dir:"向外立 · 说清我", line:"从「功能账户」升进情绪/社交/投资档，锁定预算来源", c:"var(--g2)"},
+    {seal:"叁", gate:"三 升维", mother:"让母体复制", old:"模式资产", neo:"利润容器", stage:"容器", dir:"向上升 · 放大我", line:"三链贯通 = 9 模块 = 58 原子组合的十倍利润容器", c:"var(--g3)"},
+    {seal:"肆", gate:"四 锁定", mother:"防母体被抄", old:"壁垒资产", neo:"财富飞轮", stage:"飞轮", dir:"向守远 · 焊死我", line:"四维护城×16控点 · 双十10/10法则 · 母体自转复利 = ʸx 显化", c:"var(--g4)"}
+  ],
+  outcome: {left:{h:"左手 · 现金流", d:"心理账户 × 利润容器的当期产出"}, right:{h:"右手 · 资产雪球", d:"财富飞轮的复利"}, sum:"出师"},
+  naming: [
+    {keep:"模式升维", drop:"模式升级", why:"上线站 / 战略README / 用户三处一致用「升维」"},
+    {keep:"心理账户", drop:"心智账户", why:"向正典让步，避免一字之差；关二获得物=被用户升进高阶心理账户档"},
+    {keep:"获得物 = 升格层", drop:"重写理论", why:"理论留绿皮书，本文只放命名与文脉"}
+  ],
+  inventory: {
+    spine: ["ʸx","借势×合力","康波 K1-K6","12 原型","三圈交集","四关","原力资产","信息五层","30 法则"],
+    books: [
+      {key:"zichan", nm:"原力资产", leg:"向内 · 原力U（觉察→高能→阴影→整合→资产）", color:"var(--g1)",
+        cornerstones:[
+          {n:"「你」×AI = 原力资产", d:"你=最贵算法(不可复制) · AI=最强算力(无限放大) · 乘积=会自我繁殖万倍资产 · ʸx 投在「你」这一维", s:true},
+          {n:"关窍五步法（=信息五层）", d:"碎片→特征→观点→洞察→全局最优 · 努力解决20%关窍解决80% · 与OS信息五层同一把尺", s:true},
+          {n:"路径反转 + 双螺旋引擎", d:"不是你理解AI是AI理解你 · 内螺旋(自我认知)×外螺旋(AI共创)越转越快", s:false},
+          {n:"三圈交集 + 12 原型 + 天才区", d:"非对称∩非理性∩非线性 · 原型是操作变量非标签 · 天才区不做难受", s:false},
+          {n:"元AI + 我的说明书", d:"AI工具<统筹器<元AI(镜子/放大器/预言家) · 说明书V1→V3=原力资产底层代码", s:false},
+          {n:"穿越周期复利（守富>创富）", d:"30 法则·数据飞轮·留存复利 · 法币无下限资产无上限 · 左手现金流右手雪球", s:true}
+        ],
+        keys:["关窍·算力鸿沟","你是最贵的算法","元AI三层架构","路径反转","双螺旋引擎","三圈交集","12 原型","阴影炼金术·金色阴影","天才区雷达","四大人生资产","大象骑象人","高敏感超能力","关系原型解码","上下文工程","我的说明书V1-V3","天选用户","确定键 Yes I Do","三角闭环飞轮","借势×合力·命与运","法币无下限资产无上限","守富>创富","30 法则·10-10","数据飞轮","原力人生融合","康波 K1-K6·资产配置"]},
+      {key:"venture", nm:"原力创业", leg:"左腿·落地 / 通关地图", color:"var(--g3)",
+        cornerstones:[
+          {n:"财富 = 借势 × 合力 (MECE PASS)", d:"财富归因第一性 · 势=外部/力=内部 · 不存在第三类", s:true},
+          {n:"四关 · 四生死端口 · 不能跳关", d:"输入/市场/变现/防御端 · 觉醒→独创→升维→锁定 严格串行", s:true},
+          {n:"四关内部对称 (3×3×3×4)", d:"三圈交集 / 三角定位 / 三链贯通 / 四维护城 · 餐巾纸画得完", s:false},
+          {n:"四获得物 = 四资产升格", d:"原力资产→心理账户→利润容器→财富飞轮（本金→开户→容器→飞轮）", s:false},
+          {n:"加速器层 AI杠杆×时间复利", d:"贯穿四关不进顶层公式 · 每关配AI教练+累积复利资产", s:false}
+        ],
+        keys:["12 原型","58 商业原子","16 控制点","三圈交集","16 字真言","甜用户","贵任务","四大心理账户","入脑表达","三链路","九模块","VRSE 四维护城","康波 K1-K6","双十 10/10","30 法则","超级单点","LTV/CAC","游轮测试","十万力","意义主权","100 锦囊","原力资产"]},
+      {key:"os", nm:"原力OS", leg:"右腿 · 物种转移", color:"var(--g4)",
+        cornerstones:[
+          {n:"物种转移 (碳基 x·y→硅基 ʸx)", d:"第六康波本质=杠杆载体物种切换 · 人退到循环之外", s:false},
+          {n:"两公式 x^y vs ʸx", d:"飞轮(还需人)vs 迭代幂(智能造智能·你睡觉它还在长)·差的是维度", s:true},
+          {n:"四部 信念→图景→工具→身份", d:"为什么转→转向哪→怎么转→转完是谁 · 物种转移必然分段", s:false},
+          {n:"三法印", d:"递归进化 / 技能统帅 / 人类友好 · 硅基世界万有引力", s:false},
+          {n:"S 路径 S1→S4", d:"建模(1·x)→工具(x·y)→板(x^y)→舱(ʸx) · 每步是相变 · 出口=孵化造物者", s:false},
+          {n:"元AI = 四套东西（核心关窍）", d:"一纸文脉(原力)·一个大脑(OS/company-brain)·一张地图(CBM)·一条链路(OSA) · 懂你+记得住+会判断+能动手", s:false}
+        ],
+        keys:["一纸文脉(原力)","一个大脑(OS)","一张地图(CBM)","一条链路(OSA)","三非心智筛","超级个体四隐喻","密度革命","算力思维","原力资产","六判断","双 OS 架构","OSA 卡","信息五层","IDA 协议","任务族图谱","三化改造","模-表-板","班底第一性 1+N","蒸馏 case→skill","单一真源+龙虾","代谢系统","四关"]}
+    ]
+  },
+  models: [
+    {shape:"U", book:"原力资产", color:"var(--g1)",
+      model:"U 型理论（Theory U）", src:"Otto Scharmer · MIT / Presencing Institute",
+      claim:"从可见的<b>症状</b>下潜，穿过结构与思维，潜到<b>源头</b>触底（presencing）再整合上升、浮出为资产。资产五式走的就是这条 U——<b>不潜到源头(阴影)，照出的是卓越区的你(耗能版)，不是天才区的你</b>。",
+      map:[{t:"觉察·症状"},{t:"高能·结构"},{t:"阴影·源头",pit:true},{t:"整合·上升"},{t:"资产·浮出"}]},
+    {shape:"chasm", book:"原力创业", color:"var(--g3)",
+      model:"跨越鸿沟（四大周期）", src:"Geoffrey Moore · Crossing the Chasm",
+      claim:"品类独创拿下早期采用者后，通往主流市场之间横着一道<b>鸿沟</b>。四关=四段周期，<b>鸿沟在 独创↔升维 之间</b>——靠保龄球策略(bowling-pin)逐格击穿：先吃透一个甜用户细分，再倒下相邻一格。",
+      map:[{t:"借势·识势"},{t:"独创·早期采用者"},{t:"鸿沟",gap:true},{t:"升维·主流规模"},{t:"锁定·壁垒"}]},
+    {shape:"mobius", book:"原力OS", color:"var(--g4)",
+      model:"莫比乌斯环 · 复杂自适应系统", src:"Hofstadter 怪圈 + Holland CAS + von Neumann 自繁殖",
+      claim:"单面闭环=<b>ʸx</b>：输出即输入、无内外、无终点。<b>自指</b>(造你的造物者)·<b>递归</b>(每件比上件好)·<b>繁衍</b>(造下一代造物者)·<b>涌现</b>(复杂自适应)。OS 就是这只环——也是整个三部曲飞轮的形状。",
+      map:[{t:"自指·怪圈"},{t:"递归·S1→S4"},{t:"繁衍·造造物者"},{t:"涌现·CAS"}]}
+  ],
+  modelBelt: "三个形状本身就是一条<b>究竟</b>线：<b>U</b>(带凹的线) → <b>鸿沟</b>(带缺口的线) → <b>莫比乌斯</b>(无端闭环) ＝ <b>1</b>(找到你) → <b>万</b>(跨越) → <b>∞</b>(自繁殖)。而莫比乌斯(OS)又是整个三部曲飞轮的形状——<b>部分即整体</b>(CAS 自相似)。"
+};
+
+/* ===== 渲染层 ===== */
+const $ = (s)=>document.querySelector(s);
+const el = (tag, cls, html)=>{const e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e;};
+
+function renderLadder(){
+  const box=$("#ladder");
+  SPINE.ladder.forEach(x=>{
+    const s=el("div","step"+(x.tip?" tip":""));
+    s.appendChild(el("div","m",x.m));
+    s.appendChild(el("div","nt",x.nt));
+    box.appendChild(s);
+  });
+}
+function renderProj(){
+  const box=$("#proj");
+  SPINE.projections.forEach(p=>{
+    const c=el("div","pcard"+(p.inTri?" in-trilogy":""));
+    c.appendChild(el("div","leg-tag "+p.legCls,p.leg));
+    c.appendChild(el("div","ver",p.ver));
+    c.appendChild(el("div","dim",p.dim));
+    c.appendChild(el("div","is",p.is));
+    c.appendChild(el("div","yx","ʸx："+p.yx));
+    box.appendChild(c);
+  });
+}
+function renderBooks(){
+  const legend=$("#legend"), books=$("#books");
+  let active=null;
+  const cards=[];
+  SPINE.books.forEach(b=>{
+    const card=el("div","book"); card.style.setProperty("--bk",b.color);
+    card.appendChild(el("div","topbar"));
+    const bd=el("div","bd");
+    bd.appendChild(el("div","leg",b.leg));
+    bd.appendChild(el("div","nm",b.nm));
+    bd.appendChild(el("div","alt","「"+b.alt+"」· "+b.q));
+    bd.appendChild(el("div","row","<b>结构</b> "+b.struct));
+    if(b.model) bd.appendChild(el("div","row","<b>理论依据</b> "+b.model));
+    bd.appendChild(el("div","gain","获得物 · "+b.gain));
+    const sh=el("div","shares");
+    b.shares.forEach(s=>{const t=el("span","s",s); t.dataset.share=s; sh.appendChild(t);});
+    bd.appendChild(sh);
+    bd.appendChild(el("div","role","角色 · "+b.role));
+    card.appendChild(bd);
+    card.addEventListener("click",()=>card.classList.toggle("open"));
+    books.appendChild(card);
+    cards.push({card,shares:b.shares});
+  });
+  SPINE.shares.forEach(s=>{
+    const chip=el("span","chip",s);
+    chip.addEventListener("click",()=>{
+      if(active===s){active=null;} else {active=s;}
+      legend.querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c.textContent===active));
+      cards.forEach(({card,shares})=>{
+        const hit=shares.includes(active);
+        card.classList.toggle("hot",!!active&&hit);
+        card.classList.toggle("dim",!!active&&!hit);
+        card.querySelectorAll(".s").forEach(t=>t.classList.toggle("hit",!!active&&t.dataset.share===active));
+      });
+    });
+    legend.appendChild(chip);
+  });
+}
+function renderBelt(){
+  const box=$("#belt");
+  SPINE.belt.forEach(x=>{
+    if(x.arrow){
+      const a=el("div","arrow"); a.appendChild(el("div","ln")); a.appendChild(el("div","tx",x.arrow));
+      box.appendChild(a);
+    } else {
+      const n=el("div","node"); n.appendChild(el("div","nm",x.nm)); n.appendChild(el("div","lg",x.lg));
+      box.appendChild(n);
+    }
+  });
+  const sp=$("#spath");
+  SPINE.spath.forEach(x=>{
+    const c=el("div","sp"+(x.tip?" tip":""));
+    c.appendChild(el("div","s",x.s));
+    c.appendChild(el("div","nm",x.nm));
+    c.appendChild(el("div","meta",x.meta));
+    c.appendChild(el("div","m",x.m));
+    sp.appendChild(c);
+  });
+}
+function renderLife(){
+  const box=$("#life");
+  SPINE.life.forEach(x=>{
+    const s=el("div","seg"); s.style.setProperty("--c",x.c);
+    s.appendChild(el("div","seal",x.seal+" · "+x.mother));
+    s.appendChild(el("div","gate",x.gate));
+    s.appendChild(el("div","neo",x.neo));
+    s.appendChild(el("div","stage",x.stage));
+    s.appendChild(el("div","old","升格自 <s>"+x.old+"</s>"));
+    s.appendChild(el("div","dir",x.dir));
+    s.appendChild(el("div","line",x.line));
+    s.appendChild(el("div","flow","→"));
+    box.appendChild(s);
+  });
+  const o=SPINE.outcome, box2=$("#outcome");
+  const L=el("div","hand"); L.appendChild(el("div","h",o.left.h)); L.appendChild(el("div","d",o.left.d));
+  const R=el("div","hand"); R.appendChild(el("div","h",o.right.h)); R.appendChild(el("div","d",o.right.d));
+  const eq=el("div","equals","=");
+  const sum=el("div","sum"); sum.appendChild(el("div","big",o.sum)); sum.appendChild(el("div","sm","四获得物合体 · 左手现金流 + 右手雪球"));
+  box2.appendChild(L); box2.appendChild(el("div","equals","+")); box2.appendChild(R); box2.appendChild(eq); box2.appendChild(sum);
+}
+function renderNaming(){
+  const box=$("#naming");
+  SPINE.naming.forEach(x=>{
+    const c=el("div","nm-card");
+    c.appendChild(el("div","",'<span class="keep">'+x.keep+'</span><span class="drop">'+x.drop+'</span>'));
+    c.appendChild(el("div","why",x.why));
+    box.appendChild(c);
+  });
+}
+function renderInventory(){
+  const box=$("#inventory"), legend=$("#inv-legend");
+  const spine=SPINE.inventory.spine;
+  const isSpine=(nm)=>spine.some(t=>nm.indexOf(t)>=0);
+  let active=null; // null | "__ALL__" | a spine token
+  const cols=[];
+  SPINE.inventory.books.forEach(b=>{
+    const col=el("div","inv-col"); col.style.setProperty("--bk",b.color);
+    col.appendChild(el("div","inv-h",b.nm+'<span class="inv-leg">'+b.leg+'</span>'));
+    col.appendChild(el("div","inv-label","基石 · 地基"));
+    const cs=el("div","cornerstones");
+    b.cornerstones.forEach((c,i)=>{
+      const item=el("div","cs-item"); item.dataset.name=c.n;
+      item.appendChild(el("div","cs-n",'<span class="cs-num">'+(i+1)+'</span>'+c.n+(c.s?' <span class="cs-link">🔗</span>':'')));
+      item.appendChild(el("div","cs-d",c.d));
+      cs.appendChild(item);
+    });
+    col.appendChild(cs);
+    col.appendChild(el("div","inv-label","关键 · 梁柱"));
+    const kb=el("div","keys");
+    b.keys.forEach(k=>{
+      const chip=el("span","kchip"+(isSpine(k)?" k-shared":""),k); chip.dataset.name=k;
+      kb.appendChild(chip);
+    });
+    col.appendChild(kb);
+    box.appendChild(col); cols.push(col);
+  });
+  function apply(){
+    cols.forEach(col=>{
+      col.querySelectorAll(".cs-item,.kchip").forEach(node=>{
+        const nm=node.dataset.name;
+        let hot=false, dim=false;
+        if(active==="__ALL__"){ hot=isSpine(nm); dim=!hot; }
+        else if(active){ hot=nm.indexOf(active)>=0; dim=!hot; }
+        node.classList.toggle("inv-hot",hot);
+        node.classList.toggle("inv-dim",dim);
+      });
+    });
+  }
+  function clearActiveChips(){ legend.querySelectorAll(".chip,.inv-toggle").forEach(c=>c.classList.remove("active")); }
+  const tgl=el("span","inv-toggle","只看脊骨");
+  tgl.addEventListener("click",()=>{ active=(active==="__ALL__")?null:"__ALL__"; clearActiveChips(); if(active)tgl.classList.add("active"); apply(); });
+  legend.appendChild(tgl);
+  spine.forEach(s=>{
+    const chip=el("span","chip",s);
+    chip.addEventListener("click",()=>{ active=(active===s)?null:s; clearActiveChips(); if(active)chip.classList.add("active"); apply(); });
+    legend.appendChild(chip);
+  });
+}
+function renderModels(){
+  const box=$("#models");
+  const svgs={
+    U:'<svg viewBox="0 0 240 112" preserveAspectRatio="xMidYMid meet">'
+      +'<line class="ms-water" x1="10" y1="40" x2="230" y2="40"/>'
+      +'<text class="ms-lbl" x="10" y="35">水线 · 症状/鸿沟</text>'
+      +'<path class="ms-line" d="M22,16 Q120,150 218,16"/>'
+      +'<circle class="ms-dot" cx="120" cy="84" r="4.5"/>'
+      +'<text class="ms-lbl-g" x="120" y="104" text-anchor="middle">阴影 · 源头 (presencing)</text>'
+      +'<text class="ms-lbl" x="16" y="13">觉察↘</text>'
+      +'<text class="ms-lbl" x="196" y="13">↗资产</text></svg>',
+    chasm:'<svg viewBox="0 0 240 112" preserveAspectRatio="xMidYMid meet">'
+      +'<path class="ms-line" d="M14,90 Q56,72 96,56"/>'
+      +'<path class="ms-gap" d="M96,56 Q112,106 128,80"/>'
+      +'<path class="ms-line" d="M128,80 Q182,42 226,12"/>'
+      +'<circle class="ms-dot" cx="96" cy="56" r="3.5"/>'
+      +'<text class="ms-lbl" x="10" y="104">借势</text>'
+      +'<text class="ms-lbl-g" x="80" y="50">独创</text>'
+      +'<text x="112" y="100" text-anchor="middle" style="fill:#dca18c;font-size:9.5px;font-family:var(--sans)">鸿沟↓</text>'
+      +'<text class="ms-lbl" x="148" y="44">升维</text>'
+      +'<text class="ms-lbl-g" x="206" y="9">锁定</text></svg>',
+    mobius:'<svg viewBox="0 0 240 112" preserveAspectRatio="xMidYMid meet">'
+      +'<path class="ms-line" d="M120,56 C82,20 28,20 28,56 C28,92 82,92 120,56 C158,20 212,20 212,56 C212,92 158,92 120,56 Z"/>'
+      +'<path class="ms-band" d="M120,64 C86,34 42,36 42,57 C42,78 80,80 114,56"/>'
+      +'<line class="ms-band" x1="113" y1="48" x2="127" y2="64"/>'
+      +'<polygon class="ms-arrow" points="116,42 108,39 112,50"/>'
+      +'<text class="ms-yx" x="120" y="44" text-anchor="middle">ʸx</text>'
+      +'<text class="ms-lbl" x="40" y="59" text-anchor="middle">自指</text>'
+      +'<text class="ms-lbl" x="200" y="59" text-anchor="middle">繁衍</text>'
+      +'<text class="ms-lbl-g" x="120" y="108" text-anchor="middle">单面闭环 · 输出即输入 · 涌现(CAS)</text></svg>'
+  };
+  SPINE.models.forEach(m=>{
+    const card=el("div","model-card"); card.style.setProperty("--bk",m.color);
+    const h=el("div","mh");
+    h.appendChild(el("div","mbook",m.book));
+    h.appendChild(el("div","mname","◢ "+m.model));
+    card.appendChild(h);
+    card.appendChild(el("div","msrc",m.src));
+    card.appendChild(el("div","model-svg",svgs[m.shape]||""));
+    card.appendChild(el("div","model-claim",m.claim));
+    const mp=el("div","model-map");
+    m.map.forEach(x=>{ mp.appendChild(el("span","mm"+(x.pit?" pit":"")+(x.gap?" gap":""),x.t)); });
+    card.appendChild(mp);
+    box.appendChild(card);
+  });
+  $("#model-belt").innerHTML=SPINE.modelBelt;
+}
+document.addEventListener("DOMContentLoaded",()=>{
+  try{
+    renderLadder(); renderProj(); renderBooks(); renderModels(); renderBelt(); renderLife(); renderNaming(); renderInventory();
+  }catch(e){ console.error("[文脉座舱] render error:",e); }
+});
+</script>
+</body>
+</html>

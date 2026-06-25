@@ -1,0 +1,57 @@
+{
+  "verdict": "warn",
+  "summary": "四张图骨架完整、def/src 零空缺、白皮书100概念≈94%归位；MECE 互斥基本成立但有一处真重叠(冬·守富集群 #55-60 被原力资产x6与原力创业x5双拥有且无去重说明)+若干合法边界对象。判 warn。",
+  "counts": {
+    "totalNodes": 173,
+    "cornerstones": 20,
+    "keywords": 149,
+    "perAtlas": {
+      "umbrella": {"cornerstones": 3, "keywords": 25, "nodes": 29},
+      "zichan":   {"cornerstones": 6, "keywords": 37, "nodes": 44},
+      "chuangye": {"cornerstones": 5, "keywords": 45, "nodes": 51},
+      "os":       {"cornerstones": 6, "keywords": 42, "nodes": 49}
+    },
+    "emptyDef": 0,
+    "emptySrc": 0
+  },
+  "completeness": {
+    "whitepaper_hash_span": "#01-#84",
+    "cited_singletons_or_ranges": 78,
+    "true_orphans_hash": [22, 23, 24, 37, 38, 39],
+    "covered_by_range": {"#51": "chuangye/x5 虚实入出壁垒(#50-53)", "#52": "同", "#53": "同"},
+    "philosophy_12_coverage": "12/12 全归位(umbrella/x3 哲1-哲12)",
+    "whitepaper100_placed_estimate": 94,
+    "note": "母4(ʸx/借势×合力/三投影/两条腿)✓、哲12 全✓、左腿#25-60 基本全✓(仅#37-39缺)、右腿#61-84 全✓。缺口集中在 #22-24 与 #37-39 两段。"
+  },
+  "orphans": [
+    "#22 千日窗口? — 实际千日窗口已落 chuangye/x1(白皮书#20)；#22 号位本身未被任一节点引用",
+    "#23 (白皮书源号空缺·原力资产/创业均未挂)",
+    "#24 (白皮书源号空缺·未挂)",
+    "#37 商业模式画布九格相关原子(九模块落#秋36-39，#37单号未单独引用)",
+    "#38 (同九模块段·未单独引用)",
+    "#39 (同九模块段·未单独引用)"
+  ],
+  "orphans_note": "6个 true orphan 多为'被范围/相邻号吸收'而非真缺概念：#37-39 实质已被 chuangye/x4 九模块(标#秋36-39)与三链路覆盖，只是未逐号标注；#22-24 是白皮书冬/春之间源号，对应概念(千日窗口/T1-T9度量)已在别处归位。真正'概念级缺失'≈0，'引用号未对齐'≈6。",
+  "overlaps_true_violation": [
+    "守富 > 创富 (#57) — zichan/x6[SHARED] 与 chuangye/x5[SHARED] 双拥有,def 近同,无'归X只引用'去重说明",
+    "数据飞轮 (#56) — zichan/x6[SHARED] 与 chuangye/x5[SHARED] 双拥有",
+    "30法则 (#55) — zichan/x6[SHARED] 与 chuangye/x5[SHARED] 双拥有",
+    "原力人生融合 (#60) — zichan/x6[SHARED] 与 chuangye/x5[SHARED] 双拥有(双十10-10)",
+    "善战者无赫赫战功 (#58) — chuangye/x5 持有,与 zichan/x6 穿越周期复利同源(哲11留白)语义重叠"
+  ],
+  "overlaps_legit_boundary": [
+    "财富=借势×合力 / 乘法律 (#01/#04) — umbrella/x2 主权威 × chuangye/x1 引用,chuangye 显式标'合力归原力资产只引用'=合法边界对象✓",
+    "三圈交集 (#05-08) — zichan/x4 主权威 × chuangye/x3'四关内部对称'仅列举引用✓ (os/x3'三圈记忆边界'是同名异义不算)",
+    "12原型/原型力 (#03/#11) — umbrella/x2 借势合力侧引用 × zichan/x4 主权威✓",
+    "信息五层/关窍五步 (#70) — os/x3 主权威 × zichan/x2'关窍五步法(=信息五层)'显式标同一把尺 × chuangye/x1'全局最优解(向外)'是投影✓",
+    "元AI/我的说明书/龙虾 — zichan(资产侧:镜子/放大器) × os(工作侧:四套东西/龙虾心智镜) 分工不同面✓",
+    "康波K1-K6/借势 — 跨4图出现但各取一面(umbrella母/chuangye借势关/zichan资配/os第六康波物种切换)✓"
+  ],
+  "mece": {
+    "mutual_exclusion_ok": false,
+    "reason": "冬·守富集群(#55-58,#60)在'原力资产 x6 穿越周期复利出口'与'原力创业 x5 锁定关/加速器'之间被双拥有为全权重 SHARED 节点,且未像其它跨图概念那样写明'主权威在X、此处只引用'。这是 v0.3 三部曲重组(资产新书把守富收为出口 vs 创业锁定关原有归属)留下的接缝未焊死。",
+    "collective_exhaustion_ok": true,
+    "exhaustion_note": "穷尽侧达标:母4/哲12/左腿/右腿四象限齐全,无空基石,无空 def/src。"
+  },
+  "recommendation": "焊死冬集群接缝:在 zichan/x6 或 chuangye/x5 二选一标为主权威(建议守富/30法则/数据飞轮/原力人生融合 主权威留 zichan'守富出口',chuangye/x5 改为'见原力资产x6,锁定关只引用'),与现有'合力归原力资产只引用'同范式。并把 #37-39/#22-24 逐号对齐到已覆盖节点的 src,消除6个引用孤儿。"
+}
