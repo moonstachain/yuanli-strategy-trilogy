@@ -13,7 +13,7 @@ def inline(s):
 
 def render(md_path):
     src = pathlib.Path(md_path).read_text(encoding='utf-8')
-    src = re.sub(r'<!--.*?-->', '', src, flags=re.DOTALL)  # drop meta comment
+    src = re.sub(r'<!--(?!ILLUS:).*?-->', '', src, flags=re.DOTALL)  # drop meta comment, keep ILLUS
     lines = src.split('\n')
     out, para, quote = [], [], []
     title = subtitle = ''
@@ -41,6 +41,15 @@ def render(md_path):
                 subtitle = t.lstrip('—-').strip()
             else:
                 out.append(f'<h2>{inline(t)}</h2>')
+        elif s.startswith('<!--ILLUS:'):
+            flush_para(); flush_quote()
+            m = re.match(r'<!--ILLUS:([\w-]+)\|?(.*?)-->', s)
+            if m:
+                key, concept = m.group(1), m.group(2).strip()
+                svg_path = pathlib.Path(md_path).parent / 'illus' / f'{key}.svg'
+                if svg_path.exists():
+                    cap = f'<figcaption>{html.escape(concept)}</figcaption>' if concept else ''
+                    out.append(f'<figure class="illus" data-key="{key}">{svg_path.read_text(encoding="utf-8")}{cap}</figure>')
         elif s.strip() == '---':
             flush_para(); flush_quote()
             if out: out.append('<div class="ornament">❧</div>')
@@ -77,6 +86,9 @@ h2::after{content:"";display:block;width:42px;height:1px;background:var(--gold-d
 .book p .todo{color:var(--cinnabar-soft);font-style:italic;font-size:14.5px;font-family:var(--sans)}
 .lead-cap::first-letter{font-family:var(--display);font-size:3.4em;float:left;line-height:.84;margin:6px 12px 0 0;color:var(--gold);font-weight:700}
 .ornament{text-align:center;color:var(--gold-deep);font-size:20px;margin:8px 0 30px;letter-spacing:.3em}
+figure.illus{margin:46px auto;max-width:560px;text-align:center;padding:22px 16px 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+figure.illus svg{width:100%;height:auto;max-width:520px;display:block;margin:0 auto;overflow:visible}
+figure.illus figcaption{font-family:var(--sans);font-size:12.5px;color:var(--cream-dim);margin-top:14px;letter-spacing:.03em;opacity:.85}
 blockquote.note{border:1px solid var(--line);border-left:3px solid var(--cinnabar);background:rgba(168,54,44,.06);border-radius:0 10px 10px 0;padding:18px 24px;margin:40px 0 0;font-family:var(--sans);font-size:13.5px;line-height:1.85;color:var(--cream-dim)}
 blockquote.note strong{color:var(--gold-light)}
 blockquote.note .todo{color:var(--cinnabar-soft)}

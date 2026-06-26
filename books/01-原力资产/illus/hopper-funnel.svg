@@ -1,0 +1,40 @@
+<svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="关窍五步漏斗">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.thin{fill:none;stroke:#c9a961;stroke-width:1;stroke-linecap:round;opacity:.5}
+.tangle{fill:none;stroke:#c9a961;stroke-width:1.2;stroke-linecap:round;opacity:.7}
+.accent{fill:none;stroke:#a8362c;stroke-width:1.9}
+.glow{fill:#a8362c;opacity:.16}
+.dot{fill:#c9a961;opacity:.5}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;opacity:.85}
+.lbl-a{fill:#c06a5e;font-family:"Noto Serif SC",serif;font-weight:600}
+</style>
+<!-- chaotic fragments at the mouth -->
+<path class="tangle" d="M150,86 C176,58 192,98 218,72 C242,50 238,96 268,78 C292,64 286,100 312,84"/>
+<path class="tangle" d="M162,104 C188,84 200,112 232,92 C260,76 262,110 296,98"/>
+<!-- funnel -->
+<path class="ln" d="M112,118 L330,118"/>
+<path class="ln" d="M112,118 L208,346"/>
+<path class="ln" d="M330,118 L234,346"/>
+<!-- spout -->
+<path class="ln" d="M208,346 L208,372 L234,372 L234,346"/>
+<!-- descending particles (many → few) -->
+<circle cx="170" cy="150" r="2.2" class="dot"/><circle cx="210" cy="158" r="2.2" class="dot"/>
+<circle cx="250" cy="150" r="2.2" class="dot"/><circle cx="290" cy="156" r="2.2" class="dot"/>
+<circle cx="196" cy="206" r="2" class="dot"/><circle cx="246" cy="210" r="2" class="dot"/>
+<circle cx="221" cy="266" r="1.8" class="dot"/>
+<!-- distilled drop / 全局最优解 -->
+<circle cx="221" cy="404" r="19" class="glow"/>
+<circle cx="221" cy="404" r="19" class="accent"/>
+<path class="accent" stroke-width="1.4" d="M221,396 L221,412 M213,404 L229,404"/>
+<!-- stage ticks + labels -->
+<path class="thin" d="M332,92 L356,92"/><text x="362" y="96" class="lbl" font-size="14">碎片</text>
+<path class="thin" d="M300,162 L356,162"/><text x="362" y="166" class="lbl" font-size="14">特征</text>
+<path class="thin" d="M286,224 L356,224"/><text x="362" y="228" class="lbl" font-size="14">观点</text>
+<path class="thin" d="M268,288 L356,288"/><text x="362" y="292" class="lbl" font-size="14">洞察</text>
+<text x="250" y="408" class="lbl-a" font-size="15">全局最优解</text>
+<!-- distill arrow -->
+<path class="thin" d="M86,140 L86,330" stroke-dasharray="2 6"/>
+<path class="thin" d="M86,330 l-4,-9 M86,330 l4,-9"/>
+<text x="60" y="240" class="lbl" font-size="12" opacity=".6" transform="rotate(-90,60,240)">蒸馏</text>
+</svg>

@@ -18,6 +18,9 @@ h2::after{content:"";display:block;width:42px;height:1px;background:var(--gold-d
 .book p .todo{color:var(--cinnabar-soft);font-style:italic;font-size:14.5px;font-family:var(--sans)}
 .lead-cap::first-letter{font-family:var(--display);font-size:3.4em;float:left;line-height:.84;margin:6px 12px 0 0;color:var(--gold);font-weight:700}
 .ornament{text-align:center;color:var(--gold-deep);font-size:20px;margin:8px 0 30px;letter-spacing:.3em}
+figure.illus{margin:46px auto;max-width:560px;text-align:center;padding:22px 16px 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+figure.illus svg{width:100%;height:auto;max-width:520px;display:block;margin:0 auto;overflow:visible}
+figure.illus figcaption{font-family:var(--sans);font-size:12.5px;color:var(--cream-dim);margin-top:14px;letter-spacing:.03em;opacity:.85}
 blockquote.note{border:1px solid var(--line);border-left:3px solid var(--cinnabar);background:rgba(168,54,44,.06);border-radius:0 10px 10px 0;padding:18px 24px;margin:40px 0 0;font-family:var(--sans);font-size:13.5px;line-height:1.85;color:var(--cream-dim)}
 blockquote.note strong{color:var(--gold-light)}
 blockquote.note .todo{color:var(--cinnabar-soft)}
@@ -53,6 +56,53 @@ blockquote.note .todo{color:var(--cinnabar-soft)}
 <p>你看得见的那点焦虑——「我努力却卖不上价」「我学了一堆 AI 工具还是慌」——只是浮在水面上的症状。真正决定你那条横线能不能往上走的，是水下那座你从没看过的山。</p>
 <p>这一章，就是想把你从「擦水面那一角」，第一次拽到水边，让你往下看一眼。</p>
 <p>我先不给你答案。我只给你一个钩子：<strong>水面上那一角，是机器随时能复制走的；水下那 90%，机器永远够不着。</strong> 而那 90%，才是「你」真正值钱的地方。</p>
+<figure class="illus" data-key="iceberg-diver"><svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="冰山潜水者">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.thin{fill:none;stroke:#c9a961;stroke-width:1;stroke-linecap:round;opacity:.5}
+.accent{fill:none;stroke:#a8362c;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.accent-f{fill:#a8362c;stroke:none}
+.berg{fill:#c9a961;opacity:.05}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;opacity:.8}
+.lbl-s{fill:#9bae9a;font-family:"Noto Serif SC",serif;opacity:.65}
+</style>
+<!-- waterline -->
+<path class="thin" d="M24,150 Q70,144 116,150 T208,150 T300,150 T392,150 T484,150 T576,150"/>
+<text x="30" y="142" class="lbl-s" font-size="11">水面</text>
+<!-- iceberg tip above water -->
+<path class="ln" d="M250,150 L276,104 L294,128 L312,150 Z"/>
+<!-- tiny figure polishing the tip -->
+<g class="ln" stroke-width="1.3">
+<circle cx="282" cy="96" r="3.4"/>
+<path d="M282,99 Q285,106 291,107"/>
+<path d="M291,107 L299,110"/>
+<path d="M282,107 L279,114 M282,107 L285,114"/>
+</g>
+<path class="thin" d="M300,112 q4,-1 7,1"/>
+<text x="318" y="100" class="lbl-s" font-size="11.5">你擦的那一角</text>
+<!-- iceberg body below water (the 90%) -->
+<path class="berg" d="M214,151 L360,151 C404,200 396,278 336,320 C296,346 244,344 210,312 C166,266 172,196 214,151 Z"/>
+<path class="ln" d="M214,151 C172,196 166,266 210,312 C244,344 296,346 336,320 C396,278 404,200 360,151"/>
+<path class="thin" d="M256,168 L236,250 L286,308"/>
+<path class="thin" d="M322,176 L342,262"/>
+<path class="thin" d="M236,250 L322,238"/>
+<text x="232" y="244" class="lbl" font-size="26" font-weight="600">90%</text>
+<text x="232" y="266" class="lbl-s" font-size="12.5">机器永远够不着</text>
+<!-- diver descending, head-down (accent) -->
+<g class="accent">
+<circle cx="452" cy="196" r="4.2" class="accent-f"/>
+<path d="M452,192 L455,160"/>
+<path d="M452,191 Q444,198 439,205 M452,191 Q460,198 466,205"/>
+<path d="M455,160 Q450,150 445,144 M455,160 Q460,150 466,145"/>
+</g>
+<!-- bubbles rising -->
+<circle cx="466" cy="178" r="2.1" class="thin" fill="none"/>
+<circle cx="473" cy="162" r="1.6" class="thin" fill="none"/>
+<circle cx="478" cy="149" r="1.1" class="thin" fill="none"/>
+<!-- entry splash -->
+<path class="accent" stroke-width="1.2" d="M449,150 l-4,-7 M457,150 l3,-7 M453,150 l0,-8"/>
+</svg>
+<figcaption>你拼命擦水面那一角，水下 90% 才是机器永远够不着的「你」</figcaption></figure>
 <div class="ornament">❧</div>
 <h2>二 · 努力，只解决你人生的 20%</h2>
 <p>现在我要说一句你可能一辈子都没听人这么讲过的话，说完你大概会愣一下：</p>
@@ -86,11 +136,79 @@ blockquote.note .todo{color:var(--cinnabar-soft)}
 <p>那「原力」到底是什么，不是个虚词。它有一个很硬的定义，是三样东西的交集，缺一样都不算：</p>
 <p><strong>原力 ＝ 非理性痴迷（动机：不给钱也做）∩ 非对称优势（能力：别人学不来）∩ 非线性回报（结果：扩 100 倍不累）。</strong></p>
 <p>三个圈，缺任何一个都不是原力。光有痴迷没能力，是民科；光有能力没痴迷，是打工；光有这两样却扩不大、一扩就累，是手艺人。三个圈交叠的那一小块，才是你的原力——那是你身上唯一机器学不走、且能被无限放大的东西。</p>
+<figure class="illus" data-key="three-circles"><svg viewBox="0 0 460 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="原力三圈交集">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.6;stroke-linejoin:round}
+.fillc{fill:#c9a961;opacity:.045}
+.accent{fill:none;stroke:#a8362c;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.glow{fill:#a8362c;opacity:.1}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;opacity:.9}
+.lbl-a{fill:#c06a5e;font-family:"Noto Serif SC",serif;font-style:italic;opacity:.85}
+.core{fill:#f4e4b8;font-family:"Noto Serif SC",serif;font-weight:600}
+</style>
+<!-- three circles -->
+<circle cx="230" cy="168" r="115" class="fillc"/>
+<circle cx="168" cy="272" r="115" class="fillc"/>
+<circle cx="292" cy="272" r="115" class="fillc"/>
+<circle cx="230" cy="168" r="115" class="ln"/>
+<circle cx="168" cy="272" r="115" class="ln"/>
+<circle cx="292" cy="272" r="115" class="ln"/>
+<!-- circle names -->
+<text x="230" y="40" text-anchor="middle" class="lbl" font-size="16">非理性痴迷</text>
+<text x="230" y="58" text-anchor="middle" class="lbl" font-size="11" opacity=".6">不给钱也做</text>
+<text x="44" y="350" class="lbl" font-size="16">非对称优势</text>
+<text x="44" y="368" class="lbl" font-size="11" opacity=".6">别人学不来</text>
+<text x="330" y="350" class="lbl" font-size="16">非线性回报</text>
+<text x="330" y="368" class="lbl" font-size="11" opacity=".6">扩百倍不累</text>
+<!-- trap regions (only two of three) -->
+<text x="230" y="120" text-anchor="middle" class="lbl-a" font-size="13">民科</text>
+<text x="120" y="300" text-anchor="middle" class="lbl-a" font-size="13">打工</text>
+<text x="168" y="212" text-anchor="middle" class="lbl-a" font-size="13">手艺人</text>
+<!-- core: 原力 -->
+<circle cx="230" cy="236" r="30" class="glow"/>
+<g class="accent">
+<path d="M230,212 L230,260 M208,236 L252,236 M215,221 L245,251 M245,221 L215,251"/>
+</g>
+<text x="230" y="304" text-anchor="middle" class="core" font-size="17">原力</text>
+</svg>
+<figcaption>原力 ＝ 非理性痴迷 ∩ 非对称优势 ∩ 非线性回报，缺一不算</figcaption></figure>
 <p>讲到这儿，我想从口袋里掏出一样东西，给你翻一次。</p>
 <p>你可以把刚才这一整套，想象成<strong>一枚硬币的两面</strong>。</p>
 <p>正面，是你输的那一面：在纯信息处理上，你输给了 80 亿分之多，机器把你套了圈。</p>
 <p>反面，是你赢的那一面：你有机器永远没有的 DNA、痴迷、灵性。</p>
 <p>关键在于——<strong>这是同一枚硬币，不是两件事。</strong> 你的算力不够，和你的原力无可替代，是焊在同一块金属上的两面。「你得认」，认的是正面那一面；可你只要把硬币翻过来，<strong>认输的那一刻，就是解放的那一刻。</strong></p>
+<figure class="illus" data-key="coin-flip"><svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="硬币翻面">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.thin{fill:none;stroke:#c9a961;stroke-width:1;stroke-linecap:round;opacity:.55}
+.accent{fill:none;stroke:#a8362c;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.accent-f{fill:#a8362c;stroke:none}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;opacity:.85}
+.lbl-a{fill:#c06a5e;font-family:"Noto Serif SC",serif}
+.lbl-s{fill:#9bae9a;font-family:"Noto Serif SC",serif;opacity:.7}
+</style>
+<text x="300" y="40" text-anchor="middle" class="lbl" font-size="14">同一枚硬币，翻个面而已</text>
+<!-- flip arc over the top -->
+<path class="thin" d="M214,150 Q300,70 386,150" stroke-dasharray="3 5"/>
+<path class="thin" d="M386,150 l-9,-3 M386,150 l-2,-9"/>
+<!-- the coin, split into two faces -->
+<circle cx="300" cy="196" r="62" class="ln"/>
+<line x1="300" y1="138" x2="300" y2="254" class="thin"/>
+<!-- left face: 算力 (up-arrow + grid dots) -->
+<path class="ln" d="M266,214 L266,180 M258,189 L266,178 L274,189"/>
+<circle cx="252" cy="216" r="1.7" class="thin" fill="#c9a961"/>
+<circle cx="262" cy="222" r="1.7" class="thin" fill="#c9a961"/>
+<circle cx="272" cy="216" r="1.7" class="thin" fill="#c9a961"/>
+<text x="222" y="282" text-anchor="middle" class="lbl-s" font-size="14">算力</text>
+<text x="222" y="299" text-anchor="middle" class="lbl-s" font-size="10.5" opacity=".6">你输的那面</text>
+<!-- right face: 原力 (spark, accent) -->
+<g class="accent">
+<path d="M333,170 L333,210 M315,190 L351,190 M321,178 L345,202 M345,178 L321,202"/>
+</g>
+<text x="378" y="282" text-anchor="middle" class="lbl-a" font-size="14">原力</text>
+<text x="378" y="299" text-anchor="middle" class="lbl-s" font-size="10.5" opacity=".6">你赢的那面</text>
+</svg>
+<figcaption>同一枚硬币：一面是你输的算力，一面是你赢的原力</figcaption></figure>
 <p>我得在这儿停一下，诚实地交个底：「硬币的两面」是我自己拿来帮你理解的一个说法，不是什么权威定义。我只是觉得，没有比一枚硬币更能讲清楚这件事的了——你以为是两个相反的命运，其实是同一个东西，翻个面而已。</p>
 <p>翻完这一面，我把硬币收回口袋，咱们回到那座冰山。</p>
 <p><strong>硬币那个「原力」的反面，就是冰山水下那 90%。</strong> 你输掉的算力，是浮在水面、机器能复制的那一角；你赢的原力，是沉在水下、机器永远够不着的那一大块。两个画面，在这里焊死：往后，我只跟你讲冰山。</p>
@@ -113,6 +231,47 @@ blockquote.note .todo{color:var(--cinnabar-soft)}
 <p>这把尺，叫<strong>关窍五步法</strong>：</p>
 <p><strong>碎片 → 特征 → 观点 → 洞察 → 全局最优解。</strong></p>
 <p>我用大白话给你走一遍。面对任何一个你想搞懂的领域，你手里一开始是一团乱麻，全是零零碎碎的信息（<strong>碎片</strong>）；你把这团乱麻一根根理顺，看出哪些是反复出现的（<strong>特征</strong>）；从这些特征里，你拎出一条主线、一个判断（<strong>观点</strong>）；再往深看一层，你看穿这条主线背后真正要去的方向（<strong>洞察</strong>）；最后，你落到那个全局最省力、一通百通的解法（<strong>全局最优解</strong>）。像把一团乱麻一根根理顺，挑出主线，看穿它要去哪，最后找到那个最省力的解开方式。</p>
+<figure class="illus" data-key="hopper-funnel"><svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="关窍五步漏斗">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.thin{fill:none;stroke:#c9a961;stroke-width:1;stroke-linecap:round;opacity:.5}
+.tangle{fill:none;stroke:#c9a961;stroke-width:1.2;stroke-linecap:round;opacity:.7}
+.accent{fill:none;stroke:#a8362c;stroke-width:1.9}
+.glow{fill:#a8362c;opacity:.16}
+.dot{fill:#c9a961;opacity:.5}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;opacity:.85}
+.lbl-a{fill:#c06a5e;font-family:"Noto Serif SC",serif;font-weight:600}
+</style>
+<!-- chaotic fragments at the mouth -->
+<path class="tangle" d="M150,86 C176,58 192,98 218,72 C242,50 238,96 268,78 C292,64 286,100 312,84"/>
+<path class="tangle" d="M162,104 C188,84 200,112 232,92 C260,76 262,110 296,98"/>
+<!-- funnel -->
+<path class="ln" d="M112,118 L330,118"/>
+<path class="ln" d="M112,118 L208,346"/>
+<path class="ln" d="M330,118 L234,346"/>
+<!-- spout -->
+<path class="ln" d="M208,346 L208,372 L234,372 L234,346"/>
+<!-- descending particles (many → few) -->
+<circle cx="170" cy="150" r="2.2" class="dot"/><circle cx="210" cy="158" r="2.2" class="dot"/>
+<circle cx="250" cy="150" r="2.2" class="dot"/><circle cx="290" cy="156" r="2.2" class="dot"/>
+<circle cx="196" cy="206" r="2" class="dot"/><circle cx="246" cy="210" r="2" class="dot"/>
+<circle cx="221" cy="266" r="1.8" class="dot"/>
+<!-- distilled drop / 全局最优解 -->
+<circle cx="221" cy="404" r="19" class="glow"/>
+<circle cx="221" cy="404" r="19" class="accent"/>
+<path class="accent" stroke-width="1.4" d="M221,396 L221,412 M213,404 L229,404"/>
+<!-- stage ticks + labels -->
+<path class="thin" d="M332,92 L356,92"/><text x="362" y="96" class="lbl" font-size="14">碎片</text>
+<path class="thin" d="M300,162 L356,162"/><text x="362" y="166" class="lbl" font-size="14">特征</text>
+<path class="thin" d="M286,224 L356,224"/><text x="362" y="228" class="lbl" font-size="14">观点</text>
+<path class="thin" d="M268,288 L356,288"/><text x="362" y="292" class="lbl" font-size="14">洞察</text>
+<text x="250" y="408" class="lbl-a" font-size="15">全局最优解</text>
+<!-- distill arrow -->
+<path class="thin" d="M86,140 L86,330" stroke-dasharray="2 6"/>
+<path class="thin" d="M86,330 l-4,-9 M86,330 l4,-9"/>
+<text x="60" y="240" class="lbl" font-size="12" opacity=".6" transform="rotate(-90,60,240)">蒸馏</text>
+</svg>
+<figcaption>关窍五步法：把一团碎片蒸馏成那颗全局最优解</figcaption></figure>
 <p>你要记住一件事：<strong>这把尺，是同一把尺。</strong> 它不只用在这一章。它就是白皮书里那套「信息五层萃取」的人话首讲，会贯穿整本书——后面解码「你是谁」要用它，把「你」沉淀成一份说明书要用它，让 AI 越用越懂你，还是它。这一章，是这把尺的开篇第一课。今天你先认得它长什么样，往后每一章，都是拿它往水下捞东西。</p>
 <p>讲到这儿，我得诚实地停一下，补一句关于前面那个「100 个天才」的数字。「十亿分之一、全世界大概一百来人」——这是一个<strong>量级感，不是我真去数过人头、做过统计的精确数字。我不想拿一个听起来很唬人的精确数字，来冒充一个我其实没做过的统计。</strong> 但我可以负责任地说，量级是对的：真正能在纯算力上跟机器掰手腕的人，凤毛麟角，少到可以忽略。所以这个判断，对你我这样的普通人依然成立——我们都在那 80 亿里。这一点，我不糊弄你。</p>
 <p>好，现在我把这把尺，给你转一个方向。</p>
@@ -128,6 +287,55 @@ blockquote.note .todo{color:var(--cinnabar-soft)}
 <p>分完，你数一数。</p>
 <p><strong>这是硬验收：你过去一周里，「原力活」占了几成？</strong> 如果不到两成——别沮丧，<strong>恭喜你，你刚刚找到了这辈子最大的一笔套利空间。</strong> 因为这等于在说，你八成以上的时间，都耗在了机器随时能替你干、而且干得更好的事情上。把那八成一点点交给 AI，把自己腾出来，全压到那两成原力活上去——这就是你接下来要走的整条路。你现在赚得少，不是因为你不够努力，是因为你把命，花在了一堆机器随手就能干的活儿上。</p>
 <p>把这一刀切下去，你就完成了这一章最重要的一个动作：第一次，亲手把「算力活」和「原力活」分了开。这一刀，就是你下潜冰山的第一铲。</p>
+<figure class="illus" data-key="two-piles"><svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="算力活与原力活两堆">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.thin{fill:none;stroke:#c9a961;stroke-width:1;stroke-linecap:round;opacity:.55}
+.faint{fill:none;stroke:#9bae9a;stroke-width:1.1;stroke-linejoin:round;opacity:.34}
+.faintl{stroke:#9bae9a;stroke-width:1;opacity:.3}
+.accent{fill:none;stroke:#a8362c;stroke-width:1.9;stroke-linejoin:round}
+.glow{fill:#a8362c;opacity:.1}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;opacity:.9}
+.lbl-a{fill:#c06a5e;font-family:"Noto Serif SC",serif}
+.lbl-s{fill:#9bae9a;font-family:"Noto Serif SC",serif;opacity:.65}
+</style>
+<!-- center divider -->
+<line x1="300" y1="56" x2="300" y2="312" class="thin" stroke-dasharray="3 6"/>
+<!-- LEFT: 算力活 (dense, faded, many) -->
+<text x="150" y="44" text-anchor="middle" class="lbl-s" font-size="15">算力活</text>
+<text x="150" y="62" text-anchor="middle" class="lbl-s" font-size="11">机器分分钟干完</text>
+<g class="faint">
+<rect x="46" y="92" width="40" height="26" rx="2"/><rect x="92" y="100" width="40" height="26" rx="2"/>
+<rect x="64" y="128" width="40" height="26" rx="2"/><rect x="112" y="134" width="40" height="26" rx="2"/>
+<rect x="44" y="166" width="40" height="26" rx="2"/><rect x="96" y="172" width="40" height="26" rx="2"/>
+<rect x="70" y="204" width="40" height="26" rx="2"/><rect x="120" y="210" width="40" height="26" rx="2"/>
+<rect x="52" y="242" width="40" height="26" rx="2"/><rect x="104" y="248" width="40" height="26" rx="2"/>
+</g>
+<g class="faintl">
+<line x1="52" y1="101" x2="80" y2="101"/><line x1="98" y1="109" x2="126" y2="109"/>
+<line x1="70" y1="137" x2="98" y2="137"/><line x1="50" y1="175" x2="78" y2="175"/>
+<line x1="76" y1="213" x2="104" y2="213"/><line x1="58" y1="251" x2="86" y2="251"/>
+</g>
+<!-- RIGHT: 原力活 (sparse, bright, one accent) -->
+<text x="450" y="44" text-anchor="middle" class="lbl-a" font-size="15">原力活</text>
+<text x="450" y="62" text-anchor="middle" class="lbl-s" font-size="11">只有你能干</text>
+<rect x="372" y="104" width="58" height="38" rx="3" class="ln"/>
+<line x1="384" y1="118" x2="418" y2="118" class="thin"/><line x1="384" y1="128" x2="408" y2="128" class="thin"/>
+<rect x="450" y="232" width="58" height="38" rx="3" class="ln"/>
+<line x1="462" y1="246" x2="496" y2="246" class="thin"/><line x1="462" y1="256" x2="484" y2="256" class="thin"/>
+<!-- the one that glows: accent -->
+<rect x="408" y="168" width="62" height="42" rx="3" class="glow"/>
+<rect x="408" y="168" width="62" height="42" rx="3" class="accent"/>
+<path class="accent" stroke-width="1.4" d="M439,180 L439,198 M430,189 L448,189 M433,183 L445,195 M445,183 L433,195"/>
+<!-- tiny figure sorting at the divider -->
+<g class="ln" stroke-width="1.3">
+<circle cx="300" cy="296" r="5"/>
+<path d="M300,301 L300,322"/>
+<path d="M300,306 L286,300 M300,306 L314,300"/>
+<path d="M300,322 L292,336 M300,322 L308,336"/>
+</g>
+</svg>
+<figcaption>把一周的活分两堆：算力活交给机器，原力活留给自己</figcaption></figure>
 <p>往后会怎么走，我先给你埋两个钩子，这一章不展开。第一个钩子，叫<strong>双螺旋加速器</strong>：你越懂自己，AI 就越准；AI 越准，又反过来帮你更懂自己——两股劲拧成一股，越转越快。第二个钩子，叫<strong>十万力</strong>：AI 时代唯一值钱的能力，是使唤 AI 的能力——这力气的根，不在你会多少工具，在你这个人的人格底色里。这两件事怎么把你那块独特结构变成真金白银，是下一章下潜的时候，要替你一层层解码的。</p>
 <p>这一章，你先把「算力活 / 原力活」这一刀，狠狠切下去。</p>
 <div class="ornament">❧</div>

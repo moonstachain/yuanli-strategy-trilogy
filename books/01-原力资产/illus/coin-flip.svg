@@ -1,0 +1,31 @@
+<svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="硬币翻面">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.thin{fill:none;stroke:#c9a961;stroke-width:1;stroke-linecap:round;opacity:.55}
+.accent{fill:none;stroke:#a8362c;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.accent-f{fill:#a8362c;stroke:none}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;opacity:.85}
+.lbl-a{fill:#c06a5e;font-family:"Noto Serif SC",serif}
+.lbl-s{fill:#9bae9a;font-family:"Noto Serif SC",serif;opacity:.7}
+</style>
+<text x="300" y="40" text-anchor="middle" class="lbl" font-size="14">同一枚硬币，翻个面而已</text>
+<!-- flip arc over the top -->
+<path class="thin" d="M214,150 Q300,70 386,150" stroke-dasharray="3 5"/>
+<path class="thin" d="M386,150 l-9,-3 M386,150 l-2,-9"/>
+<!-- the coin, split into two faces -->
+<circle cx="300" cy="196" r="62" class="ln"/>
+<line x1="300" y1="138" x2="300" y2="254" class="thin"/>
+<!-- left face: 算力 (up-arrow + grid dots) -->
+<path class="ln" d="M266,214 L266,180 M258,189 L266,178 L274,189"/>
+<circle cx="252" cy="216" r="1.7" class="thin" fill="#c9a961"/>
+<circle cx="262" cy="222" r="1.7" class="thin" fill="#c9a961"/>
+<circle cx="272" cy="216" r="1.7" class="thin" fill="#c9a961"/>
+<text x="222" y="282" text-anchor="middle" class="lbl-s" font-size="14">算力</text>
+<text x="222" y="299" text-anchor="middle" class="lbl-s" font-size="10.5" opacity=".6">你输的那面</text>
+<!-- right face: 原力 (spark, accent) -->
+<g class="accent">
+<path d="M333,170 L333,210 M315,190 L351,190 M321,178 L345,202 M345,178 L321,202"/>
+</g>
+<text x="378" y="282" text-anchor="middle" class="lbl-a" font-size="14">原力</text>
+<text x="378" y="299" text-anchor="middle" class="lbl-s" font-size="10.5" opacity=".6">你赢的那面</text>
+</svg>
