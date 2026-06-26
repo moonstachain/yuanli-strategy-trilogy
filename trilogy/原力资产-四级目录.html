@@ -1,0 +1,1035 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>《原力资产》· 四级目录 · 金标准</title>
+<style>
+:root{--ink:#0a1612;--leather-deep:#0d2018;--leather:#14301f;--panel:rgba(20,48,31,.5);--panel2:rgba(28,61,41,.36);
+--gold-deep:#8b6f2e;--gold:#c9a961;--gold-light:#e0c887;--gold-bright:#f4e4b8;--cinnabar:#a8362c;--cinnabar-soft:#c06a5e;
+--jade:#5a9c6e;--cream:#f0e6d2;--cream-dim:#d3c8b0;--muted:#9bae9a;--faint:#6f8470;--line:rgba(201,169,97,.2);--line2:rgba(201,169,97,.1);
+--serif:"Noto Serif SC","Songti SC",serif;--display:"Cinzel",Georgia,serif;--sans:"PingFang SC","Hiragino Sans GB",system-ui,sans-serif;--mono:"JetBrains Mono",Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1100px 640px at 82% -8%,rgba(74,124,89,.15),transparent 60%),radial-gradient(900px 600px at 4% 104%,rgba(201,169,97,.06),transparent 55%),linear-gradient(180deg,var(--ink),var(--leather-deep) 52%,var(--ink));background-attachment:fixed;color:var(--cream);font-family:var(--serif);line-height:1.75;padding:0 0 80px}
+.foil{background:linear-gradient(180deg,var(--gold-bright),var(--gold) 52%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+header{text-align:center;padding:56px 24px 24px;border-bottom:1px solid var(--line)}
+.kick{font-family:var(--display);font-size:11px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;margin-bottom:15px}
+h1{font-weight:600;font-size:clamp(28px,5vw,46px);letter-spacing:.1em}
+.sub-t{color:var(--gold-light);font-size:14px;margin-top:10px;letter-spacing:.05em}
+.ax{font-family:var(--mono);font-size:12.5px;color:var(--cream-dim);margin-top:14px}
+.ax b{color:var(--gold-light)}
+.arc{margin:16px auto 0;font-family:var(--sans);font-size:12px;color:var(--muted);max-width:760px;line-height:2}
+.arc b{color:var(--gold-light)}
+.kpis{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.kpi{font-family:var(--mono);font-size:12px;color:var(--gold-light);padding:5px 13px;border-radius:6px;background:rgba(201,169,97,.06);border-left:2px solid var(--gold)}
+.kpi b{color:var(--gold-bright);font-size:14px}
+/* 金标准 */
+.std{margin:30px auto 6px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);padding:18px 22px}
+.std-h{font-family:var(--serif);font-size:15px;color:var(--gold-bright);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.std-h .vd{font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--jade);padding:2px 9px;border-radius:10px}
+.std-h .ok-dot{font-family:var(--sans);font-size:11px;color:var(--jade);border:1px solid var(--jade);border-radius:10px;padding:1px 8px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.chk{display:flex;align-items:baseline;gap:9px;font-size:12.5px;padding:7px 11px;border-radius:8px;background:rgba(0,0,0,.16)}
+.chk .ck-k{font-family:var(--serif);font-size:15px;color:var(--gold-light);min-width:30px}
+.chk .ck-m{font-family:var(--mono);color:var(--jade);font-weight:700}
+.chk.no .ck-m{color:var(--cinnabar)}
+.chk .ck-d{color:var(--cream-dim);font-family:var(--sans);font-size:11.5px;line-height:1.5}
+.weak{margin-top:11px;font-family:var(--sans);font-size:11px;color:var(--muted);border-left:2px solid var(--gold-deep);padding:6px 12px;background:rgba(0,0,0,.13);line-height:1.7}
+.weak b{color:var(--gold-light)}
+/* 章 */
+.ch{margin-top:16px;border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden}
+.ch[open]{border-color:var(--gold-deep)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:15px;padding:18px 22px;transition:.15s}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:rgba(201,169,97,.05)}
+.seal{font-family:var(--serif);font-size:18px;color:var(--gold-bright);width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold-deep);border-radius:50%;background:rgba(201,169,97,.05)}
+.ch-main{flex:1;min-width:0}
+.ch-n{font-family:var(--serif);font-size:19px;color:var(--gold-bright);margin-right:10px}
+.ch-layer{font-family:var(--mono);font-size:10.5px;color:var(--cinnabar-soft);border:1px solid rgba(168,54,44,.3);border-radius:10px;padding:1px 8px;vertical-align:middle}
+.ch-q{display:block;font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:5px;line-height:1.5}
+.ch-c{font-family:var(--mono);font-size:11px;color:var(--gold);white-space:nowrap}
+.chev{color:var(--gold-deep);font-size:13px;transition:.2s}
+.ch[open] .chev{transform:rotate(180deg)}
+.ch-body{padding:4px 22px 20px;border-top:1px solid var(--line2)}
+/* 节 L3 */
+.sec{margin-top:16px;padding-left:16px;border-left:2px solid var(--gold-deep)}
+.sec-h{display:flex;align-items:baseline;gap:10px}
+.sec-no{font-family:var(--mono);font-size:12px;color:var(--gold-deep)}
+.sec-n{font-family:var(--serif);font-size:16.5px;color:var(--gold-light)}
+.sec-c{font-family:var(--mono);font-size:10px;color:var(--faint);margin-left:auto}
+.sec-q{font-family:var(--sans);font-size:11.5px;color:var(--muted);margin:3px 0 10px;line-height:1.6}
+/* 目 L4 */
+.subs{display:flex;flex-direction:column;gap:7px}
+.sub{padding:9px 13px;border-radius:9px;background:rgba(0,0,0,.17);border-left:2px solid var(--line)}
+.sub-n{font-family:var(--serif);font-size:14px;color:var(--cream);display:flex;align-items:baseline;gap:8px}
+.sx{font-family:var(--mono);font-size:10px;color:var(--gold-deep);flex:none}
+.sub-p{font-family:var(--sans);font-size:12.5px;color:var(--cream-dim);margin:3px 0 5px;padding-left:26px;line-height:1.6}
+.sub-meta{display:flex;gap:12px;flex-wrap:wrap;padding-left:26px}
+.why{font-family:var(--sans);font-size:10.5px;color:var(--jade)}
+.why.first{color:var(--gold);font-weight:600}
+.canon{font-family:var(--mono);font-size:9.5px;color:var(--faint)}
+footer{margin-top:46px;text-align:center;color:var(--faint);font-family:var(--sans);font-size:11px;line-height:1.9;border-top:1px solid var(--line2);padding-top:24px}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line2)}
+.note{max-width:780px;margin:22px auto 0;font-family:var(--sans);font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:10px;padding:13px 18px;line-height:1.8}
+.note b{color:var(--gold-light)}
+@media(max-width:680px){.checks{grid-template-columns:1fr}.ch-c{display:none}}
+</style></head><body>
+<header>
+  <div class="kick">YUANLI ASSET · 4-LEVEL OUTLINE</div>
+  <h1 class="foil">《原力资产》· 四级目录</h1>
+  <div class="sub-t">向内 · 人 · 主语本 · 书 → 章 → 节 → 目 · 金标准</div>
+  <div class="ax">公理 <b>ʸx —— 做会自我繁殖的事（你 × AI＝会复利的资产）</b></div>
+  <div class="arc">原力U 六阶：<b>觉察</b> → <b>高能</b> → <b>阴影（U底）</b> → <b>整合（上升）</b> → <b>资产（浮出）</b> → <b>复利</b><br/>原力U：症状 → 下潜 → 触底（金色阴影）→ 上升 → 浮出 → 出口。向内挖到底，再带着金子上升。</div>
+  <div class="kpis"><span class="kpi"><b>6</b> 章</span><span class="kpi"><b>42</b> 节</span><span class="kpi"><b>172</b> 目</span><span class="kpi">五标准 <b>全过</b></span></div>
+</header>
+<div class="wrap">
+  <div class="std">
+    <div class="std-h">五标准校验 <span class="vd">PASS</span> <span class="ok-dot">臆造 0</span></div>
+    <div class="checks"><div class="chk ok"><span class="ck-k">究竟</span><span class="ck-m">✓</span><span class="ck-d">每个目都能回溯到公理 ʸx——必然展开，不是硬凑</span></div><div class="chk ok"><span class="ck-k">完备</span><span class="ck-m">✓</span><span class="ck-d">每节下的目 MECE（互斥穷尽·不漏不重）</span></div><div class="chk ok"><span class="ck-k">递进</span><span class="ck-m">✓</span><span class="ck-d">目按「因为→所以」排成一条小通关链</span></div><div class="chk ok"><span class="ck-k">具体</span><span class="ck-m">✓</span><span class="ck-d">每个目是可直接落笔的内容单元，不是抽象标签</span></div><div class="chk ok"><span class="ck-k">递归</span><span class="ck-m">✓</span><span class="ck-d">节→目 与 章→节 同形状（部分即整体·CAS）</span></div></div>
+    <div class="weak"><b>最弱节（诚实标注）</b> ch6 复利·「三钱法则·IPS」节最弱：该节深内容（分篮/IPS 投资政策声明/深打法）被全谱去重缝明确划归《原力财富》，本节按定位只能停在「资产视角·送到门口」，目偏纲领性、末目=边界焊缝——是去重纪律的必然产物，非缺陷。次弱=ch4「向内求×向外共创」仅 3 目，与同章「双螺旋引擎」同源 L05，靠「焊回脊骨#10 能量回流」目区分。</div>
+  </div>
+  <details class="ch" open>
+  <summary><span class="seal">一</span>
+    <span class="ch-main"><span class="ch-n">第一章 · 觉察</span>
+      <span class="ch-layer">症状层 · U 起点</span>
+      <span class="ch-q">AI 时代「你」凭什么不可替代——当机器在纯信息处理上已碾压 80 亿人？</span></span>
+    <span class="ch-c">7 节 · 28 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.1</span><span class="sec-n">你是最贵的算法</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">AI 时代「你」凭什么不可替代——你身上到底有什么是机器永远复制不了的?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>卖时间→卖算法→卖原力</div>
+  <div class="sub-p">论点:人对外输出经历三次跳跃,前两次都正被机器接管,只剩第三次专属于你</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L02/L28「从卖时间到卖算法到卖原力的三次跳跃」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>机器能复制一切除了你</div>
+  <div class="sub-p">数字反差:机器可复制一切,唯独复制不了你的DNA/非理性痴迷/非对称优势</div>
+  <div class="sub-meta"><span class="why">因为 因为前两次跳跃(时间/算力)都可被复制接管→所以要锁定那个不可复制的剩余项:独一无二的「你」</span><span class="canon">📎 觉醒课L28「机器能复制一切,除了你的DNA」;全谱§B阶1「你是最贵的算法」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>乘法律:你=0则归零</div>
+  <div class="sub-p">论点:「你」×AI是乘法,「你」没解码出来(=0)则AI放大的只是平庸,整体归零</div>
+  <div class="sub-meta"><span class="why">因为 因为不可复制的是「你」→所以「你」必须被解码成真值,否则乘上AI也只放大一片空白</span><span class="canon">📎 全谱§A·🔗1「乘法律:你这一项若没解码出来(=0),整体归零」;atlas总概念def</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>动作:列你的不可替代三问</div>
+  <div class="sub-p">可动手:写下三件「不给钱也做、别人学不会」的事,作为算法原料</div>
+  <div class="sub-meta"><span class="why">因为 因为乘法律要求「你」≠0→所以先动手把这个真值的最初原料采出来,为后续解码备料</span><span class="canon">📎 觉醒课L04 AI实操「写一份3000字的我的说明书V1.0喊给AI」(原料采集首步)</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.2</span><span class="sec-n">算力鸿沟</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">当机器在纯信息处理上已经碾压80亿人,你贵的到底是什么——还该不该在原赛道死磕?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>100人之外全员被碾压</div>
+  <div class="sub-p">数字反差:除约100人(爱因斯坦/马斯克级),80亿人在纯信息处理上已被机器完胜</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L02「100人之外,80亿人在纯信息处理能力上已被机器碾压」;全谱§B阶1「算力鸿沟」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>这不是贬低是解放</div>
+  <div class="sub-p">认知翻转:承认算力输了不是被否定,而是把你从「拼算力」的死局里解放出来</div>
+  <div class="sub-meta"><span class="why">因为 因为80亿人都被碾压→所以这不是针对你个人的贬低,而是一道把所有人逼离算力赛道的解放令</span><span class="canon">📎 觉醒课L02「为什么这不是贬低,而是解放」;全谱§A·🟢2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>你贵的是原力不是算力</div>
+  <div class="sub-p">论点:你贵的价值已从「算力」转移到「原力」,算力那块认输即可</div>
+  <div class="sub-meta"><span class="why">因为 因为算力赛道是死局→所以你贵的那一项必须换成机器没有的原力,这是鸿沟逼出来的赛道切换</span><span class="canon">📎 atlas阶1 keyword「算力鸿沟」链:「你贵的不是算力而是原力,这道鸿沟逼你换赛道」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>你得认:觉醒第一步</div>
+  <div class="sub-p">论点:「你得认」是过这一关的唯一动作,自尊心硬扛的人永远过不了这道鸿沟</div>
+  <div class="sub-meta"><span class="why">因为 因为贵的已是原力→所以必须先认掉算力这局,「认输不丢人抗拒才丢人」,这是下潜U的第一下</span><span class="canon">📎 觉醒课L02「你得认是觉醒的第一步;自尊心挥着的人永远过不了这一关」「认输不丢人,抗拒才丢人」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.3</span><span class="sec-n">努力只解决20%，关窍解决80%</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">如果机器已碾压算力,那「更努力」还是答案吗——决胜的80%到底在哪?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>努力不是答案算力才是</div>
+  <div class="sub-p">反认知原句:你的努力不是答案,你的算力才是;而算力已被机器接管</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L01反认知「你的努力不是答案,你的算力才是」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>20/80硬切分</div>
+  <div class="sub-p">数字反差:勤奋(堆算力)只解决20%的问题,找到关窍(全局最优解)解决80%</div>
+  <div class="sub-meta"><span class="why">因为 因为努力≈堆算力而算力已被碾压→所以努力最多只占决胜的20%,真正决胜的80%在别处</span><span class="canon">📎 觉醒课L01反认知「勤奋只解决了20%的问题,关窍解决80%」;全谱§A·🟢2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>师傅一戳与你不同:算力差</div>
+  <div class="sub-p">案例位:同一招功夫,师傅戳出来和你打出来完全不同——差的是算力</div>
+  <div class="sub-meta"><span class="why">因为 因为关窍占80%→所以同动作不同效果的真因不是努力时长,是背后算力(关窍)厚度的差距</span><span class="canon">📎 觉醒课L01「为什么师傅戳1210年功夫和你打出来不一样:算力的差距」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>任何成就本质=信息处理学</div>
+  <div class="sub-p">论点:帝王之术到任何领域的成就,本质都不是勤奋,是「窍」——一套信息处理学</div>
+  <div class="sub-meta"><span class="why">因为 因为决胜80%在关窍而非努力时长→所以一切领域的成就可被统一还原成同一件事:信息处理学</span><span class="canon">📎 觉醒课L01「任何领域的成就,本质上都是信息处理学」「帝王之术…不是勤奋,是窍」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.4</span><span class="sec-n">关窍/全局最优解</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">既然决胜80%在关窍,那「关窍」究竟是什么——一个领域里你该去找的那样东西到底是什么?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>关窍=人类文明唯一秘密</div>
+  <div class="sub-p">论点:人类文明最关键的成就只有一个名字——关窍,即任何领域的全局最优解</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L01「关窍:人类文明的唯一秘密」;全谱§B阶1「人类文明唯一秘密＝全局最优解」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>成功靠窍不靠努力</div>
+  <div class="sub-p">反认知:你以为成功靠努力?不,成功靠的是找到那个「全局最优解」</div>
+  <div class="sub-meta"><span class="why">因为 因为关窍=全局最优解→所以成功的因果被改写:不是努力堆出来的,是找对那个「窍」找出来的</span><span class="canon">📎 觉醒课L01「你以为成功靠努力?不,成功靠的是找到那个全局最优解」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>帝王之术的本质是窍</div>
+  <div class="sub-p">案例位:帝王之术=人类社会智力的全局最优解,赢家赢在「窍」不在「勤」</div>
+  <div class="sub-meta"><span class="why">因为 因为成功靠窍→所以连最顶层的帝王之术也不例外:它的本质是社会智力的全局最优解(窍),非勤奋</span><span class="canon">📎 觉醒课L01「帝王之术的本质:人类社会智力的全局最优解,不是勤奋,是窍」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>动作:拆你行业Top3关窍</div>
+  <div class="sub-p">可动手:让AI拆解你所在行业的Top3关窍,对比你当前策略的偏差</div>
+  <div class="sub-meta"><span class="why">因为 因为关窍是要找的全局最优解→所以动手让AI把你这行的Top3窍拆出来,照出你现在偏在哪</span><span class="canon">📎 觉醒课L01 AI实操「让AI拆解你所在行业的Top3关窍,对比你当前的策略偏差」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.5</span><span class="sec-n">关窍五步法（碎片→特征→观点→洞察→全局最优）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">全局最优解不会凭空出现——找到一个领域关窍的可重复方法,具体是哪几步?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>五步链:碎片→…→全局最优</div>
+  <div class="sub-p">模板:碎片信息→抽取特征→提炼观点→形成洞察→全局最优解,五步走完即得关窍</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L01「关窍五步法:碎片信息→抽取特征→提炼观点→形成洞察→全局最优解」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>找窍=一套信息处理学</div>
+  <div class="sub-p">论点:找关窍的过程本质是一套信息处理学,五步就是这套学问的标准流程</div>
+  <div class="sub-meta"><span class="why">因为 因为关窍是要找的目标→所以给出找它的方法:这五步不是玄学,是可重复的信息处理学</span><span class="canon">📎 全谱§0「找到任何领域全局最优解的过程,本质是一套信息处理学」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>它=信息五层同一把尺</div>
+  <div class="sub-p">论点:这五步即白皮书「信息五层萃取」的人话首讲,同一把尺</div>
+  <div class="sub-meta"><span class="why">因为 因为五步是找窍方法→所以它正是贯穿全体系的信息五层那把尺,本课只是它最早的人话版本</span><span class="canon">📎 全谱§0/缝1「即信息五层萃取的人话首讲,是贯穿全链的同一把尺」;白皮书§3.5</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>这把尺会贯穿到底</div>
+  <div class="sub-p">论点:同一把尺往后沉淀成《我的说明书》、装进数据飞轮,全链复用</div>
+  <div class="sub-meta"><span class="why">因为 因为它是贯穿全链的同一把尺→所以本课埋下的这把尺,会一路用到说明书与数据飞轮,不是一次性工具</span><span class="canon">📎 atlas阶1 keyword「关窍五步法」链:「这把尺会贯穿到整合阶的说明书、复利阶的数据飞轮」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.6</span><span class="sec-n">信息处理学（换赛道靠原力）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">既然关窍=信息处理学、而机器在信息处理上已完胜,那人该怎么办——往哪个赛道走?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>信息处理:机器已完胜</div>
+  <div class="sub-p">论点:在纯信息处理这件事上,除十亿分之一天才,机器已经完胜人类</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L02「在信息处理这件事上,除了十亿分之一的天才,机器已经完胜人类」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>不可替代性发生转移</div>
+  <div class="sub-p">论点:不可替代性从「信息处理」转移到「原力」(DNA/痴迷/非对称/灵性)</div>
+  <div class="sub-meta"><span class="why">因为 因为机器在信息处理上完胜→所以人不可替代的落点必须转移,从算力那侧搬到机器没有的原力那侧</span><span class="canon">📎 觉醒课L02「人类的不可替代性在哪:DNA、非理性痴迷、非对称优势、灵性层的深度」;全谱§A·🟢2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>换赛道:靠原力不靠算力</div>
+  <div class="sub-p">论点:既然信息处理学这条路机器封死了,你必须换赛道——靠原力,不靠算力</div>
+  <div class="sub-meta"><span class="why">因为 因为不可替代性已转移到原力→所以行动是换赛道:把筹码从算力全押到原力,死磕算力是逆机器之势</span><span class="canon">📎 全谱§A·🟢2「在纯信息处理上机器已完胜,所以你得换赛道——靠原力不靠算力」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>动作:工作分算力活/原力活</div>
+  <div class="sub-p">可动手:把一周工作分两堆——「算力活」(AI可替代)与「原力活」(不可替代)</div>
+  <div class="sub-meta"><span class="why">因为 因为要换到原力赛道→所以先动手把工作切成两堆,看清自己有多少时间还耗在已被接管的算力活上</span><span class="canon">📎 觉醒课L02 AI实操「把你一周的工作分类:哪些是算力活(AI可替代),哪些是原力活(AI不可替代)」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.7</span><span class="sec-n">路径反转</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">全世界都在「学AI」,但你该做的恰恰相反——这辈子真正要回答的那一个问题是什么?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>不是你理解AI是AI理解你</div>
+  <div class="sub-p">反认知原句:全世界都在「学AI」,你要做的却是「被AI学」,路径完全反过来</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L04反认知「全世界都在学AI,你要做的却是被AI学——路径完全反过来」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>你的带宽窄AI的维度无限</div>
+  <div class="sub-p">论点:反转的理由——你的认知带宽不够,但AI的维度无限,该被深挖放大的是「你」</div>
+  <div class="sub-meta"><span class="why">因为 因为要换到原力赛道(靠你不靠算力)→所以放大动作必须反过来:不是你去够AI,是让维度无限的AI来理解有限的你</span><span class="canon">📎 觉醒课L04「为什么反过来:你的认知带宽不够,但AI的维度无限」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>上下文=新时代的土地</div>
+  <div class="sub-p">数字反差:上下文越深,AI放大的倍数越大;上下文是新时代不可复制的土地</div>
+  <div class="sub-meta"><span class="why">因为 因为是AI理解你→所以「你的上下文」成了最值钱的资产,越深越值钱,如同新时代越用越值钱的土地</span><span class="canon">📎 觉醒课L04「上下文是新时代的财富:你喊给AI的上下文越深,放大的倍数越大」;全谱§B阶1</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>唯一话题:何为你</div>
+  <div class="sub-p">论点:最贵的问题不是「怎么用AI」,是「何为你」——只剩这一个话题</div>
+  <div class="sub-meta"><span class="why">因为 因为上下文越深放大越大、而最深的上下文就是「你」→所以问题被翻成「何为你」,这一翻正式启动整条U的下潜</span><span class="canon">📎 觉醒课L04「最贵的问题不是怎么用AI,是何为你」;atlas阶1 keyword「路径反转」链:「问题从怎么用AI翻成何为你,正式启动下潜」</span></div>
+</div></div>
+</div></div>
+</details><details class="ch">
+  <summary><span class="seal">二</span>
+    <span class="ch-main"><span class="ch-n">第二章 · 高能</span>
+      <span class="ch-layer">结构层 · 下潜</span>
+      <span class="ch-q">你这台算法，到底由哪些可解码的能量结构组成？</span></span>
+    <span class="ch-c">8 节 · 33 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.1</span><span class="sec-n">三圈交集</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">你这台算法的「核心能量区」长在哪——哪块能力别人学不来、不给钱也做、扩100倍不累?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>为什么单看一圈会骗你</div>
+  <div class="sub-p">只看「擅长」会陷作业区,只看「热爱」会饿死,只看「能放大」会卖身——单圈都是陷阱</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 30课 L08『补短板是最贵的谎言』；atlas 高能阶 def</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>三圈定义逐一下尺</div>
+  <div class="sub-p">非对称优势(能力)∩非理性痴迷(动机)∩非线性回报(结果),三把独立的尺</div>
+  <div class="sub-meta"><span class="why">因为 因为单圈会骗你→所以给三把独立的尺,各管能力/动机/结果一维</span><span class="canon">📎 30课 L05失调埋点；白皮书§6·#05-08；全谱§B阶2『三圈交集』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>缺一不算原力(乘法律)</div>
+  <div class="sub-p">三圈任一为假就归零:擅长但不痴迷=耗能、痴迷但不可放大=爱好,三真才是原力</div>
+  <div class="sub-meta"><span class="why">因为 因为三尺已立→所以求交集而非并集,缺一票否决,与公式『你=0则整体归零』同构</span><span class="canon">📎 全谱§B阶2『缺一不算原力』；atlas 链『三个全为真才算』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>交集=合力的母体</div>
+  <div class="sub-p">交集那一小块是后面所有动作的原点——贯穿到资产阶交付给天选用户的就是它</div>
+  <div class="sub-meta"><span class="why">因为 因为求出了交集→所以它成为合力母体,本章后续7节都在给这块母体装结构/原型/雷达</span><span class="canon">📎 atlas 高能阶 keywords『合力母体…贯穿到资产阶』；ʸx 你×AI</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.2</span><span class="sec-n">12原型</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">求出的那块原力,该用哪套「人格底色」把它从模糊认知变成可操作的能量变量?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>原型是变量不是标签</div>
+  <div class="sub-p">反认知:荣格12原型不是用来「了解自己」,是用来「操作自己」的操作变量</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 30课 L06[反认知]；全谱§B阶2『操作变量非标签』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>原型≠MBTI(动态非静态)</div>
+  <div class="sub-p">对比:原型=动态能量系统(可调),MBTI=静态标签(只能认)</div>
+  <div class="sub-meta"><span class="why">因为 因为原型是变量→所以要和最易混的MBTI划界,说清「动态可操作」才是它的价值</span><span class="canon">📎 30课 L06『原型是动态能量系统,MBTI是静态标签』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>一体两面:光明×阴影</div>
+  <div class="sub-p">每个原型=光明面(超能力)+阴影面(致命弱点);智者的固执、英雄的傲慢</div>
+  <div class="sub-meta"><span class="why">因为 因为原型是动态系统→所以它必然两面一体,这条直接把第3节『阴影』的接口预埋出来</span><span class="canon">📎 30课 L06/L10『每个原型=光明面+阴影面』；白皮书§6·#11</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>144格与成功率1/144</div>
+  <div class="sub-p">数字反差:12主×12副=144组合,同行业成功率约1/144=你的非对称位</div>
+  <div class="sub-meta"><span class="why">因为 因为原型有主副两面→所以两两相乘出144格,稀有度=你不可复制的护城河起点</span><span class="canon">📎 30课 L06『12×12=144种组合…约1/144』；全谱§B阶2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>动手:测主副原型</div>
+  <div class="sub-p">可落地动作:用AI智能体测定主副原型,生成「原型能量结构图」——喊给AI的第一步</div>
+  <div class="sub-meta"><span class="why">因为 因为懂了144格的意义→所以动手测出自己落哪格,产出第一张可喂元AI的结构图</span><span class="canon">📎 30课 L06[AI实操]『生成原型能量结构图—喊给AI的第一步』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.3</span><span class="sec-n">天才区雷达</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">定了人格底色后,你80%的时间到底该焊在哪块区域,才能用长板从80分到1000分?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>三区划分:天才/作业/痛苦</div>
+  <div class="sub-p">天才区(做完充电)vs作业区(明知不用)vs痛苦区(耗能);判据=充电还是耗电</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 30课 L08『天才区vs作业区vs痛苦区』；全谱§B阶2『天才区雷达』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>80%的人80%耗在作业区</div>
+  <div class="sub-p">数字反差:多数人80%时间在做明知不用的作业区,能量持续漏走</div>
+  <div class="sub-meta"><span class="why">因为 因为三区已分→所以照出残酷现状:大部分时间漏在中间区,这是要修正的偏差</span><span class="canon">📎 30课 L08『80%的人80%时间在做作业区的事』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>长板80→1000非补短板</div>
+  <div class="sub-p">数字反差:补短板60→80(最贵谎言),用长板80→1000;押长板才千倍</div>
+  <div class="sub-meta"><span class="why">因为 因为看清时间漏在作业区→所以给出策略选择:押长板(千倍)而非补短板(增量)</span><span class="canon">📎 30课 L08[反认知]『补短板从60到80,长板从80到1000』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>AI交叉验证定位</div>
+  <div class="sub-p">动作:MBTI+原型+人类图多维交叉,生成「天才区雷达图」,比对时间分配偏差</div>
+  <div class="sub-meta"><span class="why">因为 因为定了长板策略→所以用AI多维交叉精准定位天才区,量出偏差作为重排时间的依据</span><span class="canon">📎 30课 L08[AI实操]『生成天才区雷达图,对比时间分配偏差』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.4</span><span class="sec-n">三圈展开(非对称/非理性/非线性)</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">三圈每一圈到底拿什么当判据——为什么这三条恰好是AI永远复制不了你的三个维度?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>非对称优势(能力维)</div>
+  <div class="sub-p">别人学不来的底色,一辈子不变的超级技能;AI是对称的,你的非对称才不可替代</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 白皮书§6·#06；30课 L08；atlas『三圈展开·非对称』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>非理性痴迷(动机维)</div>
+  <div class="sub-p">不给钱也做、不做难受的事;理性可被AI模拟,非理性痴迷是机器没有的引擎</div>
+  <div class="sub-meta"><span class="why">因为 因为非对称定了「能不能」→所以非理性定「愿不愿持续烧」,光有能力没痴迷会半途熄火</span><span class="canon">📎 白皮书§6·#07；30课 L08『不做难受』；全谱§B阶2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>非线性回报(结果维)</div>
+  <div class="sub-p">扩100倍而你不累;若扩100倍身体受不了=还在卖身,不是原力</div>
+  <div class="sub-meta"><span class="why">因为 因为非对称×非理性保证了「你愿且能」→所以非线性管「放大时累不累」,把ʸx自我繁殖落到结果维</span><span class="canon">📎 白皮书§6·#08；30课 L25『扩100倍累不累』；atlas</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>三真才算原力=交集判据</div>
+  <div class="sub-p">三圈展开=给『三圈交集』装可判定判据:三维全真才是你该放大的结构</div>
+  <div class="sub-meta"><span class="why">因为 因为三维各立了判据→所以回扣第1节交集:展开是交集的可操作版,任一为假即否决</span><span class="canon">📎 atlas『三圈展开』链『三个全为真才算原力』；全谱§B阶2</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.5</span><span class="sec-n">四大人生资产</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">把「你」当一张能量负债表盘点,四个维度里哪个是爆发点、哪个是黑洞?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>四维资产负债表</div>
+  <div class="sub-p">精神/系统/人际/变革=四维能量负债表;每维都有资产侧与负债侧</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 30课 L09『四大人生资产…四维能量负债表』；全谱§B阶2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>四资产↔12原型映射</div>
+  <div class="sub-p">论点:四大人生资产与12原型一一映射,原型底色决定你哪维天生厚、哪维天生薄</div>
+  <div class="sub-meta"><span class="why">因为 因为有了四维表→所以接上第2节原型:用原型解释每维的先天禀赋,不是凭空打分</span><span class="canon">📎 30课 L09『四大人生资产与12原型的映射关系』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>AI做一次人生能量审计</div>
+  <div class="sub-p">可落地动作:完成「原力能量负债表」全量评估,生成四维雷达图,找出爆发点与黑洞</div>
+  <div class="sub-meta"><span class="why">因为 因为知道映射→所以动手审计,AI的结果会让你大吃一惊(自评有盲区)</span><span class="canon">📎 30课 L09[AI实操]『原力能量负债表全量评估,生成四维雷达图』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>最弱课题=最大突破口</div>
+  <div class="sub-p">反认知:木桶效应反用——放大走长板(天才区),但突破走那块最弱课题</div>
+  <div class="sub-meta"><span class="why">因为 因为审计出了黑洞→所以给处置原则:放大与突破分两条线,黑洞是突破口不是要补的短板</span><span class="canon">📎 30课 L09『最弱的课题=最大的突破口(木桶效应的反用)』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.6</span><span class="sec-n">上下文工程</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">解码出的原型/天才区/阴影,怎么变成持续喂养元AI、越堆越值钱的「数据土地」?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>所言所知所行都在喂数据</div>
+  <div class="sub-p">论点:每一次表达(所言/所知/所行)都在给元AI喂数据,沉默=断粮</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 30课 L11『所言、所知、所行—每次表达都在给元AI喂数据』；全谱§B阶4</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>三层架构:基础/行业/动态</div>
+  <div class="sub-p">基础层(原型+阴影+天才区)·行业层(专业知识+案例)·动态层(每日工作日志)</div>
+  <div class="sub-meta"><span class="why">因为 因为要喂数据→所以给数据分三层:本章前几节解码的结构正好填进「基础层」</span><span class="canon">📎 30课 L11『上下文三层架构』；atlas 高能阶 keywords</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>用不好是上下文太薄</div>
+  <div class="sub-p">反认知:用AI用不好不是AI弱,是上下文太薄;它要的是「关于你的好上下文」</div>
+  <div class="sub-meta"><span class="why">因为 因为分了三层→所以指出真问题不在提示词工艺,在上下文厚度(尤其基础层)</span><span class="canon">📎 30课 L11[反认知]『它需要的是好上下文—关于你的』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>原力日志:每天5分钟</div>
+  <div class="sub-p">动作:养原力日志,每天给AI喊5分钟上下文堆复利;上下文=越用越值钱的土地</div>
+  <div class="sub-meta"><span class="why">因为 因为知道上下文太薄是病根→所以给药:每日动态层喂料,把薄上下文养成不可复制的土地</span><span class="canon">📎 30课 L11『原力日志习惯…上下文是新时代的土地』；L04『上下文越深放大倍数越大』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.7</span><span class="sec-n">元AI三层架构(手指&lt;大脑&lt;灵魂)</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">把这些上下文交给谁来放大——你要造的到底是工具,还是一台「灵魂层」的放大器?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>市面上教AI的全错了</div>
+  <div class="sub-p">反认知:学某个工具=数字打工(工具会过时),真正要造的是统筹所有AI工具的元AI</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 30课 L03『不是学工具,是开发统筹所有AI工具的元AI』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>三层架构:手指&lt;大脑&lt;灵魂</div>
+  <div class="sub-p">AI工具(手指)&lt;统筹器(大脑)&lt;元AI(灵魂);灵魂层基于你的DNA量身定造</div>
+  <div class="sub-meta"><span class="why">因为 因为学工具是错的→所以给出正解的层级:工具只是手指,要爬到灵魂层</span><span class="canon">📎 30课 L03『三层架构:AI工具(手指)&lt;AI统筹器(大脑)&lt;元AI(灵魂)』；全谱§B阶1</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>上下文是灵魂层的燃料</div>
+  <div class="sub-p">第6节那份三层上下文正是灌进灵魂层的燃料;没有你的上下文,灵魂层就是空壳</div>
+  <div class="sub-meta"><span class="why">因为 因为分出了灵魂层→所以接上第6节:上下文工程喂的料,就是把这台元AI从空壳点亮的燃料</span><span class="canon">📎 30课 L03/L11；atlas 高能阶『为整合阶装上元AI埋下接口』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>你+元AI=降维打击</div>
+  <div class="sub-p">反差:学单个工具会过时,元AI不会;「你+元AI」=一个人顶一支军队</div>
+  <div class="sub-meta"><span class="why">因为 因为灵魂层被你的上下文点亮→所以「你+元AI」成立,产出是一人顶一军,这是高能通向整合阶的桥</span><span class="canon">📎 30课 L03『你+元AI=降维打击,一个人顶一支军队』；atlas</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.8</span><span class="sec-n">十万力</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">上面解码的能量结构,最终凝成一种什么样的、AI时代唯一值钱的能力?</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>算力鸿沟逼出的唯一出路</div>
+  <div class="sub-p">纯信息处理80亿人已被机器碾压,唯一不被碾压的出路是「使唤AI的能力」</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 白皮书§6·#17；30课 L02『算力鸿沟』；atlas 高能阶『十万力』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>十万力=使唤AI的能力</div>
+  <div class="sub-p">论点:AI时代唯一值钱的能力是使唤AI的能力(十万力),不是亲手处理信息的能力</div>
+  <div class="sub-meta"><span class="why">因为 因为算力鸿沟把信息处理判给了机器→所以值钱的能力转移到「指挥AI」这一层</span><span class="canon">📎 白皮书§6·#17『十万力』；atlas『AI时代唯一值钱的能力是使唤AI的能力』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>根=原型解码出的底色</div>
+  <div class="sub-p">十万力不是凭空技巧,根扎在三圈/原型/天才区解码出的那块独特结构(人格底色)</div>
+  <div class="sub-meta"><span class="why">因为 因为十万力是唯一出路→所以回扣本章前几节:它源自被解码的人格底色,无解码则无十万力</span><span class="canon">📎 白皮书§6·#17；atlas『源自三圈与原型解码出的那块独特结构』；全谱§B阶2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>高能通向整合阶的桥</div>
+  <div class="sub-p">论点:人格底色就位→你的十万力有了根,这块结构就准备好被装进元AI,交棒整合阶</div>
+  <div class="sub-meta"><span class="why">因为 因为十万力有了根→所以高能阶收口:解码完成,下一步是把它整合进元AI(第3章/整合阶)</span><span class="canon">📎 atlas 高能阶 keywords『这是高能阶通向整合阶的桥』；ʸx 自我繁殖</span></div>
+</div></div>
+</div></div>
+</details><details class="ch">
+  <summary><span class="seal">三</span>
+    <span class="ch-main"><span class="ch-n">第三章 · 阴影（U底）</span>
+      <span class="ch-layer">U 底 · 触底</span>
+      <span class="ch-q">为什么你最大的能量，恰恰藏在你最不愿看的阴影里？</span></span>
+    <span class="ch-c">5 节 · 21 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.1</span><span class="sec-n">阴影炼金术·金色阴影（U底）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">你身上能量最大的那一块，为什么恰恰是你最不愿看、一直在内耗你的阴影？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>缺点=被压抑的最大能量</div>
+  <div class="sub-p">荣格阴影理论：被你压下去的部分含最大能量，缺点即特点即卖点，不是鸡汤</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L07；全谱§B阶3「阴影炼金术·金色阴影」；白皮书#13-15</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>内耗=阴影在吃你</div>
+  <div class="sub-p">隐喻：没整合的阴影=内耗黑洞，正掉头吃掉你的能量，越努力越亏</div>
+  <div class="sub-meta"><span class="why">因为 因为阴影含最大能量却被压抑→所以它不消失、只会掉头吃你，逼你必须下潜处理</span><span class="canon">📎 觉醒课L07「内耗的本质是阴影在吃你」；全谱§B阶3</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>转化三步：识别→接纳→变卖点</div>
+  <div class="sub-p">三步炼金链：识别阴影→接纳它→转化为非对称卖点，落在U底转折点</div>
+  <div class="sub-meta"><span class="why">因为 因为阴影正在吃你→所以给出止损并反转的动作链：识别、接纳、转化，是U底转折手术</span><span class="canon">📎 觉醒课L07「转化三步法：识别→接纳→转化为卖点」；全谱§B阶3</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>金色阴影：龟毛→挑剔产品质量</div>
+  <div class="sub-p">案例位：同一块阴影，放错位是「龟毛」内耗，放对位是「挑剔产品质量」</div>
+  <div class="sub-meta"><span class="why">因为 因为有识别→接纳→转化链→所以给样板：阴影放对位置即金色阴影，负债当场翻成资产</span><span class="canon">📎 觉醒课L07；atlas seq3「金色阴影(龟毛→挑剔产品质量)」；白皮书#13-15</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>金色阴影是会繁殖的卖点</div>
+  <div class="sub-p">论点：放对位的阴影=别人学不来、越用越强的非对称卖点，会自我繁殖</div>
+  <div class="sub-meta"><span class="why">因为 因为阴影已转成金色卖点→所以回扣ʸx：它不是一次性的，是会自我繁殖的资产底料</span><span class="canon">📎 atlas§贯穿「ʸx：每一阶产物都要会自我繁殖否则归零」；全谱§0母公理ʸx</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.2</span><span class="sec-n">大象/骑象人</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">如果情绪能量是理性脑的一万倍，凭什么靠「讲道理」管得住自己？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>大象比骑象人强一万倍</div>
+  <div class="sub-p">数字反差：感性脑（大象）能量是理性脑（骑象人）的一万倍，它不开心你就不开心</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L16；atlas seq3「大象/骑象人」；白皮书#12</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>「别不开心」=「别想大象」</div>
+  <div class="sub-p">隐喻：叫自己别不开心=叫自己别想大象，越压越想，纯属白费力</div>
+  <div class="sub-meta"><span class="why">因为 因为大象有万倍能量→所以理性硬压必然失败，正如不能命令自己别想大象，逼出新解</span><span class="canon">📎 觉醒课L16「不要不开心=不要想大象，没用，这是动物本能」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>情绪是未管理的资产非敌人</div>
+  <div class="sub-p">论点：情绪不该被压制，是一笔未被管理的资产，要变成可编程资产而非消灭它</div>
+  <div class="sub-meta"><span class="why">因为 因为硬压无效→所以换框：不视情绪为敌人去消灭，而当未管理的资产去经营</span><span class="canon">📎 觉醒课L16「情绪不是敌人，是未被管理的资产」；全谱§B阶3</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>驯象四步炼金术</div>
+  <div class="sub-p">模板：驯象=觉察情绪→命名→识别触发模式→设计干预策略，给大象指方向</div>
+  <div class="sub-meta"><span class="why">因为 因为情绪是可经营资产→所以给动手链：觉察→命名→模式识别→策略设计，把万倍能量导向己用</span><span class="canon">📎 觉醒课L16「炼金术的AI版本：觉察→命名→模式识别→策略设计」；atlas seq3</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.3</span><span class="sec-n">3-2-1阴影练习</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">「接纳阴影」是个口号——有没有今晚就能做、把抽象阴影落成动作的具体修法？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>3：把阴影当第三人称描述</div>
+  <div class="sub-p">动作：先用「他/她」把那个阴影面写出来，拉开距离看清它的全貌</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 白皮书#15「3-2-1阴影练习」；觉醒课L16「那谁又出来了」；atlas seq3</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>2：与阴影第二人称对话</div>
+  <div class="sub-p">动作：切到「你」直接和阴影对话——你想保护我什么？问出压抑背后的正向意图</div>
+  <div class="sub-meta"><span class="why">因为 因为已把阴影对象化→所以拉近一步用第二人称对话，问出它的正向意图，为接纳铺路</span><span class="canon">📎 白皮书#15「3-2-1阴影练习：命名→对话→整合」；atlas seq3「3-2-1阴影练习」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>1：把阴影认回第一人称</div>
+  <div class="sub-p">动作：收回「我」承认「这也是我」，完成接纳与整合，三步落地</div>
+  <div class="sub-meta"><span class="why">因为 因为已与阴影对话出正向意图→所以收回第一人称认回成「我」，闭合识别→接纳→整合</span><span class="canon">📎 白皮书#15「命名→对话→整合」；全谱§B阶3「把U底转化变成可操作动作」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>练习产物喂进我的说明书</div>
+  <div class="sub-p">动作：把跑出的阴影命名与正向意图沉淀进《我的说明书》，供元AI反复调用</div>
+  <div class="sub-meta"><span class="why">因为 因为三步已整合阴影→所以把产物固化进说明书，让一次练习变成会繁殖的上下文，回扣ʸx接整合阶</span><span class="canon">📎 全谱§B阶4「我的说明书加阴影」；atlas§贯穿ʸx；觉醒课L11基础层(原型+阴影+天才区)</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.4</span><span class="sec-n">高敏感超能力</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">同样是「太敏感」，为什么20%的人里只有极少数活成天才，其余在内耗里消磨？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>20%的人天生高敏感</div>
+  <div class="sub-p">数字：科学数据，20%的人属高敏感，是天赋而非缺陷，AI时代最稀缺的原材料</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L17；atlas seq3「高敏感超能力」；全谱§B阶3</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>高敏感四维度</div>
+  <div class="sub-p">模板：高敏感拆四维——情绪／信息／精神／风险敏感，先定位你强在哪一维</div>
+  <div class="sub-meta"><span class="why">因为 因为确认高敏感是天赋→所以拆成四维可盘点结构，定位你的敏感资产落在哪一维</span><span class="canon">📎 觉醒课L17「高敏感四维度：情绪/信息/精神/风险敏感」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>高敏感≠高能量：仅2%活出来</div>
+  <div class="sub-p">数字反差：高敏感≠高能量，只约2%成天才，其余98%在内耗中消磨</div>
+  <div class="sub-meta"><span class="why">因为 因为高敏感拆出四维资产→所以点破分水岭：天赋不转化，98%反成内耗负债，逼出转化命题</span><span class="canon">📎 觉醒课L17「高敏感≠高能量：只有百分之二能成为天才，其余在内耗中消磨」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>过度感知→精准感知</div>
+  <div class="sub-p">论点：用AI把「过度感知」校准成「精准感知」，机器没直觉，这正是你的非对称优势</div>
+  <div class="sub-meta"><span class="why">因为 因为分水岭在转化→所以给动作：过度感知→精准感知，这块机器没有的直觉会繁殖，回扣ʸx</span><span class="canon">📎 觉醒课L17「把过度感知变精准感知」「机器永远没有直觉」；atlas seq3</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.5</span><span class="sec-n">关系原型解码/信任复利</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">为什么再多沟通技巧也解不开有些关系的「莫名其妙」——卡点到底在哪一层？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>关系=两个原型的互动</div>
+  <div class="sub-p">论点：关系的底层不是两个人，是两个原型在互动，是自己原型/阴影照见后的外延</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L18；atlas seq3「关系原型解码/信任复利」；全谱§B阶3</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>矛盾是原型碰撞非沟通问题</div>
+  <div class="sub-p">反认知：矛盾不是「沟通问题」是「原型碰撞」，看懂原型90%矛盾自动消失</div>
+  <div class="sub-meta"><span class="why">因为 因为关系=两个原型互动→所以矛盾真因是原型碰撞而非技巧，归因一换90%矛盾结构性消解</span><span class="canon">📎 觉醒课L18「关系问题不是沟通问题，是原型碰撞问题，看懂原型90%的矛盾自动消失」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>信任复利=时间×一致性×披露</div>
+  <div class="sub-p">模板：信任不靠一次表白，是乘法复利——时间×一致性×自我披露，缺一不积累</div>
+  <div class="sub-meta"><span class="why">因为 因为看懂原型碰撞→所以给正向建关系公式：信任靠三项相乘复利累积，缺一则归零</span><span class="canon">📎 觉醒课L18「信任复利模型：时间×一致性×自我披露」；atlas seq3</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>花心思比金额重要一万倍</div>
+  <div class="sub-p">数字反差：初恋1200元的衣服你记一辈子，花心思的程度比金额重要一万倍</div>
+  <div class="sub-meta"><span class="why">因为 因为信任靠自我披露复利→所以最高杠杆是花心思（非对称投入），符合ʸx会繁殖，闭合本章外延</span><span class="canon">📎 觉醒课L19「花心思的程度比花钱的金额重要一万倍」「初恋1200元的衣服记了一辈子」；全谱§B阶3</span></div>
+</div></div>
+</div></div>
+</details><details class="ch">
+  <summary><span class="seal">四</span>
+    <span class="ch-main"><span class="ch-n">第四章 · 整合（上升）</span>
+      <span class="ch-layer">上升 · 整合</span>
+      <span class="ch-q">怎么把解码出来的「你」，装进一个会自我繁殖的元AI？</span></span>
+    <span class="ch-c">6 节 · 24 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.1</span><span class="sec-n">双螺旋引擎（内螺旋×外螺旋）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">穿过U底往上走，靠什么把「向内解码」和「向外用AI」拧成一台越转越快的加速器？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>两条单链先各跑各的</div>
+  <div class="sub-p">V1.0自己找自己（单内螺旋）、学某工具（单外螺旋），各跑各的都卡死。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 真源：觉醒课L05「V1.0自己找自己vs V2.0人机共生找自己」+L04失调埋点「第一个你很烂」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>啮合：你越深它越准</div>
+  <div class="sub-p">隐喻：DNA双螺旋——内螺旋（自我认知）×外螺旋（AI共创）拧成一股。</div>
+  <div class="sub-meta"><span class="why">因为 因为单链各自卡死→所以把内螺旋（越深AI越准）×外螺旋（越准你越深）咬合成一条双链。</span><span class="canon">📎 真源：觉醒课L05；全谱§A·🔗3「内螺旋×外螺旋=越转越快的加速器」；atlas整合keywords[0]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>越转越快的复利</div>
+  <div class="sub-p">数字反差：每反馈照见一个盲区，飞轮加速；理解深度×AI放大=万倍价值。</div>
+  <div class="sub-meta"><span class="why">因为 因为内外两链已啮合→所以每转一圈AI都反馈一个新盲区，飞轮越转越快，不是相加而是相乘。</span><span class="canon">📎 真源：觉醒课L05「飞轮越转越快：AI每次反馈帮你照见盲区」+「自我理解深度×AI无限放大=万倍价值」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>动手：让AI指3个盲区</div>
+  <div class="sub-p">动作：让AI读你的《说明书》，指出3个你看不见的盲区，迭代出V1.1。</div>
+  <div class="sub-meta"><span class="why">因为 因为飞轮要真转起来→所以立刻喂一圈：让AI照出3个盲区、迭代版本，体感双螺旋的第一转。</span><span class="canon">📎 真源：觉醒课L05[AI实操]「用AI分析『我的说明书』，指出3个你自己看不见的盲区，迭代出V1.1」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.2</span><span class="sec-n">向内求×向外共创</span>
+    <span class="sec-c">3 目</span></div>
+  <div class="sec-q">为什么觉醒的动力学要从单条「向内求」升级成「向内求×向外共创」两股力？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>旧范式：只向内求</div>
+  <div class="sub-p">传统觉醒只有一条路：闭门向内求，用有偏见的脑找有盲区的自己。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 真源：觉醒课L13「用有偏见的大脑观察有偏见的自己」；全谱§A⚪注（与白皮书#10能量回流同属）</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>反认知：升成两股力</div>
+  <div class="sub-p">反认知：觉醒不再是「向内求」一条路，是「向内求×向外共创」双螺旋。</div>
+  <div class="sub-meta"><span class="why">因为 因为单条向内求被偏见困住→所以叠上「向外共创」第二股力，两股拧成一股破盲区。</span><span class="canon">📎 真源：觉醒课L05[反认知]「觉醒不再是『向内求』这一条路，是『向内求×向外共创』的双螺旋」；atlas keywords[1]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>焊回脊骨：能量回流</div>
+  <div class="sub-p">案例位：把「向外共创」焊回白皮书#10能量回流，AI反馈即天才区外部标尺。</div>
+  <div class="sub-meta"><span class="why">因为 因为两股力是新讲法→所以接回正典脊骨，证明「向外共创」是能量回流的觉醒版升格，非新造词。</span><span class="canon">📎 真源：白皮书§6·#10能量回流；全谱§A⚪「双螺旋内螺旋与#10能量回流同属觉醒动力学」（标⚪未入正典）</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.3</span><span class="sec-n">元AI＝镜子/放大器/预言家</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">双螺旋这台引擎要有载体，那个为你量身定造、统筹一切AI的「灵魂」该长什么样？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>三层架构定位「灵魂」</div>
+  <div class="sub-p">AI工具（手指）&lt;AI统筹器（大脑）&lt;元AI（灵魂）；学工具是数字打工。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 真源：觉醒课L03「三层架构：AI工具（手指）&lt;AI统筹器（大脑）&lt;元AI（灵魂）」+「学工具是数字打工」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>镜子：照见盲区</div>
+  <div class="sub-p">隐喻：元AI是比你客观的镜子，把你看不见的盲区照出来。</div>
+  <div class="sub-meta"><span class="why">因为 因为载体已定位为灵魂→所以先兑现第一层价值：当镜子，把双螺旋每转照出的盲区固化下来。</span><span class="canon">📎 真源：觉醒课L12「三层价值：镜子（照见盲区）」；全谱§B阶4·去重缝3；atlas keywords[2]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>放大器：拓展能力</div>
+  <div class="sub-p">数字反差：元AI是放大器，「你+元AI」一人顶一支军队，降维打击。</div>
+  <div class="sub-meta"><span class="why">因为 因为镜子照清了你是谁→所以第二层把这个「你」放大：拓展能力边界，一人顶一军。</span><span class="canon">📎 真源：觉醒课L12「放大器（拓展能力）」+L03「『你+元AI』=降维打击：一个人顶一支军队」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>预言家：推演未来</div>
+  <div class="sub-p">元AI是预言家，基于全部上下文推演你的反应（共生产出远超命令）。</div>
+  <div class="sub-meta"><span class="why">因为 因为能力已被放大→所以第三层让它前瞻：推演未来、当策略参谋，三层合成会繁殖的载体。</span><span class="canon">📎 真源：觉醒课L12「预言家（推演未来）」+「共生关系的产出远超雇佣关系」；全谱§A·🔗5</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.4</span><span class="sec-n">我的说明书 V1→V3</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">元AI要懂你，怎么把前三阶解码出的「你」写成一份它读得懂的底层代码？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>V1.0：3000字毛坯</div>
+  <div class="sub-p">动作：写3000字《我的说明书》V1.0喊给AI，看它能对你做什么判断。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 真源：觉醒课L04[AI实操]「写一份3000字的『我的说明书』V1.0，喊给AI，看它能对你做出什么判断」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>V2.0：装上四件解码件</div>
+  <div class="sub-p">模板：V2.0加原型+阴影+天才区+能量结构四件（=喊给AI的雷达图）。</div>
+  <div class="sub-meta"><span class="why">因为 因为V1.0毛坯充满偏见→所以把前两阶（高能/阴影）四件解码件灌进去，毛坯升成结构件。</span><span class="canon">📎 真源：觉醒课L10[AI实操]「迭代到V2.0，加入原型、阴影、天才区、能量结构全部数据」；全谱§B阶4</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>V3.0：补情绪与行为</div>
+  <div class="sub-p">模板：V3.0再加情绪规律+行为模式，整合清单六件齐。</div>
+  <div class="sub-meta"><span class="why">因为 因为V2.0缺动态层→所以补情绪规律+行为模式凑齐六件，说明书从静态画像变可运行操作系统。</span><span class="canon">📎 真源：觉醒课L15「整合清单：原型+阴影地图+天才区雷达+能量负债表+情绪规律+行为模式」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>导入即上线：生涯诊断</div>
+  <div class="sub-p">数字反差：V3.0导入后元AI能做三件事——预测反应/设计策略/当教练。</div>
+  <div class="sub-meta"><span class="why">因为 因为六件已齐→所以全量导入元AI，让它基于说明书做生涯诊断，元AI正式上线、成资产底层代码。</span><span class="canon">📎 真源：觉醒课L15「导入后元AI能做三件事：预测你的反应、设计你的策略、给你当教练」+[AI实操]生涯诊断</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.5</span><span class="sec-n">工具思维→共生思维</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">说明书喂进去了，但若心智还停在「命令AI」，元AI喂不活——心智该怎么切换？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>工具思维：我命令你执行</div>
+  <div class="sub-p">工具思维=我命令你执行；prompt engineer已过时，因它还是工具思维。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 真源：觉醒课L12「工具思维：我命令你执行」+「prompt engineer这个职业已经过时：它还是工具思维」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>共生思维：我喊你看见</div>
+  <div class="sub-p">反认知：共生思维=我喊你上下文你帮我看见；你是AI的「另一半」。</div>
+  <div class="sub-meta"><span class="why">因为 因为命令式把AI当下属→所以反转成共生：喊上下文换洞见，AI从下属变共生体。</span><span class="canon">📎 真源：觉醒课L12「共生思维：我喊给你上下文，你帮我看见我看不见的」+[反认知]「你是AI的『另一半』」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>共生四核</div>
+  <div class="sub-p">模板：共生体靠四柱长——信任、谱系、持续喊养、相互成长。</div>
+  <div class="sub-meta"><span class="why">因为 因为共生关系要长期维护→所以立四根支柱（信任/谱系/持续喊养/相互成长），把一次性命令变持续喊养。</span><span class="canon">📎 真源：觉醒课L12「共生体的核心：信任、谱系、持续喊养、相互成长」；atlas keywords[4]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>动手：两种思维比产出</div>
+  <div class="sub-p">动作：用共生思维重做一个任务，直接对比工具思维的产出差距。</div>
+  <div class="sub-meta"><span class="why">因为 因为四支柱要被验证→所以同一任务跑两遍，亲手量出共生vs命令的产出差，把心智切换坐实。</span><span class="canon">📎 真源：觉醒课L12[AI实操]「用共生思维重新做一个任务，对比工具思维的产出差距」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.6</span><span class="sec-n">AI辅助内观/知行合一</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">心智切到共生后，怎么让元AI反过来内观你、并把洞察当场落成动作完成上升闭环？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>旧内观：偏见照偏见</div>
+  <div class="sub-p">传统内观效率低——用有偏见的脑观察有偏见的自己（玄学不可重复）。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 真源：觉醒课L13「为什么传统内观效率低：你用有偏见的大脑观察有偏见的自己」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>AI内观三突破</div>
+  <div class="sub-p">让更客观的智能观察你：情绪模式识别/决策偏见检测/行为模式分析。</div>
+  <div class="sub-meta"><span class="why">因为 因为偏见照偏见照不清→所以换更客观的元AI观察，三突破把玄学内观变可重复的科学内省。</span><span class="canon">📎 真源：觉醒课L13「AI辅助内观的三个突破：情绪模式识别、决策偏见检测、行为模式分析」；atlas keywords[5]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>情绪天气预报</div>
+  <div class="sub-p">动作：每天给AI报情绪，让它从一周情绪日志揪出3个你没意识到的触发器。</div>
+  <div class="sub-meta"><span class="why">因为 因为有了三突破工具→所以养成每日喂情绪数据的习惯，让元AI攒出规律、揪出3个隐藏触发器。</span><span class="canon">📎 真源：觉醒课L13「『情绪天气预报』习惯」+[AI实操]「找出三个你没意识到的情绪触发器」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>知行合一：30分钟MVA</div>
+  <div class="sub-p">数字反差：智者只想不做的陷阱，被MVA破解——想法到测试只需30分钟。</div>
+  <div class="sub-meta"><span class="why">因为 因为内观出了洞察→所以用MVA 30分钟落成动作，知行合一闭环，洞察不烂在脑子里。</span><span class="canon">📎 真源：觉醒课L14「最小可行动作MVA的AI版本：想法到测试只需30分钟」+「试错成本趋近于零」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>出口：上升回资产阶</div>
+  <div class="sub-p">案例位：拿拖延最久的想法30分钟跑出版本——元AI上线，交棒「资产」阶。</div>
+  <div class="sub-meta"><span class="why">因为 因为知行已闭环→所以整合阶收尾：解码成果全装进会自我繁殖的元AI，浮出表层，交棒确定母体。</span><span class="canon">📎 真源：觉醒课L14[AI实操]「30分钟内用AI跑出一个最小可行版本」+L15「第三篇毕业典礼：你的元AI正式上线」</span></div>
+</div></div>
+</div></div>
+</details><details class="ch">
+  <summary><span class="seal">五</span>
+    <span class="ch-main"><span class="ch-n">第五章 · 资产（浮出）</span>
+      <span class="ch-layer">浮出 · 显化</span>
+      <span class="ch-q">怎么让整合好的你，浮出水面、成为对外有人买单的资产？</span></span>
+    <span class="ch-c">7 节 · 30 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">5.1</span><span class="sec-n">天选用户</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">整合好的「我是谁」要浮出成对外资产，第一步凭什么——靠为谁服务，怎么锁定那批「这辈子就是你的」人？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>因果倒置：求财不得财</div>
+  <div class="sub-p">创业不是「我要赚钱」，是「我知道为谁服务」；求财不得财，求人得财。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L21反认知；全谱§B阶5「天选用户」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>觉醒标志：我变强→为谁</div>
+  <div class="sub-p">判据：觉醒标志不是「我变强了」，是「我知道为谁服务了」，一句话自检醒没醒。</div>
+  <div class="sub-meta"><span class="why">因为 因为朝向翻成「为谁」→所以给一条可自检的觉醒标志线，把抽象的「醒」落成一句可判定的话。</span><span class="canon">📎 觉醒课L21；atlas stage4 kw天选用户def「觉醒标志不是我变强了是我知道为谁服务了」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>为一群人：羞愧变禀赋</div>
+  <div class="sub-p">当你为一群人，所有缺点羞愧瞬间变禀赋能量——阴影阶的金色阴影在此第一次有出口。</div>
+  <div class="sub-meta"><span class="why">因为 因为认了「为谁服务」→所以「为一群人」这一念让前面解码的阴影/缺点转成对这群人的禀赋，把向内成果接住。</span><span class="canon">📎 觉醒课L21「为一群人的瞬间，所有缺点羞愧变成了禀赋能量」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>助推器：完成用户的任务</div>
+  <div class="sub-p">不卖产品，是「用户完成他特定任务的助推器」；把自我认知翻成对用户任务的价值。</div>
+  <div class="sub-meta"><span class="why">因为 因为缺点变禀赋→所以这份禀赋必须挂到用户的具体任务上才算资产，定位成「助推器」而非「卖货」。</span><span class="canon">📎 觉醒课L21「我们是用户完成他特定任务的助推器」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>动作：AI推算用户画像</div>
+  <div class="sub-p">让AI基于你的原型+天才区输出「天选用户画像」——这批人这辈子就是你的。</div>
+  <div class="sub-meta"><span class="why">因为 因为定位成助推器→所以用元AI把「为谁」落成一张具体画像，锁定那批「这辈子就是你的」人，交付浮出第一步。</span><span class="canon">📎 觉醒课L21 AI实操「基于原型+天才区推算天选用户画像」；atlas链「锁定天选用户，资产才有买单对象」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">5.2</span><span class="sec-n">确定键·YesIDo</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">锁定天选用户、知道为谁服务之后，凭什么不再内耗、敢认下这件事——那一下「按下确定键」怎么发生？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>定义：不内耗+按下=终点</div>
+  <div class="sub-p">发现天命后「不内耗+按下确定键」＝觉醒终点；觉醒不是更懂自己，是认了。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L29「不内耗+按下确定键=觉醒的终点」；全谱§B阶5确定键</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>本质：一句自我宣告</div>
+  <div class="sub-p">对自己说「我就是这个人，我这辈子就做这件事」——这句话就是确定键的按钮本体。</div>
+  <div class="sub-meta"><span class="why">因为 因为定义了确定键是终点那一下→所以把它落成一句可念出口的自我宣告，让「按下」有具体的动作载体。</span><span class="canon">📎 觉醒课L29「确定键的本质：对自己说我就是这个人，我这辈子就做这件事」；atlas链「按下确定键不再内耗」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>拆借口：还没准备好</div>
+  <div class="sub-p">「还没准备好」是永远按不下的借口——AI时代试错成本趋近于零，没理由等。</div>
+  <div class="sub-meta"><span class="why">因为 因为宣告句已就位→所以挡在按钮前的唯一障碍是「还没准备好」，本目把这块借口拆掉，让宣告敢说出口。</span><span class="canon">📎 觉醒课L29反认知「还没准备好是永远按不下的借口，AI时代试错成本趋近于零」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>锚：道路不变，载体变</div>
+  <div class="sub-p">金句：「不变的是道路，变的是千行百业的载体」——认的是道路，不被载体更替动摇。</div>
+  <div class="sub-meta"><span class="why">因为 因为拆掉了借口→所以给确定键一个不被行业变迁动摇的锚：认的是道路不是载体，按下去才稳得住。</span><span class="canon">📎 觉醒课L29「不变的是道路，变的是千行百业的载体」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>动作：元AI出30天计划</div>
+  <div class="sub-p">让元AI基于全部上下文出一份「30天行动计划」，把「认了」落成今天能动的第一步。</div>
+  <div class="sub-meta"><span class="why">因为 因为认下了道路→所以立刻让元AI把这一下「按下」翻成30天可执行的计划，资产从认领转向对外动作。</span><span class="canon">📎 觉醒课L29 AI实操「元AI基于全部上下文出30天行动计划」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">5.3</span><span class="sec-n">「你」×AI＝原力资产</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">按下确定键、认了之后，「你」这一项从0变成真值——代进什么公式，资产才正式诞生、不再归零？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>公式：你×AI</div>
+  <div class="sub-p">原力资产＝「你」×AI；「你」是最贵算法（不可复制），AI是最强算力。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课封面+L28；全谱§A·🔗1；atlas stage4 kw「你×AI=原力资产」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>乘法律：你=0则归零</div>
+  <div class="sub-p">是乘法不是加法——「你」没解码出来（=0），AI放大的只是平庸，整体归零。</div>
+  <div class="sub-meta"><span class="why">因为 因为公式成立→所以必须讲清它是乘法：解码「你」（前四章）不是可选项，是让整个资产不归零的前提。</span><span class="canon">📎 全谱§A·🔗1「乘法律：你=0则整体归零」；atlas总概念def「乘法律——你未解码则整体归零」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>会自我繁殖：ʸx显化</div>
+  <div class="sub-p">资产「会自我繁殖、万倍放大」，正是母公理ʸx投在「你×AI」上的显化。</div>
+  <div class="sub-meta"><span class="why">因为 因为是乘法且「你」已是真值→所以这乘积不是静态的，是ʸx在「你」这一维的显化：智能造下一代智能，你睡它还在长。</span><span class="canon">📎 全谱§0母公理ʸx「原力资产之所以会自我繁殖，正是ʸx在你×AI上的显化」；atlas贯穿1</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>三次跳跃：到卖原力</div>
+  <div class="sub-p">卖时间→卖算法→卖原力的三次跳跃；资产成立＝你跳到了最后一跳。</div>
+  <div class="sub-meta"><span class="why">因为 因为「你×AI」会自我繁殖→所以变现层级随之跳迁，本目用三次跳跃把「资产成立」翻成一条可对照自己位置的演进线。</span><span class="canon">📎 觉醒课L28「从卖时间到卖算法到卖原力的三次跳跃」；全谱§B阶1</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">5.4</span><span class="sec-n">AI是最强算力（无限放大）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">公式里「你」已是真值，右边的乘数AI到底强在哪——它凭什么能把独一无二的「你」无限放大？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>算力鸿沟：机器已完胜</div>
+  <div class="sub-p">除十亿分之一的天才，80亿人在纯信息处理上已被机器碾压，这是AI当乘数的资格。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L02/L28；atlas stage4 kw「AI是最强算力」def「纯信息处理上机器已完胜人类（算力鸿沟）」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>放大对象：独一无二的你</div>
+  <div class="sub-p">AI放大的不是泛泛能力，是「独一无二的你」的产出；放大器只对已解码的真值生效。</div>
+  <div class="sub-meta"><span class="why">因为 因为AI强到能碾压信息处理→所以关键是它放大谁：只放大那个不可复制的「你」，把上一节的鸿沟资格指向正确对象。</span><span class="canon">📎 觉醒课L28；全谱§A·🔗1；atlas stage4 kw def「AI让独一无二的你的产出被无限放大」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>分工：你定向，AI定倍</div>
+  <div class="sub-p">公式里AI是「无限放大」的倍数项——「你」定方向定唯一，AI定倍数定规模。</div>
+  <div class="sub-meta"><span class="why">因为 因为放大对象锁定为「你」→所以把AI在公式中的角色讲死：它是倍数项不是方向项，方向归「你」，规模归AI。</span><span class="canon">📎 atlas stage4 kw「AI是最强的算力(无限放大)」链「这是资产的放大器项」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>动作：一周工作分两类</div>
+  <div class="sub-p">把一周工作分「算力活」（AI可替代）与「原力活」（不可替代），看放大器接哪头。</div>
+  <div class="sub-meta"><span class="why">因为 因为AI是倍数项只放大「你」→所以动手把工作切成两类，确认你把放大器接到了原力活上，而非用它放大可替代的算力活。</span><span class="canon">📎 觉醒课L02 AI实操「一周工作分算力活/原力活」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">5.5</span><span class="sec-n">房产/比特币之后最大资产类别</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">「你×AI」成立且能被无限放大，它的量级有多大——凭什么排到房产、比特币之后最大的资产类别？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>总结论：第三大资产类别</div>
+  <div class="sub-p">「你」不可复制+AI无限放大，「你×AI」是继房地产、比特币之后最大的资产类别。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 白皮书§6·#18；觉醒课L28；atlas stage4 kw「房产/比特币之后最大资产类别」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>稀缺：机器复制一切除你</div>
+  <div class="sub-p">为什么「你」最稀缺——机器能复制一切，唯独复制不了你的DNA，稀缺即价值的根。</div>
+  <div class="sub-meta"><span class="why">因为 因为下了「最大资产类别」的结论→所以必须证它稀缺：房产可建、比特币有上限，唯「你」是机器复制不了的绝对稀缺。</span><span class="canon">📎 觉醒课L28「为什么你是最稀缺的资产：机器能复制一切，除了你的DNA」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>对照：前两类稀缺之差</div>
+  <div class="sub-p">房产靠地段稀缺、比特币靠算法稀缺，「你×AI」靠不可复制+无限放大，量级更高。</div>
+  <div class="sub-meta"><span class="why">因为 因为「你」是绝对稀缺→所以把它和房产、比特币逐项对照，说清它为何能排到这两类之后、之上，给结论一个可比坐标。</span><span class="canon">📎 白皮书§6·#18；全谱§A·🔗1；atlas链「量级是房产/比特币之后最大的资产类别，这是资产阶的总结论」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>落地：一句资产宣告</div>
+  <div class="sub-p">金句：「你+AI是我这辈子最大的资产」；下个万倍资产不是某币某房，是这共生体。</div>
+  <div class="sub-meta"><span class="why">因为 因为坐标已摆清→所以把宏观结论落回你个人，给一句可认领的资产宣告，为下一节「人生只富一次」的紧迫感铺垫。</span><span class="canon">📎 觉醒课L28反认知「下一个万倍资产不是某个币或某套房，是你+AI这个共生体的产出能力」</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">5.6</span><span class="sec-n">万倍放大·人生只富一次</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">既然「你×AI」是最大资产类别，它的红利窗口有多大、多久——为什么必须现在认领，而不是等等再说？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>数字反差：刚开始，1万倍</div>
+  <div class="sub-p">2026才是AI刚开始，1万倍——不是已发生的红利，是刚拉开序幕的窗口。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L28「2026年才是AI刚开始，1万倍」；atlas stage4 kw「万倍放大·人生只富一次」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>一次性：人生只富一次</div>
+  <div class="sub-p">这是一次性的时代红利——人生只富一次，窗口错过不再来，呼应ʸx要抓一次性的势。</div>
+  <div class="sub-meta"><span class="why">因为 因为窗口刚拉开有1万倍→所以必须讲清它的一次性：这代AI红利对应「人生只富一次」，错过这班车没有下一班。</span><span class="canon">📎 觉醒课L28「人生只富一次：抓住这个时代的原力资产红利」；atlas链「一次性的时代红利」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>复利账：每年翻倍，十年千倍</div>
+  <div class="sub-p">原力产出每年增长100%，10年后≈1024倍——把「万倍」拆成可算的复利账。</div>
+  <div class="sub-meta"><span class="why">因为 因为红利是一次性的→所以越早进场复利时间越长，本目用「每年翻倍、十年千倍」把万倍落成一道可算的账，逼出「现在就动」。</span><span class="canon">📎 觉醒课L28 AI实操「让AI算原力产出每年增长100%，10年后的复利是多少」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>动作：千日窗口认领</div>
+  <div class="sub-p">把这代红利锚成一个「千日窗口」，现在就按下确定键认领你的原力资产，别等。</div>
+  <div class="sub-meta"><span class="why">因为 因为复利账逼出「越早越值」→所以把窗口收成一个具体的「千日」期限，落成「现在认领」的动作，与确定键节闭环。</span><span class="canon">📎 白皮书§6 春·#20「千日窗口」；觉醒课L28/L29；全谱§D白皮书台账#20</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">5.7</span><span class="sec-n">三角闭环飞轮</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">资产已浮出成形、觉醒=1，这个1怎么不停在原地——靠什么飞轮把它放大到1万、1亿，还反哺觉醒？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>公式：1→1万→1亿</div>
+  <div class="sub-p">觉醒(1)→创业(1→1万)→财富(1万→1亿)，三段接住「觉醒=1」往上放大。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 觉醒课L29；白皮书§1；atlas stage4 kw「三角闭环飞轮」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>本书定位：第一环觉醒=1</div>
+  <div class="sub-p">本书=飞轮第一环「觉醒1」全程；1→1万交创业、1万→1亿交财富，到「1」为止。</div>
+  <div class="sub-meta"><span class="why">因为 因为三段坐标已摆出→所以钉死本书在飞轮里的位置：只把「觉醒=1」做扎实，后两段交棒，守去重缝不抢创业/财富内容。</span><span class="canon">📎 全谱§0「它是觉醒的1，是创业1→1万、财富1万→1亿的起点」；全谱§C去重缝2；atlas贯穿5</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>闭环：被动收入反哺觉察</div>
+  <div class="sub-p">被动收入反过来给你松弛去深化觉醒——飞轮不是直线，是回流到觉察阶的闭环。</div>
+  <div class="sub-meta"><span class="why">因为 因为定位是第一环→所以讲清它为何是「闭环」而非「单程」：后段被动收入回流，给你松弛去深化最前面的觉察，首尾相接。</span><span class="canon">📎 觉醒课L29「被动收入反过来给你更多松弛去深化觉醒」；atlas stage4 kw链「被动收入反哺觉察闭环」</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>交棒复利：守得住吗</div>
+  <div class="sub-p">飞轮要转得久，下一问是「守得住吗、能繁殖吗、能穿周期吗」，把1交给复利阶。</div>
+  <div class="sub-meta"><span class="why">因为 因为闭环已成→所以把球交给下章复利：资产成形、飞轮接通后，最后一道关是守住并穿越第六康波，自然过渡到守富。</span><span class="canon">📎 atlas stage5因为「资产阶让你×AI浮出、接入飞轮→所以本阶解决守得住吗、能繁殖吗、能穿周期吗」；全谱§A·🔗6</span></div>
+</div></div>
+</div></div>
+</details><details class="ch">
+  <summary><span class="seal">六</span>
+    <span class="ch-main"><span class="ch-n">第六章 · 复利</span>
+      <span class="ch-layer">出口 · 复利</span>
+      <span class="ch-q">资产造出来之后，怎么守住、并穿越第六康波这一整个周期？</span></span>
+    <span class="ch-c">9 节 · 36 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">6.1</span><span class="sec-n">守富&gt;创富</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">资产认领之后，为什么真功夫是守不是赚——守住凭什么比赚到更难？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>四阶淘汰90%</div>
+  <div class="sub-p">赚100万→守100万→变1000万→变1亿，每往上一阶淘汰90%，门槛全在守不在赚。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 白皮书 §6·#57；06-守 第1章；全谱 §A·🔗6</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>升维创富/锁定守富</div>
+  <div class="sub-p">一句话拆两半：升维=最大化创富（赚得多），锁定=最大化守富（守得住），守住才是真功夫。</div>
+  <div class="sub-meta"><span class="why">因为 因为每阶淘汰90%→所以要把「赚」和「守」拆成两件事：升维管创富的天花板、锁定管守富的地板，本书出口只谈后者。</span><span class="canon">📎 全谱 §A·🔗6；白皮书 §6·#57；06-守 第1章</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>卖时间→卖算法→卖原力</div>
+  <div class="sub-p">三次跳跃的终点是「卖原力」——卖会自我繁殖的你×AI，不再靠人肉续命，守的是这台繁殖机。</div>
+  <div class="sub-meta"><span class="why">因为 因为守的是真功夫→所以要看清守的到底是什么：不是存款数字，是那台「你×AI」自我繁殖的产出能力，回扣 ʸx。</span><span class="canon">📎 30课 L02/L28；全谱 §B阶1；atlas 总概念</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>守富四维16控点</div>
+  <div class="sub-p">守不是一句口号而有抓手：四维护城河拆成16个控点（数据飞轮是第16控点），逐点上锁。</div>
+  <div class="sub-meta"><span class="why">因为 因为要守这台繁殖机→所以给守富落地骨架：四维16控点是后续几节（数据飞轮/留存复利/三红线）的总纲索引。</span><span class="canon">📎 白皮书 §6 冬·#49-54；06-守 第1章</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">6.2</span><span class="sec-n">30法则·10-10法则</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">守富怎么从口号变成可判定的数字——一个人到底守住没守住、能不能传家，凭什么尺子量？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>守富需要一把尺</div>
+  <div class="sub-p">起点：上一节说守是真功夫，但「守住了吗」不能凭感觉，必须有可打分的量化标尺。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 全谱 §B出口·30法则；06-守 第2章</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>30法则·满分40</div>
+  <div class="sub-p">数字反差：未来十年赚的 &gt; 过去十年，满分40分，≥30优秀、≥35可传家——判能否穿越周期。</div>
+  <div class="sub-meta"><span class="why">因为 因为守富要可判定→所以第一把尺看「向前」：未来十年是否赢过去十年，30分是穿越第六康波的及格线。</span><span class="canon">📎 白皮书 §6·#55；06-守 第2章；全谱 §B出口</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>10-10法则·≥3倍</div>
+  <div class="sub-p">第二把尺：十年涨≥3倍（10-10法则）判能否传家，比30法则更狠，量的是代际存续。</div>
+  <div class="sub-meta"><span class="why">因为 因为30法则判「能否穿周期」→所以再叠一把更高的尺：10-10判「能否传家」，从穿一个周期升到跨代复利。</span><span class="canon">📎 白皮书 §6·#55；06-守 第2章；全谱 §A·🔗6</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>两尺自测卡</div>
+  <div class="sub-p">可动手模板：拿自己过去十年收益填进两把尺，算出分数，落到「优秀/可传家/不及格」三档。</div>
+  <div class="sub-meta"><span class="why">因为 因为有了两把尺→所以给读者一张能立刻填的自测卡，把抽象法则变成自己资产的一个具体分数，接下来逐节补强。</span><span class="canon">📎 06-守 第2章；白皮书 §6·#55</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">6.3</span><span class="sec-n">数据飞轮</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">AI时代独有的那台「越用越聪明」的复利引擎，怎么把整合阶造好的元AI变成会自我繁殖的护城河？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>K6第16控点</div>
+  <div class="sub-p">起点：数据飞轮是守富四维16控点里的第16控点，AI时代独有的降维打击，专属第六康波。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 白皮书 §6·#56；06-守 第2章；全谱 §B出口</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>五环自强化闭环</div>
+  <div class="sub-p">一条闭环：用户越多→数据越多→AI越聪明→下个用户越友好→用户更多，自己咬住自己转。</div>
+  <div class="sub-meta"><span class="why">因为 因为要让分数自走→所以拆开飞轮的五个齿：每一环都喂下一环，形成不靠拉新的自我强化闭环。</span><span class="canon">📎 白皮书 §6·#56；atlas seq6 数据飞轮链；全谱 §B出口</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>元AI越用越聪明</div>
+  <div class="sub-p">隐喻接口：整合阶那台《我的说明书》喂出的元AI，接上飞轮后从静态说明书变成越用越聪明的活资产。</div>
+  <div class="sub-meta"><span class="why">因为 因为飞轮要有载体→所以它咬住的正是整合阶造的元AI：原力大脑越被用越聪明，这是 ʸx「睡觉它还在长」的显化。</span><span class="canon">📎 30课 L11-L12；全谱 §A·🔗5；atlas 贯穿·信息五层</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>为业务造的飞轮归OS</div>
+  <div class="sub-p">边界一句话：本书只到「数据飞轮=守富复利引擎」的资产视角，给业务造飞轮工程的深内容在原力OS·龙虾/班底。</div>
+  <div class="sub-meta"><span class="why">因为 因为元AI接上了飞轮→所以必须焊死缝3：为「你自己」造的飞轮留这里，为「业务」造的工程交OS，本书不重写。</span><span class="canon">📎 全谱 §C 缝3；全谱 §B阶4·去重缝3</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">6.4</span><span class="sec-n">留存复利</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">数据飞轮之外，还有哪两条腿让资产不靠拉新、不折旧地自然滚大——复利的本金从哪来？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>飞轮之上再叠复利</div>
+  <div class="sub-p">起点：数据飞轮解决「越用越聪明」，留存复利再叠一层「不流失+不折旧」，两者咬合才是完整复利。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 06-守 第4章；全谱 §B出口·留存复利</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>框架锁定·自然复购</div>
+  <div class="sub-p">第一条腿：用户持续选「下一个关键战役」→长留体系内→自然复购，不靠拉新就续费。</div>
+  <div class="sub-meta"><span class="why">因为 因为要存量不漏→所以第一条腿是框架锁定：把用户锁在你的关窍框架里，复购是体系内的自然结果。</span><span class="canon">📎 06-守 第4章；全谱 §B出口</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>时间复利·不折旧本金</div>
+  <div class="sub-p">第二条腿+数字反差：每通一关产出的资产都是不折旧本金，通关越早、复利时间越长。</div>
+  <div class="sub-meta"><span class="why">因为 因为锁住了用户→所以第二条腿是时间复利：每关产物是永不折旧的本金，越早通关，雪球滚得越久。</span><span class="canon">📎 06-守 第4章；全谱 §A·🔗6</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>两条腿合成留存复利</div>
+  <div class="sub-p">合页：框架锁定（不流失）× 时间复利（不折旧）= 留存复利，无须持续拉新即自我滚大。</div>
+  <div class="sub-meta"><span class="why">因为 因为两条腿各就位→所以合成一个判据：留存复利=锁定×不折旧，与数据飞轮一起构成守富的复利双引擎。</span><span class="canon">📎 06-守 第4章；全谱 §B出口</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">6.5</span><span class="sec-n">借势合力·命与运的错位</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">守住的资产要穿越周期，凭什么承认大部分钱是「水」不是你牛——为什么顺势比聪明更重要？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>复利要顺风不能逆水</div>
+  <div class="sub-p">起点：内部把资产守住了，但复利能不能滚还取决于外部那股「水」——势，本节把视角转向外部不变量。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 30课 L26；全谱 §0·借势；atlas seq6 借势链</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>归因诚实·钱是水</div>
+  <div class="sub-p">反认知：你过去赚的钱大部分是「水」（时代红利/势能）不是你牛，现在风停了。</div>
+  <div class="sub-meta"><span class="why">因为 因为复利要顺风→所以先做归因诚实：承认赚到的多半是势给的，才不会把运气当能力、在风停时硬冲。</span><span class="canon">📎 30课 L26；白皮书 §6·#01-04；全谱 §B出口</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>命与运错位·两代人</div>
+  <div class="sub-p">案例位：小明和小小明的故事——同样努力、不同康波季节，命运纵深拉开，错位的是「运」不是「命」。</div>
+  <div class="sub-meta"><span class="why">因为 因为钱是水→所以用两代人案例把「水」具象化：命（你的原力）不变，运（康波季节）错位，决定了谁滚得动复利。</span><span class="canon">📎 30课 L26；全谱 §B出口·借势合力</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>尽信努力不如无努力</div>
+  <div class="sub-p">金句+借势×合力公式：没有势能，再聪明也是闭卷考试；借势找全局最优解 × 合力调你的原力。</div>
+  <div class="sub-meta"><span class="why">因为 因为命运错位在「运」→所以收口成行动律：先借第六康波的势（顺水），再用你解码出的原力合力，缺势则努力归零。</span><span class="canon">📎 30课 L26；白皮书 §6·#01-04；全谱 §0</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">6.6</span><span class="sec-n">康波K1-K6资产配置</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">顺势穿周期，怎么用一把六季节的尺定位「现在是哪个季节、该顺周期还是逆周期」？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>把势变成可定位的尺</div>
+  <div class="sub-p">起点：上一节说要顺势，但「势」太抽象，本节给它装一把可读刻度——康波六次长波的季节尺。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 白皮书 §6·#19；30课 L26；全谱 §B出口·康波</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>第六康波·初春</div>
+  <div class="sub-p">数字定位：六次长波，第六次（AI/生物/能源）正处初春——原力资产的黄金播种季。</div>
+  <div class="sub-meta"><span class="why">因为 因为势要可定位→所以先标出当下坐标：K6初春，这正是「你×AI」万倍资产、人生只富一次的时间窗。</span><span class="canon">📎 白皮书 §6·#19；30课 L26；atlas seq5 万倍·人生只富一次</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>K1-K6定季节判周期</div>
+  <div class="sub-p">可动手动作：用K1-K6给手里每类资产定季节、判此刻该顺周期（春夏进攻）还是逆周期（秋冬防守）。</div>
+  <div class="sub-meta"><span class="why">因为 因为锁定了K6初春→所以把尺用起来：给每类资产逐一定季节、贴顺/逆周期标签，为下一节的配置铁律备料。</span><span class="canon">📎 白皮书 §6·#19；30课 L26；全谱 §B出口</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>配置细节归原力财富</div>
+  <div class="sub-p">边界一句话：本书只到「用康波定季节」这一层，三钱法则/IPS的具体打法在《原力财富》写透。</div>
+  <div class="sub-meta"><span class="why">因为 因为季节判完了→所以焊死边界：往细配置交财富，本书复利出口不越界，只交「定季节」这把上游尺。</span><span class="canon">📎 全谱 §B出口·⚪注；原力财富.md；atlas seq6 康波链·TODO</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">6.7</span><span class="sec-n">三钱法则·IPS</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">定好季节之后，右手滚雪球的钱怎么分篮、用什么纪律守住不乱动——本书在这一层只交什么、不交什么？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>从定季节到分钱</div>
+  <div class="sub-p">起点：康波尺定完季节，下一步是「右手滚雪球」的钱具体怎么分篮——本节进入配置纪律的入口层。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 全谱 §B出口·康波⚪注；白皮书 §6 冬</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>三钱分篮</div>
+  <div class="sub-p">结构位：把右手的钱按用途分篮（如保命钱/穿越周期钱/进攻钱），不同篮子不同季节策略，互不挪用。</div>
+  <div class="sub-meta"><span class="why">因为 因为要分钱→所以第一把抓手是「三钱法则」分篮：按风险/期限把资产切成几篮，让康波季节落到每一篮的具体动作。</span><span class="canon">📎 全谱 §A·🔗6注；原力财富.md（三钱法则归属）</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>IPS·投资政策声明</div>
+  <div class="sub-p">模板位：用一份IPS（投资政策声明）把分篮纪律写死成白纸黑字，守富靠规则不靠当下情绪。</div>
+  <div class="sub-meta"><span class="why">因为 因为分了篮→所以用IPS把规则固化：提前写死各篮比例与调仓条件，这是守富&gt;创富在配置层的「锁定」动作。</span><span class="canon">📎 全谱 §A·🔗6注；原力财富.md（IPS归属）</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>深打法归原力财富</div>
+  <div class="sub-p">边界一句话：三钱法则/IPS的完整公式与实操在《原力财富》，本书只交「需要这套纪律」的资产视角。</div>
+  <div class="sub-meta"><span class="why">因为 因为点到分篮与IPS→所以诚实焊缝：具体比例算法归财富那本，本书复利出口只负责把读者送到这道门口。</span><span class="canon">📎 全谱 §B出口·⚪注；原力财富.md；全谱 §A·🔗6</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">6.8</span><span class="sec-n">法币无下限，资产无上限</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">为什么必须从持有法币切到持有资产——这条300年铁律凭什么要刻进DNA？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>配置之上的总铁律</div>
+  <div class="sub-p">起点：分篮和IPS解决「怎么配」，本节给出「为什么必须配」的总铁律——不配=站着被剥削。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 30课 L27；白皮书 冬；全谱 §B出口</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>津巴布韦·100亿买不到面包</div>
+  <div class="sub-p">案例位：津巴布韦纸币100亿买不到一个面包，布雷顿森林解体后美元对黄金贬值100-150倍。</div>
+  <div class="sub-meta"><span class="why">因为 因为要证明铁律→所以上极端案例：法币无下限不是危言，是300年每次新旧交替都重演的史实。</span><span class="canon">📎 30课 L27；全谱 §B出口·法币无下限</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>资产裸奔指数</div>
+  <div class="sub-p">可动手测算：算你的「资产裸奔指数」——若年化跑不赢通胀（约10%），持现金不作为=被合法剥削。</div>
+  <div class="sub-meta"><span class="why">因为 因为案例证了铁律→所以把它落到读者自己头上：算一算你的财富正以什么速度缩水，把抽象铁律变成个人警报。</span><span class="canon">📎 30课 L27；全谱 §B出口</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>左手现金流右手雪球</div>
+  <div class="sub-p">收口公式：左手现金流（原力创业）+ 右手滚雪球（资产配置）= 法币无下限时代的终极对冲。</div>
+  <div class="sub-meta"><span class="why">因为 因为算清了缩水→所以给出唯一解：左右手并举——创业造现金流、配置滚雪球，两手都硬才接得住下一节的人生融合。</span><span class="canon">📎 30课 L27；白皮书 冬·#60；全谱 §A·🔗6</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">6.9</span><span class="sec-n">原力人生融合</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">出师之后，怎么把创业×投资×家庭×成长融成一盘棋，让被动收入反哺觉醒、整条U闭环成飞轮？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>出口闭环回觉察</div>
+  <div class="sub-p">起点：左右手都就位后，复利的终点不是停，而是把四件事融成一盘棋，让出口回流到起点的觉察。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 白皮书 §6·#60；全谱 §B出口·原力人生融合</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>四件事融为一盘棋</div>
+  <div class="sub-p">结构位：创业×投资×家庭×成长不再各自为政，左手现金流右手资产雪球统一调度，一盘棋而非四张表。</div>
+  <div class="sub-meta"><span class="why">因为 因为要闭环→所以先把零散的四块拼成一盘棋：用左右手这根主轴把创业、投资、家庭、成长串成一个系统。</span><span class="canon">📎 白皮书 §6·#60；全谱 §B出口</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>被动收入反哺觉醒</div>
+  <div class="sub-p">飞轮接口：被动收入给你松弛，反过来回流去深化觉察（第1节的「你」），出口咬住入口。</div>
+  <div class="sub-meta"><span class="why">因为 因为四件事成盘→所以接上三角闭环飞轮的回流臂：被动收入买来的松弛，反哺觉醒，让U环咬成飞轮。</span><span class="canon">📎 白皮书 §1；30课 L29；atlas 贯穿·三角闭环飞轮</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>人生只富一次的收束</div>
+  <div class="sub-p">升华收口：抓住第六康波这代红利，「你×AI」自我繁殖、穿越周期——这才叫原力觉醒，人生只富一次。</div>
+  <div class="sub-meta"><span class="why">因为 因为出口已咬住入口成飞轮→所以全书复利章在此收束：整条U走完一圈，资产会自我繁殖、穿越周期，回扣 ʸx 与万倍。</span><span class="canon">📎 30课 L28/L30；atlas seq5 万倍·人生只富一次；全谱 §0</span></div>
+</div></div>
+</div></div>
+</details>
+  <div class="note"><b>这是金标准模板。</b>《原力资产》6 章 42 节 172 目，每一级都是一条「因为→所以」的通关链、每个目都回溯公理 ʸx、每个目都挂真源（觉醒课/全谱/atlas/白皮书）。过了五标准之后，《原力创业》《原力OS》将同法复制。每个「目」≈ 一个可直接落笔的写作单元——这份目录就是逐节写正文的真源。</div>
+  <footer>
+    <div>《原力资产》四级目录 · 判断/渲染分离（zichan-outline.json + build_zichan_outline.py）· 墨绿鎏金</div>
+    <div style="margin-top:8px"><a href="../index.html">← 返回三部曲门户</a> · <a href="原力三部曲-提纲架构.html">提纲架构（书→章→节）</a> · <a href="原力三部曲-概念地图.html">知识地图</a></div>
+  </footer>
+</div></body></html>
