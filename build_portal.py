@@ -225,6 +225,12 @@ footer .q{{font-family:var(--serif);color:var(--gold);font-size:15px;margin-bott
 (HERE / "index.html").write_text(HTML, encoding="utf-8")
 print(f"wrote index.html | {len(BOOKS)}书/{TOT_CH}章/{TOT_SEC}节/{TOT_SUB}目 · 正文 {TOT_W}/{TOT_CH}章 {TOT_PIECES}篇 · 元AI {len(dv.get('organs',[]))}套 · 复盘 {len(HISTORY)}篇")
 
+# ---------- 全站统一导航（收尾·防重渲孤岛）----------
+try:
+    import apply_nav; apply_nav.run()
+except Exception as _ex:
+    print("apply_nav 跳过：", _ex)
+
 # ---------- 孤儿审计 ----------
 all_html = {str(p.relative_to(HERE)) for p in HERE.rglob("*.html") if ".git" not in p.parts}
 all_html.discard("index.html")
