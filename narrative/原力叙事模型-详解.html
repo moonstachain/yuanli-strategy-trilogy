@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>原力叙事模型 · 详解</title>
+<style>
+:root{
+  --ink:#0a1612;--leather-deep:#0d2018;--leather:#14301f;--leather-mid:#1c3d29;--panel:rgba(20,48,31,.5);--panel2:rgba(28,61,41,.38);
+  --gold-deep:#8b6f2e;--gold-foil:#b08d57;--gold:#c9a961;--gold-light:#e0c887;--gold-bright:#f4e4b8;
+  --cinnabar:#a8362c;--cinnabar-soft:#c06a5e;--jade:#4a7c59;--cream:#f0e6d2;--cream-dim:#d3c8b0;--muted:#9bae9a;--faint:#6f8470;
+  --line:rgba(201,169,97,.2);--line2:rgba(201,169,97,.1);
+  --serif:"Noto Serif SC","Songti SC","STSong",serif;--display:"Cinzel","Cormorant Garamond",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB",system-ui,sans-serif;--mono:"JetBrains Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1000px 600px at 84% -6%,rgba(74,124,89,.15),transparent 60%),radial-gradient(800px 560px at 6% 102%,rgba(201,169,97,.06),transparent 55%),linear-gradient(180deg,var(--ink),var(--leather-deep) 50%,var(--ink));background-attachment:fixed;color:var(--cream);font-family:var(--serif);line-height:1.85;min-height:100vh;padding:0 0 70px}
+.foil{background:linear-gradient(180deg,var(--gold-bright),var(--gold) 52%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.col{max-width:900px;margin:0 auto;padding:0 26px}
+/* hero */
+.hero{text-align:center;padding:64px 26px 30px;border-bottom:1px solid var(--line)}
+.kick{font-family:var(--display);font-size:12px;letter-spacing:.46em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+h1{font-weight:600;font-size:clamp(30px,5.4vw,52px);letter-spacing:.1em;line-height:1.25}
+.lead{max-width:760px;margin:22px auto 0;font-size:16.5px;color:var(--gold-light);line-height:2}
+.lead b{color:var(--gold-bright)}
+.formula{margin:26px auto 0;display:inline-flex;align-items:center;gap:14px;font-size:18px;color:var(--cream);flex-wrap:wrap;justify-content:center}
+.formula b{color:var(--gold-bright);font-size:20px}.formula .op{color:var(--gold);font-size:15px}
+.sub{margin-top:18px;font-size:12.5px;color:var(--muted);font-family:var(--sans);letter-spacing:.05em}
+/* section */
+section{padding-top:54px}
+.sec-head{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.sec-num{font-family:var(--display);font-size:34px;color:var(--gold-deep);line-height:1;flex:0 0 auto}
+.sec-t{font-size:26px;letter-spacing:.06em;color:var(--cream)}
+.sec-sub{font-family:var(--sans);font-size:13px;color:var(--muted);margin:2px 0 24px 50px;letter-spacing:.04em}
+.divider{height:1px;background:linear-gradient(90deg,var(--gold-deep),transparent);margin:0 0 4px}
+/* 声纹 cards */
+.voice{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:14px;background:var(--panel);padding:22px 26px;margin-bottom:18px}
+.voice .vh{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.voice .vn{font-family:var(--display);font-size:15px;color:var(--gold)}
+.voice .vt{font-size:20px;color:var(--gold-bright)}
+.voice .vrole{margin-left:auto;font-family:var(--sans);font-size:11.5px;color:var(--muted)}
+.voice p{font-size:15px;color:var(--cream-dim);margin:9px 0}
+.voice .lab{font-family:var(--sans);font-size:11px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;display:inline-block;margin-right:8px}
+blockquote{border-left:2px solid var(--cinnabar);background:rgba(168,54,44,.07);border-radius:0 8px 8px 0;padding:11px 17px;margin:11px 0;font-size:14.5px;color:var(--cream);line-height:1.8}
+blockquote .src{display:block;font-family:var(--sans);font-size:11px;color:var(--faint);margin-top:6px}
+/* 工艺 */
+.craft{display:flex;gap:18px;border:1px solid var(--line);border-radius:13px;background:var(--panel2);padding:18px 22px;margin-bottom:14px}
+.craft .ci{flex:0 0 54px;font-family:var(--display);font-size:30px;color:var(--gold);border-right:1px solid var(--line2);display:flex;align-items:center;justify-content:center}
+.craft .cc{flex:1}
+.craft .cn{font-size:18px;color:var(--gold-bright);margin-bottom:6px}
+.craft .cd{font-size:14px;color:var(--cream-dim)}
+.craft .cw{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:7px;border-top:1px dashed var(--line2);padding-top:7px}
+/* 节奏 flow */
+.rhythm{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin-top:6px}
+.beat{flex:1 1 150px;min-width:140px;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:12px;background:var(--panel);padding:15px 16px;text-align:center}
+.beat .bk{font-family:var(--display);font-size:11px;color:var(--gold-deep)}
+.beat .bn{font-size:19px;color:var(--gold-bright);margin:4px 0 8px}
+.beat .bd{font-family:var(--sans);font-size:11.5px;color:var(--muted);line-height:1.6}
+.beat .bq{font-size:12.5px;color:var(--cream-dim);margin-top:9px;border-top:1px solid var(--line2);padding-top:8px;font-style:italic;line-height:1.6}
+.r-arrow{flex:0 0 24px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:16px}
+/* 母意象 grid */
+.imgs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px}
+.imgcard{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:16px 18px}
+.imgcard .in{font-size:18px;color:var(--gold-bright);margin-bottom:5px}
+.imgcard .iq{font-size:13.5px;color:var(--gold-light);font-style:italic;margin-bottom:8px;line-height:1.7}
+.imgcard .iu{font-family:var(--sans);font-size:12px;color:var(--muted);line-height:1.6}
+.imgcard .iu b{color:var(--cream-dim)}
+.imgcard .isrc{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:7px}
+/* table */
+.tbl{width:100%;border-collapse:collapse;margin-top:6px;font-size:13.5px}
+.tbl th{font-family:var(--sans);font-size:11.5px;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;text-align:left;padding:9px 12px;border-bottom:1px solid var(--gold-deep)}
+.tbl td{padding:11px 12px;border-bottom:1px solid var(--line2);color:var(--cream-dim);vertical-align:top;line-height:1.7}
+.tbl td b{color:var(--gold-light);font-size:15px}
+.tbl tr:hover td{background:rgba(201,169,97,.04)}
+/* 自检 */
+.check{border:1px dashed rgba(201,169,97,.4);border-radius:14px;background:rgba(74,124,89,.06);padding:22px 26px;margin-top:6px}
+.cg{margin-bottom:18px}
+.cg .ct{font-size:17px;color:var(--gold-bright);margin-bottom:9px}
+.cg ul{list-style:none}
+.cg li{font-family:var(--sans);font-size:13.5px;color:var(--cream-dim);padding:5px 0 5px 26px;position:relative;line-height:1.6}
+.cg li::before{content:"☐";position:absolute;left:0;color:var(--gold)}
+.veto{margin-top:8px;font-size:13px;color:var(--cinnabar-soft);border-top:1px solid var(--line2);padding-top:14px;font-family:var(--sans);line-height:1.8}
+.veto b{color:#e0a08c}
+footer{text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid var(--line2)}
+footer .fq{font-size:18px;color:var(--gold);line-height:2;max-width:680px;margin:0 auto 14px}
+footer .fm{font-family:var(--sans);font-size:11.5px;color:var(--faint);letter-spacing:.04em}
+@media(max-width:720px){.imgs{grid-template-columns:1fr}.rhythm .r-arrow{width:100%;height:22px;transform:rotate(90deg)}.beat{flex-basis:100%}}
+</style></head>
+<body>
+
+<div class="hero">
+  <div class="kick">YUANLI NARRATIVE MODEL · 方法论详解</div>
+  <h1 class="foil">原力叙事模型</h1>
+  <div class="lead">这不是一份「怎么写好文章」的通用指南。它只做一件事：把原力体系那套独特的「讲法」，从老师脑子里碰巧能讲对的状态，<b>固化成一套谁拿起来都能照着复刻的生产纪律</b>。所有例句都来自白皮书、通关地图、已发成稿——一字不改。</div>
+  <div class="formula"><b>诚实的人</b><span class="op">＋</span><b>冷硬的账</b><span class="op">＋</span><b>东方的根</b><span class="op">＝</span>焊成一篇</div>
+  <div class="sub">壹 三层混编声纹　·　贰 深入浅出5工艺　·　叁 娓娓道来5段节奏　·　肆 7母意象库　·　伍 人文底色　·　陆 疯传STEPPS　·　柒 四达标自检</div>
+</div>
+
+<div class="col">
+
+<section>
+  <div class="sec-head"><span class="sec-num">〇</span><span class="sec-t foil">一句话定义</span></div>
+  <div class="sec-sub">先拿到整个模型的钥匙</div><div class="divider"></div>
+  <blockquote style="font-size:17px;border-left-color:var(--gold);background:rgba(201,169,97,.07)">原力叙事 ＝ 用<b>同行者的诚实第一人称</b>，把一条哲学公理拆成一张<b>谁都能对标的硬账</b>，再用<b>东方智慧的底色</b>收口——让读者既看穿了内幕、又算清了账、还被点醒了做人，然后忍不住转给下一个人。</blockquote>
+  <p style="font-family:var(--sans);font-size:14px;color:var(--cream-dim);margin-top:14px">它不是科普（科普只讲对错，不讲「为什么非这样不可」），不是鸡汤（鸡汤只给情绪，不给可对标的账），也不是纯硬核拆解（硬核只有冷数字，没有人味）。它是<b style="color:var(--gold-light)">三样东西焊在一起：诚实的人 + 冷硬的账 + 东方的根</b>。少任何一样，它就退化成那三种里的某一种——而那三种，市面上到处都是，不值钱。</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">壹</span><span class="sec-t foil">三层混编声纹</span></div>
+  <div class="sec-sub">这是原力叙事的指纹——别的都可仿，这个仿不像。独特不在任何单一一层，在「三层同时在场、互相咬合」</div><div class="divider"></div>
+
+  <div class="voice">
+    <div class="vh"><span class="vn">第一层</span><span class="vt">第一人称诚实思考</span><span class="vrole">同行者，不是权威</span></div>
+    <p><span class="lab">定义</span>作者站在读者旁边，不站在对面。讲的是「我也走过、我替你踩过坑」，不是「我懂你不懂、听我的」。最高级的标志是<b style="color:var(--gold-light)">主动暴露自己的不确定</b>——哪里是亲耳听的、哪里是我推的，划得清清楚楚。</p>
+    <p><span class="lab">为什么</span>AI 时代权威贬值，读者对「专家口吻」天然设防。你越像走在前面半步的同路人，读者越卸防。诚实声明不是示弱，是最高级的建信任——一个肯说「这块我没实测」的人，他说「这块我实测了」时你才信。</p>
+    <blockquote>说个我自己也想了很久才想通的事。有很长一段时间，我把「东西卖不上价」这件事，理解成了「手艺还不够好」。<span class="src">成稿开篇 —— 不是「我来教你」，是「我也困惑过」</span></blockquote>
+    <blockquote>这里我必须诚实声明一句……除了超级 VIP 那个量级是她亲口说的，其余我没有逐项拿到精确数字……我不拿推断冒充实测。<span class="src">成稿 —— 主动给方法论划边界</span></blockquote>
+  </div>
+
+  <div class="voice" style="border-left-color:var(--cinnabar)">
+    <div class="vh"><span class="vn">第二层</span><span class="vt">数学/财务冷硬拆解</span><span class="vrole">把哲学落成可对标的账</span></div>
+    <p><span class="lab">定义</span>所有抽象的「道」，必须能落成一张可以硬碰硬的账、一个可以算的数、一条恒真的定律。不停在形容词（「很厉害」「差很多」），一定要给到数量级（「100 倍」「恒真」「归零」）。</p>
+    <p><span class="lab">为什么</span>这是原力叙事跟所有「人文写作」的分水岭。光有诚实和底色，会飘成情怀文；接上冷硬的账，读者就有了可以拿回去对标自己的尺子。<b style="color:var(--gold-light)">情怀让人感动一次，账让人改一次行为。</b></p>
+    <blockquote>同样一件东西，别人的边际成本在往上走，她的在往下掉。这一上一下，就是那一百倍差距真正的发动机。<span class="src">成稿 —— 把「为什么差100倍」落成一个可指的机械结构</span></blockquote>
+    <blockquote>复利压倒单利，进化压倒不变，飞轮压倒手推……这在数学上是恒真的，不依赖任何价值判断。<span class="src">白皮书 §1.3 —— 把公理钉成定律，不是观点</span></blockquote>
+  </div>
+
+  <div class="voice" style="border-left-color:var(--jade)">
+    <div class="vh"><span class="vn">第三层</span><span class="vt">东方智慧人文底色</span><span class="vrole">讲完账，回到做人</span></div>
+    <p><span class="lab">定义</span>在冷硬的账之上，盖一层东方处世智慧——卖艺不卖身、善战者无赫赫战功、阴影即力量。它管的不是「怎么赚」，是「以什么姿势赚，才不把自己赔进去」。</p>
+    <p><span class="lab">为什么</span>纯冷硬的账会让人变成精算的机器，读者跟你走一段就累。东方底色给整套体系<b style="color:var(--gold-light)">留了一口气、一条命</b>——它是原力叙事的「魂」，也是它区别于一切纯商业方法论的地方。</p>
+    <blockquote>其实就一句话，尽量卖艺，不卖身。这句话我琢磨了很久。<span class="src">成稿 —— 把冷冰冰的风控点翻译成东方处世格言</span></blockquote>
+    <blockquote>阴影放到对的位置就成金色阴影（龟毛 → 挑剔产品质量）。<span class="src">白皮书概念14 —— 被压抑的负面，反面就是超能力</span></blockquote>
+  </div>
+  <p style="font-family:var(--sans);font-size:13.5px;color:var(--muted);background:rgba(0,0,0,.18);border-radius:10px;padding:14px 18px;margin-top:6px;line-height:1.8"><b style="color:var(--gold-light)">三层咬合的总检</b>：一段好的原力叙事，往往是「诚实地引出一个问题（一层）→ 用一张账拆穿它（二层）→ 用一句东方智慧收口（三层）」。</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">贰</span><span class="sec-t foil">深入浅出 · 5 工艺</span></div>
+  <div class="sec-sub">让一公理沉到日常，让读者零门槛上车——不是天赋，是五个可复制的动作</div><div class="divider"></div>
+
+  <div class="craft"><div class="ci">①</div><div class="cc"><div class="cn">问句开篇 + 一句话核心</div><div class="cd">用一个问句（或自白）把读者拽进来，紧接着甩出一句话就能记住的核心命题。先勾住，再交底。<br/><span style="color:var(--gold-light)">「你说，我这东西到底值不值钱？」→ 引出整篇单位经济的拆解</span></div><div class="cw">什么时候用：每一节、每一篇的开头。一个问句定「核心问题」，一句话命题定「带走物」。</div></div></div>
+
+  <div class="craft"><div class="ci">②</div><div class="cc"><div class="cn">数字反差 1:100</div><div class="cd">找到那个最刺眼的数字反差，放到标题或开篇暴击。1:100、1000 倍、归零，比任何形容词都狠。<br/><span style="color:var(--gold-light)">「一个超级客户一年顶一百个」「同样的能力，不同时代赚的钱差 1000 倍」</span></div><div class="cw">什么时候用：标题必用。找不到精确数字就找数量级，找不到数量级就找「归零」。</div></div></div>
+
+  <div class="craft"><div class="ci">③</div><div class="cc"><div class="cn">概念 → 隐喻 → 日常词</div><div class="cd">一个硬概念，先给隐喻，再给一个日常到不能再日常的词。三级一落，读者就懂了。<br/><span style="color:var(--gold-light)">心理账户 → 口袋　·　ʸx → 药引（你睡觉时它还在长）　·　克制 → 卖艺不卖身</span></div><div class="cw">什么时候用：每出现一个体系术语，立刻问：它的隐喻是什么？日常词是什么？给不出日常词，读者记不住。</div></div></div>
+
+  <div class="craft"><div class="ci">④</div><div class="cc"><div class="cn">第一人称诚实声明</div><div class="cd">在最容易被质疑的地方（数据、推断、案例），主动停下来声明边界。「这块是她亲口说的，这块是我推的。」<br/><span style="color:var(--gold-light)">「我不拿推断冒充实测。」</span></div><div class="cw">什么时候用：每当你给出一个看起来很硬、其实是推断的结论时。主动招认一次，买下读者对整篇的信任。</div></div></div>
+
+  <div class="craft"><div class="ci">⑤</div><div class="cc"><div class="cn">故事化推导 A→B→C</div><div class="cd">把一个道理拆成「问题 → 困境 → 转折 → 破局 → 结果」的弧线。不下结论让读者背，带读者走一遍，让他自己撞出结论。<br/><span style="color:var(--gold-light)">最普通的门窗 → 卷不动 → 配出生证 → 换品类随身寺庙 → 抬进情绪/社交/投资账户</span></div><div class="cw">什么时候用：讲任何核心机制时。讲清「为什么非这样不可」，比喊一百句「你应该」管用。</div></div></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">叁</span><span class="sec-t foil">娓娓道来 · 5 段节奏</span></div>
+  <div class="sec-sub">能量曲线：低（自白）→ 紧（反直觉）→ 稳（给框架）→ 实（能动手）→ 远（回到起点升维）</div><div class="divider"></div>
+  <div class="rhythm">
+    <div class="beat"><div class="bk">低</div><div class="bn">钩子</div><div class="bd">问句/自白把人拽进来</div><div class="bq">「说个我自己也想了很久才想通的事。」</div></div>
+    <div class="r-arrow">→</div>
+    <div class="beat"><div class="bk">紧</div><div class="bn">张力</div><div class="bd">反直觉，制造认知失调</div><div class="bq">「真相恰恰相反。手艺只是入场券。」</div></div>
+    <div class="r-arrow">→</div>
+    <div class="beat"><div class="bk">稳</div><div class="bn">框架</div><div class="bd">甩骨架，让读者有抓手</div><div class="bq">「单位经济，和护城河。」</div></div>
+    <div class="r-arrow">→</div>
+    <div class="beat"><div class="bk">实</div><div class="bn">落地</div><div class="bd">砸到地上，今天能动手</div><div class="bq">「先说今天就能动手的三件事……」</div></div>
+    <div class="r-arrow">→</div>
+    <div class="beat"><div class="bk">远</div><div class="bn">升华</div><div class="bd">回到开篇问句，升一维</div><div class="bq">「你卖的，到底是器物，还是确定性。」</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">肆</span><span class="sec-t foil">7 母意象库</span></div>
+  <div class="sec-sub">底色是「魂」，母意象是「身体」。单峰纪律——一篇优先选一个当主轴，让抽象命题有一个贯穿全篇的画面</div><div class="divider"></div>
+  <div class="imgs">
+    <div class="imgcard"><div class="in">药引非药渣</div><div class="iq">「药不是药渣，是药引，你睡觉时它还在长。」</div><div class="iu"><b>讲什么用它：</b>复利 / 自我繁殖 / 为什么做会生长的事</div><div class="isrc">白皮书 1.1</div></div>
+    <div class="imgcard"><div class="in">硬币翻面</div><div class="iq">你是最贵的算法 × AI 是最强的算力</div><div class="iu"><b>讲什么用它：</b>人机协作 / 认知差被放大 / 十万力</div><div class="isrc">白皮书概念17·哲12</div></div>
+    <div class="imgcard"><div class="in">蜕壳龙虾</div><div class="iq">你养的 AI 就是你心智的外显</div><div class="iu"><b>讲什么用它：</b>AI 班底 / 心智镜 / 对内造物</div><div class="isrc">白皮书概念81</div></div>
+    <div class="imgcard"><div class="in">两条腿</div><div class="iq">对外 × 对内正交繁殖，缺一条都跛</div><div class="iu"><b>讲什么用它：</b>战略与 OS 的关系 / 为什么单腿不成立</div><div class="isrc">白皮书 2.2</div></div>
+    <div class="imgcard"><div class="in">能量守恒</div><div class="iq">「这在数学上是恒真的」——非鸡汤，是定律</div><div class="iu"><b>讲什么用它：</b>把任何判断钉成定律，不容质疑</div><div class="isrc">白皮书 1.3</div></div>
+    <div class="imgcard"><div class="in">四季四关</div><div class="iq">春觉醒、夏独创、秋升维、冬锁定</div><div class="iu"><b>讲什么用它：</b>创业全程的旅程化叙事 / 财富四季</div><div class="isrc">白皮书 4.1</div></div>
+    <div class="imgcard" style="grid-column:1/-1"><div class="in">冰山 U</div><div class="iq">水下的人格底色，决定浮出水面的单位经济</div><div class="iu"><b>讲什么用它：</b>觉醒 / 阴影 / 为什么内在决定外在（原力U：症状→源头→浮出）</div><div class="isrc">白皮书概念13/14 · 通关地图卷三</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">伍</span><span class="sec-t foil">人文底色 · 5 锚</span></div>
+  <div class="sec-sub">原力叙事的「魂」由这五条东方底色撑着。写之前过一遍，否则它只是一篇聪明的商业拆解，没有原力的味道</div><div class="divider"></div>
+  <table class="tbl">
+    <tr><th>底色</th><th>一句话</th><th>它在管什么</th><th>canon 出处</th></tr>
+    <tr><td><b>守拙</b></td><td>守纪律是凡人最高战略；本手做满，远离分手</td><td>承认自己是凡人，靠纪律不靠天才，先把不输的地基打牢</td><td>白皮书哲4 · 哲2</td></tr>
+    <tr><td><b>在场</b></td><td>永远不出局，时间才站在你这边</td><td>留白、不押身家，因为重复博弈里出局成本无限大</td><td>白皮书哲11 · 概念58</td></tr>
+    <tr><td><b>松弛</b></td><td>松弛不是懒，是在该在的位置上的副产品</td><td>待在能力圈内，费力是出圈的信号，不硬撑</td><td>白皮书哲10</td></tr>
+    <tr><td><b>觉醒</b></td><td>夺回「做什么有意义」的定义权</td><td>意义主权——做自己早就有的那条线，不被外部定义</td><td>白皮书概念16 · 通关卷一0.3</td></tr>
+    <tr><td><b>阴影</b></td><td>阴影即力量，放到对的位置就是金色阴影</td><td>被压抑的负面特质，反面就是不可替代的超能力</td><td>白皮书概念13/14</td></tr>
+  </table>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">陆</span><span class="sec-t foil">疯传 STEPPS · 6 要素</span></div>
+  <div class="sec-sub">现有成稿已把六要素全命中——但那是直觉碰巧打中的。模型的任务，是把每条变成写前主动埋、写后逐条核的纪律</div><div class="divider"></div>
+  <table class="tbl">
+    <tr><th>要素</th><th>它是什么</th><th>原力叙事怎么落（主动埋的动作）</th></tr>
+    <tr><td><b>社交货币</b></td><td>讲了显得你看穿了内幕</td><td>给读者一个「内行才懂」的结构性洞察，让他想转给别人显摆</td></tr>
+    <tr><td><b>触发词</b></td><td>日常场景能勾起你想到它</td><td>把「边际成本/心理账户/30法则」做成读者生活里反复撞见的钩子</td></tr>
+    <tr><td><b>情绪</b></td><td>理性愤怒 + 敬畏 + 同情混合</td><td>「别再用战术上的勤奋，去掩盖战略上的偷懒」（理性愤怒）</td></tr>
+    <tr><td><b>公开性</b></td><td>可被社交提及的公共标签</td><td>用四关/12原型/58原子这种可命名、可标签化的体系做谈资</td></tr>
+    <tr><td><b>实用价值</b></td><td>今天就能动手的东西</td><td>永远给「今天能动手的三件事」+ 硬验收标准</td></tr>
+    <tr><td><b>故事</b></td><td>每个故事都是「为什么错→怎么对」弧线</td><td>每个案例都包装成「问题→困境→转折→破局」，不孤立讲数字</td></tr>
+  </table>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">柒</span><span class="sec-t foil">四达标自检</span></div>
+  <div class="sec-sub">写完照着核，四达标缺一不发。任一维度不过，回去改</div><div class="divider"></div>
+  <div class="check">
+    <div class="cg"><div class="ct">✅ 深入浅出（读者零门槛上车了吗）</div><ul>
+      <li>开篇有问句或自白当钩子？紧跟一句话核心命题？</li>
+      <li>有至少一个 1:100 级的数字反差砸在标题或开篇？</li>
+      <li>每个体系术语都给了隐喻 + 日常词？</li>
+      <li>最容易被质疑的数据/推断处，有诚实边界声明？</li>
+      <li>核心机制用「问题→困境→转折→破局」故事弧线讲，不是「你应该」命令句？</li>
+    </ul></div>
+    <div class="cg"><div class="ct">✅ 娓娓道来（节奏顺、能量曲线对吗）</div><ul>
+      <li>五段骨架齐全：钩子 → 张力 → 框架 → 落地 → 升华？</li>
+      <li>张力段有反直觉判断（「真相恰恰相反」级别）？</li>
+      <li>落地段给了「今天能动手的三件事」+ 硬验收标准？</li>
+      <li>结尾回到开篇问句、升一维收口（首尾呼应）？</li>
+    </ul></div>
+    <div class="cg"><div class="ct">✅ 原力文脉（是不是这个体系的味道）</div><ul>
+      <li>全篇有一个主意象贯穿（7 选一，单峰纪律）？</li>
+      <li>至少埋进 1 个 canon 母意象？</li>
+      <li>引体系概念用了 canon 原话，没擅自改写？</li>
+    </ul></div>
+    <div class="cg" style="margin-bottom:0"><div class="ct">✅ 人文底色（魂在不在）</div><ul>
+      <li>至少埋进 1 条东方底色（守拙/在场/松弛/觉醒/阴影），优先引 canon 原话？</li>
+      <li>底色出现在「账」之后，收口升维，不是空洞前置的鸡汤？</li>
+      <li>三层混编都在场：诚实第一人称 + 可对标的硬账 + 东方收口？</li>
+    </ul></div>
+    <div class="veto"><b>一票否决：</b>三层混编缺任意一层（变成纯科普 / 纯鸡汤 / 纯硬核），或主意象超过一个（没记忆点），或东方底色前置成鸡汤——任一中招，回炉，不发。</div>
+  </div>
+</section>
+
+<footer>
+  <div class="col">
+    <div class="fq">原力叙事的终极标准，不是「读者读完觉得你很厉害」，<br/>是「读者读完，看穿了一个内幕、算清了一笔账、还被点醒了怎么做人——然后忍不住转给下一个人」。</div>
+    <div class="fm">原力叙事引擎 yuanli-narrative-engine · 脊柱方法论 · 翡翠墨绿 × 鎏金 · 账算清了没？魂留住了没？意象单峰了没？读者今天能动手没？</div>
+  </div>
+</footer>
+
+</div></body></html>

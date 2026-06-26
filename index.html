@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>原力战略三部曲 · Yuanli Strategy Trilogy</title>
+<meta name="description" content="一公理 ʸx → 两条腿 → 三本书。知识地图 · 文脉座舱 · 绿皮书正文 · 原力叙事方法论。"/>
+<style>
+:root{
+  --ink:#0a1612;--leather-deep:#0d2018;--leather:#14301f;--leather-mid:#1c3d29;--panel:rgba(20,48,31,.55);--panel2:rgba(28,61,41,.4);
+  --gold-deep:#8b6f2e;--gold-foil:#b08d57;--gold:#c9a961;--gold-light:#e0c887;--gold-bright:#f4e4b8;
+  --cinnabar:#a8362c;--cinnabar-soft:#c06a5e;--jade:#4a7c59;--cream:#f0e6d2;--cream-dim:#d3c8b0;--muted:#9bae9a;--faint:#6f8470;
+  --line:rgba(201,169,97,.2);--line2:rgba(201,169,97,.1);
+  --serif:"Noto Serif SC","Songti SC","STSong",serif;--display:"Cinzel","Cormorant Garamond",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB",system-ui,sans-serif;--mono:"JetBrains Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1100px 640px at 82% -8%,rgba(74,124,89,.16),transparent 60%),radial-gradient(900px 600px at 6% 104%,rgba(201,169,97,.07),transparent 55%),linear-gradient(180deg,var(--ink),var(--leather-deep) 52%,var(--ink));background-attachment:fixed;color:var(--cream);font-family:var(--serif);line-height:1.8;min-height:100vh;padding:0 0 70px}
+.foil{background:linear-gradient(180deg,var(--gold-bright),var(--gold) 52%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+/* hero */
+.hero{text-align:center;padding:74px 26px 30px}
+.kick{font-family:var(--display);font-size:12px;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+h1{font-weight:600;font-size:clamp(34px,6.5vw,62px);letter-spacing:.16em;line-height:1.25}
+.tag{margin-top:18px;font-size:15.5px;color:var(--gold-light);letter-spacing:.04em}
+.macro{margin:26px auto 0;display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.macro b{color:var(--gold-light)} .macro .ar{color:var(--gold-deep)}
+.hr{height:1px;background:linear-gradient(90deg,transparent,var(--gold-deep),transparent);max-width:560px;margin:34px auto 0}
+/* section label */
+.sl{display:flex;align-items:center;gap:13px;margin:46px 0 18px}
+.sl .n{font-family:var(--display);font-size:12px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+.sl .ln{flex:1;height:1px;background:var(--line)}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+a.card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:15px;background:var(--panel);padding:24px 26px;transition:.2s;position:relative;overflow:hidden}
+a.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);opacity:.7;transition:.2s}
+a.card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.34)}
+a.card:hover::before{opacity:1;width:4px}
+.card .ic{font-size:24px;margin-bottom:12px;filter:saturate(.85)}
+.card .ttl{font-size:21px;color:var(--gold-bright);letter-spacing:.03em}
+.card .sub{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:3px;letter-spacing:.04em}
+.card .dsc{font-size:13.5px;color:var(--cream-dim);margin-top:11px;line-height:1.75}
+.card .go{font-family:var(--sans);font-size:12px;color:var(--gold);margin-top:14px;letter-spacing:.1em}
+.card.feature{grid-column:1/-1;background:linear-gradient(110deg,var(--panel),rgba(168,54,44,.05));border-top:3px solid var(--gold)}
+.card.feature::before{display:none}
+.card.feature .ttl{font-size:26px}
+.badge{display:inline-block;font-family:var(--sans);font-size:10.5px;letter-spacing:.12em;color:var(--cinnabar-soft);border:1px solid rgba(168,54,44,.4);border-radius:20px;padding:2px 10px;margin-left:10px;vertical-align:middle}
+.soon{border-style:dashed;opacity:.62;cursor:default}
+.soon:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.soon::before{background:var(--faint);opacity:.4}
+.soon .go{color:var(--faint)}
+footer{margin-top:54px;text-align:center;color:var(--faint);font-family:var(--sans);font-size:11.5px;line-height:1.9;border-top:1px solid var(--line2);padding-top:26px}
+footer .q{font-family:var(--serif);color:var(--gold);font-size:15px;margin-bottom:12px;letter-spacing:.03em}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line2)}
+@media(max-width:680px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="hero">
+  <div class="kick">YUANLI STRATEGY TRILOGY</div>
+  <h1 class="foil">原力战略三部曲</h1>
+  <div class="tag">一条公理，两条腿，三本书，一张图。</div>
+  <div class="macro"><b>公理 ʸx</b><span class="ar">→</span><b>原力资产</b><span class="ar">→</span><b>原力创业</b><span class="ar">→</span><b>原力OS</b><span class="ar">→</span><b>飞轮 ∞</b></div>
+  <div class="hr"></div>
+</div>
+<div class="wrap">
+
+  <div class="sl"><span class="n">正在写的书</span><span class="ln"></span></div>
+  <div class="grid">
+    <a class="card feature" href="books/01-原力资产/第一章-觉察.html">
+      <div class="ic">📖</div>
+      <div class="ttl">第一章 · 觉察<span class="badge">新 · 含 5 张插图</span></div>
+      <div class="sub">第一本《原力资产》· 向内 · 人</div>
+      <div class="dsc">AI 时代，「你」凭什么不可替代——当机器在纯信息处理上已经碾压 80 亿人？沿「冰山U」主意象，配 5 张原力线绘墨绿鎏金插图（冰山潜水者 / 硬币翻面 / 三圈交集 / 关窍五步漏斗 / 算力活·原力活两堆）。</div>
+      <div class="go">进入阅读 →</div>
+    </a>
+  </div>
+
+  <div class="sl"><span class="n">知识底座</span><span class="ln"></span></div>
+  <div class="grid">
+    <a class="card" href="trilogy/原力三部曲-概念地图.html">
+      <div class="ic">🗺</div>
+      <div class="ttl">知识地图 · 通关链</div>
+      <div class="sub">总概念 → 基石概念 → 支撑关键词</div>
+      <div class="dsc">究极完备 MECE × 内生逻辑链。每本书一条通关链（资产=原力U / 创业=四关 / OS=四部），节点即章、关键词即节、因为即过渡。写三本绿皮书 + 公众号的唯一真源。</div>
+      <div class="go">打开地图 →</div>
+    </a>
+    <a class="card" href="trilogy/原力三部曲-文脉骨架座舱.html">
+      <div class="ic">🧭</div>
+      <div class="ttl">文脉骨架座舱</div>
+      <div class="sub">一公理 · 两条腿 · 三投影</div>
+      <div class="dsc">三本书怎么咬合的关系图。资产=主根，创业=左腿（对外变现），OS=右腿（对内造物），财富是创业的产出度量。每本各有坚实理论模型：U型理论 / 跨越鸿沟 / 莫比乌斯环。</div>
+      <div class="go">进入座舱 →</div>
+    </a>
+  </div>
+
+  <div class="sl"><span class="n">写作方法论 · 原力叙事</span><span class="ln"></span></div>
+  <div class="grid">
+    <a class="card" href="narrative/原力叙事模型-详解.html">
+      <div class="ic">✍️</div>
+      <div class="ttl">原力叙事模型 · 详解</div>
+      <div class="sub">诚实的人 + 冷硬的账 + 东方的根</div>
+      <div class="dsc">怎么把一条哲学公理，写成「读者既看穿内幕、又算清账、还被点醒做人，然后忍不住转发」的内容。三层混编声纹 × 深入浅出 5 工艺 × 7 母意象库 × 疯传 STEPPS。</div>
+      <div class="go">读方法论 →</div>
+    </a>
+    <a class="card" href="narrative/原力叙事-一页图.html">
+      <div class="ic">🎨</div>
+      <div class="ttl">原力叙事 · 一页图</div>
+      <div class="sub">一页速览叙事模型</div>
+      <div class="dsc">声纹三混编、5 工艺、5 段节奏、7 母意象、人文底色、STEPPS、四达标自检——一屏看完整套生产纪律。墨绿鎏金。</div>
+      <div class="go">看一页图 →</div>
+    </a>
+  </div>
+
+  <div class="sl"><span class="n">敬请期待</span><span class="ln"></span></div>
+  <div class="grid">
+    <div class="card soon">
+      <div class="ic">🌱</div>
+      <div class="ttl">原力创业（第二本）</div>
+      <div class="sub">向外 · 事 · 左腿 · 四关</div>
+      <div class="dsc">借势 → 独创 → 升维 → 锁定。把「你」变成一门跨得过鸿沟、守得住周期的生意。章节陆续写进来。</div>
+      <div class="go">敬请期待</div>
+    </div>
+    <div class="card soon">
+      <div class="ic">⚙️</div>
+      <div class="ttl">原力OS（第三本）</div>
+      <div class="sub">向上 · 法 · 右腿 · 四部</div>
+      <div class="dsc">信念 → 图景 → 工具 → 身份。让做事本身自我进化，物种转移 x·y → ʸx。章节陆续写进来。</div>
+      <div class="go">敬请期待</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="q">一条公理，三本书，一张图。<br/>你的最终作品，是下一个能继续造物的人。</div>
+    源码与正文 · <a href="https://github.com/moonstachain/yuanli-strategy-trilogy">github.com/moonstachain/yuanli-strategy-trilogy</a><br/>
+    翡翠墨绿 × 鎏金 · 原力叙事引擎写作 · push 即更新
+  </footer>
+</div>
+</body></html>
