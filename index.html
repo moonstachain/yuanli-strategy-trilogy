@@ -20,11 +20,25 @@ h1{font-weight:600;font-size:clamp(34px,6.4vw,60px);letter-spacing:.16em}
 .kpis{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
 .kpi{font-family:var(--mono);font-size:12px;color:var(--gold-light);padding:5px 12px;border-radius:6px;background:rgba(201,169,97,.06);border-left:2px solid var(--gold)}
 .kpi b{color:var(--gold-bright);font-size:14px} .kpi.live{border-left-color:var(--jade)} .kpi.live b{color:var(--jade)}
-/* nav */
-nav{position:sticky;top:0;z-index:9;background:rgba(10,22,18,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-top:18px}
-nav .nin{max-width:1080px;margin:0 auto;padding:11px 24px;display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
-nav a{font-family:var(--sans);font-size:12px;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:7px;border:1px solid transparent;transition:.15s}
-nav a:hover{color:var(--gold-bright);border-color:var(--line);background:rgba(201,169,97,.05)}
+/* 两栏布局 + 左侧栏 */
+.layout{display:flex;align-items:flex-start;max-width:1390px;margin:0 auto}
+.sidebar{position:sticky;top:0;height:100vh;width:252px;flex:none;overflow-y:auto;padding:16px 12px 30px;border-right:1px solid var(--line);background:rgba(9,20,16,.5);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)}
+.sidebar::-webkit-scrollbar{width:6px} .sidebar::-webkit-scrollbar-thumb{background:rgba(201,169,97,.22);border-radius:3px}
+.main{flex:1;min-width:0}
+.sb-logo{display:block;text-decoration:none;font-family:var(--serif);font-size:15.5px;color:var(--gold-bright);font-weight:600;padding:7px 12px 12px;letter-spacing:.04em;border-bottom:1px solid var(--line2);margin-bottom:9px}
+.sb-logo:hover{color:#fff}
+.sb-top{margin-bottom:7px;color:var(--gold-light)!important}
+.sb-group{margin-bottom:3px}
+.sb-gh{font-family:var(--display);font-size:11px;letter-spacing:.13em;color:var(--gold);text-transform:uppercase;padding:10px 12px 5px;display:flex;align-items:baseline;gap:7px}
+.sb-rn{font-family:var(--serif);color:var(--gold-deep);font-size:12.5px}
+.sb-items{display:flex;flex-direction:column;gap:1px}
+.sb-link{display:flex;align-items:center;justify-content:space-between;gap:8px;text-decoration:none;font-family:var(--sans);font-size:13px;color:var(--muted);padding:6px 12px 6px 22px;border-radius:7px;border-left:2px solid transparent;transition:.13s;line-height:1.4}
+.sb-link:hover{color:var(--gold-bright);background:rgba(201,169,97,.06)}
+.sb-link.active{color:var(--gold-bright);background:rgba(201,169,97,.11);border-left-color:var(--gold)}
+.sb-meta{font-family:var(--mono);font-size:9.5px;color:var(--faint);white-space:nowrap}
+.sb-ext{display:block;text-decoration:none;font-family:var(--sans);font-size:12px;color:var(--faint);padding:11px 12px 0;margin-top:12px;border-top:1px solid var(--line2)}
+.sb-ext:hover{color:var(--gold-light)}
+.sb-toggle{display:none}
 /* section label */
 .sl{display:flex;align-items:baseline;gap:13px;margin:44px 0 16px}
 .sl .rn{font-family:var(--display);font-size:13px;color:var(--gold);letter-spacing:.1em} .sl .n{font-family:var(--serif);font-size:19px;color:var(--gold-bright)}
@@ -72,50 +86,50 @@ nav a:hover{color:var(--gold-bright);border-color:var(--line);background:rgba(20
 .selfdoc{max-width:880px;margin:30px auto 0;font-family:var(--sans);font-size:11.5px;color:var(--muted);border:1px dashed var(--line);border-radius:11px;padding:13px 18px;line-height:1.85} .selfdoc b{color:var(--gold-light)}
 footer{margin-top:50px;text-align:center;color:var(--faint);font-family:var(--sans);font-size:11.5px;line-height:1.95;border-top:1px solid var(--line2);padding-top:26px} footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line2)}
 footer .q{font-family:var(--serif);color:var(--gold);font-size:15px;margin-bottom:12px}
+@media(max-width:960px){.layout{flex-direction:column}.sidebar{position:static;width:auto;height:auto;border-right:none;border-bottom:1px solid var(--line);padding:12px 14px}.main{width:100%}.sb-items{flex-direction:row;flex-wrap:wrap;gap:5px}.sb-link{padding:5px 10px;border-left:none;border:1px solid var(--line2)}.sb-link.active{border-color:var(--gold);border-left:1px solid var(--gold)}.sb-logo{margin-bottom:4px}}
 @media(max-width:720px){.grid,.organs,.cols3,.future{grid-template-columns:1fr}}
 </style></head><body>
-<header>
+<div class="layout">
+<aside class="sidebar"><a class="sb-logo" href="#top">🏛 原力战略三部曲</a><a class="sb-top sb-link" href="#top" data-spy="top">★ 北极星 · 公理 ʸx</a><div class="sb-group"><div class="sb-gh"><span class="sb-rn">Ⅰ</span>统观</div><div class="sb-items"><a class="sb-link" href="#ov-0" data-spy="ov-0">总纲</a><a class="sb-link" href="#ov-1" data-spy="ov-1">概念地图</a><a class="sb-link" href="#ov-2" data-spy="ov-2">文脉骨架座舱</a><a class="sb-link" href="#ov-3" data-spy="ov-3">提纲架构</a></div></div><div class="sb-group"><div class="sb-gh"><span class="sb-rn">Ⅱ</span>三本书</div><div class="sb-items"><a class="sb-link" href="#book1" data-spy="book1">原力资产<span class="sb-meta">1/6章</span></a><a class="sb-link" href="#book2" data-spy="book2">原力创业<span class="sb-meta">0/4章</span></a><a class="sb-link" href="#book3" data-spy="book3">原力OS<span class="sb-meta">0/4章</span></a></div></div><div class="sb-group"><div class="sb-gh"><span class="sb-rn">Ⅲ</span>写作产线</div><div class="sb-items"><a class="sb-link" href="#pl-0" data-spy="pl-0">原力叙事模型</a><a class="sb-link" href="#pl-1" data-spy="pl-1">原力叙事</a><a class="sb-link" href="#pl-2" data-spy="pl-2">写作复盘</a></div></div><div class="sb-group"><div class="sb-gh"><span class="sb-rn">Ⅳ</span>元AI 四套</div><div class="sb-items"><a class="sb-link" href="#organ-0" data-spy="organ-0">一纸文脉<span class="sb-meta">G</span></a><a class="sb-link" href="#organ-1" data-spy="organ-1">一个大脑<span class="sb-meta">A</span></a><a class="sb-link" href="#organ-2" data-spy="organ-2">一张地图<span class="sb-meta">G</span></a><a class="sb-link" href="#organ-3" data-spy="organ-3">一条链路<span class="sb-meta">A</span></a></div></div><div class="sb-group"><div class="sb-gh"><span class="sb-rn">Ⅴ</span>飞轮 · 路线图</div><div class="sb-items"><a class="sb-link" href="#roadmap" data-spy="roadmap">路线图</a><a class="sb-link" href="#rm-future" data-spy="rm-future">未来书</a></div></div><a class="sb-ext" href="https://github.com/moonstachain/yuanli-strategy-trilogy" target="_blank">GitHub ↗</a></aside>
+<main class="main">
+<header id="top">
   <div class="kick">YUANLI STRATEGY TRILOGY</div>
   <h1 class="foil">原力战略三部曲</h1>
   <div class="tag">一条公理，长成一套会自繁殖的知识体</div>
   <div class="ax"><b>公理 ʸx</b> · 做会自我繁殖的事，不做一次性的事 —— 「你」× AI ＝ 会复利、万倍放大的资产</div>
   <div class="kpis"><span class="kpi"><b>3</b> 书</span><span class="kpi"><b>14</b> 章</span><span class="kpi"><b>138</b> 节</span><span class="kpi"><b>604</b> 目</span><span class="kpi"><b>4</b> 脊骨</span><span class="kpi live">正文 <b>1/14</b> 章 · 2 篇成稿</span></div>
 </header>
-<nav><div class="nin">
-  <a href="#overview">统观</a><a href="#books">三本书</a><a href="#pipeline">写作产线</a><a href="#systems">元AI 四套</a><a href="#roadmap">进度 · 路线图</a>
-  <a href="https://github.com/moonstachain/yuanli-strategy-trilogy" target="_blank">GitHub ↗</a>
-</div></nav>
 <div class="wrap">
 
   <div class="sl" id="overview"><span class="rn">Ⅰ</span><span class="n">统观 · 一眼看全</span><span class="ln"></span><span class="hint">先看全局，再钻细节</span></div>
-  <div class="grid"><a class="card feature" href="trilogy/原力战略三部曲-总纲.html">
+  <div class="grid"><a class="card feature" id="ov-0" href="trilogy/原力战略三部曲-总纲.html">
   <div class="c-h"><span class="ic">🏛</span><span class="ttl">总纲 · 一体化四级大纲</span><span class="st">✅</span></div>
   <div class="dsc">把三本织成一棵五级树（公理→3书→14章→138节→604目）+ 脊骨穿透矩阵：点一个脊骨，跨三本高亮它穿过的所有节。</div>
-  <div class="when">何时点进来 · 想一页统观全局、看「三本其实是一本」</div></a><a class="card" href="trilogy/原力三部曲-概念地图.html">
+  <div class="when">何时点进来 · 想一页统观全局、看「三本其实是一本」</div></a><a class="card" id="ov-1" href="trilogy/原力三部曲-概念地图.html">
   <div class="c-h"><span class="ic">🗺</span><span class="ttl">概念地图 · 通关链</span><span class="st">✅</span></div>
   <div class="dsc">总概念 → 基石概念 → 支撑关键词，MECE 完备 × 内生逻辑链。</div>
-  <div class="when">何时点进来 · 想按概念找入口、看概念间的因果链</div></a><a class="card" href="trilogy/原力三部曲-文脉骨架座舱.html">
+  <div class="when">何时点进来 · 想按概念找入口、看概念间的因果链</div></a><a class="card" id="ov-2" href="trilogy/原力三部曲-文脉骨架座舱.html">
   <div class="c-h"><span class="ic">🧭</span><span class="ttl">文脉骨架座舱</span><span class="st">✅</span></div>
   <div class="dsc">三本书怎么咬合的关系图：资产=主根，创业=左腿，OS=右腿；U / 鸿沟 / 莫比乌斯三模型。</div>
-  <div class="when">何时点进来 · 想看三本的咬合关系与理论模型</div></a><a class="card" href="trilogy/原力三部曲-提纲架构.html">
+  <div class="when">何时点进来 · 想看三本的咬合关系与理论模型</div></a><a class="card" id="ov-3" href="trilogy/原力三部曲-提纲架构.html">
   <div class="c-h"><span class="ic">📋</span><span class="ttl">提纲架构</span><span class="st">✅</span></div>
   <div class="dsc">14 章 138 节提纲 + 究竟完备/递归论证 + 元AI 四套交付物。</div>
   <div class="when">何时点进来 · 想看章节提纲、为什么恰好三本</div></a></div>
 
   <div class="sl" id="books"><span class="rn">Ⅱ</span><span class="n">三本书 · 逐本深入</span><span class="ln"></span><span class="hint">书 → 章 → 节 → 目（递归脊柱）· 进度自动追踪</span></div>
-  <div class="bk">
+  <div class="bk" id="book1">
   <div class="bk-head"><span class="bk-seal">一</span><div class="bk-id">
     <div class="bk-n">《原力资产》<span class="bk-ax">向内 · 人 · 1 · 模型＝U 型理论（Scharmer）</span></div>
     <div class="bk-q">AI 时代，「你」凭什么不可替代？</div></div>
     <a class="bk-l4" href="trilogy/原力资产-四级目录.html">📑 四级目录<span class="l4c">6章 42节 <b>172</b>目</span></a></div>
   <div class="prog"><div class="prog-bar"><span style="width:17%"></span></div><span class="prog-t">正文 1/6 章</span></div>
-  <div class="chaps"><a class="chap done" href="books/01-原力资产/第一章-觉察.html">✅ 第一章 · 觉察</a><span class="chap todo">🔮 第二章 · 高能<span class="cn">33目</span></span><span class="chap todo">🔮 第三章 · 阴影（U底）<span class="cn">21目</span></span><span class="chap todo">🔮 第四章 · 整合（上升）<span class="cn">24目</span></span><span class="chap todo">🔮 第五章 · 资产（浮出）<span class="cn">30目</span></span><span class="chap todo">🔮 第六章 · 复利<span class="cn">36目</span></span></div><div class="bk-note">💰 财富（守富/30法则/数据飞轮/康波配置/三钱·IPS）全部折入第 6 章「复利」·三部曲内闭环·不另立《原力财富》。</div></div><div class="bk">
+  <div class="chaps"><a class="chap done" href="books/01-原力资产/第一章-觉察.html">✅ 第一章 · 觉察</a><span class="chap todo">🔮 第二章 · 高能<span class="cn">33目</span></span><span class="chap todo">🔮 第三章 · 阴影（U底）<span class="cn">21目</span></span><span class="chap todo">🔮 第四章 · 整合（上升）<span class="cn">24目</span></span><span class="chap todo">🔮 第五章 · 资产（浮出）<span class="cn">30目</span></span><span class="chap todo">🔮 第六章 · 复利<span class="cn">36目</span></span></div><div class="bk-note">💰 财富（守富/30法则/数据飞轮/康波配置/三钱·IPS）全部折入第 6 章「复利」·三部曲内闭环·不另立《原力财富》。</div></div><div class="bk" id="book2">
   <div class="bk-head"><span class="bk-seal">二</span><div class="bk-id">
     <div class="bk-n">《原力创业》<span class="bk-ax">向外 · 事 · 左腿 · 1 → 万 · 模型＝跨越鸿沟（Moore）</span></div>
     <div class="bk-q">怎么让「势×力」变成会复利的钱？</div></div>
     <a class="bk-l4" href="trilogy/原力创业-四级目录.html">📑 四级目录<span class="l4c">4章 51节 <b>232</b>目</span></a></div>
   <div class="prog"><div class="prog-bar"><span style="width:0%"></span></div><span class="prog-t">正文 0/4 章</span></div>
-  <div class="chaps"><span class="chap todo">🔮 第一关 · 借势 · 关一·借势<span class="cn">57目</span></span><span class="chap todo">🔮 第二关 · 独创 · 独创（关二·品类独创·三角定位）<span class="cn">53目</span></span><span class="chap todo">🔮 第三关 · 升维 · 升维（关三·收成一仗·变现端）<span class="cn">65目</span></span><span class="chap todo">🔮 第四关 · 锁定 · 锁定（关四·收成一图·防御端）<span class="cn">57目</span></span></div></div><div class="bk">
+  <div class="chaps"><span class="chap todo">🔮 第一关 · 借势 · 关一·借势<span class="cn">57目</span></span><span class="chap todo">🔮 第二关 · 独创 · 独创（关二·品类独创·三角定位）<span class="cn">53目</span></span><span class="chap todo">🔮 第三关 · 升维 · 升维（关三·收成一仗·变现端）<span class="cn">65目</span></span><span class="chap todo">🔮 第四关 · 锁定 · 锁定（关四·收成一图·防御端）<span class="cn">57目</span></span></div></div><div class="bk" id="book3">
   <div class="bk-head"><span class="bk-seal">三</span><div class="bk-id">
     <div class="bk-n">《原力OS》<span class="bk-ax">向上 · 法 · 右腿 · ×万倍 · 模型＝莫比乌斯环 · CAS</span></div>
     <div class="bk-q">怎么把「一个你」升级成「会造物的物种」？</div></div>
@@ -124,23 +138,23 @@ footer .q{font-family:var(--serif);color:var(--gold);font-size:15px;margin-botto
   <div class="chaps"><span class="chap todo">🔮 信念部 · 信念部（为什么转 · 看清 1·x 天花板，决意从 x^y 跳向 ʸx）<span class="cn">42目</span></span><span class="chap todo">🔮 图景部 · 图景部（转向哪 · 立出生证明，把 ʸx 转向哪画成可决策地图）<span class="cn">52目</span></span><span class="chap todo">🔮 工具部 · 工具部（怎么转 · 装能日夜自转的代谢系统，把方向落成可运转链路）<span class="cn">50目</span></span><span class="chap todo">🔮 身份部 · 原力OS · 身份部（转完是谁）<span class="cn">56目</span></span><a class="chap extra" href="books/03-原力OS/最小闭环.html">📖 最小闭环<span class="cn">专题</span></a></div></div>
 
   <div class="sl" id="pipeline"><span class="rn">Ⅲ</span><span class="n">写作产线 · 怎么写出来的</span><span class="ln"></span><span class="hint">方法论 + 自进化复盘</span></div>
-  <div class="grid"><a class="card" href="narrative/原力叙事模型-详解.html">
+  <div class="grid"><a class="card" id="pl-0" href="narrative/原力叙事模型-详解.html">
   <div class="c-h"><span class="ic">✍️</span><span class="ttl">原力叙事模型 · 详解</span><span class="st">✅</span></div>
   <div class="dsc">诚实的人 + 冷硬的账 + 东方的根：三层混编声纹 × 5 工艺 × 7 母意象 × STEPPS。</div>
-  <div class="when">何时点进来 · 动笔前定声纹、排节奏、选母意象</div></a><a class="card" href="narrative/原力叙事-一页图.html">
+  <div class="when">何时点进来 · 动笔前定声纹、排节奏、选母意象</div></a><a class="card" id="pl-1" href="narrative/原力叙事-一页图.html">
   <div class="c-h"><span class="ic">🎨</span><span class="ttl">原力叙事 · 一页图</span><span class="st">✅</span></div>
   <div class="dsc">一屏速览整套叙事生产纪律。</div>
-  <div class="when">何时点进来 · 想快速回顾写作方法</div></a><a class="card" href="review/index.html">
+  <div class="when">何时点进来 · 想快速回顾写作方法</div></a><a class="card" id="pl-2" href="review/index.html">
   <div class="c-h"><span class="ic">🪞</span><span class="ttl">写作复盘 · 自进化</span><span class="st">✅</span></div>
   <div class="dsc">每写完一章：FTF 三维自评（共鸣/可信/共识）+ 你的打分 → 自我改进。越写策略越丰富。</div>
   <div class="when">何时点进来 · 看写作质量轨迹、补哪块短板</div></a></div>
   <div class="htrack"><div style="font-family:var(--sans);font-size:11px;color:var(--faint);margin-bottom:7px">复盘轨迹（FTF 三维 · 越写越准）</div><div class="ht"><span class="ht-c">第一章·觉察</span><span class="ht-bars">共鸣 <b>90</b> · 可信 <b>62</b> · 共识 <b>88</b></span><span class="ht-o">自评 80.0</span></div><div class="ht"><span class="ht-c">最小闭环</span><span class="ht-bars">共鸣 <b>85</b> · 可信 <b>89</b> · 共识 <b>88</b></span><span class="ht-o">自评 87.0</span></div></div>
 
   <div class="sl" id="systems"><span class="rn">Ⅳ</span><span class="n">元AI 四套 · 通往哪</span><span class="ln"></span><span class="hint">四部转出来的四交付物 = 四个正在跑的真实系统</span></div>
-  <div class="organs"><div class="organ" style="--mc:#5a9c6e"><div class="o-h"><span class="o-n">一纸文脉</span><span class="o-or">灵魂 · 你是谁</span><span class="o-m">🟢</span></div>
-  <div class="o-d">把『你是谁』写成一页可喂 AI 的上下文</div><div class="o-s">真实系统 · yuanli-strategy-trilogy（这套三部曲文脉本身）</div><div class="o-mn">理论最完备 · 骨架锁定 · 血肉在填</div></div><div class="organ" style="--mc:#c9a961"><div class="o-h"><span class="o-n">一个大脑</span><span class="o-or">记忆 · 你知道什么</span><span class="o-m">🟡</span></div>
-  <div class="o-d">领域知识沉淀成可检索、会成长的库</div><div class="o-s">真实系统 · GBRAIN / enterprise-brain</div><div class="o-mn">脚手架 A- · 但『过目不忘、学不进』· 蒸馏停了</div></div><div class="organ" style="--mc:#5a9c6e"><div class="o-h"><span class="o-n">一张地图</span><span class="o-or">判断 · 你怎么决策</span><span class="o-m">🟢</span></div>
-  <div class="o-d">商业模式 × 关键战役画成可决策的因果图</div><div class="o-s">真实系统 · cbm-osa-traceability</div><div class="o-mn">289 组件 grounded · 数据最实 · 但复利没接、验证空</div></div><div class="organ" style="--mc:#c9a961"><div class="o-h"><span class="o-n">一条链路</span><span class="o-or">手脚 · 你怎么执行</span><span class="o-m">🟡</span></div>
+  <div class="organs"><div class="organ" id="organ-0" style="--mc:#5a9c6e"><div class="o-h"><span class="o-n">一纸文脉</span><span class="o-or">灵魂 · 你是谁</span><span class="o-m">🟢</span></div>
+  <div class="o-d">把『你是谁』写成一页可喂 AI 的上下文</div><div class="o-s">真实系统 · yuanli-strategy-trilogy（这套三部曲文脉本身）</div><div class="o-mn">理论最完备 · 骨架锁定 · 血肉在填</div></div><div class="organ" id="organ-1" style="--mc:#c9a961"><div class="o-h"><span class="o-n">一个大脑</span><span class="o-or">记忆 · 你知道什么</span><span class="o-m">🟡</span></div>
+  <div class="o-d">领域知识沉淀成可检索、会成长的库</div><div class="o-s">真实系统 · GBRAIN / enterprise-brain</div><div class="o-mn">脚手架 A- · 但『过目不忘、学不进』· 蒸馏停了</div></div><div class="organ" id="organ-2" style="--mc:#5a9c6e"><div class="o-h"><span class="o-n">一张地图</span><span class="o-or">判断 · 你怎么决策</span><span class="o-m">🟢</span></div>
+  <div class="o-d">商业模式 × 关键战役画成可决策的因果图</div><div class="o-s">真实系统 · cbm-osa-traceability</div><div class="o-mn">289 组件 grounded · 数据最实 · 但复利没接、验证空</div></div><div class="organ" id="organ-3" style="--mc:#c9a961"><div class="o-h"><span class="o-n">一条链路</span><span class="o-or">手脚 · 你怎么执行</span><span class="o-m">🟡</span></div>
   <div class="o-d">决策三段 OSA 接成可自动跑的 agent 流水线</div><div class="o-s">真实系统 · 随身智库 2051 组件</div><div class="o-mn">路由清楚 · 但验证轴全空</div></div></div>
   <div class="flow"><b>数据流</b> · 文脉（定义你）→ 大脑（攒『你风格』的知识）→ 地图（找决策支点·出 3 候选）→ 链路（OSA 三段 → 执行+验真 → 回流大脑）</div>
   <div class="lastmile">四套都搭起来了，但「会自繁殖」那层（复利/蒸馏/验证回流）普遍卡——这是 ʸx 的最后一公里。成熟度：文脉 &gt; 地图 &gt; 大脑 &gt; 链路。</div>
@@ -151,7 +165,7 @@ footer .q{font-family:var(--serif);color:var(--gold);font-size:15px;margin-botto
     <div class="rmcard rm-near"><h4>🚧 近期（在做）</h4><ul><li>逐章写正文（原力叙事写作链 FTF）· 进度看板自动填满</li><li>补《原力资产·觉察》历史举证（T 可信从 62 提上去）</li><li>元AI 四套 last-mile 补缝（说明书范本 / 蒸馏 / 验证轴）</li></ul></div>
     <div class="rmcard rm-far"><h4>🔮 远期（在望）</h4><ul><li>元AI 四套从「交付物已有」→「生产级验证运转」的成熟度爬升</li><li>康波通史完整历史内容填充（FTF 可信·博古通今锚）</li><li>三本正文全部成稿 → 成书</li></ul></div>
   </div>
-  <div style="font-family:var(--sans);font-size:12px;color:var(--muted);margin:16px 0 8px">🔮 未来书（不开坑·观察后定）</div>
+  <div id="rm-future" style="font-family:var(--sans);font-size:12px;color:var(--muted);margin:16px 0 8px">🔮 未来书（不开坑·观察后定）</div>
   <div class="future"><div class="fb"><b>《原力财富》</b><span class="fb-s">🔮 观察后定</span><div class="fb-n">现折入《原力资产》复利章。若复利章 &gt;10 万字或读者单独需求，再议拆分。</div></div><div class="fb"><b>《原力元AI 应用手册》</b><span class="fb-s">🔮 观察后定</span><div class="fb-n">现写在《原力OS》身份部。元AI 四套成熟后，或可拆成独立实操指南。</div></div></div>
 
   <div class="selfdoc"><b>这个门户的结构本身满足 究竟/完备/递进/具体/递归：</b>
@@ -166,4 +180,5 @@ footer .q{font-family:var(--serif);color:var(--gold);font-size:15px;margin-botto
     <div class="q">「你」× AI ＝ 会自我繁殖、万倍放大的资产（动词需主语+宾语）</div>
     <div>原力战略三部曲 · 门户（数据驱动·活的）· 墨绿鎏金 · <a href="https://github.com/moonstachain/yuanli-strategy-trilogy" target="_blank">moonstachain/yuanli-strategy-trilogy</a></div>
   </footer>
-</div></body></html>
+</div></main></div>
+<script>(function(){var L=document.querySelectorAll('.sb-link[data-spy]');var m={};L.forEach(function(a){m[a.getAttribute('data-spy')]=a;});var T=[];Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)T.push(el);});if(!('IntersectionObserver' in window))return;var o=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){L.forEach(function(a){a.classList.remove('active');});var a=m[en.target.id];if(a){a.classList.add('active');}}});},{rootMargin:'-12% 0px -78% 0px',threshold:0});T.forEach(function(t){o.observe(t);});})();</script></body></html>

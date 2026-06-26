@@ -46,10 +46,11 @@ TOT_PIECES = TOT_W + sum(len(b["extras"]) for b in BOOKS)
 TOT_SEC = sum(b["stats"]["sections"] for b in BOOKS)
 TOT_SUB = sum(b["stats"]["subs"] for b in BOOKS)
 
-def card(en):
+def card(en, cid=""):
     badge, _ = ST.get(en.get("status", "live"), ("", ""))
     cls = "card feature" if en.get("feature") else "card"
-    return f'''<a class="{cls}" href="{e(reg(en["href"]))}">
+    idattr = f' id="{cid}"' if cid else ""
+    return f'''<a class="{cls}"{idattr} href="{e(reg(en["href"]))}">
   <div class="c-h"><span class="ic">{e(en.get("icon",""))}</span><span class="ttl">{e(en["title"])}</span><span class="st">{badge}</span></div>
   <div class="dsc">{e(en["desc"])}</div>
   <div class="when">何时点进来 · {e(en.get("when",""))}</div></a>'''
@@ -64,7 +65,7 @@ def book_block(bp):
             chips += f'<span class="chap todo">🔮 {e(c["title"])} · {e(c["name"])}<span class="cn">{c["nsub"]}目</span></span>'
     extra = "".join(f'<a class="chap extra" href="{e(reg(x["href"]))}">📖 {e(x["title"])}<span class="cn">专题</span></a>' for x in bp["extras"])
     note = f'<div class="bk-note">💰 {e(b["note"])}</div>' if b.get("note") else ""
-    return f'''<div class="bk">
+    return f'''<div class="bk" id="book{b["seq"]}">
   <div class="bk-head"><span class="bk-seal">{cn(b["seq"])}</span><div class="bk-id">
     <div class="bk-n">《{e(b["name"])}》<span class="bk-ax">{e(b["axis"])} · {e(b["scale"])} · 模型＝{e(b["model"])}</span></div>
     <div class="bk-q">{e(b["question"])}</div></div>
@@ -75,9 +76,9 @@ def book_block(bp):
 # ---------- 元AI 四套（读 delivers）----------
 dv = OUTLINE["books"][2].get("delivers", {})
 organs = ""
-for o in dv.get("organs", []):
+for i, o in enumerate(dv.get("organs", [])):
     dot, col = MAT.get(o.get("mat", "A"), ("🟡", "#c9a961"))
-    organs += f'''<div class="organ" style="--mc:{col}"><div class="o-h"><span class="o-n">{e(o["name"])}</span><span class="o-or">{e(o["organ"])}</span><span class="o-m">{dot}</span></div>
+    organs += f'''<div class="organ" id="organ-{i}" style="--mc:{col}"><div class="o-h"><span class="o-n">{e(o["name"])}</span><span class="o-or">{e(o["organ"])}</span><span class="o-m">{dot}</span></div>
   <div class="o-d">{e(o["def"])}</div><div class="o-s">真实系统 · {e(o["system"])}</div><div class="o-mn">{e(o["mnote"])}</div></div>'''
 
 # ---------- 复盘轨迹（读 history）----------
@@ -91,9 +92,37 @@ def rlist(items): return "".join(f'<li>{e(x)}</li>' for x in items)
 future = "".join(f'<div class="fb"><b>{e(f["name"])}</b><span class="fb-s">{e(f["status"])}</span><div class="fb-n">{e(f["note"])}</div></div>' for f in RM.get("future_books", []))
 
 M = PM["meta"]
-ov_cards = "".join(card(x) for x in PM["overview"])
-pl_cards = "".join(card(x) for x in PM["pipeline"])
+ov_cards = "".join(card(x, f"ov-{i}") for i, x in enumerate(PM["overview"]))
+pl_cards = "".join(card(x, f"pl-{i}") for i, x in enumerate(PM["pipeline"]))
 books_html = "".join(book_block(b) for b in BOOKS)
+
+# ---------- 左侧栏（一级/二级目录·从同源数据生成·scroll-spy）----------
+def _short(t): return t.split(" · ")[0]
+def sb_group(rn, name, items):
+    lis = ""
+    for lbl, anc, meta in items:
+        m = f'<span class="sb-meta">{e(meta)}</span>' if meta else ""
+        lis += f'<a class="sb-link" href="#{anc}" data-spy="{anc}">{e(lbl)}{m}</a>'
+    return f'<div class="sb-group"><div class="sb-gh"><span class="sb-rn">{e(rn)}</span>{e(name)}</div><div class="sb-items">{lis}</div></div>'
+
+SIDEBAR = (
+    f'<a class="sb-logo" href="#top">🏛 {e(M["title"])}</a>'
+    f'<a class="sb-top sb-link" href="#top" data-spy="top">★ 北极星 · 公理 ʸx</a>'
+    + sb_group("Ⅰ", "统观", [(_short(x["title"]), f"ov-{i}", None) for i, x in enumerate(PM["overview"])])
+    + sb_group("Ⅱ", "三本书", [(b["meta"]["name"], f"book{b['meta']['seq']}", f"{b['n_written']}/{b['n_total']}章") for b in BOOKS])
+    + sb_group("Ⅲ", "写作产线", [(_short(x["title"]), f"pl-{i}", None) for i, x in enumerate(PM["pipeline"])])
+    + sb_group("Ⅳ", "元AI 四套", [(o["name"], f"organ-{i}", o.get("mat", "")) for i, o in enumerate(dv.get("organs", []))])
+    + sb_group("Ⅴ", "飞轮 · 路线图", [("路线图", "roadmap", None), ("未来书", "rm-future", None)])
+    + f'<a class="sb-ext" href="{e(M["github"])}" target="_blank">GitHub ↗</a>'
+)
+
+SPY_JS = ("(function(){var L=document.querySelectorAll('.sb-link[data-spy]');var m={};"
+"L.forEach(function(a){m[a.getAttribute('data-spy')]=a;});var T=[];"
+"Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)T.push(el);});"
+"if(!('IntersectionObserver' in window))return;var o=new IntersectionObserver(function(es){"
+"es.forEach(function(en){if(en.isIntersecting){L.forEach(function(a){a.classList.remove('active');});"
+"var a=m[en.target.id];if(a){a.classList.add('active');}}});},{rootMargin:'-12% 0px -78% 0px',threshold:0});"
+"T.forEach(function(t){o.observe(t);});})();")
 
 HTML = f'''<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -117,11 +146,25 @@ h1{{font-weight:600;font-size:clamp(34px,6.4vw,60px);letter-spacing:.16em}}
 .kpis{{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}}
 .kpi{{font-family:var(--mono);font-size:12px;color:var(--gold-light);padding:5px 12px;border-radius:6px;background:rgba(201,169,97,.06);border-left:2px solid var(--gold)}}
 .kpi b{{color:var(--gold-bright);font-size:14px}} .kpi.live{{border-left-color:var(--jade)}} .kpi.live b{{color:var(--jade)}}
-/* nav */
-nav{{position:sticky;top:0;z-index:9;background:rgba(10,22,18,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-top:18px}}
-nav .nin{{max-width:1080px;margin:0 auto;padding:11px 24px;display:flex;gap:7px;flex-wrap:wrap;justify-content:center}}
-nav a{{font-family:var(--sans);font-size:12px;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:7px;border:1px solid transparent;transition:.15s}}
-nav a:hover{{color:var(--gold-bright);border-color:var(--line);background:rgba(201,169,97,.05)}}
+/* 两栏布局 + 左侧栏 */
+.layout{{display:flex;align-items:flex-start;max-width:1390px;margin:0 auto}}
+.sidebar{{position:sticky;top:0;height:100vh;width:252px;flex:none;overflow-y:auto;padding:16px 12px 30px;border-right:1px solid var(--line);background:rgba(9,20,16,.5);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)}}
+.sidebar::-webkit-scrollbar{{width:6px}} .sidebar::-webkit-scrollbar-thumb{{background:rgba(201,169,97,.22);border-radius:3px}}
+.main{{flex:1;min-width:0}}
+.sb-logo{{display:block;text-decoration:none;font-family:var(--serif);font-size:15.5px;color:var(--gold-bright);font-weight:600;padding:7px 12px 12px;letter-spacing:.04em;border-bottom:1px solid var(--line2);margin-bottom:9px}}
+.sb-logo:hover{{color:#fff}}
+.sb-top{{margin-bottom:7px;color:var(--gold-light)!important}}
+.sb-group{{margin-bottom:3px}}
+.sb-gh{{font-family:var(--display);font-size:11px;letter-spacing:.13em;color:var(--gold);text-transform:uppercase;padding:10px 12px 5px;display:flex;align-items:baseline;gap:7px}}
+.sb-rn{{font-family:var(--serif);color:var(--gold-deep);font-size:12.5px}}
+.sb-items{{display:flex;flex-direction:column;gap:1px}}
+.sb-link{{display:flex;align-items:center;justify-content:space-between;gap:8px;text-decoration:none;font-family:var(--sans);font-size:13px;color:var(--muted);padding:6px 12px 6px 22px;border-radius:7px;border-left:2px solid transparent;transition:.13s;line-height:1.4}}
+.sb-link:hover{{color:var(--gold-bright);background:rgba(201,169,97,.06)}}
+.sb-link.active{{color:var(--gold-bright);background:rgba(201,169,97,.11);border-left-color:var(--gold)}}
+.sb-meta{{font-family:var(--mono);font-size:9.5px;color:var(--faint);white-space:nowrap}}
+.sb-ext{{display:block;text-decoration:none;font-family:var(--sans);font-size:12px;color:var(--faint);padding:11px 12px 0;margin-top:12px;border-top:1px solid var(--line2)}}
+.sb-ext:hover{{color:var(--gold-light)}}
+.sb-toggle{{display:none}}
 /* section label */
 .sl{{display:flex;align-items:baseline;gap:13px;margin:44px 0 16px}}
 .sl .rn{{font-family:var(--display);font-size:13px;color:var(--gold);letter-spacing:.1em}} .sl .n{{font-family:var(--serif);font-size:19px;color:var(--gold-bright)}}
@@ -169,19 +212,19 @@ nav a:hover{{color:var(--gold-bright);border-color:var(--line);background:rgba(2
 .selfdoc{{max-width:880px;margin:30px auto 0;font-family:var(--sans);font-size:11.5px;color:var(--muted);border:1px dashed var(--line);border-radius:11px;padding:13px 18px;line-height:1.85}} .selfdoc b{{color:var(--gold-light)}}
 footer{{margin-top:50px;text-align:center;color:var(--faint);font-family:var(--sans);font-size:11.5px;line-height:1.95;border-top:1px solid var(--line2);padding-top:26px}} footer a{{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line2)}}
 footer .q{{font-family:var(--serif);color:var(--gold);font-size:15px;margin-bottom:12px}}
+@media(max-width:960px){{.layout{{flex-direction:column}}.sidebar{{position:static;width:auto;height:auto;border-right:none;border-bottom:1px solid var(--line);padding:12px 14px}}.main{{width:100%}}.sb-items{{flex-direction:row;flex-wrap:wrap;gap:5px}}.sb-link{{padding:5px 10px;border-left:none;border:1px solid var(--line2)}}.sb-link.active{{border-color:var(--gold);border-left:1px solid var(--gold)}}.sb-logo{{margin-bottom:4px}}}}
 @media(max-width:720px){{.grid,.organs,.cols3,.future{{grid-template-columns:1fr}}}}
 </style></head><body>
-<header>
+<div class="layout">
+<aside class="sidebar">{SIDEBAR}</aside>
+<main class="main">
+<header id="top">
   <div class="kick">{e(M["en"])}</div>
   <h1 class="foil">{e(M["title"])}</h1>
   <div class="tag">{e(M["tagline"])}</div>
   <div class="ax"><b>{e(M["axiom_name"])}</b> · {e(M["axiom_def"])}</div>
   <div class="kpis"><span class="kpi"><b>{len(BOOKS)}</b> 书</span><span class="kpi"><b>{TOT_CH}</b> 章</span><span class="kpi"><b>{TOT_SEC}</b> 节</span><span class="kpi"><b>{TOT_SUB}</b> 目</span><span class="kpi"><b>4</b> 脊骨</span><span class="kpi live">正文 <b>{TOT_W}/{TOT_CH}</b> 章 · {TOT_PIECES} 篇成稿</span></div>
 </header>
-<nav><div class="nin">
-  <a href="#overview">统观</a><a href="#books">三本书</a><a href="#pipeline">写作产线</a><a href="#systems">元AI 四套</a><a href="#roadmap">进度 · 路线图</a>
-  <a href="{e(M["github"])}" target="_blank">GitHub ↗</a>
-</div></nav>
 <div class="wrap">
 
   <div class="sl" id="overview"><span class="rn">Ⅰ</span><span class="n">统观 · 一眼看全</span><span class="ln"></span><span class="hint">先看全局，再钻细节</span></div>
@@ -205,7 +248,7 @@ footer .q{{font-family:var(--serif);color:var(--gold);font-size:15px;margin-bott
     <div class="rmcard rm-near"><h4>🚧 近期（在做）</h4><ul>{rlist(RM.get("near",[]))}</ul></div>
     <div class="rmcard rm-far"><h4>🔮 远期（在望）</h4><ul>{rlist(RM.get("far",[]))}</ul></div>
   </div>
-  <div style="font-family:var(--sans);font-size:12px;color:var(--muted);margin:16px 0 8px">🔮 未来书（不开坑·观察后定）</div>
+  <div id="rm-future" style="font-family:var(--sans);font-size:12px;color:var(--muted);margin:16px 0 8px">🔮 未来书（不开坑·观察后定）</div>
   <div class="future">{future}</div>
 
   <div class="selfdoc"><b>这个门户的结构本身满足 究竟/完备/递进/具体/递归：</b>
@@ -220,7 +263,8 @@ footer .q{{font-family:var(--serif);color:var(--gold);font-size:15px;margin-bott
     <div class="q">{e(OUTLINE["axiom"]["subject"])}</div>
     <div>原力战略三部曲 · 门户（数据驱动·活的）· 墨绿鎏金 · <a href="{e(M["github"])}" target="_blank">moonstachain/yuanli-strategy-trilogy</a></div>
   </footer>
-</div></body></html>'''
+</div></main></div>
+<script>{SPY_JS}</script></body></html>'''
 
 (HERE / "index.html").write_text(HTML, encoding="utf-8")
 print(f"wrote index.html | {len(BOOKS)}书/{TOT_CH}章/{TOT_SEC}节/{TOT_SUB}目 · 正文 {TOT_W}/{TOT_CH}章 {TOT_PIECES}篇 · 元AI {len(dv.get('organs',[]))}套 · 复盘 {len(HISTORY)}篇")
