@@ -31,16 +31,28 @@ def book_block(b, idx):
       <div class="secs">{secs}</div></div>'''
     gc = f'<div class="gc">{e(b.get("guanchuan",""))}</div>' if b.get("guanchuan") else ''
     nsec = sum(len(c["sections"]) for c in b["chapters"])
+    deliv = ""
+    dv = b.get("delivers")
+    if dv:
+        ML = {"G": "#5a9c6e", "A": "#c9a961", "R": "#c0524a"}; MD = {"G": "🟢", "A": "🟡", "R": "🔴"}
+        cards = "".join(f'''<div class="organ" style="--mc:{ML.get(o.get("mat","A"))}">
+        <div class="o-h"><span class="o-n">{e(o["name"])}</span><span class="o-or">{e(o["organ"])}</span></div>
+        <div class="o-d">{e(o["def"])}</div><div class="o-lack">{e(o["lack"])}</div>
+        <div class="o-real">{MD.get(o.get("mat","A"))} <b>真实系统</b> {e(o["system"])}<span class="o-mn">{e(o["mnote"])}</span></div>
+        <div class="o-bi">由「{e(o["builds_in"])}」造</div></div>''' for o in dv["organs"])
+        note = f'<div class="dn">{e(b.get("delivers_note",""))}</div>' if b.get("delivers_note") else ''
+        deliv = f'''{note}<div class="deliv-t">{e(dv["title"])}</div><div class="organs">{cards}</div>
+      <div class="flow"><b>数据流</b> · {e(dv["flow"])}</div><div class="lastmile">{e(dv["last_mile"])}</div>'''
     return f'''<section class="book" style="--c:{color}">
   <div class="bk-h"><span class="seal">{seal}</span><div><div class="bk-n">《{e(b["name"])}》</div>
     <div class="bk-meta">{e(b["axis"])} · 模型＝{e(b["model"])} · {e(b["scale"])}</div>
     <div class="bk-q">{e(b["question"])}</div></div><div class="bk-cnt">{len(b["chapters"])} 章<br/>{nsec} 节</div></div>{gc}
-  <div class="chs">{chs}</div></section>'''
+  <div class="chs">{chs}</div>{deliv}</section>'''
 
 spine = "".join(f'<div class="sp"><b>{e(s["n"])}</b> {e(s["name"])}<span>{e(s["note"])}</span></div>' for s in D["spine"])
 seams = "".join(f'<div class="sm"><b>{e(s["name"])}</b> {e(s["rule"])}</div>' for s in D["seams"])
 R = D["reasoning"]
-reason = "".join(f'<div class="rz"><div class="rz-k">{e(k)}</div><div class="rz-v">{e(R[k])}</div></div>' for k in ["究竟","完备","递归","莫比乌斯"])
+reason = "".join(f'<div class="rz"><div class="rz-k">{e(k)}</div><div class="rz-v">{e(R[k])}</div></div>' for k in R)
 
 HTML = '''<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>原力战略三部曲 · 提纲架构</title>
@@ -79,6 +91,18 @@ h1{font-weight:600;font-size:clamp(28px,5vw,48px);letter-spacing:.1em}
 .bk-n{font-family:var(--serif);font-size:22px;color:var(--gold-bright)}.bk-meta{font-family:var(--sans);font-size:11.5px;color:var(--muted);margin-top:2px}
 .bk-q{font-size:13px;color:var(--gold-light);margin-top:6px}.bk-cnt{margin-left:auto;text-align:right;font-family:var(--mono);font-size:12px;color:var(--c);flex:0 0 auto}
 .gc{font-family:var(--sans);font-size:11.5px;color:var(--muted);margin:11px 0 4px;padding:7px 13px;border-left:2px solid var(--line);background:rgba(0,0,0,.13);border-radius:0 6px 6px 0}
+.dn{font-family:var(--sans);font-size:12px;color:var(--gold-light);margin:16px 0 8px;padding:9px 14px;border-left:3px solid var(--cinnabar);background:rgba(168,54,44,.06);border-radius:0 8px 8px 0;line-height:1.7}
+.deliv-t{font-family:var(--serif);font-size:16px;color:var(--gold-bright);margin:6px 0 12px;text-align:center}
+.organs{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.organ{border:1px solid var(--line);border-top:3px solid var(--mc);border-radius:11px;background:rgba(0,0,0,.18);padding:13px 15px}
+.o-h{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.o-n{font-family:var(--serif);font-size:17px;color:var(--gold-bright)}.o-or{font-family:var(--mono);font-size:11px;color:var(--mc)}
+.o-d{font-size:12.5px;color:var(--cream-dim);margin:7px 0 4px;line-height:1.6}
+.o-lack{font-family:var(--sans);font-size:11px;color:var(--cinnabar-soft);margin-bottom:8px}
+.o-real{font-family:var(--sans);font-size:11.5px;color:var(--cream-dim);border-top:1px solid var(--line2);padding-top:7px}.o-real b{color:var(--mc)}.o-mn{display:block;font-size:10.5px;color:var(--muted);margin-top:2px}
+.o-bi{font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:5px}
+.flow{font-family:var(--sans);font-size:12px;color:var(--gold-light);margin-top:12px;padding:8px 14px;background:rgba(201,169,97,.05);border-radius:8px;line-height:1.7}.flow b{color:var(--gold)}
+.lastmile{font-family:var(--sans);font-size:12px;color:var(--cream-dim);margin-top:8px;padding:8px 14px;border:1px dashed rgba(192,82,74,.4);border-radius:8px;line-height:1.7}
 .chs{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:12px}
 .ch{border:1px solid var(--line);border-radius:11px;background:rgba(0,0,0,.16);padding:13px 15px;border-top:2px solid var(--c)}
 .ch-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
