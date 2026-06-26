@@ -1,0 +1,1141 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>《原力OS》· 四级目录 · 金标准</title>
+<style>
+:root{--ink:#0a1612;--leather-deep:#0d2018;--leather:#14301f;--panel:rgba(20,48,31,.5);--panel2:rgba(28,61,41,.36);
+--gold-deep:#8b6f2e;--gold:#c9a961;--gold-light:#e0c887;--gold-bright:#f4e4b8;--cinnabar:#a8362c;--cinnabar-soft:#c06a5e;
+--jade:#5a9c6e;--cream:#f0e6d2;--cream-dim:#d3c8b0;--muted:#9bae9a;--faint:#6f8470;--line:rgba(201,169,97,.2);--line2:rgba(201,169,97,.1);
+--serif:"Noto Serif SC","Songti SC",serif;--display:"Cinzel",Georgia,serif;--sans:"PingFang SC","Hiragino Sans GB",system-ui,sans-serif;--mono:"JetBrains Mono",Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1100px 640px at 82% -8%,rgba(74,124,89,.15),transparent 60%),radial-gradient(900px 600px at 4% 104%,rgba(201,169,97,.06),transparent 55%),linear-gradient(180deg,var(--ink),var(--leather-deep) 52%,var(--ink));background-attachment:fixed;color:var(--cream);font-family:var(--serif);line-height:1.75;padding:0 0 80px}
+.foil{background:linear-gradient(180deg,var(--gold-bright),var(--gold) 52%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+header{text-align:center;padding:56px 24px 24px;border-bottom:1px solid var(--line)}
+.kick{font-family:var(--display);font-size:11px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;margin-bottom:15px}
+h1{font-weight:600;font-size:clamp(28px,5vw,46px);letter-spacing:.1em}
+.sub-t{color:var(--gold-light);font-size:14px;margin-top:10px;letter-spacing:.05em}
+.ax{font-family:var(--mono);font-size:12.5px;color:var(--cream-dim);margin-top:14px}
+.ax b{color:var(--gold-light)}
+.arc{margin:16px auto 0;font-family:var(--sans);font-size:12px;color:var(--muted);max-width:780px;line-height:2}
+.arc b{color:var(--gold-light)}
+.kpis{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.kpi{font-family:var(--mono);font-size:12px;color:var(--gold-light);padding:5px 13px;border-radius:6px;background:rgba(201,169,97,.06);border-left:2px solid var(--gold)}
+.kpi b{color:var(--gold-bright);font-size:14px}
+.std{margin:30px auto 6px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);padding:18px 22px}
+.std-h{font-family:var(--serif);font-size:15px;color:var(--gold-bright);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.std-h .vd{font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--jade);padding:2px 9px;border-radius:10px}
+.std-h .ok-dot{font-family:var(--sans);font-size:11px;color:var(--jade);border:1px solid var(--jade);border-radius:10px;padding:1px 8px}
+.std-h .no-dot{font-family:var(--sans);font-size:11px;color:var(--cinnabar-soft);border:1px solid var(--cinnabar);border-radius:10px;padding:1px 8px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.chk{display:flex;align-items:baseline;gap:9px;font-size:12.5px;padding:7px 11px;border-radius:8px;background:rgba(0,0,0,.16)}
+.chk .ck-k{font-family:var(--serif);font-size:15px;color:var(--gold-light);min-width:30px}
+.chk .ck-m{font-family:var(--mono);color:var(--jade);font-weight:700}
+.chk.no .ck-m{color:var(--cinnabar)}
+.chk .ck-d{color:var(--cream-dim);font-family:var(--sans);font-size:11.5px;line-height:1.5}
+.weak{margin-top:11px;font-family:var(--sans);font-size:11px;color:var(--muted);border-left:2px solid var(--gold-deep);padding:6px 12px;background:rgba(0,0,0,.13);line-height:1.7}
+.weak b{color:var(--gold-light)}
+.ch{margin-top:16px;border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden}
+.ch[open]{border-color:var(--gold-deep)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:15px;padding:18px 22px;transition:.15s}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:rgba(201,169,97,.05)}
+.seal{font-family:var(--serif);font-size:18px;color:var(--gold-bright);width:40px;height:40px;flex:none;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold-deep);border-radius:50%;background:rgba(201,169,97,.05)}
+.ch-main{flex:1;min-width:0}
+.ch-n{font-family:var(--serif);font-size:19px;color:var(--gold-bright);margin-right:10px}
+.ch-layer{font-family:var(--mono);font-size:10.5px;color:var(--cinnabar-soft);border:1px solid rgba(168,54,44,.3);border-radius:10px;padding:1px 8px;vertical-align:middle}
+.ch-q{display:block;font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:5px;line-height:1.5}
+.ch-c{font-family:var(--mono);font-size:11px;color:var(--gold);white-space:nowrap}
+.chev{color:var(--gold-deep);font-size:13px;transition:.2s}
+.ch[open] .chev{transform:rotate(180deg)}
+.ch-body{padding:4px 22px 20px;border-top:1px solid var(--line2)}
+.sec{margin-top:16px;padding-left:16px;border-left:2px solid var(--gold-deep)}
+.sec-h{display:flex;align-items:baseline;gap:10px}
+.sec-no{font-family:var(--mono);font-size:12px;color:var(--gold-deep)}
+.sec-n{font-family:var(--serif);font-size:16.5px;color:var(--gold-light)}
+.sec-c{font-family:var(--mono);font-size:10px;color:var(--faint);margin-left:auto}
+.sec-q{font-family:var(--sans);font-size:11.5px;color:var(--muted);margin:3px 0 10px;line-height:1.6}
+.subs{display:flex;flex-direction:column;gap:7px}
+.sub{padding:9px 13px;border-radius:9px;background:rgba(0,0,0,.17);border-left:2px solid var(--line)}
+.sub-n{font-family:var(--serif);font-size:14px;color:var(--cream);display:flex;align-items:baseline;gap:8px}
+.sx{font-family:var(--mono);font-size:10px;color:var(--gold-deep);flex:none}
+.sub-p{font-family:var(--sans);font-size:12.5px;color:var(--cream-dim);margin:3px 0 5px;padding-left:26px;line-height:1.6}
+.sub-meta{display:flex;gap:12px;flex-wrap:wrap;padding-left:26px}
+.why{font-family:var(--sans);font-size:10.5px;color:var(--jade)}
+.why.first{color:var(--gold);font-weight:600}
+.canon{font-family:var(--mono);font-size:9.5px;color:var(--faint)}
+footer{margin-top:46px;text-align:center;color:var(--faint);font-family:var(--sans);font-size:11px;line-height:1.9;border-top:1px solid var(--line2);padding-top:24px}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line2)}
+.note{max-width:790px;margin:22px auto 0;font-family:var(--sans);font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:10px;padding:13px 18px;line-height:1.8}
+.note b{color:var(--gold-light)}
+@media(max-width:680px){.checks{grid-template-columns:1fr}.ch-c{display:none}}
+</style></head><body>
+<header>
+  <div class="kick">YUANLI OS · 4-LEVEL OUTLINE</div>
+  <h1 class="foil">《原力OS》· 四级目录</h1>
+  <div class="sub-t">向上 · 法 · 右腿 · 书 → 章 → 节 → 目 · 金标准</div>
+  <div class="ax">公理 <b>ʸx —— 把『一个你』升级成『会造物的物种』（x·y → ʸx）</b> · 模型＝莫比乌斯环 · 复杂自适应系统</div>
+  <div class="arc">莫比乌斯 · 四部：<b>信念部（为什么转 · 看清 1·x 天花板，决意从 x^y 跳向 ʸx）</b> → <b>图景部（转向哪 · 立出生证明，把 ʸx 转向哪画成可决策地图）</b> → <b>工具部（怎么转 · 装能日夜自转的代谢系统，把方向落成可运转链路）</b> → <b>原力OS · 身份部（转完是谁）</b><br/>四部＝过程（怎么从 x·y 转到 ʸx）：信念部（为什么转）→ 图景部（转向哪）→ 工具部（怎么转）→ 身份部（转完是谁）。转完交付元AI 四套（一纸文脉/一个大脑/一张地图/一条链路）。</div>
+  <div class="kpis"><span class="kpi"><b>4</b> 章</span><span class="kpi"><b>45</b> 节</span><span class="kpi"><b>200</b> 目</span><span class="kpi">五标准 <b>全过</b></span></div>
+</header>
+<div class="wrap">
+  <div class="std">
+    <div class="std-h">五标准校验 <span class="vd">PASS</span> <span class="ok-dot">臆造 0</span></div>
+    <div class="checks"><div class="chk ok"><span class="ck-k">究竟</span><span class="ck-m">✓</span><span class="ck-d">每个目都能回溯到公理 ʸx——必然展开，不是硬凑</span></div><div class="chk ok"><span class="ck-k">完备</span><span class="ck-m">✓</span><span class="ck-d">每节下的目 MECE（互斥穷尽·不漏不重）</span></div><div class="chk ok"><span class="ck-k">递进</span><span class="ck-m">✓</span><span class="ck-d">目按「因为→所以」排成一条小通关链</span></div><div class="chk ok"><span class="ck-k">具体</span><span class="ck-m">✓</span><span class="ck-d">每个目是可直接落笔的内容单元，不是抽象标签</span></div><div class="chk ok"><span class="ck-k">递归</span><span class="ck-m">✓</span><span class="ck-d">节→目 与 章→节 同形状（部分即整体·CAS）</span></div></div>
+    <div class="weak"><b>最弱节（诚实标注）</b> 身份部（os4）·四套器官节（一个大脑/一张地图/一条链路）的 system＋组件数＋成熟度 来自 outline `delivers` 上游产物，无法在 atlas/改名表里二次验真——289/2051 组件、🟢/🟡 等靠真实系统快照背书（数字真实、随系统演进会变、已诚实标〔待补〕），是全书 grounding 最薄处；身份部四处 last-mile（文脉血肉在填/大脑蒸馏停/地图复利没接/链路验证轴空）按纪律诚实标〔待补〕，是真实成熟度非缺陷。另：os3 工具部「三化改造」第5目为 meta-桥接评注而非 MECE 平级目。</div>
+  </div>
+  <details class="ch" open>
+  <summary><span class="seal">一</span>
+    <span class="ch-main"><span class="ch-n">信念部 · 信念部（为什么转 · 看清 1·x 天花板，决意从 x^y 跳向 ʸx）</span>
+      <span class="ch-layer">第一部 · 为什么转（物种切换）</span><span class="ch-q">为什么必须转？——杠杆载体从碳基切到硅基，守着 x·y 的老物种会被碾过去吗？</span></span>
+    <span class="ch-c">10 节 · 42 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.1</span><span class="sec-n">第六康波（杠杆载体物种切换）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">凭什么说这一次不是又一波技术升级，而是杠杆载体本身换了物种、守旧物种会被碾过去？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>前五次康波只换工具</div>
+  <div class="sub-p">起点：蒸汽/电气/化工/汽车/信息——前五次康波都是同一个碳基物种换更好的工具。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[0]#第六康波『前五次康波同物种换工具』 / 白皮书#19康波K1-K6</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>第六次换的是载体物种</div>
+  <div class="sub-p">第六次康波(AI/生物/能源)本质不同：杠杆载体本身从碳基切到硅基，不是提效是换物种。</div>
+  <div class="sub-meta"><span class="why">因为 因为前五次只换工具不换物种→所以第六次的不同在于换的是载体物种本身。</span><span class="canon">📎 atlas chain[0]#第六康波『第六次是杠杆载体本身从碳基切硅基，本质不同』 / OS绿第02章</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>提效≠换物种(数字反差)</div>
+  <div class="sub-p">论点位：把 AI 当『提效工具』与当『换物种』，是两件不同维度的事。</div>
+  <div class="sub-meta"><span class="why">因为 因为换的是载体物种→所以『提效思维』会系统性低估这次跃迁，把维度差当成程度差。</span><span class="canon">📎 atlas chain[0]#杠杆载体切换『看不懂这步跃迁后面全是工具崇拜』 / 白皮书1.2『维度差不是程度差』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>守旧物种被碾过去</div>
+  <div class="sub-p">本章第一性命题：守着 x·y 的老物种，会被换了物种的对手碾过去——这是必须转的理由。</div>
+  <div class="sub-meta"><span class="why">因为 因为载体已切硅基→所以不转物种=继续用碳基产能对撞硅基繁殖，必然被碾，回到公理 ʸx『一次性的终将被自我繁殖的压倒』。</span><span class="canon">📎 atlas chain[0].第一性问题『守着 x·y 的老物种会被换物种的对手碾过去吗』 / 白皮书1.3</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.2</span><span class="sec-n">杠杆载体切换（碳基→硅基）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">载体从碳基切到硅基，具体切在哪一刀——是 x^y 和 ʸx 之间那一刀吗？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>右腿第一性的那道坎</div>
+  <div class="sub-p">起点：看不看得懂『载体怎么从 x^y 切到 ʸx』，是整条右腿的第一道分水岭。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[0]#杠杆载体切换『这是右腿第一性，看不懂这步跃迁后面全是工具崇拜』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>x^y 的载体还是碳基</div>
+  <div class="sub-p">互联网飞轮 x^y 看似很猛，但驱动它的还是人——载体本质仍是碳基。</div>
+  <div class="sub-meta"><span class="why">因为 因为康波换的是载体物种→所以先认清旧载体 x^y 的物种属性其实还是碳基(需人驱动)。</span><span class="canon">📎 atlas chain[0]#杠杆载体切换『互联网飞轮 x^y 还需人驱动』 / 白皮书1.2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>ʸx 的载体是硅基</div>
+  <div class="sub-p">AI 让智能造智能，人退出循环——这一刀切下去，载体才真正从碳基换成硅基。</div>
+  <div class="sub-meta"><span class="why">因为 因为旧载体还是碳基(需人)→所以那一刀=让人退出循环、智能自繁殖，载体变硅基(ʸx)。</span><span class="canon">📎 atlas chain[0]#杠杆载体切换『AI 让智能造智能 ʸx』 / 白皮书1.2 / 改名表§A.1#1</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>看不懂=工具崇拜</div>
+  <div class="sub-p">一个反例位：看不懂这步跃迁，再多 AI 工具也只是『工具崇拜』，停在 x^y 出不来。</div>
+  <div class="sub-meta"><span class="why">因为 因为这刀切的是物种(碳基→硅基)→所以没看懂的人会把换物种误当攒工具，落进工具崇拜。</span><span class="canon">📎 atlas chain[0]#杠杆载体切换『看不懂这步跃迁后面全是工具崇拜』 / chain[0].def</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.3</span><span class="sec-n">x^y（工具自反馈/增长飞轮）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">AI 工具叠工具、还能自反馈，看着已经很猛了——为什么说人仍是它过不去的天花板？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>x^y 的构成式</div>
+  <div class="sub-p">起点：你 + N 个工具 + 工具自反馈 = 幂运算 x^y，这是互联网时代的增长飞轮。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[0]#x^y『你+N个工具+工具自反馈=幂运算』 / 白皮书1.2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>飞轮里人写功能调参</div>
+  <div class="sub-p">一个具体场景：用户产生数据，但写新功能、调参、驱动增长的还是人。</div>
+  <div class="sub-meta"><span class="why">因为 因为 x^y 是工具自反馈→所以拆开看，反馈环里每一步驱动仍要人在场。</span><span class="canon">📎 白皮书1.2『人写新功能、人调参、人驱动增长』 / atlas chain[0]#x^y</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>人是天花板=底数封顶</div>
+  <div class="sub-p">数字反差位：x^y 的底数 x 始终有限，因为人的产能封顶=底数封顶。</div>
+  <div class="sub-meta"><span class="why">因为 因为反馈环每步需人→所以人的产能就是底数 x 的天花板，幂再大也开不出无限。</span><span class="canon">📎 白皮书1.2『人的产能是天花板，所以 x^y 的底数 x 始终有限』 / chain[0].递进</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>看清天花板才肯跃迁</div>
+  <div class="sub-p">本目的承重作用：只有亲眼看清 x^y 卡在人这个天花板，才会决意往 ʸx 跃。</div>
+  <div class="sub-meta"><span class="why">因为 因为底数被人封顶→所以必须先看清这块天花板，回到公理 ʸx：要让做的事不再卡在一次性的人力上。</span><span class="canon">📎 atlas chain[0]#x^y『先看清旧载体 x^y 的天花板在哪(人)』 / 白皮书第一章</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.4</span><span class="sec-n">ʸx（迭代幂/tetration）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">让人退出循环到底是什么意思——凭什么说这是公理 ʸx 的数学本体，而不是又一句口号？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>智能造下一代智能</div>
+  <div class="sub-p">起点：ʸx=智能造下一代智能，递归发生在『不需要你在场』的时间里。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[0]#ʸx『智能造下一代智能，递归发生在不需要你在场的时间里』 / 改名表§A.1#1</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>你睡觉它还在长</div>
+  <div class="sub-p">一句可直接落笔的口号：你睡觉时它还在长——这是 ʸx 区别于 x^y 的体感判据。</div>
+  <div class="sub-meta"><span class="why">因为 因为递归发生在你不在场时→所以最朴素的检验就是『你睡了它还长不长』。</span><span class="canon">📎 改名表§A.1#1『自生长智能(你睡觉它还在长的事)』 / 白皮书1.1『药不是药渣是药引，你睡觉时它还在长』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>人退出循环</div>
+  <div class="sub-p">一个机制位：AI 班底自己造下一代 AI 班底，人退到了循环之外。</div>
+  <div class="sub-meta"><span class="why">因为 因为它在你不在场时自繁殖→所以人从驱动者退成循环外的启动者，这是 x^y 做不到的那一件事。</span><span class="canon">📎 白皮书1.2『你的 AI 班底自己造下一代 AI 班底，人退到了循环之外』 / atlas chain[0].def</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>母公理的数学形态</div>
+  <div class="sub-p">回溯锚点：ʸx 就是公理『做会自我繁殖的事』的精确数学形态，不是鸡汤。</div>
+  <div class="sub-meta"><span class="why">因为 因为它让事在你不在场时自繁殖→所以它正是母公理 ʸx 的数学落地(自繁殖=tetration)，一切由此长出。</span><span class="canon">📎 白皮书1.1-1.2『这条公理不是鸡汤，它有精确的数学形态』 / atlas chain[0]#ʸx『母公理的数学形态』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.5</span><span class="sec-n">迭代幂（超出人类直觉的量级）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">x^y 和 ʸx 看着只差上标位置，为什么说这是连数学系都陌生、超出人类直觉的另一个世界？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>上标前置的冷僻运算</div>
+  <div class="sub-p">起点：ʸx 是上标前置写法(tetration/迭代幂)，连数学系都陌生的冷僻运算。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.1#1『tetration/迭代幂是连数学系都陌生的冷僻运算』 / 白皮书1.2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>读法=y 个 x 嵌套</div>
+  <div class="sub-p">动手动作：把 ʸx 读出来——读成『y 个 x 嵌套』，别读不出就跳过。</div>
+  <div class="sub-meta"><span class="why">因为 因为它是键盘打不出、屏幕显示错的冷僻符号→所以先用正确读法『y 个 x 嵌套』把它钉住。</span><span class="canon">📎 改名表§A.1#1『要读成 y 个 x 嵌套』 / atlas chain[0]#迭代幂『y 个 x 嵌套(读法)』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>是动词嵌套不是形容词快</div>
+  <div class="sub-p">一个最关键的纠偏论点：迭代幂不是形容词『快』，是动词『嵌套』。</div>
+  <div class="sub-meta"><span class="why">因为 因为读法是『嵌套』→所以必须把它当动作(嵌套)理解，把它误当形容词『快』就退回 x·y 的提效思维。</span><span class="canon">📎 改名表§A.1#1 / atlas chain[0]#迭代幂『不是形容词快，是动词嵌套』 / 白皮书1.2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>超出直觉的量级落差</div>
+  <div class="sub-p">反差位：x^y 是『想象得到』的指数，ʸx 是『超出直觉』的迭代幂=维度差。</div>
+  <div class="sub-meta"><span class="why">因为 因为它是动词嵌套(每层再嵌套自身)→所以量级落差超出人类直觉，呼应公理 ʸx 的维度跃迁。</span><span class="canon">📎 改名表§A.1#1『x^y 是想象得到的指数，ʸx 是超出人类直觉的迭代幂——维度差不是程度差』 / 白皮书1.2</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.6</span><span class="sec-n">嵌套链（ʸx nesting chain）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">既然 ʸx 是动词『嵌套』，那它落到地上、攥在一个人手里的东西，到底是什么？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>差别在有没有那条链</div>
+  <div class="sub-p">起点：差别不在提效 N 倍，在有没有『嵌套自身』的那条链。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[0]#嵌套链『差别不在提效 N 倍，在有没有嵌套自身的那条链』 / 白皮书1.2</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>28人案例的真相</div>
+  <div class="sub-p">案例位：28 人做 200 人的活，真相不是每人干 7 份，是每人一条 ʸx 嵌套链。</div>
+  <div class="sub-meta"><span class="why">因为 因为 ʸx 是嵌套不是倍数→所以『28×7≈200』的倍数脑补是错的，真相是每人一条嵌套自身的链。</span><span class="canon">📎 白皮书1.2『28 个人每人都建了一条 ʸx 嵌套链』『这是 x·y 思维，错了』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>每人建一条自生长链</div>
+  <div class="sub-p">落地物：ʸx 的具体交付=每人手里那条嵌套自身、能自己生长的链。</div>
+  <div class="sub-meta"><span class="why">因为 因为差别在那条链→所以 ʸx 落地就是『每人建一条嵌套链』这个可指认的物件，不是一句态度。</span><span class="canon">📎 atlas chain[0]#嵌套链『每人建一条 ʸx 嵌套链，造出能自己生长的智能』 / OS绿第06章</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>他长你停的分水岭</div>
+  <div class="sub-p">一句可落笔的对照：他们的人在你睡觉时还在长，你的人睡觉时就停了。</div>
+  <div class="sub-meta"><span class="why">因为 因为别人有嵌套链你没有→所以分水岭就是『你睡时他长、你睡时你停』，直接回扣公理 ʸx 的在场无关性。</span><span class="canon">📎 白皮书1.2『他们的人在你睡觉的时候还在长；你的人，睡觉时就停了』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.7</span><span class="sec-n">密度革命（嵌套自身·非倍数）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">有了嵌套链之后，怎么一句话说清 ʸx 到底革的是什么命——是把活干快了，还是别的？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>不是28人干200人的活</div>
+  <div class="sub-p">起点：先否定一个最常见的误读——ʸx 真义不是 28 人干 200 人的活(那是倍数)。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[0]#密度革命『不是 28 人干 200 人的活』 / 白皮书#62</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>是每人一条嵌套链</div>
+  <div class="sub-p">正面定义：是每人建一条嵌套链，你睡觉时它还在长——这是承接嵌套链的密度本体。</div>
+  <div class="sub-meta"><span class="why">因为 因为否定了倍数误读→所以正面说清它=每人一条会自长的嵌套链(接上一节的落地物)。</span><span class="canon">📎 atlas chain[0]#密度革命『是每人建一条嵌套链，你睡觉时它还在长』 / OS绿第06章</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>是嵌套不是倍数</div>
+  <div class="sub-p">一句锤死的判词：是嵌套，不是倍数——把『密度革命』四个字钉在嵌套上。</div>
+  <div class="sub-meta"><span class="why">因为 因为正面定义是嵌套链→所以革命的实质=嵌套(密度)而非倍数(规模)，呼应迭代幂『动词嵌套』。</span><span class="canon">📎 白皮书1.2『不是倍数是嵌套』 / atlas chain[0]#密度革命『是嵌套不是倍数』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>密度革命之名的由来</div>
+  <div class="sub-p">收口论点：正因为是嵌套(密度)而非倍数(规模)，这场变革才叫『密度革命』。</div>
+  <div class="sub-meta"><span class="why">因为 因为实质是嵌套不是倍数→所以才理解 ʸx 是密度革命不是倍数革命，命名服从本质，回扣公理。</span><span class="canon">📎 atlas chain[0]#密度革命『才理解 ʸx 是密度(嵌套)革命不是倍数革命』 / 白皮书#62</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.8</span><span class="sec-n">算力思维（财力→算力时代）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">既然密度靠多嵌套，那投入逻辑该怎么变——还按『有多少钱办多少事』算，还是换个算盘？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>杠杆从财力变算力</div>
+  <div class="sub-p">起点：时代杠杆从『财力』切换到『算力』——这是投入逻辑要换算盘的根因。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[0]#算力思维『从财力时代进入算力时代，杠杆从财力变算力』 / 白皮书#65</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>多生AI项目崽</div>
+  <div class="sub-p">一个能动手的动作：多生 AI 项目崽——密度靠多嵌套，所以投入方式变成『多生崽』。</div>
+  <div class="sub-meta"><span class="why">因为 因为密度靠多条嵌套链→所以投入动作从『集中下注』变成『多生 AI 项目崽』(多铺嵌套)。</span><span class="canon">📎 atlas chain[0]#算力思维『多生 AI 项目崽』 / OS绿第05章</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>越早投入越划算</div>
+  <div class="sub-p">数字反差/判词位：算力时代越早投入越划算，因为崽会自繁殖、复利越滚越大。</div>
+  <div class="sub-meta"><span class="why">因为 因为要多生崽→所以越早投越划算(早投的崽自繁殖时间更长)，这是算力思维的核心算法。</span><span class="canon">📎 atlas chain[0]#算力思维『越早投入越划算』 / 白皮书#65 / 6-6酒后</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>算力思维=公理的投入版</div>
+  <div class="sub-p">回溯锚点：算力思维就是公理 ʸx 在『怎么投入』维度的投影——投会自繁殖的，不投一次性的。</div>
+  <div class="sub-meta"><span class="why">因为 因为越早投的崽自繁殖越久→所以算力思维=把投入也变成自繁殖(ʸx)，与母公理同构。</span><span class="canon">📎 白皮书1.1『做会自我繁殖的事，不做一次性的事』 / atlas chain[0]#算力思维</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.9</span><span class="sec-n">三非心智筛（三不可替代）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">要换物种、要多生崽，那选人的尺子也得换——还看简历资历，还是看别的三样？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>筛心智不筛简历</div>
+  <div class="sub-p">起点：换物种要换选人尺子——招聘只看三条物种过滤器，筛心智不筛简历。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[0]#三非心智筛『筛心智不筛简历』 / 改名表§A.1#2 / 白皮书#63</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>非理性痴迷</div>
+  <div class="sub-p">第一条尺子：不赚钱、不被支持也停不下来(不是理性热爱)——这是非理性痴迷。</div>
+  <div class="sub-meta"><span class="why">因为 因为要筛心智不筛简历→所以第一条看『停不下来』的痴迷，它对应嵌套链的自驱燃料。</span><span class="canon">📎 改名表§A.1#2『非理性痴迷＝不赚钱不被支持也停不下来』 / atlas chain[0]#三非心智筛</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>非对称优势</div>
+  <div class="sub-p">第二条尺子：别人花 10 年学不会、你天生就会(不是比同事擅长)——非对称优势。</div>
+  <div class="sub-meta"><span class="why">因为 因为有了痴迷的燃料→所以第二条看『学不来的天赋』，它是嵌套链跑得比别人快的底数。</span><span class="canon">📎 改名表§A.1#2『非对称优势＝别人花 10 年学不会你天生就会』 / atlas chain[0]#三非心智筛</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>非线性回报</div>
+  <div class="sub-p">第三条尺子：做 1 可能得 0、也可能得 100 万的认知(不是按劳分配)——非线性回报。</div>
+  <div class="sub-meta"><span class="why">因为 因为有了痴迷×天赋→所以第三条看能不能接受 ʸx 式非线性回报(0 或 100 万)，这正是迭代幂的赔率观。</span><span class="canon">📎 改名表§A.1#2『非线性回报＝做 1 可能得 0、也可能得 100 万』 / atlas chain[0]#三非心智筛</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>找看起来不够格的人</div>
+  <div class="sub-p">一个反直觉动作位：三非合起来=找看起来不够格、却有这三样的人。</div>
+  <div class="sub-meta"><span class="why">因为 因为三条筛的都是心智结构非过往战绩→所以结论是敢要『看起来不够格』的人，回扣『换物种=换尺子』。</span><span class="canon">📎 atlas chain[0]#三非心智筛『找看起来不够格的人』 / 改名表§A.1#2『筛的是心智结构，不是过去做到什么』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">1.10</span><span class="sec-n">超级个体四隐喻</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">三非筛出来的这个超级个体，进了组织以后到底算一个人，还是同时是好几个人？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>同时是四个人</div>
+  <div class="sub-p">起点：在 OS 有机体里你不是一个角色，而是同时四个——对应嵌套链的四个生命要素。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.1#3『在 OS 有机体里你不是一个角色而是同时四个』 / atlas chain[0]#超级个体四隐喻</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>神经元(传信号)</div>
+  <div class="sub-p">第一个角色：接收-处理-传递信号，信息处理要比传统员工快 10 倍。</div>
+  <div class="sub-meta"><span class="why">因为 因为你同时是四个人→所以第一个是神经元(信息处理)，它是嵌套链的传导通路。</span><span class="canon">📎 改名表§A.1#3『神经元＝接收-处理-传递信号，要比传统员工快 10 倍』 / atlas chain[0]#超级个体四隐喻</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>触手(抓客户)</div>
+  <div class="sub-p">第二个角色：直接对接客户、抓三流——是整条嵌套链的摄取入口。</div>
+  <div class="sub-meta"><span class="why">因为 因为信号要有源头→所以第二个是触手(摄取入口)，把外部三流抓进链里喂给神经元。</span><span class="canon">📎 改名表§A.1#3『触手＝直接对接客户抓三流(摄取入口)』 / atlas chain[0]#超级个体四隐喻</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>抗体(挑错隔离失真)</div>
+  <div class="sub-p">第三个角色：识别-上报-隔离失真——免疫系统，防失真被指数放大。</div>
+  <div class="sub-meta"><span class="why">因为 因为抓进来的信息会带失真→所以第三个是抗体(免疫)，在 ʸx 量级把失真隔离掉以免沿链炸开。</span><span class="canon">📎 改名表§A.1#3『抗体＝识别-上报-隔离失真，防失真被指数放大』 / atlas chain[0]#超级个体四隐喻</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>繁殖体(带新人克隆)</div>
+  <div class="sub-p">第四个角色：孵化下一个管培/装客户克隆体——S4 出口考唯一一题。</div>
+  <div class="sub-meta"><span class="why">因为 因为前三个角色守住了健康的链→所以第四个是繁殖体(复制)，把这条链克隆给下一个人=ʸx 的繁殖本义。</span><span class="canon">📎 改名表§A.1#3『繁殖体＝孵化下一个管培/装客户克隆体，S4 出口考唯一一题』 / atlas chain[0]#超级个体四隐喻</span></div>
+</div></div>
+</div></div>
+</details><details class="ch">
+  <summary><span class="seal">二</span>
+    <span class="ch-main"><span class="ch-n">图景部 · 图景部（转向哪 · 立出生证明，把 ʸx 转向哪画成可决策地图）</span>
+      <span class="ch-layer">第二部 · 转向哪（硅基定律）</span><span class="ch-q">转向哪、按什么硅基物理定律转？——有没有一组违反就被拖累的定律？</span></span>
+    <span class="ch-c">11 节 · 52 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.1</span><span class="sec-n">三法印（人类友好＞递归进化＞技能统帅）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">硅基世界有没有一组像万有引力一样、违反就被一直拖累的底层定律，钉死『往哪转』的方向？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>硅基世界也有万有引力</div>
+  <div class="sub-p">三条物理铁律：违反不立刻死、但会被一直拖累累死=定方向的底物理。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.2#4『硅基世界的「万有引力」，违反不立刻死但会被一直拖累累死』 / 白皮书#66</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>三条不平权·要排序</div>
+  <div class="sub-p">三条撞车时一票否决顺序=人类友好＞递归进化＞技能统帅。</div>
+  <div class="sub-meta"><span class="why">因为 因为认了有三条铁律→所以本目解决撞车时谁让谁=排出优先级。</span><span class="canon">📎 atlas chain[1]『因为三法印要排优先级』 / 改名表§A.2#4</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>第一律：人类友好护根</div>
+  <div class="sub-p">省token/不打扰/留人最终判断权——保护启动者=保护嵌套链的根。</div>
+  <div class="sub-meta"><span class="why">因为 因为要排序→所以最高那条先立=人类友好（友好不是道德是物理）。</span><span class="canon">📎 改名表§A.2#4『人类友好＝省 token/不打扰/保留人的最终判断权（保护启动者＝保护嵌套链的根）』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>第二律：递归进化复利</div>
+  <div class="sub-p">吃完药剩的不是药渣是药引；不写 Evolution Note＝复利失效。</div>
+  <div class="sub-meta"><span class="why">因为 因为护住了根（人在场）→所以下一条要求每件事比上件好=递归进化。</span><span class="canon">📎 改名表§A.2#4『吃完药剩的不是药渣是药引』 / atlas chain[1]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>第三律：技能统帅</div>
+  <div class="sub-p">接任务先 search 再 call；不查直接做＝造轮子污染 skill 库。</div>
+  <div class="sub-meta"><span class="why">因为 因为要递归进化（一次成果可复用）→所以第三条=先搜现成再调用。</span><span class="canon">📎 改名表§A.2#4『技能统帅＝先 search 再 call』 / atlas chain[1]</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.2</span><span class="sec-n">人类友好</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">为什么对AI友好的『友好』是物理常识不是道德选择，它到底在护什么？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>护根不是讲道德</div>
+  <div class="sub-p">三法印优先级最高一条——对AI友好不是道德是物理，护的是嵌套链的根。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.2#4『优先级：人类友好＞递归进化＞技能统帅』 / atlas chain[1]『护住嵌套链的根』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>省token=不烧他的命</div>
+  <div class="sub-p">能一句话给的上下文不写三段；token=启动者的算力预算与注意力。</div>
+  <div class="sub-meta"><span class="why">因为 因为要护住启动者这个根→所以第一件具体动作=别在 token 上烧他的命。</span><span class="canon">📎 改名表§A.2#4『省 token』 / 白皮书#66</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>不打扰=别压垮他</div>
+  <div class="sub-p">第二部今晚动作过重（逐句标整篇/写3个IDA）违反不打扰，初学者被劝退。</div>
+  <div class="sub-meta"><span class="why">因为 因为省了token还不够→所以本目防『过重打扰』，让启动者第一次能动起来。</span><span class="canon">📎 改名表§B修『今晚动作过重＝违反「不打扰/保护启动者」，「第一次留痕」根本发生不了』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>留人最终判断权</div>
+  <div class="sub-p">AI 只给候选、人拍板；把『一个答案』直接给＝它替你决策、后果你担。</div>
+  <div class="sub-meta"><span class="why">因为 因为不打扰是节流→所以更深一层=判断权这个开关永远留人手里（接 IDA 的 D）。</span><span class="canon">📎 改名表§A.2#9『让 AI 给「一个答案」＝它替你做了决策、后果你担』 / §A.2#4</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.3</span><span class="sec-n">递归进化</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">怎么让『每件事比上件好』从一句口号，变成在每件小事上真发生的复利？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>药引不是药渣</div>
+  <div class="sub-p">吃完药剩下的不是药渣是药引——残留物要能引出下一件更好的事。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.2#4『吃完药剩的不是药渣是药引』 / atlas chain[1]『每件事都比上件好』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>母公理在小事落地</div>
+  <div class="sub-p">递归进化＝ʸx 在每件小事上的落地：做会自我繁殖的事、不做一次性的事。</div>
+  <div class="sub-meta"><span class="why">因为 因为药引要引出下一件→所以这条本质=母公理 ʸx 落到每件具体小事上。</span><span class="canon">📎 atlas chain[1]『ʸx 在每件小事上的落地』 / 白皮书#66</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>不写笔记=复利失效</div>
+  <div class="sub-p">不写 Evolution Note＝复利失效，三个月后的你和半年前没区别。</div>
+  <div class="sub-meta"><span class="why">因为 因为要落地到每件小事→所以缺了『留痕』，复利曲线就被拍平成直线。</span><span class="canon">📎 改名表§A.2#4『不写 Evolution Note＝个人复利失效』 / atlas（工具部）#78</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>第一次留痕必发生</div>
+  <div class="sub-p">启动者第一次就留下一行痕迹（哪怕粗糙），递归的第一节拍才接得上。</div>
+  <div class="sub-meta"><span class="why">因为 因为缺笔记复利就失效→所以底线动作=保证『第一次留痕』真发生。</span><span class="canon">📎 改名表§B修『递归进化的「第一次留痕」根本发生不了』 / §A.2#4</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.4</span><span class="sec-n">技能统帅</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">接到任务时，凭什么不该直接动手做，而要先搜一遍现成能力？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>先search再call</div>
+  <div class="sub-p">任何任务第一步不是『开始做』，是先搜库里有没有现成 skill 可调。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.2#4『技能统帅＝先 search 再 call』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>不查＝重复造轮子</div>
+  <div class="sub-p">不查直接做＝重复造轮子，同一能力造第二遍，时间与算力双浪费。</div>
+  <div class="sub-meta"><span class="why">因为 因为该先搜→所以本目讲清不搜的代价=重复造轮子。</span><span class="canon">📎 改名表§A.2#4『不查直接做＝重复造轮子污染 skill 库』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>污染库的连锁伤</div>
+  <div class="sub-p">重复造的轮子堆进库→下次搜索更难命中→库越用越脏=负复利。</div>
+  <div class="sub-meta"><span class="why">因为 因为重复造轮子→所以伤害不止本次，还污染库、拖累所有后来人。</span><span class="canon">📎 改名表§A.2#4『污染 skill 库』 / 工具部#77『复用力』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>排第三：人·复利·统帅</div>
+  <div class="sub-p">技能统帅优先级最低——服务于上两条（先护人、先保复利，再调度技能）。</div>
+  <div class="sub-meta"><span class="why">因为 因为它的代价是库污染（系统层）→所以排在人类友好/递归进化之后收尾。</span><span class="canon">📎 改名表§A.2#4『优先级：人类友好＞递归进化＞技能统帅』 / atlas chain[1]</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.5</span><span class="sec-n">六判断（动手前六问）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">三法印是底层物理常识，怎么把它落成开工前 1 分钟就能逐句勾完的扫描器？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>1分钟扫·1:5000</div>
+  <div class="sub-p">开工前 1 分钟自检六句，省你一晚 1000 美金，ROI 1:5000。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.2#5『扫 1 分钟 ROI 1:5000』 / atlas chain[1]『落成 6 句可勾的扫描器』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>六句对六个失真点</div>
+  <div class="sub-p">六问对应任务生命周期六个最易翻车的失真点，逐点设防、各守一处。</div>
+  <div class="sub-meta"><span class="why">因为 因为要 1 分钟扫完→所以六句必须各守一个真实失真点，才扫得快又不漏。</span><span class="canon">📎 改名表§A.2#5『对应任务生命周期六个失真点』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>前三问：能·值·有现成</div>
+  <div class="sub-p">自治（够不够闭环）→全局最优（值不值得做）→能力复用（有没有现成skill）。</div>
+  <div class="sub-meta"><span class="why">因为 因为有六个失真点→所以先扫『要不要上手』三问（可行/价值/复用）。</span><span class="canon">📎 改名表§A.2#5『自治判断→全局最优→能力复用』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>后三问：验·留·防雷</div>
+  <div class="sub-p">验真（谁验完成标准）→进化（做完留下什么）→最大失真（此刻最易在哪翻车）。</div>
+  <div class="sub-meta"><span class="why">因为 因为前三问决定上手→所以后三问扫『干完之后』收口（验收/沉淀/防雷）。</span><span class="canon">📎 改名表§A.2#5『验真判断→进化判断→最大失真』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>六问=三法印落地清单</div>
+  <div class="sub-p">全局最优/能力复用对技能统帅，进化对递归进化，验真护人类友好。</div>
+  <div class="sub-meta"><span class="why">因为 因为六问各守一点→所以合起来正是把三法印（抽象物理）翻成可勾的开工清单。</span><span class="canon">📎 atlas chain[1]『三法印是物理常识→动手前落成 6 句可勾的扫描器』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.6</span><span class="sec-n">双OS 架构（橙⟂绿）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">治理和业务为什么必须物理分立两套系统、跑两个不同频率，混在一起会死在哪？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>分慢治理/快业务两套</div>
+  <div class="sub-p">六判断里『能不能合规』走得慢、『怎么干活』走得快，两类节律先分开。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[1]『因为扫描器要分「慢治理/快业务」两套频率→所以把双OS分立画清』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>橙=治理OS·半年改</div>
+  <div class="sub-p">治理OS（橙）管宪法/演化协议/边界/同源同构，变化频率半年到一年=司法层。</div>
+  <div class="sub-meta"><span class="why">因为 因为要分两套频率→所以先立慢的那套=橙皮书治理OS（半年级）。</span><span class="canon">📎 改名表§A.2#6『治理 OS（橙皮书）管宪法/演化协议/边界…变化频率半年到一年』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>绿=工作OS·月/周级</div>
+  <div class="sub-p">工作OS（绿）管接客户/带班底/落产品/节律，变化频率月级甚至周级=行政层。</div>
+  <div class="sub-meta"><span class="why">因为 因为立了慢的橙→所以对照立快的那套=绿皮书工作OS（月/周级）。</span><span class="canon">📎 改名表§A.2#6『工作 OS（绿皮书）管接客户/带班底/落产品/节律…月级甚至周级』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>混=业务被拖成僵尸</div>
+  <div class="sub-p">混在一起＝业务被治理频率拖成僵尸——基金会 400 万项目失败的根因。</div>
+  <div class="sub-meta"><span class="why">因为 因为两套频率天差地别→所以混跑必出事：快业务被慢治理拖死（400万案例）。</span><span class="canon">📎 改名表§A.2#6『混在一起＝业务被治理频率拖累成僵尸（基金会 400 万项目失败的根因）』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>同源同构但物理分立</div>
+  <div class="sub-p">同一组概念跑两个不同频率的系统——分立但不分裂，不是两套人马。</div>
+  <div class="sub-meta"><span class="why">因为 因为混跑会死→所以正解=分立但不分裂（同概念两频率），既不污染又不撕裂。</span><span class="canon">📎 改名表§A.2#6『同源同构但分立——同一组概念跑两个不同频率的系统』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.7</span><span class="sec-n">OSA 卡（决策三段）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">为什么『想到就做、跳过中间步』是 80% 项目失败的根因，决策的最小节拍长什么样？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>嵌套链上的最小节拍</div>
+  <div class="sub-p">OSA=组织智能流转最小单元，也是 ʸx 嵌套链上的最小节拍与防失真协议。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.2#7『组织智能流转的最小单元…「最小节拍」与「防失真协议」』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>O 目标：必须 1 句话</div>
+  <div class="sub-p">O＝要做什么/为什么/不做的代价，压成 1 句话，否则方向都没对齐。</div>
+  <div class="sub-meta"><span class="why">因为 因为要有最小节拍→所以第一段先把目标钉成 1 句话（O）。</span><span class="canon">📎 改名表§A.2#7『O 目标层…必须 1 句话』 / OSA绿『O 看信息五层 L5 全局最优』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>S 策略：必须 3 候选</div>
+  <div class="sub-p">S＝怎么打/3 候选各自成功率，必须 3 候选，不准只端一个答案上来。</div>
+  <div class="sub-meta"><span class="why">因为 因为 O 定了目标→所以第二段展开打法=S 三候选（接 IDA『AI 给候选』）。</span><span class="canon">📎 改名表§A.2#7『S 策略层…必须 3 候选』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>A 行动：谁做·验真</div>
+  <div class="sub-p">A＝谁做/何时/怎么验真，必须有验真标准，否则『做了』≠『做对』。</div>
+  <div class="sub-meta"><span class="why">因为 因为 S 选定了打法→所以第三段落到执行=A（谁/何时/验真标准）。</span><span class="canon">📎 改名表§A.2#7『A 行动层…必须有验真标准』 / OSA绿『A 到一个人一个动作·SMART齐』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>跳层=80%失败根因</div>
+  <div class="sub-p">韬哥 900 篇录音直接转写＝垃圾、走 OSA＝金矿；跳层=80% 失败根因。</div>
+  <div class="sub-meta"><span class="why">因为 因为 O→S→A 必须按序→所以本目反证：跳过任一段（如跳到 A）就崩（900篇案例）。</span><span class="canon">📎 改名表§A.2#7『跳层是 80% 项目失败的根因（韬哥 900 篇…走 OSA＝行动金矿）』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.8</span><span class="sec-n">信息五层（思维分辨率）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">一份输出『够好还是不够好』有没有一把客观刻度尺，量出它想到了第几层？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>分辨率有五层刻度</div>
+  <div class="sub-p">任何信息处理都落在五层=碎片→特征→观点→洞察→框架，这是审美刻度尺。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.2#8『层1碎片→层2特征→层3观点→层4洞察→层5框架』 / atlas chain[1]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>多数人卡第2层交稿</div>
+  <div class="sub-p">多数人停在层2特征（贴标签/分类）就交稿——看着专业，说不出哪里不对。</div>
+  <div class="sub-meta"><span class="why">因为 因为有了五层刻度→所以先标出大众的真实水位：卡在第2层。</span><span class="canon">📎 改名表§A.2#8『多数人停层 2 就交稿（看着专业但「说不出哪里不对」）』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>层4=观点的观点</div>
+  <div class="sub-p">层4洞察＝观点的观点，捅灭所有观点的那个；层3→层4要自我推翻，90%卡这。</div>
+  <div class="sub-meta"><span class="why">因为 因为大众卡在层2→所以指出真正的难关在更高处：层3→层4那一跳（自我推翻）。</span><span class="canon">📎 改名表§A.2#8『层 4 洞察（观点的观点…）…层 3→层 4 需「自我推翻」90% 卡在这』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>层2=x·y·层4=ʸx</div>
+  <div class="sub-p">层2＝x·y（一次性、做完即弃），层4＝ʸx（可蒸馏复用）——分辨率即量级。</div>
+  <div class="sub-meta"><span class="why">因为 因为层4是关键跳→所以把它对回母公理：上到层4才从一次性变可繁殖(ʸx)。</span><span class="canon">📎 改名表§A.2#8『层2＝x·y（一次性），层4＝ʸx（可蒸馏复用）』 / atlas chain[1]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>层5全局最优=O的金标</div>
+  <div class="sub-p">层5框架＝能稳定出洞察的模式；OSA 的 O 爬到 L5 全局最优才算金标准。</div>
+  <div class="sub-meta"><span class="why">因为 因为层4可复用→所以顶层 L5 框架=能反复出洞察的模式，正是 O 轴的 gold 线。</span><span class="canon">📎 OSA绿『O 目标认知=信息五层…L5 全局最优；gold 卡 O 到 L5』 / 改名表§A.2#8</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.9</span><span class="sec-n">IDA 协议（人机分工三段）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">你和AI谁该当老板谁该当员工——三个动作怎么分，颠倒一处会怎样？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>三段各归属·颠倒减半</div>
+  <div class="sub-p">人机协作标准接口 I/D/A，三动作各有归属，颠倒一处效率减半。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.2#9『三个动作各有归属，颠倒一处效率减半』 / atlas chain[1]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>I 信息：人给上下文</div>
+  <div class="sub-p">I＝人提供复杂真实上下文——AI 没有你的业务上下文，这段只能人喂。</div>
+  <div class="sub-meta"><span class="why">因为 因为三段各有归属→所以第一段归人=I（上下文）。</span><span class="canon">📎 改名表§A.2#9『I 信息＝人提供复杂真实上下文（AI 没有你的业务上下文）』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>D 决策：AI候选人拍板</div>
+  <div class="sub-p">D＝AI 给候选、人挑选；让 AI 给『一个答案』＝它替你决策、后果你担。</div>
+  <div class="sub-meta"><span class="why">因为 因为人喂了上下文→所以第二段=D（AI 出候选、人拍板），守住人类友好的判断权。</span><span class="canon">📎 改名表§A.2#9『D 决策＝AI 给候选、人挑选…后果你担』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>A 行动：AI执行人验真</div>
+  <div class="sub-p">A＝AI 执行、人验真；干活交给 AI，验收这一关人不能让。</div>
+  <div class="sub-meta"><span class="why">因为 因为人拍了板→所以第三段=A（AI 干、人验），接验真力『从它说做了到我看见了』。</span><span class="canon">📎 改名表§A.2#9『A 行动＝AI 执行、人验真』 / 工具部#76『验真力』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>君王视角·模型钩</div>
+  <div class="sub-p">君王视角『要候选』而非臣子『问该咋办』；普通人埋1-2钩，明哥8-10钩。</div>
+  <div class="sub-meta"><span class="why">因为 因为三段分工要做对→所以本目给心法（君王视角）与功力刻度（模型钩=内功外显）。</span><span class="canon">📎 改名表§A.2#9『「君王视角」（要候选）…普通人 1-2 个钩，明哥 8-10 个，提示词是内功外显』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.10</span><span class="sec-n">任务族图谱（七类任务）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">接到任务，凭什么第一动作不是开始做、而是花 10 秒认它属于哪一族？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>第一动作是10秒识别</div>
+  <div class="sub-p">接任务第一动作不是『开始做』，是 10 秒识别身份——认错就用错招式。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.2#10『接任务第一动作不是「开始做」是「10 秒识别身份」』 / atlas chain[1]</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>七族各对一套招式</div>
+  <div class="sub-p">内容/研究/自动化/部署/治理/开发/混合七族，各对不同skill群与失败模式。</div>
+  <div class="sub-meta"><span class="why">因为 因为要 10 秒认身份→所以先把『身份』列全=七族各带一套招式。</span><span class="canon">📎 改名表§A.2#10『内容/研究/自动化/部署/治理/开发/混合…每族对应不同 skill 群/验真标准/失败模式』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>单族别繁·混合先拆</div>
+  <div class="sub-p">单族别复杂化，混合族必须先拆——把跨族活当单族打是典型翻车。</div>
+  <div class="sub-meta"><span class="why">因为 因为七族各有招→所以最大坑在边界：单族/混合族认错就用错招（混合族先拆）。</span><span class="canon">📎 改名表§A.2#10『单族别复杂化，混合族别当单族打』 / atlas keywords#72</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>识别族=路由前置</div>
+  <div class="sub-p">识别族不是终点，是路由 skill 的前置——先认族再调技能统帅 search。</div>
+  <div class="sub-meta"><span class="why">因为 因为认对了族→所以下一步才能正确路由（把技能统帅的 search 派到对的 skill 群）。</span><span class="canon">📎 改名表§A.2#10『识别族是路由 skill 的前置动作』 / §A.2#4技能统帅</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>七族同构对外/对内</div>
+  <div class="sub-p">七族归两类=对外创造价值 vs 对内维护增量，与全书『对外/对内』轴同构。</div>
+  <div class="sub-meta"><span class="why">因为 因为族要服务路由→所以再上抽一层，七族折回全书母轴(对外/对内)，路由才不漂移。</span><span class="canon">📎 改名表§B修『7 族归成「对外价值」与「对内增量」两类…与第14章任务族二分同构』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">2.11</span><span class="sec-n">出生证明（交付物）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">前面定了物理/扫描/节拍/刻度/分工/路由，怎么收口成一张可决策可验真的地图给物种发证？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>图景部交付=一张地图</div>
+  <div class="sub-p">把『转向哪』落成一张可决策、可验真的图，齐了才算给物种发了出生证明。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas keywords#出生证明『把「转向哪」落成可决策、可验真的图…才算发了出生证明』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>四件齐：理·扫·拍·尺</div>
+  <div class="sub-p">三法印定底物理×六判断扫一遍×OSA定节拍×信息五层定刻度，四件齐。</div>
+  <div class="sub-meta"><span class="why">因为 因为要拼成一张图→所以列出验收清单：底物理/扫描/节拍/刻度四件缺一不可。</span><span class="canon">📎 atlas keywords#出生证明『三法印定底物理×六判断扫一遍×OSA定节拍×信息五层定刻度，齐了才算』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>可决策：钉死不瞎忙</div>
+  <div class="sub-p">地图第一项验收=可决策：把『往哪转』钉成方向，而不是瞎忙。</div>
+  <div class="sub-meta"><span class="why">因为 因为四件已齐→所以先验它能不能用来决策（回答本部第一性：转向哪）。</span><span class="canon">📎 atlas chain[1]第一性『把「往哪转」钉成可决策的方向，而不是瞎忙』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>可验真：进工具部前体检</div>
+  <div class="sub-p">地图第二项验收=可验真：每个判断能被反推/抽样核对，才放行进工具部。</div>
+  <div class="sub-meta"><span class="why">因为 因为可决策了→所以再验它能不能被验真（接验真力），过了体检才传下一部。</span><span class="canon">📎 atlas keywords#出生证明『可验真』 / chain[2]『方向(出生证明)已清→工具部装代谢系统』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>回扣母公理：给ʸx发证</div>
+  <div class="sub-p">出生证明＝给『会自我繁殖的物种 ʸx』发的身份证，方向对了它才敢日夜自转。</div>
+  <div class="sub-meta"><span class="why">因为 因为图过了可决策×可验真双验→所以它就是 ʸx 的出生证明，图景部到此收口。</span><span class="canon">📎 atlas stage[2]『把 ʸx 转向哪画成可决策地图』 / 贯穿『母公理 ʸx』</span></div>
+</div></div>
+</div></div>
+</details><details class="ch">
+  <summary><span class="seal">三</span>
+    <span class="ch-main"><span class="ch-n">工具部 · 工具部（怎么转 · 装能日夜自转的代谢系统，把方向落成可运转链路）</span>
+      <span class="ch-layer">第三部 · 怎么转（代谢系统）</span><span class="ch-q">怎么转、靠什么日夜不停地转？——装什么代谢系统让它自己吸收、消化、繁殖？</span></span>
+    <span class="ch-c">12 节 · 50 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.1</span><span class="sec-n">三化改造</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">光有方向，怎么把专家脑子里那点隐知识，做成系统能日夜吃、消化、卖钱的代谢入口？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>宝马要饭悖论</div>
+  <div class="sub-p">起点：开着宝马要饭——特别厉害却赚不到钱的专家，差的不是本事是三步资产化。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.3#11『特别厉害但赚不到钱的专家（开着宝马要饭）差的三步』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>数据资产化（第一步）</div>
+  <div class="sub-p">把隐知识变成可被检索的结构化数据——没数据，模型是空中楼阁。</div>
+  <div class="sub-meta"><span class="why">因为 因为专家本事卡在脑子里取不出→所以第一步先把隐知识落成可查的数据。</span><span class="canon">📎 atlas chain[3]#三化改造『数据资产化』 / OS绿第16章</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>模型资产化（第二步）</div>
+  <div class="sub-p">把数据提炼成可复用 SOP/模型——没模型，商业就只是一次性咨询。</div>
+  <div class="sub-meta"><span class="why">因为 因为有了可查的数据→所以第二步把它炼成可反复调用的模型。</span><span class="canon">📎 改名表§A.3#11『模型资产化＝把数据提炼成可复用 SOP/模型』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>商业资产化（第三步）</div>
+  <div class="sub-p">把模型做成可规模变现的产品/SaaS/课程——没商业，前两步白费。</div>
+  <div class="sub-meta"><span class="why">因为 因为有了可复用的模型→所以第三步把它做成能卖的产品，三步闭环。</span><span class="canon">📎 改名表§A.3#11『商业资产化＝把模型做成可规模变现的产品/SaaS/课程』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>三化＝信息五层外侧版</div>
+  <div class="sub-p">信息五层向上提炼、三化向外变现，两者同构互补——一个对内一个对客户。</div>
+  <div class="sub-meta"><span class="why">因为 因为三步资产化是对外的→所以它正是信息五层的对客户外侧镜像，呼应 ʸx『把你做成可繁殖的资产』。</span><span class="canon">📎 atlas chain[3]#三化改造『信息五层的对客户外侧版本』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.2</span><span class="sec-n">解构-建构-增强</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">客户只会说『我大概想要』，怎么把这团模糊翻译成 AI 能照着交付的具体物？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>我大概想要的鸿沟</div>
+  <div class="sub-p">起点：客户嘴里的『我大概想要』和 AI 能交付的具体物之间，隔着一道翻译鸿沟。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[3]#解构-建构-增强『把客户「我大概想要」翻译成 AI 能交付的具体物』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>解构：拆成可交付物</div>
+  <div class="sub-p">把模糊需求解构成 AI 能照做的具体任务单元——先拆碎才能喂进系统。</div>
+  <div class="sub-meta"><span class="why">因为 因为三化要把专家知识喂进系统→所以先有翻译器把模糊需求解构成可交付物。</span><span class="canon">📎 atlas chain[3]『因为三化要把专家知识喂进系统→所以先有翻译器把模糊需求解构成可交付物』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>建构：装进自己</div>
+  <div class="sub-p">解构别人的优点，再建构进自己的体系——这是学习法的中段。</div>
+  <div class="sub-meta"><span class="why">因为 因为拆碎了别人的优点→所以下一步把它建构进自己的体系。</span><span class="canon">📎 atlas chain[3]#解构-建构-增强『也是学习法：解构别人优点再建构进自己再增强』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>增强：长出新东西</div>
+  <div class="sub-p">在装进自己的基础上增强、迭代出原本没有的——增强是这条链的产出口。</div>
+  <div class="sub-meta"><span class="why">因为 因为建构进了自己→所以在它之上增强出原本没有的，呼应 ʸx『每件比上件好』。</span><span class="canon">📎 改名表§A.3#11 同源 / atlas#解构-建构-增强『再增强』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.3</span><span class="sec-n">模-表-板（70/20/10）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">翻译完要动手了，时间到底该花在哪——是先做漂亮界面，还是先想清逻辑？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>新手反着来</div>
+  <div class="sub-p">起点：新手 80% 时间花在『板』上，因为界面有视觉反馈——但有反馈≠高 ROI。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.3#12『新手 80% 时间花在「板」上因为板有视觉反馈』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>模 MODEL：骨头·70%</div>
+  <div class="sub-p">业务逻辑模型是项目的骨头，吃 70% 时间，输出是文字/列表/流程图不是 UI。</div>
+  <div class="sub-meta"><span class="why">因为 因为有反馈不等于高 ROI→所以第一步把 70% 时间砸在看不见的骨头(模)上。</span><span class="canon">📎 改名表§A.3#12『模 MODEL＝业务逻辑模型（项目的「骨头」，70% 时间）』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>表 TABLE：血管·20%</div>
+  <div class="sub-p">数据存储底层是项目的血管，吃 20% 时间，飞书 Base 字段定义清楚。</div>
+  <div class="sub-meta"><span class="why">因为 因为骨头搭好了→所以第二步用 20% 时间接上数据血管(表)。</span><span class="canon">📎 改名表§A.3#12『表 TABLE＝数据存储底层（项目的「血管」，20% 时间）』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>板 DASHBOARD：皮肤·10%</div>
+  <div class="sub-p">交互界面是项目的皮肤，只占 10%，MVP 优先美观靠后——骨头不对皮肤再漂亮也站不住。</div>
+  <div class="sub-meta"><span class="why">因为 因为血管通了→所以最后 10% 时间才做皮肤(板)，顺序锁死才不返工。</span><span class="canon">📎 改名表§A.3#12『板 DASHBOARD＝交互界面（项目的「皮肤」，10% 时间，MVP 优先美观靠后）』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.4</span><span class="sec-n">验真力</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">AI 打卡说『完成 5 个任务了』，凭什么信它？从『它说做了』到『我看见了』隔着什么？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>打卡完成≠真完成</div>
+  <div class="sub-p">起点：AI 自我报告『完成 5 个任务』≠真完成——不信它的自报，是验真的第一念。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[3]#验真力『打卡完成5个任务≠真完成』 / OS绿第19章</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>互斥式：交叉对账</div>
+  <div class="sub-p">用互相独立的两条信息交叉对账，对不上就是有假——互斥是第一把验真尺。</div>
+  <div class="sub-meta"><span class="why">因为 因为做完了不能信自报→所以第一式用互斥信息交叉验真。</span><span class="canon">📎 atlas chain[3]#验真力『互斥/反推/抽样三式验真』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>反推式：从结果倒查</div>
+  <div class="sub-p">从声称的结果倒推过程必经的痕迹，痕迹缺失就是没真做——反推是第二把尺。</div>
+  <div class="sub-meta"><span class="why">因为 因为互斥查的是一致性→所以反推再从结果倒查过程，补另一个角度。</span><span class="canon">📎 atlas chain[3]#验真力『互斥/反推/抽样三式验真』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>抽样式：随机抽查</div>
+  <div class="sub-p">在声称完成的集合里随机抽几条亲眼看，抽到假即全盘存疑——抽样是第三把尺。</div>
+  <div class="sub-meta"><span class="why">因为 因为反推查单点→所以抽样再随机覆盖全集，三式合起来才看得见。</span><span class="canon">📎 atlas chain[3]#验真力『互斥/反推/抽样三式验真，不信 AI 的自我报告』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.5</span><span class="sec-n">复用力</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">一件事验真为真了，第一反应该是收工，还是问它能复用成什么？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>验真为真这一刻</div>
+  <div class="sub-p">起点：一件事刚被验真为真——这一刻不是终点，是复利入口动作的触发点。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[3]『因为验真为真了→所以第一反应问「这能复用成什么 skill」』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>第一反应：能复用成啥</div>
+  <div class="sub-p">做完第一反应不是收工，是问『这能复用成什么 skill』——这就是个人复利的入口。</div>
+  <div class="sub-meta"><span class="why">因为 因为验真为真了→所以第一反应问它能复用成什么，把一次性变成可复利。</span><span class="canon">📎 atlas chain[3]#复用力『做完第一反应是「能复用成什么 skill」』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>与失真识别同步发生</div>
+  <div class="sub-p">复用之问与失真识别同时进行——一手收资产、一手挑错，两个动作捆在同一刻。</div>
+  <div class="sub-meta"><span class="why">因为 因为问复用时正在回看刚做的事→所以顺手同步做失真识别，一次回看两个产出。</span><span class="canon">📎 atlas chain[3]#复用力『与失真识别同步发生』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>复用是 ʸx 入口</div>
+  <div class="sub-p">做一次只用一次=x·y，做一次复用百次才进 ʸx——复用力是从一次性跃向自繁殖的闸门。</div>
+  <div class="sub-meta"><span class="why">因为 因为复用是个人复利的入口→所以它正是 x·y 跃向 ʸx『做会自我繁殖的事』的第一道闸。</span><span class="canon">📎 atlas chain[3]#复用力『是个人复利的入口动作』 / 贯穿『母公理 ʸx』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.6</span><span class="sec-n">Evolution Note（进化记忆）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">想复用，可记忆怎么沉下来？不写进化笔记，三个月后的你凭什么和半年前不一样？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>不写=复利失效</div>
+  <div class="sub-p">起点：不写进化笔记=个人复利失效，三个月后的你和半年前没区别。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[3]#Evolution Note『不写=个人复利失效，三个月后的你和半年前没区别』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>每件事 4 行模板</div>
+  <div class="sub-p">每件事写 4 行：事件/进化/下次怎么用/留下 skill——一个能直接照填的固定模板。</div>
+  <div class="sub-meta"><span class="why">因为 因为想复用要让记忆沉下来→所以每件事写 4 行进化笔记把它沉成会复利的记忆。</span><span class="canon">📎 atlas chain[3]#Evolution Note『每件事写4行(事件/进化/下次怎么用/留下skill)』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>药引不是药渣</div>
+  <div class="sub-p">吃完药剩的不是药渣是药引——每件事比上件好，进化笔记就是把药渣转成药引的动作。</div>
+  <div class="sub-meta"><span class="why">因为 因为 4 行里有『进化/下次怎么用』→所以每条笔记把这次的残余转成下次的药引。</span><span class="canon">📎 atlas chain[2]#递归进化『吃完药剩的不是药渣是药引』(三法印·本部落地)</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>笔记=ʸx 在小事的落地</div>
+  <div class="sub-p">递归进化是 ʸx 在每件小事上的落地，进化笔记是它唯一的留痕载体——没笔记递归断在第一次。</div>
+  <div class="sub-meta"><span class="why">因为 因为药引要一代喂一代→所以进化笔记是 ʸx 递归在小事上留痕的载体，断笔记即断递归。</span><span class="canon">📎 atlas chain[2]#递归进化『ʸx 在每件小事上的落地』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.7</span><span class="sec-n">班底第一性（1+N/+N 自繁殖）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">一个人会被产能卡死，怎么从单兵变成一队、再变成这队能自己造下一代？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>单人被产能卡死</div>
+  <div class="sub-p">起点：一个你=碳基产能封顶，单兵迟早被产能卡死——这是带班底的逼迫起点。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[3]『因为单人会被产能卡死→所以装上 1+N 班底』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>1=你，N=AI 班底</div>
+  <div class="sub-p">1=你这个碳基启动者，N=你的一队 AI 角色——带班底是入门动作不是高级动作。</div>
+  <div class="sub-meta"><span class="why">因为 因为单兵卡死→所以第一步装上 1+N：一个你配一队 AI 角色。</span><span class="canon">📎 改名表§A.3#13『1＝你（碳基启动者）；N＝你的 AI 班底角色』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>+N 自繁殖那第三个加号</div>
+  <div class="sub-p">N 能造下一代 N——最容易被忽略的第三个加号，N 固定=还在 x·y，N 在生长=进 ʸx。</div>
+  <div class="sub-meta"><span class="why">因为 因为 1+N 只是带队(x·y)→所以关键在 +N 自繁殖：让 N 自己造 N，才跨进 ʸx。</span><span class="canon">📎 改名表§A.3#13『+N 自繁殖＝N 能造下一代 N…N 在生长＝进入 ʸx』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>1+3→1+100 梯度</div>
+  <div class="sub-p">1+3 入门/1+10 合格能协同/1+30 优秀自动蒸馏/1+100 是 S4 能孵化管培——一把可对号的尺子。</div>
+  <div class="sub-meta"><span class="why">因为 因为自繁殖要分阶段长→所以给出 1+3 到 1+100 的梯度，对应 S 路径升级。</span><span class="canon">📎 改名表§A.3#13『1+3 入门 / 1+10 合格…/ 1+100 是 S4 且能孵化下一个管培』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.8</span><span class="sec-n">三大脑路由</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">有了一队班底，活该派给谁——策略的事、执行的事、验真的事，能用一个脑子全干吗？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>一个脑子干不完三种活</div>
+  <div class="sub-p">起点：策略、执行、验真是三种不同的活，一个脑子全包就会样样夹生。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[3]『因为有了 1+N 班底→所以把活按策略/执行/验真路由给三大脑』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>诸葛亮：策略大脑</div>
+  <div class="sub-p">出谋划策、定方向的活派给诸葛亮——对应 OSA 的 S 策略层。</div>
+  <div class="sub-meta"><span class="why">因为 因为活分策略/执行/验真三种→所以第一类策略活派给诸葛亮。</span><span class="canon">📎 atlas chain[3]#三大脑路由『诸葛亮(策略)』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>赵子龙：执行大脑</div>
+  <div class="sub-p">冲锋落地、把方案干出来的活派给赵子龙——对应 OSA 的 A 行动层。</div>
+  <div class="sub-meta"><span class="why">因为 因为诸葛亮定了策略→所以执行活派给赵子龙把它干出来。</span><span class="canon">📎 atlas chain[3]#三大脑路由『赵子龙(执行)』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>海茨：验真大脑</div>
+  <div class="sub-p">挑错、亲眼验真的活派给海茨——接验真力那一节的互斥/反推/抽样。</div>
+  <div class="sub-meta"><span class="why">因为 因为赵子龙干完要验→所以验真活派给海茨，三脑各司一段闭成环。</span><span class="canon">📎 atlas chain[3]#三大脑路由『海茨(验真)』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.9</span><span class="sec-n">蒸馏（case→pattern→skill）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">班底跑出了一个成功 case，怎么让这一次成功繁殖成一百次，而不是只用一次？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>翻倍 100 次 vs 只用 1 次</div>
+  <div class="sub-p">起点：同一个成功，有人翻倍 100 次有人只用 1 次——差别就在蒸不蒸馏。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.3#14『同一个成功「翻倍 100 次 vs 只用 1 次」的差别所在』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>case→pattern→skill 三段</div>
+  <div class="sub-p">一次性 case→抽象→重复出现的 pattern→工程化→可反复调用的 skill——三步从特殊到普遍。</div>
+  <div class="sub-meta"><span class="why">因为 因为班底跑出了成功 case→所以按 case→pattern→skill 三段把它蒸成可复用件。</span><span class="canon">📎 改名表§A.3#14『case（一次性事件）→抽象→pattern→工程化→skill』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>难点：通用化找对边界</div>
+  <div class="sub-p">核心难点不是做出 skill 文件，是找对边界——太窄只能用 1 次、太宽用在不该用的地方。</div>
+  <div class="sub-meta"><span class="why">因为 因为三段里 pattern→skill 最易翻车→所以难点单拎出来：通用化要找对边界。</span><span class="canon">📎 改名表§A.3#14『核心难点…是通用化找对边界（太窄只能用 1 次/太宽用在不该用的地方）』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>命名约定与版本</div>
+  <div class="sub-p">skill 命名 [行业]-[动作]-[对象]（如 yuanli-policy-decoder，别人 1 秒看懂）+ 版本 v1→v4。</div>
+  <div class="sub-meta"><span class="why">因为 因为边界对了要可被复用→所以加命名约定与版本管理，让别人一秒看懂能调。</span><span class="canon">📎 改名表§A.3#14『命名约定 [行业]-[动作]-[对象]…+ 版本管理 v1→v4』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>反本能的 30 分钟</div>
+  <div class="sub-p">做完不想蒸馏（不爽），但蒸馏 30 分钟是 ROI 最高的 30 分钟——这就是 ʸx 让一次繁殖百次。</div>
+  <div class="sub-meta"><span class="why">因为 因为蒸馏反本能→所以点破它是 ROI 最高的 30 分钟，正是 ʸx『一次成功繁殖一百次』。</span><span class="canon">📎 改名表§A.3#14『反本能（…蒸馏 30 分钟是 ROI 最高的 30 分钟）』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.10</span><span class="sec-n">龙虾（心智镜 AI）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">蒸馏出的 skill 是你心智的产物，那你养出来的 AI，是不是就是你心智的镜子？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>同语料长出不同味道</div>
+  <div class="sub-p">起点：6 个管培用同样提示词+同样语料，长出 6 只味道完全不同的龙虾。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 改名表§A.3#15『6 个管培用同样提示词+同样语料，长出 6 只味道完全不同的「龙虾」』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>差异在互动模式不在模型</div>
+  <div class="sub-p">都是同一个 Claude，明哥带商业气/艾琳政务严谨/小罗数据驱动——差异不在模型在互动模式。</div>
+  <div class="sub-meta"><span class="why">因为 因为同语料却味道各异→所以差异不来自模型，来自每个人的互动模式。</span><span class="canon">📎 改名表§A.3#15『差异不在模型（同一个 Claude）在互动模式』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>味道来自累积</div>
+  <div class="sub-p">100 次出思维节奏/1000 次出风格/10000 次盲测能认出签名——味道是塑造不是设置。</div>
+  <div class="sub-meta"><span class="why">因为 因为味道来自互动模式→所以它靠次数累积长出来，是塑造不是一次设置。</span><span class="canon">📎 改名表§A.3#15『味道来自累积（100 次→思维节奏/1000 次→风格/10000 次→盲测能认出签名）』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>养歪 5 信号回到你心智</div>
+  <div class="sub-p">语气漂移/风格漂移/主动性消失/长度异常/『不像我』——触发时不是改 AI，是回到你心智。</div>
+  <div class="sub-meta"><span class="why">因为 因为味道是你塑造的→所以养歪 5 信号亮起时，改的不是 AI 是你的心智，龙虾=心智镜。</span><span class="canon">📎 改名表§A.3#15『养歪的 5 个信号…不是改 AI，是回到你心智』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.11</span><span class="sec-n">单一真源</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">龙虾喂的是你的语料资产，这些资产该放哪——能交给别人的服务器吗？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>资产是龙虾的口粮</div>
+  <div class="sub-p">起点：龙虾的味道喂自你的语料资产——这些资产是它的口粮，怎么存决定它的根。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[3]『因为龙虾喂的是你的语料资产→所以这些资产必须单一真源、本地自持』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>一个数据只有一个权威源</div>
+  <div class="sub-p">任何数据只有一个权威来源——多个副本=漂移与冲突，单一真源是自持知识库的第一律。</div>
+  <div class="sub-meta"><span class="why">因为 因为资产是口粮→所以第一律：每条数据只认一个权威源，杜绝漂移。</span><span class="canon">📎 atlas chain[3]#单一真源『任何数据只有一个权威来源』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>重要资产本地自持</div>
+  <div class="sub-p">重要资产本地存、别放别人服务器上——本地自持是把命脉攥在自己手里。</div>
+  <div class="sub-meta"><span class="why">因为 因为只能有一个权威源→所以这个源得是你本地自持的，不寄人篱下。</span><span class="canon">📎 atlas chain[3]#单一真源『重要资产本地存别放别人服务器上』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>单一真源=锁定关涡轮</div>
+  <div class="sub-p">单一真源是锁定关的 OS 涡轮——↔ 左腿第四关壁垒锁定，自持知识库就是护城河。</div>
+  <div class="sub-meta"><span class="why">因为 因为本地自持攥住了命脉→所以它成了锁定关的涡轮，把资产烧成壁垒(ʸx 自持的根)。</span><span class="canon">📎 atlas chain[3]#单一真源『锁定关的 OS 涡轮』 / 改名表§B修③『↔ 第四关壁垒锁定：单一真源与自持知识库』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">3.12</span><span class="sec-n">代谢系统（交付物）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">前面十件工具各管一段，怎么接成一套你不在场也在转的代谢系统？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>十件工具各管一段</div>
+  <div class="sub-p">起点：三化/解构建构增强/模表板/验真/复用/进化笔记/班底/蒸馏/龙虾/单一真源各管一段。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas chain[3]『因为前面十件工具各管一段→所以接成闭环』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>吸收→消化→繁殖→自持闭环</div>
+  <div class="sub-p">吸收(摄入)→消化(蒸馏)→繁殖(skill)→自持(真源)接成一环——这就是代谢的四拍。</div>
+  <div class="sub-meta"><span class="why">因为 因为十件各管一段→所以按吸收/消化/繁殖/自持串成一个闭环。</span><span class="canon">📎 atlas chain[3]#代谢系统『吸收(摄入)→消化(蒸馏)→繁殖(skill)→自持(真源)』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>你不在场也在转</div>
+  <div class="sub-p">闭环接好后你不在场它也在转——这是从『让它转(x^y)』装到『让它自己生(ʸx)』的传动。</div>
+  <div class="sub-meta"><span class="why">因为 因为四拍接成了闭环→所以它能在你不在场时自转，跨过 x^y 逼近 ʸx。</span><span class="canon">📎 atlas chain[3]#代谢系统『你不在场也在转，这就是代谢系统』 / 递进『从「让它转起来(x^y)」装到「让它自己生(ʸx)」』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>工具部交付物=元AI 的大脑</div>
+  <div class="sub-p">代谢系统=工具部交付物，对应元AI 四套里『一个大脑』(GBRAIN·yuanli-os-company-brain)。〔成熟度🟡说明书/蒸馏停未补，待补〕</div>
+  <div class="sub-meta"><span class="why">因为 因为闭环=工具部交付物→所以它落成元AI 四套的『一个大脑』(记忆器官)；薄处诚实标待补。</span><span class="canon">📎 atlas chain[3]#代谢系统『工具部的交付物』 / 改名表§A0『一个大脑＝yuanli-os-company-brain（记忆）』〔成熟度待补〕</span></div>
+</div></div>
+</div></div>
+</details><details class="ch">
+  <summary><span class="seal">四</span>
+    <span class="ch-main"><span class="ch-n">身份部 · 原力OS · 身份部（转完是谁）</span>
+      <span class="ch-layer">第四部 · 转完是谁（出口考试）</span><span class="ch-q">转完是谁、出口考什么？——造出下一个造物者算不算过？</span></span>
+    <span class="ch-c">12 节 · 56 目</span><span class="chev">▾</span></summary>
+  <div class="ch-body"><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.1</span><span class="sec-n">S1 建模（1·x/学生）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">转移的第一阶，你是谁？——0-3 月该松土还是该急着出东西，1·x 的『会用 AI』算到位了吗？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>0-3月·学生定位</div>
+  <div class="sub-p">S1=理解世界、会用 AI；0-3 月，身份是学生不是产出者。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas-v2-os.json S1#82『0-3月：理解世界、会用 AI』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>1·x 的量级天花板</div>
+  <div class="sub-p">数字反差:1·x=一个人单干，产能是一双手的线性，封顶 24 小时。</div>
+  <div class="sub-meta"><span class="why">因为 因为定了学生身份→所以先认清这阶段数学量级只是 1·x(线性、未放大)。</span><span class="canon">📎 atlas-v2-os.json 递进轴『S1建模(1·x)』+ outline macro『1·x 线性』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>最大诱惑=想出东西</div>
+  <div class="sub-p">一个论点:S1 最大的坑是急着出成品，但这阶段真任务是松土。</div>
+  <div class="sub-meta"><span class="why">因为 因为量级还在 1·x(没攒够势)→所以急着出东西=拔苗，本阶段诱惑必须按住。</span><span class="canon">📎 atlas-v2-os.json S1#82『最大诱惑是想立刻出东西，但这阶段是松土』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>松土动作=用熟 AI</div>
+  <div class="sub-p">可动手:把 AI 当日常工具用熟，攒『理解世界』的土壤，不求繁殖。</div>
+  <div class="sub-meta"><span class="why">因为 因为按住了出成品诱惑→所以把劲用在『松土=把 AI 用熟』这唯一该做的动作上。</span><span class="canon">📎 atlas-v2-os.json S1#82 + outline books OS 第37/38章</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>出阶信号</div>
+  <div class="sub-p">升 S2 凭据:不是『做出了什么』，是『AI 已成你的反射』，土松透才进。</div>
+  <div class="sub-meta"><span class="why">因为 因为松土是过程不是终点→所以用『AI 成反射』当出阶尺，土松透才进 S2。</span><span class="canon">📎 atlas-v2-os.json chain S2 链『因为 S1 会用 AI(1·x)了→所以下一阶蒸馏 skill 带班底』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.2</span><span class="sec-n">S2 工具（x·y/工匠）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">升到第二阶，你是谁？——3-6 月，从『会用 AI』跳到『蒸馏 skill 带班底』，量级凭什么从 1·x 跳成 x·y？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>3-6月·工匠定位</div>
+  <div class="sub-p">S2=蒸馏 skill、带 AI 班底；3-6 月，身份从学生变工匠。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas-v2-os.json S2#82『3-6月：蒸馏 skill、带 AI 班底』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>量级跳成 x·y</div>
+  <div class="sub-p">数字反差:1·x(一双手)→x·y(你×N 个 AI)，产能从线性变乘法。</div>
+  <div class="sub-meta"><span class="why">因为 因为带了班底(1+N)→所以量级从 1·x 跳成 x·y(乘法)，第一次换物种。</span><span class="canon">📎 atlas-v2-os.json 递进轴『S2工具(x·y)』+ 贯穿『x·y 乘法』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>蒸馏成 skill</div>
+  <div class="sub-p">可动手:把一次成功抽象成 pattern、工程化成 skill，繁殖一百次。</div>
+  <div class="sub-meta"><span class="why">因为 因为要从 1·x 跳 x·y→所以核心动作是蒸馏:把手艺沉成可复用的工具。</span><span class="canon">📎 atlas-v2-os.json 工具部#80『蒸馏 case→pattern→skill · 一次成功翻倍100次』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>『另一个人』隐喻</div>
+  <div class="sub-p">一个隐喻:S2 的你是『另一个人』——不是多了技能，是换了会带兵的物种。</div>
+  <div class="sub-meta"><span class="why">因为 因为量级跳了一档(x·y)→所以 S2 的你对 S1 是『另一个人』，是相变不是渐进。</span><span class="canon">📎 atlas-v2-os.json S2#82『S2 的你是另一个人』+ 递进轴『每升一阶不是多点能力是换了个人』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>出阶信号</div>
+  <div class="sub-p">升 S3 凭据:有一队能干活的班底+一摞蒸馏好的 skill，才够格做产品。</div>
+  <div class="sub-meta"><span class="why">因为 因为有了班底和 skill(x·y)→所以下一阶能拿它们做出被深度依赖的产品，进 S3。</span><span class="canon">📎 atlas-v2-os.json chain S3 链『因为 S2 有了班底(x·y)→所以做出自反馈飞轮/被深度依赖的产品』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.3</span><span class="sec-n">S3 板（x^y/产品人）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">升到第三阶，你是谁？——6-12 月，做出『别人离不开的东西』，但飞轮里人还是天花板，x^y 的极限在哪？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>6-12月·产品人定位</div>
+  <div class="sub-p">S3=做出被深度依赖的产品/飞轮；6-12 月，身份从工匠变产品人。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas-v2-os.json S3#82『6-12月：做出被深度依赖的产品/飞轮』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>量级跳成 x^y</div>
+  <div class="sub-p">数字反差:x·y(乘法)→x^y(自反馈的幂)，产品自滚雪球但仍要人推。</div>
+  <div class="sub-meta"><span class="why">因为 因为做出了自反馈飞轮→所以量级从 x·y 跳成 x^y(幂)，第二次换物种。</span><span class="canon">📎 atlas-v2-os.json 递进轴『S3板(x^y)』+ 信念部#61『x^y 工具自反馈/增长飞轮』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>判据=别人离不开</div>
+  <div class="sub-p">一个论点:S3 验收题不是『我做了产品』，是『有没有人依赖到离不开』。</div>
+  <div class="sub-meta"><span class="why">因为 因为 x^y 要靠真实拉力转→所以用『别人离不开』当判据，不是自我感觉的完成。</span><span class="canon">📎 atlas-v2-os.json S3#82『做出别人离不开的东西』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>x^y 天花板=人</div>
+  <div class="sub-p">诚实声明:x^y 看似很猛，飞轮里仍需人写功能调参——人是天花板。</div>
+  <div class="sub-meta"><span class="why">因为 因为产品要『离不开』就得不断喂功能→所以飞轮转得越大越暴露:人还卡在循环里。</span><span class="canon">📎 atlas-v2-os.json 信念部#61『飞轮里仍需人写功能调参驱动增长，人是天花板』+ S4 链</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>出阶信号</div>
+  <div class="sub-p">升 S4 凭据:看清『飞轮仍需我在场』这道天花板，决意让人退出循环。</div>
+  <div class="sub-meta"><span class="why">因为 因为 x^y 卡在人这道天花板→所以唯一出路是让人退出循环=跳向 ʸx，进 S4。</span><span class="canon">📎 atlas-v2-os.json chain S4 链『因为 S3 飞轮仍需你在场(x^y)→所以造出能独立造物的下一个人』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.4</span><span class="sec-n">S4 舱（ʸx/孵化者）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">走到末阶，你是谁？——12 月+，出口考试只有一道题:你造出『能独立造物的下一个人』了吗？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>12月+·孵化者定位</div>
+  <div class="sub-p">S4=造出能独立造物的下一个人；12 月+，身份从产品人变孵化者。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas-v2-os.json S4#82『12月+：造出能独立造物的下一个人』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>量级走满 ʸx</div>
+  <div class="sub-p">数字反差:x^y(人仍在场)→ʸx(智能造智能、人退出)，是维度差。</div>
+  <div class="sub-meta"><span class="why">因为 因为要让人退出循环→所以量级从 x^y 走满 ʸx，四档全跨完，最后一次换物种。</span><span class="canon">📎 atlas-v2-os.json 贯穿『x^y 与 ʸx 是维度差不是程度差』+ 递进轴『人退出循环、智能自己生』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>出口考只一道题</div>
+  <div class="sub-p">一个论点:S4 出口考只一题=物种转移是否完成，过/不过二元。</div>
+  <div class="sub-meta"><span class="why">因为 因为 ʸx 的标志是人退出循环→所以出口题只剩一道:那个能独立造物的人造出来没。</span><span class="canon">📎 atlas-v2-os.json S4#82『出口考试只有一道题=物种转移完成』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>舱=ʸx 栖身处</div>
+  <div class="sub-p">一个隐喻:S4 叫『舱』——从 S1 的工地走进能孵化下一代的造物者母舱。</div>
+  <div class="sub-meta"><span class="why">因为 因为走满了 ʸx(智能自己生)→所以身份终态是『舱』:会自繁殖的栖身处，不再是工位。</span><span class="canon">📎 atlas-v2-os.json outline OS 身份部『S4 舱（ʸx/孵化者）』+ 总概念『你睡觉时它还在长』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>接最高命题</div>
+  <div class="sub-p">递进锚:S4 出口题(造出下一个造物者)就是下一节『最高命题』入口。</div>
+  <div class="sub-meta"><span class="why">因为 因为出口题=造出下一个造物者→所以它直接升格成全书最高命题，四阶 S 路径在此收口。</span><span class="canon">📎 atlas-v2-os.json chain 最高命题链『因为 S4 出口题=造出下一个造物者→所以最高命题=繁殖出繁殖者』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.5</span><span class="sec-n">最高命题（下一个造物者）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">物种转移走到头，你最终的作品是什么？——是任何一个产品，还是『下一个能继续造物的人』？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>最终作品非产品</div>
+  <div class="sub-p">一个反转:终极成果不是某个爆款产品，是『下一个能继续造物的人』。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas-v2-os.json 最高命题#84『你的最终作品不是任何产品，是下一个能继续造物的人』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>繁殖出繁殖者</div>
+  <div class="sub-p">一个论点:繁殖的最高形式是繁殖出繁殖者——造一个会造产品的人。</div>
+  <div class="sub-meta"><span class="why">因为 因为最终作品是『下一个人』→所以繁殖升到最高阶:繁殖出能再繁殖的繁殖者。</span><span class="canon">📎 atlas-v2-os.json 最高命题#84『繁殖的最高形式是繁殖出繁殖者』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>=ʸx 的终点</div>
+  <div class="sub-p">究竟回溯:繁殖出繁殖者=ʸx 数学终点(智能造智能落到人身上)。</div>
+  <div class="sub-meta"><span class="why">因为 因为繁殖出繁殖者是递归最高形式→所以它正是公理 ʸx 在身份层的终点形态。</span><span class="canon">📎 atlas-v2-os.json 最高命题#84『这是 ʸx 的终点』+ outline axiom『做会自我繁殖的事』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>递归无终点回扣</div>
+  <div class="sub-p">一个画面:下一个造物者又造他的下一个——莫比乌斯环，终点即起点。</div>
+  <div class="sub-meta"><span class="why">因为 因为 ʸx 是递归(部分即整体 CAS)→所以『终点』不封口，是螺旋:造物者再造造物者。</span><span class="canon">📎 atlas-v2-os.json model『莫比乌斯环…递归无终点』+ outline reasoning『莫比乌斯:终点即起点』</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.6</span><span class="sec-n">三红线（隐私/合规/人格）</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">ʸx 的量级要放大，先得圈死什么？——哪三条边界，死也不能碰？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>三条不可碰红线</div>
+  <div class="sub-p">一个清单:隐私、合规、人格——死也不能碰，由治理OS 守在工作OS 之上。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas-v2-os.json 三红线#83『死也不能碰的三条不可碰红线』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>为何先圈死</div>
+  <div class="sub-p">一个论点:ʸx 越放大，碰红线后果越被指数放大——放大前先圈死。</div>
+  <div class="sub-meta"><span class="why">因为 因为 ʸx 量级要放大(S4)→所以放大之前先用三红线圈死死也不能碰的地方。</span><span class="canon">📎 atlas-v2-os.json 三红线链『因为 ʸx 量级要放大→所以先用三红线圈死边界』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>治理守·工作干</div>
+  <div class="sub-p">一个机制:红线由治理OS(半年级·司法)守，工作OS(月级·行政)只管干别越界。</div>
+  <div class="sub-meta"><span class="why">因为 因为红线是慢变底线→所以归治理OS 守，与快变的工作OS 物理分立，频率不混。</span><span class="canon">📎 atlas-v2-os.json 三红线#83『工作OS之上由治理OS守住的边界』+ 图景部#68 双OS架构</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>红线 vs 扫描器</div>
+  <div class="sub-p">一个对照:六判断是动手前『扫一遍』的软闸，三红线是一票否决的硬墙。</div>
+  <div class="sub-meta"><span class="why">因为 因为治理OS 要分清软硬→所以六判断(扫描)管效率、三红线(硬墙)管生死，别混。</span><span class="canon">📎 atlas-v2-os.json 图景部#67 六判断 + 三红线#83(对照:扫描器是软闸/红线是硬墙)</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.7</span><span class="sec-n">失真自首</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">在一个会自繁殖的系统里，犯了错该藏还是该自首？——藏一处错，会沿嵌套链炸成什么？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>犯错主动自首</div>
+  <div class="sub-p">一个论点:犯错主动自首是给组织送礼物——把雷拆在它炸开之前。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas-v2-os.json 失真自首#83『犯错主动自首是给组织送礼物』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>失真被指数放大</div>
+  <div class="sub-p">数字反差:手推系统失真是加法,ʸx 系统是自乘×2×2,沿嵌套链炸开。</div>
+  <div class="sub-meta"><span class="why">因为 因为 ʸx 是嵌套链(一个环喂下一个)→所以一处失真不是累加是自乘，被指数放大。</span><span class="canon">📎 atlas-v2-os.json 失真自首#83『ʸx 量级失真被指数放大，藏一处错会沿嵌套链炸开』+ 最小闭环 U3 §1.3</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>三态诚实拦废齿</div>
+  <div class="sub-p">一个机制:收口必落成/卡/部分成三态，不许『差不多』混进飞轮。</div>
+  <div class="sub-meta"><span class="why">因为 因为失真会被飞轮放大→所以收口处装诚实刻度盘:三态落子，拦住废齿入轮。</span><span class="canon">📎 最小闭环 U3『三种结果态 completed/blocked/failed_partial…不允许模糊收口』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>失败是药引</div>
+  <div class="sub-p">一个隐喻:诚实标的部分没成是下轮药引;藏成已完成就把药引当药渣扔。</div>
+  <div class="sub-meta"><span class="why">因为 因为三态诚实留住了真信息→所以『没成的那段』成药引能复利;藏起来=扔药引断复利。</span><span class="canon">📎 最小闭环 U3 §1.2『药不是药渣是药引』+ atlas-v2-os.json 贯穿母公理</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.8</span><span class="sec-n">三圈记忆边界</span>
+    <span class="sec-c">4 目</span></div>
+  <div class="sec-q">自首要诚实、隐私要守住，怎么两全？——客户 A 的隐私，会不会沿你的 AI 班底漏给客户 B？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>白箱对内黑箱对外</div>
+  <div class="sub-p">一个机制:对内白箱(自己人全透明)、对外黑箱(客户间互不可见)。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 atlas-v2-os.json 三圈记忆边界#49『白箱对内黑箱对外』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>各客户物理隔离</div>
+  <div class="sub-p">一个论点:客户 A/B/C 记忆物理隔离，防 A 隐私沿共享班底漏给 B。</div>
+  <div class="sub-meta"><span class="why">因为 因为对外要黑箱→所以各客户记忆必须物理隔离，不是逻辑约定是物理切断。</span><span class="canon">📎 atlas-v2-os.json 三圈记忆边界#49『各客户记忆物理隔离，防止客户A的隐私沿班底泄露给客户B』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>诚实与守密并存</div>
+  <div class="sub-p">一个对照:自首要对内全透明，三圈要对外守死——靠白/黑箱分层并存。</div>
+  <div class="sub-meta"><span class="why">因为 因为上一节要诚实自首但隐私要守→所以用白箱(对内诚实)×黑箱(对外隔离)化解张力。</span><span class="canon">📎 atlas-v2-os.json 三圈记忆边界链『因为自首要诚实但隐私要守→所以各客户记忆物理隔离』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>接第四关壁垒锁定</div>
+  <div class="sub-p">一个锚点:三圈隔离是 OS↔创业同构缝，即创业第四关壁垒锁定在 OS 侧落地。</div>
+  <div class="sub-meta"><span class="why">因为 因为隔离守住了客户资产→所以它与创业第四关壁垒锁定同构，OS 收口接回锁定关。</span><span class="canon">📎 atlas-v2-os.json 三圈记忆边界#49『双轨改名表§B修③ ↔第四关壁垒锁定』+ outline 同构</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.9</span><span class="sec-n">一纸文脉（原力·灵魂）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">转完交付的元AI，第一套器官是什么？——『你是谁』怎么写成一页能喂给 AI 的灵魂？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>灵魂=你是谁</div>
+  <div class="sub-p">一个定义:一纸文脉=元AI 灵魂器官，把『你是谁』写成一页可喂 AI 的上下文。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 outline delivers organs『一纸文脉…灵魂·你是谁…缺→是通用 AI，不是你的 AI』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>建在信念部接资产</div>
+  <div class="sub-p">一个锚点:文脉在信念部确立精神底色，向左接脊骨④原力资产。</div>
+  <div class="sub-meta"><span class="why">因为 因为灵魂是『你是谁』→所以它建在信念部(定精神底色)、接原力资产这条主根。</span><span class="canon">📎 outline delivers organs 一纸文脉『builds_in:信念部』+ spine 脊骨④原力资产 + atlas-v2-os.json#106</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>系统=三部曲本身🟢</div>
+  <div class="sub-p">一个案例位:真实系统=这套三部曲文脉本身(🟢G、最完备),书造它自己。</div>
+  <div class="sub-meta"><span class="why">因为 因为文脉要可喂 AI→所以真实系统就是这套三部曲(成熟度🟢G、最完备)，书造自己。</span><span class="canon">📎 outline delivers organs 一纸文脉『system:yuanli-strategy-trilogy…mat:G…理论最完备』+ reasoning『书造自己』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>制品=说明书 V1-V3</div>
+  <div class="sub-p">一个模板:制品=《原力资产》说明书 V1→V3/龙虾心智镜，逐版把『你』写厚。</div>
+  <div class="sub-meta"><span class="why">因为 因为系统骨架锁定但血肉在填→所以用说明书 V1-V3 当迭代模板，逐版把灵魂写厚。</span><span class="canon">📎 outline delivers organs 一纸文脉『制品=《原力资产》说明书V1-V3/龙虾心智镜』· 改名表§A0</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>last-mile〔待补〕</div>
+  <div class="sub-p">诚实标:文脉成熟度最高🟢，但血肉在填，范本 V1-V3 实例〔待补〕。</div>
+  <div class="sub-meta"><span class="why">因为 因为制品是 V1-V3 迭代物→所以诚实交代当前填到哪一版，未完成处标〔待补〕别硬填。</span><span class="canon">📎 outline delivers last_mile『血肉在填…成熟度文脉&gt;地图&gt;大脑&gt;链路』；范本〔待补〕</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.10</span><span class="sec-n">一个大脑（OS·记忆）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">第二套器官是什么？——领域知识怎么沉成『过目不忘、会成长』的记忆，而不是每次从零？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>记忆=你知道什么</div>
+  <div class="sub-p">一个定义:一个大脑=元AI 记忆器官，把领域知识沉成可检索、会成长的库。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 outline delivers organs『一个大脑…记忆·你知道什么…缺→失忆，每次从零』+ atlas-v2-os.json#107</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>建在工具部·蒸馏</div>
+  <div class="sub-p">一个锚点:大脑在工具部长出来，靠代谢的『蒸馏』把每次跑通沉成记忆。</div>
+  <div class="sub-meta"><span class="why">因为 因为记忆要会成长→所以它建在工具部，由代谢系统的吸收→蒸馏不断喂养。</span><span class="canon">📎 outline delivers organs 一个大脑『builds_in:工具部(代谢系统/蒸馏)』+ 最小闭环 U6</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>系统=GBRAIN🟡</div>
+  <div class="sub-p">一个案例位:真实系统=GBRAIN 企业大脑(🟡A)，脚手架 A- 可检索。</div>
+  <div class="sub-meta"><span class="why">因为 因为记忆要可检索→所以真实系统=GBRAIN 企业大脑(成熟度🟡A，脚手架已搭)。</span><span class="canon">📎 outline delivers organs 一个大脑『system:GBRAIN/enterprise-brain…mat:A』+ atlas-v2-os.json#107</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>过目不忘×真源</div>
+  <div class="sub-p">一个论点:大脑两条命门=过目不忘(吸收沉淀)×单一真源(本地自持权威库)。</div>
+  <div class="sub-meta"><span class="why">因为 因为脚手架搭好了→所以接着该解决『记得住』:靠单一真源把记忆焊成不漂移的库。</span><span class="canon">📎 atlas-v2-os.json 工具部#81『单一真源:任何数据只有一个权威来源』+ outline organs 大脑 lack『失忆』</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>卡蒸馏停🟡〔待补〕</div>
+  <div class="sub-p">诚实标:大脑卡在『过目不忘、学不进·蒸馏停了』，蒸馏回流断点〔待补〕。</div>
+  <div class="sub-meta"><span class="why">因为 因为单一真源解决了存→但『学进去、会成长』那层卡(蒸馏停)，所以标 last-mile〔待补〕。</span><span class="canon">📎 outline delivers organs 一个大脑『mnote:脚手架A-·但过目不忘、学不进·蒸馏停了』+ last_mile</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.11</span><span class="sec-n">一张地图（CBM·判断）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">第三套器官是什么？——商业模式×关键战役怎么画成一张能决策、能出 3 候选的因果图？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>判断=你怎么决策</div>
+  <div class="sub-p">一个定义:一张地图=元AI 判断器官，把商业模式×关键战役画成可决策因果图。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 outline delivers organs『一张地图…判断·你怎么决策…缺→瞎干，没方向』+ atlas-v2-os.json#108</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>建在图景部 OSA</div>
+  <div class="sub-p">一个锚点:地图在图景部立出生证明，底物理三法印、刻度信息五层、节拍 OSA。</div>
+  <div class="sub-meta"><span class="why">因为 因为判断要可决策→所以它建在图景部，用三法印×信息五层×OSA 钉成可决策图。</span><span class="canon">📎 outline delivers organs 一张地图『builds_in:图景部(三法印/信息五层/OSA)』+ atlas-v2-os.json 图景部</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>系统=cbm-osa🟢</div>
+  <div class="sub-p">一个案例位:真实系统=cbm-osa 可追溯层(🟢G)，289 组件、数据最实。</div>
+  <div class="sub-meta"><span class="why">因为 因为地图要可决策→所以真实系统=cbm-osa 可追溯层(成熟度🟢G、289 组件 grounded)。</span><span class="canon">📎 outline delivers organs 一张地图『system:cbm-osa-traceability…mat:G…289 组件 grounded·数据最实』+ atlas-v2-os.json#108</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>出 3 候选不跳层</div>
+  <div class="sub-p">一个机制:地图用法=找支点、逼出 3 候选砍到 1;跳层是 80% 失败根因。</div>
+  <div class="sub-meta"><span class="why">因为 因为数据最实(289 组件)→所以地图能撑起 OSA 的 S 段:摆 3 候选、不跳层地判断。</span><span class="canon">📎 atlas-v2-os.json 图景部#69『OSA…Strategy(3候选)…跳层是 80% 项目失败根因』+ 最小闭环 U4</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>卡复利没接🟢〔待补〕</div>
+  <div class="sub-p">诚实标:地图卡在『复利没接、验证空』，回流复利那层未通〔待补〕。</div>
+  <div class="sub-meta"><span class="why">因为 因为数据最实但闭环最后一公里卡→所以诚实标:复利/验证那层〔待补〕，别拿空轴冒充已验。</span><span class="canon">📎 outline delivers organs 一张地图『mnote:数据最实·但复利没接、验证空』+ last_mile</span></div>
+</div></div>
+</div><div class="sec">
+  <div class="sec-h"><span class="sec-no">4.12</span><span class="sec-n">一条链路（OSA·手脚）</span>
+    <span class="sec-c">5 目</span></div>
+  <div class="sec-q">第四套器官是什么？——决策三段 OSA 怎么接成可自动跑、跑完会回流大脑的 agent 流水线？</div>
+  <div class="subs"><div class="sub">
+  <div class="sub-n"><span class="sx">01</span>手脚=你怎么执行</div>
+  <div class="sub-p">一个定义:一条链路=元AI 手脚，把 OSA 三段接成可自动跑的流水线。</div>
+  <div class="sub-meta"><span class="why first">▸ 起点</span><span class="canon">📎 outline delivers organs『一条链路…手脚·你怎么执行…缺→只想不做』+ atlas-v2-os.json#109</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">02</span>建在工具→身份部</div>
+  <div class="sub-p">一个锚点:链路从工具部装传动、到身份部走 S 路径自动化，横跨最长。</div>
+  <div class="sub-meta"><span class="why">因为 因为执行要自动跑→所以它从工具部(装传动)长到身份部(S 路径自动化)，跨度最长。</span><span class="canon">📎 outline delivers organs 一条链路『builds_in:工具部→身份部(S 路径自动化)』+ atlas-v2-os.json#109</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">03</span>系统=随身智库🟡</div>
+  <div class="sub-p">一个案例位:真实系统=随身智库 2051 组件(🟡A)，路由清楚认得调哪个。</div>
+  <div class="sub-meta"><span class="why">因为 因为执行要派对工具→所以真实系统=随身智库 2051 组件(成熟度🟡A、路由清楚)。</span><span class="canon">📎 outline delivers organs 一条链路『system:随身智库 2051 组件…mat:A…路由清楚』+ atlas-v2-os.json#109</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">04</span>OSA 接回闭环</div>
+  <div class="sub-p">一个机制:链路把 OSA→执行+前台验真→回流大脑接成环;不验真轴接不回。</div>
+  <div class="sub-meta"><span class="why">因为 因为路由清楚能跑→所以接着要让它收口:执行后前台验真、回流大脑，OSA 轴闭成环。</span><span class="canon">📎 outline delivers organs 一条链路『OSA 决策三段接成可自动跑的 agent 流水线』· 改名表§A0</span></div>
+</div><div class="sub">
+  <div class="sub-n"><span class="sx">05</span>卡验证全空🟡〔待补〕</div>
+  <div class="sub-p">诚实标:链路是四套最薄一环，『验证轴全空』，验证回流〔待补〕。</div>
+  <div class="sub-meta"><span class="why">因为 因为路由清楚但收口未通→所以诚实标:成熟度文脉&gt;地图&gt;大脑&gt;链路，链路验证轴〔待补〕。</span><span class="canon">📎 outline delivers organs 一条链路『mnote:路由清楚·但验证轴全空』+ last_mile『成熟度文脉&gt;地图&gt;大脑&gt;链路』</span></div>
+</div></div>
+</div></div>
+</details>
+  <div class="note"><b>这份目录是逐节写《原力OS》正文的写作单元真源。四部＝过程，身份部后 4 节＝元AI 四套交付物（呼应提纲 delivers 的器官/真实系统/成熟度）；四套 last-mile 薄处（说明书范本/蒸馏停/验证轴空）诚实标〔待补〕，不臆造。</b></div>
+  <footer>
+    <div>《原力OS》四级目录 · 判断/渲染分离（os-outline.json + build_book_outline.py）· 墨绿鎏金</div>
+    <div style="margin-top:8px"><a href="../index.html">← 返回三部曲门户</a> · <a href="原力三部曲-提纲架构.html">提纲架构</a> · <a href="原力资产-四级目录.html">原力资产四级目录</a></div>
+  </footer>
+</div></body></html>
