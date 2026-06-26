@@ -1,0 +1,115 @@
+{
+  "chapter": "第一章 · 觉察",
+  "book": "原力资产",
+  "date": "2026-06-26",
+  "spine": "FTF（共鸣 → 可信 → 共识）",
+  "overall_self": 80.0,
+  "wordcount": 6386,
+  "workflow": "yuanli-zichan-ch1-write",
+
+  "modules_agents": [
+    {
+      "module": "① 框架",
+      "goal": "出章节 spec（FTF 排序 / 母意象 / 10 关键词→小节序）",
+      "status": "ok",
+      "agents": [
+        { "role": "框架师", "n": 1, "did": "把 10 关键词编排进 5 段节奏成连贯章节流，定主意象冰山U、3 钩子方向",
+          "component": { "name": "yuanli-narrative-engine", "type": "skill · orchestrator", "zhiku_path": "yuanli-os-starter/yuanli-narrative-engine", "via": "读 原力叙事模型 + 母意象库（脊柱注入）" } }
+      ]
+    },
+    {
+      "module": "② 起草",
+      "goal": "3 个不同钩子各写整章 ~6000 字（养蛊式多角度）",
+      "status": "派 3 得 2（承诺型 agent 跑偏）",
+      "agents": [
+        { "role": "起草人 · 问题型", "n": 1, "did": "「你有多久没涨过收入了？」开篇起草", "component": { "name": "wechat-writer（原力 Style DNA）", "type": "skill", "zhiku_path": "yuanli-os-starter/wechat-writer", "via": "脊柱=原力叙事模型" } },
+        { "role": "起草人 · 反认知型", "n": 1, "did": "「我很努力所以我很牛是幻觉」开篇起草 —— 最终底稿", "component": { "name": "wechat-writer（原力 Style DNA）", "type": "skill", "zhiku_path": "yuanli-os-starter/wechat-writer", "via": "脊柱=原力叙事模型" } },
+        { "role": "起草人 · 承诺型", "n": 1, "did": "跑偏：误判成项目 grounding，echo 了 CLAUDE.md，未产出 —— 废稿", "component": null, "flag": "agent 跑偏（写长文档类 agent 易误判·见 backlog P2）" }
+      ]
+    },
+    {
+      "module": "③ 选编",
+      "goal": "选最强为底 + 嫁接 + 四达标/L1-L4 质检 → 定稿",
+      "status": "verdict = pass",
+      "agents": [
+        { "role": "主编", "n": 1, "did": "选 反认知型 为底，嫁接 问题型 的收入横线开场 + 〔待补真案例〕标记；四达标全过、L1-L4 全过（绿皮书维度）",
+          "component": { "name": "content-quality-gate", "type": "skill · L1-L4", "zhiku_path": "yuanli-os-starter/content-quality-gate", "via": "读 SKILL.md 内化 L1-L4（子代理不能调 Skill）" } }
+      ]
+    }
+  ],
+
+  "self_eval": {
+    "F_共鸣": {
+      "score": 90, "light": "G", "tagline": "情感切入·让读者咦一下+这说的就是我",
+      "signals": [
+        { "name": "问句钩子", "light": "G", "src": "开篇「你有多久，没涨过收入了？」" },
+        { "name": "数字反差 1:100", "light": "G", "src": "「80 亿分之多」「十亿分之一的天才约 100 人」" },
+        { "name": "反直觉判断", "light": "G", "src": "「我很努力所以我很牛，恰是上个时代最大的幻觉」" },
+        { "name": "情感故事弧", "light": "G", "src": "擦冰山一角 → 拽到水边 → 下潜第一铲" },
+        { "name": "第一人称同行者", "light": "G", "src": "「我也信了很多年」" }
+      ]
+    },
+    "T_可信": {
+      "score": 62, "light": "A", "tagline": "权威+数据+案例+历史举证·让读者信不是忽悠",
+      "signals": [
+        { "name": "可对标的账（数量级）", "light": "G", "src": "乘法律「10×0=0，整体归零」" },
+        { "name": "canon 逐字", "light": "G", "src": "算力鸿沟 / 关窍五步法 / 路径反转 / 十万力 全逐字" },
+        { "name": "案例", "light": "A", "src": "通用/匿名例（师傅点窍）·真案例缺·标了〔待补真案例〕" },
+        { "name": "历史举证（博古通今·古今对照）", "light": "R", "value": 0, "src": "🔴 全章 0 个古今对照 —— 真短板，把 T 可信从 ~80 拖到 62" },
+        { "name": "诚实边界声明", "light": "G", "src": "「100 个天才是量级感，不拿精确数字冒充统计」" }
+      ]
+    },
+    "F_共识": {
+      "score": 88, "light": "G", "tagline": "人文升华·达成共识",
+      "signals": [
+        { "name": "东方底色收口", "light": "G", "src": "守拙「认输不丢人抗拒才丢人」+ 觉醒「夺回意义主权」" },
+        { "name": "升华回到开篇", "light": "G", "src": "回到「何为你」首尾呼应" },
+        { "name": "升一维", "light": "G", "src": "从「还能做什么」升到「有什么只有你能做」" },
+        { "name": "三层混编齐", "light": "G", "src": "诚实第一人称 + 冷硬账 + 东方收口 都在场" }
+      ]
+    }
+  },
+
+  "mirrors": {
+    "清晰度": { "score": 85, "note": "论证自洽、结构连贯、FTF 三段走通" },
+    "成熟度": { "score": 40, "note": "n=1·真案例缺·历史举证缺·尚未被读者验证" },
+    "优秀度": { "score": 88, "note": "FTF 脊柱 + 冰山U 单峰 + 原力线绘 5 图，比普通商业写作有创新" }
+  },
+
+  "human_score": {
+    "F_共鸣": null,
+    "T_可信": null,
+    "F_共识": null,
+    "overall": null,
+    "notes": "（留空待你填——你在每维给 0-100，我下次写作前读「自评 vs 你的分」的差距，差距最大那维就是我的盲区，进 backlog）"
+  },
+
+  "backlog": [
+    {
+      "p": "P0", "title": "补 T·可信 的历史举证（博古通今 / 古今对照）", "mirror": "T_可信",
+      "why": "历史举证 = 0（🔴），把可信分从 ~80 拖到 62——这是全章唯一真短板。",
+      "how": "给「算力鸿沟·技能贬值」挂 ≥1 个古今对照：印刷术（约1450·抄写匠贬值/编辑升值）、工业革命纺织机（约1780·手工贬值/设计升值），跨度≥50年带出处。见 references/博古通今-历史举证.md §五。",
+      "auto_safe": true, "status": "待办",
+      "zhiku_reco": [
+        { "name": "hv-deep-research", "type": "skill", "path": "yuanli-os-starter/hv-deep-research", "why": "横纵分析·纵向追历史完整生命历程 + 横向对标", "via": "zhiku_recommend(历史举证)" },
+        { "name": "angle-qianshenjinshi", "type": "skill", "path": "yuanli-os-starter/angle-qianshenjinshi", "why": "前生今世 3 拍·今日钩子→50-300年溯源→当代继承/背离·直接产古今对照骨架", "via": "zhiku_recommend(历史举证)" }
+      ]
+    },
+    {
+      "p": "P1", "title": "补真案例，替换通用例", "mirror": "成熟度",
+      "why": "文中〔待补真案例〕——成熟度 40，缺真实学员故事支撑。",
+      "how": "用一个真实学员的「觉察→认清原力→换赛道」故事替换通用例（师傅点窍）。",
+      "auto_safe": false, "status": "待办 · 需你提供素材"
+    },
+    {
+      "p": "P2", "title": "起草 agent 跑偏加固", "mirror": "清晰度",
+      "why": "承诺型起草 agent 误判成 grounding、echo 了 CLAUDE.md（写长文档类 agent 通病·派 3 得 2 兜住）。",
+      "how": "prompt 钉死「你就是起草人·必须 Write 到指定 path·别读项目 instructions」。",
+      "auto_safe": true, "status": "待办"
+    }
+  ],
+
+  "governing_thought": "ch01 的 共鸣（90）和 共识（88）都强；可信（62）是唯一短板——数据、canon、诚实声明都有，但缺『博古通今历史举证』（=0）+ 真案例待补。下一步把 T 从『只有数据』升到『数据 + 历史 + 真案例』，整篇可信能从 62 → 80+，overall 从 80 → 86+。这正印证 FTF：共鸣共识容易，可信最费功夫——而历史举证是可信里分量最重、我最该补的一招。",
+
+  "facts": { "total_chapters": 1, "avg_overall_self": 80.0, "weak_dim": "T·可信（历史举证=0）", "human_scored": 0, "backlog_open": 3, "zhiku_catalog_total": 2051 }
+}

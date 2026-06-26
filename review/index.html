@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>原力叙事 · 写作复盘 🪞</title>
+<style>
+:root{--ink:#0a1612;--leather-deep:#0d2018;--panel:rgba(20,48,31,.5);--panel2:rgba(28,61,41,.4);--gold-deep:#8b6f2e;--gold:#c9a961;--gold-light:#e0c887;--gold-bright:#f4e4b8;--cinnabar:#a8362c;--cinnabar-soft:#c06a5e;--jade:#5a9c6e;--cream:#f0e6d2;--cream-dim:#d3c8b0;--muted:#9bae9a;--faint:#6f8470;--line:rgba(201,169,97,.2);--line2:rgba(201,169,97,.1);--serif:"Noto Serif SC","Songti SC",serif;--display:"Cinzel",Georgia,serif;--sans:"PingFang SC","Hiragino Sans GB",system-ui,sans-serif;--mono:"JetBrains Mono",Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1000px 600px at 82% -8%,rgba(74,124,89,.14),transparent 60%),linear-gradient(180deg,var(--ink),var(--leather-deep) 52%,var(--ink));background-attachment:fixed;color:var(--cream);font-family:var(--serif);line-height:1.75;padding:0 0 70px}
+.foil{background:linear-gradient(180deg,var(--gold-bright),var(--gold) 52%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+header{text-align:center;padding:56px 26px 22px;border-bottom:1px solid var(--line)}
+.kick{font-family:var(--display);font-size:11px;letter-spacing:.46em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4.6vw,42px);letter-spacing:.1em}
+.sub{color:var(--cream-dim);font-size:13px;margin-top:12px;font-family:var(--sans)}
+.kpis{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.kpi{font-family:var(--mono);font-size:11.5px;color:var(--gold-light);padding:4px 11px;border-radius:5px;background:rgba(201,169,97,.06);border-left:2px solid var(--gold)}
+.kpi b{color:var(--gold-bright)}
+.howto{max-width:760px;margin:20px auto 0;font-family:var(--sans);font-size:12px;color:var(--muted);line-height:1.85;border:1px dashed var(--line);border-radius:10px;padding:13px 18px}
+.howto b{color:var(--gold-light)}
+.rev{margin-top:40px;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:24px 26px}
+.rev-h{display:flex;align-items:baseline;gap:13px;border-bottom:1px solid var(--gold-deep);padding-bottom:12px;flex-wrap:wrap}
+.rev-t{font-size:22px;color:var(--gold-bright)}.rev-b{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.rev-o{margin-left:auto;font-family:var(--mono);font-size:14px;color:var(--gold)}
+.gov{font-size:13px;color:var(--cream-dim);line-height:1.85;margin:14px 0 6px;border-left:2px solid var(--cinnabar);padding:8px 14px;background:rgba(168,54,44,.05);border-radius:0 8px 8px 0}
+.sl{font-family:var(--display);font-size:11px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin:26px 0 12px;border-bottom:1px solid var(--line2);padding-bottom:6px}
+.ftf-row{margin-bottom:18px}
+.ftf-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ftf-l{font-size:17px;font-weight:600}.ftf-en{font-family:var(--display);font-size:10px;color:var(--faint);letter-spacing:.2em}
+.ftf-tag{font-family:var(--sans);font-size:11.5px;color:var(--muted)}.ftf-sc{margin-left:auto;font-family:var(--mono);font-size:16px}
+.gap{font-family:var(--mono);font-size:11px;color:var(--cinnabar-soft);border:1px solid rgba(192,82,74,.4);border-radius:10px;padding:1px 7px;margin-left:8px}
+.bar{position:relative;height:9px;background:rgba(0,0,0,.28);border-radius:6px;margin:8px 0 9px;overflow:visible}
+.fill{height:100%;border-radius:6px;opacity:.85}
+.hh{position:absolute;top:-2px;transform:translateX(-50%);font-family:var(--mono);font-size:10px;color:var(--gold-bright);white-space:nowrap}
+.hh.wait{right:0;left:auto;transform:none;color:var(--faint)}
+.sigs{display:flex;gap:7px;flex-wrap:wrap}
+.sig{font-family:var(--sans);font-size:11px;color:var(--cream-dim);border:1px solid var(--line);border-left-width:2px;border-radius:6px;padding:4px 9px;background:rgba(0,0,0,.15)}
+.sig .sx{display:block;font-size:10px;color:var(--faint);margin-top:2px;max-width:230px}
+.mirs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mir{border:1px solid var(--line2);border-radius:10px;padding:13px;background:rgba(0,0,0,.16);text-align:center}
+.mir-v{font-family:var(--serif);font-size:24px;color:var(--gold-bright)}.mir-k{font-size:12.5px;color:var(--gold);margin-top:2px}.mir-n{font-family:var(--sans);font-size:10.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+.mods{display:flex;flex-direction:column;gap:10px}
+.mod{border:1px solid var(--line);border-radius:11px;background:var(--panel2);padding:13px 16px}
+.mod-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:7px}
+.mod-n{font-size:15px;color:var(--gold-bright)}.mod-g{font-family:var(--sans);font-size:11.5px;color:var(--muted)}.mod-s{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--gold-light)}
+.ag{font-family:var(--sans);font-size:12px;color:var(--cream-dim);padding:3px 0 3px 12px;border-left:1px solid var(--line2);margin-bottom:3px}
+.ag b{color:var(--gold-light)}.comp{font-family:var(--mono);font-size:10.5px;color:var(--jade);margin:0 7px;padding:1px 7px;border:1px solid rgba(90,156,110,.4);border-radius:9px}
+.comp.bad{color:var(--cinnabar-soft);border-color:rgba(192,82,74,.4)}.did{display:block;color:var(--muted);font-size:11px;margin-top:1px}
+.bks{display:flex;flex-direction:column;gap:12px}
+.bk{border:1px solid var(--line);border-radius:11px;background:rgba(0,0,0,.16);padding:14px 16px}
+.bk-h{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:7px}
+.p{font-family:var(--mono);font-size:10px;font-weight:700;border-radius:5px;padding:2px 7px}.p-P0{background:var(--cinnabar);color:#fff}.p-P1{background:var(--gold);color:#1a1305}.p-P2{background:rgba(201,169,97,.25);color:var(--gold-light)}
+.bk-h b{font-size:14.5px;color:var(--gold-bright)}.bk-m,.bk-safe,.bk-st{font-family:var(--mono);font-size:10.5px;color:var(--muted)}.bk-st{margin-left:auto;color:var(--gold-light)}
+.bk-why,.bk-how{font-family:var(--sans);font-size:12px;color:var(--cream-dim);line-height:1.7;margin-top:3px}.bk-why b,.bk-how b{color:var(--gold);font-size:11px}
+.zks{margin-top:9px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.zkl{font-family:var(--sans);font-size:11px;color:var(--muted)}
+.zk{font-family:var(--sans);font-size:11.5px;color:var(--gold-light);text-decoration:none;border:1px solid var(--gold-deep);border-radius:8px;padding:4px 10px;background:rgba(201,169,97,.06)}
+.zk .zx{display:block;font-size:10px;color:var(--faint);margin-top:1px}
+footer{text-align:center;margin-top:40px;color:var(--faint);font-family:var(--sans);font-size:11.5px;line-height:1.9}
+footer a{color:var(--muted)}
+@media(max-width:680px){.mirs{grid-template-columns:1fr}}
+</style></head><body>
+<header>
+  <div class="kick">YUANLI NARRATIVE · WRITING REVIEW</div>
+  <h1 class="foil">写作自我盘点 🪞</h1>
+  <div class="sub">每写完一篇 · 写作模块×智能体 + FTF 三维自评 + 你的打分 + 自进化 backlog · 接随身智库</div>
+  <div class="kpis"><span class="kpi"><b>1</b> 篇已盘</span><span class="kpi">均分 <b>80.0</b></span><span class="kpi">脊柱 FTF</span><span class="kpi">智库 <b>2051</b> 组件</span></div>
+  <div class="howto"><b>怎么用</b>：① 我按 FTF 三维（共鸣/可信/共识）信号自评，每条挂出处、🟢🟡🔴 诚实降级。② <b>你在 <code>review/reviews/&lt;章节&gt;.json</code> 的 <code>human_score</code> 槽给每维打 0-100</b>（push 后这页实时更新）。③ <b>自评 vs 你的分，差距最大那一维 = 我的盲区 → 进化 backlog</b>，短板调随身智库荐新能力补进流水线——这就是「你给分 → 我改进」，越往后越丰富。</div>
+</header>
+<div class="wrap"><section class="rev">
+  <div class="rev-h"><span class="rev-t">第一章 · 觉察</span><span class="rev-b">《原力资产》· 2026-06-26 · 6386 字</span>
+    <span class="rev-o">自评 80.0</span></div>
+  <div class="gov">ch01 的 共鸣（90）和 共识（88）都强；可信（62）是唯一短板——数据、canon、诚实声明都有，但缺『博古通今历史举证』（=0）+ 真案例待补。下一步把 T 从『只有数据』升到『数据 + 历史 + 真案例』，整篇可信能从 62 → 80+，overall 从 80 → 86+。这正印证 FTF：共鸣共识容易，可信最费功夫——而历史举证是可信里分量最重、我最该补的一招。</div>
+  <div class="sl"><span>FTF 三维自评 × 你的打分</span></div>
+  <div class="ftf"><div class="ftf-row">
+  <div class="ftf-h"><span class="ftf-l" style="color:#5a9c6e">F · 共鸣</span><span class="ftf-en">Feelings</span>
+    <span class="ftf-tag">情感切入·让读者咦一下+这说的就是我</span><span class="ftf-sc" style="color:#5a9c6e">90</span></div>
+  <div class="bar"><div class="fill" style="width:90%;background:#5a9c6e"></div><span class="hh wait">▽ 待你打分</span></div>
+  <div class="sigs"><span class="sig" style="border-color:#5a9c6e">🟢 问句钩子<span class="sx">开篇「你有多久，没涨过收入了？」</span></span><span class="sig" style="border-color:#5a9c6e">🟢 数字反差 1:100<span class="sx">「80 亿分之多」「十亿分之一的天才约 100 人」</span></span><span class="sig" style="border-color:#5a9c6e">🟢 反直觉判断<span class="sx">「我很努力所以我很牛，恰是上个时代最大的幻觉」</span></span><span class="sig" style="border-color:#5a9c6e">🟢 情感故事弧<span class="sx">擦冰山一角 → 拽到水边 → 下潜第一铲</span></span><span class="sig" style="border-color:#5a9c6e">🟢 第一人称同行者<span class="sx">「我也信了很多年」</span></span></div>
+</div><div class="ftf-row">
+  <div class="ftf-h"><span class="ftf-l" style="color:#c9a961">T · 可信</span><span class="ftf-en">Trust</span>
+    <span class="ftf-tag">权威+数据+案例+历史举证·让读者信不是忽悠</span><span class="ftf-sc" style="color:#c9a961">62</span></div>
+  <div class="bar"><div class="fill" style="width:62%;background:#c9a961"></div><span class="hh wait">▽ 待你打分</span></div>
+  <div class="sigs"><span class="sig" style="border-color:#5a9c6e">🟢 可对标的账（数量级）<span class="sx">乘法律「10×0=0，整体归零」</span></span><span class="sig" style="border-color:#5a9c6e">🟢 canon 逐字<span class="sx">算力鸿沟 / 关窍五步法 / 路径反转 / 十万力 全逐字</span></span><span class="sig" style="border-color:#c9a961">🟡 案例<span class="sx">通用/匿名例（师傅点窍）·真案例缺·标了〔待补真案例〕</span></span><span class="sig" style="border-color:#c0524a">🔴 历史举证（博古通今·古今对照）<span class="sx">🔴 全章 0 个古今对照 —— 真短板，把 T 可信从 ~80 拖到 62</span></span><span class="sig" style="border-color:#5a9c6e">🟢 诚实边界声明<span class="sx">「100 个天才是量级感，不拿精确数字冒充统计」</span></span></div>
+</div><div class="ftf-row">
+  <div class="ftf-h"><span class="ftf-l" style="color:#5a9c6e">F · 共识</span><span class="ftf-en">Future</span>
+    <span class="ftf-tag">人文升华·达成共识</span><span class="ftf-sc" style="color:#5a9c6e">88</span></div>
+  <div class="bar"><div class="fill" style="width:88%;background:#5a9c6e"></div><span class="hh wait">▽ 待你打分</span></div>
+  <div class="sigs"><span class="sig" style="border-color:#5a9c6e">🟢 东方底色收口<span class="sx">守拙「认输不丢人抗拒才丢人」+ 觉醒「夺回意义主权」</span></span><span class="sig" style="border-color:#5a9c6e">🟢 升华回到开篇<span class="sx">回到「何为你」首尾呼应</span></span><span class="sig" style="border-color:#5a9c6e">🟢 升一维<span class="sx">从「还能做什么」升到「有什么只有你能做」</span></span><span class="sig" style="border-color:#5a9c6e">🟢 三层混编齐<span class="sx">诚实第一人称 + 冷硬账 + 东方收口 都在场</span></span></div>
+</div></div>
+  <div class="sl"><span>三镜 meta</span></div><div class="mirs"><div class="mir"><div class="mir-v">85</div><div class="mir-k">清晰度</div><div class="mir-n">论证自洽、结构连贯、FTF 三段走通</div></div><div class="mir"><div class="mir-v">40</div><div class="mir-k">成熟度</div><div class="mir-n">n=1·真案例缺·历史举证缺·尚未被读者验证</div></div><div class="mir"><div class="mir-v">88</div><div class="mir-k">优秀度</div><div class="mir-n">FTF 脊柱 + 冰山U 单峰 + 原力线绘 5 图，比普通商业写作有创新</div></div></div>
+  <div class="sl"><span>写作模块 × 智能体</span></div><div class="mods"><div class="mod"><div class="mod-h"><span class="mod-n">① 框架</span>
+      <span class="mod-g">出章节 spec（FTF 排序 / 母意象 / 10 关键词→小节序）</span><span class="mod-s">ok</span></div><div class="ag"><b>框架师</b><span class="comp">yuanli-narrative-engine</span><span class="did">把 10 关键词编排进 5 段节奏成连贯章节流，定主意象冰山U、3 钩子方向</span></div></div><div class="mod"><div class="mod-h"><span class="mod-n">② 起草</span>
+      <span class="mod-g">3 个不同钩子各写整章 ~6000 字（养蛊式多角度）</span><span class="mod-s">派 3 得 2（承诺型 agent 跑偏）</span></div><div class="ag"><b>起草人 · 问题型</b><span class="comp">wechat-writer（原力 Style DNA）</span><span class="did">「你有多久没涨过收入了？」开篇起草</span></div><div class="ag"><b>起草人 · 反认知型</b><span class="comp">wechat-writer（原力 Style DNA）</span><span class="did">「我很努力所以我很牛是幻觉」开篇起草 —— 最终底稿</span></div><div class="ag"><b>起草人 · 承诺型</b><span class="comp bad">agent 跑偏（写长文档类 agent 易误判·见 backlog P2）</span><span class="did">跑偏：误判成项目 grounding，echo 了 CLAUDE.md，未产出 —— 废稿</span></div></div><div class="mod"><div class="mod-h"><span class="mod-n">③ 选编</span>
+      <span class="mod-g">选最强为底 + 嫁接 + 四达标/L1-L4 质检 → 定稿</span><span class="mod-s">verdict = pass</span></div><div class="ag"><b>主编</b><span class="comp">content-quality-gate</span><span class="did">选 反认知型 为底，嫁接 问题型 的收入横线开场 + 〔待补真案例〕标记；四达标全过、L1-L4 全过（绿皮书维度）</span></div></div></div>
+  <div class="sl"><span>进化 backlog（短板 → 待办 + 随身智库荐新能力）</span></div><div class="bks"><div class="bk">
+  <div class="bk-h"><span class="p p-P0">P0</span><b>补 T·可信 的历史举证（博古通今 / 古今对照）</b>
+    <span class="bk-m">T_可信</span><span class="bk-safe">自动安全</span><span class="bk-st">待办</span></div>
+  <div class="bk-why"><b>为什么</b> 历史举证 = 0（🔴），把可信分从 ~80 拖到 62——这是全章唯一真短板。</div>
+  <div class="bk-how"><b>怎么补</b> 给「算力鸿沟·技能贬值」挂 ≥1 个古今对照：印刷术（约1450·抄写匠贬值/编辑升值）、工业革命纺织机（约1780·手工贬值/设计升值），跨度≥50年带出处。见 references/博古通今-历史举证.md §五。</div><div class="zks"><span class="zkl">随身智库荐补能力：</span><a class="zk" href="https://moonstachain.github.io/yuanli-strategy-trilogy/" onclick="return false">＋ hv-deep-research<span class="zx">横纵分析·纵向追历史完整生命历程 + 横向对标</span></a><a class="zk" href="https://moonstachain.github.io/yuanli-strategy-trilogy/" onclick="return false">＋ angle-qianshenjinshi<span class="zx">前生今世 3 拍·今日钩子→50-300年溯源→当代继承/背离·直接产古今对照骨架</span></a></div>
+</div><div class="bk">
+  <div class="bk-h"><span class="p p-P1">P1</span><b>补真案例，替换通用例</b>
+    <span class="bk-m">成熟度</span><span class="bk-safe">需人审</span><span class="bk-st">待办 · 需你提供素材</span></div>
+  <div class="bk-why"><b>为什么</b> 文中〔待补真案例〕——成熟度 40，缺真实学员故事支撑。</div>
+  <div class="bk-how"><b>怎么补</b> 用一个真实学员的「觉察→认清原力→换赛道」故事替换通用例（师傅点窍）。</div>
+</div><div class="bk">
+  <div class="bk-h"><span class="p p-P2">P2</span><b>起草 agent 跑偏加固</b>
+    <span class="bk-m">清晰度</span><span class="bk-safe">自动安全</span><span class="bk-st">待办</span></div>
+  <div class="bk-why"><b>为什么</b> 承诺型起草 agent 误判成 grounding、echo 了 CLAUDE.md（写长文档类 agent 通病·派 3 得 2 兜住）。</div>
+  <div class="bk-how"><b>怎么补</b> prompt 钉死「你就是起草人·必须 Write 到指定 path·别读项目 instructions」。</div>
+</div></div>
+</section>
+<footer>原力战略三部曲 · 写作复盘 · 判断/渲染分离（reviews/*.json + build_review.py）· <a href="https://github.com/moonstachain/yuanli-strategy-trilogy">github.com/moonstachain/yuanli-strategy-trilogy</a> · push 即更新</footer>
+</div></body></html>
