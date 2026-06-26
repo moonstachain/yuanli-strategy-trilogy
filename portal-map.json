@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "原力战略三部曲",
+    "en": "YUANLI STRATEGY TRILOGY",
+    "tagline": "一条公理，长成一套会自繁殖的知识体",
+    "axiom_name": "公理 ʸx",
+    "axiom_def": "做会自我繁殖的事，不做一次性的事 —— 「你」× AI ＝ 会复利、万倍放大的资产",
+    "github": "https://github.com/moonstachain/yuanli-strategy-trilogy"
+  },
+  "overview": [
+    { "icon": "🏛", "title": "总纲 · 一体化四级大纲", "href": "trilogy/原力战略三部曲-总纲.html", "feature": true, "status": "live",
+      "desc": "把三本织成一棵五级树（公理→3书→14章→138节→604目）+ 脊骨穿透矩阵：点一个脊骨，跨三本高亮它穿过的所有节。",
+      "when": "想一页统观全局、看「三本其实是一本」" },
+    { "icon": "🗺", "title": "概念地图 · 通关链", "href": "trilogy/原力三部曲-概念地图.html", "status": "live",
+      "desc": "总概念 → 基石概念 → 支撑关键词，MECE 完备 × 内生逻辑链。", "when": "想按概念找入口、看概念间的因果链" },
+    { "icon": "🧭", "title": "文脉骨架座舱", "href": "trilogy/原力三部曲-文脉骨架座舱.html", "status": "live",
+      "desc": "三本书怎么咬合的关系图：资产=主根，创业=左腿，OS=右腿；U / 鸿沟 / 莫比乌斯三模型。", "when": "想看三本的咬合关系与理论模型" },
+    { "icon": "📋", "title": "提纲架构", "href": "trilogy/原力三部曲-提纲架构.html", "status": "live",
+      "desc": "14 章 138 节提纲 + 究竟完备/递归论证 + 元AI 四套交付物。", "when": "想看章节提纲、为什么恰好三本" }
+  ],
+  "books": [
+    { "seq": 1, "name": "原力资产", "axis": "向内 · 人", "scale": "1", "model": "U 型理论（Scharmer）", "question": "AI 时代，「你」凭什么不可替代？",
+      "outline": "zichan-outline.json", "l4": "trilogy/原力资产-四级目录.html", "dir": "books/01-原力资产",
+      "note": "财富（守富/30法则/数据飞轮/康波配置/三钱·IPS）全部折入第 6 章「复利」·三部曲内闭环·不另立《原力财富》。" },
+    { "seq": 2, "name": "原力创业", "axis": "向外 · 事 · 左腿", "scale": "1 → 万", "model": "跨越鸿沟（Moore）", "question": "怎么让「势×力」变成会复利的钱？",
+      "outline": "chuangye-outline.json", "l4": "trilogy/原力创业-四级目录.html", "dir": "books/02-原力创业" },
+    { "seq": 3, "name": "原力OS", "axis": "向上 · 法 · 右腿", "scale": "×万倍", "model": "莫比乌斯环 · CAS", "question": "怎么把「一个你」升级成「会造物的物种」？",
+      "outline": "os-outline.json", "l4": "trilogy/原力OS-四级目录.html", "dir": "books/03-原力OS" }
+  ],
+  "pipeline": [
+    { "icon": "✍️", "title": "原力叙事模型 · 详解", "href": "narrative/原力叙事模型-详解.html", "status": "live",
+      "desc": "诚实的人 + 冷硬的账 + 东方的根：三层混编声纹 × 5 工艺 × 7 母意象 × STEPPS。", "when": "动笔前定声纹、排节奏、选母意象" },
+    { "icon": "🎨", "title": "原力叙事 · 一页图", "href": "narrative/原力叙事-一页图.html", "status": "live",
+      "desc": "一屏速览整套叙事生产纪律。", "when": "想快速回顾写作方法" },
+    { "icon": "🪞", "title": "写作复盘 · 自进化", "href": "review/index.html", "status": "live", "live_track": "review",
+      "desc": "每写完一章：FTF 三维自评（共鸣/可信/共识）+ 你的打分 → 自我改进。越写策略越丰富。", "when": "看写作质量轨迹、补哪块短板" }
+  ]
+}
