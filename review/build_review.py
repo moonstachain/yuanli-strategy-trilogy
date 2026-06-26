@@ -64,10 +64,12 @@ def backlog_block(r):
 def review_section(r):
     m = r.get("mirrors", {})
     mir = "".join(f'<div class="mir"><div class="mir-v">{(m[k].get("score") if isinstance(m[k],dict) else m[k])}</div><div class="mir-k">{esc(k)}</div><div class="mir-n">{esc(m[k].get("note","") if isinstance(m[k],dict) else "")}</div></div>' for k in m)
+    evo = "".join(f'<div class="evo">🔁 <b>自进化闭环跑通</b> · {esc(e.get("from"))}：<span class="was">{esc(e.get("was"))}</span> → <span class="now">{esc(e.get("now"))}</span> ⇒ <b style="color:var(--gold-bright)">{esc(e.get("result"))}</b><div class="evo-via">{esc(e.get("via"))}</div></div>' for e in r.get("evolution_closed", []))
     return f'''<section class="rev">
   <div class="rev-h"><span class="rev-t">{esc(r.get("chapter"))}</span><span class="rev-b">《{esc(r.get("book"))}》· {esc(r.get("date"))} · {esc(r.get("wordcount"))} 字</span>
     <span class="rev-o">自评 {r.get("overall_self")}</span></div>
   <div class="gov">{esc(r.get("governing_thought"))}</div>
+  {evo}
   <div class="sl"><span>FTF 三维自评 × 你的打分</span></div>
   <div class="ftf">{ftf_block(r)}</div>
   <div class="sl"><span>三镜 meta</span></div><div class="mirs">{mir}</div>
@@ -102,6 +104,9 @@ h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,4.6vw,42px);let
 .rev-t{font-size:22px;color:var(--gold-bright)}.rev-b{font-family:var(--sans);font-size:12px;color:var(--muted)}
 .rev-o{margin-left:auto;font-family:var(--mono);font-size:14px;color:var(--gold)}
 .gov{font-size:13px;color:var(--cream-dim);line-height:1.85;margin:14px 0 6px;border-left:2px solid var(--cinnabar);padding:8px 14px;background:rgba(168,54,44,.05);border-radius:0 8px 8px 0}
+.evo{margin:12px 0 4px;font-family:var(--sans);font-size:12.5px;color:var(--cream-dim);line-height:1.8;border:1px solid rgba(90,156,110,.4);border-left:3px solid var(--jade);border-radius:0 10px 10px 0;padding:11px 16px;background:rgba(90,156,110,.07)}
+.evo b{color:var(--jade)}.evo .was{color:var(--cinnabar-soft)}.evo .now{color:var(--jade)}
+.evo-via{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.6}
 .sl{font-family:var(--display);font-size:11px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin:26px 0 12px;border-bottom:1px solid var(--line2);padding-bottom:6px}
 .ftf-row{margin-bottom:18px}
 .ftf-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}

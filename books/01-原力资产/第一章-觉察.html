@@ -1,36 +1,42 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>第一章 觉察</title><style>
-:root{--ink:#0a1612;--leather-deep:#0d2018;--leather:#14301f;--gold-deep:#8b6f2e;--gold:#c9a961;--gold-light:#e0c887;--gold-bright:#f4e4b8;--cinnabar:#a8362c;--cinnabar-soft:#c06a5e;--jade:#4a7c59;--cream:#efe6d4;--cream-dim:#cdc2aa;--muted:#9bae9a;--faint:#6f8470;--line:rgba(201,169,97,.18);
---serif:"Noto Serif SC","Songti SC","STSong",serif;--display:"Cinzel",Georgia,serif;--sans:"PingFang SC","Hiragino Sans GB",system-ui,sans-serif;}
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>第一章 觉察</title><style>
+:root{--ink:#0a1612;--leather-deep:#0d2018;--leather:#14301f;--panel:rgba(20,48,31,.5);--gold-deep:#8b6f2e;--gold:#c9a961;--gold-light:#e0c887;--gold-bright:#f4e4b8;--cinnabar:#a8362c;--cinnabar-soft:#c06a5e;--jade:#5a9c6e;--cream:#efe6d4;--cream-dim:#cdc2aa;--muted:#9bae9a;--faint:#6f8470;--line:rgba(201,169,97,.18);--line2:rgba(201,169,97,.1);--serif:"Noto Serif SC","Songti SC",serif;--display:"Cinzel",Georgia,serif;--sans:"PingFang SC","Hiragino Sans GB",system-ui,sans-serif;--mono:"JetBrains Mono",Menlo,monospace}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:radial-gradient(1000px 620px at 82% -8%,rgba(74,124,89,.13),transparent 60%),linear-gradient(180deg,var(--ink),var(--leather-deep) 52%,var(--ink));background-attachment:fixed;color:var(--cream);font-family:var(--serif);line-height:2.05;font-size:17.5px;padding:0 0 90px;-webkit-font-smoothing:antialiased}
+body{background:radial-gradient(1000px 620px at 82% -8%,rgba(74,124,89,.13),transparent 60%),linear-gradient(180deg,var(--ink),var(--leather-deep) 52%,var(--ink));background-attachment:fixed;color:var(--cream);font-family:var(--serif);line-height:1.95;font-size:17px;padding:0 0 90px}
 .foil{background:linear-gradient(180deg,var(--gold-bright),var(--gold) 54%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.book{max-width:740px;margin:0 auto;padding:0 30px}
-.chapter-head{text-align:center;padding:78px 26px 20px;border-bottom:1px solid var(--line);margin-bottom:46px}
-.kicker{font-family:var(--display);font-size:12px;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:22px}
-h1{font-weight:600;font-size:clamp(34px,6vw,56px);letter-spacing:.16em;line-height:1.3}
-.subtitle{margin-top:20px;font-size:18px;color:var(--gold-light);letter-spacing:.04em;font-style:italic}
-h2{font-weight:600;font-size:23px;color:var(--gold-bright);letter-spacing:.05em;margin:54px 0 22px;padding-bottom:0;text-align:center;position:relative}
+.book{max-width:760px;margin:0 auto;padding:0 30px}
+.chapter-head{text-align:center;padding:74px 26px 20px;border-bottom:1px solid var(--line);margin-bottom:42px}
+.kicker{font-family:var(--display);font-size:12px;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+h1{font-weight:600;font-size:clamp(32px,6vw,54px);letter-spacing:.14em;line-height:1.3}
+.subtitle{margin-top:18px;font-size:17px;color:var(--gold-light);font-style:italic}
+h2{font-weight:600;font-size:24px;color:var(--gold-bright);letter-spacing:.04em;margin:56px 0 20px;text-align:center;position:relative}
 h2::after{content:"";display:block;width:42px;height:1px;background:var(--gold-deep);margin:14px auto 0}
-.book p{margin:0 0 22px;color:var(--cream);text-align:justify}
+h3{font-weight:600;font-size:18px;color:var(--gold);letter-spacing:.03em;margin:32px 0 12px;padding-left:12px;border-left:3px solid var(--gold-deep)}
+.book p{margin:0 0 20px;color:var(--cream);text-align:justify}
 .book p strong{color:var(--gold-light);font-weight:600}
-.book p .todo{color:var(--cinnabar-soft);font-style:italic;font-size:14.5px;font-family:var(--sans)}
-.lead-cap::first-letter{font-family:var(--display);font-size:3.4em;float:left;line-height:.84;margin:6px 12px 0 0;color:var(--gold);font-weight:700}
-.ornament{text-align:center;color:var(--gold-deep);font-size:20px;margin:8px 0 30px;letter-spacing:.3em}
-figure.illus{margin:46px auto;max-width:560px;text-align:center;padding:22px 16px 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-figure.illus svg{width:100%;height:auto;max-width:520px;display:block;margin:0 auto;overflow:visible}
-figure.illus figcaption{font-family:var(--sans);font-size:12.5px;color:var(--cream-dim);margin-top:14px;letter-spacing:.03em;opacity:.85}
-blockquote.note{border:1px solid var(--line);border-left:3px solid var(--cinnabar);background:rgba(168,54,44,.06);border-radius:0 10px 10px 0;padding:18px 24px;margin:40px 0 0;font-family:var(--sans);font-size:13.5px;line-height:1.85;color:var(--cream-dim)}
+.book .todo{color:var(--cinnabar-soft);font-style:italic;font-size:14px;font-family:var(--sans)}
+code.ic{font-family:var(--mono);font-size:.86em;color:var(--gold-light);background:rgba(201,169,97,.1);padding:1px 6px;border-radius:4px}
+.lead-cap::first-letter{font-family:var(--display);font-size:3.3em;float:left;line-height:.84;margin:6px 12px 0 0;color:var(--gold);font-weight:700}
+.ornament{text-align:center;color:var(--gold-deep);font-size:20px;margin:6px 0 28px;letter-spacing:.3em}
+ol,ul{margin:0 0 20px;padding-left:8px;list-style:none;counter-reset:li}
+.book li{position:relative;padding:5px 0 5px 30px;color:var(--cream-dim);line-height:1.8}
+ol>li::before{counter-increment:li;content:counter(li);position:absolute;left:0;top:6px;font-family:var(--mono);font-size:12px;color:var(--gold);border:1px solid var(--line);border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center}
+ul>li::before{content:"·";position:absolute;left:8px;color:var(--gold);font-size:20px;top:2px}
+.tw{overflow-x:auto;margin:0 0 22px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;font-family:var(--sans)}
+th{background:rgba(201,169,97,.08);color:var(--gold);text-align:left;padding:9px 13px;border-bottom:1px solid var(--gold-deep);font-weight:600;font-size:13px}
+td{padding:9px 13px;border-bottom:1px solid var(--line2);color:var(--cream-dim);vertical-align:top;line-height:1.7}
+td strong{color:var(--gold-light)} tr:hover td{background:rgba(201,169,97,.03)}
+pre.tpl{background:rgba(0,0,0,.28);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px;padding:15px 18px;margin:0 0 22px;overflow-x:auto}
+pre.tpl code{font-family:var(--mono);font-size:13px;color:var(--cream-dim);line-height:1.7;white-space:pre}
+blockquote.note{border:1px solid var(--line);border-left:3px solid var(--cinnabar);background:rgba(168,54,44,.06);border-radius:0 10px 10px 0;padding:16px 22px;margin:24px 0;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--cream-dim)}
 blockquote.note strong{color:var(--gold-light)}
-blockquote.note .todo{color:var(--cinnabar-soft)}
-.colophon{max-width:740px;margin:54px auto 0;padding:0 30px;text-align:center;color:var(--faint);font-family:var(--sans);font-size:11.5px;letter-spacing:.06em}
+figure.illus{margin:42px auto;max-width:560px;text-align:center;padding:20px 16px 14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+figure.illus svg{width:100%;height:auto;max-width:520px;display:block;margin:0 auto;overflow:visible}
+figure.illus figcaption{font-family:var(--sans);font-size:12.5px;color:var(--cream-dim);margin-top:12px;font-style:italic}
+.colophon{max-width:760px;margin:50px auto 0;padding:0 30px;text-align:center;color:var(--faint);font-family:var(--sans);font-size:11.5px}
 </style></head><body>
-<div class="chapter-head">
-  <div class="kicker">原力资产 · 第一本</div>
-  <h1 class="foil">第一章 觉察</h1>
-  <div class="subtitle">你输给了 80 亿分之多，这是好消息</div>
-</div>
+<div class="chapter-head"><div class="kicker">原力资产 · 第一本</div><h1 class="foil">第一章 觉察</h1><div class="subtitle">你输给了 80 亿分之多，这是好消息</div></div>
 <article class="book">
 <p class="lead-cap">我们这代创业者，信一件事信得最深：<strong>我很努力，所以我很牛。</strong></p>
 <p>我也信了很多年。从一个人扛到一群人扛，我把所有的体面，都押在了「勤奋」这两个字上——别人睡了我还在改方案，别人放假我还在跑客户。我以为那就是我跟别人拉开差距的地方，也是我之所以是「我」的地方。</p>
@@ -355,8 +361,7 @@ blockquote.note .todo{color:var(--cinnabar-soft)}
 <p>而那座浮上来的冰山，从头到尾，只在回答一个问题——</p>
 <p><strong>何为你。</strong></p>
 <div class="ornament">❧</div>
-<p>&gt;</p>
-<blockquote class="note"><strong>写作说明</strong> · 本章由「原力叙事引擎」写作链生成（叙事框架 → 多角度起草 → 主编选编）。脊柱＝原力叙事模型：三层混编声纹（诚实第一人称 + 冷硬账 + 东方底色）全在场；母意象<strong>冰山U 单峰贯穿</strong>；硬币翻面仅作叙事 device（非白皮书原词，文中已明示）。质检：四达标（深入浅出 / 娓娓道来 / 原力文脉 / 人文底色）+ content-quality-gate L1–L4 全过（绿皮书维度）。<br/><strong>待补</strong>：① 文中<span class="todo">〔待补真案例〕</span>处需补一个真实学员故事（觉察 → 认清原力 → 换赛道）；②「房产 / 比特币之后最大资产类别」为体系判断，市场规模与对照数据待补。本章为<strong>初稿</strong>。<br/></blockquote>
+<blockquote class="note"><strong>写作说明</strong> · 本章由「原力叙事引擎」写作链生成（叙事框架 → 多角度起草 → 主编选编）。脊柱＝原力叙事模型：三层混编声纹（诚实第一人称 + 冷硬账 + 东方底色）全在场；母意象<strong>冰山U 单峰贯穿</strong>；硬币翻面仅作叙事 device（非白皮书原词，文中已明示）。质检：四达标（深入浅出 / 娓娓道来 / 原力文脉 / 人文底色）+ content-quality-gate L1–L4 全过（绿皮书维度）。<br/><strong>待补</strong>：① 文中<span class="todo">〔待补真案例〕</span>处需补一个真实学员故事（觉察 → 认清原力 → 换赛道）；②「房产 / 比特币之后最大资产类别」为体系判断，市场规模与对照数据待补。本章为<strong>初稿</strong>。</blockquote>
 </article>
 <div class="colophon">原力战略三部曲 · 原力叙事引擎写作 · 翡翠墨绿 × 鎏金 · 初稿</div>
 </body></html>

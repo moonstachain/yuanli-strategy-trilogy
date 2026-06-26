@@ -1,0 +1,77 @@
+{
+  "chapter": "最小闭环（OS 教学章）",
+  "book": "原力OS",
+  "date": "2026-06-26",
+  "spine": "FTF（共鸣 → 可信 → 共识）",
+  "overall_self": 87.0,
+  "wordcount": 34220,
+  "workflow": "yuanli-minloop-chapter-write",
+
+  "modules_agents": [
+    { "module": "① 框架", "goal": "整章 FTF 排 + 6 单元 spec（铁三角各件）", "status": "ok",
+      "agents": [ { "role": "框架师", "n": 1, "did": "FTF 三段排 + 6 单元每个的 第一性问题/原理/模板/作业/反模式/验收/博古通今锚 + 飞轮单峰",
+        "component": { "name": "yuanli-narrative-engine", "type": "skill · orchestrator", "zhiku_path": "yuanli-os-starter/yuanli-narrative-engine", "via": "读 原力叙事模型(FTF) + 博古通今-历史举证" } } ] },
+    { "module": "② 起草（并行 7）", "goal": "6 硬核单元×铁三角 + 引言收口", "status": "7/7 ok（这次承诺型坑没复现·prompt 钉死生效）",
+      "agents": [
+        { "role": "单元起草人 ×6", "n": 6, "did": "闭环四段式 / 自治判断 / 三结果态 / OSA / 单环→代谢飞轮 / 最小真实，各 ~5-8k 走铁三角（原理+模板+作业+反模式+验收+古今对照）",
+          "component": { "name": "wechat-writer（原力 DNA）+ 博古通今(angle-qianshenjinshi/hv-deep-research)", "type": "skill", "via": "脊柱=原力叙事 FTF·T可信注入历史举证" } },
+        { "role": "引言+收口起草人", "n": 1, "did": "FTF 原理叙事引言（别憋大招钩子）+ 升华收口（你睡觉它还在转=ʸx）",
+          "component": { "name": "wechat-writer（原力 DNA）", "type": "skill", "via": "FTF" } }
+      ] },
+    { "module": "③ 主编", "goal": "FTF + L1-L4 + 铁三角完整性 + 博古通今 + canon 质检", "status": "verdict 见下",
+      "agents": [ { "role": "主编", "n": 1, "did": "6 单元铁三角齐 + 6 处博古通今(跨度≥50年带出处) + canon 逐字零臆造；抓 2 条治理 canon 覆盖缺口 + 单元编号撞车（我组装时已修）",
+        "component": { "name": "content-quality-gate", "type": "skill · L1-L4", "zhiku_path": "yuanli-os-starter/content-quality-gate", "via": "读 SKILL.md 内化" } } ] }
+  ],
+
+  "self_eval": {
+    "F_共鸣": { "score": 85, "light": "G", "tagline": "情感切入·反直觉",
+      "signals": [
+        { "name": "反直觉钩子", "light": "G", "src": "引言「别再憋大招——'等做完整套再上线'正在杀死你的生意」" },
+        { "name": "数字反差", "light": "G", "src": "0 次 vs 1 次验证·80% 项目死于 goal→action 断链" },
+        { "name": "第一人称同行者", "light": "G", "src": "「我自己、和我带的学员都栽过」" },
+        { "name": "情感故事弧", "light": "A", "src": "教学章·故事弧弱于纯叙事章（正常·硬核为主）" }
+      ] },
+    "T_可信": { "score": 89, "light": "G", "tagline": "数据+案例+canon+博古通今历史举证",
+      "signals": [
+        { "name": "历史举证（博古通今·古今对照）", "light": "G", "value": 6, "src": "🟢 6 处：戴明 PDCA 1950s / 莱特兄弟 1903 / 爱迪生灯丝 1880 / 孙子庙算 / 福特装配线 1913 / 集装箱·哈里森航海钟，全跨度≥50年带出处 —— ★ 这是 ch01 复盘 P0 短板（历史举证=0）补上后的结果，可信从 62→89" },
+        { "name": "canon 逐字", "light": "G", "src": "三结果态/连续表达→收束→推进→明确结果/代谢吸收→消化→繁殖→自持/OSA=内核·跳层=80%失败 全与 mvp-closure.md 逐字一致" },
+        { "name": "可对标的账", "light": "G", "src": "假环×1000=0 / 真环×1=1 / 福特 12.5h→93min" },
+        { "name": "铁三角作业+模板+验收", "light": "G", "src": "6 单元各配 可填模板 + checkable 作业 + 红黄绿验收" },
+        { "name": "治理 canon 覆盖", "light": "A", "src": "🟡 human_manual_pending / 不把镜像误当本体 两条未落地（practitioner 镜头下非核心·有意取舍·见 backlog）" }
+      ] },
+    "F_共识": { "score": 88, "light": "G", "tagline": "人文升华",
+      "signals": [
+        { "name": "母锚升华", "light": "G", "src": "收口「当你睡觉，它还在转 = ʸx」+ 药引非药渣" },
+        { "name": "东方底色", "light": "G", "src": "守拙「守纪律=凡人最高战略」+ 在场「永远不出局」" },
+        { "name": "升一维收口", "light": "G", "src": "回到引言「攒大飞轮 vs 养小环」升一维" },
+        { "name": "飞轮意象单峰", "light": "G", "src": "全章环→齿→飞轮单峰贯穿·零第二意象" }
+      ] }
+  },
+
+  "mirrors": {
+    "清晰度": { "score": 88, "note": "6 单元铁三角结构清晰·FTF 三段走通·77 个 ### 子节有序" },
+    "成熟度": { "score": 50, "note": "n=2·历史举证已补(↑ch01的40)·真案例仍〔待补〕7处·未经读者验证" },
+    "优秀度": { "score": 91, "note": "FTF×铁三角×5原力线绘×飞轮单峰×6古今对照·OS绿皮书级" }
+  },
+
+  "human_score": { "F_共鸣": null, "T_可信": null, "F_共识": null, "overall": null,
+    "notes": "（留空待你填——这章 T·可信我自评 89，比第一章的 62 高，因为补了历史举证；你校准一下我是不是高估了）" },
+
+  "backlog": [
+    { "p": "P1", "title": "补真案例，替换通用例", "mirror": "成熟度",
+      "why": "全章 ~7 处〔待补真案例〕，缺真实学员的最小闭环故事。", "how": "用真实学员「跑通一个最小验证闭环」的故事替换通用例。",
+      "auto_safe": false, "status": "待办 · 需你提供素材" },
+    { "p": "P2", "title": "（可选）补 2 条治理 canon 覆盖", "mirror": "T_可信",
+      "why": "主编抓到 human_manual_pending 状态码 / 不把镜像误当系统本体 两条 canon 未在正文落地。", "how": "practitioner 镜头下非核心·若要做成多智能体治理版再补；当前有意取舍。",
+      "auto_safe": true, "status": "待定（镜头取舍）" }
+  ],
+
+  "evolution_closed": [
+    { "from": "ch01 觉察 · P0", "was": "T·可信 历史举证 = 0（🔴）", "now": "本章 6 处博古通今古今对照（🟢）", "result": "可信 62 → 89·overall 80 → 87",
+      "via": "ch01 复盘 backlog 调 zhiku_recommend 荐 hv-deep-research + angle-qianshenjinshi → 折成 references/博古通今-历史举证.md → 本章用上。**自进化闭环跑通的第一个证据。**" }
+  ],
+
+  "governing_thought": "这一章是「自进化闭环」跑通的第一个实证：第一章复盘发现的真短板（可信缺历史举证=0）→ 进 backlog → 随身智库荐 博古通今 能力 → 折成 reference → 这一章真的用上了 6 处古今对照 → T·可信从 62 抬到 89、overall 从 80 抬到 87。复盘 → 荐能力 → 补 → 分涨，这条线第一次闭上了。下一个短板：真案例（成熟度 50·n=2 还薄）—— 等你给素材 + 给我打分校准。",
+
+  "facts": { "total_chapters": 2, "avg_overall_self": 83.5, "weak_dim": "成熟度（真案例待补）", "improved_dim": "T·可信 62→89（历史举证补上）", "human_scored": 0, "backlog_open": 2, "evolution_closed": 1 }
+}

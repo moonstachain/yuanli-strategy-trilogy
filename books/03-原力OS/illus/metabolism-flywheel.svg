@@ -1,0 +1,45 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="单环到代谢飞轮">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.thin{fill:none;stroke:#c9a961;stroke-width:1;opacity:.5;stroke-linecap:round}
+.teeth{fill:none;stroke:#c9a961;stroke-width:9;stroke-dasharray:7 9;opacity:.85}
+.accent{fill:none;stroke:#a8362c;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.accent-f{fill:#a8362c;stroke:none}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;font-size:13.5px;opacity:.9}
+.lbl-a{fill:#c06a5e;font-family:"Noto Serif SC",serif;font-size:13px}
+.lbl-s{fill:#9bae9a;font-family:"Noto Serif SC",serif;font-size:10.5px;opacity:.7}
+</style>
+<!-- 单环 -->
+<circle cx="70" cy="150" r="26" class="ln"/>
+<path class="thin" d="M70 124 a26 26 0 0 1 22 13"/>
+<path class="thin" d="M92 137 l-7 0 M92 137 l0 -7" stroke="#c9a961" opacity=".9"/>
+<text x="70" y="200" text-anchor="middle" class="lbl">单环</text>
+<text x="70" y="217" text-anchor="middle" class="lbl-s">跑通一个</text>
+<path class="ln" d="M104 150 L150 150"/><path d="M154 150 l-10 -5 l0 10 z" fill="#c9a961"/>
+<!-- 齿 (small cog) -->
+<circle cx="206" cy="150" r="24" class="teeth" stroke-width="7" stroke-dasharray="5 7"/>
+<circle cx="206" cy="150" r="15" class="ln"/>
+<circle cx="206" cy="150" r="3" class="accent-f"/>
+<text x="206" y="206" text-anchor="middle" class="lbl">蒸馏成齿</text>
+<text x="206" y="223" text-anchor="middle" class="lbl-s">复用力·skill</text>
+<path class="ln" d="M242 150 L292 150"/><path d="M296 150 l-10 -5 l0 10 z" fill="#c9a961"/>
+<!-- 代谢飞轮 (big gear) -->
+<circle cx="466" cy="178" r="82" class="teeth"/>
+<circle cx="466" cy="178" r="70" class="ln"/>
+<circle cx="466" cy="178" r="18" class="ln"/>
+<circle cx="466" cy="178" r="3.5" class="accent-f"/>
+<path class="thin" d="M466 160 L466 124 M466 196 L466 232 M448 178 L412 178 M484 178 L520 178 M453 165 L432 144 M479 191 L500 212"/>
+<!-- self-turn arrow (cinnabar) -->
+<path class="accent" d="M466 84 A94 94 0 0 1 558 196" stroke-dasharray="0"/>
+<path class="accent-f" d="M558 196 l-2 -11 l-8 7 z"/>
+<text x="466" y="300" text-anchor="middle" class="lbl">代谢飞轮 · 自转</text>
+<text x="396" y="120" text-anchor="end" class="lbl-s">吸收→消化</text>
+<text x="396" y="135" text-anchor="end" class="lbl-s">→繁殖→自持</text>
+<!-- sleeping figure -->
+<g class="ln" stroke-width="1.4">
+<path d="M548 312 q14 -12 30 0"/>
+<circle cx="556" cy="306" r="5"/>
+</g>
+<text x="592" y="300" class="lbl-a" font-size="11">z z z</text>
+<text x="582" y="322" text-anchor="middle" class="lbl-a" font-size="11.5">你睡觉它还在转 ＝ ʸx</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OSA 决策三段">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.thin{fill:none;stroke:#c9a961;stroke-width:1;opacity:.5;stroke-linecap:round}
+.accent{fill:none;stroke:#a8362c;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.accent-f{fill:#a8362c;stroke:none}
+.node{fill:rgba(201,169,97,.05);stroke:#c9a961;stroke-width:1.7}
+.k{fill:#f4e4b8;font-family:"Cinzel",serif;font-size:22px;font-weight:600}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;font-size:14px;opacity:.92}
+.lbl-s{fill:#9bae9a;font-family:"Noto Serif SC",serif;font-size:11px;opacity:.7}
+.lbl-a{fill:#c06a5e;font-family:"Noto Serif SC",serif;font-size:11.5px}
+</style>
+<!-- 3 nodes O S A -->
+<circle cx="110" cy="130" r="40" class="node"/>
+<text x="110" y="124" text-anchor="middle" class="k">O</text>
+<text x="110" y="146" text-anchor="middle" class="lbl-s">目标</text>
+<text x="110" y="196" text-anchor="middle" class="lbl">一句话</text>
+<text x="110" y="213" text-anchor="middle" class="lbl-s">＋不做的代价</text>
+
+<circle cx="300" cy="130" r="40" class="node"/>
+<text x="300" y="124" text-anchor="middle" class="k">S</text>
+<text x="300" y="146" text-anchor="middle" class="lbl-s">策略</text>
+<text x="300" y="196" text-anchor="middle" class="lbl">摆 3 条</text>
+<text x="300" y="213" text-anchor="middle" class="lbl-s">砍到 1 条</text>
+
+<circle cx="490" cy="130" r="40" class="node"/>
+<text x="490" y="124" text-anchor="middle" class="k">A</text>
+<text x="490" y="146" text-anchor="middle" class="lbl-s">行动</text>
+<text x="490" y="196" text-anchor="middle" class="lbl">谁/何时</text>
+<text x="490" y="213" text-anchor="middle" class="lbl-s">/怎么验真</text>
+
+<!-- forward arrows -->
+<path class="ln" d="M152 130 L246 130"/><path class="accent-f" d="M250 130 l-10 -5 l0 10 z" fill="#c9a961"/>
+<path class="ln" d="M342 130 L436 130"/><path class="accent-f" d="M440 130 l-10 -5 l0 10 z" fill="#c9a961"/>
+
+<!-- no-skip: O -> A dashed, barred -->
+<path class="accent" stroke-dasharray="4 5" d="M110 88 C200 30 400 30 490 88" opacity=".8"/>
+<g class="accent"><path d="M291 49 l18 18 M309 49 l-18 18"/></g>
+<text x="300" y="40" text-anchor="middle" class="lbl-a">跳层 ✗ ＝ 80% 项目死因</text>
+
+<text x="300" y="288" text-anchor="middle" class="lbl-s">不跳层：先完整 O 才进 S，先完整 S 才进 A ——这就是最小闭环的内核</text>
+</svg>

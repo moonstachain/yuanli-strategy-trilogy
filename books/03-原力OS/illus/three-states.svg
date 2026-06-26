@@ -1,0 +1,35 @@
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三结果态">
+<style>
+.ln{fill:none;stroke:#c9a961;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.thin{fill:none;stroke:#c9a961;stroke-width:1;opacity:.5;stroke-linecap:round}
+.accent{fill:none;stroke:#a8362c;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.jade{stroke:#5a9c6e}
+.lbl{fill:#c9a961;font-family:"Noto Serif SC",serif;opacity:.9}
+.lbl-s{fill:#9bae9a;font-family:"Noto Serif SC",serif;opacity:.7;font-size:11px}
+.mono{fill:#9bae9a;font-family:"JetBrains Mono",monospace;font-size:10px;opacity:.7}
+</style>
+<!-- source node: 收口 -->
+<circle cx="300" cy="56" r="20" class="ln"/>
+<text x="300" y="60" text-anchor="middle" class="lbl" font-size="13">收口</text>
+<!-- three branches -->
+<path class="thin" d="M286 70 C220 100 150 120 130 150"/>
+<path class="thin" d="M300 76 L300 150"/>
+<path class="thin" d="M314 70 C380 100 450 120 470 150"/>
+<!-- state 1: completed (jade ✓) -->
+<rect x="64" y="152" width="132" height="78" rx="9" class="ln jade"/>
+<path class="ln jade" stroke-width="2.2" d="M104 192 l11 13 l24 -28"/>
+<text x="130" y="252" text-anchor="middle" class="lbl" font-size="15">完成</text>
+<text x="130" y="270" text-anchor="middle" class="mono">completed</text>
+<!-- state 2: blocked (gold ⏸) -->
+<rect x="234" y="152" width="132" height="78" rx="9" class="ln"/>
+<path class="ln" stroke-width="2.4" d="M289 178 l0 26 M311 178 l0 26"/>
+<text x="300" y="252" text-anchor="middle" class="lbl" font-size="15">卡住·待人</text>
+<text x="300" y="270" text-anchor="middle" class="mono">blocked_needs_user</text>
+<!-- state 3: failed (cinnabar ✗) -->
+<rect x="404" y="152" width="132" height="78" rx="9" class="accent"/>
+<path class="accent" stroke-width="2.2" d="M456 180 l28 28 M484 180 l-28 28"/>
+<text x="470" y="252" text-anchor="middle" fill="#c06a5e" font-family="Noto Serif SC,serif" font-size="15">部分失败</text>
+<text x="470" y="270" text-anchor="middle" class="mono" fill="#c06a5e">failed_partial</text>
+<!-- the forbidden fuzzy -->
+<text x="300" y="120" text-anchor="middle" class="lbl-s">三选一 · 离散 · 不许「快好了 / 差不多」</text>
+</svg>
