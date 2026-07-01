@@ -119,6 +119,8 @@ section{margin-top:46px}
 .kw-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .kw-n{font-family:var(--mono);font-size:10px;color:var(--gold);border:1px solid var(--line);border-radius:50%;width:18px;height:18px;flex:0 0 18px;display:flex;align-items:center;justify-content:center}
 .kw-name{font-family:var(--serif);font-size:15px} .kw-tag{font-size:9.5px;padding:1px 7px;border-radius:10px;border:1px solid var(--line-2);color:var(--muted)}
+.kw-alias{font-size:11px;color:#aee0bb;background:rgba(74,124,89,.12);border:1px solid rgba(74,124,89,.35);border-radius:11px;padding:1px 9px;font-family:var(--sans)}
+.kw-alias b{color:#c6ecce;font-weight:600} .kw-alias-todo{color:var(--muted);font-size:9.5px}
 .kw-def{font-size:12px;color:var(--cream-dim);line-height:1.6;margin-top:5px}
 .kw-src{font-size:10px;color:var(--faint);font-family:var(--mono);margin-top:3px;word-break:break-all}
 .kw-link{font-size:11px;color:var(--gold-light);margin:5px 0 0 4px;padding-left:10px;border-left:1px dashed rgba(201,169,97,.4)}
@@ -182,7 +184,8 @@ function openNode(n,book,color){
   inner.appendChild(el("div","dw-kh","支撑关键词概念 · 派生链 · "+n.keywords.length+" 条"));
   n.keywords.forEach((k,i)=>{
     const it=el("div","kw");const g=tag(k.tag);
-    it.appendChild(el("div","kw-h",'<span class="kw-n">'+(i+1)+'</span><span class="kw-name">'+k.name+'</span><span class="kw-tag '+g.c+'">'+g.t+'</span>'));
+    const aliasHtml=k.alias?'<span class="kw-alias">白话叫「<b>'+k.alias+'</b>」'+(k.alias_todo?'<span class="kw-alias-todo"> ⚪待核</span>':'')+'</span>':'';
+    it.appendChild(el("div","kw-h",'<span class="kw-n">'+(i+1)+'</span><span class="kw-name">'+k.name+'</span><span class="kw-tag '+g.c+'">'+g.t+'</span>'+aliasHtml));
     it.appendChild(el("div","kw-def",k.def));
     it.appendChild(el("div","kw-src","· "+k.src));
     if(k["链"]&&k["链"]!=="·") it.appendChild(el("div","kw-link","↳ "+k["链"]));
