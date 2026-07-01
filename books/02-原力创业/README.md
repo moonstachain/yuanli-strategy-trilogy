@@ -18,6 +18,6 @@
 > 四获得物：原力资产 → 心理账户 → 利润容器 → 财富飞轮（＝左手现金流 + 右手雪球）。
 
 **既有正典**：完整六卷通关地图 + 交互网站见 [moonstachain/yuanli-startup-map-site](https://github.com/moonstachain/yuanli-startup-map-site)（h5.odysseyinst.com/qishi）。
-**写作真源**：`../../trilogy/原力三部曲-概念地图.html`（点「原力创业」通关链）。
+**写作真源**（对应概念图通关链 →「原力创业」域）：[`../../trilogy/原力三部曲-概念地图.html`](../../trilogy/原力三部曲-概念地图.html)（点「原力创业」通关链）。
 
-> 本仓正文：以知识地图通关链重写/精炼版，待写。
+> **进度**：本仓 0 章——四关正文（以知识地图通关链重写的精炼版）待写。想读完整内容，先看上方[既有六卷通关地图 + 交互站](https://github.com/moonstachain/yuanli-startup-map-site)。
