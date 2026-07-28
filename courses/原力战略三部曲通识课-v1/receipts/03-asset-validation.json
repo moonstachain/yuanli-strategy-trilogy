@@ -1,0 +1,48 @@
+{
+  "schema": "yuanli_course_asset_validation_receipt_v2",
+  "generated_at": "2026-07-28T20:00:00+08:00",
+  "status": "pass_with_documented_nonblocking_warning",
+  "assets": [
+    {
+      "file": "assets/原力战略起点诊断工作坊-v2.pptx",
+      "sha256": "a3840ba17cfb94985fb84c75b42ac6d118034ca96453abc83a7570700768ad3b",
+      "slides": 22,
+      "max_slides": 24,
+      "fresh_render": "pass",
+      "overflow_test": "pass",
+      "source_notes": "present"
+    },
+    {
+      "file": "assets/原力战略学员工作簿-v2.docx",
+      "sha256": "5863e8bd2a37b75dc027ad5d376f4b0deedb6bd1fc330f4b200f91ca6a4a7a08",
+      "rendered_pages": 7,
+      "fresh_render": "pass",
+      "visual_review": "all_pages_no_clip_no_blank",
+      "warning": "bundled headless office rendering lacked a usable CJK font fallback; acceptance used an isolated renderer with system CJK fonts and preserved the original asset bytes"
+    },
+    {
+      "file": "assets/原力战略讲师手册-v2.docx",
+      "sha256": "dab050626783e751b1c59eabd63c92e88ff303615528f4c185af920620a1d061",
+      "rendered_pages": 8,
+      "fresh_render": "pass",
+      "visual_review": "all_pages_no_clip_no_blank",
+      "warning": "bundled headless office rendering lacked a usable CJK font fallback; acceptance used an isolated renderer with system CJK fonts and preserved the original asset bytes"
+    },
+    {
+      "file": "assets/原力战略试讲观察与七天迁移-v2.xlsx",
+      "sha256": "3c19dd44c004240cb9be0fce0d414cbc7f17afa29010b3567aeb48cd0294bee3",
+      "worksheets": 5,
+      "formula_error_count": 0,
+      "fresh_render": "pass_all_sheets",
+      "synthetic_smoke": {
+        "two_fact_rate": 0.6666666667,
+        "eight_of_ten_rate": 0.6666666667,
+        "seven_day_evidence_rate": 0.3333333333,
+        "included_in_live_acceptance": false
+      },
+      "warning": "artifact-tool emits repeated missing sheetId diagnostics while evaluating Chinese cross-sheet formulas; exported formulas, computed values, error scan and final renders are intact"
+    }
+  ],
+  "external_writes": false,
+  "claim_boundary": "asset pass does not imply live_trial_pass or published"
+}

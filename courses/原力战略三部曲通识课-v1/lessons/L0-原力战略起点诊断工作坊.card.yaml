@@ -1,0 +1,132 @@
+metadata:
+  lesson_id: YL-L0-WS02
+  module_id: L0
+  title: 先找到未来 30 天限制原力复利的主卡点
+  core_concept: 原力战略主卡点是未来 30 天最限制原力复利的单一瓶颈
+  canon_version: soul-concept-card-v1.0-plus-routing-v2.0
+  status: live_trial_pending
+  duration_minutes: 120
+  audience: 8–12 位有十年以上经验、正在用 AI 重构事业的专家型创业者
+  prerequisites:
+    - 愿意用真实事业事实而非理想自我作判断
+    - 接受 30 天只选择一个主卡点
+  next_interface: 两班真实试讲与七天迁移
+learning_contract:
+  old_judgment: A、B、C 都有缺口，所以应该同时补齐三套答案。
+  new_judgment: 不同时补齐 A/B/C，先找到未来 30 天限制原力复利的主卡点。
+  learner_action: 用 A1、B1、C4 三面诊断镜和两条事实选择一个主卡点，并定义一个 30 天行动证据。
+  artifact: 原力战略起点卡 v2
+  acceptance_criteria:
+    - 明确只选择 A、B、C 中一个主卡点
+    - 至少写出两条可复核事实
+    - 写出一个可能推翻当前判断的反证信号
+    - 30 天行动有截止时间、唯一输出和完成证据
+cut:
+  protagonist: 匿名情境中的专家型创业者（教学情境，非真实学员）
+  moment: 周一早上打开项目清单，A、B、C 三类问题同时亮红灯
+  dilemma: 同时推进显得全面，却会把有限注意力摊薄；只选一个又担心错过另外两个。
+  cost: 过去一个月会议、内容和工具都增加了，但没有形成一个可验收的战略结果。
+  opening_question: 如果未来 30 天只能解除一个限制，解除哪一个会让另外两个更容易？
+  self_check: 你现在最昂贵的停滞，是没有源头、没有市场放大，还是行动没有沉淀成系统？
+concept_core:
+  definition: 原力战略主卡点，是未来 30 天内对原力复利形成最大限制、解除后能显著改善其他环节的单一瓶颈。
+  non_definitions:
+    - 不是对一个人的永久类型标签
+    - 不是当前最焦虑或最容易处理的任务
+    - 不是同时列出 A、B、C 三张愿望清单
+  first_principles_question: 在有限时间与注意力下，哪一个限制最决定原力能否继续复利？
+  variables:
+    - 生成源头清晰度 A
+    - 市场与结构放大度 B
+    - 行动资产化程度 C
+    - 限制解除后的连锁收益
+    - 两条事实与反证信号
+  mechanism: 三面镜先分辨限制所在，再用事实和反证压缩自我叙事，最后把唯一瓶颈转成一个有期限、有证据的 30 天行动，使注意力从并行补课转为可验证解除限制。
+  boundaries:
+    - 只用于未来 30 天的行动排序，不做永久身份分类
+    - A1、B1、C4 在本课只提供诊断问题，不教授完整模块工具
+    - 严重现金流、法律、健康或安全危机应先进入相应专业处置，不由本诊断替代
+  common_misuses:
+    - 选分数最低项而不写事实
+    - 把最想学的内容当成主卡点
+    - 写三个 30 天输出以回避取舍
+depth:
+  axis: civilization_technology
+  historical_nodes:
+    - 生成式 AI 从工具辅助进入知识任务工作流
+    - 工作影响呈任务级差异而非整份职业整齐替代
+    - 行动迁移需要把意图绑定到可观察情境与证据
+  evidence:
+    theory:
+      - claim: 实施意图研究表明，仅有目标意愿与把行动绑定到具体情境不是同一件事；起点卡因此强制写截止时间、输出和证据。
+        source: https://doi.org/10.1016/S0065-2601(06)38002-1
+        evidence_level: primary
+        status: verified
+    data:
+      - claim: ILO 2025 估计全球约四分之一就业处于某种 GenAI 暴露梯度，但最高暴露梯度为 3.3%，且报告强调更可能发生工作转型而非整份工作消失。
+        source: https://doi.org/10.54394/HETP0387
+        evidence_level: official_data
+        status: verified
+    case:
+      - claim: Noy 与 Zhang 对 453 名受过大学教育的专业人士开展预注册实验；在特定写作任务中，ChatGPT 组平均用时下降 40%，质量上升 18%。
+        source: https://doi.org/10.1126/science.adh2586
+        evidence_level: primary
+        status: verified
+      - claim: Dell'Acqua 等对 758 名知识工作者的预注册实验显示，AI 在能力边界内提升任务量、速度和质量，说明具体任务边界比“会不会用 AI”更有诊断价值。
+        source: https://doi.org/10.2139/ssrn.4573321
+        evidence_level: primary
+        status: verified
+    counterexample:
+      - claim: 同一项锯齿状前沿实验中，在被设计为能力边界外的任务上，AI 使用者正确率反而更低；工具采用不能替代对限制与边界的判断。
+        source: https://www.hbs.edu/faculty/Pages/item.aspx?num=68729
+        evidence_level: primary
+        status: verified
+  evidence_conclusion: 外部证据支持“任务影响不均、边界需要诊断、意图需要转为具体行动”；它不直接证明 A/B/C 三分法，三面镜的效度仍需两班真实课堂与七天迁移验证。
+high_arc:
+  old_belief: 价值命题草案——更完整的答案会带来更大的安全感。
+  rupture: 价值命题草案——全面推进常让每个方向都缺少足够证据，结果只有忙碌没有解除限制。
+  real_cost: 待明哥确认；不得对外讲述任何第一人称经历。
+  value_judgment: 宁可先承认一处真正限制复利的卡点，也不以同时补齐三套答案回避取舍。
+  renunciation: 暂时放弃在 30 天内同时改善 A、B、C 的完整感。
+  author_sentence: 待明哥确认——先解除最限制复利的一处，才有资格谈全局。
+  learner_choice: 你愿意用两条事实选择一个主卡点，还是继续用三张愿望清单保护完整感？
+  author_confirmation: pending
+landing:
+  tool: A1 / B1 / C4 三面镜 + 两事实一反证
+  in_class_exercise: 先独立填写三面镜，再选择一个主卡点；用两条事实支持，用一个信号说明何时应推翻判断，并把它转成 30 天唯一行动。
+  artifact: 原力战略起点卡 v2
+  rubric:
+    - 主卡点唯一且未同时选择 A/B/C，2 分
+    - 两条事实具体、可复核且来自真实事业，2 分
+    - 使用对应诊断镜的概念而非情绪标签，2 分
+    - 写出可证伪的反证或失效信号，2 分
+    - 30 天行动含截止时间、唯一输出与完成证据，2 分
+  transfer_task_7d: 七天内完成一个最小验证动作，回传行动证据，并记录它支持、削弱还是推翻当前主卡点判断。
+  failure_signal: 七天后只有学习感想、没有行动证据，或 30 天承诺仍包含三个并行产物。
+  next_interface: 两班真实试讲验收；通过后按主卡点分布选择需求最高路线的三张缺失模块课。
+writeback:
+  user_language: []
+  misunderstandings: []
+  effective_cases: []
+  failed_cases: []
+  new_evidence: []
+  hypotheses:
+    - 三面镜加两事实一反证能在 120 分钟内提高主卡点判断质量
+  canon_candidates: []
+  evolution_note: 桌面结构已完成，真实课堂与七天迁移均待验证。
+provenance:
+  source_files:
+    - yuanli-strategy-soul/docs/YUANLI-CONCEPT-LESSON-CARD-STANDARD-v1.md
+    - yuanli-strategy-soul/modules/A-原力资产/A1-发现母体.md
+    - yuanli-strategy-soul/modules/B-原力创业/B1-原力借势.md
+    - yuanli-strategy-soul/modules/C-原力OS/C4-一条链路.md
+    - research/00-研究设计-spec.md
+    - research/01-四证包.md
+  decisions:
+    - A1、B1、C4 只作为三面诊断镜
+    - 唯一产物为原力战略起点卡 v2
+    - 两班真实试讲前不生成其余九课
+  open_questions:
+    - 明哥确认高弧光价值命题与可公开作者经历
+    - 两班真实课堂是否分别达到预设门槛
+    - 哪一条主卡点路线在真实分布中需求最高
