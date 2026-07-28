@@ -1,0 +1,34 @@
+{
+  "schema": "yuanli_course_end_to_end_dry_run_receipt_v2",
+  "generated_at": "2026-07-28T20:00:00+08:00",
+  "router_id": "yl-trilogy-l0-workshop-v2",
+  "overall": "dry_run_pass_live_trial_pending",
+  "external_write_count": 0,
+  "live_trial_count": 0,
+  "real_learner_count": 0,
+  "stages": [
+    {"stage_id": "canonical_alignment", "status": "pass", "output": "canon layers embedded in L0 card and research pack"},
+    {"stage_id": "learner_insight", "status": "evidence_gap_recorded", "output": "research/02-学员洞察与证据缺口.md"},
+    {"stage_id": "research_design", "status": "pass", "output": "research/00-研究设计-spec.md"},
+    {"stage_id": "deep_research", "status": "pass_with_validity_boundary", "output": "research/01-四证包.md"},
+    {"stage_id": "narrative", "status": "pass_author_arc_pending", "output": "lessons/L0-原力战略起点诊断工作坊.md"},
+    {"stage_id": "strong_landing", "status": "pass", "output": "exercises/原力战略起点卡-v2.md"},
+    {"stage_id": "content_quality", "status": "pass_with_human_l4_pending", "output": "receipts/content-quality-report.md"},
+    {"stage_id": "learning_assets", "status": "pass_with_tool_warning_recorded", "output": "assets/"},
+    {"stage_id": "live_trial", "status": "not_run_human_gate", "output": null},
+    {"stage_id": "transcript_review", "status": "not_run_no_authorized_recording", "output": null},
+    {"stage_id": "seven_day_transfer", "status": "template_only", "output": "exercises/七天迁移包.md"},
+    {"stage_id": "marketing_research", "status": "pass_draft_scope", "output": "marketing/00-营销研究与边界.md"},
+    {"stage_id": "marketing_translation", "status": "draft_pack_ready", "output": "marketing/"},
+    {"stage_id": "onsite_reproduction", "status": "structure_only_no_real_timestamps", "output": "publish-pack/视频号发布包-dry-run.md"},
+    {"stage_id": "xiaoe_draft", "status": "local_handoff_pack_ready_no_platform_write", "output": "xiaoe/小鹅通未发布草稿创建包.md"},
+    {"stage_id": "canonical_backwrite", "status": "not_run_human_gate", "output": null}
+  ],
+  "state": {
+    "course": "live_trial_pending",
+    "remaining_nine_modules": "HOLD",
+    "wechat": "draft_only",
+    "channels": "publish_pack_only",
+    "xiaoe": "unpublished_handoff_pack_only"
+  }
+}

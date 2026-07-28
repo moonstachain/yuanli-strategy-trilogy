@@ -1,0 +1,47 @@
+{
+  "schema": "yuanli_course_managed_activation_receipt_v2",
+  "generated_at": "2026-07-28T20:00:00+08:00",
+  "mode": "route_and_govern",
+  "status": "activated_with_declared_validation_gap",
+  "runtime": {
+    "commit": "a455f54542335e927848ee6f1617f571c53ccd4f",
+    "tree_hash": "c4b941d661871c9138c35ba5b0ba5fff2390d8f50312c39e8da0d65315ae9a23",
+    "attestation_metadata_sha256": "417f83cbac7ba2ab57943c5f4630bfc6aae64318b7b07866405ad6bbdfa56867",
+    "projection_manifest_sha256": "dc634d22203641dff8fc82ef672cf5debdf348f850477b5101b2a4bb90aa8fd3",
+    "rollback_commit": "df3bed260a6b11464a182306942a7370f936674f",
+    "source_dirty": false,
+    "external_writes": false,
+    "governor_validation_state": "unknown"
+  },
+  "identity": {
+    "canonical_id_count": 9,
+    "identity_conflicts": 0,
+    "dedupe_key": "canonical_id+source_content_hash"
+  },
+  "projection": {
+    "codex": "9/9_current_runtime",
+    "claude": "9/9_current_runtime",
+    "manual_distribution_edits": false,
+    "atomic_switch": true,
+    "rollback_preserved": true
+  },
+  "security": {
+    "scanner": "skill-vetter",
+    "result": "9/9_safe",
+    "risk_score": 0,
+    "finding_count": 0,
+    "note": "Automated scan is necessary but not sufficient; instruction smoke and declared dependency gaps remain separate."
+  },
+  "capabilities": [
+    {"canonical_id": "zk:skill:yuanli-brain-surface", "source_content_hash": "69aadba5ffc23d510aa7a797d57115cd69247c5a5de7905b49691b707a901d26"},
+    {"canonical_id": "zk:skill:research-design-gate", "source_content_hash": "47693976f8aa4c76349016d3d5953aa6730fbf464d7885794aa8851f78671714"},
+    {"canonical_id": "zk:skill:yuanli-research-max", "source_content_hash": "8ee45574a05abf9e557d749fbac84de70303894addb0099efb41a27a6dd388d5"},
+    {"canonical_id": "zk:skill:hv-deep-research", "source_content_hash": "089c0ebd47d13391498a25da096c8af89cea1a9f7106dc505c516014d5ee8cd9"},
+    {"canonical_id": "zk:skill:yuanli-narrative-four-beats", "source_content_hash": "711388c19b6b3e5fcdd052db6f84d3ec63edb76495b583c6c5b338dfac292337"},
+    {"canonical_id": "zk:skill:yuanli-narrative-course", "source_content_hash": "1e502514b774071f6912828d9e66652c441bd1ecb644d1e08a6f6260f7436c6b"},
+    {"canonical_id": "zk:skill:content-quality-gate", "source_content_hash": "e4d993fbeec54e0a48cd461c161781cf3db697bcb86e91714596a49f8013bc55"},
+    {"canonical_id": "zk:skill:yuanli-narrative-marketing", "source_content_hash": "c4f1086ae6a0e4c31baa76e34996e741c98f2c65100e1c8cdedb34359c756754"},
+    {"canonical_id": "zk:skill:yuanli-course-video-factory", "source_content_hash": "caf0546d107bf0aec8878d9f49caa3600d3580c1842fd11b814acef61c26ef93"}
+  ],
+  "claim_boundary": "callable_instruction_smoke_pass; never claim governor passed_current while validation_state is unknown"
+}

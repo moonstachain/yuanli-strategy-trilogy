@@ -1,0 +1,50 @@
+{
+  "schema": "audit_analysis_v1",
+  "audit_id": "course-capability-chain-v2-20260728",
+  "generated_at": "2026-07-28T20:00:00+08:00",
+  "facts": {
+    "router_stage_count": 16,
+    "managed_capability_count": 9,
+    "managed_safe_scan_passed": 9,
+    "managed_identity_conflicts": 0,
+    "governor_validation_state": "unknown",
+    "ppt_slide_count": 22,
+    "ppt_slide_limit": 24,
+    "docx_asset_count": 2,
+    "learner_workbook_rendered_pages": 7,
+    "instructor_manual_rendered_pages": 8,
+    "xlsx_sheet_count": 5,
+    "xlsx_formula_error_count": 0,
+    "verified_external_source_count": 4,
+    "desktop_timing_budget_minutes": 120,
+    "wechat_article_draft_count": 1,
+    "channels_script_draft_count": 3,
+    "moments_set_draft_count": 3,
+    "course_detail_pack_count": 1,
+    "xiaoe_unpublished_handoff_pack_count": 1,
+    "remaining_module_files_generated": 0,
+    "external_write_count": 0,
+    "live_trial_class_count": 0,
+    "real_learner_count": 0
+  },
+  "states": {
+    "course": "live_trial_pending",
+    "l0": "desktop_trial_pass",
+    "remaining_nine_modules": "HOLD",
+    "wechat": "draft_only",
+    "channels": "publish_pack_only",
+    "xiaoe": "unpublished_handoff_pack_only"
+  },
+  "asset_hashes": {
+    "assets/原力战略起点诊断工作坊-v2.pptx": "a3840ba17cfb94985fb84c75b42ac6d118034ca96453abc83a7570700768ad3b",
+    "assets/原力战略学员工作簿-v2.docx": "5863e8bd2a37b75dc027ad5d376f4b0deedb6bd1fc330f4b200f91ca6a4a7a08",
+    "assets/原力战略讲师手册-v2.docx": "dab050626783e751b1c59eabd63c92e88ff303615528f4c185af920620a1d061",
+    "assets/原力战略试讲观察与七天迁移-v2.xlsx": "3c19dd44c004240cb9be0fce0d414cbc7f17afa29010b3567aeb48cd0294bee3"
+  },
+  "scope_boundary": {
+    "live_trial_substituted_by_dry_run": false,
+    "synthetic_data_counted_as_real": false,
+    "platform_publication_performed": false,
+    "soul_canon_upgraded": false
+  }
+}

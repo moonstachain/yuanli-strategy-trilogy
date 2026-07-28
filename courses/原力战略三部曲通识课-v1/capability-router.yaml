@@ -1,0 +1,311 @@
+schema_version: yuanli-course-capability-router-v2.0
+router_id: yl-trilogy-l0-workshop-v2
+mode: route_and_govern
+generated_at: 2026-07-28
+course_boundary:
+  audience: 8-12 位专家型创业者
+  instructor: 明哥
+  duration_minutes: 120
+  product: 付费诊断工作坊
+  single_judgment: 不同时补齐 A/B/C，先找到未来 30 天限制原力复利的主卡点。
+  single_artifact: 原力战略起点卡 v2
+  maturity: live_trial_pending
+  batch_generation: hold_remaining_nine_modules
+runtime:
+  current_commit: a455f54542335e927848ee6f1617f571c53ccd4f
+  rollback_commit: df3bed260a6b11464a182306942a7370f936674f
+  governor_validation_state: unknown
+  safe_scan: 9/9_pass_risk_0
+  dual_projection: pass
+  identity_conflicts: 0
+capabilities:
+  repo:skill:yuanli-content-engineering:
+    version: v2.0
+    content_hash: e03e4809ab6c1651b520549e80a14a4eb7c29ab074a4dd0b307565f873786b9e
+  zk:skill:yuanli-brain-surface:
+    version: runtime-a455f5454233
+    content_hash: 69aadba5ffc23d510aa7a797d57115cd69247c5a5de7905b49691b707a901d26
+    constraint: missing_cli_helper
+  zk:skill:research-design-gate:
+    version: runtime-a455f5454233
+    content_hash: 47693976f8aa4c76349016d3d5953aa6730fbf464d7885794aa8851f78671714
+  zk:skill:yuanli-research-max:
+    version: runtime-a455f5454233
+    content_hash: 8ee45574a05abf9e557d749fbac84de70303894addb0099efb41a27a6dd388d5
+  zk:skill:hv-deep-research:
+    version: runtime-a455f5454233
+    content_hash: 089c0ebd47d13391498a25da096c8af89cea1a9f7106dc505c516014d5ee8cd9
+  zk:skill:yuanli-narrative-four-beats:
+    version: runtime-a455f5454233
+    content_hash: 711388c19b6b3e5fcdd052db6f84d3ec63edb76495b583c6c5b338dfac292337
+  zk:skill:yuanli-narrative-course:
+    version: runtime-a455f5454233
+    content_hash: 1e502514b774071f6912828d9e66652c441bd1ecb644d1e08a6f6260f7436c6b
+    constraint: declared_references_missing_use_inline_quick_protocol
+  zk:skill:content-quality-gate:
+    version: runtime-a455f5454233
+    content_hash: e4d993fbeec54e0a48cd461c161781cf3db697bcb86e91714596a49f8013bc55
+  zk:skill:yuanli-narrative-marketing:
+    version: runtime-a455f5454233
+    content_hash: c4f1086ae6a0e4c31baa76e34996e741c98f2c65100e1c8cdedb34359c756754
+    constraint: declared_references_missing_use_inline_quick_protocol
+  zk:skill:yuanli-course-video-factory:
+    version: runtime-a455f5454233
+    content_hash: caf0546d107bf0aec8878d9f49caa3600d3580c1842fd11b814acef61c26ef93
+    constraint: scripts_and_workflow_references_missing_fallback_required
+  local:skill:agent-reach:
+    version: unversioned-2026-07-28
+    content_hash: 8a4a7acef0097af56fb6d7c3241ec6986bcb238275c598101a8fe517e9aecfb2
+  local:skill:browse:
+    version: unversioned-2026-07-28
+    content_hash: 2f307a33c314f88773bcbb4d7f6e72bb3db30a9161d86fe4a2b6bd4e69abb187
+  bundle:skill:presentations:
+    version: 26.727.11326
+    content_hash: bddd302686bb5a2311e66585deed3e052cdc18916cbd88d08cdd298aa54d280c
+  bundle:skill:documents:
+    version: 26.727.11326
+    content_hash: d960ab3bba2ada4e944bd45d5fae25032c508c1c8fc91492a6327493bce1ba64
+  bundle:skill:spreadsheets:
+    version: 26.727.11326
+    content_hash: 52771665dfbe4922b45b8f31bc033013f9ff66370d5f1ffebd704c7531ad6643
+  local:skill:yuanli-design-taste:
+    version: unversioned-2026-07-28
+    content_hash: 63bc4da68a6ff1e612c04c616c7f87537cb69b6d0bebdb986546f8a62273df48
+  local:skill:tencent-meeting-mcp:
+    version: unversioned-2026-07-28
+    content_hash: 4ffe200713282af32a5fce1685af3332590e01139335935f02f76f0020840310
+  local:skill:lark-minutes:
+    version: unversioned-2026-07-28
+    content_hash: 081cf7ca4f8714dc54bc40173477ca5faf81d11710aad8d663c9131302d4117a
+  local:skill:get-biji-transcript:
+    version: unversioned-2026-07-28
+    content_hash: 96fb642e2f018dbf328320d930ad46bce5bb932993fc5c62b623423d04f16d9a
+  local:skill:lark-base:
+    version: unversioned-2026-07-28
+    content_hash: 4d2e1e931ccc19083f55c47818c23d85eb2b2ae1ab5e37ad853f31355c44ee35
+  local:skill:lark-task:
+    version: unversioned-2026-07-28
+    content_hash: 7f0442e6cd37715ba098bfa880b79638fd6ad588bf52a18719ac4dfe7da46163
+  local:skill:lark-sheets:
+    version: unversioned-2026-07-28
+    content_hash: 72ef54e6a734d0d7ca91d7d6f9b67a3eeb91be113bda77e4834c9ee2636c5162
+  local:skill:lark-im:
+    version: unversioned-2026-07-28
+    content_hash: 0db1c39dffccd7d8e8e2cd25b8c2a7dcfc0b11601cc248c9c94e827ed80b6242
+  local:skill:viral-benchmark-radar:
+    version: unversioned-2026-07-28
+    content_hash: e1f1af5268d3a5eca22be017a077a1e965185c8ed47a53ecb48452da772908fb
+  local:skill:wechat-article-writer:
+    version: unversioned-2026-07-28
+    content_hash: c043037eb4044890d5a894c7c8922cadae1f6d222146727c3c3a8e000271817b
+  local:skill:wechat-title-generator:
+    version: unversioned-2026-07-28
+    content_hash: b3976320cc653cb6b275c4956dd6d181e0aa2c887fd23674ec2a475a24a75dc9
+  local:skill:wechat-draft-writer:
+    version: unversioned-2026-07-28
+    content_hash: e651bf7633cbb4b91c38df356872d208698b913b062ff386030bd266deb35079
+  local:skill:short-video-autopublish:
+    version: unversioned-2026-07-28
+    content_hash: ade27f6fa9a31b79c61d4d3602eaf87791824cc6fed3c332eb0754d4cfee5234
+  local:skill:xiaoe-course-creator:
+    version: unversioned-2026-07-28
+    content_hash: e4e28657efe9ad018d68a43b26afac4a5ecf36aa23d351751bc848ad46a72560
+  local:skill:verification-before-completion:
+    version: unversioned-2026-07-28
+    content_hash: 58f4dbaa27e45d3ab963a96458f1269c04b43d6ba8789be7c614a18d2c5175f0
+  local:skill:audit-as-deliverable:
+    version: unversioned-2026-07-28
+    content_hash: dbbc22d10be24c734c035b560663cb35b1c4103422596a93b74677648edd18d1
+stages:
+  - stage_id: canonical_alignment
+    trigger: 新建或改写课程判断、案例、工具或营销主张
+    primary: repo:skill:yuanli-content-engineering
+    fallbacks: [zk:skill:yuanli-brain-surface, repo_source:soul_files]
+    availability: repo_local
+    input_contract: [course_brief, target_module, known_decisions]
+    output_contract: [canon_packet, assumption_register, external_reference_register]
+    preconditions: [Soul 正典可读, 课程边界已声明]
+    quality_gate: [裁决与假设分层, B4 口径无漂移, 无作者经历编造]
+    external_write: false
+    receipt: receipts/stage-canonical-alignment.yaml
+    backwrite_target: Trilogy/Evolution-Note
+  - stage_id: learner_insight
+    trigger: 设计小切口、诊断问题或学员语言
+    primary: local:skill:agent-reach
+    fallbacks: [authorized_interview_transcripts, existing_anonymized_transcripts]
+    availability: local_direct
+    input_contract: [audience_hypothesis, authorized_materials]
+    output_contract: [language_candidates, dilemmas, costs, evidence_gaps]
+    preconditions: [真实材料授权, PII 不入仓]
+    quality_gate: [不得虚构学员语言, 真实与问题模板分层]
+    external_write: false
+    receipt: receipts/stage-learner-insight.yaml
+    backwrite_target: research/learner-insight-register.md
+  - stage_id: research_design
+    trigger: 任何大纵深检索开工前
+    primary: zk:skill:research-design-gate
+    fallbacks: [lightweight_three_line_research_spec]
+    availability: managed_activation
+    input_contract: [decision_to_inform, scope, timebox]
+    output_contract: [research_questions, evidence_standard, stop_condition, validity_threats]
+    preconditions: [决策明确, 不用搜索替代裁决]
+    quality_gate: [问题可证伪, 停止条件明确]
+    external_write: false
+    receipt: receipts/stage-research-design.yaml
+    backwrite_target: research/00-研究设计-spec.md
+  - stage_id: deep_research
+    trigger: research_design 已通过
+    primary: zk:skill:yuanli-research-max
+    fallbacks: [zk:skill:hv-deep-research, local:skill:agent-reach, local:skill:browse]
+    availability: managed_activation
+    input_contract: [research_spec, canon_packet]
+    output_contract: [theory_evidence, data_evidence, case_evidence, counterexample_evidence, source_register]
+    preconditions: [研究 spec 完整]
+    quality_gate: [关键结论至少三源交叉, 每条来源有状态, 无出处数字禁入讲稿]
+    external_write: false
+    receipt: receipts/stage-deep-research.yaml
+    backwrite_target: research/01-四证包.md
+  - stage_id: narrative
+    trigger: 四证包与真实小切口材料达到输入门
+    primary: zk:skill:yuanli-narrative-four-beats
+    fallbacks: [zk:skill:yuanli-narrative-course, concept_lesson_card_protocol]
+    availability: managed_activation
+    input_contract: [concept_core, learner_dilemma, evidence_pack]
+    output_contract: [small_cut, depth_arc, new_implant, high_arc_draft]
+    preconditions: [真实学员语言或明确待访谈, 高弧光作者门]
+    quality_gate: [一个判断, 一个叙事脊柱, 作者经历 pending 不外讲]
+    external_write: false
+    receipt: receipts/stage-narrative.yaml
+    backwrite_target: lessons/L0-原力战略起点诊断工作坊.md
+  - stage_id: strong_landing
+    trigger: 叙事与概念硬核通过
+    primary: zk:skill:yuanli-narrative-course
+    fallbacks: [concept_lesson_card_schema]
+    availability: managed_activation
+    input_contract: [single_judgment, lesson_card]
+    output_contract: [tool, practice, single_artifact, rubric, seven_day_task]
+    preconditions: [唯一产物已冻结]
+    quality_gate: [只产出起点卡 v2, 评分可复核, 迁移有失败信号]
+    external_write: false
+    receipt: receipts/stage-strong-landing.yaml
+    backwrite_target: exercises/原力战略起点卡-v2.md
+  - stage_id: content_quality
+    trigger: 讲稿、课件或营销草稿完成
+    primary: zk:skill:content-quality-gate
+    fallbacks: [local:skill:verification-before-completion]
+    availability: managed_activation
+    input_contract: [content_asset, source_register]
+    output_contract: [quality_report, issue_list, revised_asset]
+    preconditions: [来源指针可读]
+    quality_gate: [结构正确, 来源可追, 无 AI 套话, 无作者经历编造]
+    external_write: false
+    receipt: receipts/stage-content-quality.yaml
+    backwrite_target: receipts/content-quality-report.md
+  - stage_id: learning_assets
+    trigger: 授课卡与讲稿结构通过
+    primary: [bundle:skill:presentations, bundle:skill:documents, bundle:skill:spreadsheets]
+    fallbacks: [local:skill:yuanli-design-taste]
+    availability: local_direct
+    input_contract: [approved_script, workbook_fields, design_dna]
+    output_contract: [pptx_max_24, learner_workbook_docx, observer_workbook_xlsx]
+    preconditions: [事实来源已分层, Greenbook Luxury 视觉协议]
+    quality_gate: [PPT 不超过 24 页, 全页渲染可读, 工作表无公式错误]
+    external_write: false
+    receipt: receipts/stage-learning-assets.yaml
+    backwrite_target: assets/README.md
+  - stage_id: live_trial
+    trigger: 两班真实试讲排期与授权齐全
+    primary: local:skill:tencent-meeting-mcp
+    fallbacks: [authorized_lark_meeting, offline_authorized_recording]
+    availability: human_gate
+    input_contract: [8_12_real_learners, recording_consent, approved_deck]
+    output_contract: [recording_reference, attendance_count, live_trial_receipt]
+    preconditions: [明哥确认, 录制授权, 隐私告知]
+    quality_gate: [真实课堂, 每班独立验收, 无 PII 入仓]
+    external_write: false
+    receipt: receipts/live-trial-{class_id}.yaml
+    backwrite_target: trials/live/
+  - stage_id: transcript_review
+    trigger: 已有受权真实录像
+    primary: local:skill:lark-minutes
+    fallbacks: [local:skill:get-biji-transcript, human_transcription_review]
+    availability: local_direct
+    input_contract: [authorized_recording]
+    output_contract: [timestamped_transcript, misunderstandings, learner_language, arc_reactions, pacing_breaks]
+    preconditions: [录制授权覆盖转写]
+    quality_gate: [时码可回读, 金句逐字一致, 仓内仅匿名汇总]
+    external_write: false
+    receipt: receipts/transcript-{class_id}.yaml
+    backwrite_target: trials/live/{class_id}-anonymous-review.md
+  - stage_id: seven_day_transfer
+    trigger: 真实课堂结束且学员选择参与迁移
+    primary: [local:skill:lark-base, local:skill:lark-task]
+    fallbacks: [local:skill:lark-sheets, local:skill:lark-im, local_offline_tracker]
+    availability: human_gate
+    input_contract: [consented_participant_aliases, start_card_scores, action_commitments]
+    output_contract: [action_evidence, eight_of_ten_scores, anonymous_aggregate]
+    preconditions: [单独授权外部写入, 最小化个人信息]
+    quality_gate: [50_percent_valid_evidence_target, 匿名回写, 不自动催发消息]
+    external_write: false
+    receipt: receipts/transfer-{class_id}.yaml
+    backwrite_target: trials/live/{class_id}-7d-aggregate.md
+  - stage_id: marketing_research
+    trigger: 已批准课程正典可用于首发营销
+    primary: local:skill:viral-benchmark-radar
+    fallbacks: [local:skill:agent-reach, manual_benchmark_library]
+    availability: local_direct
+    input_contract: [approved_canon, audience_questions]
+    output_contract: [verified_benchmarks, hook_candidates, counterexamples]
+    preconditions: [不得使用未授权课堂证据]
+    quality_gate: [流量指标不替代课程价值, 对标来源可追]
+    external_write: false
+    receipt: receipts/stage-marketing-research.yaml
+    backwrite_target: marketing/00-营销研究与边界.md
+  - stage_id: marketing_translation
+    trigger: 营销研究与课程正典通过
+    primary: zk:skill:yuanli-narrative-marketing
+    fallbacks: [local:skill:wechat-article-writer, local:skill:wechat-title-generator, local:skill:wechat-draft-writer]
+    availability: managed_activation
+    input_contract: [approved_canon, verified_evidence, marketing_research]
+    output_contract: [wechat_article, three_video_scripts, three_moments_sets, course_detail_copy]
+    preconditions: [不引用虚构课堂金句]
+    quality_gate: [每项主张可追, 草稿状态显式]
+    external_write: false
+    receipt: receipts/stage-marketing-translation.yaml
+    backwrite_target: marketing/
+  - stage_id: onsite_reproduction
+    trigger: 真实课堂逐字稿通过人工复核
+    primary: zk:skill:yuanli-course-video-factory
+    fallbacks: [local:skill:short-video-autopublish, human_editor_handoff]
+    availability: managed_activation
+    input_contract: [authorized_video, verified_timestamped_transcript]
+    output_contract: [clip_candidates, publish_pack, course_asset_manifest]
+    preconditions: [真实时码, 传播授权]
+    quality_gate: [不改写金句, 不自动发布, 缺脚本时强制 fallback]
+    external_write: false
+    receipt: receipts/reproduction-{class_id}.yaml
+    backwrite_target: publish-pack/post-trial/
+  - stage_id: xiaoe_draft
+    trigger: 课程资产清单与人工账号交接就绪
+    primary: local:skill:xiaoe-course-creator
+    fallbacks: [human_computer_use_handoff]
+    availability: human_gate
+    input_contract: [course_name, lesson_order, approved_videos, detail_copy]
+    output_contract: [unpublished_draft_handoff, field_checklist]
+    preconditions: [明哥逐项确认平台写入]
+    quality_gate: [未发布, 未定价, 未分享, 未通知, 未支付, 未删除]
+    external_write: false
+    receipt: receipts/xiaoe-draft.yaml
+    backwrite_target: xiaoe/小鹅通未发布草稿创建包.md
+  - stage_id: canonical_backwrite
+    trigger: 两班真实试讲与七天迁移形成匿名证据
+    primary: repo:skill:yuanli-content-engineering
+    fallbacks: [local:skill:audit-as-deliverable]
+    availability: human_gate
+    input_contract: [anonymous_aggregates, receipts, evolution_note]
+    output_contract: [soul_pr_proposal, evidence_audit]
+    preconditions: [真实裁决单独 PR, 明哥确认]
+    quality_gate: [事实判断假设分层, 不含 PII, 不自动升级正典]
+    external_write: false
+    receipt: receipts/stage-canonical-backwrite.yaml
+    backwrite_target: moonstachain/yuanli-strategy-soul_via_separate_pr

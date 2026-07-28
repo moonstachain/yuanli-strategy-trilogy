@@ -1,0 +1,58 @@
+{
+  "schema": "yuanli_course_capability_smoke_receipt_v2",
+  "generated_at": "2026-07-28T20:00:00+08:00",
+  "overall": "pass_with_declared_degradations",
+  "external_writes": false,
+  "checks": [
+    {
+      "canonical_id": "zk:skill:yuanli-brain-surface",
+      "status": "degraded_fallback_verified",
+      "evidence": "Soul canon files were recalled and layered into the lesson-card package.",
+      "constraint": "declared CLI helper is absent; route falls back to repo source"
+    },
+    {
+      "canonical_id": "zk:skill:research-design-gate",
+      "status": "instruction_smoke_pass",
+      "evidence": "research/00-研究设计-spec.md contains decision, questions, evidence standard, stop condition, validity threats and handoff"
+    },
+    {
+      "canonical_id": "zk:skill:yuanli-research-max",
+      "status": "instruction_smoke_pass",
+      "evidence": "research/01-四证包.md separates theory, data, cases, counterevidence and source states"
+    },
+    {
+      "canonical_id": "zk:skill:hv-deep-research",
+      "status": "fallback_smoke_pass",
+      "evidence": "historical and cross-sectional claims are routed through verified sources; A/B/C validity remains a live-trial hypothesis"
+    },
+    {
+      "canonical_id": "zk:skill:yuanli-narrative-four-beats",
+      "status": "instruction_smoke_pass",
+      "evidence": "L0 lesson card contains cognitive isolation, small cut, depth, new implant and high-arc author gate"
+    },
+    {
+      "canonical_id": "zk:skill:yuanli-narrative-course",
+      "status": "pass_with_inline_protocol",
+      "evidence": "one tool, one practice, one artifact, a ten-point rubric and seven-day task are present",
+      "constraint": "declared references are missing in the runtime projection; inline quick protocol was used"
+    },
+    {
+      "canonical_id": "zk:skill:content-quality-gate",
+      "status": "pass_with_human_l4_pending",
+      "evidence": "hard-rule scan has no banned phrase hit after repair; source and fabrication checks pass",
+      "constraint": "author voice and lived-experience arc still require Mingge review"
+    },
+    {
+      "canonical_id": "zk:skill:yuanli-narrative-marketing",
+      "status": "pass_with_inline_protocol",
+      "evidence": "one WeChat article, three Channels scripts, three Moments sets and one detail-page package are draft-only",
+      "constraint": "declared references are missing in the runtime projection"
+    },
+    {
+      "canonical_id": "zk:skill:yuanli-course-video-factory",
+      "status": "fallback_route_verified_not_executed",
+      "evidence": "pre-trial Channels package contains no fabricated timestamps and routes to human editing after real transcript review",
+      "constraint": "no authorized real recording; declared scripts and workflow references are missing"
+    }
+  ]
+}
