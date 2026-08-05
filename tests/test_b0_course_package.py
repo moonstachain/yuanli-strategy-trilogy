@@ -31,7 +31,7 @@ class B0CoursePackageTests(unittest.TestCase):
     def test_b0_is_navigation_not_fifth_canon_module(self):
         lesson = self.text["lesson"]
         control = self.text["control"]
-        self.assertIn("不是第五个正典模块", lesson)
+        self.assertIn("不得据此把 B0 升格为第五个正典模块", lesson)
         self.assertIn("不是第五个正典模块", control)
         self.assertIn("临时挂靠 B1", lesson)
 
@@ -48,10 +48,11 @@ class B0CoursePackageTests(unittest.TestCase):
             self.assertIn(phrase, lesson)
 
     def test_two_accounts_boundary_is_explicit(self):
-        for name in ("lesson", "exercise", "deck", "evidence"):
+        for name in ("lesson", "exercise", "deck"):
             text = self.text[name]
             self.assertIn("存量账户", text)
             self.assertIn("增量账户", text)
+        self.assertIn("两账是两种价值竞争路线", self.text["evidence"])
         self.assertIn("不等于 B2 的完整心理账户体系", self.text["lesson"])
         for gate in ("甜用户", "贵任务", "心理账户", "旧品类", "新品类", "入脑表达"):
             self.assertIn(gate, self.text["lesson"])
