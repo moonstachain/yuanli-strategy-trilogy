@@ -2,154 +2,199 @@
 
 > Blind Learner × Observer × Examiner × Red Team
 
-## 目的
-
-这不是内部审稿，也不是证明课程正确。
-
-唯一目的：在进入真人课堂前，主动寻找五课内容中最可能导致学习失败的地方。
-
-重点检测：
-
-1. 哪里第一次听不懂；
-2. 哪里自以为听懂但理解错；
-3. 哪里新概念过多导致前面内容掉线；
-4. 五张主工具是否能在目标时间内完成到可用水平；
-5. 90 分钟节奏是否存在必然超载；
-6. L1→L2→L3→L4→L5 是否自然产生下一课问题；
-7. 五课结束后能否重建一条完整心智龙骨。
-
-## 冻结输入
+## 当前裁决
 
 ```yaml
 trial_id: YL-TRILOGY-GENERAL-v2-DESKTOP-01
-trial_version: v1
-course_version: YL-TRILOGY-GENERAL-v2
 input_snapshot_commit: 6be729bf56759604f2ce2ff19e5163e2206ae2cf
-input_snapshot_role: immutable_course_content_for_round_1_and_round_2
-status: ROUND_1_COMPLETE
-round_1: COMPLETED_WITH_BLOCKERS
-round_2: READY_NOT_RUN
-round_3: BLOCKED_UNTIL_PATCH
-results_exist: true
+evidence_class: simulated_desktop_trial
 real_learner_evidence: false
+status: ROUND_2_COMPLETE
+qualification: NOT_QUALIFIED_FOR_LIVE_TRIAL
+next_gate: HUMAN_PATCH_REVIEW
+round_3: BLOCKED
 ```
 
-Round 1 全程以冻结 commit 的五课授课稿、五张主工具和 Deck 蓝图为唯一课程输入；15个Session期间没有修改课程正文。
-
-## Round 1｜Blind Run｜已完成
+五课冻结稿已经完成两轮Desktop Trial：
 
 ```text
-P01 方法很多型专家
-P02 成熟经营型企业家
-P03 专家 IP 型创业者
-×
-L01→L05
-=
-15/15 Sessions
+Round 1｜Blind Run
+P01 + P02 + P03 × L01—L05
+= 15/15纵向Session
+
+Round 2｜Adversarial Run
+P04 × L04
+P05 × L05
++ 29个Red Team横向攻击
 ```
 
-### Round 1 Verdict
+两轮期间均**没有修改冻结课程正文**。
 
-> **FAIL_WITH_ACTIONABLE_EVIDENCE / NOT_QUALIFIED_FOR_LIVE_TRIAL**
+---
 
-核心阻塞：
+# Round 1｜Blind Run｜COMPLETE
 
-1. P02 L03：母体被稳定压缩成“底层核心竞争力”；
-2. P03 L02：品类被稳定压缩成“定位词/超级标签”；
-3. L03 工具：3/3 Persona 课堂时间窗内无法到 L3；
-4. L04 工具：3/3 Persona 课堂时间窗内无法到 L3；
-5. P01 L02→L03 Handoff = 3，被专业解释层截流。
+Verdict：
 
-正典边界在本轮均守住：
+> **FAIL_WITH_ACTIONABLE_EVIDENCE**
 
-```yaml
-A_B_C_canon_confusion: 0
-B4_fifth_barrier_confusion: 0
-C5_confusion: 0
-yuanli_life_as_part4_confusion: 0
-```
+主要发现：
+
+1. L03：P02把母体稳定压缩成“底层核心竞争力”；
+2. L02：P03把品类稳定压缩成“定位词/超级标签”；
+3. L03工具：3/3 Persona课堂时间窗内无法达到L3；
+4. L04工具：3/3 Persona课堂时间窗内无法达到L3；
+5. P01 L02→L03 Handoff=3，被第二套专业口诀截流。
 
 详见：`ROUND-1-REVIEW.md`。
 
-## Round 2｜Adversarial Run｜READY_NOT_RUN
+---
 
-- P04 AI 工具狂热者：重点攻击 L04；
-- P05 高成就效率主义者：重点攻击 L05；
-- Red Team 横向攻击本轮两个P0和正典硬边界。
+# Round 2｜Adversarial Run｜COMPLETE
 
-Round 2 继续使用冻结课程快照，**不应用Patch**，目的是先把攻击面找全。
+## P04｜AI工具狂热者 × L04
 
-## Round 3｜Regression Run｜BLOCKED
-
-完成 P0/P1 Patch 后，必须创建全新 Persona F，从 L01 完整走到 L05。
-
-原 Persona 不得用于证明修复有效。
-
-## 五角色分权
-
-- **Teacher**：严格按冻结课程讲，不临时扩写救场；
-- **Blind Learner**：只使用当前已讲内容，必须暴露困惑与误解；
-- **Observer**：只记录，不教学、不补答案；
-- **Examiner**：闭卷检测“说得出、分得清、对得上、用得起”；
-- **Red Team**：主动诱导危险误解，测试学员能否拒绝错误解释。
-
-## 单课评分七维
-
-每项 1—5：
-
-- Hit｜被击中
-- Comprehension｜听懂
-- Discrimination｜分得清
-- Self-Mapping｜对号入座
-- Toolability｜用得起
-- Load｜认知负荷控制
-- Pull｜对下一课的自然牵引
-
-## 单课 Green Gate
-
-```yaml
-comprehension: ">=4/5"
-discrimination: ">=4/5"
-self_mapping: ">=4/5"
-tool_quality: "Level 3"
-narrative_pull: ">=4/5"
-critical_misconceptions: 0
-load_red_zones: 0
-```
-
-## 五课整体 Green Gate
-
-```yaml
-five_lesson_spine_recall: PASS
-A_B_C_canon_confusion: 0
-yuanli_life_as_part4_confusion: 0
-B4_fifth_barrier_confusion: 0
-C5_confusion: 0
-five_tools_reconstructable: PASS
-lesson_handoffs: 4/4_PASS
-new_persona_regression: PASS
-```
-
-## 目录
+最终成功拒绝：
 
 ```text
-README.md
-protocol.md
+OS = 软件
+C1 = Prompt
+C2 = RAG
+C3 = Dashboard
+C4 = Automation
+强 = C5
+```
+
+但再次复现：
+
+- L04中段二级框架Red负荷；
+- OS一页架构冻结4分钟槽不足，高AI熟练Persona达到L3仍估算约14分钟。
+
+## P05｜高成就效率主义者 × L05
+
+最终成功拒绝：
+
+```text
+原力人生 = 第四部
+人生 = 唯一使命
+长期 = 永远做同一件事
+终局 = 财富自由
+```
+
+“人生=五维KPI”经过交换测试后也被纠正，但存在轻度摩擦。
+
+## Red Team｜29个横向攻击
+
+```yaml
+critical_breaches: 2
+new_critical_breaches: 0
+reproduced_round_1_P0: 2
+canon_boundary_breaches: 0
+```
+
+重复击穿：
+
+1. `mother_equals_core_competency`
+2. `category_equals_positioning_word`
+
+说明这两个P0不是单一Persona偏好，而是当前冻结稿可重复发生的概念压缩错误。
+
+详见：
+
+- `ROUND-2-REVIEW.md`
+- `red-team/ROUND-2-ADVERSARIAL-BATTERY.md`
+
+---
+
+# 当前正典边界
+
+Round 1 + Round 2 均守住：
+
+```yaml
+A_B_C_canon_confusion: 0
+B4_fifth_barrier_confusion: 0
+C5_confusion: 0
+yuanli_life_as_part4_confusion: 0
+mother_as_fixed_destiny: 0
+C3_as_mindmap_only_at_exit: 0
+```
+
+因此当前主要问题是：
+
+> **教学判别、负荷与工具编排，不是Soul正典漂移。**
+
+---
+
+# Patch Queue｜尚未应用
+
+```yaml
+P0: 2
+P1: 4
+P2: 3
+watch_items: 1
+applied: 0
+```
+
+优先级：
+
+```text
+1. L03 母体 vs 核心竞争力
+2. L02 品类 vs 定位词
+3. L03 工具随课分段
+4. L04 工具随课分段
+5. L02 第二套专业口诀降级
+6. L04 二级框架降负荷
+7. 可选P2节奏/判别优化
+```
+
+详见：`patch-candidates.md`。
+
+---
+
+# Round 3｜Regression Run｜BLOCKED
+
+不得直接开始。
+
+必须先完成：
+
+```text
+Human Gate
+↓
+批准P0/P1最小Patch
+↓
+应用Patch
+↓
+重新冻结patched snapshot
+↓
+创建全新Persona F
+↓
+Persona F：L01→L05完整回归
+```
+
+原Persona不得用于证明修复有效。
+
+---
+
+# 证据目录
+
+```text
 ROUND-1-REVIEW.md
+ROUND-2-REVIEW.md
+protocol.md
+DESKTOP-TRIAL-RECEIPT.yaml
 
 personas/
-  P01-method-rich-expert.yaml
-  P02-pragmatic-founder.yaml
-  P03-expert-ip.yaml
-  P04-ai-tool-maximalist.yaml
-  P05-achievement-maximalist.yaml
+  P01—P05
 
 sessions/
-  L01/SESSION-TEMPLATE.md + P01/P02/P03.md
-  L02/SESSION-TEMPLATE.md + P01/P02/P03.md
-  L03/SESSION-TEMPLATE.md + P01/P02/P03.md
-  L04/SESSION-TEMPLATE.md + P01/P02/P03.md
-  L05/SESSION-TEMPLATE.md + P01/P02/P03.md
+  L01/P01-P03
+  L02/P01-P03
+  L03/P01-P03
+  L04/P01-P04
+  L05/P01-P03 + P05
+
+red-team/
+  ROUND-2-ADVERSARIAL-BATTERY.md
 
 ledgers/
   misconception-ledger.md
@@ -158,27 +203,24 @@ ledgers/
   narrative-handoff-ledger.md
 
 cross-course/
-  five-course-reconstruction.md
-  context-isolated-recall.md
-  P01/P02/P03-five-course-reconstruction.md
-  P01/P02/P03-context-isolated-recall.md
+  P01/P02/P03 five-course reconstruction
+  P01/P02/P03 context-isolated recall
 
 patch-candidates.md
-DESKTOP-TRIAL-RECEIPT.yaml
 ```
 
-## 当前闸门
+---
 
-```yaml
-round_1: COMPLETE
-round_2: READY_NOT_RUN
-live_trial: NOT_READY
-reusable: false
-supersedes_v1: false
-```
+# 当前唯一允许动作
 
-下一次允许动作：
+> **HUMAN_REVIEW_PATCH_QUEUE**
 
-> **Run Round 2 / P04 + P05 + Red Team against the same frozen snapshot.**
+在Human Gate之前：
 
-在Round 2完成前，不应用课程Patch；在Round 3新Persona回归通过前，不宣称Desktop Trial PASS。
+- 不应用Patch；
+- 不创建patched snapshot；
+- 不运行Round 3；
+- 不宣称Desktop Trial PASS；
+- 不宣称Live Trial Ready；
+- 不宣称reusable；
+- 不宣称supersedes v1。
