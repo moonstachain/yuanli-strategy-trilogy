@@ -1,5 +1,5 @@
 trial_id: YL-TRILOGY-GENERAL-v2-DESKTOP-01
-phase: PATCH_APPLICATION
+phase: PATCH_APPLICATION_AND_REGRESSION
 status: COMPLETE
 human_gate: APPROVED
 
@@ -27,53 +27,62 @@ snapshots:
 
 course_files_modified: 12
 lesson_01_modified: false
-
-modified_paths:
-  - courses/原力战略三部曲通识课-v2/lessons/02-原力创业-找到秘密.md
-  - courses/原力战略三部曲通识课-v2/lessons/03-原力资产-为什么偏偏是你.md
-  - courses/原力战略三部曲通识课-v2/lessons/04-原力OS-让原力离开你仍然生长.md
-  - courses/原力战略三部曲通识课-v2/lessons/05-原力人生-什么值得被复制一万倍.md
-  - courses/原力战略三部曲通识课-v2/exercises/我的原力秘密四步卡-v1.md
-  - courses/原力战略三部曲通识课-v2/exercises/我的原力母体假设卡-v1.md
-  - courses/原力战略三部曲通识课-v2/exercises/我的原力OS一页架构-v1.md
-  - courses/原力战略三部曲通识课-v2/exercises/我的原力人生一页纸-v1.md
-  - courses/原力战略三部曲通识课-v2/deck/02-原力创业-PPT蓝图.md
-  - courses/原力战略三部曲通识课-v2/deck/03-原力资产-PPT蓝图.md
-  - courses/原力战略三部曲通识课-v2/deck/04-原力OS-PPT蓝图.md
-  - courses/原力战略三部曲通识课-v2/deck/05-原力人生-PPT蓝图.md
+course_edits_during_round_3: false
 
 patch_results:
-  PATCH-P0-01: APPLIED
-  PATCH-P0-02: APPLIED
-  PATCH-P1-01: APPLIED
-  PATCH-P1-02: APPLIED
-  PATCH-P1-03: APPLIED
-  PATCH-P1-04: APPLIED
-  PATCH-P2-01: APPLIED
-  PATCH-P2-02: ABSORBED_MINIMAL_LINE
-  PATCH-P2-03: APPLIED
-  W-01: WATCH_NOT_APPLIED
+  PATCH-P0-01: APPLIED_AND_REGRESSION_PASS
+  PATCH-P0-02: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-01: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-02: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-03: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-04: APPLIED_AND_REGRESSION_PASS
+  PATCH-P2-01: APPLIED_AND_REGRESSION_PASS
+  PATCH-P2-02: ABSORBED_MINIMAL_LINE_AND_PASS
+  PATCH-P2-03: APPLIED_AND_REGRESSION_PASS
+  W-01: WATCH_NOT_APPLIED_AND_REGRESSION_PASS
 
 round_3:
   persona: P06-regression-founder
   alias: Persona_F
-  status: READY_NOT_RUN
+  status: COMPLETE
   input_snapshot: e05450f800b47ff0360c75cb73365e2011d7ee69
   required_path: L01_to_L05_longitudinal
+  expected_sessions: 5
+  completed_sessions: 5
   old_personas_allowed_as_proof: false
+  teacher_rescue_required: 0
+  result: PASS
+
+regression_results:
+  category_not_positioning_word: PASS
+  generator_not_capability: PASS
+  L02_to_L03_handoff: PASS
+  L03_tool_level_3_within_15min_equivalent: PASS_AT_LIMIT
+  L03_counter_evidence_present: PASS
+  L04_no_continuous_red_load: PASS
+  L04_tool_level_3_within_15min: PASS
+  L04_outcome_present: PASS
+  L04_reuse_present: PASS
+  L05_value_constraint_not_kpi: PASS
+  L05_tool_level_3_within_14min: PASS
+  L01_only_you_not_destiny: PASS
+  five_lesson_spine_recall: PASS
+  context_isolated_recall_proxy: PASS
+  critical_misconception_recurrence: 0
 
 release_effect:
-  desktop_trial: IN_PROGRESS_REGRESSION_READY
-  live_trial: NOT_READY
+  desktop_trial: PASS_SIMULATED
+  live_trial: READY_NOT_RUN
+  real_learner_evidence: false
+  real_24h_recall: NOT_RUN
   reusable: false
   supersedes_v1: false
 
-allowed_next_action:
-  - RUN_ROUND_3_PERSONA_F_L01_TO_L05_AGAINST_PATCHED_SNAPSHOT
+next_action:
+  - DESIGN_AND_RUN_SMALL_SAMPLE_HUMAN_LIVE_TRIAL
 
 forbidden_claims:
-  - DESKTOP_TRIAL_PASS
-  - LIVE_TRIAL_READY
+  - REAL_LEARNER_VALIDATED
   - REAL_24H_MEMORY_PASS
   - REUSABLE
   - SUPERSEDES_V1
