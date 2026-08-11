@@ -1,14 +1,16 @@
 trial_id: YL-TRILOGY-GENERAL-v2-DESKTOP-01
 trial_version: v1
 course_id: YL-TRILOGY-GENERAL-v2
-input_snapshot_commit: 6be729bf56759604f2ce2ff19e5163e2206ae2cf
+
+original_input_snapshot_commit: 6be729bf56759604f2ce2ff19e5163e2206ae2cf
+patched_input_snapshot_commit: e05450f800b47ff0360c75cb73365e2011d7ee69
 
 evidence_class: simulated_desktop_trial
 real_learner_evidence: false
 
-status: ROUND_2_COMPLETE
-qualification: NOT_QUALIFIED_FOR_LIVE_TRIAL
-next_gate: HUMAN_PATCH_REVIEW
+status: PATCHED_SNAPSHOT_FROZEN
+qualification: NOT_YET_QUALIFIED_FOR_LIVE_TRIAL
+next_gate: ROUND_3_REGRESSION
 
 rounds:
   round_1_blind_run:
@@ -21,32 +23,48 @@ rounds:
     result: FAIL_WITH_ACTIONABLE_EVIDENCE
   round_2_adversarial:
     status: COMPLETE
-    prerequisite_round_1_review: COMPLETE
     targeted_personas: [P04, P05]
     targeted_sessions_completed: 2
-    red_team_required: true
     red_team_status: COMPLETE
     red_team_attacks: 29
     course_edits_during_round: false
     result: CONFIRMS_ROUND_1_BLOCKERS
+  patch_application:
+    status: COMPLETE
+    human_gate: APPROVED
+    required_P0_applied: 2_of_2
+    required_P1_applied: 4_of_4
+    selected_P2_applied: 2_of_2
+    P2_boundary_absorbed: 1_of_1
+    watch_items_modified: 0
+    patched_snapshot: e05450f800b47ff0360c75cb73365e2011d7ee69
   round_3_regression:
-    status: BLOCKED_UNTIL_HUMAN_APPROVES_PATCH_AND_NEW_PERSONA
+    status: READY_NOT_RUN
+    persona: P06
+    alias: Persona_F
+    persona_path: personas/P06-regression-founder.yaml
     new_persona_required: true
+    new_persona_created: true
     patched_snapshot_required: true
+    patched_snapshot_frozen: true
+    required_lessons: [L01, L02, L03, L04, L05]
+    expected_sessions: 5
+    completed_sessions: 0
 
 ledgers:
   misconception_ledger: ROUND_2_POPULATED
   cognitive_load_ledger: ROUND_2_POPULATED
   tool_completion_ledger: ROUND_2_POPULATED
   narrative_handoff_ledger: ROUND_2_POPULATED
+  round_3_updates: NOT_RUN
 
 cross_course:
-  five_course_reconstruction:
-    status: COMPLETED_ROUND_1
+  five_course_reconstruction_round_1:
+    status: COMPLETED
     personas: [P01, P02, P03]
     overall_gate: FAIL
-  context_isolated_recall_proxy:
-    status: COMPLETED_ROUND_1
+  context_isolated_recall_proxy_round_1:
+    status: COMPLETED
     personas: [P01, P02, P03]
     real_24h_equivalent: false
   round_2_red_team:
@@ -54,10 +72,11 @@ cross_course:
     attacks: 29
     new_critical_breaches: 0
     reproduced_existing_critical_breaches: 2
+  round_3_five_course_reconstruction: NOT_RUN
+  round_3_context_isolated_recall_proxy: NOT_RUN
   real_24h_recall: NOT_RUN
 
-persistent_blockers:
-  critical_misconceptions: 2
+historical_blockers_before_patch:
   critical_items:
     - mother_equals_core_competency
     - category_equals_positioning_word
@@ -66,52 +85,49 @@ persistent_blockers:
   narrative_handoff_failure:
     - P01_L02_to_L03
 
-round_2_positive_findings:
-  OS_as_tool_stack: RESISTED
-  C1_as_prompt_only: RESISTED
-  C2_as_RAG_only: RESISTED
-  C3_as_dashboard_only: RESISTED
-  C4_as_automation_only: RESISTED
-  C5_exists: RESISTED
-  yuanli_life_as_part4: RESISTED
-  life_as_single_mission: RESISTED
-  long_term_as_same_job_forever: RESISTED
-  wealth_freedom_as_ultimate_end: RESISTED
+patches:
+  PATCH-P0-01: APPLIED
+  PATCH-P0-02: APPLIED
+  PATCH-P1-01: APPLIED
+  PATCH-P1-02: APPLIED
+  PATCH-P1-03: APPLIED
+  PATCH-P1-04: APPLIED
+  PATCH-P2-01: APPLIED
+  PATCH-P2-02: ABSORBED_MINIMAL_LINE
+  PATCH-P2-03: APPLIED
+  W-01: WATCH_NOT_APPLIED
 
-hard_gates:
-  critical_misconceptions: FAIL_2
-  five_lesson_spine_recall: FAIL
-  five_tools_level_3: FAIL
-  lesson_handoffs_4_of_4: FAIL
-  A_B_C_canon_confusion: PASS_0
-  B4_fifth_barrier_confusion: PASS_0
-  C5_confusion: PASS_0
-  yuanli_life_as_part4_confusion: PASS_0
-  new_persona_regression: NOT_RUN
-
-patch_queue:
-  P0: 2
-  P1: 4
-  P2: 3
-  watch_items: 1
-  applied: 0
-  round_2_confirmed_existing_P0: 2
-  round_2_confirmed_existing_P1: 2
-  human_gate_required_before_apply: true
+round_3_required_regression_gates:
+  category_not_positioning_word: NOT_RUN
+  generator_not_capability: NOT_RUN
+  L02_to_L03_handoff: NOT_RUN
+  L03_tool_level_3_within_15min_equivalent: NOT_RUN
+  L03_counter_evidence_present: NOT_RUN
+  L04_no_continuous_red_load: NOT_RUN
+  L04_tool_level_3_within_15min: NOT_RUN
+  L04_outcome_present: NOT_RUN
+  L04_reuse_present: NOT_RUN
+  L05_value_constraint_not_kpi: NOT_RUN
+  L05_tool_level_3_within_14min: NOT_RUN
+  L01_only_you_not_destiny: NOT_RUN
+  five_lesson_spine_recall: NOT_RUN
+  A_B_C_canon_confusion: NOT_RUN_ROUND_3
+  B4_fifth_barrier_confusion: NOT_RUN_ROUND_3
+  C5_confusion: NOT_RUN_ROUND_3
+  yuanli_life_as_part4_confusion: NOT_RUN_ROUND_3
 
 release_effect:
-  desktop_trial: IN_PROGRESS_PATCH_REQUIRED
+  desktop_trial: IN_PROGRESS_REGRESSION_READY
   live_trial: NOT_READY
   reusable: false
   supersedes_v1: false
 
 allowed_next_action:
-  - HUMAN_REVIEW_PATCH_QUEUE
+  - RUN_ROUND_3_PERSONA_F_L01_TO_L05_AGAINST_PATCHED_SNAPSHOT
 
-forbidden_actions_until_human_gate:
-  - APPLY_PATCHES
-  - CREATE_PATCHED_SNAPSHOT
-  - RUN_ROUND_3
+forbidden_actions_until_round_3_result:
+  - MODIFY_PATCHED_COURSE_SNAPSHOT
+  - USE_P01_TO_P05_AS_REGRESSION_PROOF
   - CLAIM_DESKTOP_TRIAL_PASS
   - CLAIM_LIVE_TRIAL_READY
 
@@ -122,4 +138,4 @@ forbidden_claims:
   - REUSABLE
   - SUPERSEDES_V1
 
-human_gate_required: true
+human_gate_patch_approval: true
