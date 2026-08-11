@@ -1,0 +1,38 @@
+persona_id: P04
+name: ai-tool-maximalist
+role_cn: AI工具狂热者
+round: 2
+status: BLOCKED_UNTIL_ROUND_1_REVIEW
+
+profile:
+  ai_fluency: 高
+  business: 专家创业/小团队
+  system_thinking: 中等
+  tool_orientation: 极高
+
+observable_traits:
+  - 喜欢Agent、RAG、知识库、自动化
+  - 容易把系统问题技术化
+  - 倾向用软件替代治理与判断设计
+
+starting_beliefs:
+  - OS就是工具栈
+  - 知识库越全越聪明
+  - 自动化率越高越先进
+
+likely_misconceptions:
+  - C1 = Prompt / 人设设定
+  - C2 = RAG数据库
+  - C3 = 思维导图/驾驶舱
+  - C4 = 自动化工作流
+  - 强 = C5
+
+pressure_focus:
+  - L04
+  - 能否理解OS是Judgment Stack而非Technology Stack
+  - 能否主动说出Outcome → Learning → Reuse
+
+learner_rule:
+  propose_tool_solution_first: true
+  challenge_governance_value: true
+  do_not_accept_metaphor_without_operational_meaning: true

@@ -1,0 +1,65 @@
+trial_id: YL-TRILOGY-GENERAL-v2-DESKTOP-01
+trial_version: v1
+course_id: YL-TRILOGY-GENERAL-v2
+input_snapshot_commit: 6be729bf56759604f2ce2ff19e5163e2206ae2cf
+
+evidence_class: simulated_desktop_trial
+real_learner_evidence: false
+
+status: READY_NOT_RUN
+qualification: NOT_EVALUATED
+
+rounds:
+  round_1_blind_run:
+    status: READY_NOT_RUN
+    required_personas: [P01, P02, P03]
+    required_lessons: [L01, L02, L03, L04, L05]
+    expected_sessions: 15
+    completed_sessions: 0
+    course_edits_during_round: FORBIDDEN
+  round_2_adversarial:
+    status: BLOCKED_UNTIL_ROUND_1_REVIEW
+    required_personas: [P04, P05]
+  round_3_regression:
+    status: BLOCKED_UNTIL_PATCH_AND_NEW_PERSONA
+    new_persona_required: true
+
+ledgers:
+  misconception_ledger: EMPTY
+  cognitive_load_ledger: EMPTY
+  tool_completion_ledger: EMPTY
+  narrative_handoff_ledger: EMPTY
+
+cross_course:
+  five_course_reconstruction: NOT_RUN
+  context_isolated_recall_proxy: NOT_RUN
+  real_24h_recall: NOT_RUN
+
+hard_gates:
+  critical_misconceptions: NOT_EVALUATED
+  five_lesson_spine_recall: NOT_EVALUATED
+  five_tools_level_3: NOT_EVALUATED
+  lesson_handoffs_4_of_4: NOT_EVALUATED
+  A_B_C_canon_confusion: NOT_EVALUATED
+  B4_fifth_barrier_confusion: NOT_EVALUATED
+  C5_confusion: NOT_EVALUATED
+  yuanli_life_as_part4_confusion: NOT_EVALUATED
+  new_persona_regression: NOT_EVALUATED
+
+release_effect:
+  desktop_trial: not_run
+  live_trial: not_ready
+  reusable: false
+  supersedes_v1: false
+
+allowed_next_action:
+  - RUN_ROUND_1_P01_P02_P03_AGAINST_FROZEN_SNAPSHOT
+
+forbidden_claims:
+  - DESKTOP_TRIAL_PASS
+  - LIVE_TRIAL_READY
+  - REAL_24H_MEMORY_PASS
+  - REUSABLE
+  - SUPERSEDES_V1
+
+human_gate_required: true

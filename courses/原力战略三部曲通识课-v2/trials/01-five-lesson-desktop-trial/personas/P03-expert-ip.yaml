@@ -1,0 +1,37 @@
+persona_id: P03
+name: expert-ip
+role_cn: 专家IP型创业者
+round: 1
+status: READY_NOT_RUN
+
+profile:
+  business: 内容/IP/课程/社群型业务
+  audience: 已有粉丝或私域
+  ai_fluency: 中等
+  self_expression_strength: 高
+
+observable_traits:
+  - 擅长内容与表达
+  - 重视定位和个人品牌
+  - 容易追求一句超级标签
+  - 容易把自我认知做成人设工程
+
+starting_beliefs:
+  - 找到差异化定位就是最关键的事
+  - 母体可能等于天赋/人格/超级标签
+  - 秘密可能等于内容选题或定位
+
+likely_misconceptions:
+  - 母体 = MBTI / 原型 / 天赋标签
+  - 显化 = 打造个人品牌
+  - 世界选择 = 点赞或流量
+
+pressure_focus:
+  - L02 能否区分秘密与内容定位
+  - L03 能否强制 Mother Hypothesis + 反证
+  - A4 是否真正回到现实验证
+
+learner_rule:
+  search_for_identity_labels: true
+  expose_self_narrative_bias: true
+  require_counter_evidence: true

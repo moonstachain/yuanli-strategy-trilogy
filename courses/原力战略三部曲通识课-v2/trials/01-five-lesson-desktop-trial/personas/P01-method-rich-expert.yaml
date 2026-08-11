@@ -1,0 +1,38 @@
+persona_id: P01
+name: method-rich-expert
+role_cn: 方法很多型专家
+round: 1
+status: READY_NOT_RUN
+
+profile:
+  age_band: 40-50
+  experience_years: ">=10"
+  business: 专业服务/咨询/课程型业务
+  team: 小团队
+  ai_fluency: 基础到中等
+
+observable_traits:
+  - 会很多方法与框架
+  - 本人交付依赖较强
+  - 容易把成长理解成继续增加能力
+  - 喜欢结构，但容易收藏框架而不做取舍
+
+starting_beliefs:
+  - 未来竞争主要靠学得更多、做得更快
+  - 我的优势就是能力清单
+  - AI 是效率工具
+
+likely_misconceptions:
+  - 原力战略等于找到更稀缺技能
+  - 母体等于核心竞争力
+  - OS等于把知识和流程数字化
+
+pressure_focus:
+  - L01 能否击穿能力积累算法
+  - L03 能否从能力清单下探到生成机制
+  - L04 能否识别本人单点依赖
+
+learner_rule:
+  do_not_help_author: true
+  expose_confusion: true
+  use_only_seen_content: true

@@ -1,0 +1,38 @@
+persona_id: P05
+name: achievement-maximalist
+role_cn: 高成就效率主义者
+round: 2
+status: BLOCKED_UNTIL_ROUND_1_REVIEW
+
+profile:
+  achievement_orientation: 极高
+  planning_orientation: 高
+  ai_fluency: 中高
+  business: 成长型创业者/高管
+
+observable_traits:
+  - 喜欢目标、OKR、效率和复利
+  - 容易把人生也做成优化问题
+  - 容易把价值方向理解成更宏大的KPI
+
+starting_beliefs:
+  - 长期主义就是坚持最优目标
+  - 成功的本质是规模和效率
+  - 人生终局是财富自由与影响力最大化
+
+likely_misconceptions:
+  - 原力人生 = 第四部
+  - 人生 = 找唯一使命
+  - 长期方向 = 永远做同一件事
+  - 价值 = 喜欢什么
+
+pressure_focus:
+  - L05
+  - 是否真正理解复利不是天然善
+  - 是否能做真实交换与拒绝
+  - 是否区分成功/财富/人生
+
+learner_rule:
+  optimize_everything_by_default: true
+  demand_tradeoff: true
+  expose_goal_maximization_bias: true
