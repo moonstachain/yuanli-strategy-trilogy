@@ -1,6 +1,6 @@
 # Cognitive Load Ledger｜认知负荷总账
 
-> 当前状态：ROUND_2_POPULATED / PATCH_NOT_APPLIED
+> 当前状态：ROUND_3_REGRESSION_COMPLETE
 
 ## 采样规则
 
@@ -23,27 +23,31 @@
 | 2 | P04 | L04 | 30—45 | 6 | C2母问题被事实/证据/判断/Outcome/Learning与Cited/Inferred/Unknown挤压 | Red | P04-L04 | PATCH-P1-04 |
 | 2 | P04 | L04 | 60—75 | 6 | C4母问题被五级现实链+Human Gate+Reuse挤压 | Red | P04-L04 | PATCH-P1-04 |
 | 2 | P05 | L05 | 0—90 | 3—5 | 无持续掉线；主要摩擦是把价值重新KPI化 | Green/Yellow | P05-L05 | PATCH-P2-03 |
+| 3 | P06 | L01 | 全课 | 2—4 | 无主线掉线；A/B/C只选一个主瓶颈 | Green/Yellow | P06-L01 | — |
+| 3 | P06 | L02 | 31—77 | 3—4 | 专业层未形成第二套学生口诀；见名繁守保持主线 | Green/Yellow | P06-L02 | PATCH-P1-03 |
+| 3 | P06 | L03 | 10—40 | 4—5 | Generator/Capability判别与四线索并存，但无掉线 | Yellow | P06-L03 | PATCH-P0-01 / PATCH-P1-01 |
+| 3 | P06 | L03 | 40—87 | 3—5 | 工具随课分段，反证/取舍/判断/验证未集中爆发 | Green/Yellow | P06-L03 | PATCH-P1-01 |
+| 3 | P06 | L04 | C1 | 2—3 | 无 | Green | P06-L04 | PATCH-P1-02 |
+| 3 | P06 | L04 | C2 | 4—5 | Cited/Inferred/Unknown未形成独立口诀 | Yellow | P06-L04 | PATCH-P1-04 |
+| 3 | P06 | L04 | C3 | 3—4 | 控制/支撑/瓶颈未抢主记忆 | Green/Yellow | P06-L04 | PATCH-P1-04 |
+| 3 | P06 | L04 | C4 | 4—5 | Output/Outcome只作判别，未形成连续Red | Yellow | P06-L04 | PATCH-P1-04 |
+| 3 | P06 | L05 | 全课 | 3—5 | KPI偏见经交换测试纠正，无持续掉线 | Green/Yellow | P06-L05 | PATCH-P2-03 |
 
-## Round 1 Lesson-Level Signal
+## Round 3 Findings
 
-| Lesson | Hit avg | Comprehension avg | Discrimination avg | Self-Mapping avg | Toolability avg | Load avg | Pull avg | Load verdict |
-|---|---:|---:|---:|---:|---:|---:|---:|---|
-| L01 | 5.00 | 4.00 | 3.33 | 5.00 | 4.00 | 4.00 | 5.00 | Green/Yellow |
-| L02 | 5.00 | 4.33 | 3.67 | 5.00 | 4.33 | 3.67 | 4.00 | Persona-sensitive Red in P01 |
-| L03 | 4.33 | 3.67 | 3.33 | 4.33 | **1.67** | 3.00 | 4.67 | **Systemic tool-stage Red** |
-| L04 | 5.00 | 4.00 | 4.00 | 5.00 | **2.33** | **2.67** | 5.00 | **Systemic middle/tool Red** |
-| L05 | 4.33 | 4.33 | 4.00 | 4.33 | 4.00 | 4.00 | 4.00 | Green/Yellow |
-
-## Round 2 Findings
-
-1. **P04再次复现L04两个Red窗口。** 说明L04负荷不是“方法很多型学员”的个人偏好，而是对高AI熟练者也成立。
-2. P04最终仍能守住C1—C4边界，所以修法应是**降二级框架记忆要求**，不是删掉Human Gate/Outcome/Reuse。
-3. P05没有系统性Red，L05的主要问题是目标最大化偏见与轻度工具超时，不是概念密度崩塌。
-4. L03系统性Red仍由Round1三位纵向Persona充分成立，Round2没有新课程Patch前不再重复跑普通理解。
+1. **L03不再出现系统性工具阶段Red。** Persona F 总等价工作量15分钟，分散在A1/A2/A3/A4完成；最重窗口为Yellow。
+2. **L04无连续Red窗口。** C1—C4保持唯一母图，二级标签没有形成竞争记忆。
+3. L02第二套专业口诀被降级后，Persona F没有出现方法收藏截流。
+4. L05仍有价值KPI化的自然偏见，但经过交换测试在同课内自行纠正，负荷保持Green/Yellow。
+5. L01无新增负荷问题。
 
 ```yaml
-round_2_load_result: CONFIRMS_EXISTING_BLOCKERS
-systemic_red_lessons: [L03, L04]
-new_systemic_red_lesson: none
-PATCH_P1_04_confidence: increased
+round_3_systemic_red_lessons: []
+L03_load_regression: PASS
+L04_no_continuous_red_load: PASS
+round_3_load_gate: PASS
 ```
+
+结论：
+
+> **针对Round 1/2发现的L03/L04系统性负荷，patched snapshot在全新Persona F回归中消除了连续Red窗口；真人课堂仍应特别观察L03，因为15分钟工具工作量刚好压线。**
