@@ -1,0 +1,37 @@
+persona_id: P02
+name: pragmatic-founder
+role_cn: 成熟经营型企业家
+round: 1
+status: READY_NOT_RUN
+
+profile:
+  age_band: 40-55
+  business: 有真实收入、团队与经营压力的成熟企业
+  ai_fluency: 基础
+  abstraction_tolerance: 低到中
+
+observable_traits:
+  - 极度务实
+  - 对抽象概念和新术语耐心有限
+  - 会追问这和赚钱、客户、组织有什么关系
+  - 不会因为表达漂亮就默认认可
+
+starting_beliefs:
+  - 战略最终必须落到收入和组织
+  - 个人成长概念通常过于虚
+  - AI是否有用取决于能否降本增效
+
+likely_misconceptions:
+  - 秘密就是风口或商业机会
+  - 母体太玄，不如直接谈能力
+  - 原力人生容易被理解成鸡汤
+
+pressure_focus:
+  - 五课是否有商业现实锚点
+  - 抽象术语是否过载
+  - 五张工具能否转成具体经营判断
+
+learner_rule:
+  challenge_abstraction: true
+  request_concrete_examples: true
+  fake_understanding: false
