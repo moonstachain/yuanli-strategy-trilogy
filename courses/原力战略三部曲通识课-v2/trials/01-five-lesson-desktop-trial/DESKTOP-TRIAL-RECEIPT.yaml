@@ -6,54 +6,81 @@ input_snapshot_commit: 6be729bf56759604f2ce2ff19e5163e2206ae2cf
 evidence_class: simulated_desktop_trial
 real_learner_evidence: false
 
-status: READY_NOT_RUN
-qualification: NOT_EVALUATED
+status: ROUND_1_COMPLETE
+qualification: NOT_QUALIFIED_FOR_LIVE_TRIAL
 
 rounds:
   round_1_blind_run:
-    status: READY_NOT_RUN
+    status: COMPLETED_WITH_BLOCKERS
     required_personas: [P01, P02, P03]
     required_lessons: [L01, L02, L03, L04, L05]
     expected_sessions: 15
-    completed_sessions: 0
-    course_edits_during_round: FORBIDDEN
+    completed_sessions: 15
+    course_edits_during_round: false
+    result: FAIL_WITH_ACTIONABLE_EVIDENCE
   round_2_adversarial:
-    status: BLOCKED_UNTIL_ROUND_1_REVIEW
+    status: READY_NOT_RUN
+    prerequisite_round_1_review: COMPLETE
     required_personas: [P04, P05]
+    red_team_required: true
   round_3_regression:
     status: BLOCKED_UNTIL_PATCH_AND_NEW_PERSONA
     new_persona_required: true
 
 ledgers:
-  misconception_ledger: EMPTY
-  cognitive_load_ledger: EMPTY
-  tool_completion_ledger: EMPTY
-  narrative_handoff_ledger: EMPTY
+  misconception_ledger: POPULATED
+  cognitive_load_ledger: POPULATED
+  tool_completion_ledger: POPULATED
+  narrative_handoff_ledger: POPULATED
 
 cross_course:
-  five_course_reconstruction: NOT_RUN
-  context_isolated_recall_proxy: NOT_RUN
+  five_course_reconstruction:
+    status: COMPLETED
+    personas: [P01, P02, P03]
+    overall_gate: FAIL
+  context_isolated_recall_proxy:
+    status: COMPLETED
+    personas: [P01, P02, P03]
+    real_24h_equivalent: false
   real_24h_recall: NOT_RUN
 
+round_1_metrics:
+  persistent_critical_misconceptions: 2
+  critical_items:
+    - mother_equals_core_competency
+    - category_equals_positioning_word
+  tool_L3_in_lesson_timebox: 9_of_15
+  tool_quality_and_time_pass: 8_of_15
+  L03_tool_L3: 0_of_3
+  L04_tool_L3: 0_of_3
+  narrative_handoffs_passed: 11_of_12
+
 hard_gates:
-  critical_misconceptions: NOT_EVALUATED
-  five_lesson_spine_recall: NOT_EVALUATED
-  five_tools_level_3: NOT_EVALUATED
-  lesson_handoffs_4_of_4: NOT_EVALUATED
-  A_B_C_canon_confusion: NOT_EVALUATED
-  B4_fifth_barrier_confusion: NOT_EVALUATED
-  C5_confusion: NOT_EVALUATED
-  yuanli_life_as_part4_confusion: NOT_EVALUATED
-  new_persona_regression: NOT_EVALUATED
+  critical_misconceptions: FAIL_2
+  five_lesson_spine_recall: FAIL
+  five_tools_level_3: FAIL
+  lesson_handoffs_4_of_4: FAIL
+  A_B_C_canon_confusion: PASS_0
+  B4_fifth_barrier_confusion: PASS_0
+  C5_confusion: PASS_0
+  yuanli_life_as_part4_confusion: PASS_0
+  new_persona_regression: NOT_RUN
+
+patch_queue:
+  P0: 2
+  P1: 4
+  P2: 2
+  applied: 0
+  apply_before_round_2: FORBIDDEN
 
 release_effect:
-  desktop_trial: not_run
-  live_trial: not_ready
+  desktop_trial: IN_PROGRESS_ROUND_1_BLOCKERS_FOUND
+  live_trial: NOT_READY
   reusable: false
   supersedes_v1: false
 
 allowed_next_action:
-  - RUN_ROUND_1_P01_P02_P03_AGAINST_FROZEN_SNAPSHOT
+  - RUN_ROUND_2_P04_P05_AND_RED_TEAM_AGAINST_FROZEN_SNAPSHOT
 
 forbidden_claims:
   - DESKTOP_TRIAL_PASS
