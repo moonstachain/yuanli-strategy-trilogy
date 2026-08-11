@@ -1,6 +1,6 @@
 # Tool Completion Ledger｜工具完成度总账
 
-> 当前状态：ROUND_2_POPULATED / PATCH_NOT_APPLIED
+> 当前状态：ROUND_3_REGRESSION_COMPLETE
 
 ## 质量等级
 
@@ -20,8 +20,6 @@ L3 有事实 + 判断 + 取舍 + 可验证行动
 | L03 | 我的原力母体假设卡 | ≤15min |
 | L04 | 我的原力OS一页架构 | ≤15min |
 | L05 | 我的原力人生一页纸 | ≤14min |
-
-> 冻结讲稿实际给 L03 主工具约9分钟、L04约4分钟；Ledger同时记录“完整达到L3的估算时间”。
 
 ## Round 1 Ledger
 
@@ -50,28 +48,35 @@ L3 有事实 + 判断 + 取舍 + 可验证行动
 | 2 | P04 | L04 | 14 | L3 | Yes | **No (~4min slot)** | 工具本身可用，课程编排不可用 | PATCH-P1-02 |
 | 2 | P05 | L05 | 15 | L3 | **No by 1min** | Near | 2036字段重新打开宏大规划 | PATCH-P2-01 |
 
-## Round 1 Aggregate
+## Round 3 Regression Ledger｜Patched Snapshot
+
+| Round | Persona | Lesson | Estimated min to L3 | Quality | Meets target? | Critical field retained | Result |
+|---|---|---|---:|---|---|---|---|
+| 3 | P06 | L01 | 11 | L3 | Yes | 单主瓶颈 + 成功/失败信号 | PASS |
+| 3 | P06 | L02 | 13 | L3 | Yes | 旧/新分类与比较对象 + 可证伪验证 | PASS |
+| 3 | P06 | L03 | **15** | L3 | **Yes at limit** | 反证 + 替代解释 + 三种表型 + 90天验证 | PASS_AT_LIMIT |
+| 3 | P06 | L04 | 14 | L3 | Yes | Human Gate + Outcome + Learning + Reuse | PASS |
+| 3 | P06 | L05 | 13 | L3 | Yes | 真实tradeoff；2036不计核心时间 | PASS |
+
+## Round 3 Gate
 
 ```yaml
-sessions_total: 15
-quality_L3_in_lesson_timebox: 9
-quality_L3_rate: 60_percent
-meets_quality_and_desktop_time_target: 8
-meets_quality_and_time_rate: 53_percent
-L03_L3_count: 0_of_3
-L04_L3_count: 0_of_3
-round_1_tool_gate: FAIL
+five_tools_level_3: PASS_5_OF_5
+five_tools_within_desktop_time_budget: PASS_5_OF_5
+L03_tool_level_3_within_15min_equivalent: PASS_AT_LIMIT
+L03_counter_evidence_present: PASS
+L04_tool_level_3_within_15min: PASS_14min
+L04_outcome_present: PASS
+L04_reuse_present: PASS
+L05_tool_level_3_within_14min: PASS_13min
+round_3_tool_gate: PASS
 ```
 
-## Round 2 Interpretation
+## Interpretation
 
-- P04是高AI熟练、强工具取向Persona，仍需约14分钟才能把L04工具做到L3；冻结稿只给约4分钟，因此 `PATCH-P1-02` 被再次确认。
-- P05能把L05做到L3，但估算15分钟，较14分钟目标多1分钟；支持 `PATCH-P2-01`，不升级为P1。
-- Round 2没有证据支持删除反证、Human Gate、Outcome或Reuse；相反，这些字段是抵抗错误压缩的关键。
+- `PATCH-P1-01`有效：L03由Round1的20—23分钟、0/3 L3，回归为Persona F 15分钟L3；但**刚好压线**，应在真人Live Trial重点观察。
+- `PATCH-P1-02`有效：L04不再把整表集中到最后4分钟，Persona F 14分钟等价工作量达到L3并保留Outcome+Reuse。
+- `PATCH-P2-01`有效：2036回望退出课堂核心时间后，L05从15—16分钟风险回归为13分钟。
+- 没有通过删除反证、Human Gate、Outcome或Reuse来换取时间。
 
-```yaml
-round_2_tool_result: CONFIRMS_EXISTING_PATCHES
-new_P0_from_tools: 0
-PATCH_P1_02: CONFIRMED
-PATCH_P2_01: CONFIRMED
-```
+> **Desktop Time 仍是模拟估算，不是现实课堂计时。**
