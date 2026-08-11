@@ -3,7 +3,7 @@ alias: Persona_F
 name: cross-domain-regression-founder
 role_cn: 跨域小团队创始人
 round: 3
-status: READY_NOT_RUN
+status: COMPLETE_PASS
 
 profile:
   age_band: 35-48
@@ -43,6 +43,7 @@ round_3_input:
   patched_snapshot_commit: e05450f800b47ff0360c75cb73365e2011d7ee69
   lessons: [L01, L02, L03, L04, L05]
   longitudinal_run_required: true
+  course_edits_during_round: false
 
 learner_rule:
   use_only_seen_content: true
@@ -51,20 +52,28 @@ learner_rule:
   do_not_help_author: true
   self_map_to_one_real_business: true
 
-regression_observation_scope:
-  - 是否自然区分品类与定位词
-  - 是否自然区分母体与核心能力/核心竞争力
-  - L02到L03是否自然产生“为什么偏偏是我”的问题
-  - L03工具能否在等价15分钟工作量内达到L3并保留反证
-  - L04是否只记住C1-C4主线且无连续Red负荷
-  - L04工具是否在15分钟内包含Outcome和Reuse
-  - L05是否理解价值约束不是可补偿KPI
-  - L05核心工具是否在14分钟内达到L3
-  - L01“只有你”是否被理解为排他天命
-  - 五课结束能否闭卷重建完整心智龙骨
+round_3_result:
+  sessions_completed: 5_of_5
+  five_lesson_spine_recall: PASS
+  context_isolated_recall_proxy: PASS
+  historical_P0_recurrence: 0
+  tool_gate: PASS_5_OF_5
+  handoff_gate: PASS_4_OF_4
+  canon_boundary_breaches: 0
+  result: PASS
 
-prohibited_regression_shortcuts:
-  - 不用P01-P05旧答案提示Persona F
-  - 不把Patch目标直接告诉Learner
-  - 不用Red Team问题提前教学
-  - 不以教师额外救场证明Patch有效
+regression_observation_scope:
+  category_not_positioning_word: PASS
+  generator_not_capability: PASS
+  L02_to_L03_handoff: PASS
+  L03_tool_within_15min_equivalent: PASS_AT_LIMIT
+  L04_no_continuous_red_load: PASS
+  L04_outcome_and_reuse: PASS
+  L05_value_constraint_not_kpi: PASS
+  L05_tool_within_14min: PASS
+  L01_only_you_not_destiny: PASS
+
+prohibited_regression_shortcuts_respected: true
+
+evidence_class: simulated_desktop_trial
+real_learner_evidence: false
