@@ -2,7 +2,7 @@
 
 > Blind Learner × Observer × Examiner × Red Team
 
-## 最终裁决
+## 当前裁决
 
 ```yaml
 trial_id: YL-TRILOGY-GENERAL-v2-DESKTOP-01
@@ -11,211 +11,219 @@ patched_input_snapshot: e05450f800b47ff0360c75cb73365e2011d7ee69
 evidence_class: simulated_desktop_trial
 real_learner_evidence: false
 status: DESKTOP_TRIAL_PASS_SIMULATED
+qualification: QUALIFIED_FOR_LIVE_TRIAL_READY_NOT_RUN
 round_1: COMPLETE
 round_2: COMPLETE
 patch_application: COMPLETE
 round_3: COMPLETE
-qualification: QUALIFIED_FOR_LIVE_TRIAL_READY_NOT_RUN
-live_trial: READY_NOT_RUN
-reusable: false
-supersedes_v1: false
+next_gate: HUMAN_LIVE_TRIAL
 ```
-
-> **Desktop Trial 已完成其使命：找出高风险误解与结构阻塞，经Human Gate应用最小Patch，再由全新Persona F完成五课回归。模拟证据支持进入小样本真人Live Trial，但不能替代真人学习证据。**
 
 ---
 
-# Round 1｜Blind Run
+# 一、Desktop Trial 已完成
+
+## Round 1｜Blind Run
 
 ```text
-P01 + P02 + P03 × L01—L05
-= 15/15 Sessions
+P01 方法很多型专家
+P02 成熟经营型企业家
+P03 专家IP型创业者
+× L01—L05
+= 15/15纵向Session
 ```
 
-发现五个主要阻塞：
+结论：`FAIL_WITH_ACTIONABLE_EVIDENCE`。
 
-1. L03母体→核心竞争力；
-2. L02品类→定位词；
-3. L03工具集中填写超载；
-4. L04工具集中填写超载；
-5. L02第二套专业口诀截断L02→L03 Handoff。
+主要发现：
 
-Verdict：`FAIL_WITH_ACTIONABLE_EVIDENCE`。
+1. L03：母体被压成“底层核心竞争力”；
+2. L02：品类被压成“定位词/超级标签”；
+3. L03工具3/3无法在课堂时间窗达到L3；
+4. L04工具3/3无法在课堂时间窗达到L3；
+5. P01 L02→L03被第二套专业口诀截流。
 
-详见 `ROUND-1-REVIEW.md`。
+详见：`ROUND-1-REVIEW.md`。
 
----
-
-# Round 2｜Adversarial Run
+## Round 2｜Adversarial Run
 
 ```text
-P04 × L04
-P05 × L05
-+ 29 Red Team attacks
+P04 AI工具狂热者 × L04
+P05 高成就效率主义者 × L05
++ 29个Red Team横向攻击
+```
+
+结论：`CONFIRMS_ROUND_1_BLOCKERS`。
+
+- 两个Round 1 P0再次被对抗条件重复击穿；
+- 没有新增Critical Misconception；
+- 正典硬边界全部守住；
+- L04中段负荷与工具时间再次被P04确认；
+- L05“人生=五维KPI”可被交换测试纠正，但存在轻度摩擦。
+
+详见：
+
+- `ROUND-2-REVIEW.md`
+- `red-team/ROUND-2-ADVERSARIAL-BATTERY.md`
+
+## Human Gate｜Patch 已批准并应用
+
+Human批准范围：
+
+```yaml
+P0: 2_of_2
+P1: 4_of_4
+selected_P2:
+  - PATCH-P2-01
+  - PATCH-P2-03
+absorbed_boundary_line:
+  - PATCH-P2-02
+watch_not_applied:
+  - W-01
+```
+
+Round 3唯一课程输入：
+
+```text
+e05450f800b47ff0360c75cb73365e2011d7ee69
+```
+
+## Round 3｜Persona F Regression
+
+全新 Persona F / P06：
+
+```text
+L01 → L02 → L03 → L04 → L05
+= 5/5 PASS
 ```
 
 结果：
 
 ```yaml
-new_critical_breaches: 0
-reproduced_round_1_P0: 2
-canon_boundary_breaches: 0
-```
-
-两个P0被再次重复击穿，L04负荷被高AI熟练Persona再次确认。
-
-详见 `ROUND-2-REVIEW.md`。
-
----
-
-# Human Patch｜已完成
-
-批准并应用：
-
-```yaml
-P0: 2_of_2
-P1: 4_of_4
-selected_P2: [PATCH-P2-01, PATCH-P2-03]
-absorbed_boundary_line: [PATCH-P2-02]
-watch_not_applied: [W-01]
-```
-
-核心变化：
-
-- L02：先改分类/比较对象，名字最后可选；专业口诀降为讲师层；
-- L03：Generator≠Capability；三种不同表型；工具随A1—A4分段；
-- L04：C1—C4边学边建；二级框架降为局部判别标签；
-- L05：“守”为不可补偿约束；2036回望退出课堂核心时间；
-- L01未修改。
-
-Round 3唯一课程输入冻结为：
-
-`e05450f800b47ff0360c75cb73365e2011d7ee69`
-
-详见：
-
-- `patch-candidates.md`
-- `PATCH-APPLICATION-RECEIPT.yaml`
-
----
-
-# Round 3｜Persona F Regression｜PASS
-
-新Persona：`P06 / Persona_F`。
-
-```text
-L01 → L02 → L03 → L04 → L05
-= 5/5 Sessions PASS
-```
-
-## 两个历史P0
-
-```yaml
-category_equals_positioning_word: NOT_REPRODUCED
-mother_equals_core_competency: NOT_REPRODUCED
-context_isolated_recall_recurrence: 0
-```
-
-## 五张工具
-
-```yaml
-L01: L3_11min
-L02: L3_13min
-L03: L3_15min_PASS_AT_LIMIT
-L04: L3_14min
-L05: L3_13min
-five_tools_L3: PASS_5_OF_5
-```
-
-## 负荷
-
-```yaml
-L03_continuous_red: false
-L04_continuous_red: false
-systemic_red_lessons: []
-```
-
-## Handoff
-
-```yaml
-L01_to_L02: PASS_5
-L02_to_L03: PASS_5
-L03_to_L04: PASS_5
-L04_to_L05: PASS_5
-```
-
-## 跨课重建
-
-```yaml
+historical_P0_recurrence: 0
+critical_misconceptions: 0
+five_tools_L3: 5_of_5
+tool_time_targets: 5_of_5
+L03_tool: L3_15min_PASS_AT_LIMIT
+L04_tool: L3_14min_with_Outcome_and_Reuse
+L05_tool: L3_13min
+handoff: 4_of_4_PASS
 five_lesson_spine_recall: PASS
-five_tools_reconstructable: PASS
 context_isolated_recall_proxy: PASS
+canon_boundary_breaches: 0
+teacher_rescue_required: 0
 ```
 
-详见：
-
-- `ROUND-3-REVIEW.md`
-- `sessions/L01—L05/P06.md`
-- `cross-course/P06-five-course-reconstruction.md`
-- `cross-course/P06-context-isolated-recall.md`
+详见：`ROUND-3-REVIEW.md`。
 
 ---
 
-# 正典边界
-
-Round 3仍全部守住：
+# 二、Desktop Trial 最终资格
 
 ```yaml
-A_B_C_canon_confusion: 0
-B4_fifth_barrier_confusion: 0
-C5_confusion: 0
-yuanli_life_as_part4_confusion: 0
-mother_as_fixed_destiny: 0
-L01_only_you_as_destiny: 0
-```
-
-本次修订改变的是教学判别、负荷与工具编排，不修改Soul正典。
-
----
-
-# 当前证据边界
-
-已证明：
-
-> **在模拟桌面压力测试中，patched snapshot能够让全新Persona F完成五课并通过已知Regression Gate。**
-
-未证明：
-
-- 真人学员真的听懂；
-- 真人90分钟真的能按模拟时间完成；
-- 真实24小时后仍能回忆；
-- 五张工具能真实改变30/90天Outcome；
-- 课程已经可复用或可以取代v1。
-
-所以：
-
-```yaml
+desktop_trial: PASS_SIMULATED
+live_trial: READY_NOT_RUN
 real_learner_evidence: false
 real_24h_recall: NOT_RUN
 reusable: false
 supersedes_v1: false
 ```
 
+Desktop Trial只证明模拟桌面回归通过，不能证明：
+
+- 真人学员已验证；
+- 真人90分钟时间成立；
+- 真实24h记忆通过；
+- 30/90天迁移与Outcome成立。
+
 ---
 
-# 下一 Gate｜Human Live Trial
+# 三、Post-Desktop Narrative Layer｜新增候选
 
-不再继续堆模拟Persona。
+Desktop Trial完成后，新增独立叙事导演层：
 
-下一阶段应设计小样本真人Live Trial，重点观察：
+```text
+../../narrative/
+├── README.md
+└── 00-五课叙事总纲.md
+```
 
-1. L03真实完成时间是否≤15min；
-2. 真人务实经营者是否仍把母体压回核心竞争力；
-3. 真人专家IP是否仍把品类压回定位词；
-4. L04是否真实保住Outcome+Reuse；
-5. 真实24h后能否重建五课龙骨；
-6. 五张工具是否进入真实30/90天实验。
+核心叙事母命题：
 
-下一允许动作：
+> **AI正在把“一万倍机器”交给每个人。未来真正稀缺的，不再是复制能力，而是什么值得被复制。**
+
+五课叙事压缩：
+
+```text
+AI让平均变便宜
+↓
+秘密让差异变值钱
+↓
+母体让差异持续生成
+↓
+OS让差异穿越本人
+↓
+人生决定差异最终去哪里
+```
+
+叙事原则：
+
+> **五课不是五个主题，而是五次危机升级；上一课的成功，必须制造下一课更深的危机。**
+
+### 重要法权边界
+
+该叙事层是在 Round 3 之后新增，因此：
+
+```yaml
+narrative_layer: CANDIDATE_FOR_LIVE_TRIAL
+validated_by_round_3: false
+applied_to_frozen_lessons: false
+effect_on_desktop_qualification: none
+```
+
+不能把结构层通过 Desktop Trial 偷换为叙事层已验证。
+
+详见：
+
+- `../../narrative/README.md`
+- `../../narrative/00-五课叙事总纲.md`
+- `../../evolution/04-五课叙事层设计-Evolution-Note.md`
+
+---
+
+# 四、下一 Gate｜Human Live Trial
+
+下一步不应继续增加模拟Persona，而应进入小样本真人 Live Trial。
+
+结构层重点观察：
+
+1. L03工具真实课堂完成时间是否仍≤15min；
+2. 真人学员是否仍会把母体压回核心竞争力；
+3. 真人专家IP是否把品类压回定位词；
+4. L04真实填写是否能保住Outcome+Reuse；
+5. 真实24h后还能否重建五课龙骨；
+6. 五张工具是否真的能进入现实30/90天实验。
+
+叙事层新增观察：
+
+1. “一万倍机器”是否快速建立时代危机，而不变成AI工具宣传；
+2. 五次危机升级是否提高注意力与情绪牵引；
+3. L03“一棵树/侦探”是否进一步降低 Mother=Capability；
+4. L04“一家公司形状的个人外挂/把你编译进事业”是否降低 OS=Tool Stack；
+5. L05“成功错了”是否避免鸡汤化；
+6. 四个 Handoff 是否继续自然产生；
+7. 24h后记住的是因果故事，而不仅是五套口诀；
+8. 叙事是否没有挤压工具完成时间。
+
+当前唯一允许推进：
 
 > **DESIGN_AND_RUN_SMALL_SAMPLE_HUMAN_LIVE_TRIAL**
+
+在真人证据完成前：
+
+```yaml
+real_learner_validated: false
+narrative_layer_validated: false
+reusable: false
+supersedes_v1: false
+```
