@@ -1,6 +1,6 @@
 # Narrative Handoff Ledger｜课间悬念与承接总账
 
-> 当前状态：ROUND_2_POPULATED / PATCH_NOT_APPLIED
+> 当前状态：ROUND_3_REGRESSION_COMPLETE
 
 ## 理想自然问题
 
@@ -30,34 +30,35 @@
 
 ## Round 2 Targeted Handoff
 
-| Round | Persona | From | Raw next question | Score | Points to intended next lesson? | Pass? | Patch ID |
+| Round | Persona | From | Raw next question | Score | Points to intended next lesson? | Pass? |
+|---|---|---|---|---:|---|---|
+| 2 | P04 | L04 | “如果这套系统真的能放大我的判断，我得先确定哪些判断和目标值得被长期放大。” | 5 | Yes | PASS |
+
+## Round 3 Regression Handoff
+
+| Round | Persona | From | Raw next question | Score | Points to intended next lesson? | Drift target | Pass? |
 |---|---|---|---|---:|---|---|---|
-| 2 | P04 | L04 | “如果这套系统真的能放大我的判断，我得先确定哪些判断和目标值得被长期放大。” | 5 | Yes | PASS | — |
+| 3 | P06 | L01 | “它到底是不是市场愿意买的秘密，以及怎么变成更清楚的价值？” | 5 | Yes | — | PASS |
+| 3 | P06 | L02 | “为什么我会一直觉得客户真正的问题不只是设计？为什么总是我先抓到经营层问题？” | 5 | Yes | — | PASS |
+| 3 | P06 | L03 | “如果这套判断越来越清楚，怎么让团队不用每个项目都等我判断一次？” | 5 | Yes | — | PASS |
+| 3 | P06 | L04 | “如果真能复制出去，我到底希望公司长期复制什么，而不是什么都做得更快？” | 5 | Yes | — | PASS |
 
-P05执行的是Capstone L05，不存在下一课，因此不计入Handoff分母。
-
-## Aggregate
-
-Round 1 主Gate仍保持：
-
-```yaml
-handoff_observations: 12
-passes: 11
-failures: 1
-failed_edge: L02_to_L03_for_P01
-minimum_score_observed: 3
-round_1_handoff_gate: FAIL
-```
-
-Round 2新增的P04 L04→L05为PASS，说明第四课到第五课的价值方向悬念即使面对AI工具狂热者也成立。
-
-但Round 2不是修复回归，因此：
+## Round 3 Gate
 
 ```yaml
-PATCH_P1_03_still_required: true
-handoff_gate_after_round_2: FAIL_UNTIL_PATCHED_REGRESSION
+handoff_edges_required: 4
+handoff_edges_passed: 4
+minimum_score: 5
+L02_to_L03_regression: PASS
+round_3_handoff_gate: PASS_4_OF_4
 ```
 
 ## Interpretation
 
-> **当前唯一叙事断点仍是L02专业解释层抢走“为什么偏偏是我”的自然问题。Round 2没有发现新的课间断裂。**
+- `PATCH-P1-03`有效：专业解释层降级后，Persona F 的 L02→L03 自然问题直接回到“为什么偏偏是我”，没有先要求继续深挖三链/四权。
+- L01→L02、L03→L04、L04→L05继续保持强自然牵引。
+- 五课结束后的下一问转向“这些假设在真实世界里哪些会被推翻”，说明课程开始把学员送向现实验证，而不是继续索取第六套理论。
+
+结论：
+
+> **Round 3 四个 Narrative Handoff 全部通过。**
