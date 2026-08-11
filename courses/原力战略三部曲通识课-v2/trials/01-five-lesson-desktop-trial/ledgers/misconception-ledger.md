@@ -1,6 +1,6 @@
 # Misconception Ledger｜危险误解总账
 
-> 当前状态：ROUND_2_POPULATED / PATCH_NOT_APPLIED
+> 当前状态：ROUND_3_REGRESSION_COMPLETE
 
 ## 记录规则
 
@@ -16,47 +16,44 @@
 | M-006 | 1 | P01 | L01 | “那我得找一个AI不会的稀缺技能。” | P1 / resolved | 未持续 | 经营独特生成而非技能避难所 | `starting_belief` | — |
 | M-007 | 2 | P04 | L04 | “OS本质就是Prompt+RAG+Dashboard+Agent Workflow。” | P1 / resolved | Exit已能区分载体与定义 | Judgment Stack；技术只是载体 | `tool_stack_bias` | PATCH-P1-04 |
 | M-008 | 2 | P05 | L05 | “守生事人留可以做成五维10年Scorecard。” | P2 / resolved with friction | 交换测试后纠正 | “守”中部分价值是不可突破约束，不是优化目标 | `goal_maximization_bias` | PATCH-P2-03 |
-| RT-001 | 2 | Red Team | L02 | “品类独创最终还是抢一个用户记得住的词。” | **P0 CONFIRMED** | Round1 + adversarial reproduction | 分类/比较对象/问题解释改变后才构成认知接口；名字只是可能的载体 | `definition_ambiguity + prior_IP_schema` | PATCH-P0-02 |
+| RT-001 | 2 | Red Team | L02 | “品类独创最终还是抢一个用户记得住的词。” | **P0 CONFIRMED** | Round1 + adversarial reproduction | 分类/比较对象/问题解释改变后才构成认知接口；名字只是可能载体 | `definition_ambiguity + prior_IP_schema` | PATCH-P0-02 |
 | RT-002 | 2 | Red Team | L03 | “母体就是跨职业最底层的核心竞争力。” | **P0 CONFIRMED** | Round1 + adversarial reproduction | generator != capability | `definition_ambiguity + example_mismatch` | PATCH-P0-01 |
+| R3-001 | 3 | P06 | L02 | 初始类比“是不是找一个新定位词”，随后仅通过 patched 工具自行纠正为“分类/比较对象改变，名字最后可选” | historical P0 regression | **未持续** | category != positioning word | patched discrimination action effective | PATCH-P0-02 |
+| R3-002 | 3 | P06 | L03 | 初始自述“客户洞察/空间策略是底层优势”，随后能区分能力表型与跨载体生成机制 | historical P0 regression | **未持续** | generator != capability | patched three-phenotype test effective | PATCH-P0-01 |
+| R3-003 | 3 | P06 | L04 | 初始提出“把过去项目喂给AI做知识库”，最终自行降回C2载体 | P1 regression | 未持续 | OS = C1—C4 control loop | C1—C4 persistent mother map effective | PATCH-P1-04 |
+| R3-004 | 3 | P06 | L05 | 初始尝试将五环做成年度打分，经过 patched 交换测试自行拒绝可补偿总分 | P2 regression | 未持续 | value constraint != KPI | non-compensable constraint test effective | PATCH-P2-03 |
 
-## Persistent Critical Misconception Result
+## Historical P0 Regression Result
 
 ```yaml
-persistent_critical_misconceptions: 2
-items:
-  - mother_equals_core_competency
-  - category_equals_positioning_word
+historical_persistent_critical_misconceptions: 2
 round_1_detected: true
 round_2_adversarially_reproduced: true
-new_round_2_critical_misconceptions: 0
-critical_gate: FAIL
+round_3_new_persona_regression:
+  category_equals_positioning_word: NOT_REPRODUCED
+  mother_equals_core_competency: NOT_REPRODUCED
+round_3_context_isolated_recall_recurrence: 0
+round_3_critical_gate: PASS_0
 ```
 
-## Round 2 Boundary Findings
+## Round 3 Boundary Findings
 
-P04在L04结束时成功拒绝：
+P06最终成功拒绝：
 
 ```yaml
-OS_as_software: false
-C1_as_prompt_only: false
-C2_as_RAG_only: false
-C3_as_dashboard_only: false
-C4_as_automation_only: false
+L01_only_you_as_exclusive_destiny: false
+category_equals_positioning_word: false
+mother_equals_core_competency: false
+OS_as_tool_stack: false
 C5_exists: false
-```
-
-P05在L05结束时成功拒绝：
-
-```yaml
+value_constraint_as_compensable_KPI: false
 yuanli_life_as_part4: false
 life_as_single_mission: false
-long_term_as_same_job_forever: false
-wealth_freedom_as_ultimate_end: false
 ```
 
 ## 正典硬边界检查
 
-Round 1 + Round 2 均为 0：
+Round 3：
 
 ```yaml
 B_to_A_to_C_as_new_canon: 0
@@ -70,4 +67,4 @@ desktop_evidence_as_real_learner_evidence: 0
 
 结论：
 
-> **当前阻塞属于教学概念判别与课程负荷，不是 Soul 正典法权漂移。**
+> **两个Round 1/2 P0在全新 Persona F 和隔离回忆代理中均未复发。当前模拟证据支持：最小Patch已修复已知危险概念压缩；未发现新的Critical Misconception。**
