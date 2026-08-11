@@ -111,6 +111,17 @@ patches:
   PATCH-P2-03: APPLIED_AND_REGRESSION_PASS
   W-01: WATCH_NOT_APPLIED_AND_PASS
 
+post_trial_narrative_layer:
+  status: CANDIDATE_FOR_LIVE_TRIAL
+  added_after_round_3: true
+  validated_by_round_3: false
+  applied_to_patched_input_snapshot: false
+  narrative_index: courses/原力战略三部曲通识课-v2/narrative/README.md
+  narrative_spine: courses/原力战略三部曲通识课-v2/narrative/00-五课叙事总纲.md
+  evolution_note: courses/原力战略三部曲通识课-v2/evolution/04-五课叙事层设计-Evolution-Note.md
+  effect_on_desktop_qualification: NONE
+  requires_human_live_trial: true
+
 release_effect:
   desktop_trial: PASS_SIMULATED
   live_trial: READY_NOT_RUN
@@ -124,12 +135,17 @@ live_trial_watch_items:
   - L04_real_outcome_and_reuse_completion
   - real_24h_spine_recall
   - real_30_90_day_experiment_transfer
+  - narrative_one万倍_machine_not_AI_tool_marketing
+  - narrative_five_crisis_escalation_attention
+  - narrative_handoff_naturalness
+  - narrative_does_not_reduce_tool_time
 
 allowed_next_action:
   - DESIGN_AND_RUN_SMALL_SAMPLE_HUMAN_LIVE_TRIAL
 
 forbidden_claims:
   - REAL_LEARNER_VALIDATED
+  - NARRATIVE_LAYER_DESKTOP_VALIDATED
   - REAL_24H_MEMORY_PASS
   - REUSABLE
   - SUPERSEDES_V1
