@@ -3,16 +3,22 @@
 ```yaml
 exercise_id: YL-TRILOGY-GENERAL-v2-E04
 lesson: 04-原力OS
-status: draft
+status: draft_patched
 purpose: 用一个真实任务建立最小 C1-C4 控制循环
 not_a_technology_stack: true
+segmented_in_class_fill: true
+patches_applied:
+  - PATCH-P1-02
+  - PATCH-P1-04
 ```
 
 > 不搭“大系统”。只选一个过去必须找你本人处理的真实任务，做第一次 OS 化。
+>
+> **课堂填写顺序：开场填1；C1后填2；C2后填3；C3后填4；C4后填5；84—88分钟只填6并做闭环检查。**
 
 ---
 
-## 1｜我的本人单点故障
+## 1｜我的本人单点故障｜0—10分钟填写
 
 如果我离开30天，事业最可能在哪一件事上卡住？
 
@@ -26,9 +32,11 @@ not_a_technology_stack: true
 - [ ] 决定无法进入现实
 - [ ] 其他：______
 
+> 后面所有格子只围绕这一件事，不更换案例。
+
 ---
 
-## 2｜C1 一纸文脉｜什么不能漂移？
+## 2｜C1 一纸文脉｜什么不能漂移？｜18—32分钟填写
 
 围绕这类任务，三条稳定原则：
 
@@ -46,7 +54,7 @@ not_a_technology_stack: true
 
 ---
 
-## 3｜C2 一个大脑｜什么必须记住？
+## 3｜C2 一个大脑｜什么必须记住？｜32—46分钟填写
 
 ### 一个事实
 
@@ -68,7 +76,7 @@ not_a_technology_stack: true
 
 > ______
 
-知识状态：
+可信度只作局部标记，不要求背第二套口诀：
 
 - [ ] Cited
 - [ ] Inferred
@@ -76,7 +84,7 @@ not_a_technology_stack: true
 
 ---
 
-## 4｜C3 一张地图｜现在必须押什么？
+## 4｜C3 一张地图｜现在必须押什么？｜46—61分钟填写
 
 ### 当前唯一 Top 1 控制点
 
@@ -98,7 +106,7 @@ not_a_technology_stack: true
 
 ---
 
-## 5｜C4 一条链路｜怎样真正进入现实？
+## 5｜C4 一条链路｜怎样真正进入现实？｜61—76分钟填写
 
 ### Owner
 
@@ -124,9 +132,11 @@ not_a_technology_stack: true
 
 > ______
 
+> 注意：Output/Action/Evidence/Outcome 只用于判别“有没有真正进入现实”，不是需要额外背诵的新框架。
+
 ---
 
-## 6｜Learning 与下一次复用
+## 6｜Learning 与下一次复用｜84—88分钟填写
 
 ### 成功后增加什么规则？
 
@@ -143,6 +153,8 @@ not_a_technology_stack: true
 ### 第二次在哪个真实任务再次加载？
 
 > ______
+
+> **没有 Outcome 或第二次 Reuse，不得判定为 L3。**
 
 ---
 
@@ -162,16 +174,16 @@ not_a_technology_stack: true
 
 ---
 
-# 8｜离场自检
+# 8｜课末闭环检查
 
 - [ ] 我只选了一个本人单点故障
 - [ ] C1写的是稳定原则，不是阶段目标
-- [ ] C2区分事实、推断与 Unknown
+- [ ] C2至少有一个可信事实和一个 Unknown
 - [ ] C3只选一个 Top 1，并有 Stop Condition
-- [ ] C4区分 Output、Action、Evidence、Outcome
-- [ ] 我保留 Human Gate
+- [ ] C4有 Owner / Human Gate / Evidence / Outcome
 - [ ] 我写出了 Learning 的回写位置
 - [ ] 我写出了第二次真实复用
+- [ ] 我没有把 Prompt / RAG / Dashboard / Automation 当成 C1—C4 本身
 - [ ] 我没有把“每次变强”新增为 C5
 
 状态：

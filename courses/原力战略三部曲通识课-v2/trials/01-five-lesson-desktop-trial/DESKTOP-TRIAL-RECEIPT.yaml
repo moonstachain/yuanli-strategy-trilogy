@@ -1,65 +1,153 @@
 trial_id: YL-TRILOGY-GENERAL-v2-DESKTOP-01
 trial_version: v1
 course_id: YL-TRILOGY-GENERAL-v2
-input_snapshot_commit: 6be729bf56759604f2ce2ff19e5163e2206ae2cf
+
+original_input_snapshot_commit: 6be729bf56759604f2ce2ff19e5163e2206ae2cf
+patched_input_snapshot_commit: e05450f800b47ff0360c75cb73365e2011d7ee69
 
 evidence_class: simulated_desktop_trial
 real_learner_evidence: false
+real_24h_recall: NOT_RUN
 
-status: READY_NOT_RUN
-qualification: NOT_EVALUATED
+status: DESKTOP_TRIAL_PASS_SIMULATED
+qualification: QUALIFIED_FOR_LIVE_TRIAL_READY_NOT_RUN
+next_gate: HUMAN_LIVE_TRIAL
 
 rounds:
   round_1_blind_run:
-    status: READY_NOT_RUN
-    required_personas: [P01, P02, P03]
-    required_lessons: [L01, L02, L03, L04, L05]
+    status: COMPLETED_WITH_BLOCKERS
+    personas: [P01, P02, P03]
     expected_sessions: 15
-    completed_sessions: 0
-    course_edits_during_round: FORBIDDEN
+    completed_sessions: 15
+    course_edits_during_round: false
+    result: FAIL_WITH_ACTIONABLE_EVIDENCE
   round_2_adversarial:
-    status: BLOCKED_UNTIL_ROUND_1_REVIEW
-    required_personas: [P04, P05]
+    status: COMPLETE
+    targeted_personas: [P04, P05]
+    targeted_sessions_completed: 2
+    red_team_status: COMPLETE
+    red_team_attacks: 29
+    course_edits_during_round: false
+    result: CONFIRMS_ROUND_1_BLOCKERS
+  patch_application:
+    status: COMPLETE
+    human_gate: APPROVED
+    required_P0_applied: 2_of_2
+    required_P1_applied: 4_of_4
+    selected_P2_applied: 2_of_2
+    P2_boundary_absorbed: 1_of_1
+    watch_items_modified: 0
+    patched_snapshot: e05450f800b47ff0360c75cb73365e2011d7ee69
   round_3_regression:
-    status: BLOCKED_UNTIL_PATCH_AND_NEW_PERSONA
-    new_persona_required: true
+    status: COMPLETE
+    persona: P06
+    alias: Persona_F
+    expected_sessions: 5
+    completed_sessions: 5
+    course_edits_during_round: false
+    teacher_rescue_required: 0
+    result: PASS
 
-ledgers:
-  misconception_ledger: EMPTY
-  cognitive_load_ledger: EMPTY
-  tool_completion_ledger: EMPTY
-  narrative_handoff_ledger: EMPTY
+round_3_regression_gates:
+  category_not_positioning_word: PASS
+  generator_not_capability: PASS
+  L02_to_L03_handoff: PASS
+  L03_tool_level_3_within_15min_equivalent: PASS_AT_LIMIT
+  L03_counter_evidence_present: PASS
+  L04_no_continuous_red_load: PASS
+  L04_tool_level_3_within_15min: PASS_14min
+  L04_outcome_present: PASS
+  L04_reuse_present: PASS
+  L05_value_constraint_not_kpi: PASS
+  L05_tool_level_3_within_14min: PASS_13min
+  L01_only_you_not_destiny: PASS
+  five_lesson_spine_recall: PASS
+  five_tools_reconstructable: PASS
+  context_isolated_recall_proxy: PASS
 
-cross_course:
-  five_course_reconstruction: NOT_RUN
-  context_isolated_recall_proxy: NOT_RUN
-  real_24h_recall: NOT_RUN
+historical_P0:
+  mother_equals_core_competency:
+    round_1: DETECTED
+    round_2: REPRODUCED
+    round_3: NOT_REPRODUCED
+    context_isolated_recall: NOT_REPRODUCED
+  category_equals_positioning_word:
+    round_1: DETECTED
+    round_2: REPRODUCED
+    round_3: NOT_REPRODUCED
+    context_isolated_recall: NOT_REPRODUCED
 
 hard_gates:
-  critical_misconceptions: NOT_EVALUATED
-  five_lesson_spine_recall: NOT_EVALUATED
-  five_tools_level_3: NOT_EVALUATED
-  lesson_handoffs_4_of_4: NOT_EVALUATED
-  A_B_C_canon_confusion: NOT_EVALUATED
-  B4_fifth_barrier_confusion: NOT_EVALUATED
-  C5_confusion: NOT_EVALUATED
-  yuanli_life_as_part4_confusion: NOT_EVALUATED
-  new_persona_regression: NOT_EVALUATED
+  critical_misconceptions_round_3: PASS_0
+  five_lesson_spine_recall: PASS
+  five_tools_level_3: PASS_5_OF_5
+  tool_time_targets: PASS_5_OF_5
+  lesson_handoffs_4_of_4: PASS
+  L03_continuous_red: PASS_FALSE
+  L04_continuous_red: PASS_FALSE
+  A_B_C_canon_confusion: PASS_0
+  B4_fifth_barrier_confusion: PASS_0
+  C5_confusion: PASS_0
+  yuanli_life_as_part4_confusion: PASS_0
+  new_persona_regression: PASS
+
+cross_course:
+  round_1_reconstruction: COMPLETED_WITH_BLOCKERS
+  round_1_context_isolated_recall_proxy: COMPLETED_WITH_BLOCKERS
+  round_2_red_team: COMPLETE
+  round_3_five_course_reconstruction: PASS
+  round_3_context_isolated_recall_proxy: PASS
+  real_24h_recall: NOT_RUN
+
+patches:
+  PATCH-P0-01: APPLIED_AND_REGRESSION_PASS
+  PATCH-P0-02: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-01: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-02: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-03: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-04: APPLIED_AND_REGRESSION_PASS
+  PATCH-P2-01: APPLIED_AND_REGRESSION_PASS
+  PATCH-P2-02: ABSORBED_MINIMAL_LINE_AND_PASS
+  PATCH-P2-03: APPLIED_AND_REGRESSION_PASS
+  W-01: WATCH_NOT_APPLIED_AND_PASS
+
+post_trial_narrative_layer:
+  status: CANDIDATE_FOR_LIVE_TRIAL
+  added_after_round_3: true
+  validated_by_round_3: false
+  applied_to_patched_input_snapshot: false
+  narrative_index: courses/原力战略三部曲通识课-v2/narrative/README.md
+  narrative_spine: courses/原力战略三部曲通识课-v2/narrative/00-五课叙事总纲.md
+  evolution_note: courses/原力战略三部曲通识课-v2/evolution/04-五课叙事层设计-Evolution-Note.md
+  effect_on_desktop_qualification: NONE
+  requires_human_live_trial: true
 
 release_effect:
-  desktop_trial: not_run
-  live_trial: not_ready
+  desktop_trial: PASS_SIMULATED
+  live_trial: READY_NOT_RUN
   reusable: false
   supersedes_v1: false
 
+live_trial_watch_items:
+  - L03_real_completion_time_and_cognitive_load
+  - mother_vs_core_competency_with_real_learners
+  - category_vs_positioning_word_with_expert_IP_learners
+  - L04_real_outcome_and_reuse_completion
+  - real_24h_spine_recall
+  - real_30_90_day_experiment_transfer
+  - narrative_one万倍_machine_not_AI_tool_marketing
+  - narrative_five_crisis_escalation_attention
+  - narrative_handoff_naturalness
+  - narrative_does_not_reduce_tool_time
+
 allowed_next_action:
-  - RUN_ROUND_1_P01_P02_P03_AGAINST_FROZEN_SNAPSHOT
+  - DESIGN_AND_RUN_SMALL_SAMPLE_HUMAN_LIVE_TRIAL
 
 forbidden_claims:
-  - DESKTOP_TRIAL_PASS
-  - LIVE_TRIAL_READY
+  - REAL_LEARNER_VALIDATED
+  - NARRATIVE_LAYER_DESKTOP_VALIDATED
   - REAL_24H_MEMORY_PASS
   - REUSABLE
   - SUPERSEDES_V1
 
-human_gate_required: true
+human_gate_patch_approval: true

@@ -1,0 +1,88 @@
+trial_id: YL-TRILOGY-GENERAL-v2-DESKTOP-01
+phase: PATCH_APPLICATION_AND_REGRESSION
+status: COMPLETE
+human_gate: APPROVED
+
+approval:
+  required_P0:
+    - PATCH-P0-01
+    - PATCH-P0-02
+  required_P1:
+    - PATCH-P1-01
+    - PATCH-P1-02
+    - PATCH-P1-03
+    - PATCH-P1-04
+  selected_P2:
+    - PATCH-P2-01
+    - PATCH-P2-03
+  absorbed_boundary_line:
+    - PATCH-P2-02
+  watch_not_applied:
+    - W-01
+
+snapshots:
+  original_trial_input: 6be729bf56759604f2ce2ff19e5163e2206ae2cf
+  round_2_review_head: a26085bf1e83d3bbb6a4e46ac30ea828f034ebe7
+  patched_course_snapshot: e05450f800b47ff0360c75cb73365e2011d7ee69
+
+course_files_modified: 12
+lesson_01_modified: false
+course_edits_during_round_3: false
+
+patch_results:
+  PATCH-P0-01: APPLIED_AND_REGRESSION_PASS
+  PATCH-P0-02: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-01: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-02: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-03: APPLIED_AND_REGRESSION_PASS
+  PATCH-P1-04: APPLIED_AND_REGRESSION_PASS
+  PATCH-P2-01: APPLIED_AND_REGRESSION_PASS
+  PATCH-P2-02: ABSORBED_MINIMAL_LINE_AND_PASS
+  PATCH-P2-03: APPLIED_AND_REGRESSION_PASS
+  W-01: WATCH_NOT_APPLIED_AND_REGRESSION_PASS
+
+round_3:
+  persona: P06-regression-founder
+  alias: Persona_F
+  status: COMPLETE
+  input_snapshot: e05450f800b47ff0360c75cb73365e2011d7ee69
+  required_path: L01_to_L05_longitudinal
+  expected_sessions: 5
+  completed_sessions: 5
+  old_personas_allowed_as_proof: false
+  teacher_rescue_required: 0
+  result: PASS
+
+regression_results:
+  category_not_positioning_word: PASS
+  generator_not_capability: PASS
+  L02_to_L03_handoff: PASS
+  L03_tool_level_3_within_15min_equivalent: PASS_AT_LIMIT
+  L03_counter_evidence_present: PASS
+  L04_no_continuous_red_load: PASS
+  L04_tool_level_3_within_15min: PASS
+  L04_outcome_present: PASS
+  L04_reuse_present: PASS
+  L05_value_constraint_not_kpi: PASS
+  L05_tool_level_3_within_14min: PASS
+  L01_only_you_not_destiny: PASS
+  five_lesson_spine_recall: PASS
+  context_isolated_recall_proxy: PASS
+  critical_misconception_recurrence: 0
+
+release_effect:
+  desktop_trial: PASS_SIMULATED
+  live_trial: READY_NOT_RUN
+  real_learner_evidence: false
+  real_24h_recall: NOT_RUN
+  reusable: false
+  supersedes_v1: false
+
+next_action:
+  - DESIGN_AND_RUN_SMALL_SAMPLE_HUMAN_LIVE_TRIAL
+
+forbidden_claims:
+  - REAL_LEARNER_VALIDATED
+  - REAL_24H_MEMORY_PASS
+  - REUSABLE
+  - SUPERSEDES_V1

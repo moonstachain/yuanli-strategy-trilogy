@@ -1,0 +1,79 @@
+persona_id: P06
+alias: Persona_F
+name: cross-domain-regression-founder
+role_cn: 跨域小团队创始人
+round: 3
+status: COMPLETE_PASS
+
+profile:
+  age_band: 35-48
+  business: 专业服务正在产品化的小团队创业者
+  team: 3-12人
+  revenue_stage: 已有稳定收入但增长仍依赖创始人
+  ai_fluency: 中等
+  abstraction_tolerance: 中等
+  strategy_framework_exposure: 有一些但不系统
+
+observable_traits:
+  - 能听抽象概念，但会要求落到真实业务
+  - 既不迷信工具，也不天然排斥AI
+  - 有定位、产品化、团队复制的实际困惑
+  - 会把新概念与既有经验类比，但不会故意配合作答
+  - 遇到无法区分的概念时会直接承认“不确定”
+
+starting_beliefs:
+  - 未来要把自己的专业能力产品化、团队化
+  - 差异化通常来自经验、定位与方法
+  - 公司增长最终还是要靠流程和AI降低本人依赖
+  - 长期主义意味着选择一个值得做很多年的方向
+
+blindness_contract:
+  prior_yuanli_knowledge: none
+  access_to_round_1_sessions: false
+  access_to_round_2_sessions: false
+  access_to_red_team_results: false
+  access_to_patch_queue: false
+  access_to_patch_ids: false
+  access_to_project_memory: false
+  access_to_soul_canon: false
+  access_to_future_lessons: false
+  infer_author_intent: prohibited
+
+round_3_input:
+  patched_snapshot_commit: e05450f800b47ff0360c75cb73365e2011d7ee69
+  lessons: [L01, L02, L03, L04, L05]
+  longitudinal_run_required: true
+  course_edits_during_round: false
+
+learner_rule:
+  use_only_seen_content: true
+  expose_confusion: true
+  fake_understanding: false
+  do_not_help_author: true
+  self_map_to_one_real_business: true
+
+round_3_result:
+  sessions_completed: 5_of_5
+  five_lesson_spine_recall: PASS
+  context_isolated_recall_proxy: PASS
+  historical_P0_recurrence: 0
+  tool_gate: PASS_5_OF_5
+  handoff_gate: PASS_4_OF_4
+  canon_boundary_breaches: 0
+  result: PASS
+
+regression_observation_scope:
+  category_not_positioning_word: PASS
+  generator_not_capability: PASS
+  L02_to_L03_handoff: PASS
+  L03_tool_within_15min_equivalent: PASS_AT_LIMIT
+  L04_no_continuous_red_load: PASS
+  L04_outcome_and_reuse: PASS
+  L05_value_constraint_not_kpi: PASS
+  L05_tool_within_14min: PASS
+  L01_only_you_not_destiny: PASS
+
+prohibited_regression_shortcuts_respected: true
+
+evidence_class: simulated_desktop_trial
+real_learner_evidence: false

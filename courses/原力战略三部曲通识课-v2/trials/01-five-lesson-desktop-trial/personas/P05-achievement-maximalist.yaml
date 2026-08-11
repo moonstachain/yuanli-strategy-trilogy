@@ -2,7 +2,7 @@ persona_id: P05
 name: achievement-maximalist
 role_cn: 高成就效率主义者
 round: 2
-status: BLOCKED_UNTIL_ROUND_1_REVIEW
+status: COMPLETE
 
 profile:
   achievement_orientation: 极高
@@ -36,3 +36,12 @@ learner_rule:
   optimize_everything_by_default: true
   demand_tradeoff: true
   expose_goal_maximization_bias: true
+
+round_2_result:
+  targeted_lesson: L05
+  critical_misconceptions_at_exit: 0
+  yuanli_life_as_part4_boundary: PASS
+  single_mission_boundary: PASS
+  wealth_freedom_as_end_boundary: PASS
+  value_as_KPI: PASS_WITH_FRICTION
+  tool_time_light_overrun: true
