@@ -6,8 +6,9 @@ input_snapshot_commit: 6be729bf56759604f2ce2ff19e5163e2206ae2cf
 evidence_class: simulated_desktop_trial
 real_learner_evidence: false
 
-status: ROUND_1_COMPLETE
+status: ROUND_2_COMPLETE
 qualification: NOT_QUALIFIED_FOR_LIVE_TRIAL
+next_gate: HUMAN_PATCH_REVIEW
 
 rounds:
   round_1_blind_run:
@@ -19,41 +20,63 @@ rounds:
     course_edits_during_round: false
     result: FAIL_WITH_ACTIONABLE_EVIDENCE
   round_2_adversarial:
-    status: READY_NOT_RUN
+    status: COMPLETE
     prerequisite_round_1_review: COMPLETE
-    required_personas: [P04, P05]
+    targeted_personas: [P04, P05]
+    targeted_sessions_completed: 2
     red_team_required: true
+    red_team_status: COMPLETE
+    red_team_attacks: 29
+    course_edits_during_round: false
+    result: CONFIRMS_ROUND_1_BLOCKERS
   round_3_regression:
-    status: BLOCKED_UNTIL_PATCH_AND_NEW_PERSONA
+    status: BLOCKED_UNTIL_HUMAN_APPROVES_PATCH_AND_NEW_PERSONA
     new_persona_required: true
+    patched_snapshot_required: true
 
 ledgers:
-  misconception_ledger: POPULATED
-  cognitive_load_ledger: POPULATED
-  tool_completion_ledger: POPULATED
-  narrative_handoff_ledger: POPULATED
+  misconception_ledger: ROUND_2_POPULATED
+  cognitive_load_ledger: ROUND_2_POPULATED
+  tool_completion_ledger: ROUND_2_POPULATED
+  narrative_handoff_ledger: ROUND_2_POPULATED
 
 cross_course:
   five_course_reconstruction:
-    status: COMPLETED
+    status: COMPLETED_ROUND_1
     personas: [P01, P02, P03]
     overall_gate: FAIL
   context_isolated_recall_proxy:
-    status: COMPLETED
+    status: COMPLETED_ROUND_1
     personas: [P01, P02, P03]
     real_24h_equivalent: false
+  round_2_red_team:
+    status: COMPLETE
+    attacks: 29
+    new_critical_breaches: 0
+    reproduced_existing_critical_breaches: 2
   real_24h_recall: NOT_RUN
 
-round_1_metrics:
-  persistent_critical_misconceptions: 2
+persistent_blockers:
+  critical_misconceptions: 2
   critical_items:
     - mother_equals_core_competency
     - category_equals_positioning_word
-  tool_L3_in_lesson_timebox: 9_of_15
-  tool_quality_and_time_pass: 8_of_15
-  L03_tool_L3: 0_of_3
-  L04_tool_L3: 0_of_3
-  narrative_handoffs_passed: 11_of_12
+  L03_tool_L3_round_1: 0_of_3
+  L04_tool_L3_round_1: 0_of_3
+  narrative_handoff_failure:
+    - P01_L02_to_L03
+
+round_2_positive_findings:
+  OS_as_tool_stack: RESISTED
+  C1_as_prompt_only: RESISTED
+  C2_as_RAG_only: RESISTED
+  C3_as_dashboard_only: RESISTED
+  C4_as_automation_only: RESISTED
+  C5_exists: RESISTED
+  yuanli_life_as_part4: RESISTED
+  life_as_single_mission: RESISTED
+  long_term_as_same_job_forever: RESISTED
+  wealth_freedom_as_ultimate_end: RESISTED
 
 hard_gates:
   critical_misconceptions: FAIL_2
@@ -69,18 +92,28 @@ hard_gates:
 patch_queue:
   P0: 2
   P1: 4
-  P2: 2
+  P2: 3
+  watch_items: 1
   applied: 0
-  apply_before_round_2: FORBIDDEN
+  round_2_confirmed_existing_P0: 2
+  round_2_confirmed_existing_P1: 2
+  human_gate_required_before_apply: true
 
 release_effect:
-  desktop_trial: IN_PROGRESS_ROUND_1_BLOCKERS_FOUND
+  desktop_trial: IN_PROGRESS_PATCH_REQUIRED
   live_trial: NOT_READY
   reusable: false
   supersedes_v1: false
 
 allowed_next_action:
-  - RUN_ROUND_2_P04_P05_AND_RED_TEAM_AGAINST_FROZEN_SNAPSHOT
+  - HUMAN_REVIEW_PATCH_QUEUE
+
+forbidden_actions_until_human_gate:
+  - APPLY_PATCHES
+  - CREATE_PATCHED_SNAPSHOT
+  - RUN_ROUND_3
+  - CLAIM_DESKTOP_TRIAL_PASS
+  - CLAIM_LIVE_TRIAL_READY
 
 forbidden_claims:
   - DESKTOP_TRIAL_PASS
