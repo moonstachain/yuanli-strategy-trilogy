@@ -1,6 +1,6 @@
 # Narrative Handoff Ledger｜课间悬念与承接总账
 
-> 当前状态：ROUND_1_POPULATED
+> 当前状态：ROUND_2_POPULATED / PATCH_NOT_APPLIED
 
 ## 理想自然问题
 
@@ -11,7 +11,7 @@
 | L03 | L04 | 如果我的原力越来越值钱，怎样避免本人被绑死？ |
 | L04 | L05 | 如果什么都能被放大，我究竟应该放大什么？ |
 
-## Ledger
+## Round 1 Ledger
 
 | Round | Persona | From | Raw next question | Score | Points to intended next lesson? | Drift target | Pass? | Patch ID |
 |---|---|---|---|---:|---|---|---|---|
@@ -28,21 +28,36 @@
 | 1 | P03 | L03 | “怎么让团队和AI也能用，而不是最后还是靠我本人？” | 5 | Yes | — | PASS | — |
 | 1 | P03 | L04 | “如果机器越来越会复制我的价值，我到底希望它把什么放大？” | 5 | Yes | — | PASS | — |
 
+## Round 2 Targeted Handoff
+
+| Round | Persona | From | Raw next question | Score | Points to intended next lesson? | Pass? | Patch ID |
+|---|---|---|---|---:|---|---|---|
+| 2 | P04 | L04 | “如果这套系统真的能放大我的判断，我得先确定哪些判断和目标值得被长期放大。” | 5 | Yes | PASS | — |
+
+P05执行的是Capstone L05，不存在下一课，因此不计入Handoff分母。
+
 ## Aggregate
+
+Round 1 主Gate仍保持：
 
 ```yaml
 handoff_observations: 12
 passes: 11
 failures: 1
-pass_rate: 91.7_percent
 failed_edge: L02_to_L03_for_P01
 minimum_score_observed: 3
-overall_gate_requires_minimum_each_4: true
 round_1_handoff_gate: FAIL
+```
+
+Round 2新增的P04 L04→L05为PASS，说明第四课到第五课的价值方向悬念即使面对AI工具狂热者也成立。
+
+但Round 2不是修复回归，因此：
+
+```yaml
+PATCH_P1_03_still_required: true
+handoff_gate_after_round_2: FAIL_UNTIL_PATCHED_REGRESSION
 ```
 
 ## Interpretation
 
-- 四个课间转场的因果设计总体成立；
-- 唯一失败不是“没有兴趣”，而是 **L02专业解释层使方法型学员想继续追枝节，截断了主体回归悬念**；
-- 因此优先修叙事负荷，而不是增强第三课预告。
+> **当前唯一叙事断点仍是L02专业解释层抢走“为什么偏偏是我”的自然问题。Round 2没有发现新的课间断裂。**
