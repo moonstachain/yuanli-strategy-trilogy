@@ -1,0 +1,43 @@
+trial_id: YL-TRILOGY-GENERAL-v2-ANCHOR-LIVE-001
+status: READY_NOT_RUN
+anchors:
+  - lesson: L01
+    id: gutenberg_1455
+    core_judgment: copy_cost_shift
+    evidence_status: verified
+  - lesson: L01
+    id: deep_blue_1997
+    core_judgment: task_boundary_crossed_by_machine
+    evidence_status: verified
+  - lesson: L02
+    id: nokia_iphone_2007_2008
+    core_judgment: old_world_strength_can_mask_new_production_function
+    evidence_status: verified
+  - lesson: L02
+    id: nintendo_wii
+    core_judgment: category_redefines_who_is_in_the_market
+    evidence_status: verified
+  - lesson: L03
+    id: john_snow_1854
+    core_judgment: anomaly_counterexample_evidence_action
+    evidence_status: verified
+  - lesson: L03
+    id: tu_youyou_191_1971
+    core_judgment: judgment_rewrites_method
+    evidence_status: verified
+  - lesson: L04
+    id: model_299_1935
+    core_judgment: critical_state_must_be_system_visible
+    evidence_status: verified
+  - lesson: L04
+    id: toyota_jidoka_andon
+    core_judgment: anomaly_stop_learn_reuse
+    evidence_status: verified
+  - lesson: L05
+    id: washington_1783
+    core_judgment: values_as_costly_constraints
+    evidence_status: verified
+  - lesson: L05
+    id: patagonia_2022
+    core_judgment: direction_encoded_in_institutional_carrier
+    evidence_status: verified
