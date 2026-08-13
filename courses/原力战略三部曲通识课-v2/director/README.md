@@ -5,15 +5,19 @@
 ```yaml
 layer: director
 course_id: YL-TRILOGY-GENERAL-v2
-status: flagship_anchor_patch_ready_for_live_trial
+status: word_level_anchor_scripts_ready_for_rehearsal
 source_structure_snapshot: e05450f800b47ff0360c75cb73365e2011d7ee69
 narrative_sources:
   - narrative/00-五课叙事总纲.md
   - narrative/01-叙事内核-小切口大纵深.md
 anchor_evidence_pack: ../evidence/01-五课旗舰小切口证据包.md
+anchor_word_level_router: anchors/README.md
+anchor_recording_master: anchors/RECORDING-MASTER.md
 anchor_cut_count: 10
+word_level_anchor_count: 10
 applied_to_frozen_lessons: false
 validated_by_round_3: false
+rehearsal_required: true
 live_trial_required: true
 canon_effect: none
 ```
@@ -206,7 +210,46 @@ required_marks:
   - PERSONAL_VERDICT
 ```
 
-## 七、Live Trial 必须额外观察
+## 七、逐字级 Anchor Layer
+
+九拍结构已经进一步编译成 10 个独立、可排练、可录制的逐字级导演稿：
+
+> `anchors/`
+
+总入口：
+
+- `anchors/README.md`：10 个逐字稿路由；
+- `anchors/RECORDING-MASTER.md`：五课嵌入、语速、黑屏、屏幕、QC Gate；
+- `anchors/A01...A10`：逐个旗舰故事的 8—12 分钟逐字导演稿。
+
+逐字级文件不是新的正典，也不替代五份 90 分钟 Director Script。
+
+层级关系：
+
+```text
+五课结构
+↓
+Narrative Layer
+↓
+90min Director Script
+↓
+Anchor Word-level Script
+↓
+Rehearsal
+↓
+Recording / Live Trial
+```
+
+当前状态：
+
+```yaml
+word_level_scripts: 10_of_10_complete
+rehearsal: READY_NOT_RUN
+recording: NOT_RUN
+live_trial: NOT_RUN
+```
+
+## 八、Live Trial 必须额外观察
 
 导演层进入真人试讲后，除了原 Desktop Trial 指标，再记录：
 

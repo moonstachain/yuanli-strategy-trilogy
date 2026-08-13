@@ -1,0 +1,12 @@
+course_id: YL-TRILOGY-GENERAL-v2
+layer: anchor_word_level_director
+updated_at: 2026-08-13
+anchor_count: 10
+scripts_complete: 10
+static_qc: PASS
+source_verification: PASS_WITH_BOUNDARIES
+rehearsal: READY_NOT_RUN
+recording: NOT_RUN
+live_trial: NOT_RUN
+canon_effect: none
+next_gate: trials/03-anchor-word-level-rehearsal
