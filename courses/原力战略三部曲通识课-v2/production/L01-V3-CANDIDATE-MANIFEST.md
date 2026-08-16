@@ -1,53 +1,115 @@
-# Production Manifest｜L01 V3 Candidate
+# Production Manifest｜L01 V3.1 Candidate
 
 ```yaml
-candidate_id: YL-TRILOGY-GENERAL-v2-L01-V3-CANDIDATE
+candidate_id: YL-TRILOGY-GENERAL-v2-L01-V3.1-CANDIDATE
 course_id: YL-TRILOGY-GENERAL-v2
 layer: production_candidate
-status: REVISE_BEFORE_LIVE
+status: LIVE_TRIAL_READY
 created_at: 2026-08-16
 last_trial_at: 2026-08-16
 canon_effect: none
 current_L01_replaced: false
-desktop_trial: EVIDENCE_AVAILABLE_REVISE
-context_isolated_recall_proxy: COMPLETE_WITH_ONE_CRITICAL_DRIFT
+human_patch_gate: APPROVED
+frozen_snapshot_branch: snapshot/l01-v3.1-20260816
+frozen_snapshot_sha: eda55d3d653c03ba2c3b78822745e80f1b9b10f3
+desktop_trial: PASS_SIMULATED
+context_isolated_recall_proxy: PASS_6_OF_6
 real_24h_recall: NOT_RUN
-live_trial: NOT_READY_PATCH_REQUIRED
+live_trial: READY_NOT_RUN
 promotion: NOT_AUTHORIZED
-patch_gate: AWAITING_HUMAN_RULING
 ```
 
 ## 1. 生产目的
 
-本文件只登记一个 Overlay Candidate，不改变现役 V2 五课生产状态。
+本文件登记 L01 V3.1 Overlay Candidate 的当前合法状态。
 
-现役 L01 继续保持当前合法基线；V3 只有在补丁回归、真人 Trial 与 Human Promotion Gate 通过后，才允许替换。
+现役 V2 L01 仍保持合法基线；V3.1 已通过模拟桌面回归，因此**获得进入真人试讲的制作资格**，但尚未获得替换 V2 的 Promotion 法权。
 
-## 2. Candidate 资产清单
+---
 
-- Evolution：`../evolution/09-L01-AI时代新财富算法-v3-Evolution-Note.md`
+# 2. V3.1 主资产
+
+- Lesson：`../lessons/secret-life/L01-秘密诞生-原力战略-v3.1-candidate.md`
+- Director：`../director/secret-life/L01-90MIN-DIRECTOR-v3.1-candidate.md`
+- Deck：`../deck/secret-life/01-原力战略-AI时代新财富算法-PPT蓝图-v3.1.md`
+- Artifact：`../exercises/secret-life/L01-AI时代我的价值清算表-v3.1.md`
 - Evidence：`../evidence/L01-文明理论三角-Evidence-Packet-v1.md`
-- Lesson：`../lessons/secret-life/L01-秘密诞生-原力战略-v3-candidate.md`
-- Director：`../director/secret-life/L01-90MIN-DIRECTOR-v3-candidate.md`
-- Deck：`../deck/secret-life/01-原力战略-AI时代新财富算法-PPT蓝图-v3.md`
-- Artifact：`../exercises/secret-life/L01-AI时代我的价值清算表-v2.md`
-- Trial Protocol：`../trials/08-l01-new-wealth-v3/README.md`
-- Round 1：`../trials/08-l01-new-wealth-v3/ROUND-1-PERSONA-SESSIONS.md`
-- Red Team：`../trials/08-l01-new-wealth-v3/ROUND-2-RED-TEAM.md`
-- Recall Proxy：`../trials/08-l01-new-wealth-v3/CONTEXT-ISOLATED-RECALL-PROXY.md`
-- A/B：`../trials/08-l01-new-wealth-v3/AB-COMPARISON-V2-V3.md`
-- Patch Queue：`../trials/08-l01-new-wealth-v3/PATCH-CANDIDATES.md`
-- Result：`../trials/08-l01-new-wealth-v3/RESULT-v1.md`
+- Evolution：`../evolution/09-L01-AI时代新财富算法-v3-Evolution-Note.md`
 
-## 3. 上游理论
+## 3. Trial 08 Evidence
 
-Soul Candidate Extension：
+### V3 初轮
 
-`moonstachain/yuanli-strategy-soul/curriculum/extensions/AI时代新财富算法-v1/`
+- `../trials/08-l01-new-wealth-v3/RESULT-v1.md`
+- `ROUND-1-PERSONA-SESSIONS.md`
+- `ROUND-2-RED-TEAM.md`
+- `CONTEXT-ISOLATED-RECALL-PROXY.md`
+- `AB-COMPARISON-V2-V3.md`
+- `PATCH-CANDIDATES.md`
 
-法权：`teaching_framework / canon_effect:none`。
+### V3.1 回归
 
-## 4. 保留现役资产
+- `../trials/08-l01-new-wealth-v3/HUMAN-GATE.md`
+- `V3.1-SNAPSHOT.md`
+- `V3.1-REGRESSION-SESSIONS.md`
+- `V3.1-CONTEXT-ISOLATED-RECALL-PROXY.md`
+- `RESULT-v2-V3.1.md`
+
+---
+
+# 4. Human-approved Patch Set
+
+```text
+P0-01 秘密 ≠ 商业机会
+P1-01 Live Core Artifact 10—12min
+P1-02 三本书脚注化 + 稀缺阶梯压缩
+P1-03 关闭 L03/L05 竞争悬念，只留 L02
+P1-04 Value Candidate ≠ 唯一使命
+```
+
+---
+
+# 5. Regression Result
+
+```yaml
+critical_secret_misconception_recurrence: 0_of_6
+opportunity_secret_boundary: PASS_6_OF_6
+value_candidate_missionization: 0_of_6
+artifact_L3: 6_of_6
+artifact_estimated_time_range: 9-12min
+P02_cognitive_peak: YELLOW_NOT_RED
+P04_cognitive_peak: MEDIUM_NOT_RED
+L02_first_handoff: 6_of_6
+context_isolated_recall_proxy: PASS_6_OF_6
+canon_boundary_breach: 0
+teacher_rescue_required: 0
+```
+
+Desktop Verdict：
+
+> **PASS_FOR_LIVE_TRIAL_READINESS**
+
+---
+
+# 6. 当前合法状态
+
+```text
+Theory Extension       READY
+Evidence Packet        READY_WITH_BOUNDARIES
+V3.1 Lesson             FROZEN
+V3.1 Director           FROZEN
+V3.1 Deck               FROZEN
+V3.1 Artifact           FROZEN
+Desktop Regression      PASS_SIMULATED
+Recall Proxy            PASS_6_OF_6
+Real 24h Recall         NOT_RUN
+Live Trial              READY_NOT_RUN
+Promotion               NOT_AUTHORIZED
+```
+
+---
+
+# 7. 保留现役资产
 
 以下不删除、不覆盖：
 
@@ -57,53 +119,27 @@ Soul Candidate Extension：
 - 现役 Secret-Life Director / Deck / Desktop Trial 收据
 - 1455 古腾堡与 1997 Deep Blue Anchor
 
-## 5. Candidate 状态
+---
+
+# 8. 下一合法动作
+
+> **执行 L01 V3.1 真人试讲，采集真实课堂证据。**
+
+真人试讲之后必须继续：
 
 ```text
-Theory Extension       READY
-Evidence Packet        READY_WITH_BOUNDARIES
-Lesson Candidate       FROZEN_FOR_TRIAL_08
-90min Director         FROZEN_FOR_TRIAL_08
-Deck Blueprint         READY
-Artifact               BLOCKED_BY_TIME_BUDGET
-Desktop Evidence       AVAILABLE
-Red Team                COMPLETE
-V2/V3 A-B               COMPLETE_DIRECTIONAL
-Recall Proxy            PASS_WITH_ONE_CRITICAL_DRIFT
-Real 24h Recall         NOT_RUN
-Patch Candidates        RECORDED_NOT_APPLIED
-Human Patch Gate        AWAITING_RULING
-Live Trial              NOT_READY_PATCH_REQUIRED
-Promotion               NOT_AUTHORIZED
+Live Trial
+→ Live Evidence
+→ 真实24h Recall
+→ V2 / V3.1 Human A/B Review
+→ Promotion Decision
 ```
-
-## 6. Desktop Gate Failure Reasons
-
-1. `Critical Misconception recurrence > 0`：P02 将秘密重新压缩为商业机会；
-2. Artifact 当前无独立课内时间槽，P01-P05 估时 15—19min，超过既有 L01 `≤13min` Desktop Budget；
-3. L02 Handoff 被 L03/L05 竞争；
-4. P02/P04 出现高 Cognitive Load 峰值。
-
-## 7. 当前裁决
-
-> **V3 的理论发动机保留，但当前版本不得进入真人试讲。**
-
-状态：
-
-```yaml
-decision: REVISE_BEFORE_LIVE
-```
-
-## 8. 下一合法动作
-
-> **Human Patch Gate → 应用最小补丁 → 冻结 V3.1 snapshot → 新一轮 regression → 再判断 LIVE_TRIAL_READY。**
-
-推荐 Patch Set 已在 `PATCH-CANDIDATES.md` 冻结，尚未应用。
 
 不得：
 
-- 把 Context-Isolated Recall 冒充真实 24h；
-- 直接标记 `validated_live`；
-- 覆盖现役 V2；
+- 把 simulated completion time 当真实课堂时间；
+- 把 Context-Isolated Recall Proxy 当真实 24h Recall；
+- 自动替换 V2；
+- 标记 `validated_live`；
 - Promotion；
 - Canon upgrade。
