@@ -14,6 +14,7 @@ context_isolated_recall_proxy: COMPLETE_WITH_ONE_CRITICAL_DRIFT
 real_24h_recall: NOT_RUN
 live_trial: NOT_READY_PATCH_REQUIRED
 promotion: NOT_AUTHORIZED
+patch_gate: AWAITING_HUMAN_RULING
 ```
 
 ## 1. 生产目的
@@ -71,6 +72,7 @@ V2/V3 A-B               COMPLETE_DIRECTIONAL
 Recall Proxy            PASS_WITH_ONE_CRITICAL_DRIFT
 Real 24h Recall         NOT_RUN
 Patch Candidates        RECORDED_NOT_APPLIED
+Human Patch Gate        AWAITING_RULING
 Live Trial              NOT_READY_PATCH_REQUIRED
 Promotion               NOT_AUTHORIZED
 ```
@@ -95,6 +97,8 @@ decision: REVISE_BEFORE_LIVE
 ## 8. 下一合法动作
 
 > **Human Patch Gate → 应用最小补丁 → 冻结 V3.1 snapshot → 新一轮 regression → 再判断 LIVE_TRIAL_READY。**
+
+推荐 Patch Set 已在 `PATCH-CANDIDATES.md` 冻结，尚未应用。
 
 不得：
 
