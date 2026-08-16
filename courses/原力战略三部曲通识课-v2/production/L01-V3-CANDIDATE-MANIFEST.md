@@ -4,11 +4,15 @@
 candidate_id: YL-TRILOGY-GENERAL-v2-L01-V3-CANDIDATE
 course_id: YL-TRILOGY-GENERAL-v2
 layer: production_candidate
-status: CANDIDATE_ASSEMBLED
+status: REVISE_BEFORE_LIVE
 created_at: 2026-08-16
+last_trial_at: 2026-08-16
 canon_effect: none
 current_L01_replaced: false
-live_trial: NOT_RUN
+desktop_trial: EVIDENCE_AVAILABLE_REVISE
+context_isolated_recall_proxy: COMPLETE_WITH_ONE_CRITICAL_DRIFT
+real_24h_recall: NOT_RUN
+live_trial: NOT_READY_PATCH_REQUIRED
 promotion: NOT_AUTHORIZED
 ```
 
@@ -16,7 +20,7 @@ promotion: NOT_AUTHORIZED
 
 本文件只登记一个 Overlay Candidate，不改变现役 V2 五课生产状态。
 
-现役 L01 继续保持当前合法基线；V3 只有在真实 Trial 与 Human Promotion Gate 通过后，才允许替换。
+现役 L01 继续保持当前合法基线；V3 只有在补丁回归、真人 Trial 与 Human Promotion Gate 通过后，才允许替换。
 
 ## 2. Candidate 资产清单
 
@@ -26,7 +30,13 @@ promotion: NOT_AUTHORIZED
 - Director：`../director/secret-life/L01-90MIN-DIRECTOR-v3-candidate.md`
 - Deck：`../deck/secret-life/01-原力战略-AI时代新财富算法-PPT蓝图-v3.md`
 - Artifact：`../exercises/secret-life/L01-AI时代我的价值清算表-v2.md`
-- Trial：`../trials/08-l01-new-wealth-v3/README.md`
+- Trial Protocol：`../trials/08-l01-new-wealth-v3/README.md`
+- Round 1：`../trials/08-l01-new-wealth-v3/ROUND-1-PERSONA-SESSIONS.md`
+- Red Team：`../trials/08-l01-new-wealth-v3/ROUND-2-RED-TEAM.md`
+- Recall Proxy：`../trials/08-l01-new-wealth-v3/CONTEXT-ISOLATED-RECALL-PROXY.md`
+- A/B：`../trials/08-l01-new-wealth-v3/AB-COMPARISON-V2-V3.md`
+- Patch Queue：`../trials/08-l01-new-wealth-v3/PATCH-CANDIDATES.md`
+- Result：`../trials/08-l01-new-wealth-v3/RESULT-v1.md`
 
 ## 3. 上游理论
 
@@ -51,19 +61,45 @@ Soul Candidate Extension：
 ```text
 Theory Extension       READY
 Evidence Packet        READY_WITH_BOUNDARIES
-Lesson Candidate       READY
-90min Director         READY
+Lesson Candidate       FROZEN_FOR_TRIAL_08
+90min Director         FROZEN_FOR_TRIAL_08
 Deck Blueprint         READY
-Artifact               READY
-Trial Protocol         READY_NOT_RUN
-Desktop Evidence       MISSING
-Live Evidence          MISSING
-24h Recall             MISSING
-Promotion              NOT_AUTHORIZED
+Artifact               BLOCKED_BY_TIME_BUDGET
+Desktop Evidence       AVAILABLE
+Red Team                COMPLETE
+V2/V3 A-B               COMPLETE_DIRECTIONAL
+Recall Proxy            PASS_WITH_ONE_CRITICAL_DRIFT
+Real 24h Recall         NOT_RUN
+Patch Candidates        RECORDED_NOT_APPLIED
+Live Trial              NOT_READY_PATCH_REQUIRED
+Promotion               NOT_AUTHORIZED
 ```
 
-## 6. 下一合法动作
+## 6. Desktop Gate Failure Reasons
 
-> **只允许执行 Desktop Trial；不得直接 Promotion。**
+1. `Critical Misconception recurrence > 0`：P02 将秘密重新压缩为商业机会；
+2. Artifact 当前无独立课内时间槽，P01-P05 估时 15—19min，超过既有 L01 `≤13min` Desktop Budget；
+3. L02 Handoff 被 L03/L05 竞争；
+4. P02/P04 出现高 Cognitive Load 峰值。
 
-Desktop Trial 通过后，再由 Human Review 决定是否进入真人试讲。
+## 7. 当前裁决
+
+> **V3 的理论发动机保留，但当前版本不得进入真人试讲。**
+
+状态：
+
+```yaml
+decision: REVISE_BEFORE_LIVE
+```
+
+## 8. 下一合法动作
+
+> **Human Patch Gate → 应用最小补丁 → 冻结 V3.1 snapshot → 新一轮 regression → 再判断 LIVE_TRIAL_READY。**
+
+不得：
+
+- 把 Context-Isolated Recall 冒充真实 24h；
+- 直接标记 `validated_live`；
+- 覆盖现役 V2；
+- Promotion；
+- Canon upgrade。
