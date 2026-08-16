@@ -1,229 +1,171 @@
-# Trial 08｜L01「AI时代的新财富算法」V3 Candidate
+# Trial 08｜L01「AI时代的新财富算法」V3.1
 
 ```yaml
 trial_id: YL-L01-V3-TRIAL-08
-candidate_id: YL-TRILOGY-GENERAL-v2-L01-V3-CANDIDATE
-status: REVISE_BEFORE_LIVE
+candidate_id: YL-TRILOGY-GENERAL-v2-L01-V3.1-CANDIDATE
+status: LIVE_TRIAL_READY
 trial_type:
   - desktop
   - live
   - 24h_recall
 promotion_authority: human
 canon_effect: none
-desktop_trial: EVIDENCE_AVAILABLE_REVISE
-context_isolated_recall_proxy: COMPLETE
+human_patch_gate: APPROVED
+frozen_snapshot_branch: snapshot/l01-v3.1-20260816
+frozen_snapshot_sha: eda55d3d653c03ba2c3b78822745e80f1b9b10f3
+desktop_trial: PASS_SIMULATED
+context_isolated_recall_proxy: PASS_6_OF_6
 real_24h_recall: NOT_RUN
-live_trial: NOT_READY_PATCH_REQUIRED
+live_trial: READY_NOT_RUN
 promotion: NOT_AUTHORIZED
-patch_gate: AWAITING_HUMAN_RULING
 ```
 
-## 0. 本轮执行结果｜2026-08-16
+## 0. 当前总裁决｜2026-08-16
 
-已完成：
-
-- `ROUND-1-PERSONA-SESSIONS.md`：P01/P02/P03；
-- `ROUND-2-RED-TEAM.md`：P04/P05；
-- `CONTEXT-ISOLATED-RECALL-PROXY.md`：P01-P06；
-- `AB-COMPARISON-V2-V3.md`：V2 vs V3 方向性 Desktop A/B；
-- `PATCH-CANDIDATES.md`：1 个 P0、4 个 P1/P1 blocker、1 个 P2；
-- `RESULT-v1.md`：Live Gate 总裁决；
-- `HUMAN-GATE.md`：Patch Gate 等待人工裁决。
-
-总裁决：
-
-> **V3 的理论发动机已经赢，但当前课程工程仍未达到真人试讲门槛。**
-
-当前必须修复：
+V3 初轮 Desktop Trial 暴露四个主要问题：
 
 1. P02 的“秘密 = 商业机会”关键漂移；
-2. Artifact 无独立课内时间槽、预计 15—19min，超过既有 L01 ≤13min Desktop Budget；
+2. Artifact 无独立课内时间槽；
 3. L02 Handoff 被 L03/L05 竞争；
-4. 三本书 + 稀缺阶梯造成部分 Persona 高负荷。
+4. 三本书 + 长稀缺阶梯造成部分 Persona 高负荷。
 
-下一合法动作：
-
-> **Human Patch Gate → V3.1 minimal patch → regression → 再裁决是否 LIVE_TRIAL_READY。**
-
----
-
-## 1. 目的
-
-验证 V3 是否真实优于现役 L01，而不是验证它“理论更复杂”。
-
-唯一判据：
-
-> **学员是否更容易完成财富观换轨，并自然进入下一课。**
-
----
-
-# 2. 六项主测试
-
-## T1｜能 → 贵 → 值 → 我
-
-结课即刻要求学员不看笔记重建：
+Human 已批准：
 
 ```text
-能 = ?
-贵 = ?
-值 = ?
-我 = ?
+P0-01 + P1-01 + P1-02 + P1-03 + P1-04
 ```
 
-PASS：能说清因果关系，而不是只记住三本书名。
-
-## T2｜AI 是否仍被理解为“人整体贬值”
-
-问：
-
-> “这堂课是否在说 AI 会让人越来越没价值？”
-
-PASS：回答接近——AI 在重新给能力定价；部分平均能力供给变多，但问题定义、判断、品味、信任、责任等可能更重要。
-
-## T3｜效率 ≠ 方向
-
-给情景：
-
-> “AI 能把一个项目效率提高 10 倍，是否因此证明应该做这个项目？”
-
-PASS：明确区分 HOW 优化与 WHY/价值选择。
-
-## T4｜秘密误解测试
-
-让学员写：
-
-> “秘密是什么？”
-
-FAIL 关键词：内幕、渠道信息差、爆款技巧、别人不知道的小聪明、一次套利。
-
-PASS：接近“值得现实验证的非共识价值候选”。
-
-## T5｜工具完成率
-
-Artifact：`../../exercises/secret-life/L01-AI时代我的价值清算表-v2.md`
-
-目标：
-
-```yaml
-in_class_completion_rate_target: ">=80%"
-value_candidate_completion_target: ">=70%"
-```
-
-## T6｜追课欲
-
-结课问：
-
-> “你现在最想继续追问什么？”
-
-理想自然语言：
-
-- 秘密怎么被市场验证？
-- 世界为什么愿意付钱？
-- 怎么让别人理解并记住？
-- 怎么复制、怎么守住？
-
-如果大量学员直接跳到“我的母体是什么”，说明 L01/L02 handoff 可能失衡。
-
----
-
-# 3. 认知负荷测试
-
-重点观察 Slide 14“稀缺阶梯”。
-
-记录：
-
-```yaml
-cognitive_overload:
-  low:
-  medium:
-  high:
-```
-
-如果学员记住“物质→资本→信息…”却说不清“稀缺迁移”，则删减阶梯，不牺牲机制。
-
----
-
-# 4. 三本书法权测试
-
-问学员：
-
-> “三本书是在证明原力战略正确吗？”
-
-PASS：理解为三种外部理论母根/思想实验，帮助解释时代变化；原力战略是后续对具体生命与事业的回应。
-
----
-
-# 5. 24h Recall
-
-24 小时后，不看材料回答：
-
-1. AI 首先改变的是什么？
-2. 为什么技术不会消灭稀缺？
-3. “效率不能证明方向”是什么意思？
-4. 新财富公式是什么？
-5. 你的 Value Candidate 是什么？
-
-优先看机制重建，不要求逐字。
-
-治理边界：Desktop 阶段只能执行 Context-Isolated Recall Proxy，不得冒充真实 24h Recall。
-
----
-
-# 6. A/B 对照
-
-V2 与 V3 至少比较：
+补丁已应用为 V3.1，并冻结：
 
 ```text
-即时记忆
-Recall Proxy / 后续真实24h Recall
-秘密误解率
-工具完成率
-L02 追课欲
-时间超支
-认知负荷
+snapshot/l01-v3.1-20260816
+@ eda55d3d653c03ba2c3b78822745e80f1b9b10f3
 ```
 
-V3 不因“理论更深”自动胜出。
-
-本轮方向性结论：
+V3.1 Regression + Context-Isolated Recall Proxy 结果：
 
 ```yaml
-winner_theory_engine: V3
-winner_current_live_readiness: V2
-v3_should_be_abandoned: false
-v3_should_replace_v2_now: false
+critical_secret_misconception_recurrence: 0_of_6
+opportunity_secret_boundary: PASS_6_OF_6
+value_candidate_missionization: 0_of_6
+artifact_L3: 6_of_6
+artifact_estimated_time_range: 9-12min
+P02_cognitive_peak: YELLOW_NOT_RED
+P04_cognitive_peak: MEDIUM_NOT_RED
+L02_first_handoff: 6_of_6
+context_isolated_recall_proxy: PASS_6_OF_6
+canon_boundary_breach: 0
 ```
 
----
+最终 Desktop 裁决：
 
-# 7. Promotion Gate
+> # **PASS_FOR_LIVE_TRIAL_READINESS**
 
-```text
-READY_NOT_RUN
-↓ Desktop Trial
-DESKTOP_EVIDENCE_AVAILABLE
-↓ 当前裁决：REVISE_BEFORE_LIVE
-↓ Human Patch Gate
-V3.1 PATCHED SNAPSHOT
-↓ Regression
-DESKTOP_PASS_SIMULATED
-↓ Human Review
-LIVE_READY
-↓ Live Trial
-LIVE_EVIDENCE_AVAILABLE
-↓ Real 24h Recall
-PROMOTION_REVIEW
-↓ Human Ruling
-PROMOTED / REVISE / REJECT
-```
+因此当前允许：
 
-当前：
+> **正式进入 L01 V3.1 真人试讲。**
+
+但仍然：
 
 ```yaml
-desktop_trial: EVIDENCE_AVAILABLE_REVISE
-context_isolated_recall_proxy: COMPLETE_WITH_ONE_CRITICAL_DRIFT
-live_trial: NOT_READY_PATCH_REQUIRED
+real_learner_evidence: false
 real_24h_recall: NOT_RUN
+validated_live: false
 promotion: NOT_AUTHORIZED
-patch_gate: AWAITING_HUMAN_RULING
+current_V2_replaced: false
 ```
+
+---
+
+# 1. V3.1 唯一教学主线
+
+学员前台只记：
+
+> # **能 → 贵 → 值 → 我**
+
+```text
+能：AI让某些能力供给增加、价格变化
+贵：旧瓶颈突破后，好问题/判断/取舍等新瓶颈浮现
+值：效率不能证明方向，先选值得继续验证的方向
+我：找自己的非平均判断，不是找风口、标签或唯一使命
+```
+
+三本书只作为脚注式理论桥，不进入强制记忆。
+
+---
+
+# 2. P0 强边界
+
+> # **机会在外面；秘密是你对机会形成、并愿意交给现实验证的非平均判断。**
+
+Live Trial 必须重点观察务实经营型学员是否仍把“秘密”理解成风口、赛道或商业机会。
+
+---
+
+# 3. Artifact Gate
+
+V3.1 使用：
+
+`../../exercises/secret-life/L01-AI时代我的价值清算表-v3.1.md`
+
+课堂 Live Core 冻结为 `10—12min`，只填：
+
+```text
+A 1项正在变便宜的能力
+B 1项更值得训练的非平均价值
+C 1个至少一年仍愿意验证的人群/问题
+D 1次要变成下一次输入的输出
+E 1句 Value Candidate
+```
+
+完整清算进入 24h Extension。
+
+---
+
+# 4. 真人试讲必须实测
+
+1. `能→贵→值→我` 即时闭卷重建率；
+2. “AI=人整体贬值”误解是否清零；
+3. `机会 ≠ 秘密` 真人误解率；
+4. Live Core 真实中位完成时间；
+5. Live Core L3 完成率；
+6. Value Candidate 是否使命化；
+7. 第一自发下一问是否指向 L02；
+8. 课程真实时间是否≤90min；
+9. 真实 24h Recall；
+10. 与现役 V2 的真人 A/B。
+
+---
+
+# 5. 关键证据入口
+
+- 初轮：`RESULT-v1.md`
+- Patch：`PATCH-CANDIDATES.md`
+- Human Gate：`HUMAN-GATE.md`
+- Frozen Snapshot：`V3.1-SNAPSHOT.md`
+- Regression：`V3.1-REGRESSION-SESSIONS.md`
+- Recall Proxy：`V3.1-CONTEXT-ISOLATED-RECALL-PROXY.md`
+- Final Desktop Result：`RESULT-v2-V3.1.md`
+
+---
+
+# 6. 状态机
+
+```text
+V3 Desktop
+→ REVISE_BEFORE_LIVE
+→ Human Patch Gate APPROVED
+→ V3.1 Frozen Snapshot
+→ Regression PASS
+→ Recall Proxy PASS
+→ LIVE_TRIAL_READY
+→ 真人试讲
+→ LIVE_EVIDENCE_AVAILABLE
+→ 真实24h Recall
+→ V2/V3.1 Human A/B Review
+→ Promotion Decision
+```
+
+当前停在：
+
+> **LIVE_TRIAL_READY / READY_NOT_RUN**
