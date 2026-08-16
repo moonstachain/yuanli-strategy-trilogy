@@ -3,14 +3,47 @@
 ```yaml
 trial_id: YL-L01-V3-TRIAL-08
 candidate_id: YL-TRILOGY-GENERAL-v2-L01-V3-CANDIDATE
-status: READY_NOT_RUN
+status: REVISE_BEFORE_LIVE
 trial_type:
   - desktop
   - live
   - 24h_recall
 promotion_authority: human
 canon_effect: none
+desktop_trial: EVIDENCE_AVAILABLE_REVISE
+context_isolated_recall_proxy: COMPLETE
+real_24h_recall: NOT_RUN
+live_trial: NOT_READY_PATCH_REQUIRED
+promotion: NOT_AUTHORIZED
 ```
+
+## 0. 本轮执行结果｜2026-08-16
+
+已完成：
+
+- `ROUND-1-PERSONA-SESSIONS.md`：P01/P02/P03；
+- `ROUND-2-RED-TEAM.md`：P04/P05；
+- `CONTEXT-ISOLATED-RECALL-PROXY.md`：P01-P06；
+- `AB-COMPARISON-V2-V3.md`：V2 vs V3 方向性 Desktop A/B；
+- `PATCH-CANDIDATES.md`：1 个 P0、4 个 P1/P1 blocker、1 个 P2；
+- `RESULT-v1.md`：Live Gate 总裁决。
+
+总裁决：
+
+> **V3 的理论发动机已经赢，但当前课程工程仍未达到真人试讲门槛。**
+
+当前必须修复：
+
+1. P02 的“秘密 = 商业机会”关键漂移；
+2. Artifact 无独立课内时间槽、预计 15—19min，超过既有 L01 ≤13min Desktop Budget；
+3. L02 Handoff 被 L03/L05 竞争；
+4. 三本书 + 稀缺阶梯造成部分 Persona 高负荷。
+
+下一合法动作：
+
+> **Human Patch Gate → V3.1 minimal patch → regression → 再裁决是否 LIVE_TRIAL_READY。**
+
+---
 
 ## 1. 目的
 
@@ -130,15 +163,17 @@ PASS：理解为三种外部理论母根/思想实验，帮助解释时代变化
 
 优先看机制重建，不要求逐字。
 
+治理边界：Desktop 阶段只能执行 Context-Isolated Recall Proxy，不得冒充真实 24h Recall。
+
 ---
 
 # 6. A/B 对照
 
-如条件允许，V2 与 V3 至少比较：
+V2 与 V3 至少比较：
 
 ```text
 即时记忆
-24h Recall
+Recall Proxy / 后续真实24h Recall
 秘密误解率
 工具完成率
 L02 追课欲
@@ -148,6 +183,15 @@ L02 追课欲
 
 V3 不因“理论更深”自动胜出。
 
+本轮方向性结论：
+
+```yaml
+winner_theory_engine: V3
+winner_current_live_readiness: V2
+v3_should_be_abandoned: false
+v3_should_replace_v2_now: false
+```
+
 ---
 
 # 7. Promotion Gate
@@ -156,11 +200,16 @@ V3 不因“理论更深”自动胜出。
 READY_NOT_RUN
 ↓ Desktop Trial
 DESKTOP_EVIDENCE_AVAILABLE
+↓ 当前裁决：REVISE_BEFORE_LIVE
+↓ Human Patch Gate
+V3.1 PATCHED SNAPSHOT
+↓ Regression
+DESKTOP_PASS_SIMULATED
 ↓ Human Review
 LIVE_READY
 ↓ Live Trial
 LIVE_EVIDENCE_AVAILABLE
-↓ 24h Recall
+↓ Real 24h Recall
 PROMOTION_REVIEW
 ↓ Human Ruling
 PROMOTED / REVISE / REJECT
@@ -169,8 +218,9 @@ PROMOTED / REVISE / REJECT
 当前：
 
 ```yaml
-desktop_trial: NOT_RUN
-live_trial: NOT_RUN
-24h_recall: NOT_RUN
+desktop_trial: EVIDENCE_AVAILABLE_REVISE
+context_isolated_recall_proxy: COMPLETE_WITH_ONE_CRITICAL_DRIFT
+live_trial: NOT_READY_PATCH_REQUIRED
+real_24h_recall: NOT_RUN
 promotion: NOT_AUTHORIZED
 ```
