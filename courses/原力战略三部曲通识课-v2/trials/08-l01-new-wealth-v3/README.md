@@ -15,6 +15,7 @@ context_isolated_recall_proxy: COMPLETE
 real_24h_recall: NOT_RUN
 live_trial: NOT_READY_PATCH_REQUIRED
 promotion: NOT_AUTHORIZED
+patch_gate: AWAITING_HUMAN_RULING
 ```
 
 ## 0. 本轮执行结果｜2026-08-16
@@ -26,7 +27,8 @@ promotion: NOT_AUTHORIZED
 - `CONTEXT-ISOLATED-RECALL-PROXY.md`：P01-P06；
 - `AB-COMPARISON-V2-V3.md`：V2 vs V3 方向性 Desktop A/B；
 - `PATCH-CANDIDATES.md`：1 个 P0、4 个 P1/P1 blocker、1 个 P2；
-- `RESULT-v1.md`：Live Gate 总裁决。
+- `RESULT-v1.md`：Live Gate 总裁决；
+- `HUMAN-GATE.md`：Patch Gate 等待人工裁决。
 
 总裁决：
 
@@ -223,4 +225,5 @@ context_isolated_recall_proxy: COMPLETE_WITH_ONE_CRITICAL_DRIFT
 live_trial: NOT_READY_PATCH_REQUIRED
 real_24h_recall: NOT_RUN
 promotion: NOT_AUTHORIZED
+patch_gate: AWAITING_HUMAN_RULING
 ```
