@@ -1,0 +1,92 @@
+version: "0.1"
+trial_id: YL-TRILOGY-GENERAL-v2-TRIAL-10-NARRATIVE-SHADOW
+status: TEMPLATE_ONLY_NOT_RUN
+real_learner_evidence: false
+
+learner_record_template:
+  learner_id:
+  sample_profile:
+    novice_to_trilogy: true
+    founder_dependency_level:
+    product_revenue_state:
+    inheritance_direction_problem:
+  value_thread_id:
+
+  T0:
+    status: NOT_RUN
+    lessons:
+      L01:
+        M0_quote:
+        rupture_quote:
+        focus_question:
+        construction_mode: self_generated | prompted_generation | teacher_given_only | NOT_RUN
+        discrimination_p0:
+        artifact_evidence:
+        eight_states:
+          awaken: X
+          rupture: X
+          focus: X
+          construct: X
+          discriminate: X
+          generate: X
+          transfer: X
+          evolve: X
+        M1_quote:
+      L02: {}
+      L03: {}
+      L04: {}
+      L05: {}
+    five_act_recall_immediate:
+    course_trial_09_pointer:
+
+  T24h:
+    status: NOT_RUN
+    no_materials: required
+    Q1_one_changed_judgment:
+    Q2_five_act_recall:
+    Q3_explain_value_lifecycle:
+    terminology_only_failure: false
+    retrieval_verdict: NOT_RUN
+
+  T7d:
+    status: NOT_RUN
+    unseen_case_id:
+    unseen_case_text_or_pointer:
+    learner_reasoning:
+    deep_structure_hit:
+    keyword_matching_only:
+    boundary_explanation:
+    transfer_verdict: NOT_RUN
+
+  T30d:
+    status: NOT_RUN
+    real_decision:
+    real_action:
+    outcome:
+    counterevidence:
+    model_revision_M2:
+    evidence_pointer:
+    reality_use_verdict: NOT_RUN
+
+  seven_evidence:
+    hit: NOT_RUN
+    discriminate: NOT_RUN
+    retrieve: NOT_RUN
+    self_map: NOT_RUN
+    use: NOT_RUN
+    transfer: NOT_RUN
+    writeback: NOT_RUN
+
+  contamination:
+    observer_prompted_answer: false
+    answer_leaked_before_recall: false
+    sample_replaced_post_result: false
+    notes:
+
+settlement_guardrails:
+  missing_real_learner: FAIL_CLOSED
+  T24h_not_run_cannot_claim_retrieval: true
+  T7d_not_run_cannot_claim_transfer: true
+  T30d_not_run_cannot_claim_reality_use: true
+  behavior_signal_not_equal_causal_proof: true
+  desktop_or_ai_simulation_not_live_evidence: true
