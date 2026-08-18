@@ -2,22 +2,37 @@
 
 ```yaml
 trial_id: YL-TRILOGY-GENERAL-v2-TRIAL-09-G3-LIVE
-status: WAITING_FOR_REAL_SESSION
-recall_window: approximately_24h_after_each_participant_session_end
+status: WAITING_UNTIL_RECALL_TARGET
+session_end_at_approx: 2026-08-18T12:00:00+08:00
+recall_target_at_approx: 2026-08-19T12:00:00+08:00
+participant_scope:
+  - P01
+  - P02
+  - P03
+  - P04
+  - P05
 pre_answering_forbidden: true
 ```
 
-> 24h Recall 必须由真人在不看资料、不补标准答案的情况下完成。AI/讲师可记录，但不得提示。
+> 24h Recall 必须由真人在不看资料、不补标准答案的情况下完成。AI/讲师可记录，但不得提示。当前目标时间按讲师补记的约 12:00 课程结束时间冻结为次日约 12:00。
 
-## P__ Recall
+## P01–P05 Recall
+
+每位学员单独执行同一套冻结问题；不得五人集体互相提示后再作答。
+
+```yaml
+session_end_at_approx: 2026-08-18T12:00:00+08:00
+recall_target_at_approx: 2026-08-19T12:00:00+08:00
+materials_visible: false
+teacher_prompt_beyond_frozen_questions: false
+```
+
+对每位 P01–P05 分别记录：
 
 ```yaml
 pid: P__
-session_end_at: NOT_OBSERVED
 recall_started_at: NOT_OBSERVED
 elapsed_hours: NOT_OBSERVED
-materials_visible: false
-teacher_prompt_beyond_frozen_questions: false
 ```
 
 ### Q1｜五幕
@@ -83,6 +98,8 @@ behavior_change_evidence_ref: NOT_OBSERVED
 
 ## Recall integrity
 
+每位学员分别记录：
+
 ```yaml
 answer_leakage: NOT_OBSERVED
 teacher_rescue: NOT_OBSERVED
@@ -101,4 +118,14 @@ INVALID
 NOT_RUN
 ```
 
-当前：`NOT_RUN`。
+当前：
+
+```yaml
+P01: NOT_RUN
+P02: NOT_RUN
+P03: NOT_RUN
+P04: NOT_RUN
+P05: NOT_RUN
+```
+
+在 2026-08-19 约 12:00 前，不因即时认可度高而预填任何 Recall 结果。
