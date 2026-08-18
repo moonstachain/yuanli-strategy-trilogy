@@ -1,38 +1,55 @@
-# G3 Trial 09｜24h Recall Ledger v1
+# G3 Trial 09｜24h Recall Ledger v1.1
 
 ```yaml
 trial_id: YL-TRILOGY-GENERAL-v2-TRIAL-09-G3-LIVE
-status: WAITING_UNTIL_RECALL_TARGET
+status: L2_FORMAL_VALIDATION_TOOL_NOT_REQUIRED_FOR_CURRENT_CLAIM
 session_end_at_approx: 2026-08-18T12:00:00+08:00
-recall_target_at_approx: 2026-08-19T12:00:00+08:00
-participant_scope:
-  - P01
-  - P02
-  - P03
-  - P04
-  - P05
+original_recall_target_at_approx: 2026-08-19T12:00:00+08:00
+mandatory_for_all_participants: false
 pre_answering_forbidden: true
 ```
 
-> 24h Recall 必须由真人在不看资料、不补标准答案的情况下完成。AI/讲师可记录，但不得提示。当前目标时间按讲师补记的约 12:00 课程结束时间冻结为次日约 12:00。
+> 本 Ledger 保留用于 L2 正式验证，但不再要求 2026-08-19 12:00 对 P01–P05 全员执行固定 Recall。
+>
+> 当前 Trial 的最小声明只是：真实课堂已发生、出现初步正向接受信号、值得继续真实使用。这个声明由 L0 自然证据即可支持。
 
-## P01–P05 Recall
+## 什么时候使用本 Ledger
 
-每位学员单独执行同一套冻结问题；不得五人集体互相提示后再作答。
+只有准备进行以下高强度声明时才启用：
 
-```yaml
-session_end_at_approx: 2026-08-18T12:00:00+08:00
-recall_target_at_approx: 2026-08-19T12:00:00+08:00
-materials_visible: false
-teacher_prompt_beyond_frozen_questions: false
-```
+- Canon Promotion；
+- 对外宣称课程效果；
+- 大规模复制前的正式验证；
+- 需要证明稳定认知留存；
+- 需要证明真实 Behavior Change / Task2 Reuse。
 
-对每位 P01–P05 分别记录：
+## L1 轻验证优先
+
+如果只是想知道“学员第二天还剩下什么”，优先抽样 1–2 名自然可接触学员，仅问：
+
+> **昨天那堂课，到现在你脑子里还剩下什么？**
+
+必要时再问：
+
+> **有没有哪个真实判断因为这堂课变了？**
+
+AI / OS 负责把自然回答结构化；不要求讲师手工填完整 Ledger。
+
+---
+
+# L2 Formal Recall Template
+
+只有 L2 被显式触发时，才使用以下模板。
+
+## P__ Recall
 
 ```yaml
 pid: P__
+session_end_at: NOT_OBSERVED
 recall_started_at: NOT_OBSERVED
 elapsed_hours: NOT_OBSERVED
+materials_visible: false
+teacher_prompt_beyond_frozen_questions: false
 ```
 
 ### Q1｜五幕
@@ -44,8 +61,6 @@ elapsed_hours: NOT_OBSERVED
 ```yaml
 five_act_recall: NOT_OBSERVED
 ```
-
-目标概念：`重估 → 入世 → 留存 → 继承 → 定向`。
 
 ### Q2｜价值生命史
 
@@ -85,9 +100,9 @@ Decision / Action change：______
 state_transition_real_example: NOT_OBSERVED
 ```
 
-### Q5｜过去24h真实变化
+### Q5｜真实变化
 
-问题：过去24小时，哪一个真实判断、拒绝、保存或行动已经变化？
+问题：最近哪一个真实判断、拒绝、保存或行动因为这套课程发生变化？
 
 原话摘要：______
 
@@ -97,8 +112,6 @@ behavior_change_evidence_ref: NOT_OBSERVED
 ```
 
 ## Recall integrity
-
-每位学员分别记录：
 
 ```yaml
 answer_leakage: NOT_OBSERVED
@@ -118,14 +131,4 @@ INVALID
 NOT_RUN
 ```
 
-当前：
-
-```yaml
-P01: NOT_RUN
-P02: NOT_RUN
-P03: NOT_RUN
-P04: NOT_RUN
-P05: NOT_RUN
-```
-
-在 2026-08-19 约 12:00 前，不因即时认可度高而预填任何 Recall 结果。
+默认当前：`NOT_RUN`，这不是失败，而是 **L2 未被当前声明触发**。
