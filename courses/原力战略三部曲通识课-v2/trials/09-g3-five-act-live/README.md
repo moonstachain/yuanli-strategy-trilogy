@@ -2,46 +2,25 @@
 
 ```yaml
 trial_id: YL-TRILOGY-GENERAL-v2-TRIAL-09-G3-LIVE
-status: LIVE_COMPLETED_WAITING_24H_RECALL
+status: L0_REALITY_SIGNAL_POSITIVE
 sample_target: 3_to_8
 reported_participant_count: 5
 reported_total_duration_min: 120
 reported_approx_end: 2026-08-18T12:00:00+08:00
-recall_target_at_approx: 2026-08-19T12:00:00+08:00
 subject: G3_five_act_live_validation
 requires_real_learners: true
+evidence_protocol: progressive_evidence
+human_friction_policy: minimize
 promotion_effect: none_until_human_gate
 ```
 
-> 这是 G3 之后唯一真人入口。它不能被 Desktop、AI 模拟、讲师自评替代。2026-08-18 已发生一次 5 人真人小班授课，约 120 分钟，讲师报告现场对新概念整体反馈积极；当前进入约 24h Recall 等待态。
+> 2026-08-18 已发生一次 5 人真人小班授课，约 120 分钟，讲师报告现场对新概念整体反馈积极。真人反馈同时暴露：原先逐人 Recall / Ledger / Behavior Change 的强制流程过度增加人类摩擦，不适合作为长期课程 OS 的默认前台。
+>
+> 因此当前采用 `HUMAN-FRIENDLY-PROTOCOL-v1.md`：**L0 自然证据为默认，L1 轻验证按需抽样，L2 正式验证只用于高声明 / Promotion。**
 
 ---
 
-# 1. 样本
-
-本轮真人样本数量门已满足：5 人。
-
-匿名编号：`P01–P05`。
-
-目标均为真实小白专家型创业者；不得把即时认可度当成 Recall / Behavior Change / Promotion 证据。
-
----
-
-# 2. 五幕验收主线
-
-24h 五幕记忆目标：
-
-> **重估 → 入世 → 留存 → 继承 → 定向**
-
-传播层仍可使用“秘密 × 一万倍”，但不再把旧“诞生→入世→寻主→得生→定向”作为默认验收答案。
-
-L04 的“继承”第一性解释：
-
-> **继承不是把过去答案复制下去，而是让事业在时间中既保持连续性，又能依据现实持续更新。**
-
----
-
-# 3. 当前真实证据
+# 1. 本轮已经知道什么
 
 ```yaml
 real_session_occurred: true
@@ -52,46 +31,33 @@ immediate_reaction_signal: POSITIVE
 immediate_reaction_source: facilitator_user_attestation
 ```
 
-当前只支持：真人课堂发生、样本数量满足、约 120 分钟真实交付、即时正向接受信号。
-
-不得据此宣称：
+允许的当前结论：
 
 ```text
-24h Recall PASS
-Concept Boundary PASS
-Behavior Change Proven
-Reusable
-Compounding
-Promotion
+REAL_SESSION_OCCURRED
+L0_COMPLETE
+INITIAL_REALITY_SIGNAL_POSITIVE
+WORTH_CONTINUING_IN_LIVE_USE
+```
+
+不能据此宣称：
+
+```text
+CAUSAL_EFFECT_PROVEN
+REUSE_PROVEN
+COMPOUNDING_PROVEN
+CANON_PROMOTION
 ```
 
 ---
 
-# 4. 24h Recall｜下一动作
+# 2. 五幕与 L04 主张继续作为观察对象
 
-目标时间：
+课程主线保持：
 
-```text
-2026-08-19 约 12:00（UTC+8）
-```
+> **重估 → 入世 → 留存 → 继承 → 定向**
 
-P01–P05 应分别独立完成，不看资料、不互相提示、不由讲师补答案。
-
-冻结问题：
-
-1. 五节课如果只剩五个动作，是什么？
-2. 一个独特价值怎样从“我看见”走到“值得长期复利”？
-3. 为什么一家经营十年的公司，可能并没有拥有十年的复利？
-4. 举一个自己的例子：过去一次真实经历，下一次应该因此怎样不同？
-5. 过去 24 小时，哪一个真实判断、拒绝、保存或行动已经变化？
-
-详见：`24H-RECALL-LEDGER-v1.md`。
-
----
-
-# 5. L04 专项边界
-
-必须继续验证：
+L04 继续观察：
 
 ```text
 时间 ≠ 自动复利
@@ -105,69 +71,127 @@ Retrieval ≠ Reuse
 State_t → Reality → Learning → State_t+1
 ```
 
-`守 / 知 / 择 / 变` 仅为教学压缩，不是新正典名称。
+但不要求每位学员逐项填表证明。
 
 ---
 
-# 6. Behavior Change
+# 3. L0｜自然证据｜默认
 
-即时“认可”“觉得有启发”不算行为变化。
+系统优先从真实教学本身获得证据：
 
-只记录真实：
+- 课堂自然反应；
+- 学员自然提问 / 复述；
+- 课后聊天；
+- 作业；
+- 后续主动引用；
+- 真实决策 / 行动中的自然使用。
 
-```text
-DEC_CHANGE
-REJECT_CHANGE
-SAVE_CHANGE
-ACT_CHANGE
-PRELOAD_CHANGE
-```
+讲师不需要额外给每位学员编号后完成完整五问。
 
-详见：`BEHAVIOR-CHANGE-LEDGER-v1.md`。
+当前 2026-08-18 这场课已经完成 L0。
 
 ---
 
-# 7. Evidence Settlement Gate
+# 4. L1｜轻验证｜可选抽样
 
-只有 Live + 24h Recall + Behavior Change 真实证据完成后，才允许进入 Evidence Settlement。
+如果后续自然接触到 1–2 名学员，只需自然问：
 
-机器结论只允许：
+> **“昨天那堂课，到今天你脑子里还剩下什么？”**
+
+如有必要再问：
+
+> **“有没有哪个真实判断因为这堂课变了？”**
+
+AI / OS 负责把自然回答编译成认知留存 / 迁移候选；不要求人类维护结构化 Ledger。
+
+没有自然机会就跳过，不制造额外行政任务。
+
+---
+
+# 5. L2｜正式验证｜仅在高声明时
+
+以下场景才启用原完整 Ledgers：
+
+- 准备 Canon Promotion；
+- 准备对外宣称课程有效；
+- 大规模复制前；
+- 需要证明真实 Behavior Change；
+- 需要证明 Task2 Reuse / Compounding。
+
+此时才进入：
 
 ```text
-PASS_FOR_FRESH_HUMAN_GATE
-REVISE_AND_RETEST_RECOMMENDED
-INCOMPLETE_EVIDENCE
-FAIL_SAFE
+24H-RECALL-LEDGER
+→ BEHAVIOR-CHANGE-LEDGER
+→ EVIDENCE-SETTLEMENT
+→ Fresh Human Gate
 ```
 
-最终 Human Ruling 只允许：
+这些文件继续保留，但不再是每次真人课的默认必填项。
+
+---
+
+# 6. Human Effort Budget
+
+任何新增取证动作先问：
+
+> **它会不会显著改变我们下一步的决策？**
+
+若不会：
+
+> **不增加人类步骤。**
+
+默认研发方式：
 
 ```text
-APPROVE_PROMOTION
-或
-REVISE_AND_RETEST
+Continuous Passive Evidence
++
+Occasional Active Validation
 ```
 
-在此之前：
+---
+
+# 7. 下一状态
+
+当前不再等待强制 `2026-08-19 12:00 P01–P05 全员 Recall`。
+
+下一步是：
+
+```text
+继续真实授课 / 使用
+→ 持续积累 L0 自然证据
+→ 有自然机会时抽样 L1
+→ 当声明升级时再进入 L2
+→ Fresh Human Gate
+```
+
+只有出现以下情况才需要主动升级：
+
+- 连续多场一致正 / 负信号；
+- 1–2 条强认知迁移证据；
+- 真实行为变化；
+- 主动复用；
+- 准备 Promotion；
+- P0 概念冲突。
+
+---
+
+# 8. 治理边界
 
 - 不 merge PR #18；
-- 不 merge/promotion Soul #528；
-- 不宣称 reusable / compounding；
-- 不新增一级理论来规避真实失败。
+- 不 merge / promotion Soul #528；
+- 不因为“人类友好”降低 Canon / Reuse / Compounding 的证明门槛；
+- 不把即时认可等同 Outcome / Reuse；
+- 不新增一级理论来逃避真实失败。
 
----
-
-# 8. 当前状态
+当前状态：
 
 ```yaml
 G3_CONVERGENCE: COMPLETE
-L03_DESKTOP_REGRESSION: PASS_WITH_OVERLAY
 L04_TIME_ENTROPY_PROJECTION: ACCEPTED_FOR_LIVE_TRIAL
 G3_LIVE_TRIAL: LIVE_COMPLETED
-participant_count: 5
-immediate_reaction_signal: POSITIVE
-RECALL_TARGET: 2026-08-19T12:00:00+08:00
-24H_RECALL: WAITING
-BEHAVIOR_CHANGE_EVIDENCE: WAITING
-PROMOTION: BLOCKED
+L0_NATURAL_EVIDENCE: COMPLETE_POSITIVE
+L1_LIGHT_VALIDATION: OPTIONAL_WHEN_NATURAL
+L2_FORMAL_VALIDATION: NOT_REQUIRED_FOR_CURRENT_CLAIM
+PROMOTION: BLOCKED_PENDING_FRESH_HUMAN_GATE
 ```
