@@ -3,7 +3,7 @@
 ```yaml
 trial_id: YL-TRILOGY-GENERAL-v2-TRIAL-09-G3-LIVE
 issue: moonstachain/yuanli-strategy-trilogy#19
-status: LIVE_COMPLETED_WAITING_FOR_24H_RECALL_WINDOW
+status: LIVE_COMPLETED_WAITING_FOR_24H_RECALL
 participant_target: 3_to_8
 privacy_mode: anonymized_only
 real_session_started: true
@@ -19,8 +19,8 @@ report_source: facilitator_user_attestation
 session_id: 20260818-small-class-v1
 session_date: 2026-08-18
 scheduled_start: NOT_OBSERVED
-actual_start: NOT_OBSERVED
-actual_end: NOT_OBSERVED
+reported_approx_start: 2026-08-18T10:00:00+08:00
+reported_approx_end: 2026-08-18T12:00:00+08:00
 reported_total_duration_min: 120
 format: small_class
 facilitator: RAY
@@ -34,6 +34,7 @@ protocol_frozen: true
 - 真人小班授课已发生；
 - 参与人数：5 人；
 - 课程总时长：约 120 分钟；
+- 讲师补记：课程约于 12:00 结束，因此起始时间可按约 10:00 作为运行记录；
 - 讲师报告：学员对本轮新概念整体反馈积极、认可度高。
 
 证据边界：
@@ -46,7 +47,11 @@ positive_reaction ≠ behavior_change
 positive_reaction ≠ reusable / compounding
 ```
 
-由于尚未记录准确或近似 `actual_end`，24h Recall 的时间窗暂不能精确冻结。
+24h Recall 运行目标已冻结为：
+
+```yaml
+recall_target_at_approx: 2026-08-19T12:00:00+08:00
+```
 
 ## 1. Participant Registry
 
@@ -54,11 +59,11 @@ positive_reaction ≠ reusable / compounding
 
 | pid | eligibility_confirmed | attended | full_session | 24h_recall_due | notes |
 |---|---|---|---|---|---|
-| P01 | NOT_OBSERVED | YES | NOT_OBSERVED | PENDING_END_TIME | 真人参与 |
-| P02 | NOT_OBSERVED | YES | NOT_OBSERVED | PENDING_END_TIME | 真人参与 |
-| P03 | NOT_OBSERVED | YES | NOT_OBSERVED | PENDING_END_TIME | 真人参与 |
-| P04 | NOT_OBSERVED | YES | NOT_OBSERVED | PENDING_END_TIME | 真人参与 |
-| P05 | NOT_OBSERVED | YES | NOT_OBSERVED | PENDING_END_TIME | 真人参与 |
+| P01 | NOT_OBSERVED | YES | NOT_OBSERVED | 2026-08-19 ~12:00 +08:00 | 真人参与 |
+| P02 | NOT_OBSERVED | YES | NOT_OBSERVED | 2026-08-19 ~12:00 +08:00 | 真人参与 |
+| P03 | NOT_OBSERVED | YES | NOT_OBSERVED | 2026-08-19 ~12:00 +08:00 | 真人参与 |
+| P04 | NOT_OBSERVED | YES | NOT_OBSERVED | 2026-08-19 ~12:00 +08:00 | 真人参与 |
+| P05 | NOT_OBSERVED | YES | NOT_OBSERVED | 2026-08-19 ~12:00 +08:00 | 真人参与 |
 | P06 | N/A | NO | N/A | N/A | 未使用 |
 | P07 | N/A | NO | N/A | N/A | 未使用 |
 | P08 | N/A | NO | N/A | N/A | 未使用 |
@@ -97,6 +102,8 @@ Session-level qualitative observation：
 ```yaml
 participant_count: 5
 reported_total_duration_min: 120
+reported_approx_end: 2026-08-18T12:00:00+08:00
+recall_target_at_approx: 2026-08-19T12:00:00+08:00
 immediate_reaction_signal: POSITIVE
 immediate_reaction_evidence_class: facilitator_user_attestation
 timing_pass_rate: NOT_OBSERVED
@@ -126,12 +133,8 @@ FAIL_SAFE
 
 ```yaml
 live_verdict: LIVE_COMPLETED_WAITING_24H_RECALL
-```
-
-但由于 `actual_end` 尚未记录：
-
-```yaml
-24h_recall_window_state: WAITING_FOR_END_TIME
+24h_recall_window_state: TARGET_FROZEN
+recall_target_at_approx: 2026-08-19T12:00:00+08:00
 ```
 
 不得在 24h Recall 和 Evidence Settlement 前宣称 PASS / reusable / compounding / promotion。
