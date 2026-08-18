@@ -1,121 +1,151 @@
-# G3 Trial 09｜真人执行 Runbook v1
+# G3 Trial 09｜真人执行 Runbook v1.1
 
 ```yaml
-status: READY_TO_RUN_WHEN_REAL_SESSION_EXISTS
+status: HUMAN_FRIENDLY_DEFAULT
 issue: moonstachain/yuanli-strategy-trilogy#19
 authorized_by: ACCEPT_ROUND2_FOR_TRILOGY_TRIAL
+evidence_protocol: progressive_evidence
 merge_effect: none
 promotion_effect: none
 ```
 
-## A. 开课前 48–2h
+> 默认纪律：**不要让讲师或学员为了“证明系统严谨”额外承担行政工作。**
+>
+> 后台仍保留严格 Evidence / Outcome / Reuse 边界；前台采用 L0 自然证据、L1 按需轻验证、L2 高声明正式验证。
 
-1. 确认 3–8 名真实小白专家型创业者；只给匿名编号 P01–P08。
-2. 不提前发完整定义、标准答案、PPT 全稿或练习参考答案。
-3. 冻结本次使用的 PR #18 head；记录到 `EXECUTION-LEDGER-v1.md`。
-4. 为每位学员准备同一个 `VALUE_THREAD_ID` 连续加工，不允许五课换五个对象。
-5. 确认 24h Recall 可在课程结束约 24h 后联系到参与者。
-6. 课程只使用已冻结材料；现场如发现 P0 问题，记录，不临时新增一级概念救场。
+## A. 默认真人运行｜L0
 
-## B. 现场
+正常授课即可。
 
-每课必须记录：
+系统只捕捉已经自然发生的信息：
+
+- 课堂是否真实发生；
+- 大概人数与时长；
+- 整体正 / 负反应；
+- 自然提问、复述、争议；
+- 课后自然反馈、作业、主动引用；
+- 后续真实判断 / 行动里自然出现的使用。
+
+不要求：
+
+- 每人编号后逐项填表；
+- 每课现场 closed-book 打分；
+- 所有人统一 24h Recall；
+- 讲师手工维护 ACT / OUT / LRN / REUSE Ledger。
+
+L0 可以支持：
 
 ```text
-actual timing
-→ one idea closed-book recall
-→ artifact completion
-→ VALUE_THREAD continuity
-→ concept confusion
-→ natural next-crisis question
+REAL_SESSION_OCCURRED
+INITIAL_ACCEPTANCE_SIGNAL
+WORTH_CONTINUING
 ```
 
-L03 额外看：
+不能支持：
 
-- 资产 ≠ 收入/结果/资源；
-- 原力 ≠ 技能/能量感；
+```text
+REUSE_PROVEN
+COMPOUNDING_PROVEN
+CANON_PROMOTION
+```
+
+## B. 按需轻验证｜L1
+
+只有当一个不确定性会影响下一步决策时，才抽样 1–2 名自然可接触学员。
+
+优先只问：
+
+> “昨天那堂课，到现在你脑子里还剩下什么？”
+
+必要时加一句：
+
+> “有没有哪个真实判断因为这堂课变了？”
+
+AI / OS 负责从自然回答中提炼：
+
+- 认知留存；
+- 概念边界；
+- 迁移候选；
+- 行为变化候选。
+
+人类不需要把答案再编码成 YAML。
+
+## C. 正式验证｜L2
+
+只有准备做高声明时才启用完整协议：
+
+- Canon Promotion；
+- 对外宣称效果；
+- 大规模复制；
+- 证明 Behavior Change；
+- 证明 Task2 Reuse / Compounding。
+
+这时才使用：
+
+```text
+24H-RECALL-LEDGER-v1.md
+BEHAVIOR-CHANGE-LEDGER-v1.md
+EVIDENCE-SETTLEMENT-TEMPLATE-v1.md
+```
+
+以及真实 Task2 / preload / actual use 证据。
+
+## D. Human Effort Budget
+
+新增任何取证步骤前先问：
+
+> **这一步会显著改变我们的下一项决策吗？**
+
+若不会：
+
+> **不增加这一步。**
+
+默认方式：
+
+```text
+Continuous Passive Evidence
++
+Occasional Active Validation
+```
+
+## E. L03 / L04 继续观察什么
+
+无需逐人打分，但自然反馈中重点注意：
+
+### L03
+
+- 资产 ≠ 收入 / 结果 / 资源；
+- 原力 ≠ 技能 / 能量感；
 - 世界验证 ≠ 已完成资产化；
-- “留下来”是否自然制造 L04 问题。
+- 留下来 ≠ 已经复利。
 
-L04 额外看：
+### L04
 
 - 时间 ≠ 自动复利；
-- 能否举出时间熵；
-- `Continuity × Adaptation`；
-- C1–C4 = Normative / Epistemic / Policy / Reality；
-- `Output ≠ Action ≠ Outcome ≠ Learning ≠ Reuse`；
-- `Retrieval ≠ Reuse`；
-- 能否完成真实 `State_t → State_t+1`。
+- Continuity × Adaptation；
+- C1–C4 不是四类新资产；
+- Output ≠ Action ≠ Outcome ≠ Learning ≠ Reuse；
+- Retrieval ≠ Reuse；
+- State Transition 是否能被学员迁移到自己的现实。
 
-## C. 课程结束 0–1h
+## F. 什么时候主动升级
 
-1. 立刻补齐匿名 Live Ledger。
-2. 不给 24h Recall 提前发答案。
-3. 为每位完成全程的学员记录真实 `session_end_at` 和 `24h_recall_due`。
-4. 立即状态只能是：
+出现任一情况，才升级验证强度：
 
-```text
-LIVE_COMPLETED_WAITING_24H_RECALL
-```
+- 连续多场出现相同正向 / 负向信号；
+- 出现 P0 概念冲突；
+- 准备正式发布 / Promotion；
+- 出现真实行为变化候选；
+- 出现主动复用候选；
+- 证据相互冲突，需要裁决。
 
-不得写 PASS / reusable / compounding。
+## G. Fail safe
 
-## D. 约 24h
+以下边界不因“人类友好”而放松：
 
-逐人按 `24H-RECALL-LEDGER-v1.md` 原问题执行：
-
-1. 五幕；
-2. 独特价值的完整生命史；
-3. 为什么经营十年不等于十年复利；
-4. 自己的一条 Reality → Learning → next Task change；
-5. 过去24h真实行为变化。
-
-不得提示关键词。
-
-## E. Behavior Change
-
-把“有启发”排除，只记录：
-
-```text
-DEC_CHANGE
-REJECT_CHANGE
-SAVE_CHANGE
-ACT_CHANGE
-PRELOAD_CHANGE
-NO_CHANGE
-```
-
-如果声称 Reuse，必须满足：真实独立 Task2、决策前 preload、actual use、DEC/WPK/ACT 至少一项真实改变。
-
-## F. Evidence Settlement
-
-填 `EVIDENCE-SETTLEMENT-TEMPLATE-v1.md`。
-
-机器结算只允许：
-
-```text
-PASS_FOR_FRESH_HUMAN_GATE
-REVISE_AND_RETEST_RECOMMENDED
-INCOMPLETE_EVIDENCE
-FAIL_SAFE
-```
-
-随后停止，等待 Fresh Human Gate：
-
-```text
-APPROVE_PROMOTION
-or
-REVISE_AND_RETEST
-```
-
-## G. Fail closed
-
-出现以下任一项，停止 Promotion：
-
-- 少于 3 名真实合格参与者；
-- 用 AI/Desktop 补真人数据；
-- 24h Recall 被提前泄题；
-- P0 概念混淆未清零；
-- C1-C4 被理解成四类新资产；
-- Retrieval 被当作 Reuse；
-- Evidence 不足却试图 merge/promotion。
+- 不用 AI / Desktop 假装真人证据；
+- 不把即时认可当 Reuse；
+- 不把 Retrieval 当 Reuse；
+- 不把自然反馈直接升级为 Compounding；
+- Evidence 不足时不 merge / promotion；
+- 高风险 / Canon 变更仍必须 Human Gate。
