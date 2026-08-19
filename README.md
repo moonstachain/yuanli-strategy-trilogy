@@ -7,11 +7,18 @@
 
 ## 0. 仓库定位
 
-本仓不再作为原力战略三部曲的最高 SSOT。  
-最高正典、龙骨、模块、术语、接口、任务治理与递归回写，统一归属：
+本仓不是原力战略三部曲的正典法权仓。最高正典、龙骨、模块、术语、接口、任务治理与递归回写，统一归属：
 
 ```text
 yuanli-strategy-soul
+```
+
+ARCH-1 统一口径：
+
+```text
+soul = CANON_AUTHORITY
+trilogy = PROJECTION / 内容工程工作仓
+legacy playbook / startup-map / greenbook = HISTORICAL_SOURCE_ONLY
 ```
 
 本仓的新定位是：
@@ -92,11 +99,13 @@ yuanli-strategy-soul Issue #206
 
 ## 3. 各书当前状态
 
-| 书 | 本仓进度 | 已成稿样章 | 对应 soul 模块 | 完整正典源仓 |
+| 书 | 本仓进度 | 已成稿样章 | 对应 soul 模块 | 历史内容源 / Legacy Source |
 |---|---|---|---|---|
 | **① 原力资产**（向内·人） | 骨架 + 1/6 章 | [第一章·觉察](books/01-原力资产/第一章-觉察.md) ✅ | A1-A4 | [strategy-playbook](https://github.com/moonstachain/yuanli-strategy-playbook) |
 | **② 原力创业**（向外·事） | 骨架 · 0 章 | — | B1-B4 | [startup-map-site](https://github.com/moonstachain/yuanli-startup-map-site)、[startup-map-book](https://github.com/moonstachain/yuanli-startup-map-book) |
 | **③ 原力 OS**（向上·法） | 骨架 + 教学样章 | [最小闭环](books/03-原力OS/最小闭环.md) ✅ | C1-C4 | [os-greenbook](https://github.com/moonstachain/yuanli-os-greenbook) |
+
+> 上表只表示历史内容血缘，不赋予这些 legacy 仓当前正典法权。与 Soul 冲突时，一律以 Soul 为准。
 
 ---
 
@@ -214,14 +223,23 @@ cd .. && python3 review/build_review.py && python3 build_portal.py && python3 ap
 
 ## 8. 正典与出处
 
-各书既有正典正文仍保留在源仓：
+当前正典法权唯一归属 `moonstachain/yuanli-strategy-soul`。
+
+以下仓仅保留历史正文、旧版方法材料与内容血缘，用于溯源、蒸馏和必要的历史比较；它们不是当前 Canon Authority：
 
 - **原力战略·白皮书 + 绿皮书六册** → [moonstachain/yuanli-strategy-playbook](https://github.com/moonstachain/yuanli-strategy-playbook)
 - **原力创业·通关地图六卷 + 交互网站** → [moonstachain/yuanli-startup-map-site](https://github.com/moonstachain/yuanli-startup-map-site)
 - **借势合力·通关地图绿皮书 v1.0** → [moonstachain/yuanli-startup-map-book](https://github.com/moonstachain/yuanli-startup-map-book)
 - **原力OS·绿皮书** → [moonstachain/yuanli-os-greenbook](https://github.com/moonstachain/yuanli-os-greenbook)
 
-白皮书是**公理 umbrella**；`soul` 是当前统一的正典根仓；本仓是三部曲内容工程外显仓。
+若历史材料与 Soul 冲突：
+
+```text
+Soul wins.
+Legacy remains historical evidence, not active law.
+```
+
+本仓是三部曲内容工程外显仓。
 
 ---
 
@@ -254,9 +272,9 @@ SOP / 链路
 
 ## 10. 当前状态
 
-- `v0.4`：本仓正式转型为三部曲内容工程工作仓。
+- `v0.4 + ARCH-1 candidate cleanup`：本仓为三部曲内容工程工作仓，不拥有正典法权。
 - 已有：概念地图、总纲、四级提纲、三本书骨架、样章、构建脚本、复盘看板，以及通识课 v1 的 A1/B1/C4 跨模块试跑。
-- 课程入口：`courses/原力战略三部曲通识课-v1/`；其余九模块等待用户验收三次试跑后批量生成。
+- 课程入口：`courses/原力战略三部曲通识课-v1/`。
 - 已回写：A1-C4 模块、术语、接口、模板、源文件映射到 `yuanli-strategy-soul`。
 - 下一步：按 `soul/templates/chapter-template.md` 继续孵化章节正文与课程内容，并持续回写。
 
