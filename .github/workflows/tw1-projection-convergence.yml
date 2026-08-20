@@ -45,11 +45,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          git config core.quotePath false
           git fetch origin "${{ github.base_ref }}" --depth=1
           changed="$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")"
           printf '%s\n' "$changed"
 
-          allowed='^(README\.md|portal-map\.json|trilogy/_atlas/worldview-v1\.json|trilogy/_atlas/master-outline-worldview-overlay-v1\.json|trilogy/TW1-LEGACY-EXPLANATION-SETTLEMENT-v0\.1\.md|trilogy/原力战略三世界-总图\.html|scripts/tw1/|project/tw1/|\.github/workflows/tw1-projection-convergence\.yml)$'
+          allowed='^(README\.md|portal-map\.json|trilogy/_atlas/worldview-v1\.json|trilogy/_atlas/master-outline-worldview-overlay-v1\.json|trilogy/TW1-LEGACY-EXPLANATION-SETTLEMENT-v0\.1\.md|trilogy/原力战略三世界-总图\.html|scripts/tw1/.*|project/tw1/.*|\.github/workflows/tw1-projection-convergence\.yml)$'
           unexpected="$(printf '%s\n' "$changed" | grep -Ev "$allowed" || true)"
           if [ -n "$unexpected" ]; then
             echo 'TW1 FAIL: changed files exceed authorized Projection Convergence scope:'
@@ -63,6 +64,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          git config core.quotePath false
           changed="$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")"
           forbidden='^(courses/|trials/|lessons/|director/|deck/|exercises/|runtime/)'
           if printf '%s\n' "$changed" | grep -E "$forbidden"; then
