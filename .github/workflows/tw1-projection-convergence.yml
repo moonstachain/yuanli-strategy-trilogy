@@ -1,0 +1,76 @@
+name: TW1 Trilogy Projection Convergence
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'portal-map.json'
+      - 'trilogy/_atlas/worldview-v1.json'
+      - 'trilogy/_atlas/master-outline-worldview-overlay-v1.json'
+      - 'trilogy/TW1-LEGACY-EXPLANATION-SETTLEMENT-v0.1.md'
+      - 'trilogy/原力战略三世界-总图.html'
+      - 'scripts/tw1/**'
+      - 'project/tw1/**'
+      - '.github/workflows/tw1-projection-convergence.yml'
+      - 'courses/**'
+      - 'trials/**'
+      - 'lessons/**'
+      - 'director/**'
+      - 'deck/**'
+      - 'exercises/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate Three Worlds projection
+        run: python scripts/tw1/validate_tw1_projection.py
+
+      - name: Fail closed on TW1 scope drift
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          changed="$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")"
+          printf '%s\n' "$changed"
+
+          allowed='^(README\.md|portal-map\.json|trilogy/_atlas/worldview-v1\.json|trilogy/_atlas/master-outline-worldview-overlay-v1\.json|trilogy/TW1-LEGACY-EXPLANATION-SETTLEMENT-v0\.1\.md|trilogy/原力战略三世界-总图\.html|scripts/tw1/|project/tw1/|\.github/workflows/tw1-projection-convergence\.yml)$'
+          unexpected="$(printf '%s\n' "$changed" | grep -Ev "$allowed" || true)"
+          if [ -n "$unexpected" ]; then
+            echo 'TW1 FAIL: changed files exceed authorized Projection Convergence scope:'
+            printf '%s\n' "$unexpected"
+            exit 1
+          fi
+          echo 'TW1 explicit allowlist scope: PASS'
+
+      - name: Assert course and runtime isolation
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          changed="$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")"
+          forbidden='^(courses/|trials/|lessons/|director/|deck/|exercises/|runtime/)'
+          if printf '%s\n' "$changed" | grep -E "$forbidden"; then
+            echo 'TW1 FAIL: Course/Trial/Runtime layer is not authorized.'
+            exit 1
+          fi
+          echo 'TW1 course/runtime isolation: PASS'
+
+      - name: Reject whitespace errors
+        if: github.event_name == 'pull_request'
+        run: git diff --check "origin/${{ github.base_ref }}...HEAD"
