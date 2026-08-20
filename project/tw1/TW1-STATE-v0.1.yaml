@@ -1,6 +1,6 @@
 schema: yuanli.tw1.state.v0.1
 program: TW1
-status: CANDIDATE_PROJECTION_CONVERGENCE
+status: READY_FOR_TW1_HUMAN_REVIEW
 branch: worldview/tw1-trilogy-projection-convergence
 base_main: 8afa1c5d0b7e220e1a05addf0b34973067ce659b
 upstream_tw0_merge: 9441586acb638da9819ff13ca03f7ae68a034dc2
@@ -14,7 +14,10 @@ scope:
   legacy_explanation_settlement: DONE
   master_outline_authority_overlay: DONE
   validator: DONE
-  ci_gate: PENDING
+  ci_gate: DONE
+  ci_run: 3
+  ci_result: SUCCESS
+  ci_validated_head: c8a4d0f5331d041d78846e86ea49f7120ec6f2ad
   human_review_card: DONE
   generated_portal_rebuild: NOT_RUN
   generated_legacy_pages_rewrite: NOT_REQUIRED_FOR_TW1_AUTHORITY_CONVERGENCE
@@ -52,4 +55,4 @@ human_gate:
   merge_authorized: false
   acceptance_authorizes_only: TW1_MERGE
 
-next_state_if_ci_passes: READY_FOR_TW1_HUMAN_REVIEW
+next_legal_state_if_human_accepts: HUMAN_ACCEPTED_AWAITING_MERGE
