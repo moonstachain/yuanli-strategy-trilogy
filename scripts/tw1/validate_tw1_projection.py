@@ -165,15 +165,20 @@ if not errors:
         if phrase not in orientation:
             errors.append(f"orientation page missing: {phrase}")
 
-    for phrase in [
-        "course_layer_changed: false",
-        "TW2",
-        "NOT_AUTHORIZED",
-        "merge_authorized: false",
-        "next_state_if_ci_passes: READY_FOR_TW1_HUMAN_REVIEW",
-    ]:
+    # State validation is lifecycle-aware. Do not force a valid state to regress just to satisfy CI.
+    for phrase in ["course_layer_changed: false", "TW2: NOT_AUTHORIZED", "TW3: NOT_AUTHORIZED", "TW4: NOT_AUTHORIZED", "merge_authorized: false"]:
         if phrase not in state:
             errors.append(f"TW1 state missing boundary phrase: {phrase}")
+
+    if "status: CANDIDATE_PROJECTION_CONVERGENCE" in state:
+        if "next_state_if_ci_passes: READY_FOR_TW1_HUMAN_REVIEW" not in state:
+            errors.append("candidate state must declare READY_FOR_TW1_HUMAN_REVIEW as next state after CI")
+    elif "status: READY_FOR_TW1_HUMAN_REVIEW" in state:
+        for phrase in ["ci_gate: DONE", "ci_result: SUCCESS", "human_gate:", "decision: PENDING", "next_legal_state_if_human_accepts: HUMAN_ACCEPTED_AWAITING_MERGE"]:
+            if phrase not in state:
+                errors.append(f"Human Review ready state missing lifecycle evidence: {phrase}")
+    else:
+        errors.append("TW1 state must be either CANDIDATE_PROJECTION_CONVERGENCE or READY_FOR_TW1_HUMAN_REVIEW before Human Gate")
 
 if errors:
     print("TW1 Trilogy Projection Convergence: FAIL")
