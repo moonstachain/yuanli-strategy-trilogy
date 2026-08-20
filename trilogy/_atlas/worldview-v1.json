@@ -1,9 +1,14 @@
 {
   "schema": "yuanli.trilogy.worldview-projection.v1",
   "program": "TW1",
-  "status": "CANDIDATE_PROJECTION_CONVERGENCE",
+  "status": "HUMAN_ACCEPTED_AWAITING_MERGE",
   "projection_repo": "moonstachain/yuanli-strategy-trilogy",
   "canon_effect": "none",
+  "human_gate": {
+    "decision": "ACCEPT_TW1_TRILOGY_PROJECTION_CONVERGENCE",
+    "acceptance_receipt": "project/tw1/TW1-HUMAN-ACCEPTANCE-v0.1.yaml",
+    "merge_authorized": false
+  },
   "upstream": {
     "authority_repo": "moonstachain/yuanli-strategy-soul",
     "tw0_merge_commit": "9441586acb638da9819ff13ca03f7ae68a034dc2",
