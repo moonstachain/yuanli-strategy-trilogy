@@ -15,7 +15,9 @@ scope:
   master_outline_authority_overlay: DONE
   validator: DONE
   ci_gate: DONE
+  ci_run: 11
   ci_result: SUCCESS
+  ci_validated_head: 3821bb4118edfa43d34af6122a000e559820a8cd
   human_review_card: DONE
   human_acceptance_receipt: DONE
   generated_portal_rebuild: NOT_RUN
