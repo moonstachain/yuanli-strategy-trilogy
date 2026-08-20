@@ -1,6 +1,6 @@
 schema: yuanli.tw2.state.v0.1
 program: TW2
-status: CANDIDATE_READY_FOR_LIVE_VALIDATION
+status: READY_FOR_LIVE_VALIDATION
 branch: course/tw2-three-world-overlay
 
 upstream:
@@ -15,8 +15,11 @@ scope:
   observation_rubric: DONE
   evidence_settlement_template: DONE
   promotion_gate: DONE
-  validator: PENDING
-  ci_gate: PENDING
+  validator: DONE
+  ci_gate: DONE
+  ci_run: 2
+  ci_result: SUCCESS
+  ci_validated_head: 02a78081e8be150ba3162ccdf4cd0999ac2fbbe4
   real_session: NOT_RUN
   l0_evidence: NOT_RUN
   l1_sample: OPTIONAL_NOT_RUN
@@ -60,4 +63,4 @@ merge_gate:
   tw2_pr_merge_authorized: false
   requires: FRESH_HUMAN_REVIEW_AFTER_REALITY_EVIDENCE
 
-next_legal_state_if_ci_passes: READY_FOR_LIVE_VALIDATION
+next_legal_state: REAL_SESSION_OCCURRED
