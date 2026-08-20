@@ -1,0 +1,63 @@
+schema: yuanli.tw2.state.v0.1
+program: TW2
+status: CANDIDATE_READY_FOR_LIVE_VALIDATION
+branch: course/tw2-three-world-overlay
+
+upstream:
+  soul_tw0_merge: 9441586acb638da9819ff13ca03f7ae68a034dc2
+  trilogy_tw1_merge: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
+  base_course_pr: 18
+  base_course_branch: course-force-assets-asset-force-v3
+  frozen_course_head: 9602583c95ae074a72dce840c297a7ce26abd372
+
+scope:
+  overlay_contract: DONE
+  observation_rubric: DONE
+  evidence_settlement_template: DONE
+  promotion_gate: DONE
+  validator: PENDING
+  ci_gate: PENDING
+  real_session: NOT_RUN
+  l0_evidence: NOT_RUN
+  l1_sample: OPTIONAL_NOT_RUN
+  settlement: NOT_STARTED
+  human_gate: NOT_STARTED
+
+protected_boundaries:
+  soul_canon_changed: false
+  a1_c4_changed: false
+  five_lesson_order_changed: false
+  existing_lesson_files_changed: false
+  existing_director_files_changed: false
+  existing_deck_files_changed: false
+  existing_exercise_files_changed: false
+  pr18_merge_authorized: false
+  course_promotion_authorized: false
+  runtime_action_authorized: false
+
+three_worlds:
+  role: narrative_device_course_overlay
+  canon_effect: none
+  memory_hook: 回到源头，进入现实，创造未来。
+  ontology_order: Source -> Reality -> Future
+  learning_journey: L01-map -> L02-Reality -> L03-Source -> L04-Future -> L05-recursion
+
+validation_thresholds:
+  correct_three_world_explanation_rate: ">=0.80"
+  core_misconception_rate_each: "<0.20"
+  self_problem_navigation_rate: ">=0.70"
+  canonical_mapping_retained: true
+  new_parallel_canon_misread_count: 0
+
+downstream_authorization:
+  TW3: NOT_AUTHORIZED
+  TW4: NOT_AUTHORIZED
+  lesson_rewrite: NOT_AUTHORIZED
+  course_standard_promotion: NOT_AUTHORIZED
+  web_content_rollout: NOT_AUTHORIZED
+
+merge_gate:
+  tw2_pr_merge_authorized: false
+  requires: FRESH_HUMAN_REVIEW_AFTER_REALITY_EVIDENCE
+
+next_legal_state_if_ci_passes: READY_FOR_LIVE_VALIDATION
