@@ -11,9 +11,11 @@ README = ROOT / "README.md"
 SETTLEMENT = ROOT / "trilogy/TW1-LEGACY-EXPLANATION-SETTLEMENT-v0.1.md"
 ORIENTATION = ROOT / "trilogy/原力战略三世界-总图.html"
 STATE = ROOT / "project/tw1/TW1-STATE-v0.1.yaml"
+REVIEW = ROOT / "project/tw1/TW1-HUMAN-REVIEW-CARD-v0.1.md"
+ACCEPTANCE = ROOT / "project/tw1/TW1-HUMAN-ACCEPTANCE-v0.1.yaml"
 
 errors = []
-for p in [WV, PM, OVERLAY, README, SETTLEMENT, ORIENTATION, STATE]:
+for p in [WV, PM, OVERLAY, README, SETTLEMENT, ORIENTATION, STATE, REVIEW]:
     if not p.exists():
         errors.append(f"missing required file: {p.relative_to(ROOT)}")
 
@@ -25,15 +27,27 @@ if not errors:
     settlement = SETTLEMENT.read_text(encoding="utf-8")
     orientation = ORIENTATION.read_text(encoding="utf-8")
     state = STATE.read_text(encoding="utf-8")
+    review = REVIEW.read_text(encoding="utf-8")
 
     if worldview.get("schema") != "yuanli.trilogy.worldview-projection.v1":
         errors.append("worldview schema drift")
     if worldview.get("program") != "TW1":
         errors.append("program must be TW1")
-    if worldview.get("status") != "CANDIDATE_PROJECTION_CONVERGENCE":
-        errors.append("TW1 worldview must remain candidate before Human Gate")
+    if worldview.get("status") not in ["CANDIDATE_PROJECTION_CONVERGENCE", "HUMAN_ACCEPTED_AWAITING_MERGE"]:
+        errors.append("TW1 worldview lifecycle status invalid")
     if worldview.get("canon_effect") != "none":
         errors.append("TW1 canon_effect must remain none")
+
+    if worldview.get("status") == "HUMAN_ACCEPTED_AWAITING_MERGE":
+        hg = worldview.get("human_gate") or {}
+        if hg.get("decision") != "ACCEPT_TW1_TRILOGY_PROJECTION_CONVERGENCE":
+            errors.append("accepted worldview missing exact TW1 Human decision")
+        if hg.get("acceptance_receipt") != "project/tw1/TW1-HUMAN-ACCEPTANCE-v0.1.yaml":
+            errors.append("accepted worldview missing acceptance receipt pointer")
+        if hg.get("merge_authorized") is not False:
+            errors.append("Human Acceptance may not silently authorize merge")
+        if not ACCEPTANCE.exists():
+            errors.append("accepted worldview requires Human Acceptance receipt")
 
     upstream = worldview.get("upstream") or {}
     if upstream.get("authority_repo") != "moonstachain/yuanli-strategy-soul":
@@ -165,7 +179,6 @@ if not errors:
         if phrase not in orientation:
             errors.append(f"orientation page missing: {phrase}")
 
-    # State validation is lifecycle-aware. Do not force a valid state to regress just to satisfy CI.
     for phrase in ["course_layer_changed: false", "TW2: NOT_AUTHORIZED", "TW3: NOT_AUTHORIZED", "TW4: NOT_AUTHORIZED", "merge_authorized: false"]:
         if phrase not in state:
             errors.append(f"TW1 state missing boundary phrase: {phrase}")
@@ -177,8 +190,43 @@ if not errors:
         for phrase in ["ci_gate: DONE", "ci_result: SUCCESS", "human_gate:", "decision: PENDING", "next_legal_state_if_human_accepts: HUMAN_ACCEPTED_AWAITING_MERGE"]:
             if phrase not in state:
                 errors.append(f"Human Review ready state missing lifecycle evidence: {phrase}")
+    elif "status: HUMAN_ACCEPTED_AWAITING_MERGE" in state:
+        accepted_state_phrases = [
+            "decision: ACCEPT_TW1_TRILOGY_PROJECTION_CONVERGENCE",
+            "acceptance_receipt: project/tw1/TW1-HUMAN-ACCEPTANCE-v0.1.yaml",
+            "accepted: true",
+            "merge_authorized: false",
+            "next_legal_action: EXPLICIT_MERGE_AUTHORIZATION_FOR_PR_22",
+        ]
+        for phrase in accepted_state_phrases:
+            if phrase not in state:
+                errors.append(f"Human Accepted state missing lifecycle evidence: {phrase}")
+        if not ACCEPTANCE.exists():
+            errors.append("Human Accepted state requires acceptance receipt")
+        else:
+            acceptance = ACCEPTANCE.read_text(encoding="utf-8")
+            for phrase in [
+                "decision: ACCEPT_TW1_TRILOGY_PROJECTION_CONVERGENCE",
+                "status: HUMAN_ACCEPTED_AWAITING_MERGE",
+                "TW2: NOT_AUTHORIZED",
+                "TW3: NOT_AUTHORIZED",
+                "TW4: NOT_AUTHORIZED",
+                "merge_authorized_by_this_receipt: false",
+                "does_not_authorize_merge_by_itself: true",
+            ]:
+                if phrase not in acceptance:
+                    errors.append(f"acceptance receipt missing boundary phrase: {phrase}")
+        for phrase in [
+            "status: `HUMAN_ACCEPTED_AWAITING_MERGE`",
+            "human_decision: `ACCEPT_TW1_TRILOGY_PROJECTION_CONVERGENCE`",
+            "Human Review：`PASS`",
+            "不自动授权 merge",
+            "EXPLICIT_MERGE_AUTHORIZATION_FOR_PR_22",
+        ]:
+            if phrase not in review:
+                errors.append(f"Human Review Card missing accepted-state evidence: {phrase}")
     else:
-        errors.append("TW1 state must be either CANDIDATE_PROJECTION_CONVERGENCE or READY_FOR_TW1_HUMAN_REVIEW before Human Gate")
+        errors.append("TW1 state lifecycle status invalid")
 
 if errors:
     print("TW1 Trilogy Projection Convergence: FAIL")
@@ -195,3 +243,4 @@ print("portal_source=converged")
 print("legacy_relation_models=downgraded")
 print("course_layer_change=false")
 print("TW2=not_authorized")
+print(f"lifecycle={worldview.get('status')}")
