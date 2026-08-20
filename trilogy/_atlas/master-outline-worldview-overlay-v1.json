@@ -1,0 +1,35 @@
+{
+  "schema": "yuanli.trilogy.master-outline-worldview-overlay.v1",
+  "program": "TW1",
+  "status": "CANDIDATE_PROJECTION_CONVERGENCE",
+  "base_source": "trilogy/_atlas/trilogy-master-outline.json",
+  "current_worldview_authority": "trilogy/_atlas/worldview-v1.json",
+  "base_role": "DEEP_CONTENT_HISTORICAL_PROJECTION",
+  "base_may_define_current_trilogy_relation": false,
+  "active_relation": {
+    "canon": ["原力资产", "原力创业", "原力OS"],
+    "architecture": ["Source", "Venture", "Evolution"],
+    "worldview": ["源头世界", "现实世界", "未来世界"],
+    "memory_hook": "回到源头，进入现实，创造未来。"
+  },
+  "legacy_fields_downgraded": [
+    "axiom.subject containing 你 × AI",
+    "macro relation language using 主语/左腿/右腿",
+    "book axis labels 向内/向外/向上 as active ontology",
+    "external models U型理论/跨越鸿沟/莫比乌斯 as active trilogy relation"
+  ],
+  "allowed_uses_of_base": [
+    "chapter material",
+    "historical comparison",
+    "deep outline",
+    "writing reference",
+    "legacy spine research"
+  ],
+  "forbidden_uses_of_base": [
+    "current worldview authority",
+    "canon rename",
+    "AI authority promotion",
+    "new canonical module creation"
+  ],
+  "renderer_rule": "future renderer changes must compile worldview-v1.json and may not restore legacy relation language as active authority"
+}
