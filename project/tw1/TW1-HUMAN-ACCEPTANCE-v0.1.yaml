@@ -1,0 +1,48 @@
+schema: yuanli.tw1.human-acceptance.v0.1
+program: TW1
+decision: ACCEPT_TW1_TRILOGY_PROJECTION_CONVERGENCE
+decision_date: 2026-08-20
+status: HUMAN_ACCEPTED_AWAITING_MERGE
+
+scope_review:
+  q1_first_view_clarity: PASS
+  q2_first_principles_preserved: PASS
+  q3_legacy_assets_preserved_but_downgraded: PASS
+  q4_ai_authority_clean: PASS
+  q5_worthy_to_merge_as_trilogy_worldview_entry: PASS
+
+accepted_projection:
+  canon_names:
+    - 原力资产
+    - 原力创业
+    - 原力OS
+  worldview:
+    - 源头世界
+    - 现实世界
+    - 未来世界
+  memory_hook: 回到源头，进入现实，创造未来。
+  recursive_compression: 生成 → 选择 → 继承 → 再生成
+
+boundaries:
+  canon_effect: none
+  changes_soul_canon: false
+  changes_a1_c4: false
+  changes_course_layer: false
+  changes_runtime_authority: false
+  TW2: NOT_AUTHORIZED
+  TW3: NOT_AUTHORIZED
+  TW4: NOT_AUTHORIZED
+  course_promotion: NOT_AUTHORIZED
+  runtime_action: NOT_AUTHORIZED
+  merge_authorized_by_this_receipt: false
+
+legal_effect:
+  human_gate_passed: true
+  pr_may_transition_to_ready_for_review: true
+  next_legal_action: EXPLICIT_MERGE_AUTHORIZATION_FOR_PR_22
+  does_not_authorize_merge_by_itself: true
+
+source:
+  repository: moonstachain/yuanli-strategy-trilogy
+  branch: worldview/tw1-trilogy-projection-convergence
+  upstream_tw0_merge: 9441586acb638da9819ff13ca03f7ae68a034dc2
