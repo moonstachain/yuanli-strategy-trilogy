@@ -1,0 +1,112 @@
+{
+  "schema": "yuanli.trilogy.worldview-projection.v1",
+  "program": "TW1",
+  "status": "CANDIDATE_PROJECTION_CONVERGENCE",
+  "projection_repo": "moonstachain/yuanli-strategy-trilogy",
+  "canon_effect": "none",
+  "upstream": {
+    "authority_repo": "moonstachain/yuanli-strategy-soul",
+    "tw0_merge_commit": "9441586acb638da9819ff13ca03f7ae68a034dc2",
+    "worldview_contract_path": "docs/worldview/THREE-WORLDS-WORLDVIEW-CONTRACT-v0.1.md",
+    "worldview_contract_blob_sha": "db290e11af9a1c72b219a21ead90e188372cd4bc",
+    "human_decision": "ACCEPT_TW0_THREE_WORLDS_WORLDVIEW_CONTRACT"
+  },
+  "authority_layers": {
+    "canon": ["原力资产", "原力创业", "原力OS"],
+    "architecture": ["Source", "Venture", "Evolution"],
+    "worldview": ["源头世界", "现实世界", "未来世界"],
+    "memory_hook": "回到源头，进入现实，创造未来。"
+  },
+  "worlds": [
+    {
+      "id": "YL-WORLD-SOURCE",
+      "order": 1,
+      "name": "源头世界",
+      "canonical_ref": "YL-A",
+      "canonical_name": "原力资产",
+      "architecture_ref": "Source",
+      "mechanism": "generation",
+      "frontstage_action": "回到源头",
+      "first_principle_question": "什么持续生成我的不同？",
+      "book_label": "《原力资产》｜进入源头世界",
+      "axis_descriptor": "向内｜源头",
+      "causal_chain": [
+        "原力母体",
+        "A1 发现母体",
+        "A2 回到母体",
+        "A3 获得原力",
+        "A4 显化原力",
+        "原力资产"
+      ],
+      "boundary": "源头世界不是原力资产的新名字；原力母体是生成源，原力资产是资产化结果。"
+    },
+    {
+      "id": "YL-WORLD-REALITY",
+      "order": 2,
+      "name": "现实世界",
+      "canonical_ref": "YL-B",
+      "canonical_name": "原力创业",
+      "architecture_ref": "Venture",
+      "mechanism": "selection",
+      "frontstage_action": "进入现实",
+      "first_principle_question": "世界为什么选择、付费并放大这种不同？",
+      "book_label": "《原力创业》｜进入现实世界",
+      "axis_descriptor": "向外｜现实",
+      "canonical_modules": {
+        "B1": "原力借势",
+        "B2": "品类独创",
+        "B3": "模式升维",
+        "B4": "壁垒锁定"
+      },
+      "boundary": "现实世界不是赚钱世界；收入只是现实选择的一类 Outcome。"
+    },
+    {
+      "id": "YL-WORLD-FUTURE",
+      "order": 3,
+      "name": "未来世界",
+      "canonical_ref": "YL-C",
+      "canonical_name": "原力OS",
+      "architecture_ref": "Evolution",
+      "mechanism": "retention_evolution",
+      "frontstage_action": "创造未来",
+      "first_principle_question": "今天发生的价值，怎样被未来继承并继续做功？",
+      "book_label": "《原力OS》｜创造未来世界",
+      "axis_descriptor": "向时间｜未来",
+      "canonical_modules": {
+        "C1": "一纸文脉",
+        "C2": "一个大脑",
+        "C3": "一张地图",
+        "C4": "一条链路"
+      },
+      "boundary": "未来世界不是 AI 未来、未来科技或趋势预测；它回答今天的价值怎样被未来继承、调用、学习与复用。"
+    }
+  ],
+  "recursive_loop": {
+    "sequence": ["YL-WORLD-SOURCE", "YL-WORLD-REALITY", "YL-WORLD-FUTURE", "learning_reuse", "YL-WORLD-SOURCE_NEXT"],
+    "compression": "生成 → 选择 → 继承 → 再生成"
+  },
+  "legacy_explanation_settlement": {
+    "向内_向外_向上": "historical_axis_descriptor",
+    "人_事_法": "historical_teaching_descriptor",
+    "主根_左腿_右腿": "historical_narrative_device",
+    "U型理论_跨越鸿沟_莫比乌斯": "external_explanatory_lens",
+    "你乘AI": "legacy_amplification_metaphor",
+    "秘密乘一万倍": "narrative_device"
+  },
+  "ai": {
+    "role": "amplifier",
+    "canon_authority": false,
+    "identity_authority": false,
+    "decision_authority": false,
+    "reality_action_authority": false
+  },
+  "scope": {
+    "changes_soul_canon": false,
+    "changes_a1_c4": false,
+    "changes_course_layer": false,
+    "changes_runtime_authority": false,
+    "tw2_authorized": false,
+    "tw3_authorized": false,
+    "tw4_authorized": false
+  }
+}
