@@ -13,8 +13,9 @@ scope:
   three_worlds_frontstage_map: DONE
   legacy_explanation_settlement: DONE
   master_outline_authority_overlay: DONE
-  validator: PENDING
+  validator: DONE
   ci_gate: PENDING
+  human_review_card: DONE
   generated_portal_rebuild: NOT_RUN
   generated_legacy_pages_rewrite: NOT_REQUIRED_FOR_TW1_AUTHORITY_CONVERGENCE
 
