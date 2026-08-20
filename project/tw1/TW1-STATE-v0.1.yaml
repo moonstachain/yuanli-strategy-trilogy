@@ -1,0 +1,61 @@
+schema: yuanli.tw1.state.v0.1
+program: TW1
+status: HUMAN_ACCEPTED_AWAITING_MERGE
+branch: worldview/tw1-trilogy-projection-convergence
+base_main: 8afa1c5d0b7e220e1a05addf0b34973067ce659b
+upstream_tw0_merge: 9441586acb638da9819ff13ca03f7ae68a034dc2
+upstream_contract_blob: db290e11af9a1c72b219a21ead90e188372cd4bc
+
+scope:
+  worldview_source: DONE
+  readme_projection: DONE
+  portal_source_projection: DONE
+  three_worlds_frontstage_map: DONE
+  legacy_explanation_settlement: DONE
+  master_outline_authority_overlay: DONE
+  validator: DONE
+  ci_gate: DONE
+  ci_run: 11
+  ci_result: SUCCESS
+  ci_validated_head: 3821bb4118edfa43d34af6122a000e559820a8cd
+  human_review_card: DONE
+  human_acceptance_receipt: DONE
+  generated_portal_rebuild: NOT_RUN
+  generated_legacy_pages_rewrite: NOT_REQUIRED_FOR_TW1_AUTHORITY_CONVERGENCE
+
+protected_boundaries:
+  soul_canon_changed: false
+  a1_c4_changed: false
+  course_layer_changed: false
+  trials_changed: false
+  lessons_changed: false
+  director_changed: false
+  deck_changed: false
+  exercises_changed: false
+  runtime_authority_changed: false
+
+downstream_authorization:
+  TW2: NOT_AUTHORIZED
+  TW3: NOT_AUTHORIZED
+  TW4: NOT_AUTHORIZED
+  course_promotion: NOT_AUTHORIZED
+  runtime_action: NOT_AUTHORIZED
+
+projection_claim:
+  current_worldview_source: trilogy/_atlas/worldview-v1.json
+  current_world_count: 3
+  canon_names_preserved: true
+  legacy_relation_models_downgraded: true
+  portal_source_converged: true
+  readme_converged: true
+  master_outline_legacy_source_downgraded: true
+
+human_gate:
+  required_before_merge: true
+  decision: ACCEPT_TW1_TRILOGY_PROJECTION_CONVERGENCE
+  acceptance_receipt: project/tw1/TW1-HUMAN-ACCEPTANCE-v0.1.yaml
+  accepted: true
+  merge_authorized: false
+  acceptance_authorizes_only: PR_READY_FOR_REVIEW
+
+next_legal_action: EXPLICIT_MERGE_AUTHORIZATION_FOR_PR_22
