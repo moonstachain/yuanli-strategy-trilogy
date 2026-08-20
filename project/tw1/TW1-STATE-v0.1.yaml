@@ -30,6 +30,13 @@ protected_boundaries:
   exercises_changed: false
   runtime_authority_changed: false
 
+downstream_authorization:
+  TW2: NOT_AUTHORIZED
+  TW3: NOT_AUTHORIZED
+  TW4: NOT_AUTHORIZED
+  course_promotion: NOT_AUTHORIZED
+  runtime_action: NOT_AUTHORIZED
+
 projection_claim:
   current_worldview_source: trilogy/_atlas/worldview-v1.json
   current_world_count: 3
@@ -44,12 +51,5 @@ human_gate:
   decision: PENDING
   merge_authorized: false
   acceptance_authorizes_only: TW1_MERGE
-  does_not_authorize:
-    - TW2
-    - TW3
-    - TW4
-    - course_promotion
-    - canon_change
-    - runtime_change
 
 next_state_if_ci_passes: READY_FOR_TW1_HUMAN_REVIEW
