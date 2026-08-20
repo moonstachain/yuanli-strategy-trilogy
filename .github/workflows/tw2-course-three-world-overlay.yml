@@ -1,0 +1,97 @@
+name: TW2 Course Three-World Overlay
+
+on:
+  pull_request:
+    paths:
+      - 'courses/原力战略三部曲通识课-v2/overlays/TW2-THREE-WORLDS-COURSE-OVERLAY-v0.1.md'
+      - 'courses/原力战略三部曲通识课-v2/trials/11-tw2-three-world-overlay/**'
+      - 'project/tw2/**'
+      - 'scripts/tw2/**'
+      - '.github/workflows/tw2-course-three-world-overlay.yml'
+      - 'courses/原力战略三部曲通识课-v2/lessons/**'
+      - 'courses/原力战略三部曲通识课-v2/director/**'
+      - 'courses/原力战略三部曲通识课-v2/deck/**'
+      - 'courses/原力战略三部曲通识课-v2/exercises/**'
+      - 'courses/原力战略三部曲通识课-v2/narrative/**'
+      - 'courses/原力战略三部曲通识课-v2/00-课程总控.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch pinned authorities and base
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main --depth=100
+          git fetch origin "${{ github.base_ref }}" --depth=1
+
+      - name: Validate pinned PR18 course head
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected='9602583c95ae074a72dce840c297a7ce26abd372'
+          actual="$(git rev-parse "origin/${{ github.base_ref }}")"
+          echo "base_ref=${{ github.base_ref }}"
+          echo "actual=$actual"
+          echo "expected=$expected"
+          if [ "$actual" != "$expected" ]; then
+            echo 'TW2 FAIL: PR #18 course base moved. Re-qualify overlay against the new learner-facing head.'
+            exit 1
+          fi
+          echo 'TW2 frozen PR18 course head: PASS'
+
+      - name: Validate Three Worlds overlay contract
+        run: python scripts/tw2/validate_tw2_overlay.py
+
+      - name: Fail closed on TW2 scope drift
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config core.quotePath false
+          changed="$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")"
+          printf '%s\n' "$changed"
+
+          allowed='^(courses/原力战略三部曲通识课-v2/overlays/TW2-THREE-WORLDS-COURSE-OVERLAY-v0\.1\.md|courses/原力战略三部曲通识课-v2/trials/11-tw2-three-world-overlay/.*|project/tw2/.*|scripts/tw2/.*|\.github/workflows/tw2-course-three-world-overlay\.yml)$'
+          unexpected="$(printf '%s\n' "$changed" | grep -Ev "$allowed" || true)"
+          if [ -n "$unexpected" ]; then
+            echo 'TW2 FAIL: changed files exceed authorized overlay-only scope:'
+            printf '%s\n' "$unexpected"
+            exit 1
+          fi
+          echo 'TW2 explicit overlay allowlist: PASS'
+
+      - name: Assert existing course content is untouched
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config core.quotePath false
+          changed="$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")"
+          forbidden='^courses/原力战略三部曲通识课-v2/(00-课程总控\.md|G3-COURSE-CONVERGENCE\.md|README\.md|lessons/|director/|deck/|exercises/|narrative/|evolution/|trials/0[0-9]-)'
+          if printf '%s\n' "$changed" | grep -E "$forbidden"; then
+            echo 'TW2 FAIL: existing learner-facing course or prior trial content changed.'
+            exit 1
+          fi
+          echo 'TW2 existing course isolation: PASS'
+
+      - name: Reject whitespace errors
+        if: github.event_name == 'pull_request'
+        run: git diff --check "origin/${{ github.base_ref }}...HEAD"
