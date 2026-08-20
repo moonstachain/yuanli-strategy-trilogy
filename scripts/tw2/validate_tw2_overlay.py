@@ -73,8 +73,7 @@ if not errors:
         if phrase not in promotion:
             errors.append(f"promotion gate missing: {phrase}")
 
-    required_state = [
-        "status: CANDIDATE_READY_FOR_LIVE_VALIDATION",
+    common_state = [
         f"trilogy_tw1_merge: {TW1_MERGE}",
         f"frozen_course_head: {FROZEN_COURSE_HEAD}",
         "existing_lesson_files_changed: false",
@@ -86,9 +85,21 @@ if not errors:
         "tw2_pr_merge_authorized: false",
         "requires: FRESH_HUMAN_REVIEW_AFTER_REALITY_EVIDENCE",
     ]
-    for phrase in required_state:
+    for phrase in common_state:
         if phrase not in state:
             errors.append(f"state missing boundary: {phrase}")
+
+    # Lifecycle-aware: do not force READY state to regress back to candidate after CI.
+    if "status: CANDIDATE_READY_FOR_LIVE_VALIDATION" in state:
+        for phrase in ["validator: PENDING", "ci_gate: PENDING", "next_legal_state_if_ci_passes: READY_FOR_LIVE_VALIDATION"]:
+            if phrase not in state:
+                errors.append(f"candidate state missing lifecycle evidence: {phrase}")
+    elif "status: READY_FOR_LIVE_VALIDATION" in state:
+        for phrase in ["validator: DONE", "ci_gate: DONE", "ci_result: SUCCESS", "real_session: NOT_RUN", "next_legal_state: REAL_SESSION_OCCURRED"]:
+            if phrase not in state:
+                errors.append(f"ready state missing lifecycle evidence: {phrase}")
+    else:
+        errors.append("TW2 state must be candidate or READY_FOR_LIVE_VALIDATION before reality evidence")
 
     # Verify TW2 is pinned to the actual merged TW1 machine worldview, not a copied interpretation.
     proc = subprocess.run(
