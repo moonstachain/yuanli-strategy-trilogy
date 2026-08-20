@@ -1,281 +1,410 @@
 # 原力战略三部曲 · Yuanli Strategy Trilogy
 
-> **三部曲内容工程工作仓。**  
-> 本仓负责把 `yuanli-strategy-soul` 的正典龙骨，外显为三本书、课程、章节正文、概念地图、样章、HTML 页面与内容工程资产。
+> **三部曲内容工程与 Projection 工作仓。**
+> `yuanli-strategy-soul` 负责定法；本仓负责把正典龙骨编译成书、课程、地图、门户、样章与公众可理解的表达。
 
 ---
 
-## 0. 仓库定位
+## 0. Authority｜谁定义什么
 
-本仓不是原力战略三部曲的正典法权仓。最高正典、龙骨、模块、术语、接口、任务治理与递归回写，统一归属：
+本仓不是 Canon Authority。
 
 ```text
 yuanli-strategy-soul
-```
+= CANON_AUTHORITY
 
-ARCH-1 统一口径：
+↓ compile / project
 
-```text
-soul = CANON_AUTHORITY
-trilogy = PROJECTION / 内容工程工作仓
-legacy playbook / startup-map / greenbook = HISTORICAL_SOURCE_ONLY
-```
-
-本仓的新定位是：
-
-```text
 yuanli-strategy-trilogy
-= 三部曲内容工程工作仓
-= 书稿与课程孵化仓
-= 概念地图与外显表达仓
-= 样章与章节生产仓
+= PROJECTION / CONTENT ENGINEERING
+```
+
+当前上游基线：
+
+```text
+ARCH-1｜1+4+1 Repository Authority Convergence
+TW0｜Three Worlds Worldview Contract
+```
+
+TW0 已于 Soul 合并：
+
+```text
+merge commit: 9441586acb638da9819ff13ca03f7ae68a034dc2
+human decision: ACCEPT_TW0_THREE_WORLDS_WORLDVIEW_CONTRACT
 ```
 
 一句话：
 
+> **Soul 定义“我是谁、事业如何成立、系统如何进化”；Trilogy 负责把它写出来、讲明白、画出来。**
+
+---
+
+## 1. Three Worlds｜当前世界观入口
+
+TW1 以后，本仓关于“三本究竟是什么关系”的唯一前台世界观是：
+
+# **回到源头，进入现实，创造未来。**
+
 ```text
-soul 负责定法，trilogy 负责写书、做课、外显和孵化内容资产。
+Canon
+原力资产 × 原力创业 × 原力OS
+
+= Architecture
+Source × Venture × Evolution
+
+= Worldview
+源头世界 × 现实世界 × 未来世界
+
+= Mechanism
+生成 × 选择 × 继承/进化
+```
+
+> **正典名负责准确，三个世界负责看懂。**
+
+机器源：
+
+```text
+trilogy/_atlas/worldview-v1.json
+```
+
+可视入口：
+
+- [原力战略三世界·总图](trilogy/原力战略三世界-总图.html)
+- [Legacy Explanation Settlement](trilogy/TW1-LEGACY-EXPLANATION-SETTLEMENT-v0.1.md)
+
+---
+
+## 2. 第一世界｜源头世界｜《原力资产》
+
+第一性问题：
+
+> **什么持续生成我的不同？**
+
+因果链保持：
+
+```text
+原力母体
+→ A1 发现母体
+→ A2 回到母体
+→ A3 获得原力
+→ A4 显化原力
+→ 原力资产
+```
+
+因此：
+
+- `源头世界 != 原力资产改名`；
+- 原力母体是生成源，原力资产是资产化后的可调用结果；
+- Human Design、MBTI、荣格、星盘、优势测评等只能作为 Source Lens / Evidence Lens，不定义 Mother 或 Identity Authority。
+
+前台动作：**回到源头。**
+
+---
+
+## 3. 第二世界｜现实世界｜《原力创业》
+
+第一性问题：
+
+> **世界为什么选择、付费并放大这种不同？**
+
+正典模块保持：
+
+```text
+B1 原力借势
+→ B2 品类独创
+→ B3 模式升维
+→ B4 壁垒锁定
+```
+
+因此：
+
+- `现实世界 != 赚钱世界`；
+- Revenue 只是 Reality Outcome 的一类；
+- 时代、用户、心智、模式、组织、竞争与控制权共同构成现实选择环境。
+
+前台动作：**进入现实。**
+
+---
+
+## 4. 第三世界｜未来世界｜《原力OS》
+
+第一性问题：
+
+> **今天发生的价值，怎样被未来继承并继续做功？**
+
+正典模块保持：
+
+```text
+C1 一纸文脉
++ C2 一个大脑
++ C3 一张地图
++ C4 一条链路
+```
+
+因此：
+
+- `未来世界 != AI未来`；
+- `未来世界 != 未来科技 / 趋势预测`；
+- AI 只作为 Amplifier；
+- 未来世界关心今天的身份、知识、证据、判断、行动、结果与学习，能否在未来任务中被正确继承、调用和复用。
+
+前台动作：**创造未来。**
+
+---
+
+## 5. Recursive Law｜三个世界如何形成复利
+
+三个世界不是三站，而是一条循环：
+
+```text
+源头世界_n
+→ 现实世界_n
+→ 未来世界_n
+→ Learning / Reuse
+→ 源头世界_n+1
+```
+
+压缩：
+
+> **生成 → 选择 → 继承 → 再生成。**
+
+所以：
+
+```text
+Stored ≠ Reused
+Remembered ≠ Compounding
+Systemized ≠ Evolved
+```
+
+只有过去的 Learning 真正改变下一轮判断或行动，才开始出现递归进化与复利。
+
+---
+
+## 6. Legacy Explanation Settlement｜旧解释如何处理
+
+TW1 不删除历史解释，但重新裁决其法权：
+
+| 历史表达 | 当前身份 |
+|---|---|
+| 向内 / 向外 / 向上 | `HISTORICAL_AXIS_DESCRIPTOR` |
+| 人 / 事 / 法 | `HISTORICAL_TEACHING_DESCRIPTOR` |
+| 主根 / 左腿 / 右腿 | `HISTORICAL_NARRATIVE_DEVICE` |
+| U 型理论 / 跨越鸿沟 / 莫比乌斯 | `EXTERNAL_EXPLANATORY_LENS` |
+| 「你」× AI | `LEGACY_AMPLIFICATION_METAPHOR` |
+| 秘密 × 一万倍 | `NARRATIVE_DEVICE` |
+
+这些表达可以作为历史材料、局部解释或课程叙事继续使用，但不得再定义三部曲本体关系。
+
+尤其：
+
+```text
+AI = Amplifier
+!= Canon Authority
+!= Identity Authority
+!= Decision Authority
+!= Reality Action Authority
 ```
 
 ---
 
-## 1. 主从关系
+## 7. 三部十二模块
+
+所有书稿、地图、门户和课程最终仍服从 Soul A1-C4：
 
 ```text
-yuanli-strategy-soul
-= 正典根仓 / 龙骨仓 / 基石概念体系 / 任务入口 / 递归回写中心
+《原力资产》｜源头世界
+A1 发现母体
+A2 回到母体
+A3 获得原力
+A4 显化原力
 
-↓ 裁决 / 分发 / 模板 / 回写
+《原力创业》｜现实世界
+B1 原力借势
+B2 品类独创
+B3 模式升维
+B4 壁垒锁定
 
-yuanli-strategy-trilogy
-= 内容工程工作仓 / 书稿孵化 / 课程孵化 / 概念地图外显
-
-↓ 执行 / 产出 / 样章 / 工具 / 案例
-
-yuanli-strategy-soul
-= 回写模块 / 术语 / 接口 / 模板 / 索引
+《原力OS》｜未来世界
+C1 一纸文脉
+C2 一个大脑
+C3 一张地图
+C4 一条链路
 ```
 
-所有重要结构变化，必须先进入 `soul` 的 Issue 与模块裁决，再回到本仓执行。
-
-当前吸收工程：
-
-```text
-yuanli-strategy-soul Issue #206
-[治理] trilogy 原子级拆解并吸收回 soul
-```
+不得新增第四部、A0、B0、B5、C5 等新的正典模块。
 
 ---
 
-## 2. 三部十二模块
+## 8. 当前三本书
 
-本仓所有书稿、课程、章节、地图、样章，必须服从 `soul` 中的 A1-C4 龙骨：
-
-```text
-原力战略三部曲
-│
-├─ 第一部：原力资产 · 向内 · 人
-│   ├─ A1 发现母体
-│   ├─ A2 回到母体
-│   ├─ A3 获得原力
-│   └─ A4 显化原力
-│
-├─ 第二部：原力创业 · 向外 · 事
-│   ├─ B1 原力借势
-│   ├─ B2 品类独创
-│   ├─ B3 模式升维
-│   └─ B4 壁垒锁定
-│
-└─ 第三部：原力 OS · 向上 · 法
-    ├─ C1 一纸文脉
-    ├─ C2 一个大脑
-    ├─ C3 一张地图
-    └─ C4 一条链路
-```
-
-旧表达“一条公理、两条腿、三本书、一张图”保留为证明模型与历史表达，不再作为本仓最高目录模型。
-
----
-
-## 3. 各书当前状态
-
-| 书 | 本仓进度 | 已成稿样章 | 对应 soul 模块 | 历史内容源 / Legacy Source |
+| 书 | 世界 | 第一性问题 | Canon | 本仓状态 |
 |---|---|---|---|---|
-| **① 原力资产**（向内·人） | 骨架 + 1/6 章 | [第一章·觉察](books/01-原力资产/第一章-觉察.md) ✅ | A1-A4 | [strategy-playbook](https://github.com/moonstachain/yuanli-strategy-playbook) |
-| **② 原力创业**（向外·事） | 骨架 · 0 章 | — | B1-B4 | [startup-map-site](https://github.com/moonstachain/yuanli-startup-map-site)、[startup-map-book](https://github.com/moonstachain/yuanli-startup-map-book) |
-| **③ 原力 OS**（向上·法） | 骨架 + 教学样章 | [最小闭环](books/03-原力OS/最小闭环.md) ✅ | C1-C4 | [os-greenbook](https://github.com/moonstachain/yuanli-os-greenbook) |
+| **《原力资产》** | 源头世界 | 什么持续生成我的不同？ | A1-A4 | 骨架 + 样章 |
+| **《原力创业》** | 现实世界 | 世界为什么选择、付费并放大这种不同？ | B1-B4 | 骨架 |
+| **《原力OS》** | 未来世界 | 今天发生的价值怎样被未来继承并继续做功？ | C1-C4 | 骨架 + 教学样章 |
 
-> 上表只表示历史内容血缘，不赋予这些 legacy 仓当前正典法权。与 Soul 冲突时，一律以 Soul 为准。
+历史内容源继续存在，但只拥有 `HISTORICAL_SOURCE_ONLY` 身份：
+
+- `yuanli-strategy-playbook`
+- `yuanli-startup-map-site`
+- `yuanli-startup-map-book`
+- `yuanli-os-greenbook`
+
+与 Soul 冲突时：
+
+```text
+Soul wins.
+```
 
 ---
 
-## 4. 仓里有什么
+## 9. Projection Sources｜判断与渲染分离
+
+当前关键数据层：
+
+```text
+trilogy/_atlas/worldview-v1.json          Three Worlds 当前世界观投影源
+portal-map.json                           Portal 编译数据
+trilogy/_atlas/*.json                     历史/深层知识地图与目录数据
+```
+
+当前渲染层：
+
+```text
+build_portal.py
+trilogy/build_atlas.py
+trilogy/build_master_outline.py
+trilogy/build_outline.py
+trilogy/build_zichan_outline.py
+trilogy/build_book_outline.py
+```
+
+规则：
+
+> **判断源先收敛，渲染器只编译，不重新发明世界观。**
+
+部分历史生成页仍保留旧解释，它们当前身份是：
+
+```text
+DEEP_CONTENT / HISTORICAL_PROJECTION
+!= CURRENT_WORLDVIEW_AUTHORITY
+```
+
+包括但不限于：
+
+- `trilogy/原力战略三部曲-总纲.html`
+- `trilogy/原力三部曲-文脉骨架座舱.html`
+- `trilogy/_atlas/trilogy-master-outline.json`
+
+当前世界观关系一律服从 `worldview-v1.json`。
+
+---
+
+## 10. Course Isolation｜TW1 不碰真人课程轨
+
+TW1 明确不修改：
+
+```text
+courses/
+trials/
+lessons/
+director/
+deck/
+exercises/
+```
+
+当前 PR #18、#20 等真人课程与 Shadow 轨保持独立。
+
+这意味着：
+
+```text
+TW1 = Projection Convergence
+TW2 = Course Overlay
+```
+
+二者不是同一个授权。
+
+---
+
+## 11. 仓库主要资产
 
 ```text
 trilogy/
-├── 原力三部曲-概念地图.html          概念地图外显
-├── 原力三部曲-文脉骨架座舱.html       体系关系图
-├── 原力三部曲-文脉总纲.md             历史文脉总纲 / 参考
-├── 原力战略三部曲-重构骨架设计稿.md    结构重构稿 / 已回写 soul 部分
-├── 原力三部曲-基石与关键概念-全谱.md    字典层全谱 / 已回写 soul 术语词典
-├── 原力资产-基石与关键概念-全谱.md      资产分册全谱 / 已回写 A 轴术语与模板
-├── 原力OS-信雅达双轨改名表.md           OS 术语与四件套 / 已回写 C 轴术语与模板
-├── _atlas/atlas-v2-*.json              知识地图数据层
-└── build_atlas.py                      渲染层：读 _atlas/*.json → 生成知识地图.html
+├── _atlas/                         判断数据层
+│   └── worldview-v1.json           TW1 唯一世界观投影源
+├── 原力战略三世界-总图.html         新世界观入口
+├── 原力三部曲-概念地图.html         深层概念投影
+├── 原力战略三部曲-总纲.html         深层/历史章节投影
+└── 原力三部曲-文脉骨架座舱.html     历史解释投影
 
 books/
 ├── 01-原力资产/
 ├── 02-原力创业/
 └── 03-原力OS/
 
-review/
-└── 写作复盘看板
-
 courses/
-└── 原力战略三部曲通识课-v1/       通识课总控、A1/B1/C4试跑与验收
-```
-
-判断 / 渲染分离：
-
-```text
-内容数据在 _atlas/*.json
-样式与页面生成在 build_*.py
-HTML 是构建产物
+└── ...                              独立真人课程轨，TW1 冻结
 ```
 
 ---
 
-## 5. 与 soul 的回写关系
+## 12. 写作与内容工程规则
 
-本仓中以下内容已被吸收或正在吸收回 `soul`：
-
-```text
-知识总纲 → source/indexes/trilogy-source-index.md
-A1-C4 模块 → modules/A-B-C/*
-术语全谱 → glossary/*
-去重三缝 → interfaces/去重三缝.md
-资产样章动作 → templates/asset/算力活-原力活清算卡.md
-OS 最小闭环动作 → templates/os/闭环检查卡.md、templates/os/收口句模板.md
-模块映射 → source/indexes/module-to-file-map.md
-```
-
-后续所有新增样章、课程节、工具卡、概念地图节点，完成后都必须回写 `soul` 的：
+任何新章节、样章、地图或公众表达，都先回答：
 
 ```text
-modules/
-glossary/
-interfaces/
-templates/
-source/indexes/
-source/extracts/
-project/backwrite-log.md
+1. 它属于哪个世界？
+2. 它落到 A1-C4 哪个 Canon 模块？
+3. 它是在讲 Source、Reality 还是 Future？
+4. 它使用的是 Canon、Architecture、Worldview 还是 Narrative Device？
+5. 它有没有把历史解释误升格成当前法权？
+6. 它的输出资产是什么？
+7. 它最终回写 Soul 的哪里？
 ```
 
 ---
 
-## 6. 本仓写作与内容工程规则
+## 13. 本地构建
 
-任何新章节 / 新课程节 / 新样章，必须先回答：
-
-```text
-1. 它归属 A1-C4 哪个模块？
-2. 它服务哪条共享脊骨？
-3. 它是否触碰去重三缝？
-4. 它的输入材料是什么？
-5. 它的输出资产是什么？
-6. 它回写到 soul 的哪里？
-```
-
-推荐使用 `soul` 模板：
-
-```text
-yuanli-strategy-soul/templates/chapter-template.md
-```
-
----
-
-## 7. 本地构建（零依赖）
-
-**环境**：Python ≥ 3.8，纯标准库（`json` / `html` / `pathlib` / `glob`），**无第三方依赖，无需 `pip install`**。
-
-| 脚本 | 产出 |
-|---|---|
-| `trilogy/build_atlas.py` | `trilogy/原力三部曲-概念地图.html` |
-| `trilogy/build_master_outline.py` | `trilogy/原力战略三部曲-总纲.html` |
-| `trilogy/build_outline.py` | `trilogy/原力三部曲-提纲架构.html` |
-| `trilogy/build_zichan_outline.py` | `trilogy/原力资产-四级目录.html` |
-| `trilogy/build_book_outline.py <outline>.json` | 创业 / OS 四级目录 |
-| `review/build_review.py` | `review/index.html` |
-| `build_portal.py` | `index.html` |
-| `apply_nav.py` | 给各页注入统一 sticky 导航 |
-
-全量重建：
+环境：Python ≥ 3.8，当前主要脚本为标准库实现。
 
 ```bash
 cd trilogy
-python3 build_atlas.py && python3 build_master_outline.py && python3 build_outline.py
+python3 build_atlas.py
+python3 build_master_outline.py
+python3 build_outline.py
 python3 build_zichan_outline.py
-python3 build_book_outline.py chuangye-outline.json && python3 build_book_outline.py os-outline.json
-cd .. && python3 review/build_review.py && python3 build_portal.py && python3 apply_nav.py
+python3 build_book_outline.py chuangye-outline.json
+python3 build_book_outline.py os-outline.json
+cd ..
+python3 review/build_review.py
+python3 build_portal.py
+python3 apply_nav.py
 ```
+
+构建产物不得反向取得判断法权。
 
 ---
 
-## 8. 正典与出处
+## 14. 当前状态
 
-当前正典法权唯一归属 `moonstachain/yuanli-strategy-soul`。
-
-以下仓仅保留历史正文、旧版方法材料与内容血缘，用于溯源、蒸馏和必要的历史比较；它们不是当前 Canon Authority：
-
-- **原力战略·白皮书 + 绿皮书六册** → [moonstachain/yuanli-strategy-playbook](https://github.com/moonstachain/yuanli-strategy-playbook)
-- **原力创业·通关地图六卷 + 交互网站** → [moonstachain/yuanli-startup-map-site](https://github.com/moonstachain/yuanli-startup-map-site)
-- **借势合力·通关地图绿皮书 v1.0** → [moonstachain/yuanli-startup-map-book](https://github.com/moonstachain/yuanli-startup-map-book)
-- **原力OS·绿皮书** → [moonstachain/yuanli-os-greenbook](https://github.com/moonstachain/yuanli-os-greenbook)
-
-若历史材料与 Soul 冲突：
-
-```text
-Soul wins.
-Legacy remains historical evidence, not active law.
+```yaml
+repo_class: PROJECTION
+canon_authority: yuanli-strategy-soul
+worldview_source: trilogy/_atlas/worldview-v1.json
+TW0: MERGED
+TW1: CANDIDATE_PROJECTION_CONVERGENCE
+TW2: NOT_AUTHORIZED
+TW3: NOT_AUTHORIZED
+TW4: NOT_AUTHORIZED
+course_layer_changed_by_TW1: false
+runtime_authority_changed: false
 ```
 
-本仓是三部曲内容工程外显仓。
+当前皇冠句：
 
----
+# **回到源头，进入现实，创造未来。**
 
-## 9. 怎么用本仓写书
+当前递归律：
 
-知识地图与样章是内容工程素材，写作时遵循：
-
-```text
-soul 龙骨裁决
-→ 选择 A1-C4 模块
-→ 使用 chapter-template
-→ 写章节 / 课程 / 脚本
-→ 沉淀工具卡 / 术语 / 案例
-→ 回写 soul
-```
-
-每章都要输出至少一种可复用资产：
-
-```text
-概念原子
-工具卡
-案例
-术语
-模板
-SOP / 链路
-回写记录
-```
-
----
-
-## 10. 当前状态
-
-- `v0.4 + ARCH-1 candidate cleanup`：本仓为三部曲内容工程工作仓，不拥有正典法权。
-- 已有：概念地图、总纲、四级提纲、三本书骨架、样章、构建脚本、复盘看板，以及通识课 v1 的 A1/B1/C4 跨模块试跑。
-- 课程入口：`courses/原力战略三部曲通识课-v1/`。
-- 已回写：A1-C4 模块、术语、接口、模板、源文件映射到 `yuanli-strategy-soul`。
-- 下一步：按 `soul/templates/chapter-template.md` 继续孵化章节正文与课程内容，并持续回写。
-
-视觉：qishi 翡翠墨绿 × 鎏金（`#0d2018 × #c9a961`）。
+# **生成 → 选择 → 继承 → 再生成。**
