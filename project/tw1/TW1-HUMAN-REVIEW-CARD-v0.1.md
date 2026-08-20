@@ -1,10 +1,12 @@
 # TW1｜Trilogy Projection Convergence｜Human Review Card v0.1
 
-> status: `AWAITING_HUMAN_REVIEW`
+> status: `HUMAN_ACCEPTED_AWAITING_MERGE`
 > program: `TW1`
 > canon_effect: `none`
 > merge_authorized: `false`
 > TW2_authorized: `false`
+> human_decision: `ACCEPT_TW1_TRILOGY_PROJECTION_CONVERGENCE`
+> acceptance_receipt: `project/tw1/TW1-HUMAN-ACCEPTANCE-v0.1.yaml`
 
 ## Review scope
 
@@ -41,7 +43,7 @@
 未来世界｜原力OS
 ```
 
-是否比旧的：
+相对旧的：
 
 ```text
 向内/向外/向上
@@ -50,17 +52,13 @@
 U型/鸿沟/莫比乌斯
 ```
 
-更适合作为普通用户第一入口？
-
-- [ ] PASS
-- [ ] REVISE
-- [ ] FAIL
+Human Review：`PASS`
 
 ---
 
 ## Q2｜有没有损失第一性结构
 
-必须继续成立：
+继续成立：
 
 ```text
 Canon = 原力资产 × 原力创业 × 原力OS
@@ -76,9 +74,7 @@ B1-B4 = Reality selection
 C1-C4 = Future retention/evolution
 ```
 
-- [ ] PASS
-- [ ] REVISE
-- [ ] FAIL
+Human Review：`PASS`
 
 ---
 
@@ -91,14 +87,9 @@ DEEP_CONTENT / HISTORICAL_PROJECTION
 EXTERNAL_EXPLANATORY_LENS
 ```
 
-是否同时做到了：
+Human Review：`PASS`
 
-1. 保留历史内容资产；
-2. 不让它们继续争夺当前世界观法权？
-
-- [ ] PASS
-- [ ] REVISE
-- [ ] FAIL
+裁决：既保留历史内容资产，也不允许它们继续争夺当前世界观法权。
 
 ---
 
@@ -120,9 +111,7 @@ AI = Amplifier
 
 不得取得 Canon / Identity / Decision / Reality Action Authority。
 
-- [ ] PASS
-- [ ] REVISE
-- [ ] FAIL
+Human Review：`PASS`
 
 ---
 
@@ -138,49 +127,49 @@ worldview-v1.json
 → legacy settlement / master-outline overlay
 ```
 
-是否值得作为 Trilogy 当前世界观入口合并进 `main`？
-
-- [ ] PASS
-- [ ] REVISE
-- [ ] FAIL
+Human Review：`PASS`
 
 ---
 
 # Mandatory boundary review
 
-以下必须全部为 `NO`：
+以下全部裁决为 `NO`：
 
-- [ ] TW1 修改 Soul Canon？
-- [ ] TW1 修改 A1-C4？
-- [ ] TW1 修改课程 / Trial？
-- [ ] TW1 把 Three Worlds 升成新的 Canon Part？
-- [ ] TW1 把 AI 升级为法权主体？
-- [ ] TW1 自动授权 TW2？
-- [ ] TW1 自动授权 Web / Content / Runtime rollout？
-
-任何一项为 YES，必须 `REVISE / FAIL`。
+- TW1 修改 Soul Canon？`NO`
+- TW1 修改 A1-C4？`NO`
+- TW1 修改课程 / Trial？`NO`
+- TW1 把 Three Worlds 升成新的 Canon Part？`NO`
+- TW1 把 AI 升级为法权主体？`NO`
+- TW1 自动授权 TW2？`NO`
+- TW1 自动授权 Web / Content / Runtime rollout？`NO`
 
 ---
 
 # Human decision
 
-请选择且只选择一个：
-
 ```text
 ACCEPT_TW1_TRILOGY_PROJECTION_CONVERGENCE
-REVISE_TW1_TRILOGY_PROJECTION_CONVERGENCE
-REJECT_TW1_TRILOGY_PROJECTION_CONVERGENCE
+```
+
+Decision date：`2026-08-20`
+
+Acceptance receipt：
+
+```text
+project/tw1/TW1-HUMAN-ACCEPTANCE-v0.1.yaml
 ```
 
 ## Acceptance effect
 
-若接受，只授权：
+本次接受只授权：
 
 ```text
-merge TW1 PR
+PR #22 may transition from Draft to Ready for Review
 ```
 
-不自动授权：
+**不自动授权 merge。**
+
+仍不授权：
 
 ```text
 TW2 Course Overlay
@@ -189,4 +178,10 @@ TW4 Cross-repo Drift Guard
 Canon change
 course promotion
 runtime action
+```
+
+下一合法动作：
+
+```text
+EXPLICIT_MERGE_AUTHORIZATION_FOR_PR_22
 ```
