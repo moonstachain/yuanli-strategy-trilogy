@@ -15,9 +15,9 @@ scope:
   master_outline_authority_overlay: DONE
   validator: DONE
   ci_gate: DONE
-  ci_run: 3
+  ci_run: 5
   ci_result: SUCCESS
-  ci_validated_head: c8a4d0f5331d041d78846e86ea49f7120ec6f2ad
+  ci_validated_head: 375346982cbec6baa3e7c91bd64e48233d81ae06
   human_review_card: DONE
   generated_portal_rebuild: NOT_RUN
   generated_legacy_pages_rewrite: NOT_REQUIRED_FOR_TW1_AUTHORITY_CONVERGENCE
