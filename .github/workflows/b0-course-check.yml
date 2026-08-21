@@ -1,0 +1,33 @@
+name: B0 Course Check
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/b0-course-check.yml"
+      - "courses/原力战略三部曲通识课-v1/00-课程总控.md"
+      - "courses/原力战略三部曲通识课-v1/README.md"
+      - "courses/原力战略三部曲通识课-v1/lessons/B0-原力创业四关.md"
+      - "courses/原力战略三部曲通识课-v1/exercises/原力创业四关诊断卡.md"
+      - "courses/原力战略三部曲通识课-v1/deck/B0-原力创业四关-PPT蓝图.md"
+      - "courses/原力战略三部曲通识课-v1/evidence/B0-原力创业四关-证据计划.md"
+      - "courses/原力战略三部曲通识课-v1/evolution/B0-原力创业四关-Evolution-Note.md"
+      - "courses/原力战略三部曲通识课-v1/trials/B0-原力创业四关-桌面试跑报告.md"
+      - "tests/test_b0_course_package.py"
+
+permissions:
+  contents: read
+
+jobs:
+  b0-course:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate B0 course package
+        run: python -m unittest tests/test_b0_course_package.py
