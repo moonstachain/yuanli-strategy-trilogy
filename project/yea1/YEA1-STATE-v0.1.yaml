@@ -39,3 +39,11 @@ promotion:
   merge_authorized: false
 
 next_legal_action: HUMAN_REVIEW_YEA1_PROJECTION
+
+verification:
+  unit_tests: PASS
+  projection_validator: PASS
+  json_contract: PASS
+  atlas_json: PASS
+  diff_check: PASS
+  exact_head: 6927ad2eaf252725179bf8524c832702786433f5
