@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import math
 from pathlib import Path
 
 
@@ -30,6 +31,13 @@ EXPECTED_B4_BARRIERS = ["虚", "实", "入", "出"]
 
 def _reject_non_finite_constant(value):
     raise ValueError(f"non-finite JSON constant is forbidden: {value}")
+
+
+def _parse_finite_float(value):
+    parsed = float(value)
+    if not math.isfinite(parsed):
+        raise ValueError(f"non-finite JSON number is forbidden: {value}")
+    return parsed
 
 
 def _find_forbidden_score_keys(value, path="contract"):
@@ -268,7 +276,9 @@ def validate_repository(root: Path) -> list[str]:
             continue
         try:
             parsed = json.loads(
-                contents[name], parse_constant=_reject_non_finite_constant
+                contents[name],
+                parse_constant=_reject_non_finite_constant,
+                parse_float=_parse_finite_float,
             )
         except (json.JSONDecodeError, TypeError, ValueError, RecursionError) as exc:
             errors.append(f"invalid JSON in {relative_paths[name]}: {exc}")

@@ -158,10 +158,7 @@ class YEA1ValidatorTest(unittest.TestCase):
             check=False,
         )
 
-    def _assert_invalid_contract_json_fails_repository_and_cli(self, root):
-        relative_path = (
-            "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json"
-        )
+    def _assert_invalid_json_fails_repository_and_cli(self, root, relative_path):
         error_prefix = f"invalid JSON in {relative_path}:"
         result = self._run_cli_subprocess_for_repository(root)
         with self.subTest("CLI exit"):
@@ -179,6 +176,12 @@ class YEA1ValidatorTest(unittest.TestCase):
                 self.assertTrue(errors[0].startswith(error_prefix))
             with self.subTest("CLI error identity"):
                 self.assertEqual(result.stdout, f"YEA1 FAIL: {errors[0]}\n")
+
+    def _assert_invalid_contract_json_fails_repository_and_cli(self, root):
+        self._assert_invalid_json_fails_repository_and_cli(
+            root,
+            "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json",
+        )
 
     def test_valid_contract_has_no_errors(self):
         self.assertEqual(validate_contract(self._valid_contract()), [])
@@ -464,6 +467,34 @@ class YEA1ValidatorTest(unittest.TestCase):
                 encoding="utf-8",
             )
             self._assert_invalid_contract_json_fails_repository_and_cli(root)
+
+    def test_positive_exponent_overflow_contract_json_fails_repository_and_cli(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            relative_path = (
+                "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json"
+            )
+            contract_path = root / relative_path
+            contract_text = contract_path.read_text(encoding="utf-8")
+            contract_path.write_text(
+                contract_text[:-1] + ', "exponent_overflow": 1e400}',
+                encoding="utf-8",
+            )
+            self._assert_invalid_json_fails_repository_and_cli(root, relative_path)
+
+    def test_negative_exponent_overflow_atlas_json_fails_repository_and_cli(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            relative_path = "trilogy/_atlas/atlas-v2-chuangye.json"
+            atlas_path = root / relative_path
+            atlas_text = atlas_path.read_text(encoding="utf-8")
+            atlas_path.write_text(
+                atlas_text[:-1] + ', "exponent_overflow": -1e400}',
+                encoding="utf-8",
+            )
+            self._assert_invalid_json_fails_repository_and_cli(root, relative_path)
 
 
 if __name__ == "__main__":
