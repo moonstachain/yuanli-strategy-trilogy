@@ -1,6 +1,6 @@
 schema: yuanli.yea1.state.v0.1
 program: YEA1
-status: WRITTEN_SPEC_ACCEPTED_IMPLEMENTATION_PLANNED
+status: READY_FOR_HUMAN_REVIEW
 branch: design/yea1-architecture-sync
 baseline_main: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
 written_spec: docs/superpowers/specs/2026-08-23-yea1-entrepreneurship-asset-architecture-sync-design.md
@@ -19,7 +19,7 @@ scope:
   replay_nvidia: DONE
   replay_maotai: DONE
   replay_webvan: DONE
-  human_review_card: NOT_STARTED
+  human_review_card: DONE
 
 protected_boundaries:
   b1_b4_names_changed: false
@@ -38,4 +38,4 @@ promotion:
   publication_authorized: false
   merge_authorized: false
 
-next_legal_action: EXECUTE_YEA1_IMPLEMENTATION_PLAN_AFTER_EXPLICIT_EXECUTION_CHOICE
+next_legal_action: HUMAN_REVIEW_YEA1_PROJECTION
