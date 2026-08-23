@@ -15,10 +15,10 @@ scope:
   validator: DONE
   validator_tests: DONE
   ci_gate: DONE
-  replay_amazon: NOT_STARTED
-  replay_nvidia: NOT_STARTED
-  replay_maotai: NOT_STARTED
-  replay_webvan: NOT_STARTED
+  replay_amazon: DONE
+  replay_nvidia: DONE
+  replay_maotai: DONE
+  replay_webvan: DONE
   human_review_card: NOT_STARTED
 
 protected_boundaries:
