@@ -8,8 +8,8 @@ written_spec_acceptance: project/yea1/YEA1-WRITTEN-SPEC-ACCEPTANCE-v0.1.yaml
 human_decision: ACCEPT_YEA1_WRITTEN_SPEC
 
 scope:
-  mother_architecture: NOT_STARTED
-  machine_contract: NOT_STARTED
+  mother_architecture: DONE
+  machine_contract: DONE
   atlas_projection: NOT_STARTED
   outline_projection: NOT_STARTED
   validator: NOT_STARTED
