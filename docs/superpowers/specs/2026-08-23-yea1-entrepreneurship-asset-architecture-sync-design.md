@@ -49,7 +49,7 @@ Its asset-state transition is:
 ```text
 Opportunity
 → Demand Asset
-→ Cashflow Asset
+→ Scalable Cashflow Asset
 → Controlled Compounding Asset
 ```
 
@@ -296,7 +296,7 @@ Outcome Logic / Value Definition Delta
 
 ## 4.5 Relationship with the existing four psychological accounts
 
-The existing psychological accounts remain a deeper customer-psychology projection:
+The existing psychological-account taxonomy remains a deeper customer-psychology projection:
 
 ```text
 两大价值账户
@@ -351,7 +351,7 @@ B3 模式升维
 
 ## 5.2 Structural projection
 
-Canonical operating language remains:
+Existing operating language in current Entrepreneurship materials remains:
 
 ```text
 前链路
@@ -389,7 +389,7 @@ Human Labor Income
 
 ## 5.5 Growth Chain｜增长链
 
-Canonical source:
+Existing operating source label:
 
 ```text
 前链路
@@ -428,7 +428,7 @@ The growth chain is mature when each new customer tends to improve future demand
 
 ## 5.6 Replication Chain｜复制链
 
-Canonical source:
+Existing operating source label:
 
 ```text
 后链路
@@ -473,7 +473,7 @@ Delivery Reliability maintained or ↑
 
 ## 5.7 Compounding Chain｜复利链
 
-Canonical source:
+Existing operating source label:
 
 ```text
 财链路
@@ -575,7 +575,7 @@ B4 壁垒锁定
 四壁垒｜建立一个越来越难被取代的系统
 ```
 
-Existing canonical barrier families remain:
+The existing governed barrier families used in Entrepreneurship materials remain:
 
 ```text
 虚
@@ -982,7 +982,7 @@ YEA1 must preserve existing language while assigning clear status.
 = structural human projection candidate
 
 前链 / 后链 / 财链
-= canonical operating language for B3
+= existing B3 operating language
 
 增长链 / 复制链 / 复利链
 = asset-value human projection of B3
