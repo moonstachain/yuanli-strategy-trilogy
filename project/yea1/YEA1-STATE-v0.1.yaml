@@ -12,8 +12,8 @@ scope:
   machine_contract: DONE
   atlas_projection: DONE
   outline_projection: DONE
-  validator: NOT_STARTED
-  validator_tests: NOT_STARTED
+  validator: DONE
+  validator_tests: DONE
   ci_gate: NOT_STARTED
   replay_amazon: NOT_STARTED
   replay_nvidia: NOT_STARTED
