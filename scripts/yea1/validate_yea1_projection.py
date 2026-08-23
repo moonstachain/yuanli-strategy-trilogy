@@ -145,11 +145,18 @@ def validate_atlas_projection(contract: dict, atlas: dict) -> list[str]:
     contract_stages = {}
     stages = contract.get("stages") if isinstance(contract, dict) else None
     if isinstance(stages, list):
-        contract_stages = {
-            stage.get("id"): stage
-            for stage in stages
-            if isinstance(stage, dict) and stage.get("id") in EXPECTED_STAGE_MAP
-        }
+        for index, stage in enumerate(stages):
+            if not isinstance(stage, dict):
+                continue
+            stage_id = stage.get("id")
+            if not isinstance(stage_id, str):
+                errors.append(
+                    f"Atlas contract stage ID must be a string at index {index}; "
+                    f"got {stage_id}"
+                )
+                continue
+            if stage_id in EXPECTED_STAGE_MAP:
+                contract_stages[stage_id] = stage
 
     chain = atlas.get("chain")
     if not isinstance(chain, list):

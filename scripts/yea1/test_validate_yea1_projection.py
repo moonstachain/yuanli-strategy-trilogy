@@ -193,6 +193,14 @@ class YEA1ValidatorTest(unittest.TestCase):
             )
         )
 
+    def test_atlas_projection_rejects_non_string_contract_stage_id(self):
+        contract = self._valid_contract()
+        contract["stages"][0]["id"] = []
+        errors = validate_atlas_projection(contract, self._valid_atlas())
+        self.assertTrue(
+            any("contract stage ID must be a string" in error for error in errors)
+        )
+
     def test_outline_rejects_forbidden_phrase(self):
         errors = validate_outline_text(self._valid_outline() + "\n五壁垒")
         self.assertTrue(any("五壁垒" in error for error in errors))
@@ -229,6 +237,27 @@ class YEA1ValidatorTest(unittest.TestCase):
                     and "yea1-entrepreneurship-asset-architecture-v0.1.json" in error
                     for error in errors
                 )
+            )
+
+    def test_repository_rejects_non_string_contract_stage_id(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            contract_path = (
+                root
+                / "trilogy"
+                / "_atlas"
+                / "yea1-entrepreneurship-asset-architecture-v0.1.json"
+            )
+            contract = json.loads(contract_path.read_text(encoding="utf-8"))
+            contract["stages"][0]["id"] = []
+            contract_path.write_text(
+                json.dumps(contract, ensure_ascii=False), encoding="utf-8"
+            )
+            errors = validate_repository(root)
+            self.assertTrue(errors)
+            self.assertTrue(
+                any("stage ID must be a string" in error for error in errors)
             )
 
 
