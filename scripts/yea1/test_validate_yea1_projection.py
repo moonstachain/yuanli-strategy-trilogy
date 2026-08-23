@@ -1,5 +1,6 @@
 import io
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -143,6 +144,41 @@ class YEA1ValidatorTest(unittest.TestCase):
             with redirect_stdout(output):
                 exit_code = main()
         return exit_code, output.getvalue()
+
+    def _run_cli_subprocess_for_repository(self, root):
+        script_path = root / "scripts" / "yea1" / "validate_yea1_projection.py"
+        script_path.parent.mkdir(parents=True)
+        source_path = Path(__file__).resolve().parent / "validate_yea1_projection.py"
+        script_path.write_text(source_path.read_text(encoding="utf-8"), encoding="utf-8")
+        return subprocess.run(
+            [sys.executable, str(script_path)],
+            cwd=root,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+
+    def _assert_invalid_contract_json_fails_repository_and_cli(self, root):
+        relative_path = (
+            "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json"
+        )
+        error_prefix = f"invalid JSON in {relative_path}:"
+        result = self._run_cli_subprocess_for_repository(root)
+        with self.subTest("CLI exit"):
+            self.assertEqual(result.returncode, 1)
+        with self.subTest("CLI output"):
+            self.assertTrue(result.stdout.startswith(f"YEA1 FAIL: {error_prefix}"))
+        with self.subTest("CLI stderr"):
+            self.assertEqual(result.stderr, "")
+
+        errors = validate_repository(root)
+        with self.subTest("repository errors"):
+            self.assertEqual(len(errors), 1)
+        if errors:
+            with self.subTest("repository error path"):
+                self.assertTrue(errors[0].startswith(error_prefix))
+            with self.subTest("CLI error identity"):
+                self.assertEqual(result.stdout, f"YEA1 FAIL: {errors[0]}\n")
 
     def test_valid_contract_has_no_errors(self):
         self.assertEqual(validate_contract(self._valid_contract()), [])
@@ -370,6 +406,64 @@ class YEA1ValidatorTest(unittest.TestCase):
             self.assertTrue(
                 any("seq must have type int" in error for error in errors)
             )
+
+    def test_non_finite_nan_contract_json_fails_repository_and_cli(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            contract_path = (
+                root
+                / "trilogy"
+                / "_atlas"
+                / "yea1-entrepreneurship-asset-architecture-v0.1.json"
+            )
+            contract = self._valid_contract()
+            contract["non_finite"] = float("nan")
+            contract_path.write_text(
+                json.dumps(contract, ensure_ascii=False), encoding="utf-8"
+            )
+            self._assert_invalid_contract_json_fails_repository_and_cli(root)
+
+    def test_oversized_integer_contract_json_fails_repository_and_cli(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            contract_path = (
+                root
+                / "trilogy"
+                / "_atlas"
+                / "yea1-entrepreneurship-asset-architecture-v0.1.json"
+            )
+            contract_text = json.dumps(self._valid_contract(), ensure_ascii=False)
+            contract_path.write_text(
+                contract_text[:-1]
+                + ', "oversized_integer": '
+                + ("9" * 5000)
+                + "}",
+                encoding="utf-8",
+            )
+            self._assert_invalid_contract_json_fails_repository_and_cli(root)
+
+    def test_excessive_nesting_contract_json_fails_repository_and_cli(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            contract_path = (
+                root
+                / "trilogy"
+                / "_atlas"
+                / "yea1-entrepreneurship-asset-architecture-v0.1.json"
+            )
+            contract_text = json.dumps(self._valid_contract(), ensure_ascii=False)
+            deeply_nested_value = ("[" * 1200) + "0" + ("]" * 1200)
+            contract_path.write_text(
+                contract_text[:-1]
+                + ', "excessive_nesting": '
+                + deeply_nested_value
+                + "}",
+                encoding="utf-8",
+            )
+            self._assert_invalid_contract_json_fails_repository_and_cli(root)
 
 
 if __name__ == "__main__":
