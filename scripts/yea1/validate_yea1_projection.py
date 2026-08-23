@@ -72,7 +72,9 @@ def validate_contract(contract: dict) -> list[str]:
         stage_id = stage.get("id")
         stage_ids.append(stage_id)
         if not isinstance(stage_id, str):
-            errors.append(f"stage ID must be a string at index {index}; got {stage_id}")
+            errors.append(
+                f"contract stage ID must be a string at index {index}; got {stage_id}"
+            )
             continue
         if stage_id not in EXPECTED_STAGE_MAP:
             errors.append(f"stage ID outside B1-B4 is forbidden: {stage_id}")
@@ -129,10 +131,14 @@ def validate_contract(contract: dict) -> list[str]:
 
 
 def validate_atlas_projection(contract: dict, atlas: dict) -> list[str]:
-    errors = []
+    contract_errors = validate_contract(contract)
+    if contract_errors:
+        return [f"source contract invalid: {error}" for error in contract_errors]
+
     if not isinstance(atlas, dict):
         return ["Atlas must be a JSON object"]
 
+    errors = []
     projection = atlas.get("yea1_projection")
     if not isinstance(projection, dict):
         errors.append("Atlas yea1_projection must be an object")
@@ -142,21 +148,7 @@ def validate_atlas_projection(contract: dict, atlas: dict) -> list[str]:
             f"got {projection.get('source')}"
         )
 
-    contract_stages = {}
-    stages = contract.get("stages") if isinstance(contract, dict) else None
-    if isinstance(stages, list):
-        for index, stage in enumerate(stages):
-            if not isinstance(stage, dict):
-                continue
-            stage_id = stage.get("id")
-            if not isinstance(stage_id, str):
-                errors.append(
-                    f"Atlas contract stage ID must be a string at index {index}; "
-                    f"got {stage_id}"
-                )
-                continue
-            if stage_id in EXPECTED_STAGE_MAP:
-                contract_stages[stage_id] = stage
+    contract_stages = {stage["id"]: stage for stage in contract["stages"]}
 
     chain = atlas.get("chain")
     if not isinstance(chain, list):
@@ -169,6 +161,9 @@ def validate_atlas_projection(contract: dict, atlas: dict) -> list[str]:
             errors.append("Atlas chain nodes must be objects")
             continue
         seq = node.get("seq")
+        if type(seq) is not int:
+            errors.append(f"Atlas chain seq must have type int; got {seq!r}")
+            continue
         if seq in range(1, 5):
             if seq in nodes_by_seq:
                 errors.append(f"Atlas chain contains duplicate seq {seq}")
@@ -181,16 +176,14 @@ def validate_atlas_projection(contract: dict, atlas: dict) -> list[str]:
             errors.append(f"Atlas chain missing seq {seq} YEA1 mapping")
             continue
 
-        canon_action, structural, economic, output = EXPECTED_STAGE_MAP[stage_id]
-        contract_stage = contract_stages.get(stage_id, {})
+        canon_action, _structural, _economic, _output = EXPECTED_STAGE_MAP[stage_id]
+        contract_stage = contract_stages[stage_id]
         expected_mapping = {
             "id": stage_id,
-            "structural_projection": contract_stage.get(
-                "structural_projection", structural
-            ),
-            "economic_dimension": contract_stage.get("economic_dimension", economic),
+            "structural_projection": contract_stage["structural_projection"],
+            "economic_dimension": contract_stage["economic_dimension"],
             "human_dimension": EXPECTED_HUMAN_DIMENSIONS[seq - 1],
-            "output_state": contract_stage.get("output_state", output),
+            "output_state": contract_stage["output_state"],
             "source": CONTRACT_SOURCE,
             "canon_effect": "none",
         }
@@ -200,7 +193,7 @@ def validate_atlas_projection(contract: dict, atlas: dict) -> list[str]:
                 f"{expected_mapping}; got {node.get('yea1')}"
             )
 
-        if contract_stage and contract_stage.get("canon_action") != canon_action:
+        if contract_stage["canon_action"] != canon_action:
             errors.append(
                 f"contract stage {stage_id} canon_action must equal {canon_action}"
             )
@@ -263,8 +256,9 @@ def validate_repository(root: Path) -> list[str]:
         except (OSError, UnicodeError) as exc:
             errors.append(f"unable to read {relative_path}: {exc}")
 
-    contract = None
-    atlas = None
+    unparsed = object()
+    contract = unparsed
+    atlas = unparsed
     for name in ("contract", "atlas"):
         if name not in contents:
             continue
@@ -278,9 +272,11 @@ def validate_repository(root: Path) -> list[str]:
         else:
             atlas = parsed
 
-    if contract is not None:
-        errors.extend(validate_contract(contract))
-    if contract is not None and atlas is not None:
+    contract_errors = []
+    if contract is not unparsed:
+        contract_errors = validate_contract(contract)
+        errors.extend(contract_errors)
+    if contract is not unparsed and atlas is not unparsed and not contract_errors:
         errors.extend(validate_atlas_projection(contract, atlas))
     if "outline" in contents:
         errors.extend(validate_outline_text(contents["outline"]))

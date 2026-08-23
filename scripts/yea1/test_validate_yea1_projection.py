@@ -1,12 +1,16 @@
+import io
 import json
 import sys
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from validate_yea1_projection import (  # noqa: E402
+    main,
     validate_atlas_projection,
     validate_contract,
     validate_outline_text,
@@ -130,6 +134,16 @@ class YEA1ValidatorTest(unittest.TestCase):
             encoding="utf-8",
         )
 
+    def _run_main_for_repository(self, root):
+        output = io.StringIO()
+        with patch(
+            "validate_yea1_projection.validate_repository",
+            side_effect=lambda _root: validate_repository(root),
+        ):
+            with redirect_stdout(output):
+                exit_code = main()
+        return exit_code, output.getvalue()
+
     def test_valid_contract_has_no_errors(self):
         self.assertEqual(validate_contract(self._valid_contract()), [])
 
@@ -201,6 +215,16 @@ class YEA1ValidatorTest(unittest.TestCase):
             any("contract stage ID must be a string" in error for error in errors)
         )
 
+    def test_atlas_projection_rejects_invalid_contract_arguments(self):
+        invalid_contracts = [None, {}, [], "contract", 1, True]
+        for contract in invalid_contracts:
+            with self.subTest(contract=repr(contract)):
+                errors = validate_atlas_projection(contract, self._valid_atlas())
+                self.assertTrue(errors)
+                self.assertTrue(
+                    any("source contract" in error.lower() for error in errors)
+                )
+
     def test_outline_rejects_forbidden_phrase(self):
         errors = validate_outline_text(self._valid_outline() + "\n五壁垒")
         self.assertTrue(any("五壁垒" in error for error in errors))
@@ -210,6 +234,25 @@ class YEA1ValidatorTest(unittest.TestCase):
             root = Path(directory)
             self._write_repository(root)
             self.assertEqual(validate_repository(root), [])
+
+    def test_main_success_prints_exact_pass_and_returns_zero(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            exit_code, output = self._run_main_for_repository(root)
+            self.assertEqual(exit_code, 0)
+            self.assertEqual(output, "YEA1 projection validation: PASS\n")
+
+    def test_main_failure_prints_yea1_fail_and_returns_one(self):
+        output = io.StringIO()
+        with patch(
+            "validate_yea1_projection.validate_repository",
+            return_value=["representative failure"],
+        ):
+            with redirect_stdout(output):
+                exit_code = main()
+        self.assertEqual(exit_code, 1)
+        self.assertEqual(output.getvalue(), "YEA1 FAIL: representative failure\n")
 
     def test_missing_repository_artifact_fails_closed(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -258,6 +301,74 @@ class YEA1ValidatorTest(unittest.TestCase):
             self.assertTrue(errors)
             self.assertTrue(
                 any("stage ID must be a string" in error for error in errors)
+            )
+
+    def test_null_contract_fails_repository_and_cli(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            contract_path = (
+                root
+                / "trilogy"
+                / "_atlas"
+                / "yea1-entrepreneurship-asset-architecture-v0.1.json"
+            )
+            contract_path.write_text("null", encoding="utf-8")
+            errors = validate_repository(root)
+            exit_code, output = self._run_main_for_repository(root)
+            with self.subTest("repository errors"):
+                self.assertEqual(errors, ["contract must be a JSON object"])
+            with self.subTest("CLI exit"):
+                self.assertEqual(exit_code, 1)
+            with self.subTest("CLI output"):
+                self.assertEqual(
+                    output,
+                    "YEA1 FAIL: contract must be a JSON object\n",
+                )
+
+    def test_null_atlas_fails_repository_and_cli(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            atlas_path = root / "trilogy" / "_atlas" / "atlas-v2-chuangye.json"
+            atlas_path.write_text("null", encoding="utf-8")
+            errors = validate_repository(root)
+            exit_code, output = self._run_main_for_repository(root)
+            with self.subTest("repository errors"):
+                self.assertEqual(errors, ["Atlas must be a JSON object"])
+            with self.subTest("CLI exit"):
+                self.assertEqual(exit_code, 1)
+            with self.subTest("CLI output"):
+                self.assertEqual(output, "YEA1 FAIL: Atlas must be a JSON object\n")
+
+    def test_repository_rejects_boolean_atlas_seq(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            atlas_path = root / "trilogy" / "_atlas" / "atlas-v2-chuangye.json"
+            atlas = json.loads(atlas_path.read_text(encoding="utf-8"))
+            atlas["chain"][0]["seq"] = True
+            atlas_path.write_text(
+                json.dumps(atlas, ensure_ascii=False), encoding="utf-8"
+            )
+            errors = validate_repository(root)
+            self.assertTrue(
+                any("seq must have type int" in error for error in errors)
+            )
+
+    def test_repository_rejects_float_atlas_seq(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            atlas_path = root / "trilogy" / "_atlas" / "atlas-v2-chuangye.json"
+            atlas = json.loads(atlas_path.read_text(encoding="utf-8"))
+            atlas["chain"][0]["seq"] = 1.0
+            atlas_path.write_text(
+                json.dumps(atlas, ensure_ascii=False), encoding="utf-8"
+            )
+            errors = validate_repository(root)
+            self.assertTrue(
+                any("seq must have type int" in error for error in errors)
             )
 
 
