@@ -124,7 +124,7 @@
 
 ## 8｜Invalidators
 
-[PIT_INFERENCE] The negative B2 conclusion would weaken if customers accepted delivery fees or materially larger baskets without damaging repeat behavior.
+[PIT_INFERENCE] The `MIXED` B2 conclusion would strengthen if customers accepted delivery fees or materially larger baskets without damaging repeat behavior.
 
 [PIT_INFERENCE] The negative B3 conclusion would weaken if the first center demonstrated positive contribution economics at sustained high volume and a second market reproduced them within the disclosed capital envelope.
 
@@ -142,6 +142,8 @@
 
 [PIT_INFERENCE] Result: B1 `MIXED`; B2 `MIXED`; B3 `UNSUPPORTED`; B4 `UNSUPPORTED`; evidence status `SUPPORTED`.
 
-[PIT_INFERENCE] The replay answers the required question affirmatively: `big world, weak asset-generation machine` was a defensible PIT conclusion from the prospectus itself.
+[PIT_INFERENCE] Could a disciplined YEA1 user at PIT have said "big world, weak asset-generation machine" without knowing the bankruptcy outcome?
+
+[PIT_INFERENCE] Yes. The prospectus itself made `big world, weak asset-generation machine` a defensible PIT conclusion.
 
 [PIT_INFERENCE] This hard negative supports discrimination testing but does not promote YEA1 or establish predictive validity.

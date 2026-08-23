@@ -110,13 +110,15 @@
 
 [PIT_FACT] No customer represented `10%` or more of fiscal 2022 revenue, while one customer represented `10%` of the October 2022 quarter's revenue primarily in Compute & Networking (N1, Item 7 p. 36; N2, Item 2 p. 29).
 
-[PIT_INFERENCE] Workloads and developer effort were visibly concentrating around NVIDIA's platform, but customer procurement and supply remained contestable and export restrictions could redirect demand.
+[PIT_INFERENCE] Customer-revenue concentration is a procurement metric and does not by itself establish YEA1 value concentration.
+
+[UNKNOWN] The inspected PIT corpus does not establish market-relative share or longitudinal concentration of accelerated-computing workloads, developer effort, or value around NVIDIA's platform.
 
 ### Self-Reinforcement
 
 [PIT_INFERENCE] The developer-software-hardware-cloud loop was self-reinforcing at PIT because each layer increased the usefulness and distribution of the others; this conclusion does not depend on later generative-AI results.
 
-[PIT_INFERENCE] B4 is `SUPPORTED` overall because switching and ecosystem control showed protection, concentration, and reinforcement, while physical supply control remained weak and explicitly non-proprietary.
+[PIT_INFERENCE] B4 is `MIXED` overall: switching frictions and the developer-software-hardware-cloud loop support protection and self-reinforcement, while market-relative value concentration is unknown and fabrication and supply control remained weak and externally dependent.
 
 ## 6｜What Was Knowable at PIT
 
@@ -150,8 +152,8 @@
 
 ## 10｜YEA1 Discrimination Result
 
-[PIT_INFERENCE] Result: B1 `SUPPORTED`; B2 `SUPPORTED`; B3 `SUPPORTED`; B4 `SUPPORTED`; evidence status `SUPPORTED`.
+[PIT_INFERENCE] Result: B1 `SUPPORTED`; B2 `SUPPORTED`; B3 `SUPPORTED`; B4 `MIXED`; evidence status `SUPPORTED`.
 
-[PIT_INFERENCE] The strongest discriminator was the pre-cutoff combination of a unified architecture, a documented software and library platform, broad deployment routes, positive cash generation, and developer ecosystem reinforcement—not later AI revenue or market valuation.
+[PIT_INFERENCE] The strongest discriminator was the pre-cutoff combination of a unified architecture, a documented software and library platform, broad deployment routes, positive cash generation, and developer ecosystem protection and self-reinforcement, while market-relative value concentration remained unknown and fabrication control stayed weak—not later AI revenue or market valuation.
 
 [PIT_INFERENCE] This replay does not promote YEA1 or establish that the framework predicts subsequent outcomes.

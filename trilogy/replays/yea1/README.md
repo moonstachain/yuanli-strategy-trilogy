@@ -53,6 +53,6 @@ The matched result uses only `SUPPORTED`, `MIXED`, `UNSUPPORTED`, and `UNKNOWN`.
 | Case | B1 | B2 | B3 | B4 | Strongest Discriminator | Evidence Status |
 |---|---|---|---|---|---|---|
 | Amazon | SUPPORTED | SUPPORTED | SUPPORTED | MIXED | Positive trailing cash flow plus marketplace and fulfillment leverage, while control remained contestable | SUPPORTED |
-| NVIDIA | SUPPORTED | SUPPORTED | SUPPORTED | SUPPORTED | A unified hardware-software-systems platform with a developer ecosystem, despite weak fabrication control | SUPPORTED |
+| NVIDIA | SUPPORTED | SUPPORTED | SUPPORTED | MIXED | A unified hardware-software-systems platform showed protection and self-reinforcement, while market-relative value concentration remained unknown and fabrication control was weak | SUPPORTED |
 | Kweichow Moutai | MIXED | MIXED | SUPPORTED | MIXED | Exceptional cash conversion and brand durability did not prove an expanding broad pool or every form of self-reinforcement | SUPPORTED |
 | Webvan | MIXED | MIXED | UNSUPPORTED | UNSUPPORTED | Plausible convenience demand could not clear unproven replication, negative cash conversion, or control | SUPPORTED |
