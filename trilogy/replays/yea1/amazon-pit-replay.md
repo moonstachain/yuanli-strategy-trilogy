@@ -10,7 +10,7 @@
 
 [PIT_FACT] **A1 —** [Amazon.com, Inc. 2002 Annual Report on Form 10-K](https://www.sec.gov/Archives/edgar/data/1018724/000095014903000355/v87419ore10vk.htm), issuer Amazon.com, Inc., filed with the U.S. Securities and Exchange Commission on `2003-02-19`, Item 1 pp. 1–5 and Item 7 pp. 24–36; accessed `2026-08-23`.
 
-[PIT_FACT] **A2 —** [Amazon.com, Inc. Quarterly Report on Form 10-Q for the quarter ended September 30, 2003](https://www.sec.gov/Archives/edgar/data/1018724/000089102003002504/v93801e10vq.htm), issuer Amazon.com, Inc., filed with the U.S. Securities and Exchange Commission on `2003-10-24`, Item 1 pp. 3–20 and Item 2 pp. 21–35; accessed `2026-08-23`.
+[PIT_FACT] **A2 —** [Amazon.com, Inc. Quarterly Report on Form 10-Q for the quarter ended September 30, 2003](https://www.sec.gov/Archives/edgar/data/1018724/000089102003002504/v93801e10vq.htm), issuer Amazon.com, Inc., filed with the U.S. Securities and Exchange Commission on `2003-10-24`, Item 1 pp. 2–18 and Item 2 pp. 19–48; accessed `2026-08-23`.
 
 [PIT_FACT] A1 and A2 were inspected as the latest annual and quarterly primary filings available before the cutoff; issuer strategy statements are treated as issuer claims, while reported operating and cash figures are treated as filed facts.
 
@@ -46,7 +46,7 @@
 
 [PIT_FACT] By 2002 Amazon reported more than `900,000` websites enrolled in its Associates program and designed site features and service operations to encourage repeat visits and purchases (A1, Item 1 pp. 3–4).
 
-[PIT_FACT] In 2003 management reorganized segment review partly because of the increasing prominence of third-party sellers and set a primary operating objective of increasing unit volume regardless of whether Amazon or a third party was the seller (A2, Note 10 pp. 16–20; Item 2 pp. 21–22).
+[PIT_FACT] In 2003 management reorganized segment review partly because of the increasing prominence of third-party sellers and set a primary operating objective of increasing unit volume regardless of whether Amazon or a third party was the seller (A2, Item 1 Note 10 p. 16; Item 2 pp. 20–21).
 
 [PIT_INFERENCE] Selection supplied by sellers, referrals from Associates, and retained account and preference data could turn transactions into a reusable customer asset; the absence of cohort data keeps the strength of repeat behavior below direct observation.
 
@@ -60,7 +60,7 @@
 
 ### Compounding Chain
 
-[PIT_FACT] Trailing-twelve-month operating cash flow at September 30, 2003 was `$283.638 million`, versus `$150.832 million` a year earlier; after `$44.243 million` of fixed-asset and internal-software purchases, Amazon's disclosed free-cash-flow measure was `$239.395 million`, versus `$119.651 million` (A2, Item 2 pp. 29–33).
+[PIT_FACT] Trailing-twelve-month operating cash flow at September 30, 2003 was `$283.638 million`, versus `$150.832 million` a year earlier; after `$44.243 million` of fixed-asset and internal-software purchases, Amazon's disclosed free-cash-flow measure was `$239.395 million`, versus `$119.651 million` (A2, Item 2 p. 36).
 
 [PIT_FACT] Third-quarter gross profit was `$286 million`, up from `$216 million`; higher-margin third-party sales partly offset lower prices and free shipping, while shipping itself produced a `$27 million` loss in the quarter (A2, Item 2 pp. 22–24).
 
@@ -100,7 +100,7 @@
 
 ### Concentration
 
-[PIT_INFERENCE] Third-party volume and customer traffic were concentrating on Amazon, but intense online and physical retail competition prevented a strong PIT claim that value must concentrate there.
+[PIT_INFERENCE] Third-party sales increased, while market-relative customer-traffic or value concentration remained unestablished from the inspected filings.
 
 ### Self-Reinforcement
 
@@ -120,7 +120,7 @@
 
 [PIT_INFERENCE] A competing explanation was that Amazon remained a capital- and execution-intensive retailer whose demand was driven chiefly by subsidy and category expansion, with marketplace economics too early to dominate consolidated outcomes.
 
-[PIT_INFERENCE] Positive trailing cash flow could also overstate steady economics because holiday working-capital timing created large fourth-quarter inflows and first-quarter outflows (A2, Item 2 pp. 32–33).
+[PIT_INFERENCE] Positive trailing cash flow could also overstate steady economics because holiday working-capital timing created large fourth-quarter inflows and first-quarter outflows (A2, Item 2 p. 38).
 
 ## 8｜Invalidators
 

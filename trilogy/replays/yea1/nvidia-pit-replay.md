@@ -8,9 +8,9 @@
 
 ## 1｜Evidence Boundary
 
-[PIT_FACT] **N1 —** [NVIDIA Corporation Annual Report on Form 10-K for the fiscal year ended January 30, 2022](https://www.sec.gov/Archives/edgar/data/1045810/000104581022000036/nvda-20220130.htm), issuer NVIDIA Corporation, filed with the U.S. Securities and Exchange Commission on `2022-03-18`, Item 1 pp. 4–16 and Item 7 pp. 31–46; accessed `2026-08-23`.
+[PIT_FACT] **N1 —** [NVIDIA Corporation Annual Report on Form 10-K for the fiscal year ended January 30, 2022](https://www.sec.gov/Archives/edgar/data/1045810/000104581022000036/nvda-20220130.htm), issuer NVIDIA Corporation, filed with the U.S. Securities and Exchange Commission on `2022-03-18`, Item 1 pp. 4–13, Item 1A pp. 14–26, and Item 7 pp. 30–39; accessed `2026-08-23`.
 
-[PIT_FACT] **N2 —** [NVIDIA Corporation Quarterly Report on Form 10-Q for the quarter ended October 30, 2022](https://www.sec.gov/Archives/edgar/data/1045810/000104581022000166/nvda-20221030.htm), issuer NVIDIA Corporation, filed with the U.S. Securities and Exchange Commission on `2022-11-18`, Item 1 pp. 3–26 and Item 2 pp. 27–38; accessed `2026-08-23`.
+[PIT_FACT] **N2 —** [NVIDIA Corporation Quarterly Report on Form 10-Q for the quarter ended October 30, 2022](https://www.sec.gov/Archives/edgar/data/1045810/000104581022000166/nvda-20221030.htm), issuer NVIDIA Corporation, filed with the U.S. Securities and Exchange Commission on `2022-11-18`, Item 1 pp. 3–23, Item 2 pp. 24–32, and Part II Item 1A pp. 35–40; accessed `2026-08-23`.
 
 [PIT_FACT] **N3 —** [NVIDIA CUDA Toolkit 11.8 Release Notes](https://docs.nvidia.com/cuda/archive/11.8.0/cuda-toolkit-release-notes/index.html), publisher NVIDIA Corporation, last updated `2022-10-06`, Sections 1–2 including CUDA 11.8 features and CUDA Libraries release notes; accessed `2026-08-23`.
 
@@ -62,15 +62,15 @@
 
 [PIT_FACT] NVIDIA's platform strategy reused common GPU and CUDA building blocks while varying software stacks, and its partner network manufactured, integrated, sold, and deployed systems across clouds and industries (N1, Item 1 pp. 4–11).
 
-[PIT_FACT] NVIDIA did not own wafer fabrication, assembly, testing, or packaging capacity and depended on foundries and subcontractors; by October 2022 some supply lead times had exceeded twelve months (N2, Risk Factors pp. 41–46).
+[PIT_FACT] NVIDIA did not own wafer fabrication, assembly, testing, or packaging capacity and depended on foundries and subcontractors; by October 2022 some supply lead times had exceeded twelve months (N2, Item 2 p. 24; Part II Item 1A p. 35).
 
 [PIT_INFERENCE] Software, reference systems, and partner channels supported system-level replication beyond founder time, but fabless scale transferred important execution and supply control to external parties.
 
 ### Compounding Chain
 
-[PIT_FACT] Fiscal 2022 revenue was `$26.914 billion`, gross margin was `64.9%`, and operating cash flow was `$9.108 billion`, versus `$5.822 billion` in the prior year (N1, Item 7 pp. 35–40).
+[PIT_FACT] Fiscal 2022 revenue was `$26.914 billion`, gross margin was `64.9%`, and operating cash flow was `$9.108 billion`, versus `$5.822 billion` in the prior year (N1, Item 7 pp. 31, 36, and 38).
 
-[PIT_FACT] For the first nine months of fiscal 2023, operating cash flow was `$3.393 billion`; the third-quarter gross margin was `53.6%` after a `$702 million` inventory provision, and nine-month inventory provisions totaled `$2.01 billion` (N2, Item 2 pp. 27–38).
+[PIT_FACT] For the first nine months of fiscal 2023, operating cash flow was `$3.393 billion`; the third-quarter gross margin was `53.6%` after a `$702 million` inventory provision, and nine-month inventory provisions totaled `$2.01 billion` (N2, Item 2 pp. 29–32).
 
 [PIT_INFERENCE] Large positive operating cash generation and high gross margin established a functioning capital asset at PIT, while inventory charges and long supply commitments showed that cash compounding was cyclical and forecasting-sensitive rather than frictionless.
 
@@ -86,7 +86,7 @@
 
 ### 实
 
-[PIT_FACT] NVIDIA controlled GPU, interconnect, board, system, and software design but not semiconductor fabrication or packaging (N1, Item 1 pp. 7–13; N2, Risk Factors pp. 41–46).
+[PIT_FACT] NVIDIA controlled GPU, interconnect, board, system, and software design but not semiconductor fabrication or packaging (N1, Item 1 pp. 7–13; N2, Item 2 p. 24; Part II Item 1A p. 35).
 
 [PIT_INFERENCE] Full-stack design and system integration were supply capabilities; foundry dependence was a constraint, not a supply-control advantage.
 
@@ -108,7 +108,7 @@
 
 ### Concentration
 
-[PIT_FACT] No customer represented `10%` or more of fiscal 2022 revenue, while one customer represented `10%` of the October 2022 quarter's revenue primarily in Compute & Networking (N1, Item 7 pp. 35–37; N2, Item 2 pp. 31–32).
+[PIT_FACT] No customer represented `10%` or more of fiscal 2022 revenue, while one customer represented `10%` of the October 2022 quarter's revenue primarily in Compute & Networking (N1, Item 7 p. 36; N2, Item 2 p. 29).
 
 [PIT_INFERENCE] Workloads and developer effort were visibly concentrating around NVIDIA's platform, but customer procurement and supply remained contestable and export restrictions could redirect demand.
 
@@ -126,7 +126,7 @@
 
 ## 7｜Hard Negative / Competing Explanation
 
-[PIT_FACT] N2 reported consolidated revenue down `17%`, Gaming down `51%`, a material inventory provision, China export restrictions, and outstanding inventory and long-term supply obligations of `$7.02 billion` at October 30, 2022 (N2, Notes and Item 2 pp. 18 and 27–38).
+[PIT_FACT] N2 reported consolidated revenue down `17%`, Gaming down `51%`, a material inventory provision, China export restrictions, and outstanding inventory and long-term supply obligations of `$7.02 billion` at October 30, 2022 (N2, Item 1 Note 13 p. 18; Item 2 pp. 25 and 27–29).
 
 [PIT_INFERENCE] A competing explanation was that 2020–2021 demand had pulled forward purchases, crypto and gaming distorted the installed base, hyperscalers would substitute custom chips, and NVIDIA's software position would not offset inventory cyclicality or supply dependence.
 

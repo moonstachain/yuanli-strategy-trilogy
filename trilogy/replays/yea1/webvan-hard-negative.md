@@ -8,7 +8,7 @@
 
 ## 1｜Evidence Boundary
 
-[PIT_FACT] **W1 —** [Webvan Group, Inc. Prospectus on Form 424B1](https://www.sec.gov/Archives/edgar/data/1092657/000089161899004914/0000891618-99-004914.txt), issuer Webvan Group, Inc., prospectus dated `1999-11-04` and filed with the U.S. Securities and Exchange Commission on `1999-11-05`, Prospectus Summary pp. 1–4, Risk Factors pp. 5–19, Selected Financial Data pp. 25–31, and Business pp. 32–45; accessed `2026-08-23`.
+[PIT_FACT] **W1 —** [Webvan Group, Inc. Prospectus on Form 424B1](https://www.sec.gov/Archives/edgar/data/1092657/000089161899004914/0000891618-99-004914.txt), issuer Webvan Group, Inc., prospectus dated `1999-11-04` and filed with the U.S. Securities and Exchange Commission on `1999-11-05`, Prospectus Summary pp. 1–4, Risk Factors pp. 5–18, Selected Consolidated Financial Data p. 24, MD&A pp. 25–31, Business pp. 32–44, and Competition pp. 41–42; accessed `2026-08-23`.
 
 [PIT_FACT] W1 was inspected as the final IPO prospectus available before the cutoff and contains contemporaneous customer, order, capacity, service, capital-cost, loss, cash-flow, and operating-risk metrics.
 
@@ -84,13 +84,13 @@
 
 ### 入
 
-[PIT_FACT] Saved lists and personalization retained customer context, while customers could still buy from supermarkets or other retailers and paid no disclosed switching penalty (W1, Business pp. 36–39; Competition pp. 43–45).
+[PIT_FACT] Saved lists and personalization retained customer context, while customers could still buy from supermarkets or other retailers and paid no disclosed switching penalty (W1, Business pp. 36–39; Competition pp. 41–42).
 
 [PIT_INFERENCE] Convenience-based switching friction was weak and readily substitutable.
 
 ### 出
 
-[PIT_FACT] Webvan was an inventory-owning retailer and delivery operator; the prospectus did not disclose a two-sided marketplace or a user network whose utility increased with participation (W1, Business pp. 32–45).
+[PIT_FACT] Webvan was an inventory-owning retailer and delivery operator; the prospectus did not disclose a two-sided marketplace or a user network whose utility increased with participation (W1, Business pp. 32–44).
 
 [PIT_INFERENCE] Network or ecosystem control was `UNSUPPORTED`.
 
