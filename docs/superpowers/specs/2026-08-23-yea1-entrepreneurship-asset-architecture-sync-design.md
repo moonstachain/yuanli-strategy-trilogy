@@ -2,8 +2,11 @@
 ## 原力创业资产生成架构 · GitHub 同步设计
 
 **Date**: 2026-08-23  
-**Status**: `WRITTEN_SPEC_PENDING_HUMAN_REVIEW`  
+**Status**: `WRITTEN_SPEC_HUMAN_ACCEPTED`
 **Human design decision**: `ACCEPT_YEA1_ARCHITECTURE_SYNC_DESIGN`  
+**Human written-spec decision**: `ACCEPT_YEA1_WRITTEN_SPEC`
+**Acceptance receipt**: `project/yea1/YEA1-WRITTEN-SPEC-ACCEPTANCE-v0.1.yaml`
+**Implementation plan**: `docs/superpowers/plans/2026-08-23-yea1-entrepreneurship-asset-architecture-sync.md`
 **Working repository**: `moonstachain/yuanli-strategy-trilogy`  
 **Working branch**: `design/yea1-architecture-sync`  
 **Baseline main**: `1553de3d5a8bdceba29ecd89eb4224d4e5626d15`  
@@ -1160,14 +1163,10 @@ YEA1 therefore defines Yuanli Entrepreneurship as:
 
 ```yaml
 architecture_direction: HUMAN_ACCEPTED
-written_spec: PENDING_HUMAN_REVIEW
+written_spec: HUMAN_ACCEPTED
+implementation_plan: WRITTEN
+implementation_execution: NOT_AUTHORIZED
 canon_effect: none
-soul_change: NOT_EXECUTED
-trilogy_projection_change: NOT_EXECUTED
-course_change: NOT_EXECUTED
-atlas_change: NOT_EXECUTED
-yuanli_invest_bridge: NOT_AUTHORIZED
-implementation_plan: NOT_WRITTEN
 merge_authorized: false
 publication_authorized: false
 ```

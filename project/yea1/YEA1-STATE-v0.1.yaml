@@ -1,0 +1,41 @@
+schema: yuanli.yea1.state.v0.1
+program: YEA1
+status: WRITTEN_SPEC_ACCEPTED_IMPLEMENTATION_PLANNED
+branch: design/yea1-architecture-sync
+baseline_main: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
+written_spec: docs/superpowers/specs/2026-08-23-yea1-entrepreneurship-asset-architecture-sync-design.md
+written_spec_acceptance: project/yea1/YEA1-WRITTEN-SPEC-ACCEPTANCE-v0.1.yaml
+human_decision: ACCEPT_YEA1_WRITTEN_SPEC
+
+scope:
+  mother_architecture: NOT_STARTED
+  machine_contract: NOT_STARTED
+  atlas_projection: NOT_STARTED
+  outline_projection: NOT_STARTED
+  validator: NOT_STARTED
+  validator_tests: NOT_STARTED
+  ci_gate: NOT_STARTED
+  replay_amazon: NOT_STARTED
+  replay_nvidia: NOT_STARTED
+  replay_maotai: NOT_STARTED
+  replay_webvan: NOT_STARTED
+  human_review_card: NOT_STARTED
+
+protected_boundaries:
+  b1_b4_names_changed: false
+  b5_created: false
+  parallel_canon_created: false
+  soul_canon_changed: false
+  course_baseline_changed: false
+  private_repo_ssot_restored: false
+  yuanli_invest_changed: false
+  yba0_started: false
+
+promotion:
+  candidate_projection_only: true
+  soul_promotion_authorized: false
+  course_promotion_authorized: false
+  publication_authorized: false
+  merge_authorized: false
+
+next_legal_action: EXECUTE_YEA1_IMPLEMENTATION_PLAN_AFTER_EXPLICIT_EXECUTION_CHOICE
