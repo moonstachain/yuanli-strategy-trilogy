@@ -1,16 +1,16 @@
 # YEA1｜Yuanli Entrepreneurship Asset Architecture Sync Design
 ## 原力创业资产生成架构 · GitHub 同步设计
 
-**Date**: 2026-08-23  
+**Date**: 2026-08-23\
 **Status**: `WRITTEN_SPEC_HUMAN_ACCEPTED`
-**Human design decision**: `ACCEPT_YEA1_ARCHITECTURE_SYNC_DESIGN`  
+**Human design decision**: `ACCEPT_YEA1_ARCHITECTURE_SYNC_DESIGN`\
 **Human written-spec decision**: `ACCEPT_YEA1_WRITTEN_SPEC`
 **Acceptance receipt**: `project/yea1/YEA1-WRITTEN-SPEC-ACCEPTANCE-v0.1.yaml`
 **Implementation plan**: `docs/superpowers/plans/2026-08-23-yea1-entrepreneurship-asset-architecture-sync.md`
-**Working repository**: `moonstachain/yuanli-strategy-trilogy`  
-**Working branch**: `design/yea1-architecture-sync`  
-**Baseline main**: `1553de3d5a8bdceba29ecd89eb4224d4e5626d15`  
-**Canon effect of this spec**: `NONE`  
+**Working repository**: `moonstachain/yuanli-strategy-trilogy`\
+**Working branch**: `design/yea1-architecture-sync`\
+**Baseline main**: `1553de3d5a8bdceba29ecd89eb4224d4e5626d15`\
+**Canon effect of this spec**: `NONE`\
 
 ---
 
