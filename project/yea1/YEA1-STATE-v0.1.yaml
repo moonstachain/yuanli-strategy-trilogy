@@ -10,8 +10,8 @@ human_decision: ACCEPT_YEA1_WRITTEN_SPEC
 scope:
   mother_architecture: DONE
   machine_contract: DONE
-  atlas_projection: NOT_STARTED
-  outline_projection: NOT_STARTED
+  atlas_projection: DONE
+  outline_projection: DONE
   validator: NOT_STARTED
   validator_tests: NOT_STARTED
   ci_gate: NOT_STARTED
