@@ -1,0 +1,74 @@
+name: YEA1 Entrepreneurship Asset Architecture Sync
+
+on:
+  pull_request:
+    paths:
+      - 'docs/superpowers/specs/2026-08-23-yea1-entrepreneurship-asset-architecture-sync-design.md'
+      - 'docs/superpowers/plans/2026-08-23-yea1-entrepreneurship-asset-architecture-sync.md'
+      - 'trilogy/YEA1-原力创业资产生成母架构-v0.1.md'
+      - 'trilogy/原力创业-四级目录.md'
+      - 'trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json'
+      - 'trilogy/_atlas/atlas-v2-chuangye.json'
+      - 'trilogy/replays/yea1/**'
+      - 'scripts/yea1/**'
+      - 'project/yea1/**'
+      - '.github/workflows/yea1-architecture-sync.yml'
+      - 'courses/**'
+      - 'lessons/**'
+      - 'director/**'
+      - 'deck/**'
+      - 'exercises/**'
+      - 'runtime/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit test YEA1 validator
+        run: python -m unittest -v scripts/yea1/test_validate_yea1_projection.py
+      - name: Validate YEA1 projection
+        run: python scripts/yea1/validate_yea1_projection.py
+      - name: Fail closed on YEA1 scope drift
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config core.quotePath false
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          changed="$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")"
+          printf '%s\n' "$changed"
+          allowed='^(docs/superpowers/(specs/2026-08-23-yea1-entrepreneurship-asset-architecture-sync-design\.md|plans/2026-08-23-yea1-entrepreneurship-asset-architecture-sync\.md)|trilogy/YEA1-原力创业资产生成母架构-v0\.1\.md|trilogy/原力创业-四级目录\.md|trilogy/_atlas/(yea1-entrepreneurship-asset-architecture-v0\.1\.json|atlas-v2-chuangye\.json)|trilogy/replays/yea1/.*|scripts/yea1/.*|project/yea1/.*|\.github/workflows/yea1-architecture-sync\.yml)$'
+          unexpected="$(printf '%s\n' "$changed" | grep -Ev "$allowed" || true)"
+          if [ -n "$unexpected" ]; then
+            echo 'YEA1 FAIL: changed files exceed authorized scope:'
+            printf '%s\n' "$unexpected"
+            exit 1
+          fi
+          echo 'YEA1 explicit allowlist scope: PASS'
+      - name: Assert learner-facing course and runtime isolation
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          changed="$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")"
+          forbidden='^(courses/|lessons/|director/|deck/|exercises/|runtime/)'
+          if printf '%s\n' "$changed" | grep -E "$forbidden"; then
+            echo 'YEA1 FAIL: learner-facing course or runtime layer is not authorized.'
+            exit 1
+          fi
+          echo 'YEA1 course/runtime isolation: PASS'
+      - name: Reject whitespace errors
+        if: github.event_name == 'pull_request'
+        run: git diff --check "origin/${{ github.base_ref }}...HEAD"

@@ -14,7 +14,7 @@ scope:
   outline_projection: DONE
   validator: DONE
   validator_tests: DONE
-  ci_gate: NOT_STARTED
+  ci_gate: DONE
   replay_amazon: NOT_STARTED
   replay_nvidia: NOT_STARTED
   replay_maotai: NOT_STARTED
