@@ -142,6 +142,12 @@ class YEA1ValidatorTest(unittest.TestCase):
         }
         self.assertTrue(any("B5" in error for error in validate_contract(contract)))
 
+    def test_non_string_stage_id_returns_error(self):
+        contract = self._valid_contract()
+        contract["stages"][0]["id"] = []
+        errors = validate_contract(contract)
+        self.assertTrue(any("stage ID must be a string" in error for error in errors))
+
     def test_b2_must_preserve_four_psychological_accounts(self):
         contract = self._valid_contract()
         contract["stages"][1]["psychological_accounts_preserved"] = ["功能", "价值"]
@@ -204,6 +210,26 @@ class YEA1ValidatorTest(unittest.TestCase):
             (root / "trilogy" / "_atlas" / "atlas-v2-chuangye.json").unlink()
             errors = validate_repository(root)
             self.assertTrue(any("missing required file" in error for error in errors))
+
+    def test_invalid_utf8_repository_artifact_fails_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_repository(root)
+            contract_path = (
+                root
+                / "trilogy"
+                / "_atlas"
+                / "yea1-entrepreneurship-asset-architecture-v0.1.json"
+            )
+            contract_path.write_bytes(b"\xff")
+            errors = validate_repository(root)
+            self.assertTrue(
+                any(
+                    "unable to read" in error
+                    and "yea1-entrepreneurship-asset-architecture-v0.1.json" in error
+                    for error in errors
+                )
+            )
 
 
 if __name__ == "__main__":

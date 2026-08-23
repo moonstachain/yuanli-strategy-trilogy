@@ -71,6 +71,9 @@ def validate_contract(contract: dict) -> list[str]:
             continue
         stage_id = stage.get("id")
         stage_ids.append(stage_id)
+        if not isinstance(stage_id, str):
+            errors.append(f"stage ID must be a string at index {index}; got {stage_id}")
+            continue
         if stage_id not in EXPECTED_STAGE_MAP:
             errors.append(f"stage ID outside B1-B4 is forbidden: {stage_id}")
             continue
@@ -250,7 +253,7 @@ def validate_repository(root: Path) -> list[str]:
             continue
         try:
             contents[name] = path.read_text(encoding="utf-8")
-        except OSError as exc:
+        except (OSError, UnicodeError) as exc:
             errors.append(f"unable to read {relative_path}: {exc}")
 
     contract = None
