@@ -1,5 +1,6 @@
 import io
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -150,12 +151,18 @@ class YEA1ValidatorTest(unittest.TestCase):
         script_path.parent.mkdir(parents=True)
         source_path = Path(__file__).resolve().parent / "validate_yea1_projection.py"
         script_path.write_text(source_path.read_text(encoding="utf-8"), encoding="utf-8")
+        env = os.environ.copy()
+        existing_python_path = env.get("PYTHONPATH")
+        env["PYTHONPATH"] = os.pathsep.join(
+            part for part in (str(root), existing_python_path) if part
+        )
         return subprocess.run(
             [sys.executable, str(script_path)],
             cwd=root,
             text=True,
             capture_output=True,
             check=False,
+            env=env,
         )
 
     def _assert_invalid_json_fails_repository_and_cli(self, root, relative_path):
@@ -176,9 +183,10 @@ class YEA1ValidatorTest(unittest.TestCase):
                 self.assertTrue(errors[0].startswith(error_prefix))
             with self.subTest("CLI error identity"):
                 self.assertEqual(result.stdout, f"YEA1 FAIL: {errors[0]}\n")
+        return errors
 
     def _assert_invalid_contract_json_fails_repository_and_cli(self, root):
-        self._assert_invalid_json_fails_repository_and_cli(
+        return self._assert_invalid_json_fails_repository_and_cli(
             root,
             "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json",
         )
@@ -230,6 +238,19 @@ class YEA1ValidatorTest(unittest.TestCase):
         contract = self._valid_contract()
         contract["stages"][0]["nested"] = {"yea1_score": 100}
         self.assertTrue(any("yea1_score" in error for error in validate_contract(contract)))
+
+    def test_deep_contract_tree_reports_forbidden_score_key(self):
+        contract = self._valid_contract()
+        nested = {"yea1_score": 100}
+        for _ in range(1200):
+            nested = [nested]
+        contract["deep"] = nested
+        expected_path = "contract.deep" + ("[0]" * 1200) + ".yea1_score"
+
+        self.assertEqual(
+            validate_contract(contract),
+            [f"forbidden score key: {expected_path}"],
+        )
 
     def test_exact_atlas_projection_has_no_errors(self):
         self.assertEqual(
@@ -451,6 +472,30 @@ class YEA1ValidatorTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             self._write_repository(root)
+            original_json_loads = json.loads
+
+            def loads_with_temporary_parser_capacity(*args, **kwargs):
+                original_limit = sys.getrecursionlimit()
+                sys.setrecursionlimit(10000)
+                try:
+                    return original_json_loads(*args, **kwargs)
+                finally:
+                    sys.setrecursionlimit(original_limit)
+
+            (root / "sitecustomize.py").write_text(
+                "import json\n"
+                "import sys\n"
+                "_original_loads = json.loads\n"
+                "def _loads_with_temporary_parser_capacity(*args, **kwargs):\n"
+                "    original_limit = sys.getrecursionlimit()\n"
+                "    sys.setrecursionlimit(10000)\n"
+                "    try:\n"
+                "        return _original_loads(*args, **kwargs)\n"
+                "    finally:\n"
+                "        sys.setrecursionlimit(original_limit)\n"
+                "json.loads = _loads_with_temporary_parser_capacity\n",
+                encoding="utf-8",
+            )
             contract_path = (
                 root
                 / "trilogy"
@@ -466,7 +511,21 @@ class YEA1ValidatorTest(unittest.TestCase):
                 + "}",
                 encoding="utf-8",
             )
-            self._assert_invalid_contract_json_fails_repository_and_cli(root)
+            with patch(
+                "validate_yea1_projection.json.loads",
+                side_effect=loads_with_temporary_parser_capacity,
+            ):
+                errors = self._assert_invalid_contract_json_fails_repository_and_cli(
+                    root
+                )
+            self.assertEqual(
+                errors,
+                [
+                    "invalid JSON in trilogy/_atlas/"
+                    "yea1-entrepreneurship-asset-architecture-v0.1.json: "
+                    "maximum JSON nesting depth exceeds 100"
+                ],
+            )
 
     def test_positive_exponent_overflow_contract_json_fails_repository_and_cli(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -23,6 +23,7 @@ CONTRACT_SOURCE = (
     "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json"
 )
 FORBIDDEN_SCORE_KEYS = {"score", "total_score", "composite_score", "yea1_score"}
+MAX_JSON_NESTING_DEPTH = 100
 EXPECTED_B2_ACCOUNTS = ["功能", "情绪", "社交", "投资"]
 EXPECTED_B3_OPERATING = ["前链路", "后链路", "财链路"]
 EXPECTED_B3_HUMAN = ["增长链", "复制链", "复利链"]
@@ -40,17 +41,46 @@ def _parse_finite_float(value):
     return parsed
 
 
+def _reject_excessive_json_nesting(text):
+    depth = 0
+    in_string = False
+    escaped = False
+    for character in text:
+        if in_string:
+            if escaped:
+                escaped = False
+            elif character == "\\":
+                escaped = True
+            elif character == '"':
+                in_string = False
+            continue
+
+        if character == '"':
+            in_string = True
+        elif character in "[{":
+            depth += 1
+            if depth > MAX_JSON_NESTING_DEPTH:
+                raise ValueError(
+                    "maximum JSON nesting depth exceeds "
+                    f"{MAX_JSON_NESTING_DEPTH}"
+                )
+        elif character in "]}":
+            depth -= 1
+
+
 def _find_forbidden_score_keys(value, path="contract"):
     errors = []
-    if isinstance(value, dict):
-        for key, nested in value.items():
-            key_path = f"{path}.{key}"
-            if key in FORBIDDEN_SCORE_KEYS:
-                errors.append(f"forbidden score key: {key_path}")
-            errors.extend(_find_forbidden_score_keys(nested, key_path))
-    elif isinstance(value, list):
-        for index, nested in enumerate(value):
-            errors.extend(_find_forbidden_score_keys(nested, f"{path}[{index}]"))
+    stack = [(value, path, None)]
+    while stack:
+        current, current_path, current_key = stack.pop()
+        if current_key in FORBIDDEN_SCORE_KEYS:
+            errors.append(f"forbidden score key: {current_path}")
+        if isinstance(current, dict):
+            for key, nested in reversed(tuple(current.items())):
+                stack.append((nested, f"{current_path}.{key}", key))
+        elif isinstance(current, list):
+            for index in range(len(current) - 1, -1, -1):
+                stack.append((current[index], f"{current_path}[{index}]", None))
     return errors
 
 
@@ -275,6 +305,7 @@ def validate_repository(root: Path) -> list[str]:
         if name not in contents:
             continue
         try:
+            _reject_excessive_json_nesting(contents[name])
             parsed = json.loads(
                 contents[name],
                 parse_constant=_reject_non_finite_constant,
