@@ -105,7 +105,8 @@ remote_qualification:
     initial_verdict_event: YEA1-SDD-E074
     initial_verdict: FIXES_REQUIRED
     remote_only_fix_event: YEA1-SDD-E075
-    final_verdict_event: YEA1-SDD-E076
+    final_verdict_event: YEA1-SDD-E078
+    superseded_metadata_transcription_receipt: YEA1-SDD-E076
     final_verdict: PASS
     critical_findings: 0
     important_findings: 0
