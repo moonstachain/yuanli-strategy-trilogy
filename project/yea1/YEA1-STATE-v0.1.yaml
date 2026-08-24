@@ -1,14 +1,24 @@
 schema: yuanli.yea1.state.v0.1
 program: YEA1
-status: REMOTE_SETTLEMENT_RECORDED_AWAITING_FINAL_EXACT_HEAD_CI
+status: REMOTE_VERIFIED_READY_FOR_HUMAN_REVIEW
 branch: design/yea1-architecture-sync
 baseline_main: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
 written_spec: docs/superpowers/specs/2026-08-23-yea1-entrepreneurship-asset-architecture-sync-design.md
 written_spec_acceptance: project/yea1/YEA1-WRITTEN-SPEC-ACCEPTANCE-v0.1.yaml
-human_decision: ACCEPT_YEA1_WRITTEN_SPEC
-human_decision_scope: WRITTEN_SPEC_ACCEPTANCE_ONLY
+written_spec_human_decision: ACCEPT_YEA1_WRITTEN_SPEC
+written_spec_human_decision_scope: WRITTEN_SPEC_ACCEPTANCE_ONLY
+human_decision: AWAITING
+human_decision_scope: YEA1_PROJECTION_ONLY
 projection_human_decision: AWAITING
 canon_effect: "none"
+candidate_projection_only: true
+draft_pr: true
+remote_ci: PASS
+whole_branch_review: PASS
+merge_authorized: false
+course_promotion_authorized: false
+soul_canon_promotion_authorized: false
+yba0_authorized: false
 
 scope:
   mother_architecture: DONE
@@ -37,12 +47,16 @@ protected_boundaries:
 promotion:
   candidate_projection_only: true
   soul_promotion_authorized: false
+  soul_canon_promotion_authorized: false
   course_promotion_authorized: false
   publication_authorized: false
   merge_authorized: false
 
-remote_settlement:
-  evidence_scope: VERIFIED_REMOTE_STATE_AT_FEATURE_HEAD
+remote_qualification:
+  evidence_scope: VERIFIED_REMOTE_EXACT_HEAD_AND_FINAL_WHOLE_BRANCH_REVIEW
+  reviewed_base: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
+  reviewed_head: 2f9df8c595e8ca524641ffc73e1bc43d659c7133
+  reviewed_range: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15..2f9df8c595e8ca524641ffc73e1bc43d659c7133
   pull_request:
     number: 24
     url: https://github.com/moonstachain/yuanli-strategy-trilogy/pull/24
@@ -50,30 +64,18 @@ remote_settlement:
     draft: true
     target: main
     base_head: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
-    head: da4965081db554f79a650ffc84baff392182d634
-  branch_sync:
-    origin_main_head: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
-    remote_feature_head: da4965081db554f79a650ffc84baff392182d634
-  local_remote_lineage:
-    remote_ci_coverage_through: da4965081db554f79a650ffc84baff392182d634
-    settlement_content_commit: 170ecf348bdac005a1b1c38b664fa3efd1da658a
-    implementation_receipt_commit: 28ee44b099f449363ec569d6d4f595496b554d38
-    spec_review_receipt_head: 554c59893e5298753191ceabe7d5143fd7ba1611
-    current_local_head_resolution:
-      method: GIT_HEAD_PLUS_SDD_LEDGER
-      git_command: git rev-parse HEAD
-      ledger_path: project/yea1/YEA1-SDD-LEDGER-v0.1.md
-      embedded_sha: false
-    all_local_settlement_and_receipt_commits_after_remote_ci_head:
-      scope: LOCAL_ONLY
-      verified_remote_presence: false
-      remote_ci_covered: false
-      status: AWAITING_FINAL_EXACT_HEAD_CI
+    head: 2f9df8c595e8ca524641ffc73e1bc43d659c7133
+    body_remote_ci_receipt: PASS
+    stale_pending_line_count: 0
+    truthful_pass_line_count: 1
+  branch_policy:
+    main_protected: false
+    additional_required_status_policy_configured: false
   ci:
-    first_green_exact_head_run: 32685299241
+    workflow_run: 32688075895
     workflow: YEA1 Entrepreneurship Asset Architecture Sync
-    validate_job_id: 97309187145
-    check_id: 97309187145
+    validate_job_id: 97316682292
+    check_id: 97316682292
     check_name: validate
     status: completed
     conclusion: success
@@ -85,6 +87,7 @@ remote_settlement:
     changed_file_count: 19
     sorted_utf8_sha256: f3951eca850aad06d13f9a36aaa53be817389a60daf7efd5564aafd9d19483c8
   body_integrity:
+    section_count: 51
     sha256: c1e629daced3f819e620555634e3cc603707356c5626445840cae49a25c66399
   integrity:
     status: PASS
@@ -95,18 +98,77 @@ remote_settlement:
     scalar_score_present: false
     machine_atlas_human_projection_consistent: true
     replays_present: true
+    replay_reasoning: PIT_DISCIPLINED
     webvan_b3_b4: UNSUPPORTED
     webvan_hard_negative_question_with_pit_answer_retained: true
-  whole_branch_review: AWAITING_FINAL_EXACT_HEAD_REVIEW
+  final_whole_branch_review:
+    initial_verdict_event: YEA1-SDD-E074
+    initial_verdict: FIXES_REQUIRED
+    remote_only_fix_event: YEA1-SDD-E075
+    final_verdict_event: YEA1-SDD-E076
+    final_verdict: PASS
+    critical_findings: 0
+    important_findings: 0
+    phase_h_risks:
+      canon_authority_drift: PASS
+      duplicate_or_parallel_ontology: PASS
+      two_accounts_replace_four_psychological_accounts: PASS
+      three_chains_collapse_into_departments: PASS
+      four_barriers_collapse_into_static_moat_scoring: PASS
+      hidden_b5: PASS
+      scalar_yea1_score: PASS
+      course_baseline_mutation: PASS
+      yuanli_invest_or_yba0_leakage: PASS
+      hindsight_only_replay_reasoning: PASS
+      machine_human_projection_inconsistency: PASS
+      stale_or_false_remote_receipts: PASS
+    nonblocking_minor:
+      actions_node_runtime_warning: checkout/setup-python target Node 20 and are forced to Node 24; schedule maintenance
   human_decision: AWAITING
 
-next_legal_action: RUN_FINAL_EXACT_HEAD_CI_AND_WHOLE_BRANCH_REVIEW
+post_qualification_lineage:
+  qualification_basis_head: 2f9df8c595e8ca524641ffc73e1bc43d659c7133
+  qualification_basis_scope: REMOTE_CI_AND_FINAL_WHOLE_BRANCH_REVIEW
+  final_state_content:
+    commit_resolution: YEA1-SDD-E077
+    remote_presence_verified: false
+    remote_ci_covered: false
+    spec_review: PENDING
+    quality_review: PENDING
+  final_state_receipt_carrier:
+    commit_resolution: GIT_HEAD_PLUS_SDD_LEDGER
+    remote_presence_verified: false
+    remote_ci_covered: false
+    spec_review: PENDING
+    quality_review: PENDING
+  current_local_head_resolution:
+    method: GIT_HEAD_PLUS_SDD_LEDGER
+    git_command: git rev-parse HEAD
+    ledger_path: project/yea1/YEA1-SDD-LEDGER-v0.1.md
+    embedded_sha: false
+  completion_claim_requires:
+    - FRESH_SPEC_REVIEW
+    - FRESH_QUALITY_REVIEW
+    - LIVE_EXACT_HEAD_REMOTE_CI
+
+task_8:
+  complete: false
+  status: FINAL_STATE_IMPLEMENTED_AWAITING_SPEC_REVIEW
+  spec_review: PENDING
+  quality_review: PENDING
+
+next_legal_action: HUMAN_REVIEW_YEA1_PROJECTION
 
 verification:
+  qualification_basis_head: 2f9df8c595e8ca524641ffc73e1bc43d659c7133
+  qualification_basis_scope: REMOTE_CI_AND_FINAL_WHOLE_BRANCH_REVIEW
   unit_tests: PASS
+  unit_test_count: 29
   projection_validator: PASS
   json_contract: PASS
   atlas_json: PASS
+  compilation: PASS
   diff_check: PASS
-  exact_head: 6927ad2eaf252725179bf8524c832702786433f5
-  exact_head_scope: HISTORICAL_PRE_STATE_RECEIPT_CONTENT_HEAD
+  manifest: PASS
+  body_integrity: PASS
+  local_final_state_commits_review: PENDING

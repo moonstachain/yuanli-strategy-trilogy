@@ -12,8 +12,10 @@ This card consumes the Tasks 1–6 artifacts and settled results to create a bou
 - Tasks 4–5 validator, validator tests, and CI gate
 - Task 6 Amazon, NVIDIA, 茅台, and Webvan replay pack with settled Spec Review and Quality Review results
 - Historical Task 7 pre-gate verification had 28 of 28 tests passing, exact validator PASS, and all four replay state fields at `DONE`; this evidence applies to the Task 7 gate and is not the current settlement-head verification
-- Current local settlement verification has 29 of 29 tests passing and exact validator output `YEA1 projection validation: PASS`
-- The first green remote CI covers exact remote head `da4965081db554f79a650ffc84baff392182d634` only. The later settlement content commit `170ecf348bdac005a1b1c38b664fa3efd1da658a`, implementation-receipt commit `28ee44b099f449363ec569d6d4f595496b554d38`, Spec-review-receipt head `554c59893e5298753191ceabe7d5143fd7ba1611`, and every later local settlement/receipt commit remain local, outside remote-CI coverage, and `AWAITING_FINAL_EXACT_HEAD_CI` plus final whole-branch review; the current local head is resolved from Git and the SDD ledger rather than embedded in this card
+- At qualification-basis head `2f9df8c595e8ca524641ffc73e1bc43d659c7133`, fresh local verification had 29 of 29 tests passing, exact validator output `YEA1 projection validation: PASS`, successful compilation and both JSON parses, the exact 19-path allowlist/manifest hash, and the established 51-section body identity/hash
+- Exact-head remote CI is `PASS` for workflow run `32688075895`, workflow `YEA1 Entrepreneurship Asset Architecture Sync`, validate job/check `97316682292`, with 1 total check and 0 non-success checks at Draft PR #24 head `2f9df8c595e8ca524641ffc73e1bc43d659c7133` against base/main `1553de3d5a8bdceba29ecd89eb4224d4e5626d15`
+- The final whole-branch rereview of `1553de3d5a8bdceba29ecd89eb4224d4e5626d15..2f9df8c595e8ca524641ffc73e1bc43d659c7133` is `PASS`: all 12 Phase-H risks passed, with no Critical or Important finding; the sole nonblocking Minor is that checkout/setup-python Actions target Node 20 and are forced to Node 24, which should be scheduled for maintenance without expanding this scope
+- The State/Card/Ledger final-state content commit and its ledger-only receipt are later local commits, not part of the `2f9df8c595e8ca524641ffc73e1bc43d659c7133` qualification basis. They are not claimed remote or CI-covered and require fresh Spec Review, fresh Quality Review, and live exact-head remote CI before any Task 8 completion claim. Resolve the current local head through Git plus `YEA1-SDD-LEDGER-v0.1.md`; this card embeds no self-referential current SHA
 
 ## Seven review questions
 
@@ -60,9 +62,9 @@ Agent answer: YES. 虚/实/入/出 remain the four barrier languages and are pro
 
 Phase-I Q5｜Is the full projection worthy of Human consideration?
 
-Agent answer: YES. The contract, Atlas and Human projection are consistent; all four replays are present; remote integrity is PASS; and Webvan remains a hard negative with B3/B4 `UNSUPPORTED` and the exact hard-negative question with PIT answer retained.
+Agent answer: YES. The contract, Atlas and Human projection are consistent; all four replays are present; exact-head remote CI and the final whole-branch rereview are PASS at the qualification-basis head; and Webvan remains a hard negative with B3/B4 `UNSUPPORTED` and the exact hard-negative question with PIT answer retained.
 
-Agent recommendation: `PASS_FOR_HUMAN_REVIEW`. This recommendation is provisional until final exact-head CI and whole-branch review, is not Human acceptance, and leaves the Human decision `AWAITING`.
+Agent recommendation: `PASS_FOR_HUMAN_REVIEW`. This engineering recommendation is grounded in the reviewed qualification-basis head, is not Human acceptance, and leaves the Human decision `AWAITING`. The later local final-state content and receipt commits still require fresh engineering reviews and live exact-head remote CI before any completion claim.
 
 ## Allowed Human decisions only
 
