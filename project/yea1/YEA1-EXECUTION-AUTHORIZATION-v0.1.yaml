@@ -1,0 +1,26 @@
+schema: yuanli.yea1.execution_authorization.v0.1
+program: YEA1
+decision: EXECUTE_YEA1_PLAN_SUBAGENT_DRIVEN
+authorized_at: 2026-08-23T16:40:00+08:00
+repository: moonstachain/yuanli-strategy-trilogy
+branch: design/yea1-architecture-sync
+plan: docs/superpowers/plans/2026-08-23-yea1-entrepreneurship-asset-architecture-sync.md
+execution_mode: SUBAGENT_DRIVEN
+canon_effect: none
+authorizes:
+  implementation_execution: true
+  task_by_task_changes_on_working_branch: true
+  validator_and_ci_work: true
+  replay_package: true
+  human_review_package: true
+  merge: false
+  publication: false
+  soul_canon_change: false
+  course_promotion: false
+  yuanli_invest_bridge: false
+stop_conditions:
+  - irreversible_or_destructive_operation
+  - security_sensitive_action
+  - merge_or_publish_or_shared_branch_side_effect
+  - execution_environment_missing_required_subagent_or_worktree_capability
+next_legal_action: START_SUBAGENT_DRIVEN_EXECUTION_IF_RUNTIME_SUPPORTS_REQUIRED_CAPABILITIES
