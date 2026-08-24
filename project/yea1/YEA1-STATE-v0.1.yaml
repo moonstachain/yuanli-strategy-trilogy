@@ -1,11 +1,14 @@
 schema: yuanli.yea1.state.v0.1
 program: YEA1
-status: READY_FOR_HUMAN_REVIEW
+status: REMOTE_SETTLEMENT_RECORDED_AWAITING_FINAL_EXACT_HEAD_CI
 branch: design/yea1-architecture-sync
 baseline_main: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
 written_spec: docs/superpowers/specs/2026-08-23-yea1-entrepreneurship-asset-architecture-sync-design.md
 written_spec_acceptance: project/yea1/YEA1-WRITTEN-SPEC-ACCEPTANCE-v0.1.yaml
 human_decision: ACCEPT_YEA1_WRITTEN_SPEC
+human_decision_scope: WRITTEN_SPEC_ACCEPTANCE_ONLY
+projection_human_decision: AWAITING
+canon_effect: "none"
 
 scope:
   mother_architecture: DONE
@@ -38,7 +41,51 @@ promotion:
   publication_authorized: false
   merge_authorized: false
 
-next_legal_action: HUMAN_REVIEW_YEA1_PROJECTION
+remote_settlement:
+  evidence_scope: VERIFIED_REMOTE_STATE_AT_FEATURE_HEAD
+  pull_request:
+    number: 24
+    url: https://github.com/moonstachain/yuanli-strategy-trilogy/pull/24
+    state: open
+    draft: true
+    target: main
+    base_head: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
+    head: da4965081db554f79a650ffc84baff392182d634
+  branch_sync:
+    origin_main_head: 1553de3d5a8bdceba29ecd89eb4224d4e5626d15
+    remote_feature_head: da4965081db554f79a650ffc84baff392182d634
+  ci:
+    first_green_exact_head_run: 32685299241
+    workflow: YEA1 Entrepreneurship Asset Architecture Sync
+    validate_job_id: 97309187145
+    check_id: 97309187145
+    check_name: validate
+    status: completed
+    conclusion: success
+    result: PASS
+    remote_check_inventory:
+      total: 1
+      non_success: 0
+  manifest:
+    changed_file_count: 19
+    sorted_utf8_sha256: f3951eca850aad06d13f9a36aaa53be817389a60daf7efd5564aafd9d19483c8
+  body_integrity:
+    sha256: c1e629daced3f819e620555634e3cc603707356c5626445840cae49a25c66399
+  integrity:
+    status: PASS
+    all_19_paths_allowlisted: true
+    forbidden_surface_paths_present: false
+    b1_b4_exact: true
+    b5_present: false
+    scalar_score_present: false
+    machine_atlas_human_projection_consistent: true
+    replays_present: true
+    webvan_b3_b4: UNSUPPORTED
+    webvan_hard_negative_question_with_pit_answer_retained: true
+  whole_branch_review: AWAITING_FINAL_EXACT_HEAD_REVIEW
+  human_decision: AWAITING
+
+next_legal_action: RUN_FINAL_EXACT_HEAD_CI_AND_WHOLE_BRANCH_REVIEW
 
 verification:
   unit_tests: PASS
@@ -47,3 +94,4 @@ verification:
   atlas_json: PASS
   diff_check: PASS
   exact_head: 6927ad2eaf252725179bf8524c832702786433f5
+  exact_head_scope: HISTORICAL_PRE_STATE_RECEIPT_CONTENT_HEAD
