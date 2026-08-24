@@ -132,16 +132,50 @@ post_qualification_lineage:
   qualification_basis_scope: REMOTE_CI_AND_FINAL_WHOLE_BRANCH_REVIEW
   final_state_content:
     commit_resolution: YEA1-SDD-E077
-    remote_presence_verified: false
-    remote_ci_covered: false
-    spec_review: PENDING
-    quality_review: PENDING
+    remote_presence_resolution:
+      method: CURRENT_GIT_REF_PLUS_DRAFT_PR_LIVE_HEAD
+      local_head_command: git rev-parse HEAD
+      live_pr: https://github.com/moonstachain/yuanli-strategy-trilogy/pull/24
+      comparison: EXACT_SHA_EQUALITY
+      result_storage: LIVE_ONLY
+    remote_ci_coverage_resolution:
+      method: LIVE_GITHUB_CHECK_INVENTORY_AT_CURRENT_EXACT_HEAD
+      current_head_command: git rev-parse HEAD
+      workflow: YEA1 Entrepreneurship Asset Architecture Sync
+      result_storage: LIVE_ONLY
+    spec_review_resolution:
+      method: CURRENT_TASK_8_LEDGER_RECEIPT_LINK
+      ledger_path: project/yea1/YEA1-SDD-LEDGER-v0.1.md
+      reviewer_role: SPEC_REVIEW
+      result_storage: LEDGER_ONLY
+    quality_review_resolution:
+      method: CURRENT_TASK_8_LEDGER_RECEIPT_LINK
+      ledger_path: project/yea1/YEA1-SDD-LEDGER-v0.1.md
+      reviewer_role: QUALITY_REVIEW
+      result_storage: LEDGER_ONLY
   final_state_receipt_carrier:
     commit_resolution: GIT_HEAD_PLUS_SDD_LEDGER
-    remote_presence_verified: false
-    remote_ci_covered: false
-    spec_review: PENDING
-    quality_review: PENDING
+    remote_presence_resolution:
+      method: CURRENT_GIT_REF_PLUS_DRAFT_PR_LIVE_HEAD
+      local_head_command: git rev-parse HEAD
+      live_pr: https://github.com/moonstachain/yuanli-strategy-trilogy/pull/24
+      comparison: EXACT_SHA_EQUALITY
+      result_storage: LIVE_ONLY
+    remote_ci_coverage_resolution:
+      method: LIVE_GITHUB_CHECK_INVENTORY_AT_CURRENT_EXACT_HEAD
+      current_head_command: git rev-parse HEAD
+      workflow: YEA1 Entrepreneurship Asset Architecture Sync
+      result_storage: LIVE_ONLY
+    spec_review_resolution:
+      method: CURRENT_TASK_8_LEDGER_RECEIPT_LINK
+      ledger_path: project/yea1/YEA1-SDD-LEDGER-v0.1.md
+      reviewer_role: SPEC_REVIEW
+      result_storage: LEDGER_ONLY
+    quality_review_resolution:
+      method: CURRENT_TASK_8_LEDGER_RECEIPT_LINK
+      ledger_path: project/yea1/YEA1-SDD-LEDGER-v0.1.md
+      reviewer_role: QUALITY_REVIEW
+      result_storage: LEDGER_ONLY
   current_local_head_resolution:
     method: GIT_HEAD_PLUS_SDD_LEDGER
     git_command: git rev-parse HEAD
@@ -154,9 +188,18 @@ post_qualification_lineage:
 
 task_8:
   complete: false
-  status: FINAL_STATE_IMPLEMENTED_AWAITING_SPEC_REVIEW
-  spec_review: PENDING
-  quality_review: PENDING
+  status_resolution:
+    method: CURRENT_TASK_8_LEDGER_STATUS
+    ledger_path: project/yea1/YEA1-SDD-LEDGER-v0.1.md
+    result_storage: LEDGER_ONLY
+  spec_review_resolution:
+    method: CURRENT_TASK_8_LEDGER_RECEIPT_LINK
+    reviewer_role: SPEC_REVIEW
+    result_storage: LEDGER_ONLY
+  quality_review_resolution:
+    method: CURRENT_TASK_8_LEDGER_RECEIPT_LINK
+    reviewer_role: QUALITY_REVIEW
+    result_storage: LEDGER_ONLY
 
 next_legal_action: HUMAN_REVIEW_YEA1_PROJECTION
 
@@ -172,4 +215,7 @@ verification:
   diff_check: PASS
   manifest: PASS
   body_integrity: PASS
-  local_final_state_commits_review: PENDING
+  local_final_state_commits_review_resolution:
+    method: CURRENT_TASK_8_LEDGER_REVIEW_LINKS
+    ledger_path: project/yea1/YEA1-SDD-LEDGER-v0.1.md
+    result_storage: LEDGER_ONLY
