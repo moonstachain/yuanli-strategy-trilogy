@@ -11,7 +11,9 @@ This card consumes the Tasks 1–6 artifacts and settled results to create a bou
 - Task 3 additive Atlas and outline projections
 - Tasks 4–5 validator, validator tests, and CI gate
 - Task 6 Amazon, NVIDIA, 茅台, and Webvan replay pack with settled Spec Review and Quality Review results
-- Fresh pre-gate verification with 28 of 28 tests passing, exact validator PASS, and all four replay state fields at `DONE`
+- Historical Task 7 pre-gate verification had 28 of 28 tests passing, exact validator PASS, and all four replay state fields at `DONE`; this evidence applies to the Task 7 gate and is not the current settlement-head verification
+- Current local settlement verification has 29 of 29 tests passing and exact validator output `YEA1 projection validation: PASS`
+- The first green remote CI covers exact remote head `da4965081db554f79a650ffc84baff392182d634` only. The later settlement content commit `170ecf348bdac005a1b1c38b664fa3efd1da658a`, implementation-receipt commit `28ee44b099f449363ec569d6d4f595496b554d38`, Spec-review-receipt head `554c59893e5298753191ceabe7d5143fd7ba1611`, and every later local settlement/receipt commit remain local, outside remote-CI coverage, and `AWAITING_FINAL_EXACT_HEAD_CI` plus final whole-branch review; the current local head is resolved from Git and the SDD ledger rather than embedded in this card
 
 ## Seven review questions
 
