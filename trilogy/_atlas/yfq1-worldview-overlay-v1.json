@@ -1,0 +1,25 @@
+{
+  "schema": "yuanli.trilogy.yfq1-worldview-overlay.v1",
+  "program": "YFQ1",
+  "status": "ACTIVE_PROJECTION",
+  "upstream": {
+    "authority_repo": "moonstachain/yuanli-strategy-soul",
+    "contract_path": "CONSTITUTION/YUANLI-WORLDVIEW-CONTRACT-v1.md",
+    "meta_principle": "Value Before Compounding",
+    "fundamental_question": "我这一生，究竟什么真正值得我投入有限的生命？"
+  },
+  "projection_rule": "只加上位问题，不替换三部曲正典、三个世界或A1-C4",
+  "trilogy_projection_question": "在把独特性资产化、事业化、生命化之前，这个价值本身值得我投入生命并让它进入未来吗？",
+  "worlds": {
+    "source": "什么值得通过我持续产生？",
+    "reality": "什么值得进入真实价值交换，并被世界选择与放大？",
+    "future": "什么值得被记住、复用、传递与继续进化；什么应该停止、遗忘或重审？"
+  },
+  "unchanged_authority": {
+    "strategy_mother_question": true,
+    "trilogy": ["原力资产", "原力创业", "原力OS"],
+    "a1_c4": true,
+    "three_worlds": true,
+    "runtime_authority": false
+  }
+}
