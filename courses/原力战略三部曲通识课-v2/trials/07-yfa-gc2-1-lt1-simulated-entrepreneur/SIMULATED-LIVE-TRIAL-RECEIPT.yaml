@@ -1,0 +1,55 @@
+trial_id: YFA-GC2.1-LT1-SIM
+title: L03 Force Asset Life-Tree Simulated Entrepreneur Live Trial
+input_version: v2.2-DT1
+evidence_class: simulated_live_trial_rehearsal
+real_human_participants: 0
+simulated_personas: 5
+status: CONDITIONAL_PASS_FOR_REAL_LT1
+canon_effect: none
+reusable: false
+
+personas:
+  - P01_mature_operator
+  - P02_expert_ip_founder
+  - P03_ai_native_founder
+  - P04_high_achievement_founder
+  - P05_family_responsibility_founder
+
+active_work_minutes_estimated:
+  P01: 27
+  P02: 31
+  P03: 29
+  P04: 34
+  P05: 30
+  median: 30
+
+results:
+  mother_not_capability:
+    direct_or_peer_corrected: 4_of_5
+    teacher_rescue_needed: 1_of_5
+  self_endorsed_real_opportunity_cost: 5_of_5_after_existing_prompt
+  force_bet_formed: 5_of_5
+  fruit_not_seed: 5_of_5_after_peer_check
+  task2_materially_distinct: 5_of_5_after_peer_check
+  recall_24h_proxy: 5_of_5
+  unseen_transfer_proxy: 5_of_5
+
+p0_candidate:
+  id: P0-SIM-01
+  name: External Reward Ablation Question
+  finding: High-achievement founders may encode winning, rank, achievement or extreme execution as Mother; JD discrimination alone may not falsify it.
+  proposed_minimal_question: 如果没有排名、掌声、身份和外部认可，你还会持续对什么问题投入？
+  authority: candidate_only_requires_human_review_before_course_patch
+
+p1_watch:
+  - expert_ip_mistakes_repository_or_course_for_asset
+  - ai_founder_mistakes_agent_workflow_for_human_force_asset
+
+claim_boundary:
+  real_90min_timing: NOT_PROVEN
+  real_24h_recall: NOT_RUN
+  real_7d_transfer: NOT_RUN
+  real_90d_task2_reuse: NOT_RUN
+  human_live_trial: NOT_RUN
+
+next_gate: YFA-GC2.1-LT1-HUMAN
