@@ -24,7 +24,7 @@ status:
   five_lesson_architecture: user_framework_approved
   lesson_01: content_draft
   lesson_02: content_draft
-  lesson_03: content_draft
+  lesson_03: content_draft_v2_1_candidate
   lesson_04: content_draft
   lesson_05: content_draft
   exercises_01_to_05: draft
@@ -33,6 +33,13 @@ status:
   live_trial: not_run
   transfer_validation: not_run
   reusable: false
+
+lesson_03_overlay:
+  id: YFA-GC2.1
+  status: human_requested_sync_in_progress
+  canon_effect: none
+  unique_model: 原力资产生命树
+  unique_artifact: 我的原力资产生成树 v1
 
 supersedes_v1: false
 ```
@@ -94,14 +101,16 @@ supersedes_v1: false
 |---|---|---|---|---|
 | 01 | 原力战略 | AI时代什么才是真正的新财富？ | **秘密 × 一万倍** | 《我的原力战略起点图 v1》 |
 | 02 | 原力创业 | 秘密怎样变成财富？ | **见 → 名 → 繁 → 守** | 《我的原力秘密四步卡 v1》 |
-| 03 | 原力资产 | 为什么偏偏是你？ | **找 → 归 → 炼 → 证** | 《我的原力母体假设卡 v1》 |
+| 03 | 原力资产 | 为什么偏偏是你？ | **找 → 归 → 炼 → 证** | **《我的原力资产生成树 v1》** |
 | 04 | 原力 OS | 怎样让事业不再依赖本人？ | **懂 → 记 → 判 → 行 → 强** | 《我的原力 OS 一页架构 v1》 |
 | 05 | 原力人生 | 这一生什么值得不断繁殖？ | **守 → 生 → 事 → 人 → 留** | 《我的原力人生一页纸 v1》 |
 
 其中：
 
 - “强”是 Outcome→Learning→Reuse 的递归结果，不是 C5；
-- “原力人生”是整合课，不是第四部、不是第十三模块。
+- “原力人生”是整合课，不是第四部、不是第十三模块；
+- L03 的《我的原力母体假设卡 v1》保留为历史 / 辅助工作卡，不再作为 v2.1 候选的前台唯一主产物；
+- L03 v2.1 只改变教学编译，不修改 A1→A2→A3→A4 Soul 正典。
 
 五张产物最终合成为：
 
@@ -206,12 +215,41 @@ B4只允许：
 标题：
 
 > **《为什么偏偏是你？》**
+>
+> 副标题：**从生命之根，到可复利的种子。**
 
 唯一任务：
 
-> 从“我有什么能力”迁移到“什么结构持续生成我的能力、判断、作品、关系与意义”。
+> **从“我有什么能力”迁移到“什么生命机制持续生成我的差异；它如何被炼成作用力，并怎样才开始成为资产”。**
 
-主线：
+唯一新判断：
+
+> **真正值得长期积累的，不是今天拥有的某一项能力，而是那个能够持续生成差异、被炼成现实作用力，并最终被保存和复用的生命机制。**
+
+唯一主模型：
+
+> **《原力资产生命树》**
+
+```text
+土壤
+Human Ground / Archetype / Life History / Complex / Persona
+↓
+Self
+↓
+Mother Hypothesis｜根
+↓
+Force Thesis｜选择主干
+↓
+Callable Force｜树干
+↓
+Validated Force｜果实
+↓
+Assetization Gate｜保存 / 调用 / Task2 复用 / Lift
+↓
+Atomic Force Asset｜种子
+```
+
+教学主线保持：
 
 ```text
 找｜A1 发现母体
@@ -220,15 +258,44 @@ B4只允许：
 证｜A4 显化原力
 ```
 
-治理边界：
+L03 v2.1 的四个教学补丁：
 
-> A1只产生 `Mother Hypothesis v0.1`，不宣布终极真我；必须有反证、真实取舍和世界验证。
+1. **Deep Formation Lens**：荣格层只解释“土壤 / 生命形成”，不取得 Mother Proof Authority；
+2. **Force Thesis**：A2 明确回答“Mother 的哪一种机制，值得在哪类问题上训练”；
+3. **Callable Force**：A3 不再过早把判断 / 方法 / 作品称为资产；
+4. **Assetization Gate**：A4 从 World Validation 继续走到 Preserve → Retrieve → distinct Task2 Reuse → Lift。
+
+治理红线：
+
+```text
+Archetype ≠ Mother
+Complex ≠ Mission
+Self ≠ Mother
+Mother ≠ Force
+Force ≠ Asset
+Payment ≠ Asset
+Learning Document ≠ Reuse
+AI-assisted Performance ≠ Human Capability Growth
+```
+
+本课 90 分钟只允许形成候选与现实合同：
+
+```yaml
+mother_hypothesis: candidate
+self_endorsed_direction: draft
+force_thesis: candidate
+callable_force: not_proven
+validated_force: not_proven
+atomic_force_asset: not_proven
+```
 
 文件：
 
 - `lessons/03-原力资产-为什么偏偏是你.md`
-- `exercises/我的原力母体假设卡-v1.md`
+- `exercises/我的原力资产生成树-v1.md`
+- `exercises/我的原力母体假设卡-v1.md`（保留为历史 / 辅助字段库）
 - `deck/03-原力资产-PPT蓝图.md`
+- `director/L03-原力资产-导演脚本.md`
 
 ## 04｜原力 OS
 
@@ -294,6 +361,10 @@ B4只允许：
 
 任何输出不能成为下一次输入，就不是原力资产；任何系统不能让下一轮更强，就不是原力 OS。
 
+L03 v2.1 进一步把它压成：
+
+> **果实证明今天有价值；种子决定这种价值能不能进入明天。**
+
 第五课进一步把这条母公理投影到人生层：
 
 > **真正值得一生建设的，是那些在你不在现场以后，仍然有理由继续生长的东西。**
@@ -342,6 +413,7 @@ exercises/
   我的原力战略起点图-v1.md
   我的原力秘密四步卡-v1.md
   我的原力母体假设卡-v1.md
+  我的原力资产生成树-v1.md
   我的原力OS一页架构-v1.md
   我的原力人生一页纸-v1.md
 
@@ -355,6 +427,12 @@ deck/
 
 evidence/
   00-通识课2.0-证据与案例计划.md
+  01-五课旗舰小切口证据包.md
+
+director/
+  L01-原力战略-导演脚本.md
+  ...
+  L03-原力资产-导演脚本.md
 
 trials/
   00-v1-v2-A-B-Test-Protocol.md
@@ -384,6 +462,19 @@ v2 当前仍是挑战者，不是继承人。
 → Human Gate
 ```
 
+L03 v2.1 额外要求：
+
+```text
+structural_pass
+→ desktop_trial_pass
+→ life_tree_recall
+→ mother_vs_force_discrimination
+→ validated_force_vs_asset_discrimination
+→ real_opportunity_cost
+→ task2_reuse_contract_quality
+→ live_trial
+```
+
 才允许：
 
 ```yaml
@@ -398,4 +489,5 @@ supersedes_v1: true
 - 不修改 Soul 正典；
 - 不把传播句直接升级为正典句；
 - 不把“原力人生”升级为新的正典部或模块；
-- 不把课程 `content_draft` 误称为已验证。
+- 不把课程 `content_draft` 误称为已验证；
+- 不把 90 分钟课堂产物误称为 `Atomic Force Asset = PROVEN`。
