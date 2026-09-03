@@ -1,18 +1,18 @@
-# 第三课｜原力资产 PPT 蓝图 v2.1
+# 第三课｜原力资产 PPT 蓝图 v2.2-DT1
 ## 《为什么偏偏是你？》
 ### ——从生命之根，到可复利的种子
 
 ```yaml
 deck_id: YL-TRILOGY-GENERAL-v2-D03
-version: v2.1-mother-force-asset-convergence
-status: draft_v2_1_candidate
+version: v2.2-dt1
+status: desktop_trial_patched_candidate
 slides_target: 20
 lesson: 03-原力资产
 canon_effect: none
 live_trial: not_run
 ```
 
-原则：整课只围绕一张 **《原力资产生命树》**；不把白皮书压缩成 PPT，不把荣格做成主课，不把母体做成神秘标签，也不把“更底层核心竞争力”当作母体。
+原则：整课只围绕一张 **《原力资产生命树》**；荣格术语降到讲师备注；把至少 6 页明确让给学员填写、互评、判断和迁移。
 
 ## 一课一念
 
@@ -20,105 +20,93 @@ live_trial: not_run
 
 ## 一课一果
 
-> **《我的原力资产生成树 v1》**
+> **《我的原力资产生成树 v1.1｜课堂六格主卡》**
 
 ---
 
-| 页 | 标题 | 唯一任务 |
-|---:|---|---|
-| 1 | **为什么偏偏是你？** | 建立课程身份 |
-| 2 | 上一课：秘密怎样成为财富 | 承接 L02，不改五课叙事 |
-| 3 | 同一个时代，为什么偏偏你看见？ | 建立唯一问题 |
-| 4 | 写下职业，然后划掉 | 剥离角色 |
-| 5 | 写下能力，再划掉 | 剥离表型 |
-| 6 | **原力资产生命树** | 母图：土壤→Self→根→树干→果实→种子 |
-| 7 | 土壤：你不是突然成为今天的你 | Human Ground / Archetype / Life History / Complex / Persona |
-| 8 | **原型≠母体；情结≠使命；Self≠Mother** | 深层解释与 Mother 法权分开 |
-| 9 | John Snow｜为什么有些异常偏偏抓住你？ | Anchor ①：异常与证据 |
-| 10 | 异常→假设→反例→行动 | 从故事升起生成机制问题 |
-| 11 | **Mother Hypothesis｜根** | Self ⊃ Mother；候选而非终极真我 |
-| 12 | A1｜注意→解释→价值→承诺→反证 | 找源；同步填“根” |
-| 13 | A2｜哪些力量我要继续认领？ | Integration × Self-Endorsement |
-| 14 | **Force Thesis + 舍弃不属于自己的成功** | 根选择哪根主干；本课高弧光 |
-| 15 | 屠呦呦｜Sample 191 | Anchor ②：异常→改假设→改方法 |
-| 16 | **A3｜Force 四 Gate** | Callability / Reliability / Delta / Transfer |
-| 17 | A4-V｜果实：世界是否真正选择 | Context→Behavior→Outcome；终态 Validated Force |
-| 18 | **A4-A｜种子：价值能否进入下一次** | Preserve→Retrieve→Reuse→Lift；Atomic Force Asset |
-| 19 | **我的原力资产生成树 v1** | 一课一果；课堂只整合不从零填写 |
-| 20 | 如果种子仍只能存在你本人，怎么办？ | EXIT CRISIS → 原力 OS |
+| 页 | 标题 | 唯一任务 | 类型 |
+|---:|---|---|---|
+| 1 | **为什么偏偏是你？** | 建立课程身份 | 讲 |
+| 2 | 上一课：秘密怎样成为财富 | 承接 L02 | 讲 |
+| 3 | 写下职业和最强能力，然后都划掉 | 制造认知裂缝 | **写** |
+| 4 | **John Snow｜1854 Broad Street** | 具体人物、时刻、两难、代价 | 案例 |
+| 5 | 为什么有些异常偏偏抓住你？ | 从案例迁移到本人 | **写** |
+| 6 | **原力资产生命树** | 唯一母图第一次完整出现 | 讲 |
+| 7 | 土壤不是答案：你不是突然成为今天的你 | 共同可能性×生命史×适应/冲突→Self | 讲 |
+| 8 | **Self ≠ Mother** | 深层形成与生成假设分权 | 讲 |
+| 9 | **Mother Hypothesis｜根** | 定义 + Hypothesis 边界 | 讲 |
+| 10 | 我的根：三种表型 + 一句假设 + 一个反证 | A1 主卡 | **写/互评** |
+| 11 | **真正的自我认知，是敢于舍弃不属于自己的成功** | A2 高弧光 | 讲 |
+| 12 | 我继续认领什么？我拒绝什么？ | Self-Endorsed Direction | **写** |
+| 13 | **原力下注｜Force Thesis** | 根选择哪一根主干 | **写** |
+| 14 | 屠呦呦｜Sample 191 | 更多执行→回源→改假设→改方法 | 案例 |
+| 15 | A3｜一条判断怎样开始被训练成力 | Force Candidate；四 Gate 只展示 | **写** |
+| 16 | **果实 ≠ 种子** | 一次真实结果仍不等于资产 | 讲 |
+| 17 | 果实：我的 90 天世界验证 | Behavior / Outcome / failure signal | **写** |
+| 18 | 种子：留下什么，下一次在哪里复用？ | Preserve + distinct Task2 + Lift | **写/互评** |
+| 19 | **空白生命树｜闭卷六行** | 一课一果 + 迁移 | **闭卷** |
+| 20 | 如果种子仍只能存在你本人，怎么办？ | EXIT CRISIS → 原力 OS | 讲 |
 
 ---
 
-# 核心母图｜原力资产生命树
+# 核心母图｜前台只显示这些词
 
 ```text
-                         种子
-                    Force Asset
-              保存 / 调用 / Task2 复用
-                          ↑
-                         果实
-                Behavior / Outcome
-                          ↑
-                         树冠
-               作品 / 产品 / 方法
-                          ↑
-                         树干
-                        Force
-                          ↑
-                          根
-                 Mother Hypothesis
-                          ↑
-                         Self
-                          ↑
-──────────────────────────────────
-                          │
-                         土壤
-     Human Ground / Archetype / Life History
-        Complex / Shadow / Persona / Culture
+土壤
+共同可能性 × 个人生命史 × 适应/冲突
+↓
+Self
+↓
+根｜Mother Hypothesis
+↓
+主干｜原力下注 / Force Thesis
+↓
+树干｜Force
+↓
+果实｜真实行为 / Outcome
+↓
+种子｜保存 + 下一任务复用
 ```
 
-必须让学员一眼看见：
+讲师备注可映射：
 
 ```text
-Self ≠ Mother
-Mother ≠ Force
-Force ≠ Asset
+土壤：Archetype / Complex / Shadow / Persona / Culture
+树干未来 Gate：Callability / Reliability / Delta / Transfer
+果实后台状态：Validated Force
+种子后台状态：Atomic Force Asset（仅真实复用后）
 ```
+
+学员不需要在 90 分钟内记忆这些后台英文标签。
 
 ---
 
-# 强制判别页 1｜Generator ≠ Capability
+# 两个强制判别
 
-必须展示：
+## 判别 1｜Generator ≠ Capability
 
 ```text
 同一生成机制
-→ 战略咨询能力
-→ 课程设计能力
-→ AI知识系统能力
+→ 战略咨询
+→ 课程设计
+→ AI 知识系统
 ```
 
-并明确：
+> **如果一句话可以直接放进岗位 JD，它还不是一个合格 Mother 候选。**
 
-> **如果一句话仍能直接放进核心能力清单 / 岗位 JD，它不能自动被当作 Mother。**
-
-# 强制判别页 2｜Validated Force ≠ Force Asset
-
-必须展示：
+## 判别 2｜果实 ≠ 种子
 
 ```text
-一次真实结果
-→ Validated Force
+这次产生 Outcome
+≠
+资产已经成立
 
-Validated Force
-+ Preserve
-+ Retrieve
-+ distinct Task2 Reuse
-+ Lift
-→ Atomic Force Asset
+这次有效
+→ 留下
+→ 新任务重新调用
+→ 新任务因此更强
+→ 才开始具有资产性
 ```
-
-并明确：
 
 > **果实证明今天有价值；种子决定价值能不能进入明天。**
 
@@ -128,42 +116,43 @@ Validated Force
 
 1. **职业会过时，技能会折旧，但一个人的生成方式可以迁移载体。**
 2. **真正的自我认知，不是更会解释自己，而是开始敢于舍弃不属于自己的成功。**
-3. **世界选择证明的是这次价值；只有把价值留下，并让下一次因此更强，它才开始成为资产。**
+3. **果实证明今天有价值；种子决定价值能不能进入明天。**
 
 ---
 
 # 视觉纪律
 
-- 全课只保留“一棵生命树”为主视觉，不再新增第二套复杂母图；
-- 荣格层只画为“土壤 / 深层形成”，不能成为 Mother 的证明链；
-- Mother 必须画成“根 / Generative Hypothesis”，不是能力标签；
-- A2 必须出现 `Force Thesis`，并画成“根选择主干”；
-- A3 终态只允许 `Callable Force`，不得提前出现 Force Asset；
-- A4 必须拆成 `World Validation` 与 `Assetization Gate`；
-- A4 必须出现 Behavior / Outcome、Preserve / Retrieve / Reuse / Lift；
-- 反证必须在 PPT 主线中可见，不能藏到备注；
-- 《我的原力资产生成树 v1》随课分段填写，第 19 页只整合；
-- 第 20 页必须自然推入 L04，而不是在 L03 宣称系统复利完成。
+- 一棵生命树是唯一复杂主图；
+- 不出现十二原型雷达、不讲荣格生平；
+- `Archetype / Complex / Shadow / Persona / Individuation` 只进入讲师备注或课后扩展；
+- Force Thesis 前台必须翻译为“原力下注”；
+- `Validated Force / Atomic Force Asset` 不作为必背术语；
+- 至少 6 页明确用于写、互评或闭卷，不可把它们重新改成讲授页；
+- 第 19 页只出现空白生命树，不给答案；
+- 第 20 页必须自然推向 L04。
 
----
-
-# Live Trial 重点观察
+# DT1 时间纪律
 
 ```yaml
-recall_24h:
-  - life_tree_spine
-  - self_not_mother
-  - mother_not_force
-  - force_not_asset
-transfer:
-  - generator_vs_capability
-  - force_thesis_to_real_problem
-  - validated_force_vs_asset
-personal_verdict:
-  - real_opportunity_cost
-  - task2_reuse_location
-forbidden_false_green:
-  - archetype_as_mother
-  - one_payment_as_asset
-  - ai_output_as_human_force
+slides_for_active_learner_work:
+  - 3
+  - 5
+  - 10
+  - 12
+  - 13
+  - 15
+  - 17
+  - 18
+  - 19
+active_work_target: ">=30min"
+more_knowledge_in_extra_30min: forbidden
+```
+
+# 下一真实 Gate
+
+```yaml
+desktop_trial: rerun_after_patch
+live_trial: not_run
+real_24h_recall: not_run
+reusable: false
 ```
