@@ -1,18 +1,18 @@
-# 第三课｜原力资产 PPT 蓝图 v2.2-DT1
+# 第三课｜原力资产 PPT 蓝图 v2.3-LT1
 ## 《为什么偏偏是你？》
 ### ——从生命之根，到可复利的种子
 
 ```yaml
 deck_id: YL-TRILOGY-GENERAL-v2-D03
-version: v2.2-dt1
-status: desktop_trial_patched_candidate
+version: v2.3-lt1-external-reward-ablation
+status: human_authorized_for_real_lt1
 slides_target: 20
 lesson: 03-原力资产
 canon_effect: none
 live_trial: not_run
 ```
 
-原则：整课只围绕一张 **《原力资产生命树》**；荣格术语降到讲师备注；把至少 6 页明确让给学员填写、互评、判断和迁移。
+原则：整课只围绕一张 **《原力资产生命树》**；荣格术语降到讲师备注；至少 6 页明确让给学员填写、互评、判断和迁移。`P0-SIM-01` 已获 Human Accept，以“一问消融”方式嵌入 A1→A2，不新增理论模块。
 
 ## 一课一念
 
@@ -20,7 +20,7 @@ live_trial: not_run
 
 ## 一课一果
 
-> **《我的原力资产生成树 v1.1｜课堂六格主卡》**
+> **《我的原力资产生成树 v1.2｜课堂六格主卡》**
 
 ---
 
@@ -35,9 +35,9 @@ live_trial: not_run
 | 7 | 土壤不是答案：你不是突然成为今天的你 | 共同可能性×生命史×适应/冲突→Self | 讲 |
 | 8 | **Self ≠ Mother** | 深层形成与生成假设分权 | 讲 |
 | 9 | **Mother Hypothesis｜根** | 定义 + Hypothesis 边界 | 讲 |
-| 10 | 我的根：三种表型 + 一句假设 + 一个反证 | A1 主卡 | **写/互评** |
-| 11 | **真正的自我认知，是敢于舍弃不属于自己的成功** | A2 高弧光 | 讲 |
-| 12 | 我继续认领什么？我拒绝什么？ | Self-Endorsed Direction | **写** |
+| 10 | 我的根：三种表型 + 一句假设 + 一个反证 | A1 主卡；JD Gate | **写/互评** |
+| 11 | **如果没有掌声，你还会继续吗？** | P0-SIM-01 外部奖励消融；防止“赢/第一/身份=Mother” | **写/判断** |
+| 12 | **真正的自我认知，是敢于舍弃不属于自己的成功** | A2：继续认领什么 / 拒绝什么 | **写** |
 | 13 | **原力下注｜Force Thesis** | 根选择哪一根主干 | **写** |
 | 14 | 屠呦呦｜Sample 191 | 更多执行→回源→改假设→改方法 | 案例 |
 | 15 | A3｜一条判断怎样开始被训练成力 | Force Candidate；四 Gate 只展示 | **写** |
@@ -81,7 +81,7 @@ Self
 
 ---
 
-# 两个强制判别
+# 三个强制判别
 
 ## 判别 1｜Generator ≠ Capability
 
@@ -94,7 +94,25 @@ Self
 
 > **如果一句话可以直接放进岗位 JD，它还不是一个合格 Mother 候选。**
 
-## 判别 2｜果实 ≠ 种子
+## 判别 2｜External Reward Ablation｜外部奖励消融
+
+> # **如果没有排名、掌声、身份和外部认可，你还会持续对什么问题投入？**
+
+用途：只攻击“赢 / 第一 / 高标准 / 身份认可”被误写成 Mother 的假绿。
+
+边界：
+
+```text
+External shaping ≠ false self
+External reward present ≠ Mother invalid
+Ablation question = confidence calibration, not authenticity diagnosis
+```
+
+如果拿掉外部奖励后，所谓 Mother 几乎没有剩余生成内容：
+
+> **降低 Mother Confidence / 回到 A1 重写，不直接宣布“这是假的你”。**
+
+## 判别 3｜果实 ≠ 种子
 
 ```text
 这次产生 Outcome
@@ -118,6 +136,29 @@ Self
 2. **真正的自我认知，不是更会解释自己，而是开始敢于舍弃不属于自己的成功。**
 3. **果实证明今天有价值；种子决定价值能不能进入明天。**
 
+P0-SIM-01 是 Gate，不新增为第四条传播口号。
+
+---
+
+# 第11页讲师纪律｜P0-SIM-01
+
+页面只出现一句大问题：
+
+> **如果没有排名、掌声、身份和外部认可，你还会持续对什么问题投入？**
+
+讲师只能补三句：
+
+1. 这不是“真假自我测试”；
+2. 外部塑造不等于虚假；
+3. 如果答案变化很大，只说明需要降低当前 Mother 假设置信度。
+
+禁止展开：
+
+- 内外动机理论课；
+- 创伤诊断；
+- “真正的你”宣判；
+- “有成就欲就是补偿”的过度解释。
+
 ---
 
 # 视觉纪律
@@ -127,17 +168,19 @@ Self
 - `Archetype / Complex / Shadow / Persona / Individuation` 只进入讲师备注或课后扩展；
 - Force Thesis 前台必须翻译为“原力下注”；
 - `Validated Force / Atomic Force Asset` 不作为必背术语；
+- P0-SIM-01 只占 1 页、1 问，不生长为第二套理论；
 - 至少 6 页明确用于写、互评或闭卷，不可把它们重新改成讲授页；
 - 第 19 页只出现空白生命树，不给答案；
 - 第 20 页必须自然推向 L04。
 
-# DT1 时间纪律
+# LT1 时间纪律
 
 ```yaml
 slides_for_active_learner_work:
   - 3
   - 5
   - 10
+  - 11
   - 12
   - 13
   - 15
@@ -146,12 +189,15 @@ slides_for_active_learner_work:
   - 19
 active_work_target: ">=30min"
 more_knowledge_in_extra_30min: forbidden
+external_reward_ablation_budget: "<=3min"
 ```
 
 # 下一真实 Gate
 
 ```yaml
-desktop_trial: rerun_after_patch
+desktop_trial: PASS_SIMULATED_WITH_CONDITIONS
+lt1_simulated_entrepreneur: CONDITIONAL_PASS_FOR_REAL_LT1
+p0_sim_01: HUMAN_ACCEPTED_AND_APPLIED
 live_trial: not_run
 real_24h_recall: not_run
 reusable: false
