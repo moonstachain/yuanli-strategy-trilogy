@@ -1,0 +1,27 @@
+schema: yuanli.shared-spec-domain-profile/v0.1
+project_id: YVENTURE
+domain: venture_projection
+status: ACTIVE_BINDING_PROFILE
+mappings:
+  UniversalBootstrap:
+    local_surface: README.md
+    note: Cold start resolves Soul as Canon Authority before reading Projection assets.
+  MissionBattle:
+    local_surface: books/02-原力创业
+    local_question: 世界为什么选择、付费并放大这种不同？
+  TaskContract:
+    local_task_types: [chapter_projection, course_projection, map_projection, case_projection]
+    projection_does_not_create_canon: true
+  RealityLoop:
+    local_chain: [Canon_Input, Projection, Human_Use, Reality_Feedback, Learning, Soul_Writeback]
+    note: Revenue may be one Reality outcome but is not the only Reality definition.
+  HumanAuthorization:
+    proposal_surface: content_or_course_projection_candidate
+    authorization_surface: ACT.authorization_state
+    projection_ne_authority: true
+  LearningAdmission:
+    local_requirement: real_learner_or_business_feedback_must_change_future_projection_or_soul_candidate
+non_overrides:
+  - Shared Spec does not make Trilogy a Canon Authority.
+  - Shared Spec does not change B1-B4 definitions.
+  - Shared Spec does not authorize business actions or investment decisions.
