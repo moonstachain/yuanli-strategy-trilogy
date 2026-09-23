@@ -7,12 +7,12 @@
 ```text
 01 原力战略｜世界变了
 → 02 原力创业｜见·名·繁·守
-→ 03 原力资产｜找·归·炼·证
+→ 03 原力资产｜资产·原力·找归炼证
 → 04 原力 OS｜懂·记·判·行·强
 → 05 原力人生｜守·生·事·人·留
 ```
 
-当前五课均已完成第一版 `content_draft`；尚未完成 desktop trial、live trial、transfer validation。
+当前五课均处于 `content_draft` / `content_draft_v3`；尚未完成 desktop trial、live trial、transfer validation。
 
 ## 文件路由
 
@@ -20,7 +20,7 @@
 |---|---|---|---|
 | `01-原力战略-AI时代的新财富.md` | 第一课｜母课 / 世界观 | content_draft | **YES** |
 | `02-原力创业-找到秘密.md` | 第二课｜财富发生学 | content_draft | **YES** |
-| `03-原力资产-为什么偏偏是你.md` | 第三课｜主体与生成源 | content_draft | **YES** |
+| `03-原力资产-你忙了十年到底留下了什么.md` | 第三课｜个人资产经济学 / 原力资产化 | content_draft_v3 | **YES** |
 | `04-原力OS-让原力离开你仍然生长.md` | 第四课｜判断继承与递归系统 | content_draft | **YES** |
 | `05-原力人生-什么值得被复制一万倍.md` | 第五课｜价值整合 / 毕业课 | content_draft | **YES** |
 | `00-原力战略三部曲-秘密与一万倍.md` | 历史120分钟单堂候选 | legacy_single_session_candidate | NO |
@@ -45,11 +45,36 @@ B4严格保持虚、实、入、出四壁垒。
 
 ### L03｜原力资产
 
-只建立：
+新版母问题：
 
-> 找 → 归 → 炼 → 证。
+> # **你忙了十年，到底留下了什么？**
 
-母体只产生候选假设，不宣布终极真我。
+先建立：
+
+> **资产，是被保存下来的过去，能够继续为未来做功。**
+
+再区分：
+
+> **能力回答“我会什么”；原力回答“因为我在，什么会变得不一样”。**
+
+最后把 A1—A4 编译成一条资产生成链：
+
+> **找源 → 归源 → 炼力 → 证力。**
+
+课堂总钩子：
+
+> **母体是源，原力是力，能力与作品是形，资产是留。**
+
+唯一主产物：
+
+> `exercises/我的第一张原力资产卡-v1.md`
+
+治理边界：
+
+- A1 只产生 Mother Hypothesis 候选，不宣布终极真我；
+- “源→力→形→留”只是教学解释，不替换 A1—A4；
+- 世界验证不自动等于资产形成，还要检查保存、调用与复用；
+- 用户本人不是资产。
 
 ### L04｜原力 OS
 
@@ -91,6 +116,7 @@ A 原力资产 → B 原力创业 → C 原力 OS
 
 ```yaml
 five_lessons_content: draft
+lesson_03: content_draft_v3
 desktop_trial: not_run
 live_trial: not_run
 transfer_validation: not_run
@@ -98,4 +124,4 @@ reusable: false
 supersedes_v1: false
 ```
 
-下一步：先做五课桌面试讲与误解审计，再进入真实课堂。
+下一步：先对新版 L03 做 desktop trial 与误解审计，再决定是否更新 deck / director / trial fixtures，并进入真实课堂。
