@@ -1,0 +1,73 @@
+trial_id: YFA-GC2.1-DT1
+course_id: YL-TRILOGY-GENERAL-v2
+lesson_id: YL-TRILOGY-GENERAL-v2-L03
+trial_type: simulated_desktop_trial
+real_learner_evidence: false
+canon_effect: none
+pr: 25
+
+method_source:
+  repo: moonstachain/yuanli-strategy-soul
+  path: docs/YUANLI-CONCEPT-LESSON-CARD-STANDARD-v1.md
+  invariants:
+    - one_lesson_one_judgment
+    - one_judgment_three_acts
+    - one_lesson_one_artifact
+    - extra_30min_not_for_more_knowledge
+
+round_1:
+  result: FAIL_WITH_ACTIONABLE_EVIDENCE
+  blockers:
+    - id: DT1-B01
+      name: small_cut_too_late
+      severity: P0
+    - id: DT1-B02
+      name: classroom_artifact_overloaded
+      severity: P0
+  p1:
+    - id: DT1-P101
+      name: jung_frontstage_term_overload
+    - id: DT1-P102
+      name: backend_science_term_overload
+
+patches_applied:
+  - PATCH-P0-01_anchor_to_minute_3
+  - PATCH-P0-02_six_field_classroom_core_plus_90d_extension
+  - PATCH-P1-01_jung_terms_to_facilitator_notes
+  - PATCH-P1-02_frontstage_backend_term_split
+  - PATCH-P1-03_active_work_time_36min
+
+patched_runtime:
+  director: courses/原力战略三部曲通识课-v2/director/L03-原力资产-导演脚本-v2.1.md
+  director_version: v2.2-dt1-runtime-patch
+  deck: courses/原力战略三部曲通识课-v2/deck/03-原力资产-PPT蓝图.md
+  deck_version: v2.2-dt1
+  exercise: courses/原力战略三部曲通识课-v2/exercises/我的原力资产生成树-v1.md
+  exercise_version: v1.1-dt1
+
+runtime_budget:
+  teacher_explanation_and_anchors_min: 54
+  learner_write_peer_review_transfer_min: 36
+  extra_knowledge_in_90min_extension: false
+
+round_2_regression:
+  personas:
+    - method_heavy_expert
+    - mature_operator
+    - ai_tool_enthusiast
+  result: PASS_SIMULATED
+  structural_blockers_remaining: 0
+  critical_misconceptions_observed: 0
+
+final:
+  desktop_trial: PASS_SIMULATED_WITH_CONDITIONS
+  qualification: READY_FOR_SMALL_SAMPLE_HUMAN_LIVE_TRIAL_NOT_RUN
+  real_90min_timing: NOT_PROVEN
+  real_24h_recall: NOT_RUN
+  real_7d_transfer: NOT_RUN
+  real_90d_task2_reuse: NOT_RUN
+  reusable: false
+  canon_candidate: false
+  supersedes_existing_l03: false
+
+next_gate: YFA-GC2.1-LT1_SMALL_SAMPLE_HUMAN_LIVE_TRIAL
