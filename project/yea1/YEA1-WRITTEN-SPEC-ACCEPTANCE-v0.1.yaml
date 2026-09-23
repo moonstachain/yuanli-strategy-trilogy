@@ -1,0 +1,18 @@
+schema: yuanli.yea1.written_spec_acceptance.v0.1
+program: YEA1
+decision: ACCEPT_YEA1_WRITTEN_SPEC
+accepted_at: 2026-08-23T16:33:00+08:00
+repository: moonstachain/yuanli-strategy-trilogy
+branch: design/yea1-architecture-sync
+accepted_spec: docs/superpowers/specs/2026-08-23-yea1-entrepreneurship-asset-architecture-sync-design.md
+accepted_spec_commit: 00ba2e8020ff9d4804ef1a37cb0dafc0fbbd7e9b
+canon_effect: none
+authorizes:
+  implementation_plan: true
+  implementation_execution: false
+  soul_canon_change: false
+  course_promotion: false
+  atlas_promotion: false
+  yuanli_invest_bridge: false
+  merge: false
+next_legal_action: WRITE_YEA1_IMPLEMENTATION_PLAN

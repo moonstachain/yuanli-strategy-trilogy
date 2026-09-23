@@ -17,6 +17,14 @@
     "721对位纪律:把60-80%精力焊在每关最高杠杆维度,极小比例试探边界;对位20%·执行80%,对位<10%大概率在做错的事(白皮书 §哲10不费力 / volume-1 第4.6章)",
     "T1-T9 飞书底表:把势/力/原子/账户/控点全部物理实现化,只有可度量才可改进——T1康波·T8原型·T2/T3原子·T7账户·T9控点贯穿四关(白皮书 #21 / volume-1 第7章)"
   ],
+  "yea1_projection": {
+    "schema": "yuanli.entrepreneurship_asset_architecture.v0.1",
+    "status": "CANDIDATE_STRUCTURAL_PROJECTION",
+    "source": "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json",
+    "structural_projection": ["一大势", "两账户", "三链路", "四壁垒"],
+    "human_dimensions": ["空间", "价值", "规模", "时间"],
+    "canon_effect": "none"
+  },
   "chain": [
     {
       "seq": 1,
@@ -27,6 +35,15 @@
       "递进": "最发散·千倍式·向外借势——能量收束线起点,从混沌天赋里『找到我』;同样能力不同康波赚的钱差1000倍,所以先借对势(volume-1 观察1)",
       "因为": "起点。一切从这里出发:商业=有人买+能交付+守得住,前提是『我能做』——先把母公式『财富=借势×合力』焊进第一关,锁定母体(原型力)与顺风(康波势),才有后三关。",
       "tag": "SHARED",
+      "yea1": {
+        "id": "B1",
+        "structural_projection": "一大势",
+        "economic_dimension": "value_space",
+        "human_dimension": "空间",
+        "output_state": "opportunity",
+        "source": "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json",
+        "canon_effect": "none"
+      },
       "keywords": [
         { "name": "康波周期 K1-K6", "def": "·借势的度量全谱:六次50-60年长波,第六康波(AI/生物/能源)初春,旧康波赢家在新康波启动时衰落。", "src": "白皮书 #19 / volume-1 第2章", "tag": "SHARED", "链": "·" },
         { "name": "千日窗口", "def": "因为康波每次范式转移最关键是前1000天→所以2025-2028是占位窗口,错过等50年,心智占位未关闭。", "src": "白皮书 #20 / volume-1 第2.2章", "tag": "SHARED", "链": "承『康波K6初春』→所以锁定它最关键的1000天" },
@@ -52,6 +69,15 @@
       "递进": "收成一句·百倍式·向外定位——能量从最发散收到『一句话说清我』;同样时代不同人赚的钱差1000倍、同能力做不同事差100倍,定位决定量级(volume-1 观察2/3)",
       "因为": "承接:关一觉醒拿下了母体与人生主线(找到我)→但母体若不定品类就『有母体却没人买、繁殖给空气』→所以本关给母体定一个市场认得出的品类,把人格资产升格为锁住用户预算的心理账户(用户资产)。",
       "tag": "SHARED",
+      "yea1": {
+        "id": "B2",
+        "structural_projection": "两账户",
+        "economic_dimension": "value_density",
+        "human_dimension": "价值",
+        "output_state": "demand_asset",
+        "source": "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json",
+        "canon_effect": "none"
+      },
       "keywords": [
         { "name": "品类独创", "def": "·不在现有品类竞争,创造无法分类的新品类做品类王;市场端第一性问题=市场认不认。", "src": "白皮书 #25 / gates.jsx g2 / volume-1 第5章", "tag": "SHARED", "链": "·" },
         { "name": "16字真言", "def": "因为品类要验真→无法分类/重新定义/自带预算/品类独创,四维全✓才算独创。", "src": "白皮书 #26 / gates.jsx g2 c2-1", "tag": "SHARED", "链": "承『品类独创』→所以给出验品类的四个闸" },
@@ -76,6 +102,15 @@
       "递进": "收成一仗·十倍式·向内升维——能量从一句话收到『打哪一仗』;模式空间释放,从有客无利到跑通模型,聚焦最高杠杆超级单点(volume-1 第5.3章)",
       "因为": "承接:关二独创拿下了甜用户与早期采用者(说清我·一秒入脑)→但拿下早期采用者后,要跨越通往主流市场的鸿沟、且不能再人肉单干卡在 x·y→所以模式升维,把用户资产升格为会蓄利润的利润容器(模式资产)。",
       "tag": "SHARED",
+      "yea1": {
+        "id": "B3",
+        "structural_projection": "三链路",
+        "economic_dimension": "value_scale",
+        "human_dimension": "规模",
+        "output_state": "scalable_cashflow_asset",
+        "source": "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json",
+        "canon_effect": "none"
+      },
       "keywords": [
         { "name": "三链路(前/后/财)", "def": "·前链路(渴望度)×后链路(可行性)×财链路(生存性),模式升维的三元贯通结构。", "src": "白皮书 #36 / gates.jsx g3 / volume-1 T3", "tag": "SHARED", "链": "·" },
         { "name": "前链路", "def": "承三链第一链:用户细分/价值主张/渠道结构/客户关系=渴望度架构(CS/VP/CH/CR)。", "src": "白皮书 #37 / 卷四第24章", "tag": "SHARED", "链": "承『三链路』→所以先搭前链路:用户要不要" },
@@ -102,6 +137,15 @@
       "递进": "收成一图·穿越周期·向内守远——能量收束线终点,从一仗收到『全局图』;30法则测未来十年>过去十年,善战者无赫赫战功、保不败才是最大化的赢(volume-1 第6.5章)",
       "因为": "承接:关三升维跑通了可复制模式、蓄成了利润容器(打赢一仗)→但模式跑出来若无壁垒就『被抄走、为他人作嫁衣』、利润归零→所以壁垒锁定守住利润,把模式资产升格为会自繁殖的财富飞轮(壁垒资产),四关闭环=出师。",
       "tag": "SHARED",
+      "yea1": {
+        "id": "B4",
+        "structural_projection": "四壁垒",
+        "economic_dimension": "value_duration",
+        "human_dimension": "时间",
+        "output_state": "controlled_compounding_asset",
+        "source": "trilogy/_atlas/yea1-entrepreneurship-asset-architecture-v0.1.json",
+        "canon_effect": "none"
+      },
       "keywords": [
         { "name": "四维护城 VRSE(虚实入出)", "def": "·虚(心智·进不来)/实(物理·追不上)/入(锁定·拿不走)/出(网络·离不开),供给侧2维×需求侧2维。", "src": "白皮书 #49 / gates.jsx g4 pillars", "tag": "SHARED", "链": "·" },
         { "name": "虚壁垒(心智)", "def": "承四维第一维:品牌溢价/特许经营/品类独创/文化叙事,用户『认你』,供给侧·进不来。", "src": "白皮书 #50 / gates.jsx g4", "tag": "SHARED", "链": "承『四维护城』→所以先建虚壁垒:让对手进不来" },
