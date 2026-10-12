@@ -6,27 +6,29 @@
 
 ## 当前阶段
 
-本目录是课程孵化实例，不是Soul正典。
+本目录是课程孵化实例，不是 Soul 正典。
 
 ```text
-Soul定法
-→ Trilogy做课
-→ 核心概念课与A1/B1/C4跨模块试跑
+Soul 定法
+→ Trilogy 做课
+→ 核心概念课与 A1 / B0 / B1 / C4 跨模块试跑
 → 用户验收
 → 真实试讲
-→ 结果回写Soul
+→ 结果回写 Soul
 ```
 
 当前结果态：
 
 ```text
-L0原力战略课程框架：user_framework_approved
-L0完整授课卡：content_draft
-L0 PPT蓝图：complete
-L0证据计划：complete / external_verification_pending
-L0真实课堂：live_trial_pending
+L0 原力战略课程框架：user_framework_approved
+L0 完整授课卡：content_draft
+L0 PPT 蓝图：complete
+L0 证据计划：complete / external_verification_pending
+L0 真实课堂：live_trial_pending
 A1 / B1 / C4：desktop_trial_pass
-其余九模块：blocked_by_acceptance_and_live_trial
+B0 原力创业四关：desktop_trial_pass / live_trial NOT_RUN
+B2 / B3 / B4 深课：blocked_by_acceptance_and_live_trial
+其余模块：blocked_by_acceptance_and_live_trial
 ```
 
 ---
@@ -61,6 +63,23 @@ WHY：为什么AI时代必须有原力战略
 破局 → 建模 → 全景 → 对号入座 → 行动
 ```
 
+### L0-B · 原力创业总览课
+
+《B0 · 原力创业四关——生意不好不是一个问题》
+
+定位：
+
+```text
+后台正典：B1 原力借势 → B2 品类独创 → B3 模式升维 → B4 壁垒锁定
+前台教学：一势 → 两账 → 三链 → 四权
+```
+
+唯一产物：
+
+> 《原力创业四关诊断卡》＋一项 30 天最小实验。
+
+B0 是课程导航层，不是第五个正典模块；学员根据最低分进入 B1、B2、B3 或 B4。
+
 ### L1 · 十二模块概念课
 
 - 原力资产：A1—A4。
@@ -90,22 +109,30 @@ WHY：为什么AI时代必须有原力战略
 lessons/
   00-原力战略.md
   A1-发现母体.md
+  B0-原力创业四关.md
   B1-原力借势.md
   C4-一条链路.md
 
 evidence/
   README.md
   00-原力战略-证据计划.md
+  B0-原力创业四关-证据计划.md
 
 exercises/
   原力战略起点卡.md
+  原力创业四关诊断卡.md
 
 deck/
   README.md
   00-原力战略-课程PPT蓝图.md
+  B0-原力创业四关-PPT蓝图.md
+
+evolution/
+  B0-原力创业四关-Evolution-Note.md
 
 trials/
   00-跨模块试跑验收报告.md
+  B0-原力创业四关-桌面试跑报告.md
 ```
 
 ---
@@ -127,17 +154,33 @@ trials/
 - 高弧光；
 - 学员练习、验收与回写。
 
+### `lessons/B0-原力创业四关.md`
+
+60 分钟 B 轴总览课，用四种失败症状引导学员识别一势、两账、三链、四权中的本轮主瓶颈，并进入对应 B1—B4 模块。
+
 ### `deck/00-原力战略-课程PPT蓝图.md`
 
 26页PPT结构，按“被击中—感到必要—看懂定义—看见全局—找到自己—做出行动”设计。
+
+### `deck/B0-原力创业四关-PPT蓝图.md`
+
+20页PPT结构，按“四种失败—总模型—四关解释—现场诊断—30天实验”设计。
 
 ### `evidence/00-原力战略-证据计划.md`
 
 规划人文心智、数理逻辑、复杂系统、案例与反例需要的证据；未核验外部事实保持 `to_verify`。
 
+### `evidence/B0-原力创业四关-证据计划.md`
+
+区分 Soul 正典证据、教学投影候选、外部理论数据与真实试讲证据，不把教学口令包装成新学术理论。
+
 ### `exercises/原力战略起点卡.md`
 
 v2版学员产物，从AI清算、价值主权、生成源线索、A/B/C诊断，到30天行动、完成证据、反证条件和回写位置。
+
+### `exercises/原力创业四关诊断卡.md`
+
+对一势、两账、三链、四权分别给出 0—5 分锚点、支持证据、反证与最低分裁决，并生成一项 30 天实验。
 
 ---
 
@@ -145,18 +188,23 @@ v2版学员产物，从AI清算、价值主权、生成源线索、A/B/C诊断�
 
 - 每节课先完成概念授课卡，再生成讲稿、PPT和练习。
 - 一课只改变一个关键判断，只教一个核心模型，只产出一个战略结果。
+- B0 是前台导航层，不是正典第五模块。
+- “两账”只作为存量 / 增量价值路线，不替代 B2 的完整心理账户体系与六道门。
+- “三链”只包含前链、后链、财链；产品阶梯、数据反馈、人机分工和 SOP 是增强器。
 - 外部论文、数据和案例进入正式讲稿前必须逐条核验。
 - 高弧光中的作者经历必须由明哥确认。
 - B4只使用虚、实、入、出四大控制权口径。
 - 飞轮是四大控制权相互强化的机制，不是第五种壁垒。
+- 原力母体是生成源，不是第六种壁垒。
 - 桌面试跑不等于真实课堂验证。
-- 课程语言不自动升级为Soul正典。
+- 课程语言不自动升级为 Soul 正典。
 
 ---
 
 ## 回源
 
 - 正典根仓：`moonstachain/yuanli-strategy-soul`
+- 教学投影：`projections/startup-teaching-1234-v1.yaml`
 - 教学标准：`docs/YUANLI-CONCEPT-LESSON-CARD-STANDARD-v1.md`
 - 模板：`templates/curriculum/concept-lesson-card-template.md`
 - Schema：`schemas/concept-lesson-card.schema.yaml`
