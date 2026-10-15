@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>点错成金</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Baloo+2:wght@600;800&display=swap">
+<style>
+/* Layout: one long vertical "space journey" — each section is a scene card floating in a deep-navy universe, illustration above, text below. Single committed dark world, Kurzgesagt-style. */
+:root{
+  --space:#0a1633; --space-2:#11224d; --space-3:#1a3170;
+  --gold:#ffc84a; --gold-deep:#f29a2e; --coral:#ff6a5c; --teal:#39d5c0; --violet:#8b7cff;
+  --ink:#eef3ff; --ink-2:#a9b8de; --ink-3:#6f82b3;
+  --f-display:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --f-num:"Baloo 2","Noto Sans SC",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--space);color:var(--ink);font-family:var(--f-display);font-size:16px;line-height:1.75;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:900;letter-spacing:.02em}
+h2{font-size:clamp(26px,5.4vw,38px);line-height:1.25}
+h3{font-size:19px}
+p{margin:0;color:var(--ink-2);max-width:62ch}
+p strong,li strong{color:var(--ink)}
+.eyebrow{font-family:var(--f-num);font-weight:800;font-size:13px;letter-spacing:.18em;color:var(--teal);text-transform:uppercase}
+section{display:flex;flex-direction:column;gap:18px}
+.scene{background:var(--space-2);border-radius:28px;overflow:hidden;position:relative}
+.scene svg{display:block;width:100%;height:auto}
+.gold{color:var(--gold)} .coral{color:var(--coral)} .teal{color:var(--teal)}
+.num{font-family:var(--f-num);font-weight:800}
+
+/* hero */
+.hero{gap:22px;padding-top:12px}
+.hero h1{font-size:clamp(58px,17vw,128px);line-height:1;letter-spacing:.04em}
+.hero h1 span{color:var(--gold);text-shadow:0 0 40px rgba(255,200,74,.45)}
+.hero .lede{font-size:19px;color:var(--ink)}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;padding:4px 12px;border-radius:99px;background:var(--space-3);color:var(--ink-2)}
+
+/* floating anim */
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+.bob{animation:bob 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.bob2{animation:bob 5s ease-in-out infinite .8s;transform-box:fill-box;transform-origin:center}
+.spin{animation:spin 40s linear infinite;transform-box:fill-box;transform-origin:center}
+.eye{animation:blink 5s infinite;transform-box:fill-box;transform-origin:center}
+.glow{animation:pulse 3s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* slider demo */
+.ctrl{display:flex;flex-direction:column;gap:10px;padding:18px 20px 22px}
+.ctrl label{font-size:14px;color:var(--ink-2);display:flex;justify-content:space-between;gap:12px}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.readout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.readout div{background:var(--space);border-radius:16px;padding:10px 12px;min-width:0}
+.readout b{display:block;font-family:var(--f-num);font-size:24px;line-height:1.2;font-variant-numeric:tabular-nums}
+.readout span{font-size:12px;color:var(--ink-3)}
+
+/* four sources */
+.grid4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.src{background:var(--space-2);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.src svg{width:56px;height:56px}
+.src h3{font-size:17px}
+.src p{font-size:14px;line-height:1.6}
+.tag{align-self:flex-start;font-size:12px;padding:2px 10px;border-radius:99px;font-weight:700}
+.tag.y{background:rgba(255,200,74,.16);color:var(--gold)}
+.tag.n{background:rgba(57,213,192,.14);color:var(--teal)}
+
+/* error explorer */
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tabs button{font:inherit;font-size:14px;border:0;border-radius:99px;padding:7px 14px;background:var(--space-3);color:var(--ink-2);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--gold);color:var(--space);font-weight:700}
+.tabs button:focus-visible,.q button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.panel{background:var(--space-2);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.meter{height:14px;border-radius:99px;background:var(--space);overflow:hidden;position:relative}
+.meter i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:99px;transition:width .5s}
+.meter.unk i{background:repeating-linear-gradient(90deg,var(--coral) 0 10px,transparent 10px 18px)}
+.meter-scale{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3)}
+.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.kv div{min-width:0}
+.kv span{display:block;font-size:12px;color:var(--ink-3)}
+.kv b{font-size:15px}
+.panel .ex{font-size:14px;border-top:1px dashed var(--space-3);padding-top:12px}
+
+/* timeline */
+.tl{display:flex;flex-direction:column;gap:12px}
+.tl-item{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;align-items:start}
+.tl-item .yr{font-family:var(--f-num);font-weight:800;font-size:26px;color:var(--gold);line-height:1.2}
+.tl-item p{font-size:15px}
+
+/* formula */
+.formula{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:900;font-size:17px}
+.formula .blk{padding:8px 14px;border-radius:14px;background:var(--space-3)}
+.formula .eq{color:var(--gold)}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.vs > div{background:var(--space-2);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.vs .big{font-family:var(--f-num);font-size:34px;font-weight:800;line-height:1.1}
+.vs p{font-size:14px;line-height:1.6}
+
+/* seven questions */
+.qs{display:flex;flex-direction:column;gap:10px}
+.q{background:var(--space-2);border-radius:20px;padding:14px 16px;display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 12px;align-items:start}
+.q .qn{font-family:var(--f-num);font-weight:800;font-size:22px;color:var(--teal);grid-row:span 3;line-height:1.3}
+.q h3{font-size:16px}
+.q p{font-size:14px;line-height:1.55}
+.q .btns{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+.q button{font:inherit;font-size:13px;border:1px solid var(--space-3);background:transparent;color:var(--ink-2);border-radius:99px;padding:4px 14px;cursor:pointer}
+.q button[aria-pressed=true].yes{background:var(--teal);border-color:var(--teal);color:var(--space);font-weight:700}
+.q button[aria-pressed=true].no{background:var(--coral);border-color:var(--coral);color:var(--space);font-weight:700}
+.verdict{border-radius:24px;padding:20px;display:grid;grid-template-columns:90px minmax(0,1fr);gap:16px;align-items:center;background:var(--space-3)}
+.verdict svg{width:90px;height:90px}
+.verdict h3{font-size:20px}
+.verdict p{font-size:14px}
+
+.finale{text-align:left;gap:14px}
+.finale .lines{display:flex;flex-direction:column;gap:6px;font-size:clamp(22px,5vw,30px);font-weight:900;line-height:1.4}
+.finale .lines span:nth-child(1){color:var(--teal)}
+.finale .lines span:nth-child(2){color:var(--violet)}
+.finale .lines span:nth-child(3){color:var(--gold)}
+.finale .lines span:nth-child(4){color:var(--coral)}
+.note{font-size:12px;color:var(--ink-3);line-height:1.6}
+@media (max-width:520px){
+  .grid4,.vs{grid-template-columns:minmax(0,1fr)}
+  .kv{grid-template-columns:minmax(0,1fr)}
+  .readout b{font-size:20px}
+}
+</style>
+
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<main>
+
+<!-- 0 HERO -->
+<section class="hero">
+  <div class="eyebrow">原力战略课题 · 一次关于错误的宇宙旅行</div>
+  <h1>点错<span>成金</span></h1>
+  <p class="lede">所有的超额收益，都藏在世界“算错了”的地方。可问题是，<strong>谁错了？为什么还没被纠正？你能活到它被纠正的那天吗？</strong></p>
+  <div class="scene">
+    <svg viewBox="0 0 760 360" role="img" aria-label="一颗裂开的灰色小行星中透出金光，一只小生物举着放大镜在看">
+      <circle cx="640" cy="70" r="120" fill="#13285a"/>
+      <circle cx="120" cy="330" r="160" fill="#162d66"/>
+      <g class="spin"><ellipse cx="380" cy="190" rx="250" ry="58" fill="none" stroke="#1f3a80" stroke-width="2" stroke-dasharray="6 10"/></g>
+      <!-- asteroid -->
+      <g class="bob">
+        <circle cx="380" cy="185" r="110" fill="#3a4f86"/>
+        <circle cx="345" cy="140" r="20" fill="#2f4275"/>
+        <circle cx="430" cy="235" r="14" fill="#2f4275"/>
+        <circle cx="440" cy="135" r="9" fill="#2f4275"/>
+        <path d="M330 110 L370 170 L350 205 L400 250 L392 295" fill="none" stroke="#ffc84a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="glow" d="M330 110 L370 170 L350 205 L400 250 L392 295" fill="none" stroke="#ffe6a3" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity=".25"/>
+        <circle cx="365" cy="190" r="16" fill="#ffc84a"/>
+        <text x="365" y="196" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="18" fill="#7a4a00">¥</text>
+      </g>
+      <!-- critter with magnifier -->
+      <g class="bob2">
+        <ellipse cx="600" cy="268" rx="46" ry="40" fill="#39d5c0"/>
+        <ellipse cx="600" cy="285" rx="30" ry="18" fill="#7cebd9"/>
+        <g class="eye"><circle cx="588" cy="252" r="9" fill="#fff"/><circle cx="586" cy="253" r="4.5" fill="#0a1633"/></g>
+        <g class="eye"><circle cx="612" cy="252" r="9" fill="#fff"/><circle cx="610" cy="253" r="4.5" fill="#0a1633"/></g>
+        <line x1="562" y1="262" x2="525" y2="232" stroke="#eef3ff" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="510" cy="218" r="22" fill="rgba(255,255,255,.12)" stroke="#eef3ff" stroke-width="5"/>
+      </g>
+      <g fill="#ffc84a"><circle cx="120" cy="80" r="3"/><circle cx="230" cy="300" r="2"/><circle cx="700" cy="180" r="2.5"/></g>
+    </svg>
+  </div>
+  <div class="chip-row"><span class="chip">德州扑克</span><span class="chip">价值投资</span><span class="chip">商业竞争</span><span class="chip">康波周期</span></div>
+</section>
+
+<!-- 1 WHAT IS ERROR -->
+<section>
+  <div class="eyebrow">第一幕 · 什么是“错误”</div>
+  <h2>错误，是价格里藏着的那个<span class="gold">“错的未来”</span></h2>
+  <p>每个价格都隐含着一个未来。当市场恐慌，价格算出的未来比真实未来悲观得多，两条线之间的那片空隙就是机会。拖动下面的滑块，制造一场恐慌。</p>
+  <div class="scene">
+    <svg id="gapSvg" viewBox="0 0 760 300" role="img" aria-label="价值线与价格线之间的空隙随恐慌程度变化">
+      <g stroke="#1f3a80" stroke-width="1"><line x1="60" y1="60" x2="720" y2="60"/><line x1="60" y1="140" x2="720" y2="140"/><line x1="60" y1="220" x2="720" y2="220"/></g>
+      <path id="gapArea" fill="rgba(255,200,74,.28)"/>
+      <path id="valueLine" fill="none" stroke="#39d5c0" stroke-width="5" stroke-linecap="round"/>
+      <path id="priceLine" fill="none" stroke="#ff6a5c" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 0"/>
+      <text x="64" y="40" font-size="15" fill="#39d5c0" font-weight="700">真实价值（企业还在赚钱）</text>
+      <text id="priceLabel" x="64" y="285" font-size="15" fill="#ff6a5c" font-weight="700">市场价格</text>
+      <g id="gapTag"><rect rx="12" width="120" height="30" fill="#ffc84a"/><text x="60" y="20" text-anchor="middle" font-size="14" font-weight="900" fill="#0a1633">点错 = 机会</text></g>
+    </svg>
+    <div class="ctrl">
+      <label for="panic"><span>市场恐慌程度</span><span id="panicTxt" class="num">35%</span></label>
+      <input id="panic" type="range" min="0" max="70" value="35">
+      <div class="readout">
+        <div><b id="mos" class="gold">35%</b><span>价格低于价值</span></div>
+        <div><b id="upside" class="teal">+54%</b><span>纠正后的空间</span></div>
+        <div><b id="who" class="coral" style="font-size:17px">恐慌卖家</b><span>谁在犯错</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="note">示意图，数字为演示用。原力投研 2.0 的说法：价格隐含的未来、我预计的未来、市场将会认识到的未来，三者之间的落差就是“错误”。</p>
+</section>
+
+<!-- 2 FOUR SOURCES -->
+<section>
+  <div class="eyebrow">第二幕 · 修正一个大话</div>
+  <h2>“所有利润都来自错误”？<br>只对了<span class="coral">一半</span></h2>
+  <p>经济学家们给出了四种利润来源。只有第一种是真正的“点错”，另外三种在事前谁也没犯错。</p>
+  <div class="grid4">
+    <div class="src">
+      <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="#ffc84a"/><path d="M16 30 l8 8 l16-18" stroke="#0a1633" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="tag y">是点错</span>
+      <h3>纠正别人的错 · Kirzner</h3>
+      <p>警觉地发现被错误定价的东西，把它推回均衡。股灾里买好公司就是这种。</p>
+    </div>
+    <div class="src">
+      <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="#8b7cff"/><text x="28" y="37" text-anchor="middle" font-size="26" font-weight="900" fill="#0a1633">?</text></svg>
+      <span class="tag n">不是错误</span>
+      <h3>承担不确定性 · Knight</h3>
+      <p>没人能算出概率的事，你敢下注并扛住，剩余就是你的。这是创业利润的大头。</p>
+    </div>
+    <div class="src">
+      <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="#39d5c0"/><path d="M28 14 v28 M14 28 h28" stroke="#0a1633" stroke-width="5" stroke-linecap="round"/></svg>
+      <span class="tag n">不是错误</span>
+      <h3>创造新组合 · Schumpeter</h3>
+      <p>造出原本不存在的东西。它不纠正均衡，而是打破均衡。</p>
+    </div>
+    <div class="src">
+      <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="#ff6a5c"/><path d="M18 38 v-8 M28 38 v-14 M38 38 v-20" stroke="#0a1633" stroke-width="5" stroke-linecap="round"/></svg>
+      <span class="tag n">不是错误</span>
+      <h3>风险补偿 · Beta</h3>
+      <p>长期持有股票的溢价，是你替别人承受波动拿到的报酬，不是谁送的。</p>
+    </div>
+  </div>
+  <p>还有一盆冷水：Sharpe 的算术证明，投资里的纠错收益扣费前是<strong>零和</strong>，扣费后是<strong>负和</strong>。你赚的超额，就是牌桌上另一个人的错误。</p>
+</section>
+
+<!-- 3 ERROR EXPLORER -->
+<section>
+  <div class="eyebrow">第三幕 · 错误动物园</div>
+  <h2>不是所有错误都值钱，<br>关键看它的<span class="gold">半衰期</span></h2>
+  <p>点一种错误，看它能活多久、是正和还是零和、该用哪种方式赚它的钱。</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="panel" role="tabpanel" id="panel">
+    <h3 id="eName"></h3>
+    <p id="eWhat"></p>
+    <div>
+      <div class="meter" id="eMeter"><i id="eBar"></i></div>
+      <div class="meter-scale"><span>几天就消失</span><span>能持续十年</span></div>
+    </div>
+    <div class="kv">
+      <div><span>半衰期</span><b id="eLife"></b></div>
+      <div><span>正和还是零和</span><b id="eSum"></b></div>
+      <div><span>收益机制</span><b id="eMech"></b></div>
+    </div>
+    <p id="ePlay"></p>
+    <p class="ex" id="eEx"></p>
+  </div>
+  <p class="note">半衰期是理论推论的相对排序，不是统计结果。C=经济价值复利，R=反身重定价，X=凸性表达。</p>
+</section>
+
+<!-- 4 BUFFETT -->
+<section>
+  <div class="eyebrow">第四幕 · 巴菲特真正利用的是什么</div>
+  <h2>他赚的不是别人的“笨”，<br>而是别人的<span class="coral">“被迫”</span></h2>
+  <div class="scene">
+    <svg viewBox="0 0 760 280" role="img" aria-label="一群被绳子拴着的卖家把金币倒下山坡，一只没有绳子的小生物用大桶接住">
+      <path d="M0 210 Q380 120 760 210 V280 H0Z" fill="#162d66"/>
+      <!-- tethered sellers -->
+      <g>
+        <g class="bob"><ellipse cx="150" cy="150" rx="34" ry="30" fill="#ff6a5c"/><circle cx="141" cy="140" r="6" fill="#fff"/><circle cx="159" cy="140" r="6" fill="#fff"/><circle cx="141" cy="142" r="3" fill="#0a1633"/><circle cx="159" cy="142" r="3" fill="#0a1633"/><path d="M140 160 q10 -7 20 0" stroke="#0a1633" stroke-width="3" fill="none"/></g>
+        <g class="bob2"><ellipse cx="240" cy="132" rx="30" ry="27" fill="#ff8a7e"/><circle cx="232" cy="124" r="5" fill="#fff"/><circle cx="248" cy="124" r="5" fill="#fff"/><circle cx="232" cy="126" r="2.5" fill="#0a1633"/><circle cx="248" cy="126" r="2.5" fill="#0a1633"/><path d="M232 142 q8 -6 16 0" stroke="#0a1633" stroke-width="3" fill="none"/></g>
+        <path d="M150 180 Q120 230 60 240 M240 159 Q200 230 60 246" stroke="#a9b8de" stroke-width="3" fill="none" stroke-dasharray="4 5"/>
+        <rect x="30" y="230" width="60" height="34" rx="8" fill="#a9b8de"/>
+        <text x="60" y="252" text-anchor="middle" font-size="13" font-weight="900" fill="#0a1633">赎回</text>
+      </g>
+      <!-- coins rolling -->
+      <g fill="#ffc84a" class="glow"><circle cx="330" cy="168" r="11"/><circle cx="380" cy="176" r="11"/><circle cx="430" cy="182" r="11"/><circle cx="480" cy="186" r="11"/></g>
+      <!-- free buyer with bucket -->
+      <g class="bob">
+        <ellipse cx="620" cy="160" rx="44" ry="40" fill="#39d5c0"/>
+        <g class="eye"><circle cx="608" cy="146" r="8" fill="#fff"/><circle cx="632" cy="146" r="8" fill="#fff"/><circle cx="610" cy="148" r="4" fill="#0a1633"/><circle cx="634" cy="148" r="4" fill="#0a1633"/></g>
+        <path d="M606 168 q14 10 28 0" stroke="#0a1633" stroke-width="3" fill="none"/>
+        <path d="M530 190 h70 l-10 46 h-50z" fill="#ffc84a"/>
+        <text x="565" y="222" text-anchor="middle" font-size="13" font-weight="900" fill="#0a1633">长期资本</text>
+      </g>
+    </svg>
+  </div>
+  <div class="tl">
+    <div class="tl-item"><div class="yr">1964</div><p><strong>美国运通</strong>。色拉油丑闻后股价不到 8 个月跌约 43%，全美信托部门恐慌抛售。巴菲特合伙公司投入约 1300 万美元、约占资产 40%。卖方有制度性理由必须卖，而运通的核心业务没受损。</p></div>
+    <div class="tl-item"><div class="yr">1973</div><p><strong>华盛顿邮报</strong>。卖方机构其实知道它值多少，但它们认为股价明天还会跌，所以不在乎。他们没算错价值，算错的是<strong>时间</strong>。</p></div>
+    <div class="tl-item"><div class="yr">2008</div><p><strong>高盛优先股</strong>。50 亿美元、10% 股息，外加行权价 115 美元的认股权证。危机里资本本身最稀缺，他当的是“最后贷款人”，拿到了带下行保护的凸性结构。</p></div>
+  </div>
+  <p>三次出手有同一个前提：<strong>他的钱不会被赎回，对手的钱会。</strong>学术研究也支持这一点：基金被迫卖出带来的价格压力可以预测，跟它做对手盘有显著超额收益。</p>
+</section>
+
+<!-- 5 BUSINESS -->
+<section>
+  <div class="eyebrow">第五幕 · 商业里的点错</div>
+  <h2>技术早期：把三次付钱<br>合成<span class="teal">一次</span></h2>
+  <div class="scene">
+    <svg viewBox="0 0 760 240" role="img" aria-label="电话、音乐播放器和上网设备三个图标汇入一部手机">
+      <g class="bob"><rect x="70" y="40" width="70" height="44" rx="12" fill="#ff6a5c"/><text x="105" y="69" text-anchor="middle" font-size="15" font-weight="900" fill="#0a1633">电话</text></g>
+      <g class="bob2"><rect x="60" y="100" width="90" height="44" rx="12" fill="#8b7cff"/><text x="105" y="129" text-anchor="middle" font-size="15" font-weight="900" fill="#0a1633">iPod</text></g>
+      <g class="bob"><rect x="70" y="160" width="70" height="44" rx="12" fill="#39d5c0"/><text x="105" y="189" text-anchor="middle" font-size="15" font-weight="900" fill="#0a1633">上网</text></g>
+      <path d="M160 62 C300 62 300 122 430 122 M160 122 H430 M160 182 C300 182 300 122 430 122" stroke="#a9b8de" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+      <g class="bob"><rect x="450" y="30" width="110" height="190" rx="22" fill="#eef3ff"/><rect x="462" y="48" width="86" height="150" rx="10" fill="#0a1633"/>
+        <g fill="#ff6a5c"><rect x="472" y="60" width="20" height="20" rx="5"/></g><g fill="#8b7cff"><rect x="496" y="60" width="20" height="20" rx="5"/></g><g fill="#39d5c0"><rect x="520" y="60" width="20" height="20" rx="5"/></g>
+        <circle cx="505" cy="210" r="5" fill="#a9b8de"/></g>
+      <text x="600" y="100" font-size="15" fill="#ffc84a" font-weight="900">付钱：一次</text>
+      <text x="600" y="130" font-size="15" fill="#39d5c0" font-weight="900">好处：三份</text>
+      <text x="600" y="160" font-size="13" fill="#a9b8de">损失合并，收益分开</text>
+    </svg>
+  </div>
+  <p>Thaler 的心理账户理论给了更精确的说法：<strong>损失合并，收益分开。</strong>但 iPhone 能长期赚钱，靠的不只是“在位者没看懂”。运营商控制终端、手机厂商比硬件参数，这些<strong>结构性错误</strong>就算在位者看懂了，也改不了。</p>
+
+  <h2 style="margin-top:24px">成熟晚期：便宜，<br>必须便宜得有<span class="gold">结构</span></h2>
+  <div class="formula" aria-label="性价比公式">
+    <span class="blk">真性价比</span><span class="eq">=</span><span class="blk">结构性成本</span><span class="eq">×</span><span class="blk">承诺机制</span><span class="eq">×</span><span class="blk">利润替代来源</span>
+  </div>
+  <div class="vs">
+    <div><span class="tag n">点对了</span><div class="big teal">14%</div><h3>Costco 的加价上限</h3><p>品牌商品加价上限 14%、自有品牌 15%，毛利率约 11%，利润主要来自会员费。在位者跟进就会自伤，这才是能持续的“点错”。</p></div>
+    <div><span class="tag y" style="color:var(--coral);background:rgba(255,106,92,.15)">点错了自己</span><div class="big coral">1200万</div><h3>ofo 排队退押金的人</h3><p>靠补贴压出来的低价，只是把资本方的错误转给了用户，并没有纠正在位者的错误。People Express 则是被在位者的收益管理系统定点击穿。</p></div>
+  </div>
+</section>
+
+<!-- 6 KONDRATIEV -->
+<section>
+  <div class="eyebrow">第六幕 · 康波可以当地图，不能当时钟</div>
+  <h2>错误的种类，跟着<span class="violet" style="color:var(--violet)">周期</span>换季</h2>
+  <div class="scene">
+    <svg viewBox="0 0 760 250" role="img" aria-label="一条周期波浪线，四个季节分别标注主导的错误类型">
+      <path d="M30 170 C130 170 150 60 260 60 S380 120 430 150 S560 220 640 200 S720 150 740 140" fill="none" stroke="#8b7cff" stroke-width="5" stroke-linecap="round"/>
+      <g font-size="14" font-weight="900">
+        <circle cx="120" cy="140" r="9" fill="#39d5c0"/><text x="80" y="200" fill="#39d5c0">回升</text><text x="80" y="220" fill="#a9b8de" font-weight="500" font-size="12">结构错误＋不确定性</text>
+        <circle cx="260" cy="60" r="9" fill="#ffc84a"/><text x="232" y="40" fill="#ffc84a">繁荣 / 狂热</text><text x="280" y="90" fill="#a9b8de" font-weight="500" font-size="12">叙事反身错误</text>
+        <circle cx="430" cy="150" r="9" fill="#ff6a5c"/><text x="440" y="130" fill="#ff6a5c">衰退</text><text x="440" y="112" fill="#a9b8de" font-weight="500" font-size="12">价值与价格错配</text>
+        <circle cx="610" cy="205" r="9" fill="#eef3ff"/><text x="600" y="240" fill="#eef3ff">萧条</text><text x="650" y="240" fill="#a9b8de" font-weight="500" font-size="12">恐慌＋被迫卖出</text>
+      </g>
+    </svg>
+  </div>
+  <p>两个修正。第一，<strong>被迫卖出跟着金融周期走，不跟着康波走</strong>：巴菲特的三次出手分散在不同的康波位置。第二，Carlota Perez 本人认为 AI 是 1970 年代开始的信息革命内部的一次跃迁，不是新一轮康波的起点。2026 年四大云厂商资本开支指引合计约 7300 亿美元，确实有“狂热期”的味道，但价值最后落在哪一环，仍是待检验的假设。</p>
+</section>
+
+<!-- 7 SEVEN QUESTIONS -->
+<section>
+  <div class="eyebrow">第七幕 · 找鱼</div>
+  <h2>牌桌上坐半小时还找不到鱼，<br><span class="coral">你就是那条鱼</span></h2>
+  <p>拿一个你正在想的机会，诚实回答这七个问题。</p>
+  <div class="qs" id="qs"></div>
+  <div class="verdict" id="verdict" aria-live="polite">
+    <svg viewBox="0 0 90 90" aria-hidden="true" id="vIcon"></svg>
+    <div><h3 id="vTitle"></h3><p id="vText"></p></div>
+  </div>
+</section>
+
+<!-- FINALE -->
+<section class="finale">
+  <div class="eyebrow">尾声</div>
+  <div class="lines"><span>点错是入口，</span><span>造新是放大，</span><span>复利是成金，</span><span>活着是前提。</span></div>
+  <p>超额收益来自价格与真实价值的偏离。能留住它的，是三件事：这个错误别人改不了；纠正之前你活得下来；纠正之后你手里还剩能复利的东西。</p>
+  <p class="note">来源：Kirzner (1973)；Knight (1921)；Grossman & Stiglitz (1980)；Sharpe (1991)；Shleifer & Vishny (1997)；Coval & Stafford (2007)；Thaler (1985)；Perez (2002)；伯克希尔 SEC 文件；Costco FY2018 10-K；MIT Airline Data Project。云厂商资本开支为第三方追踪口径。本页为学习示意，不构成投资建议。</p>
+</section>
+</main>
+
+<script>
+/* starfield */
+(function(){
+  const c=document.getElementById('stars'),x=c.getContext('2d');let s=[],w,h;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){w=c.width=innerWidth*devicePixelRatio;h=c.height=innerHeight*devicePixelRatio;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';
+    s=Array.from({length:110},()=>({x:Math.random()*w,y:Math.random()*h,r:(Math.random()*1.4+.3)*devicePixelRatio,p:Math.random()*6.28}))}
+  function draw(t){x.clearRect(0,0,w,h);for(const a of s){x.globalAlpha=.35+.45*Math.sin(t/900+a.p)**2;x.fillStyle='#cfe0ff';x.beginPath();x.arc(a.x,a.y,a.r,0,6.28);x.fill()}
+    if(!reduce)requestAnimationFrame(draw)}
+  size();addEventListener('resize',size);requestAnimationFrame(draw);
+})();
+
+/* gap slider */
+(function(){
+  const N=40,X0=60,X1=720;
+  const val=i=>200-i*3.4-Math.sin(i/4)*8; // y coord (smaller = higher)
+  const sl=document.getElementById('panic');
+  function render(){
+    const p=+sl.value/100;
+    const vp=[],pp=[];
+    for(let i=0;i<=N;i++){
+      const x=X0+(X1-X0)*i/N, v=val(i);
+      const dip=Math.exp(-((i-24)**2)/40)*p; // crash centered later
+      const price=v+(250-v)*dip*0.95;
+      vp.push([x,v]);pp.push([x,Math.min(price,262)]);
+    }
+    const toD=a=>a.map((q,i)=>(i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' ');
+    document.getElementById('valueLine').setAttribute('d',toD(vp));
+    document.getElementById('priceLine').setAttribute('d',toD(pp));
+    document.getElementById('gapArea').setAttribute('d',toD(vp)+' '+pp.slice().reverse().map(q=>'L'+q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' ')+'Z');
+    const tag=document.getElementById('gapTag'),mid=pp[24],mv=vp[24];
+    tag.setAttribute('transform',`translate(${mid[0]-60},${Math.max(mv[1]+10,(mid[1]+mv[1])/2-15)})`);
+    tag.style.opacity=p<.05?0:1;
+    const mos=Math.round(p*100);
+    document.getElementById('panicTxt').textContent=mos+'%';
+    document.getElementById('mos').textContent=mos+'%';
+    document.getElementById('upside').textContent=mos>=100?'∞':'+'+Math.round(100/(1-p)-100)+'%';
+    document.getElementById('who').textContent=p<.05?'没人犯错':p<.25?'情绪卖家':p<.5?'恐慌卖家':'被迫卖家';
+  }
+  sl.addEventListener('input',render);render();
+})();
+
+/* error explorer */
+(function(){
+  const E=[
+    {n:'信息/认知错误',w:'有人还没注意到某个事实。',life:'短：几天到几个月',bar:12,sum:'零和',m:'R',play:'打法：靠研究深度和信息成本优势，但在流动性好的市场里很快会被套利掉，不宜重仓。',ex:'容易发现的信息错误，在有效市场里几乎活不过一个财报季。'},
+    {n:'行为/情绪错误',w:'恐慌、外推、损失厌恶让价格偏离。',life:'中：几个月到几年',bar:45,sum:'零和',m:'R',play:'打法：逆向＋安全边际＋分批买入。注意偏离可能先扩大再收窄。',ex:'例：2008 年巴菲特在《纽约时报》写“别人贪婪时恐惧，别人恐惧时贪婪”，之后标普又跌了一大截才见底。'},
+    {n:'约束/被迫错误',w:'赎回、杠杆、指数剔除、受托人规则逼人卖出。',life:'中短，但可以预测',bar:35,sum:'近零和（提供流动性有社会价值）',m:'R＋X',play:'打法：做流动性提供者，提前积累现金和不会被赎回的资本。',ex:'例：1964 年运通，全美信托部门被迫抛售。研究估算跟着这类被迫交易布局，异常收益每年约 10%。'},
+    {n:'期限错误',w:'对手算对了价值，但等不起。',life:'中：一到三年',bar:52,sum:'零和',m:'C＋R',play:'打法：用长期资本，买能自己复利的资产，让时间替你工作。',ex:'例：1973 年华盛顿邮报，卖方机构知道它值多少，只是认为股价明天还会跌。'},
+    {n:'结构/激励错误',w:'在位者看懂了也改不了：利润池、渠道、组织、最好的客户都在拦着它。',life:'长：几年到十年',bar:90,sum:'正和',m:'C',play:'打法：颠覆式进入，按新的价值单位定价，让在位者跟进就伤害自己。',ex:'例：2007 年 iPhone，运营商和手机厂商的旧结构让它们无法跟进。'},
+    {n:'定价/成本结构错误',w:'渠道加价、品牌溢价、SKU 冗余，用户在为“不是商品本身”的东西付钱。',life:'长，需要系统重构',bar:80,sum:'正和',m:'C',play:'打法：结构性成本优势＋承诺机制（加价上限）＋利润替代来源（会员费、服务）。',ex:'例：Costco 加价上限 14%，小米承诺硬件净利率不超过 5%。'},
+    {n:'叙事/反身错误',w:'泡沫、新范式叙事让大家一起高估。',life:'不确定，可能比你撑得住的时间还长',bar:100,unk:true,sum:'零和到负和',m:'R / X',play:'打法：小仓位凸性表达，不过早做空；或者在淘金热里卖铲子。',ex:'例：铁路、光纤、互联网泡沫；2026 年 AI 资本开支的价值归属仍待检验。'},
+    {n:'不确定性（不是错误）',w:'事前谁都不知道答案，没有人算错。',life:'不适用',bar:0,sum:'若成功则正和',m:'X',play:'打法：期权式下注、分阶段投入。这是 Knight 型利润，别把它误认为“我看懂了别人没看懂”。',ex:'创业者最容易把运气和承担，讲成自己点对了别人的错。'}
+  ];
+  const tabs=document.getElementById('tabs');
+  E.forEach((e,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.id='tab'+i;b.textContent=e.n;b.setAttribute('aria-controls','panel');b.onclick=()=>show(i);tabs.appendChild(b)});
+  function show(i){
+    const e=E[i];[...tabs.children].forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+    eName.textContent=e.n;eWhat.textContent=e.w;eLife.textContent=e.life;eSum.textContent=e.sum;eMech.textContent=e.m;ePlay.textContent=e.play;eEx.textContent=e.ex;
+    eBar.style.width=e.bar+'%';eMeter.classList.toggle('unk',!!e.unk);
+  }
+  show(4);
+})();
+
+/* seven questions */
+(function(){
+  const Q=[
+    ['基准问','什么都不做（买指数、做行业平均），结果是什么？扣掉成本我还能多赚多少？',false],
+    ['谁错了？','写出具体的对手，以及他们的约束和激励。',true],
+    ['错在哪？','价格隐含的未来，和我预期的未来，差在哪个数字上？',false],
+    ['为什么还没被纠正？','信息成本高？对手被约束？对手改不了？时间太长没人等？都不是，就是我错了。',true],
+    ['谁、何时、怎么纠正？','催化剂是什么：财报、指数调整、用户迁移、在位者财务恶化？',false],
+    ['纠正前我能活着吗？','最坏路径下的现金流、杠杆和资金期限，我会不会被迫卖出？',true],
+    ['纠正后我留下什么？','一次性收益还是能复利的结构？我最早会从哪个信号知道自己错了？',false]
+  ];
+  const ans=Array(7).fill(null),box=document.getElementById('qs');
+  Q.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='q';
+    d.innerHTML=`<div class="qn">${i}</div><h3>${q[0]}${q[2]?' <span class="coral" style="font-size:12px">· 关键</span>':''}</h3><p>${q[1]}</p><div class="btns"><button type="button" class="yes" aria-pressed="false">答得出</button><button type="button" class="no" aria-pressed="false">答不出</button></div>`;
+    const [y,n]=d.querySelectorAll('button');
+    y.onclick=()=>{ans[i]=true;y.setAttribute('aria-pressed',true);n.setAttribute('aria-pressed',false);judge()};
+    n.onclick=()=>{ans[i]=false;n.setAttribute('aria-pressed',true);y.setAttribute('aria-pressed',false);judge()};
+    box.appendChild(d);
+  });
+  const critter=(col,mouth)=>`<ellipse cx="45" cy="48" rx="34" ry="30" fill="${col}"/><circle cx="35" cy="40" r="7" fill="#fff"/><circle cx="55" cy="40" r="7" fill="#fff"/><circle cx="36" cy="42" r="3.5" fill="#0a1633"/><circle cx="56" cy="42" r="3.5" fill="#0a1633"/><path d="${mouth}" stroke="#0a1633" stroke-width="3" fill="none" stroke-linecap="round"/>`;
+  const fish=`<path d="M12 45 Q40 15 70 45 Q40 75 12 45Z" fill="#ff6a5c"/><path d="M68 45 L86 30 L86 60Z" fill="#ff6a5c"/><circle cx="30" cy="40" r="6" fill="#fff"/><circle cx="31" cy="41" r="3" fill="#0a1633"/>`;
+  function judge(){
+    const done=ans.filter(a=>a!==null).length;
+    const keyFail=[1,3,5].some(i=>ans[i]===false);
+    const yes=ans.filter(a=>a===true).length;
+    if(keyFail){vIcon.innerHTML=fish;vTitle.textContent='小心，你可能就是那条鱼';vTitle.className='coral';
+      vText.textContent=ans[5]===false?'说不清自己能否活到错误被纠正，再对的判断也可能让你出局。先解决生存问题。':'说不清谁错了、为什么还没被纠正，那犯错的大概率是你。先回去补证据。';}
+    else if(done<7){vIcon.innerHTML=critter('#8b7cff','M36 60 h18');vTitle.textContent=done?`已回答 ${done} / 7`:'回答七问，看看你是猎手还是鱼';vTitle.className='';
+      vText.textContent='第 1、3、5 问是关键：谁错了、为什么还没被纠正、你能不能活下来。';}
+    else{vIcon.innerHTML=critter('#ffc84a','M34 56 q11 10 22 0');vTitle.textContent=yes===7?'七问全过：可以进入资本审查':'关键问题已过，还有缺口';vTitle.className='gold';
+      vText.textContent='这只说明值得认真研究，不说明一定赚钱。把答案写下来、标上日期，12 个月后回来对账。';}
+  }
+  judge();
+})();
+</script>
+
+</body>
+</html>
