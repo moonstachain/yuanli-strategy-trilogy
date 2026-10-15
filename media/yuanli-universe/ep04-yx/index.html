@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>x^y 与 ʸx</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Baloo+2:wght@600;800&display=swap">
+<style>
+/* Layout: 原力宇宙系列统一视觉 — 深蓝宇宙中的纵向场景卡；本期主色从金色转向“生长青绿”，以四种做事的数学为骨架。Single committed dark world. */
+:root{
+  --space:#0a1633; --space-2:#11224d; --space-3:#1a3170;
+  --gold:#ffc84a; --coral:#ff6a5c; --teal:#39d5c0; --violet:#8b7cff; --lime:#9be564;
+  --ink:#eef3ff; --ink-2:#a9b8de; --ink-3:#6f82b3;
+  --f-display:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --f-num:"Baloo 2","Noto Sans SC",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--space);color:var(--ink);font-family:var(--f-display);font-size:16px;line-height:1.75;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding-block:32px 80px;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:900;letter-spacing:.02em}
+h2{font-size:clamp(26px,5.4vw,38px);line-height:1.25}
+h3{font-size:19px}
+p{margin:0;color:var(--ink-2);max-width:62ch}
+p strong{color:var(--ink)}
+.eyebrow{font-family:var(--f-num);font-weight:800;font-size:13px;letter-spacing:.18em;color:var(--teal);text-transform:uppercase}
+section{display:flex;flex-direction:column;gap:18px}
+.scene{background:var(--space-2);border-radius:28px;overflow:hidden;position:relative}
+.scene svg{display:block;width:100%;height:auto}
+.gold{color:var(--gold)} .coral{color:var(--coral)} .teal{color:var(--teal)} .lime{color:var(--lime)} .violet{color:var(--violet)}
+.math{font-family:var(--f-num);font-weight:800;white-space:nowrap}
+sup.pre{font-size:.6em;vertical-align:.9em;margin-right:.02em}
+.note{font-size:12px;color:var(--ink-3);line-height:1.6}
+
+/* hero */
+.hero{gap:22px;padding-top:12px}
+.hero h1{font-family:var(--f-num);font-size:clamp(64px,19vw,140px);line-height:1;letter-spacing:.02em;display:flex;gap:.25em;align-items:baseline;flex-wrap:wrap}
+.hero h1 .a{color:var(--ink-2)}
+.hero h1 .vs{font-family:var(--f-display);font-size:.32em;color:var(--ink-3);font-weight:700}
+.hero h1 .b{color:var(--lime);text-shadow:0 0 40px rgba(155,229,100,.45)}
+.hero .lede{font-size:19px;color:var(--ink)}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;padding:4px 12px;border-radius:99px;background:var(--space-3);color:var(--ink-2)}
+
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes rise{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(-26px);opacity:0}}
+.bob{animation:bob 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.bob2{animation:bob 5s ease-in-out infinite .8s;transform-box:fill-box;transform-origin:center}
+.eye{animation:blink 5s infinite;transform-box:fill-box;transform-origin:center}
+.glow{animation:pulse 3s ease-in-out infinite}
+.wheel{animation:spin 6s linear infinite;transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* four species */
+.species{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.sp{background:var(--space-2);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.sp svg{width:100%;height:auto;max-height:120px}
+.sp .f{font-family:var(--f-num);font-weight:800;font-size:30px;line-height:1.1}
+.sp h3{font-size:17px}
+.sp p{font-size:14px;line-height:1.6}
+.sp .who{font-size:12px;color:var(--ink-3)}
+
+/* growth slider */
+.ctrl{display:flex;flex-direction:column;gap:12px;padding:18px 20px 22px}
+.ctrl label{font-size:14px;color:var(--ink-2);display:flex;justify-content:space-between;gap:12px}
+input[type=range]{width:100%;accent-color:var(--lime)}
+.bars{display:flex;flex-direction:column;gap:12px;padding:20px 20px 4px}
+.bar{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:center}
+.bar .lbl{font-family:var(--f-num);font-weight:800;font-size:20px;text-align:right}
+.track{height:34px;border-radius:12px;background:var(--space);position:relative;overflow:hidden}
+.fill{position:absolute;inset:0 auto 0 0;border-radius:12px;transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.val{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-family:var(--f-num);font-weight:800;font-size:15px;color:var(--space);white-space:nowrap;font-variant-numeric:tabular-nums}
+.val.out{color:var(--ink)}
+.bar.boom .fill{width:100%!important;background:repeating-linear-gradient(110deg,var(--lime) 0 14px,#c8f59d 14px 22px)}
+.boom-tag{display:none;position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:900;background:var(--coral);color:var(--space);padding:2px 8px;border-radius:99px}
+.bar.boom .boom-tag{display:block}
+
+/* day/night */
+.dn{display:flex;gap:10px;flex-wrap:wrap;padding:16px 20px 20px;align-items:center}
+.dn button,.det button,.presets button{font:inherit;font-size:14px;border:0;border-radius:99px;padding:8px 16px;cursor:pointer;background:var(--space-3);color:var(--ink-2)}
+.dn button[aria-pressed=true]{background:var(--lime);color:var(--space);font-weight:700}
+button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.dn .count{margin-left:auto;font-size:14px;color:var(--ink-2)}
+.dn .count b{font-family:var(--f-num);font-size:20px;color:var(--lime);font-variant-numeric:tabular-nums}
+#nightSky{transition:opacity .8s}
+.night #nightSky{opacity:1}
+.night .wheel{animation-play-state:paused}
+.zz{opacity:0}
+.night .zz{opacity:1}
+.zz text{animation:rise 2.4s ease-out infinite}
+.night .awake-eyes{opacity:0}
+.sleep-eyes{opacity:0}
+.night .sleep-eyes{opacity:1}
+
+/* compare chain */
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.vs > div{background:var(--space-2);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.vs svg{width:100%;height:auto}
+.vs p{font-size:14px;line-height:1.6}
+.tag{align-self:flex-start;font-size:12px;padding:2px 10px;border-radius:99px;font-weight:700}
+.tag.c{background:rgba(255,106,92,.15);color:var(--coral)}
+.tag.l{background:rgba(155,229,100,.15);color:var(--lime)}
+
+/* last mile */
+.mile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mile div{background:var(--space-2);border-radius:18px;padding:14px;min-width:0}
+.mile b{display:block;font-size:16px;margin-bottom:4px}
+.mile span{font-size:13px;color:var(--ink-2);line-height:1.55;display:block}
+
+/* detector */
+.det{background:var(--space-2);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.det label.task{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--ink-2)}
+.det input[type=text]{font:inherit;font-size:16px;border:1px solid var(--space-3);background:var(--space);color:var(--ink);border-radius:14px;padding:10px 14px;width:100%}
+.presets{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.presets span{font-size:13px;color:var(--ink-3)}
+.presets button{font-size:13px;padding:5px 12px}
+.dq{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-top:1px dashed var(--space-3)}
+.dq p{font-size:15px;color:var(--ink)}
+.dq p small{display:block;font-size:12px;color:var(--ink-3)}
+.yn{display:flex;gap:6px}
+.yn button{padding:5px 14px;font-size:13px;border:1px solid var(--space-3);background:transparent}
+.yn button[aria-pressed=true].y{background:var(--lime);border-color:var(--lime);color:var(--space);font-weight:700}
+.yn button[aria-pressed=true].n{background:var(--ink-3);border-color:var(--ink-3);color:var(--space);font-weight:700}
+.result{border-radius:20px;background:var(--space-3);padding:18px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center}
+.result .big{font-family:var(--f-num);font-weight:800;font-size:46px;line-height:1;min-width:2.4em;text-align:center}
+.result h3{font-size:18px}
+.result p{font-size:14px}
+
+.finale{gap:14px}
+.finale .lines{display:flex;flex-direction:column;gap:6px;font-size:clamp(22px,5vw,30px);font-weight:900;line-height:1.4}
+.finale .lines span:nth-child(1){color:var(--ink-2)}
+.finale .lines span:nth-child(2){color:var(--teal)}
+.finale .lines span:nth-child(3){color:var(--lime)}
+.finale .lines span:nth-child(4){color:var(--gold)}
+@media (max-width:520px){
+  .species,.vs{grid-template-columns:minmax(0,1fr)}
+  .mile{grid-template-columns:minmax(0,1fr)}
+  .bar{grid-template-columns:52px minmax(0,1fr)}
+  .result .big{font-size:36px}
+}
+</style>
+
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">原力宇宙 · 第 4 期 · 原力 OS 星系</div>
+  <h1><span class="a">x<sup>y</sup></span><span class="vs">与</span><span class="b"><sup class="pre">y</sup>x</span></h1>
+  <p class="lede">两个式子看起来只差一个上标的位置。可一个需要你一直推，另一个<strong>在你睡觉的时候还在长</strong>。</p>
+  <div class="scene">
+    <svg viewBox="0 0 760 330" role="img" aria-label="左边一只小生物满头大汗推着飞轮，右边一个发光的细胞自己分裂成很多个">
+      <circle cx="120" cy="40" r="110" fill="#13285a"/>
+      <circle cx="680" cy="320" r="150" fill="#162d66"/>
+      <!-- flywheel + pusher -->
+      <g>
+        <g class="wheel"><circle cx="210" cy="170" r="78" fill="none" stroke="#a9b8de" stroke-width="10"/>
+          <g stroke="#a9b8de" stroke-width="6"><line x1="210" y1="92" x2="210" y2="248"/><line x1="132" y1="170" x2="288" y2="170"/><line x1="155" y1="115" x2="265" y2="225"/><line x1="265" y1="115" x2="155" y2="225"/></g>
+          <circle cx="210" cy="170" r="16" fill="#a9b8de"/></g>
+        <g class="bob"><ellipse cx="80" cy="235" rx="38" ry="34" fill="#ff6a5c"/>
+          <circle cx="70" cy="224" r="7" fill="#fff"/><circle cx="92" cy="224" r="7" fill="#fff"/><circle cx="72" cy="226" r="3.5" fill="#0a1633"/><circle cx="94" cy="226" r="3.5" fill="#0a1633"/>
+          <path d="M72 246 q10 -6 20 0" stroke="#0a1633" stroke-width="3" fill="none"/>
+          <line x1="114" y1="226" x2="140" y2="205" stroke="#eef3ff" stroke-width="6" stroke-linecap="round"/>
+          <path d="M58 200 q-4 8 0 14" stroke="#39d5c0" stroke-width="3" fill="none"/><circle cx="58" cy="198" r="3" fill="#39d5c0"/></g>
+        <text x="210" y="290" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="30" fill="#a9b8de">x^y</text>
+      </g>
+      <!-- self-dividing cells -->
+      <g class="glow">
+        <circle cx="560" cy="170" r="34" fill="#9be564"/>
+        <circle cx="500" cy="120" r="22" fill="#9be564" opacity=".85"/>
+        <circle cx="622" cy="118" r="22" fill="#9be564" opacity=".85"/>
+        <circle cx="500" cy="222" r="22" fill="#9be564" opacity=".85"/>
+        <circle cx="624" cy="224" r="22" fill="#9be564" opacity=".85"/>
+        <g fill="#c8f59d" opacity=".7"><circle cx="460" cy="86" r="12"/><circle cx="526" cy="76" r="12"/><circle cx="598" cy="74" r="12"/><circle cx="664" cy="84" r="12"/><circle cx="458" cy="258" r="12"/><circle cx="530" cy="266" r="12"/><circle cx="598" cy="268" r="12"/><circle cx="666" cy="258" r="12"/></g>
+        <g fill="#e4fbcf" opacity=".5"><circle cx="430" cy="60" r="6"/><circle cx="700" cy="60" r="6"/><circle cx="430" cy="290" r="6"/><circle cx="702" cy="292" r="6"/><circle cx="560" cy="44" r="6"/><circle cx="562" cy="300" r="6"/></g>
+      </g>
+      <g class="eye"><circle cx="550" cy="164" r="6" fill="#fff"/><circle cx="570" cy="164" r="6" fill="#fff"/><circle cx="551" cy="166" r="3" fill="#0a1633"/><circle cx="571" cy="166" r="3" fill="#0a1633"/></g>
+      <path d="M552 182 q8 7 16 0" stroke="#0a1633" stroke-width="3" fill="none"/>
+      <text x="566" y="322" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="30" fill="#9be564">ʸx</text>
+    </svg>
+  </div>
+  <div class="chip-row"><span class="chip">母公理</span><span class="chip">迭代幂</span><span class="chip">嵌套链</span><span class="chip">密度革命</span></div>
+</section>
+
+<!-- ACT 1 -->
+<section>
+  <div class="eyebrow">第一幕 · 四种做事的数学</div>
+  <h2>你做的每件事，<br>都藏着一个<span class="lime">数学形态</span></h2>
+  <p>原力体系只有一条母公理：<strong>做会自我繁殖的事，不做一次性的事。</strong>把它写成数学，是一条从左到右的进化链。</p>
+  <div class="species">
+    <div class="sp">
+      <svg viewBox="0 0 200 110" aria-hidden="true"><g class="glow"><circle cx="100" cy="50" r="6" fill="#ffc84a"/><g stroke="#ffc84a" stroke-width="4" stroke-linecap="round"><line x1="100" y1="34" x2="100" y2="16"/><line x1="100" y1="66" x2="100" y2="84"/><line x1="84" y1="50" x2="66" y2="50"/><line x1="116" y1="50" x2="134" y2="50"/><line x1="89" y1="39" x2="77" y2="27"/><line x1="111" y1="61" x2="123" y2="73"/><line x1="111" y1="39" x2="123" y2="27"/><line x1="89" y1="61" x2="77" y2="73"/></g></g><text x="100" y="104" text-anchor="middle" font-size="12" fill="#6f82b3">放完就没了</text></svg>
+      <div class="f gold">1·x</div><h3>一次性</h3><p>做一次，拿一次结果。明天还得从零再来。</p><span class="who">像：接一单活、做一场分享</span>
+    </div>
+    <div class="sp">
+      <svg viewBox="0 0 200 110" aria-hidden="true"><g fill="#ff6a5c"><ellipse cx="40" cy="62" rx="18" ry="16"/><ellipse cx="80" cy="62" rx="18" ry="16"/><ellipse cx="120" cy="62" rx="18" ry="16"/><ellipse cx="160" cy="62" rx="18" ry="16"/></g><g fill="#fff"><circle cx="35" cy="57" r="4"/><circle cx="45" cy="57" r="4"/><circle cx="75" cy="57" r="4"/><circle cx="85" cy="57" r="4"/><circle cx="115" cy="57" r="4"/><circle cx="125" cy="57" r="4"/><circle cx="155" cy="57" r="4"/><circle cx="165" cy="57" r="4"/></g><g fill="#a9b8de"><rect x="28" y="22" width="24" height="16" rx="3"/><rect x="68" y="22" width="24" height="16" rx="3"/><rect x="108" y="22" width="24" height="16" rx="3"/><rect x="148" y="22" width="24" height="16" rx="3"/></g><text x="100" y="104" text-anchor="middle" font-size="12" fill="#6f82b3">多一个人，多一份</text></svg>
+      <div class="f coral">x·y</div><h3>倍数</h3><p>加人、加钱、加时间，产出按比例变多。人一停，产出就停。</p><span class="who">像：雇更多人干同样的活</span>
+    </div>
+    <div class="sp">
+      <svg viewBox="0 0 200 110" aria-hidden="true"><g class="wheel"><circle cx="110" cy="50" r="34" fill="none" stroke="#8b7cff" stroke-width="6"/><g stroke="#8b7cff" stroke-width="4"><line x1="110" y1="16" x2="110" y2="84"/><line x1="76" y1="50" x2="144" y2="50"/></g></g><ellipse cx="50" cy="70" rx="16" ry="14" fill="#ff6a5c"/><line x1="64" y1="66" x2="78" y2="56" stroke="#eef3ff" stroke-width="4" stroke-linecap="round"/><text x="100" y="104" text-anchor="middle" font-size="12" fill="#6f82b3">越转越快，但要人推</text></svg>
+      <div class="f violet">x<sup>y</sup></div><h3>飞轮（幂）</h3><p>每一轮都比上一轮更快，开始有复利。可底数被人封顶，人睡了，飞轮也会慢下来。</p><span class="who">像：一套越用越熟的方法论</span>
+    </div>
+    <div class="sp">
+      <svg viewBox="0 0 200 110" aria-hidden="true"><g class="glow"><circle cx="100" cy="50" r="18" fill="#9be564"/><g fill="#9be564" opacity=".8"><circle cx="68" cy="34" r="11"/><circle cx="132" cy="34" r="11"/><circle cx="68" cy="68" r="11"/><circle cx="132" cy="68" r="11"/></g><g fill="#c8f59d" opacity=".6"><circle cx="44" cy="22" r="6"/><circle cx="88" cy="16" r="6"/><circle cx="112" cy="16" r="6"/><circle cx="156" cy="22" r="6"/><circle cx="44" cy="80" r="6"/><circle cx="88" cy="86" r="6"/><circle cx="112" cy="86" r="6"/><circle cx="156" cy="80" r="6"/></g></g><text x="100" y="104" text-anchor="middle" font-size="12" fill="#6f82b3">它会造出下一个它</text></svg>
+      <div class="f lime"><sup class="pre">y</sup>x</div><h3>迭代幂（嵌套）</h3><p>产出本身会生出下一代产出。读作“<strong>y 个 x 嵌套</strong>”，是动词“嵌套”，不是形容词“快”。</p><span class="who">像：智能造出下一代智能</span>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 2 -->
+<section>
+  <div class="eyebrow">第二幕 · 差的不是程度，是维度</div>
+  <h2>同样从 2 出发，<br>拖到第 5 步看看</h2>
+  <p>让 x = 2，把 y 从 1 拖到 5。前三种都还在屏幕里，第四种会在某一步<strong>直接冲出你的直觉</strong>。</p>
+  <div class="scene">
+    <div class="bars" id="bars"></div>
+    <div class="ctrl">
+      <label for="ySlider"><span>y（做了几轮）</span><span class="math lime" id="yTxt">y = 3</span></label>
+      <input id="ySlider" type="range" min="1" max="5" step="1" value="3">
+    </div>
+  </div>
+  <p class="note">条形按对数刻度绘制，否则第四行在第 4 步就已经要占满几百个屏幕。<sup class="pre">5</sup>2 = 2 的 65536 次方，一共 19,729 位数字。</p>
+</section>
+
+<!-- ACT 3 -->
+<section>
+  <div class="eyebrow">第三幕 · 天花板在哪</div>
+  <h2>飞轮卡在人身上，<br>嵌套链不用你在场</h2>
+  <p>x<sup>y</sup> 已经很好了，可它的底数被“人”封了顶：推的人累了、睡了、走了，轮子就慢下来。<sup class="pre">y</sup>x 的递归发生在<strong>你不在场的时间里</strong>。按一下“天黑了”。</p>
+  <div class="scene" id="dnScene">
+    <svg viewBox="0 0 760 300" role="img" aria-label="白天和黑夜对比：黑夜里推飞轮的小生物睡着了，飞轮停下，细胞群继续分裂">
+      <rect width="760" height="300" fill="#11224d"/>
+      <g id="nightSky" opacity="0"><rect width="760" height="300" fill="#070f26"/><circle cx="680" cy="60" r="26" fill="#eef3ff"/><circle cx="692" cy="52" r="24" fill="#070f26"/>
+        <g fill="#cfe0ff"><circle cx="80" cy="40" r="2"/><circle cx="200" cy="70" r="1.6"/><circle cx="330" cy="30" r="2"/><circle cx="460" cy="60" r="1.6"/><circle cx="560" cy="24" r="2"/></g></g>
+      <line x1="380" y1="20" x2="380" y2="280" stroke="#1f3a80" stroke-width="2" stroke-dasharray="6 8"/>
+      <text x="190" y="40" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="24" fill="#8b7cff">x^y</text>
+      <text x="570" y="40" text-anchor="middle" font-family="Baloo 2,sans-serif" font-weight="800" font-size="24" fill="#9be564">ʸx</text>
+      <!-- flywheel -->
+      <g class="wheel"><circle cx="230" cy="170" r="62" fill="none" stroke="#8b7cff" stroke-width="9"/><g stroke="#8b7cff" stroke-width="5"><line x1="230" y1="108" x2="230" y2="232"/><line x1="168" y1="170" x2="292" y2="170"/></g><circle cx="230" cy="170" r="12" fill="#8b7cff"/></g>
+      <g><ellipse cx="110" cy="214" rx="36" ry="32" fill="#ff6a5c"/>
+        <g class="awake-eyes"><circle cx="100" cy="204" r="6.5" fill="#fff"/><circle cx="120" cy="204" r="6.5" fill="#fff"/><circle cx="102" cy="206" r="3.2" fill="#0a1633"/><circle cx="122" cy="206" r="3.2" fill="#0a1633"/><line x1="144" y1="206" x2="170" y2="186" stroke="#eef3ff" stroke-width="6" stroke-linecap="round"/></g>
+        <g class="sleep-eyes" stroke="#0a1633" stroke-width="3" fill="none"><path d="M94 206 q6 5 12 0"/><path d="M114 206 q6 5 12 0"/></g>
+        <g class="zz" font-family="Baloo 2,sans-serif" font-weight="800" fill="#a9b8de"><text x="140" y="180" font-size="20">z</text><text x="156" y="164" font-size="15" style="animation-delay:.6s">z</text></g>
+      </g>
+      <text x="190" y="280" text-anchor="middle" font-size="14" fill="#a9b8de" id="leftCap">白天：越转越快</text>
+      <!-- cells -->
+      <g id="cells"></g>
+      <text x="570" y="280" text-anchor="middle" font-size="14" fill="#a9b8de" id="rightCap">一直在长</text>
+    </svg>
+    <div class="dn">
+      <button type="button" id="dayBtn" aria-pressed="true">☀ 白天</button>
+      <button type="button" id="nightBtn" aria-pressed="false">☾ 天黑了</button>
+      <span class="count">夜里多长出 <b id="nightGrow">0</b> 个</span>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 4 -->
+<section>
+  <div class="eyebrow">第四幕 · 最常见的误读</div>
+  <h2>是<span class="lime">嵌套</span>，不是倍数</h2>
+  <p>有人说一支 28 人的团队干完了 200 人的活。听起来像每人干了 7 份，这是 x·y 的理解。正典给的解释是：<strong>每个人手里有一条能自己生长的嵌套链。</strong>这场变化叫“密度革命”，因为它增加的是密度，不是规模。</p>
+  <div class="vs">
+    <div>
+      <span class="tag c">倍数的读法</span>
+      <svg viewBox="0 0 300 150" aria-hidden="true"><ellipse cx="60" cy="110" rx="26" ry="23" fill="#ff6a5c"/><circle cx="52" cy="102" r="5" fill="#fff"/><circle cx="68" cy="102" r="5" fill="#fff"/><path d="M54 120 q6 -4 12 0" stroke="#0a1633" stroke-width="2.5" fill="none"/>
+        <g fill="#a9b8de"><rect x="110" y="112" width="160" height="14" rx="4"/><rect x="118" y="96" width="144" height="14" rx="4"/><rect x="126" y="80" width="128" height="14" rx="4"/><rect x="134" y="64" width="112" height="14" rx="4"/><rect x="142" y="48" width="96" height="14" rx="4"/><rect x="150" y="32" width="80" height="14" rx="4"/><rect x="158" y="16" width="64" height="14" rx="4"/></g>
+        <text x="190" y="146" text-anchor="middle" font-size="12" fill="#6f82b3">一个人扛 7 份</text></svg>
+      <p>每人更拼、更快。上限是一个人的体力和时间。</p>
+    </div>
+    <div>
+      <span class="tag l">嵌套的读法</span>
+      <svg viewBox="0 0 300 150" aria-hidden="true"><ellipse cx="44" cy="110" rx="26" ry="23" fill="#39d5c0"/><circle cx="36" cy="102" r="5" fill="#fff"/><circle cx="52" cy="102" r="5" fill="#fff"/><path d="M38 118 q6 6 12 0" stroke="#0a1633" stroke-width="2.5" fill="none"/>
+        <g class="glow"><path d="M70 104 C100 104 100 80 128 80 C156 80 156 56 184 56 C212 56 212 32 240 32 C262 32 270 20 284 14" fill="none" stroke="#9be564" stroke-width="4"/>
+        <circle cx="128" cy="80" r="11" fill="#9be564"/><circle cx="184" cy="56" r="9" fill="#9be564"/><circle cx="240" cy="32" r="7" fill="#9be564"/><circle cx="284" cy="14" r="5" fill="#9be564"/>
+        <path d="M128 80 l18 22 M184 56 l18 20 M240 32 l14 16" stroke="#9be564" stroke-width="2.5"/><circle cx="146" cy="102" r="6" fill="#c8f59d"/><circle cx="202" cy="76" r="5" fill="#c8f59d"/><circle cx="254" cy="48" r="4" fill="#c8f59d"/></g>
+        <text x="170" y="146" text-anchor="middle" font-size="12" fill="#6f82b3">一条链，每节都会生出下一节</text></svg>
+      <p>每个人造一条链：今天的产出，变成明天自动运转的下一代。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 5 -->
+<section>
+  <div class="eyebrow">第五幕 · 最后一公里</div>
+  <h2>大多数人卡在<br>“会自己繁殖”这一层</h2>
+  <p>文脉、大脑、地图、链路这四套东西，很多人都已经搭起来了。真正卡住的是让它们自己变强的那一层。存下来不等于会繁殖。</p>
+  <div class="mile">
+    <div><b class="lime">复利</b><span>上一次的产出，是否自动成为下一次的输入？</span></div>
+    <div><b class="lime">蒸馏</b><span>零散经验，是否被提炼成下次能直接调用的判断？</span></div>
+    <div><b class="lime">验证回流</b><span>现实结果，是否回头改变了系统的下一版？</span></div>
+  </div>
+</section>
+
+<!-- ACT 6 -->
+<section>
+  <div class="eyebrow">第六幕 · 两条边界</div>
+  <h2>人退出的是执行循环，<br>不是<span class="gold">方向盘</span></h2>
+  <div class="vs">
+    <div><span class="tag l">边界一 · 主权</span><h3>AI 可以继承能力，不得继承主权</h3><p>让 ʸx 在你睡觉时生长，不等于让它决定什么值得长。目标、价值和重大取舍仍然要人拍板。</p></div>
+    <div><span class="tag c">边界二 · 隐喻</span><h3>迭代幂是一种看法，不是增长承诺</h3><p>现实中的系统会撞上算力、数据、信任和市场的天花板。这个式子帮你分辨“哪件事会自己长”，不保证它真的长到天上去。</p></div>
+  </div>
+</section>
+
+<!-- DETECTOR -->
+<section>
+  <div class="eyebrow">动手 · 嵌套检测器</div>
+  <h2>你手上这件事，<br>是哪个<span class="lime">物种</span>？</h2>
+  <div class="det">
+    <label class="task" for="taskName">写下一件你本周在做的事
+      <input id="taskName" type="text" placeholder="例如：每周给学员答疑" value="每周给学员答疑">
+    </label>
+    <div class="presets"><span>或者试一个例子：</span><button type="button" data-p="0">每周给学员答疑</button><button type="button" data-p="1">把答疑整理成 SOP</button><button type="button" data-p="2">能自我进化的 AI 助教</button></div>
+    <div id="dqs"></div>
+    <div class="result" aria-live="polite">
+      <div class="big" id="rBig">x·y</div>
+      <div><h3 id="rTitle"></h3><p id="rText"></p></div>
+    </div>
+  </div>
+  <p class="note">四个问题依次对应四种形态，是帮助自查的简化判断，不是评分标准。</p>
+</section>
+
+<!-- FINALE -->
+<section class="finale">
+  <div class="eyebrow">尾声</div>
+  <div class="lines"><span>1·x 是做一次，</span><span>x·y 是多做几份，</span><span>x<sup>y</sup> 是越做越快，</span><span><sup class="pre">y</sup>x 是它会造出下一个它。</span></div>
+  <p>母公理只有一句：<strong>做会自我繁殖的事，不做一次性的事。</strong>下次开工前，先问一句：这件事做完，在我不在场的时候，还会不会长？</p>
+  <p class="note">来源：原力三部曲提纲架构（公理 ʸx）；原力 OS 四级目录 · 信念部 1.4–1.7；原力三部曲基石与关键概念全谱 §0、§C；原力三部曲绿皮书 v0.1 GP-06、GP-07。本页为“原力宇宙”系列内部草稿，公开发布前需明哥审批。</p>
+</section>
+</main>
+
+<script>
+/* starfield */
+(function(){
+  const c=document.getElementById('stars'),x=c.getContext('2d');let s=[],w,h;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){w=c.width=innerWidth*devicePixelRatio;h=c.height=innerHeight*devicePixelRatio;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';
+    s=Array.from({length:110},()=>({x:Math.random()*w,y:Math.random()*h,r:(Math.random()*1.4+.3)*devicePixelRatio,p:Math.random()*6.28}))}
+  function draw(t){x.clearRect(0,0,w,h);for(const a of s){x.globalAlpha=.35+.45*Math.sin(t/900+a.p)**2;x.fillStyle='#cfe0ff';x.beginPath();x.arc(a.x,a.y,a.r,0,6.28);x.fill()}
+    if(!reduce)requestAnimationFrame(draw)}
+  size();addEventListener('resize',size);requestAnimationFrame(draw);
+})();
+
+/* growth bars: x = 2 */
+(function(){
+  const rows=[
+    {k:'1·x',c:'var(--gold)',f:y=>2,txt:y=>'2'},
+    {k:'x·y',c:'var(--coral)',f:y=>2*y,txt:y=>String(2*y)},
+    {k:'x^y',c:'var(--violet)',f:y=>Math.pow(2,y),txt:y=>String(Math.pow(2,y))},
+    {k:'ʸx',c:'var(--lime)',f:y=>[2,4,16,65536,Infinity][y-1],txt:y=>['2','4','16','65,536','一个 19,729 位的数'][y-1]}
+  ];
+  const box=document.getElementById('bars');
+  rows.forEach((r,i)=>{
+    const d=document.createElement('div');d.className='bar';d.innerHTML=`<div class="lbl" style="color:${r.c}">${r.k==='x^y'?'x<sup>y</sup>':r.k==='ʸx'?'<sup class="pre">y</sup>x':r.k}</div><div class="track"><div class="fill" style="background:${r.c}"></div><span class="val"></span><span class="boom-tag">冲出屏幕</span></div>`;
+    box.appendChild(d);r.el=d;
+  });
+  const MAX=Math.log10(65536*1.3);
+  const sl=document.getElementById('ySlider');
+  function render(){
+    const y=+sl.value;document.getElementById('yTxt').textContent='y = '+y;
+    rows.forEach(r=>{
+      const v=r.f(y),fill=r.el.querySelector('.fill'),val=r.el.querySelector('.val');
+      const boom=!isFinite(v);r.el.classList.toggle('boom',boom);
+      const pct=boom?100:Math.max(7,Math.log10(v+1)/MAX*100);
+      fill.style.width=pct+'%';val.textContent=r.txt(y);val.classList.toggle('out',pct<14);
+      if(pct<14)val.style.left=`calc(${pct}% + 8px)`;else val.style.left='10px';
+    });
+  }
+  sl.addEventListener('input',render);render();
+})();
+
+/* day / night */
+(function(){
+  const scene=document.getElementById('dnScene'),g=document.getElementById('cells');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const NS='http://www.w3.org/2000/svg';
+  let cells=[{x:570,y:160,r:20}],night=false,grown=0;
+  function draw(){g.innerHTML='';cells.forEach((c,i)=>{const e=document.createElementNS(NS,'circle');e.setAttribute('cx',c.x);e.setAttribute('cy',c.y);e.setAttribute('r',c.r);e.setAttribute('fill',i%3?'#c8f59d':'#9be564');e.setAttribute('opacity',.9);g.appendChild(e)})}
+  function grow(){
+    if(cells.length>=64){cells=[{x:570,y:160,r:20}];draw();return}
+    const n=[];cells.forEach(c=>{const r=Math.max(5,c.r*0.78);const a=Math.random()*6.28,d=c.r*0.9+4;
+      n.push({x:Math.min(735,Math.max(405,c.x+Math.cos(a)*d)),y:Math.min(255,Math.max(60,c.y+Math.sin(a)*d)),r});
+      n.push({x:Math.min(735,Math.max(405,c.x-Math.cos(a)*d)),y:Math.min(255,Math.max(60,c.y-Math.sin(a)*d)),r});});
+    const added=n.length-cells.length;cells=n;if(night){grown+=added;document.getElementById('nightGrow').textContent=grown}
+    draw();
+  }
+  draw();
+  if(!reduce)setInterval(grow,1400);else{grow();grow();grow()}
+  function set(n){night=n;scene.classList.toggle('night',n);
+    document.getElementById('dayBtn').setAttribute('aria-pressed',!n);document.getElementById('nightBtn').setAttribute('aria-pressed',n);
+    document.getElementById('leftCap').textContent=n?'夜里：推的人睡了，轮子停了':'白天：越转越快';
+    document.getElementById('rightCap').textContent=n?'夜里：还在长':'一直在长';
+    if(n){grown=0;document.getElementById('nightGrow').textContent=0;if(reduce)grow()}
+  }
+  document.getElementById('dayBtn').onclick=()=>set(false);
+  document.getElementById('nightBtn').onclick=()=>set(true);
+})();
+
+/* detector */
+(function(){
+  const Q=[
+    ['换一个人或 AI 来做，能做到你的水准吗？','能复制，才进入“倍数”'],
+    ['这次的产出，会成为下一次的输入吗？','输出变输入，才开始积累'],
+    ['每做一次，下一次是否更快、更好？','越做越好，才有复利'],
+    ['你不在场时，它会自己生出下一个同类吗？','能自我繁殖，才是嵌套']
+  ];
+  const presets=[
+    {t:'每周给学员答疑',a:[true,false,false,false]},
+    {t:'把答疑整理成 SOP',a:[true,true,true,false]},
+    {t:'能自我进化的 AI 助教',a:[true,true,true,true]}
+  ];
+  let ans=presets[0].a.slice();
+  const box=document.getElementById('dqs');
+  Q.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='dq';
+    d.innerHTML=`<p>${q[0]}<small>${q[1]}</small></p><div class="yn"><button type="button" class="y">是</button><button type="button" class="n">否</button></div>`;
+    const [y,n]=d.querySelectorAll('button');
+    y.onclick=()=>{ans[i]=true;sync()};n.onclick=()=>{ans[i]=false;sync()};
+    box.appendChild(d);
+  });
+  document.querySelectorAll('.presets button').forEach(b=>b.onclick=()=>{const p=presets[+b.dataset.p];document.getElementById('taskName').value=p.t;ans=p.a.slice();sync()});
+  document.getElementById('taskName').addEventListener('input',sync);
+  const R={
+    one:['1·x','var(--gold)','一次性的事','做完就结束了。问问自己：能不能把它变成别人或 AI 也能做的东西？'],
+    mul:['x·y','var(--coral)','倍数的事','它能被复制，但每次都要重新投入。下一步：让这次的产出成为下次的输入。'],
+    pow:['x<sup>y</sup>','var(--violet)','飞轮的事','越做越好，已经有复利。可它还要你推。下一步：找出你不在场时它会停在哪一环。'],
+    tet:['<sup class="pre">y</sup>x','var(--lime)','嵌套的事','它会造出下一个它。记得守住方向盘：长什么、为谁长，仍然由你决定。']
+  };
+  function sync(){
+    document.querySelectorAll('.dq').forEach((d,i)=>{const [y,n]=d.querySelectorAll('button');y.setAttribute('aria-pressed',ans[i]===true);n.setAttribute('aria-pressed',ans[i]===false)});
+    let k='one';
+    if(ans[1]&&ans[2]&&ans[3])k='tet';else if(ans[1]&&ans[2])k='pow';else if(ans[0])k='mul';
+    const r=R[k],name=(document.getElementById('taskName').value||'这件事').trim();
+    const big=document.getElementById('rBig');big.innerHTML=r[0];big.style.color=r[1];
+    document.getElementById('rTitle').textContent=`「${name}」目前是${r[2]}`;
+    document.getElementById('rText').textContent=r[3];
+  }
+  sync();
+})();
+</script>
+
+</body>
+</html>
